@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>TripGuidely | Smart Travel Guides</title>
+  <meta name="description" content="TripGuidely delivers smart, curated travel guides for things to do, hotels, and cruises worldwide." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://tripguidely.github.io/" />
+
+  <style>
+    :root {
+      --turquoise: #2ec4b6;
+      --sand: #e8c38a;
+      --dark: #0b1c22;
+      --text: #eaf6f6;
+      --muted: #9fbec2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(46,196,182,.15), transparent),
+                  radial-gradient(800px 400px at 90% 80%, rgba(232,195,138,.12), transparent),
+                  var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header strong {
+      font-size: 1.2rem;
+      color: var(--turquoise);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--sand);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: rgba(46,196,182,.15);
+      color: var(--turquoise);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 16px;
+    }
+
+    p.lead {
+      max-width: 600px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    .primary {
+      background: var(--turquoise);
+      color: #002b2a;
+    }
+
+    .secondary {
+      border: 1px solid var(--sand);
+      color: var(--sand);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+    }
+
+    ul.guides li {
+      margin-bottom: 12px;
+    }
+
+    ul.guides a {
+      color: var(--turquoise);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
