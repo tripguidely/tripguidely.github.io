@@ -1,1 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <title>Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)</title>
+  <meta name="description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
+  <link rel="canonical" href="https://tripguidely.github.io/cruises/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#12cfd0" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TripGuidely" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)" />
+  <meta property="og:description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
+  <meta property="og:url" content="https://tripguidely.github.io/cruises/" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta property="og:image:alt" content="Bright editorial travel hero image for cruise planning" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)" />
+  <meta name="twitter:description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" imagesizes="100vw" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg2:#fbfcfd;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --line:rgba(15,23,42,.10);
+      --line2:rgba(15,23,42,.14);
+
+      --turq:#12cfd0;
+      --sand:#f4a261;
+
+      --shadow: 0 18px 40px rgba(2,6,23,.10);
+      --shadow2: 0 10px 22px rgba(2,6,23,.08);
+      --radius:18px;
+      --radius2:26px;
+      --max: 1120px;
+
+      --focus: rgba(18,207,208,.42);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 55%),
+        radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color:var(--text);
+      line-height:1.58;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{ color:inherit; }
+    a:focus-visible, button:focus-visible, summary:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+      border-radius:12px;
+    }
+
+    .skip{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left:16px; top:16px;
+      width:auto; height:auto;
+      padding:10px 12px;
+      background:rgba(255,255,255,.96);
+      border:1px solid var(--line2);
+      border-radius:12px;
+      box-shadow: var(--shadow2);
+      z-index:9999;
+    }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:saturate(140%) blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      min-width: 180px;
+    }
+    .logo{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(18,207,208,.95), transparent 65%),
+        radial-gradient(14px 14px at 72% 75%, rgba(244,162,97,.85), transparent 62%),
+        linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+      border:1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(18,207,208,.12), 0 10px 26px rgba(244,162,97,.10);
+    }
+    .brand span{
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      padding:0;
+      margin:0;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      font-weight:650;
+      color:var(--muted);
+      padding:9px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    nav a:hover{
+      color:var(--text);
+      border-color:rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+    }
+    nav a[aria-current="page"]{
+      color:var(--text);
+      border-color:rgba(18,207,208,.30);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+    }
+
+    main{ padding:22px 0 44px; }
+
+    .breadcrumbs{
+      display:flex; flex-wrap:wrap; gap:8px;
+      align-items:center;
+      font-size:.92rem;
+      color:var(--muted2);
+      margin: 10px 0 14px;
+    }
+    .breadcrumbs a{
+      text-decoration:none;
+      color:var(--muted);
+      border-bottom:1px solid transparent;
+    }
+    .breadcrumbs a:hover{ border-bottom-color:rgba(15,23,42,.18); }
+    .crumb-sep{ opacity:.6; }
+
+    .hero{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background:
+        radial-gradient(900px 360px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
+        radial-gradient(900px 360px at 90% 20%, rgba(244,162,97,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
+      box-shadow: var(--shadow);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:0;
+    }
+    @media (max-width: 860px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    .hero-media{
+      position:relative;
+      min-height: 260px;
+      background: rgba(2,6,23,.03);
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.28) 55%, rgba(255,255,255,.68)),
+        radial-gradient(520px 260px at 30% 30%, rgba(18,207,208,.12), transparent 60%),
+        radial-gradient(520px 260px at 70% 70%, rgba(244,162,97,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+    .hero-copy{
+      padding:22px 22px 22px;
+      display:flex; flex-direction:column; justify-content:center;
+    }
+    .kicker{
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(15,23,42,.70);
+      margin: 0 0 8px;
+    }
+    .kicker .dot{
+      display:inline-block;
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(135deg, var(--turq), var(--sand));
+      margin-right:8px;
+      vertical-align:middle;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(1.85rem, 1.2rem + 2.0vw, 2.45rem);
+      line-height:1.12;
+      letter-spacing:-.45px;
+    }
+    .lede{
+      margin:0 0 0;
+      color:var(--muted);
+      font-size:1.06rem;
+      max-width: 64ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 330px;
+      gap:18px;
+      margin-top:18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.90);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow2);
+    }
+    .card .pad{ padding:18px; }
+
+    .toc a{
+      text-decoration:none;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--muted);
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .toc a:hover{
+      color:var(--text);
+      border-color:rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+    }
+    .toc small{ color:var(--muted2); }
+
+    h2{
+      margin: 22px 0 8px;
+      font-size: 1.2rem;
+      letter-spacing:-.12px;
+    }
+    p{ margin: 0 0 12px; color:var(--muted); }
+    .content p strong{ color:var(--text); }
+
+    .callout{
+      margin: 12px 0 14px;
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(18,207,208,.22);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.12));
+      color:var(--muted);
+    }
+    .callout b{ color:var(--text); }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin: 8px 0 12px;
+    }
+    @media (max-width: 720px){
+      .two{ grid-template-columns: 1fr; }
+    }
+    .mini{
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
+    }
+    .mini h3{
+      margin:0 0 6px;
+      font-size:1rem;
+      color:var(--text);
+      letter-spacing:-.1px;
+    }
+    .mini p{ margin:0; }
+
+    details{
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.82);
+      padding:12px 12px;
+      margin:10px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:750;
+      color:var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:8px 0 0; }
+
+    .links{
+      display:grid;
+      gap:10px;
+    }
+    .link-card{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
+      text-decoration:none;
+      transition: background .15s ease, border-color .15s ease, transform .12s ease;
+    }
+    .link-card:hover{
+      border-color:rgba(18,207,208,.28);
+      background:rgba(255,255,255,.96);
+      transform: translateY(-1px);
+    }
+    .link-card strong{ color:var(--text); }
+    .link-card span{ color:var(--muted2); font-size:.93rem; }
+    .arrow{
+      width:34px; height:34px;
+      border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+      color:rgba(15,23,42,.92);
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0 24px;
+      color:var(--muted2);
+      font-size:.92rem;
+    }
+    .foot{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .foot a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+    }
+    .foot a:hover{ border-bottom-color:rgba(15,23,42,.18); }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ transition:none !important; }
+    }
+  </style>
+
+  <!-- JSON-LD: CollectionPage + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tripguidely.github.io/#website",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://tripguidely.github.io/cruises/#page",
+        "url": "https://tripguidely.github.io/cruises/",
+        "name": "Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)",
+        "description": "Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://tripguidely.github.io/cruises/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tripguidely.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Cruises", "item": "https://tripguidely.github.io/cruises/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://tripguidely.github.io/cruises/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What’s the best time to book a cruise for value?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For popular sailings, booking 6–12 months ahead usually offers the best cabin selection and stable pricing. Last-minute deals can appear 30–60 days out if you’re flexible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I choose the right cruise itinerary?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with your preferred pace: more sea days for relaxation, more ports for exploration. Then match season and route to the experience you want most."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is a balcony cabin worth it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Balcony cabins are most valuable on scenic routes if you’ll use the outdoor space. Interior cabins are often the best value if you spend little time in your room."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are common hidden cruise costs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Common add-ons include gratuities, Wi-Fi, drink packages, specialty dining, excursions, transfers, spa services, and onboard purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I book excursions with the ship or independently?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ship excursions are coordinated with departure times and reduce timing risk. Independent tours can be cheaper and more local, but you must manage timing and buffers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What’s the best cruise length for first-timers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 4–7 night cruise is ideal for first-timers: long enough to enjoy the ship, short enough to keep planning simple and reduce fatigue."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="TripGuidely home">
+          <div class="logo" aria-hidden="true"></div>
+          <span>TripGuidely</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="/cruises/" aria-current="page">Cruises</a></li>
+            <li><a href="/hotels/best-hotels-paris/">Hotels</a></li>
+            <li><a href="/things-to-do/rome/">Things to Do</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="crumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Cruises</span>
+      </nav>
+
+      <section class="hero" aria-label="Cruises Guide">
+        <div class="hero-grid">
+          <div class="hero-media" aria-hidden="true">
+            <picture>
+              <source srcset="/assets/images/global-travel-hero.webp" type="image/webp" />
+              <img
+                src="/assets/images/global-travel-hero.webp"
+                alt=""
+                width="1200"
+                height="630"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+
+          <div class="hero-copy">
+            <p class="kicker"><span class="dot" aria-hidden="true"></span>Cruises hub</p>
+            <h1>Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)</h1>
+            <p class="lede">
+              Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <article class="card content" aria-label="Cruise planning content">
+          <div class="pad">
+            <section class="card toc" aria-label="Table of contents" style="margin:0 0 16px;">
+              <div class="pad">
+                <p class="kicker" style="margin:0 0 8px;"><span class="dot" aria-hidden="true"></span>Table of contents</p>
+                <a href="#choose-route"><span>1) Choose a route that fits your pace</span><small>Fit > hype</small></a>
+                <a href="#seasons"><span>2) Best seasons to cruise</span><small>Comfort windows</small></a>
+                <a href="#ship-style"><span>3) Choose the right ship vibe</span><small>Quiet vs lively</small></a>
+                <a href="#cabins"><span>4) Cabin tips for comfort & value</span><small>Sleep matters</small></a>
+                <a href="#book-smart"><span>5) Booking strategy</span><small>Timing + flexibility</small></a>
+                <a href="#budget"><span>6) Budgeting & hidden costs</span><small>No surprises</small></a>
+                <a href="#ports"><span>7) Ports & excursions</span><small>Low stress</small></a>
+                <a href="#faq"><span>8) FAQ</span><small>Fast answers</small></a>
+              </div>
+            </section>
+
+            <section id="choose-route">
+              <h2>1) Choose a route that fits your pace</h2>
+              <p>
+                Your itinerary determines the rhythm of the trip. If you prefer slower days, choose routes with fewer ports and more sea time.
+                If you want exploration, pick port-heavy itineraries and plan one main activity per stop.
+              </p>
+              <div class="two">
+                <div class="mini">
+                  <h3>Relax-first itineraries</h3>
+                  <p>More sea days and less rushing. Perfect if you want onboard dining, shows, pool time, and a smoother schedule.</p>
+                </div>
+                <div class="mini">
+                  <h3>Explore-first itineraries</h3>
+                  <p>More ports and earlier starts. Great if you love tours, museums, and local food, and don’t mind tighter timing.</p>
+                </div>
+              </div>
+              <p>
+                Quick filter: choose “how you want to feel” first, then select the destinations that match that pace.
+              </p>
+            </section>
+
+            <section id="seasons">
+              <h2>2) Best seasons to cruise</h2>
+              <p>
+                Season impacts crowd levels, prices, and comfort. Shoulder seasons often deliver the best balance of value and weather,
+                while peak periods offer predictability at a higher price.
+              </p>
+              <p class="callout">
+                <b>Planning move:</b> decide your top priority (best price, warm weather, calm seas, fewer crowds), then pick the window that optimizes for it.
+              </p>
+            </section>
+
+            <section id="ship-style">
+              <h2>3) Choose the right ship vibe</h2>
+              <p>
+                Ships vary by atmosphere. Some feel like floating resorts; others feel quieter and more lounge-focused.
+                Match the ship to how you’ll actually spend your days: food, relaxation, nightlife, family activities, or shows.
+              </p>
+            </section>
+
+            <section id="cabins">
+              <h2>4) Cabin tips for comfort & value</h2>
+              <p>
+                Cabin selection affects sleep quality, noise, and motion comfort. Choose based on your habits, not marketing photos.
+                Interior cabins are best value, while balconies shine on scenic routes if you use the space.
+              </p>
+              <div class="two">
+                <div class="mini">
+                  <h3>Location checks</h3>
+                  <p>Avoid cabins under loud decks (pool/buffet). Mid-ship often feels steadier and reduces motion discomfort.</p>
+                </div>
+                <div class="mini">
+                  <h3>Category checks</h3>
+                  <p>Interior = value & sleep. Oceanview = daylight. Balcony = premium when the view matters and you’ll use it.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="book-smart">
+              <h2>5) Booking strategy</h2>
+              <p>
+                Booking early is best for specific dates, popular sailings, and better cabin choice. Last-minute can work if you’re flexible on ship, route, and cabin.
+                Compare offers using total cost, not just the headline fare.
+              </p>
+              <p class="callout">
+                <b>Shortcut:</b> If you’re tied to holidays or school breaks, book 6–12 months ahead. If you’re flexible, monitor the 30–60 day window.
+              </p>
+            </section>
+
+            <section id="budget">
+              <h2>6) Budgeting & hidden costs</h2>
+              <p>
+                Cruises can look “all-inclusive” until you factor in gratuities, Wi-Fi, drink packages, specialty dining, excursions, transfers, and onboard extras.
+                A simple budget keeps you in control.
+              </p>
+              <div class="two">
+                <div class="mini">
+                  <h3>Common add-ons</h3>
+                  <p>Gratuities, Wi-Fi, drinks, excursions, specialty dining, spa, photos, and port transport.</p>
+                </div>
+                <div class="mini">
+                  <h3>Control tactics</h3>
+                  <p>Pre-pay what makes sense, set a daily cap for extras, and only buy packages you’ll truly use.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="ports">
+              <h2>7) Ports & excursions</h2>
+              <p>
+                Ship excursions trade flexibility for coordination: they’re designed around departure times.
+                Independent tours can be cheaper and more local, but you must manage timing and buffers.
+              </p>
+              <p>
+                Keep days fun: choose one anchor activity per port, then leave room for wandering and food.
+              </p>
+            </section>
+
+            <section id="faq" aria-label="Frequently asked questions">
+              <h2>8) FAQ</h2>
+
+              <details>
+                <summary>What’s the best time to book a cruise for value?</summary>
+                <p>For popular sailings, booking 6–12 months ahead usually offers the best cabin selection and stable pricing. Last-minute deals can appear 30–60 days out if you’re flexible.</p>
+              </details>
+
+              <details>
+                <summary>How do I choose the right cruise itinerary?</summary>
+                <p>Start with your pace: more sea days for relaxation, more ports for exploration. Then match the season and route to the experience you want most.</p>
+              </details>
+
+              <details>
+                <summary>Is a balcony cabin worth it?</summary>
+                <p>Balcony cabins are most valuable on scenic routes if you’ll use the outdoor space. Interior cabins are often the best value if you spend little time in your room.</p>
+              </details>
+
+              <details>
+                <summary>What are common hidden cruise costs?</summary>
+                <p>Common add-ons include gratuities, Wi-Fi, drink packages, specialty dining, excursions, transfers, spa services, and onboard purchases.</p>
+              </details>
+
+              <details>
+                <summary>Should I book excursions with the ship or independently?</summary>
+                <p>Ship excursions are coordinated with departure times and reduce timing risk. Independent tours can be cheaper and more local, but you must manage timing and buffers.</p>
+              </details>
+
+              <details>
+                <summary>What’s the best cruise length for first-timers?</summary>
+                <p>A 4–7 night cruise is ideal for first-timers: long enough to enjoy the ship, short enough to keep planning simple and reduce fatigue.</p>
+              </details>
+            </section>
+          </div>
+        </article>
+
+        <aside class="card" aria-label="Internal links">
+          <div class="pad">
+            <p class="kicker"><span class="dot" aria-hidden="true"></span>Internal links</p>
+            <h2 style="margin:0 0 10px;">Explore TripGuidely</h2>
+            <p style="margin:0 0 14px; color:var(--muted);">
+              Continue your planning with these related guides.
+            </p>
+
+            <div class="links" role="list">
+              <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
+                <div>
+                  <strong>Best Cruises for 2026</strong><br />
+                  <span>Top itineraries, ships, seasons & deals</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/hotels/best-hotels-paris/">
+                <div>
+                  <strong>Best Hotels in Paris</strong><br />
+                  <span>Where to stay by area, budget & style</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/things-to-do/rome/">
+                <div>
+                  <strong>Things to Do in Rome</strong><br />
+                  <span>Must-sees, hidden gems & 3-day plan</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/cruises/">
+                <div>
+                  <strong>Cruises Hub</strong><br />
+                  <span>This page (routes, tips & strategy)</span>
+                </div>
+                <div class="arrow" aria-hidden="true">✓</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/">
+                <div>
+                  <strong>Homepage</strong><br />
+                  <span>Back to the planning hub</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+            </div>
+
+            <div class="callout" style="margin-top:14px;">
+              <b>Next build:</b> publish the focused guide at <a href="/cruises/best-cruises-2026/">/cruises/best-cruises-2026/</a> and link back here.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: YYYY-MM-DD</span></div>
+        <div>
+          <a href="/">Home</a> ·
+          <a href="/cruises/">Cruises</a> ·
+          <a href="/hotels/best-hotels-paris/">Hotels</a> ·
+          <a href="/things-to-do/rome/">Things to Do</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var y = new Date().getFullYear();
+      var el = document.getElementById("year");
+      if (el) el.textContent = String(y);
+    })();
+  </script>
+</body>
+</html>
