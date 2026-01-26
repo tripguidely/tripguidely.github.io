@@ -1,1 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <title>Best Hotels in Paris: Where to Stay by Area, Budget & Style</title>
+  <meta name="description" content="Find the best hotels in Paris by neighborhood, budget, and travel style, with practical tips on seasons, transport, and booking smarter for better stays." />
+  <link rel="canonical" href="https://tripguidely.github.io/hotels/best-hotels-paris/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#12cfd0" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TripGuidely" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Best Hotels in Paris: Where to Stay by Area, Budget & Style" />
+  <meta property="og:description" content="Find the best hotels in Paris by neighborhood, budget, and travel style, with practical tips on seasons, transport, and booking smarter for better stays." />
+  <meta property="og:url" content="https://tripguidely.github.io/hotels/best-hotels-paris/" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/paris-best-hotels.webp" />
+  <meta property="og:image:alt" content="Bright editorial travel hero image for Paris hotels guide" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Hotels in Paris: Where to Stay by Area, Budget & Style" />
+  <meta name="twitter:description" content="Find the best hotels in Paris by neighborhood, budget, and travel style, with practical tips on seasons, transport, and booking smarter for better stays." />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/paris-best-hotels.webp" />
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="/assets/images/paris-best-hotels.webp" imagesizes="100vw" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg2:#fbfcfd;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --line:rgba(15,23,42,.10);
+      --line2:rgba(15,23,42,.14);
+
+      --turq:#12cfd0;
+      --sand:#f4a261;
+
+      --shadow: 0 18px 40px rgba(2,6,23,.10);
+      --shadow2: 0 10px 22px rgba(2,6,23,.08);
+      --radius:18px;
+      --radius2:26px;
+      --max: 1120px;
+
+      --focus: rgba(18,207,208,.42);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 55%),
+        radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color:var(--text);
+      line-height:1.58;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{ color:inherit; }
+    a:focus-visible, button:focus-visible, summary:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+      border-radius:12px;
+    }
+
+    .skip{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left:16px; top:16px;
+      width:auto; height:auto;
+      padding:10px 12px;
+      background:rgba(255,255,255,.96);
+      border:1px solid var(--line2);
+      border-radius:12px;
+      box-shadow: var(--shadow2);
+      z-index:9999;
+    }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:saturate(140%) blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      min-width: 180px;
+    }
+    .logo{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(18,207,208,.95), transparent 65%),
+        radial-gradient(14px 14px at 72% 75%, rgba(244,162,97,.85), transparent 62%),
+        linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
+      border:1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(18,207,208,.12), 0 10px 26px rgba(244,162,97,.10);
+    }
+    .brand span{
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      padding:0;
+      margin:0;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      font-weight:650;
+      color:var(--muted);
+      padding:9px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    nav a:hover{
+      color:var(--text);
+      border-color:rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+    }
+    nav a[aria-current="page"]{
+      color:var(--text);
+      border-color:rgba(18,207,208,.30);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+    }
+
+    main{ padding:22px 0 44px; }
+
+    .breadcrumbs{
+      display:flex; flex-wrap:wrap; gap:8px;
+      align-items:center;
+      font-size:.92rem;
+      color:var(--muted2);
+      margin: 10px 0 14px;
+    }
+    .breadcrumbs a{
+      text-decoration:none;
+      color:var(--muted);
+      border-bottom:1px solid transparent;
+    }
+    .breadcrumbs a:hover{ border-bottom-color:rgba(15,23,42,.18); }
+    .crumb-sep{ opacity:.6; }
+
+    .hero{
+      border:1px solid var(--line);
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background:
+        radial-gradient(900px 360px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
+        radial-gradient(900px 360px at 90% 20%, rgba(244,162,97,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
+      box-shadow: var(--shadow);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:0;
+    }
+    @media (max-width: 860px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    .hero-media{
+      position:relative;
+      min-height: 260px;
+      background: rgba(2,6,23,.03);
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.28) 55%, rgba(255,255,255,.68)),
+        radial-gradient(520px 260px at 30% 30%, rgba(18,207,208,.12), transparent 60%),
+        radial-gradient(520px 260px at 70% 70%, rgba(244,162,97,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+    .hero-copy{
+      padding:22px 22px 22px;
+      display:flex; flex-direction:column; justify-content:center;
+    }
+    .kicker{
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(15,23,42,.70);
+      margin: 0 0 8px;
+    }
+    .kicker .dot{
+      display:inline-block;
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(135deg, var(--turq), var(--sand));
+      margin-right:8px;
+      vertical-align:middle;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(1.85rem, 1.2rem + 2.0vw, 2.45rem);
+      line-height:1.12;
+      letter-spacing:-.45px;
+    }
+    .lede{
+      margin:0 0 0;
+      color:var(--muted);
+      font-size:1.06rem;
+      max-width: 64ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 330px;
+      gap:18px;
+      margin-top:18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.90);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow2);
+    }
+    .card .pad{ padding:18px; }
+
+    .toc a{
+      text-decoration:none;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--muted);
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .toc a:hover{
+      color:var(--text);
+      border-color:rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+    }
+    .toc small{ color:var(--muted2); }
+
+    h2{
+      margin: 22px 0 8px;
+      font-size: 1.2rem;
+      letter-spacing:-.12px;
+    }
+    p{ margin: 0 0 12px; color:var(--muted); }
+    .content p strong{ color:var(--text); }
+
+    .callout{
+      margin: 12px 0 14px;
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(18,207,208,.22);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.12));
+      color:var(--muted);
+    }
+    .callout b{ color:var(--text); }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin: 8px 0 12px;
+    }
+    @media (max-width: 720px){
+      .two{ grid-template-columns: 1fr; }
+    }
+    .mini{
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
+    }
+    .mini h3{
+      margin:0 0 6px;
+      font-size:1rem;
+      color:var(--text);
+      letter-spacing:-.1px;
+    }
+    .mini p{ margin:0; }
+
+    details{
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.82);
+      padding:12px 12px;
+      margin:10px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:750;
+      color:var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin:8px 0 0; }
+
+    .links{
+      display:grid;
+      gap:10px;
+    }
+    .link-card{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
+      text-decoration:none;
+      transition: background .15s ease, border-color .15s ease, transform .12s ease;
+    }
+    .link-card:hover{
+      border-color:rgba(18,207,208,.28);
+      background:rgba(255,255,255,.96);
+      transform: translateY(-1px);
+    }
+    .link-card strong{ color:var(--text); }
+    .link-card span{ color:var(--muted2); font-size:.93rem; }
+    .arrow{
+      width:34px; height:34px;
+      border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+      color:rgba(15,23,42,.92);
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0 24px;
+      color:var(--muted2);
+      font-size:.92rem;
+    }
+    .foot{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .foot a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+    }
+    .foot a:hover{ border-bottom-color:rgba(15,23,42,.18); }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ transition:none !important; }
+    }
+  </style>
+
+  <!-- JSON-LD: Article + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tripguidely.github.io/#website",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://tripguidely.github.io/hotels/best-hotels-paris/#article",
+        "headline": "Best Hotels in Paris: Where to Stay by Area, Budget & Style",
+        "description": "Find the best hotels in Paris by neighborhood, budget, and travel style, with practical tips on seasons, transport, and booking smarter for better stays.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://tripguidely.github.io/hotels/best-hotels-paris/"
+        },
+        "image": [
+          "https://tripguidely.github.io/assets/images/paris-best-hotels.webp"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "TripGuidely",
+          "url": "https://tripguidely.github.io/"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "TripGuidely"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://tripguidely.github.io/hotels/best-hotels-paris/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tripguidely.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Hotels", "item": "https://tripguidely.github.io/hotels/best-hotels-paris/" },
+          { "@type": "ListItem", "position": 3, "name": "Best Hotels in Paris", "item": "https://tripguidely.github.io/hotels/best-hotels-paris/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://tripguidely.github.io/hotels/best-hotels-paris/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which Paris area is best to stay for first-time visitors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For first-timers, central areas with easy metro access are usually best. Prioritize walkability to key sights and a short metro ride to major hubs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many nights should I stay in Paris?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A common sweet spot is 3–5 nights. It’s enough to see major highlights comfortably while leaving room for neighborhoods, cafés, and slower moments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it better to stay near a metro line?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Being close to a metro station saves time and energy, especially if you plan early mornings or multiple neighborhoods in one day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When are Paris hotels cheapest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prices vary by season and events. Shoulder periods often offer better value than peak months, especially if you book early and stay flexible on dates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I prioritize when booking a Paris hotel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prioritize location and comfort basics: quiet at night, reliable climate control, good reviews for cleanliness, and easy transit access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I book refundable rates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Refundable can be worth it if your plans might shift. If your dates are fixed, non-refundable can offer savings, but only if you’re confident."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="TripGuidely home">
+          <div class="logo" aria-hidden="true"></div>
+          <span>TripGuidely</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="/cruises/">Cruises</a></li>
+            <li><a href="/hotels/best-hotels-paris/" aria-current="page">Hotels</a></li>
+            <li><a href="/things-to-do/rome/">Things to Do</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="crumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Best Hotels in Paris</span>
+      </nav>
+
+      <section class="hero" aria-label="Best Hotels in Paris">
+        <div class="hero-grid">
+          <div class="hero-media" aria-hidden="true">
+            <picture>
+              <source srcset="/assets/images/paris-best-hotels.webp" type="image/webp" />
+              <img
+                src="/assets/images/paris-best-hotels.webp"
+                alt=""
+                width="1200"
+                height="630"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+
+          <div class="hero-copy">
+            <p class="kicker"><span class="dot" aria-hidden="true"></span>Paris stays</p>
+            <h1>Best Hotels in Paris: Where to Stay by Area, Budget & Style</h1>
+            <p class="lede">
+              Choose the right Paris base with neighborhood guidance, budget positioning, and practical booking tips so your trip feels effortless.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <article class="card content" aria-label="Paris hotels content">
+          <div class="pad">
+            <section class="card toc" aria-label="Table of contents" style="margin:0 0 16px;">
+              <div class="pad">
+                <p class="kicker" style="margin:0 0 8px;"><span class="dot" aria-hidden="true"></span>Table of contents</p>
+                <a href="#pick-area"><span>1) Pick the right area first</span><small>Location wins</small></a>
+                <a href="#by-style"><span>2) Best areas by travel style</span><small>Your vibe</small></a>
+                <a href="#budget"><span>3) Budget tiers and what you get</span><small>Value map</small></a>
+                <a href="#transport"><span>4) Transport and walkability</span><small>Save time</small></a>
+                <a href="#timing"><span>5) Best times to book</span><small>Smarter rates</small></a>
+                <a href="#room-checklist"><span>6) Room checklist (Paris-specific)</span><small>Comfort</small></a>
+                <a href="#mistakes"><span>7) Common booking mistakes</span><small>Avoid pain</small></a>
+                <a href="#faq"><span>8) FAQ</span><small>Fast answers</small></a>
+              </div>
+            </section>
+
+            <section id="pick-area">
+              <h2>1) Pick the right area first</h2>
+              <p>
+                In Paris, <strong>location matters more than the hotel category</strong>. A “good enough” room in a walkable, well-connected neighborhood
+                usually beats a nicer room far from your daily routes.
+              </p>
+              <p class="callout">
+                <b>Shortcut:</b> Choose the area based on your daily plan (museums, cafés, shopping, day trips), then filter hotels inside that zone.
+              </p>
+            </section>
+
+            <section id="by-style">
+              <h2>2) Best areas by travel style</h2>
+              <p>
+                Use your travel style to guide neighborhood selection. The goal is to reduce commute friction and keep evenings easy.
+              </p>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>First-time / classic sights</h3>
+                  <p>Prioritize central access and metro convenience so you can bounce between landmarks without long transfers.</p>
+                </div>
+                <div class="mini">
+                  <h3>Cafés + local feel</h3>
+                  <p>Choose areas with strong street life and food options so your “off-hours” are as good as your sightseeing.</p>
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>Romantic + quiet nights</h3>
+                  <p>Look for calmer streets, good soundproofing reviews, and easy evening dining nearby.</p>
+                </div>
+                <div class="mini">
+                  <h3>Budget + transit</h3>
+                  <p>Choose metro-adjacent zones where you’ll trade a bit of centrality for better value and solid connections.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="budget">
+              <h2>3) Budget tiers and what you get</h2>
+              <p>
+                Paris pricing often reflects location first, then room size and service level. Expect smaller rooms than many other cities.
+              </p>
+              <ul>
+                <li><strong>Value tier:</strong> smaller rooms, simple amenities, great if you’re out all day.</li>
+                <li><strong>Mid-range:</strong> better comfort basics and calmer sleep experience.</li>
+                <li><strong>Premium:</strong> stronger service, design, and the “I’m glad we booked this” feeling.</li>
+              </ul>
+              <p class="callout">
+                <b>Value trick:</b> Spend on location and sleep quality, not extra “features” you won’t use.
+              </p>
+            </section>
+
+            <section id="transport">
+              <h2>4) Transport and walkability</h2>
+              <p>
+                Being near a metro station is a strong advantage, but <strong>walkability</strong> is the real luxury.
+                A good base lets you start mornings smoothly and return easily at night.
+              </p>
+              <div class="two">
+                <div class="mini">
+                  <h3>Metro proximity</h3>
+                  <p>Short walks to transit reduce fatigue and make spontaneous plans easier.</p>
+                </div>
+                <div class="mini">
+                  <h3>Walk-first days</h3>
+                  <p>Pick zones where cafés, bakeries, and evening dinner options are within a simple loop.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="timing">
+              <h2>5) Best times to book</h2>
+              <p>
+                If you’re traveling during popular weeks, book early to lock in choices. If you’re flexible, you can often find value by shifting days slightly
+                and comparing refundable vs non-refundable rates.
+              </p>
+              <p class="callout">
+                <b>Simple strategy:</b> book a refundable option you like, then re-check prices periodically and switch if value improves.
+              </p>
+            </section>
+
+            <section id="room-checklist">
+              <h2>6) Room checklist (Paris-specific)</h2>
+              <p>
+                Paris rooms can be compact. These are the comfort details that tend to matter most:
+              </p>
+              <ul>
+                <li><strong>Noise:</strong> look for soundproofing mentions in reviews (street + hallway).</li>
+                <li><strong>Climate control:</strong> reliable AC/heating depending on season.</li>
+                <li><strong>Elevator:</strong> important if you have luggage or mobility needs.</li>
+                <li><strong>Bathroom layout:</strong> photos matter more than star ratings.</li>
+                <li><strong>Bed quality:</strong> sleep is your best itinerary upgrade.</li>
+              </ul>
+            </section>
+
+            <section id="mistakes">
+              <h2>7) Common booking mistakes</h2>
+              <p>
+                Avoid these and your stay gets dramatically easier:
+              </p>
+              <ul>
+                <li>Booking far out to “save money” then spending hours commuting.</li>
+                <li>Ignoring noise reviews and ending up on a busy street without good insulation.</li>
+                <li>Choosing the cheapest rate without checking cancellation terms.</li>
+                <li>Assuming room size from photos without checking square meter notes.</li>
+              </ul>
+              <p class="callout">
+                <b>Next step:</b> pair this page with a city itinerary (example: <a href="/things-to-do/rome/">Rome</a>) so your hotel location supports your daily plan.
+              </p>
+            </section>
+
+            <section id="faq" aria-label="Frequently asked questions">
+              <h2>8) FAQ</h2>
+
+              <details>
+                <summary>Which Paris area is best to stay for first-time visitors?</summary>
+                <p>For first-timers, central areas with easy metro access are usually best. Prioritize walkability to key sights and a short metro ride to major hubs.</p>
+              </details>
+
+              <details>
+                <summary>How many nights should I stay in Paris?</summary>
+                <p>A common sweet spot is 3–5 nights. It’s enough to see major highlights comfortably while leaving room for neighborhoods, cafés, and slower moments.</p>
+              </details>
+
+              <details>
+                <summary>Is it better to stay near a metro line?</summary>
+                <p>Yes. Being close to a metro station saves time and energy, especially if you plan early mornings or multiple neighborhoods in one day.</p>
+              </details>
+
+              <details>
+                <summary>When are Paris hotels cheapest?</summary>
+                <p>Prices vary by season and events. Shoulder periods often offer better value than peak months, especially if you book early and stay flexible on dates.</p>
+              </details>
+
+              <details>
+                <summary>What should I prioritize when booking a Paris hotel?</summary>
+                <p>Prioritize location and comfort basics: quiet at night, reliable climate control, good reviews for cleanliness, and easy transit access.</p>
+              </details>
+
+              <details>
+                <summary>Should I book refundable rates?</summary>
+                <p>Refundable can be worth it if your plans might shift. If your dates are fixed, non-refundable can offer savings, but only if you’re confident.</p>
+              </details>
+            </section>
+          </div>
+        </article>
+
+        <aside class="card" aria-label="Internal links">
+          <div class="pad">
+            <p class="kicker"><span class="dot" aria-hidden="true"></span>Internal links</p>
+            <h2 style="margin:0 0 10px;">Explore TripGuidely</h2>
+            <p style="margin:0 0 14px; color:var(--muted);">
+              Build your trip plan with these related pages.
+            </p>
+
+            <div class="links" role="list">
+              <a class="link-card" role="listitem" href="/cruises/">
+                <div>
+                  <strong>Cruises Hub</strong><br />
+                  <span>Routes, cabins, seasons, costs & booking tips</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
+                <div>
+                  <strong>Best Cruises for 2026</strong><br />
+                  <span>Top itineraries, ships, seasons & deals</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/things-to-do/rome/">
+                <div>
+                  <strong>Things to Do in Rome</strong><br />
+                  <span>Must-sees, hidden gems & 3-day plan</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/">
+                <div>
+                  <strong>Homepage</strong><br />
+                  <span>Back to the planning hub</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+            </div>
+
+            <div class="callout" style="margin-top:14px;">
+              <b>Internal SEO tip:</b> add a short “Where to stay in Paris” teaser on the homepage linking here to strengthen relevance.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: YYYY-MM-DD</span></div>
+        <div>
+          <a href="/">Home</a> ·
+          <a href="/cruises/">Cruises</a> ·
+          <a href="/hotels/best-hotels-paris/">Hotels</a> ·
+          <a href="/things-to-do/rome/">Things to Do</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var y = new Date().getFullYear();
+      var el = document.getElementById("year");
+      if (el) el.textContent = String(y);
+    })();
+  </script>
+</body>
+</html>
