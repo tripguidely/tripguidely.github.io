@@ -12,23 +12,28 @@
   <meta name="theme-color" content="#12cfd0" />
   <meta name="color-scheme" content="light" />
 
+  <!-- Favicon / App Icons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
+  <link rel="shortcut icon" href="/assets/images/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="48x48" href="/assets/images/favicon-48.png" />
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)" />
   <meta property="og:description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
   <meta property="og:url" content="https://tripguidely.github.io/cruises/" />
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Bright editorial travel hero image for cruise planning" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/cruises-hero.webp" />
+  <meta property="og:image:alt" content="Cruise planning hero image with turquoise and sand accents" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)" />
   <meta name="twitter:description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/cruises-hero.webp" />
 
   <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" imagesizes="100vw" />
+  <link rel="preload" as="image" href="/assets/images/cruises-hero.webp" imagesizes="100vw" />
 
   <style>
     :root{
@@ -104,23 +109,40 @@
       gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
+      display:flex; align-items:center; gap:12px;
       text-decoration:none;
       min-width: 180px;
     }
+
+    /* ✅ Badge (bulle) + logo visible */
     .logo{
-      width:34px; height:34px;
-      border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(18,207,208,.95), transparent 65%),
-        radial-gradient(14px 14px at 72% 75%, rgba(244,162,97,.85), transparent 62%),
-        linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
-      border:1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(18,207,208,.12), 0 10px 26px rgba(244,162,97,.10);
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid rgba(15,23,42,.14);
+      box-shadow:
+        0 12px 28px rgba(2,6,23,.12),
+        0 0 0 4px rgba(18,207,208,.14);
+      display:grid;
+      place-items:center;
+      padding:2px;           /* moins de padding = logo plus gros */
+      overflow:hidden;
+      flex:0 0 auto;
     }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      filter: contrast(1.06) saturate(1.08);
+    }
+
     .brand span{
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.2px;
+      font-size:1.08rem;
+      color:var(--text);
     }
 
     nav ul{
@@ -410,7 +432,7 @@
         "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
+          "url": "https://tripguidely.github.io/assets/images/cruises-hero.webp"
         }
       },
       {
@@ -487,7 +509,9 @@
     <div class="wrap">
       <div class="bar">
         <a class="brand" href="/" aria-label="TripGuidely home">
-          <div class="logo" aria-hidden="true"></div>
+          <span class="logo" aria-hidden="true">
+            <img src="/assets/images/tg-logo.png" alt="TripGuidely" width="44" height="44" loading="eager" decoding="async">
+          </span>
           <span>TripGuidely</span>
         </a>
 
@@ -514,9 +538,9 @@
         <div class="hero-grid">
           <div class="hero-media" aria-hidden="true">
             <picture>
-              <source srcset="/assets/images/global-travel-hero.webp" type="image/webp" />
+              <source srcset="/assets/images/cruises-hero.webp" type="image/webp" />
               <img
-                src="/assets/images/global-travel-hero.webp"
+                src="/assets/images/cruises-hero.webp"
                 alt=""
                 width="1200"
                 height="630"
