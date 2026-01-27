@@ -6,11 +6,21 @@
 
   <title>Best Cruises for 2026: Top Itineraries, Ships, Seasons & Deals</title>
   <meta name="description" content="Discover the best cruises for 2026 with top itineraries, ship picks, best months to sail, pricing tips, and what to book early for the best value." />
-  <link rel="canonical" href="https://tripguidely.github.io/cruises/best-cruises-2026/" />
+  <meta name="author" content="TripGuidely" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#12cfd0" />
   <meta name="color-scheme" content="light" />
+
+  <link rel="canonical" href="https://tripguidely.github.io/cruises/best-cruises-2026/" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/site.webmanifest" />
+
+  <!-- Favicon / App Icons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
+  <link rel="shortcut icon" href="/assets/images/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180.png" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
@@ -19,7 +29,7 @@
   <meta property="og:description" content="Discover the best cruises for 2026 with top itineraries, ship picks, best months to sail, pricing tips, and what to book early for the best value." />
   <meta property="og:url" content="https://tripguidely.github.io/cruises/best-cruises-2026/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/best-cruises-2026.webp" />
-  <meta property="og:image:alt" content="Bright editorial travel hero image for best cruises in 2026" />
+  <meta property="og:image:alt" content="Luxury cruise ship at sea during golden hour (Best cruises for 2026)" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -28,7 +38,7 @@
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/best-cruises-2026.webp" />
 
   <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/assets/images/best-cruises-2026.webp" imagesizes="100vw" />
+  <link rel="preload" as="image" href="/assets/images/best-cruises-2026.webp" imagesizes="100vw" fetchpriority="high" />
 
   <style>
     :root{
@@ -104,23 +114,40 @@
       gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
+      display:flex; align-items:center; gap:12px;
       text-decoration:none;
       min-width: 180px;
     }
+
+    /* Badge + logo image (same as Cruises hub) */
     .logo{
-      width:34px; height:34px;
-      border-radius:12px;
-      background:
-        radial-gradient(10px 10px at 30% 30%, rgba(18,207,208,.95), transparent 65%),
-        radial-gradient(14px 14px at 72% 75%, rgba(244,162,97,.85), transparent 62%),
-        linear-gradient(135deg, rgba(15,23,42,.06), rgba(15,23,42,.02));
-      border:1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(18,207,208,.12), 0 10px 26px rgba(244,162,97,.10);
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid rgba(15,23,42,.14);
+      box-shadow:
+        0 12px 28px rgba(2,6,23,.12),
+        0 0 0 4px rgba(18,207,208,.14);
+      display:grid;
+      place-items:center;
+      padding:2px;
+      overflow:hidden;
+      flex:0 0 auto;
     }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      filter: contrast(1.06) saturate(1.08);
+    }
+
     .brand span{
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.2px;
+      font-size:1.08rem;
+      color:var(--text);
     }
 
     nav ul{
@@ -383,13 +410,17 @@
     }
     .foot a:hover{ border-bottom-color:rgba(15,23,42,.18); }
 
+    /* Minor list spacing for readability */
+    ul{ margin: 0 0 12px; padding-left: 18px; color:var(--muted); }
+    li{ margin: 6px 0; }
+
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
       *{ transition:none !important; }
     }
   </style>
 
-  <!-- JSON-LD: Article + BreadcrumbList + FAQPage -->
+  <!-- JSON-LD: WebSite + Organization + Article + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -398,7 +429,18 @@
         "@type": "WebSite",
         "@id": "https://tripguidely.github.io/#website",
         "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/"
+        "url": "https://tripguidely.github.io/",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tripguidely.github.io/#organization",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
+        }
       },
       {
         "@type": "Article",
@@ -413,15 +455,10 @@
         "image": [
           "https://tripguidely.github.io/assets/images/best-cruises-2026.webp"
         ],
-        "publisher": {
-          "@type": "Organization",
-          "name": "TripGuidely",
-          "url": "https://tripguidely.github.io/"
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "TripGuidely"
-        }
+        "author": { "@id": "https://tripguidely.github.io/#organization" },
+        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
+        "datePublished": "2026-01-26",
+        "dateModified": "2026-01-26"
       },
       {
         "@type": "BreadcrumbList",
@@ -462,6 +499,22 @@
           },
           {
             "@type": "Question",
+            "name": "What are the biggest hidden costs on cruises?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Common hidden costs include gratuities, Wi-Fi, drink packages, specialty dining, excursions, transfers, spa services, and onboard purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What cabin location is best for avoiding noise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avoid cabins directly under busy decks like the pool or buffet. Mid-ship cabins are often steadier and can feel quieter for sleep."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Is a newer ship always better?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -498,7 +551,9 @@
     <div class="wrap">
       <div class="bar">
         <a class="brand" href="/" aria-label="TripGuidely home">
-          <div class="logo" aria-hidden="true"></div>
+          <span class="logo" aria-hidden="true">
+            <img src="/assets/images/tg-logo.png" alt="" width="44" height="44" loading="eager" decoding="async">
+          </span>
           <span>TripGuidely</span>
         </a>
 
@@ -559,11 +614,14 @@
                 <a href="#how-we-pick"><span>1) How we pick “best”</span><small>Criteria</small></a>
                 <a href="#best-by-style"><span>2) Best cruises by travel style</span><small>Match your vibe</small></a>
                 <a href="#itineraries"><span>3) Itinerary shortlists</span><small>Route ideas</small></a>
-                <a href="#when-to-go"><span>4) Best months to sail</span><small>Timing</small></a>
-                <a href="#deal-checklist"><span>5) Deal checklist</span><small>Total cost</small></a>
-                <a href="#what-to-book-early"><span>6) What to book early</span><small>Don’t miss</small></a>
-                <a href="#first-timers"><span>7) Best picks for first-timers</span><small>Simple wins</small></a>
-                <a href="#faq"><span>8) FAQ</span><small>Fast answers</small></a>
+                <a href="#caribbean-2026"><span>4) Caribbean cruises 2026</span><small>Warm + easy</small></a>
+                <a href="#mediterranean-2026"><span>5) Mediterranean cruises 2026</span><small>Culture + ports</small></a>
+                <a href="#alaska-2026"><span>6) Alaska cruises 2026</span><small>Scenery + wildlife</small></a>
+                <a href="#when-to-go"><span>7) Best months to sail</span><small>Timing</small></a>
+                <a href="#deal-checklist"><span>8) Deal checklist</span><small>Total cost</small></a>
+                <a href="#what-to-book-early"><span>9) What to book early</span><small>Don’t miss</small></a>
+                <a href="#first-timers"><span>10) Best picks for first-timers</span><small>Simple wins</small></a>
+                <a href="#faq"><span>11) FAQ</span><small>Fast answers</small></a>
               </div>
             </section>
 
@@ -620,8 +678,98 @@
               </p>
             </section>
 
+            <section id="caribbean-2026">
+              <h2>4) Caribbean cruises 2026 (best for warmth + simple planning)</h2>
+              <p>
+                Caribbean itineraries are often the easiest “high happiness, low friction” choice. Ports are generally close together, sea days feel relaxing,
+                and logistics tend to be straightforward if you want a true vacation pace.
+              </p>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>Best for</h3>
+                  <p>First-timers, families, warm-weather travelers, and anyone who wants an easy win without complex transfers.</p>
+                </div>
+                <div class="mini">
+                  <h3>Watch-outs</h3>
+                  <p>Some routes can feel port-heavy. Choose fewer stops if you want deeper exploration instead of quick snapshots.</p>
+                </div>
+              </div>
+
+              <div class="callout">
+                <b>Smart pick method:</b> choose your “feel” first (relax vs explore), then pick a route with the right balance of sea days and ports.
+              </div>
+
+              <h3 style="margin:14px 0 8px;">Quick checklist</h3>
+              <ul>
+                <li><strong>Pace:</strong> 2–3 ports + 1–2 sea days is a great balance for most travelers.</li>
+                <li><strong>Cabin:</strong> interior for value, balcony only if you’ll actually use it daily.</li>
+                <li><strong>Budget:</strong> plan for gratuities + excursions + transport at each port.</li>
+              </ul>
+            </section>
+
+            <section id="mediterranean-2026">
+              <h2>5) Mediterranean cruises 2026 (best for culture + iconic ports)</h2>
+              <p>
+                Mediterranean routes can feel like a highlight reel of history, food, and architecture. They’re amazing, but planning matters more here:
+                port timing, distances, and “how far is the city from the port?” can change the experience a lot.
+              </p>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>Best for</h3>
+                  <p>Food + culture lovers, walking tour fans, and travelers who enjoy full days off the ship.</p>
+                </div>
+                <div class="mini">
+                  <h3>Watch-outs</h3>
+                  <p>Early mornings and long days. Plan one anchor activity per port to avoid overload.</p>
+                </div>
+              </div>
+
+              <div class="callout">
+                <b>Port rule:</b> pick itineraries with <b>longer port stays</b> and <b>less rushed transit</b>. Time is the real luxury.
+              </div>
+
+              <h3 style="margin:14px 0 8px;">Quick checklist</h3>
+              <ul>
+                <li><strong>Logistics:</strong> check the port-to-city distance before you book anything.</li>
+                <li><strong>Energy:</strong> avoid too many back-to-back “big city” days if you want to stay fresh.</li>
+                <li><strong>Value:</strong> compare the total cost (tours + transport) not just the base fare.</li>
+              </ul>
+            </section>
+
+            <section id="alaska-2026">
+              <h2>6) Alaska cruises 2026 (best for scenery + once-in-a-lifetime views)</h2>
+              <p>
+                Alaska is a “the view is the trip” destination. Scenic cruising days are a core part of the value, and itinerary details matter:
+                if you’re booking Alaska, you’re booking for landscapes, wildlife moments, and calm awe.
+              </p>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>Best for</h3>
+                  <p>Scenery seekers, photographers, nature lovers, and travelers who want a calmer, more “wow” type of cruise.</p>
+                </div>
+                <div class="mini">
+                  <h3>Watch-outs</h3>
+                  <p>Weather changes fast. Pack layers and plan flexibility instead of trying to control every hour.</p>
+                </div>
+              </div>
+
+              <div class="callout">
+                <b>Balcony tip:</b> Alaska is one of the rare cases where a balcony can genuinely feel “worth it” if you’ll use it during scenic days.
+              </div>
+
+              <h3 style="margin:14px 0 8px;">Quick checklist</h3>
+              <ul>
+                <li><strong>Scenic days:</strong> prioritize routes with dedicated scenic cruising time.</li>
+                <li><strong>Cabin:</strong> choose comfort and quiet (sleep matters on early port days).</li>
+                <li><strong>Excursions:</strong> pick 1–2 “signature” experiences and keep the rest light.</li>
+              </ul>
+            </section>
+
             <section id="when-to-go">
-              <h2>4) Best months to sail</h2>
+              <h2>7) Best months to sail</h2>
               <p>
                 Timing is the quiet superpower of cruise value. Shoulder seasons often offer the best balance of comfort and price,
                 while peak windows offer predictability at a premium.
@@ -629,10 +777,21 @@
               <div class="callout">
                 <b>Simple method:</b> pick your top priority (warmth, low crowds, best price, calm seas), then choose the month window that optimizes for it.
               </div>
+
+              <div class="two">
+                <div class="mini">
+                  <h3>Best value windows</h3>
+                  <p>Shoulder seasons often balance price + comfort. If your dates are flexible, this is usually the highest ROI move.</p>
+                </div>
+                <div class="mini">
+                  <h3>Peak windows</h3>
+                  <p>Higher cost, higher predictability. If you must travel on fixed dates, book earlier and prioritize cabin location.</p>
+                </div>
+              </div>
             </section>
 
             <section id="deal-checklist">
-              <h2>5) Deal checklist (compare total cost)</h2>
+              <h2>8) Deal checklist (compare total cost)</h2>
               <p>
                 A “deal” is the full bill, not the base fare. Use this checklist before you book:
               </p>
@@ -643,10 +802,14 @@
                 <li>Specialty dining: optional or required for your preferences?</li>
                 <li>Excursions and transfers: realistic for your port plans?</li>
               </ul>
+
+              <div class="callout">
+                <b>Reality check:</b> the cheapest base fare is often not the cheapest trip. Total cost (fees + gratuities + Wi-Fi + excursions) is what matters.
+              </div>
             </section>
 
             <section id="what-to-book-early">
-              <h2>6) What to book early</h2>
+              <h2>9) What to book early</h2>
               <p>
                 If you’re sailing during a popular time or want specific experiences, book early:
               </p>
@@ -663,7 +826,7 @@
             </section>
 
             <section id="first-timers">
-              <h2>7) Best picks for first-timers</h2>
+              <h2>10) Best picks for first-timers</h2>
               <p>
                 First-time cruising is easier when the itinerary reduces friction. Look for:
               </p>
@@ -679,7 +842,7 @@
             </section>
 
             <section id="faq" aria-label="Frequently asked questions">
-              <h2>8) FAQ</h2>
+              <h2>11) FAQ</h2>
 
               <details>
                 <summary>Which cruises are best for first-time cruisers in 2026?</summary>
@@ -694,6 +857,16 @@
               <details>
                 <summary>How do I compare cruise deals accurately?</summary>
                 <p>Compare total cost: base fare plus gratuities, taxes, Wi-Fi, drink packages, excursions, specialty dining, and transfers. The cheapest fare often isn’t the best value.</p>
+              </details>
+
+              <details>
+                <summary>What are the biggest hidden costs on cruises?</summary>
+                <p>Common hidden costs include gratuities, Wi-Fi, drink packages, specialty dining, excursions, transfers, spa services, and onboard purchases.</p>
+              </details>
+
+              <details>
+                <summary>What cabin location is best for avoiding noise?</summary>
+                <p>Avoid cabins directly under busy decks like the pool or buffet. Mid-ship cabins are often steadier and can feel quieter for sleep.</p>
               </details>
 
               <details>
@@ -768,7 +941,7 @@
   <footer>
     <div class="wrap">
       <div class="foot">
-        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: YYYY-MM-DD</span></div>
+        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: 2026-01-26</span></div>
         <div>
           <a href="/">Home</a> ·
           <a href="/cruises/">Cruises</a> ·
