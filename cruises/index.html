@@ -6,16 +6,21 @@
 
   <title>Cruises Guide: Best Routes, Deals, Tips & What to Expect (2026)</title>
   <meta name="description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
-  <link rel="canonical" href="https://tripguidely.github.io/cruises/" />
+  <meta name="author" content="TripGuidely" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#12cfd0" />
   <meta name="color-scheme" content="light" />
 
+  <link rel="canonical" href="https://tripguidely.github.io/cruises/" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/site.webmanifest" />
+
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
   <link rel="shortcut icon" href="/assets/images/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="48x48" href="/assets/images/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180.png" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
@@ -24,7 +29,7 @@
   <meta property="og:description" content="Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond." />
   <meta property="og:url" content="https://tripguidely.github.io/cruises/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/cruises-hero.webp" />
-  <meta property="og:image:alt" content="Cruise planning hero image with turquoise and sand accents" />
+  <meta property="og:image:alt" content="Luxury cruise ship at sea during golden hour (TripGuidely cruises guide)" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +38,7 @@
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/cruises-hero.webp" />
 
   <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/assets/images/cruises-hero.webp" imagesizes="100vw" />
+  <link rel="preload" as="image" href="/assets/images/cruises-hero.webp" imagesizes="100vw" fetchpriority="high" />
 
   <style>
     :root{
@@ -114,7 +119,6 @@
       min-width: 180px;
     }
 
-    /* ✅ Badge (bulle) + logo visible */
     .logo{
       width:44px;
       height:44px;
@@ -126,7 +130,7 @@
         0 0 0 4px rgba(18,207,208,.14);
       display:grid;
       place-items:center;
-      padding:2px;           /* moins de padding = logo plus gros */
+      padding:2px;
       overflow:hidden;
       flex:0 0 auto;
     }
@@ -411,7 +415,7 @@
     }
   </style>
 
-  <!-- JSON-LD: CollectionPage + BreadcrumbList + FAQPage -->
+  <!-- JSON-LD: WebSite + Organization + CollectionPage + BreadcrumbList + ItemList + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -420,7 +424,18 @@
         "@type": "WebSite",
         "@id": "https://tripguidely.github.io/#website",
         "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/"
+        "url": "https://tripguidely.github.io/",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tripguidely.github.io/#organization",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
+        }
       },
       {
         "@type": "CollectionPage",
@@ -430,6 +445,8 @@
         "description": "Plan the perfect cruise with route ideas, cabin tips, budgeting advice, best seasons, and smart booking strategies for 2026 and beyond.",
         "inLanguage": "en",
         "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
+        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
+        "dateModified": "2026-01-26",
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/cruises-hero.webp"
@@ -441,6 +458,19 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tripguidely.github.io/" },
           { "@type": "ListItem", "position": 2, "name": "Cruises", "item": "https://tripguidely.github.io/cruises/" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://tripguidely.github.io/cruises/#itemlist",
+        "name": "Cruise guides on TripGuidely",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://tripguidely.github.io/cruises/best-cruises-2026/",
+            "name": "Best Cruises for 2026"
+          }
         ]
       },
       {
@@ -510,7 +540,8 @@
       <div class="bar">
         <a class="brand" href="/" aria-label="TripGuidely home">
           <span class="logo" aria-hidden="true">
-            <img src="/assets/images/tg-logo.png" alt="TripGuidely" width="44" height="44" loading="eager" decoding="async">
+            <!-- Logo is decorative here because site name is already visible text -->
+            <img src="/assets/images/tg-logo.png" alt="" width="44" height="44" loading="eager" decoding="async">
           </span>
           <span>TripGuidely</span>
         </a>
@@ -774,7 +805,7 @@
   <footer>
     <div class="wrap">
       <div class="foot">
-        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: YYYY-MM-DD</span></div>
+        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: 2026-01-26</span></div>
         <div>
           <a href="/">Home</a> ·
           <a href="/cruises/">Cruises</a> ·
