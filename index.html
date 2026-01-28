@@ -14,7 +14,7 @@
     data-wpfc-render="false"></script>
 
   <title>TripGuidely: Travel Guides for Cruises, Hotels & Things to Do</title>
-  <meta name="description" content="TripGuidely helps you plan smarter trips with curated cruise guides, Paris hotel picks, and Rome itineraries built for comfort, value, and clarity." />
+  <meta name="description" content="TripGuidely helps you plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy." />
   <link rel="canonical" href="https://tripguidely.github.io/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -30,7 +30,7 @@
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
-  <meta property="og:description" content="TripGuidely helps you plan smarter trips with curated cruise guides, Paris hotel picks, and Rome itineraries built for comfort, value, and clarity." />
+  <meta property="og:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries, decision-making tips, and booking strategy." />
   <meta property="og:url" content="https://tripguidely.github.io/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
   <meta property="og:image:alt" content="Bright editorial travel hero image with turquoise and sand accents" />
@@ -38,7 +38,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
-  <meta name="twitter:description" content="TripGuidely helps you plan smarter trips with curated cruise guides, Paris hotel picks, and Rome itineraries built for comfort, value, and clarity." />
+  <meta name="twitter:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
 
   <!-- Preload hero image for faster LCP -->
@@ -127,17 +127,13 @@
       width:44px;
       height:44px;
       border-radius:14px;
-
       background:#fff;
       border:1px solid rgba(15,23,42,.14);
-
       box-shadow:
         0 12px 28px rgba(2,6,23,.12),
         0 0 0 4px rgba(18,207,208,.14);
-
       display:grid;
       place-items:center;
-
       padding:2px;
       overflow:hidden;
       flex: 0 0 auto;
@@ -503,7 +499,7 @@
     }
   </style>
 
-  <!-- JSON-LD: CollectionPage + BreadcrumbList + FAQPage -->
+  <!-- JSON-LD: WebSite + Organization + CollectionPage + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -512,20 +508,45 @@
         "@type": "WebSite",
         "@id": "https://tripguidely.github.io/#website",
         "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/"
+        "url": "https://tripguidely.github.io/",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://tripguidely.github.io/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tripguidely.github.io/#organization",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
+        },
+        "sameAs": [
+          "https://www.pinterest.com/REPLACE_ME",
+          "https://www.linkedin.com/in/REPLACE_ME"
+        ]
       },
       {
         "@type": "CollectionPage",
         "@id": "https://tripguidely.github.io/#page",
         "url": "https://tripguidely.github.io/",
         "name": "TripGuidely: Travel Guides for Cruises, Hotels & Things to Do",
-        "description": "TripGuidely helps you plan smarter trips with curated cruise guides, Paris hotel picks, and Rome itineraries built for comfort, value, and clarity.",
+        "description": "TripGuidely helps you plan smarter trips with curated guides for cruises, hotels, and things to do. Practical itineraries and booking strategy.",
         "inLanguage": "en",
         "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
+        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
-        }
+        },
+        "image": [
+          "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
+        ],
+        "dateModified": "2026-01-27"
       },
       {
         "@type": "BreadcrumbList",
@@ -556,10 +577,10 @@
           },
           {
             "@type": "Question",
-            "name": "How do you choose the best hotels in Paris?",
+            "name": "Do you provide hotel recommendations beyond Paris?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We organize Paris hotel recommendations by area, budget, and travel style so you can match your stay to your itinerary, transport needs, and comfort preferences."
+              "text": "Yes. Hotel guides are organized by city and travel style. Start from the Hotels hub, then open a city guide to choose a neighborhood and shortlist options."
             }
           },
           {
@@ -567,7 +588,7 @@
             "name": "Do you include sample itineraries for cities?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. City guides include practical day-by-day plans and tips like timing, skip-the-line strategies, and how to avoid common planning mistakes."
+              "text": "Yes. City guides include practical day-by-day plans and timing tips like when to go early, what to pre-book, and how to reduce lines."
             }
           },
           {
@@ -575,7 +596,7 @@
             "name": "How often are guides updated?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Guides are refreshed as seasons, pricing patterns, and travel logistics change. Each page includes a last updated date placeholder for tracking."
+              "text": "Guides are refreshed as seasons, pricing patterns, and travel logistics change. Each page displays a last updated date to track freshness."
             }
           }
         ]
@@ -601,8 +622,9 @@
         <nav aria-label="Primary">
           <ul>
             <li><a href="/cruises/">Cruises</a></li>
-            <li><a href="/hotels/best-hotels-paris/">Hotels</a></li>
-            <li><a href="/things-to-do/rome/">Things to Do</a></li>
+            <li><a href="/hotels/">Hotels</a></li>
+            <li><a href="/things-to-do/">Things to Do</a></li>
+            <li><a href="/car-rental/">Car Rental</a></li>
           </ul>
         </nav>
       </div>
@@ -634,9 +656,9 @@
 
           <div class="hero-copy">
             <p class="kicker"><span class="dot" aria-hidden="true"></span>Travel planning hub</p>
-            <h1>TripGuidely</h1>
+            <h1>Plan smarter trips, faster.</h1>
             <p class="lede">
-              Curated travel guides designed for clarity: smarter cruise planning, better stays in Paris, and a practical Rome itinerary you can actually follow.
+              Curated travel guides designed for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
             </p>
 
             <div class="actions" aria-label="Primary actions">
@@ -644,9 +666,9 @@
                 <span class="pill" aria-hidden="true">⛴</span>
                 Start with Cruises
               </a>
-              <a class="btn" href="/cruises/best-cruises-2026/">
-                <span class="pill" aria-hidden="true">★</span>
-                Best Cruises 2026
+              <a class="btn" href="/hotels/">
+                <span class="pill" aria-hidden="true">🏨</span>
+                Explore Hotels
               </a>
             </div>
           </div>
@@ -659,7 +681,7 @@
             <section id="start-here" aria-label="Start here">
               <div class="section-title">
                 <h2>Start here</h2>
-                <p>Pick a lane, then go deep.</p>
+                <p>Pick a category, then go deep.</p>
               </div>
 
               <div class="cards">
@@ -669,16 +691,16 @@
                   <span class="tag"><i aria-hidden="true"></i> Planning + value</span>
                 </a>
 
-                <a class="cat" href="/hotels/best-hotels-paris/">
+                <a class="cat" href="/hotels/">
                   <strong>Hotels</strong>
-                  <span>Paris stays by area, budget, and style so you can choose fast and sleep better.</span>
+                  <span>City guides by area, budget, and travel style so you can choose fast and sleep better.</span>
                   <span class="tag"><i aria-hidden="true"></i> Neighborhood fit</span>
                 </a>
 
-                <a class="cat" href="/things-to-do/rome/">
+                <a class="cat" href="/things-to-do/">
                   <strong>Things to Do</strong>
-                  <span>Rome must-sees, hidden gems, timing tips, and a simple 3-day plan.</span>
-                  <span class="tag"><i aria-hidden="true"></i> Practical itinerary</span>
+                  <span>Attractions, experiences, and practical itineraries with timing tips and smart planning.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Itineraries</span>
                 </a>
               </div>
             </section>
@@ -714,17 +736,17 @@
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="/cruises/">
+                <a class="link-card" role="listitem" href="/car-rental/">
                   <div>
-                    <strong>Cruises Hub</strong><br />
-                    <span>Route selection, cabin choices, costs & booking tips</span>
+                    <strong>Car Rental Hub</strong><br />
+                    <span>How to compare prices, insurance, and pickup logistics</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
               </div>
 
               <div class="callout">
-                <b>Suggestion:</b> publish the hub pages first (Home → Cruises), then “money pages” next. That structure makes internal linking feel natural and boosts crawl clarity.
+                <b>Suggestion:</b> publish the hubs first (Home → Cruises/Hotels/Things to do), then expand city “money pages” next. It makes internal linking feel natural and improves crawl clarity.
               </div>
             </section>
 
@@ -762,8 +784,8 @@
               </details>
 
               <details>
-                <summary>Do you provide neighborhood guidance for Paris hotels?</summary>
-                <p>Yes. The Paris hotels guide is organized by area, budget, and travel style so you can match your stay to transport, comfort, and itinerary needs.</p>
+                <summary>Do you provide neighborhood guidance for city hotels?</summary>
+                <p>Yes. Hotel guides are organized by area, budget, and travel style. Start from the Hotels hub, then open a city guide to choose a neighborhood and shortlist options.</p>
               </details>
 
               <details>
@@ -773,7 +795,7 @@
 
               <details>
                 <summary>How often are guides updated?</summary>
-                <p>As travel logistics and seasonal patterns change. Each page includes a last updated placeholder so you can track freshness.</p>
+                <p>As travel logistics and seasonal patterns change. Each page displays a last updated date to track freshness.</p>
               </details>
             </section>
           </div>
@@ -821,7 +843,7 @@
             </div>
 
             <div class="callout" style="margin-top:14px;">
-              <b>Next build:</b> publish <a href="/cruises/">/cruises/</a> and ensure it links back to the homepage for strong internal signals.
+              <b>Next build:</b> publish <a href="/cruises/">/cruises/</a>, <a href="/hotels/">/hotels/</a> and <a href="/things-to-do/">/things-to-do/</a> for strong internal signals.
             </div>
           </div>
         </aside>
@@ -832,11 +854,12 @@
   <footer>
     <div class="wrap">
       <div class="foot">
-        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: YYYY-MM-DD</span></div>
+        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: <span id="lastUpdated">2026-01-27</span></span></div>
         <div>
           <a href="/cruises/">Cruises</a> ·
-          <a href="/hotels/best-hotels-paris/">Hotels</a> ·
-          <a href="/things-to-do/rome/">Things to Do</a>
+          <a href="/hotels/">Hotels</a> ·
+          <a href="/things-to-do/">Things to Do</a> ·
+          <a href="/car-rental/">Car Rental</a>
         </div>
       </div>
     </div>
@@ -844,9 +867,17 @@
 
   <script>
     (function () {
-      var y = new Date().getFullYear();
-      var el = document.getElementById("year");
-      if (el) el.textContent = String(y);
+      var now = new Date();
+      var y = now.getFullYear();
+      var yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = String(y);
+
+      // Keep a real date visible (reviewers + trust). Update manually when you make major edits.
+      var lastUpdatedEl = document.getElementById("lastUpdated");
+      if (lastUpdatedEl && !lastUpdatedEl.textContent.trim()) {
+        var iso = now.toISOString().slice(0, 10);
+        lastUpdatedEl.textContent = iso;
+      }
     })();
   </script>
 </body>
