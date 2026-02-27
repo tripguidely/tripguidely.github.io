@@ -1,8 +1,8 @@
 /* ==========================================================================
-   TripGuidely styles.css
+   TripGuidely styles.css (PRO refresh)
    - Cross-browser friendly
    - Accessible focus states
-   - Good defaults for audits (CLS/LCP/UX)
+   - Audit-friendly defaults (CLS/LCP/UX)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -13,23 +13,30 @@
   --text:#0f172a;
   --muted:#475569;
   --muted2:#64748b;
+
   --line:rgba(15,23,42,.10);
   --line2:rgba(15,23,42,.14);
+  --line3:rgba(15,23,42,.18);
 
   --turq:#12cfd0;
   --sand:#f4a261;
 
   --shadow: 0 18px 40px rgba(2,6,23,.10);
   --shadow2: 0 10px 22px rgba(2,6,23,.08);
+  --shadow3: 0 6px 14px rgba(2,6,23,.06);
 
   --radius:18px;
   --radius2:26px;
+  --radius3:14px;
 
   --max:1120px;
 
   --focus: rgba(18,207,208,.45);
 
-  --header-h: 72px; /* helps anchor offset */
+  --header-h: 72px;
+
+  /* subtle typography polish */
+  --tracking-tight: -0.35px;
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -66,6 +73,7 @@ input, button, textarea, select{ font: inherit; }
 
 a{ color:inherit; }
 
+/* Focus: modern + safe fallback */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible{
@@ -73,8 +81,6 @@ summary:focus-visible{
   outline-offset:3px;
   border-radius:12px;
 }
-
-/* For older browsers that don't support :focus-visible */
 a:focus,
 button:focus,
 summary:focus{
@@ -129,10 +135,10 @@ summary:focus{
   padding:0 18px;
 }
 
-/* Nice anchor offset for sticky header */
+/* Anchor offset for sticky header */
 [id]{ scroll-margin-top: calc(var(--header-h) + 16px); }
 
-/* Nice defaults for basic content elements */
+/* Content defaults */
 hr{
   border:0;
   border-top:1px solid rgba(15,23,42,.12);
@@ -269,19 +275,9 @@ li{ margin: 6px 0; }
   border-bottom:1px solid var(--line);
 }
 
-/* background image container */
-.hero-bg{
-  position:absolute;
-  inset:0;
-}
+.hero-bg{ position:absolute; inset:0; }
+.hero-bg img{ width:100%; height:100%; object-fit:cover; }
 
-.hero-bg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* overlay for readability */
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -291,7 +287,6 @@ li{ margin: 6px 0; }
     linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.92));
 }
 
-/* content wrapper on top */
 .hero-inner{
   position:relative;
   padding: 34px 0 28px;
@@ -300,7 +295,7 @@ li{ margin: 6px 0; }
 .hero-panel{
   max-width: 780px;
   border:1px solid rgba(15,23,42,.10);
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.80);
   border-radius: var(--radius2);
   box-shadow: var(--shadow);
   padding: 22px 20px;
@@ -333,7 +328,7 @@ h1{
   margin:0 0 10px;
   font-size: clamp(1.95rem, 1.2rem + 2.4vw, 3rem);
   line-height:1.10;
-  letter-spacing:-.55px;
+  letter-spacing: var(--tracking-tight);
 }
 
 .lede{
@@ -363,7 +358,7 @@ h1{
   text-decoration:none;
   font-weight:750;
   color:var(--text);
-  box-shadow: 0 10px 20px rgba(2,6,23,.06);
+  box-shadow: var(--shadow3);
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
   user-select:none;
 }
@@ -378,7 +373,7 @@ h1{
 
 .btn.primary{
   border-color: rgba(18,207,208,.42);
-  background: linear-gradient(135deg, rgba(18,207,208,.20), rgba(244,162,97,.18));
+  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
 }
 
 .btn .pill{
@@ -439,9 +434,8 @@ h1{
 h2{
   margin: 22px 0 8px;
   font-size: 1.2rem;
-  letter-spacing:-.12px;
+  letter-spacing: -.12px;
 }
-
 p{ margin: 0 0 12px; color:var(--muted); }
 .content p strong{ color:var(--text); }
 
@@ -481,7 +475,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   background:
     radial-gradient(420px 160px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
     radial-gradient(420px 160px at 90% 30%, rgba(244,162,97,.12), transparent 60%),
-    rgba(255,255,255,.88);
+    rgba(255,255,255,.90);
   box-shadow: 0 10px 20px rgba(2,6,23,.06);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   min-height: 124px;
@@ -624,33 +618,32 @@ summary::-webkit-details-marker{ display:none; }
 
 details p{ margin:8px 0 0; }
 
-/* 16) Footer (premium grid) ----------------------------------------------- */
+/* 16) Footer (premium grid PRO) ------------------------------------------- */
 .footer{
-  margin-top: 56px;
-  padding: 56px 0 26px;
+  margin-top: 60px;
+  padding: 60px 0 28px;
   border-top: 1px solid var(--line);
   background:
-    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.11), transparent 55%),
-    radial-gradient(1000px 600px at 88% 10%, rgba(244,162,97,.11), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.98));
+    radial-gradient(1000px 560px at 12% 0%, rgba(18,207,208,.13), transparent 55%),
+    radial-gradient(1100px 640px at 88% 10%, rgba(244,162,97,.13), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.99));
   color: var(--muted2);
 }
 
-/* Liens footer */
 .footer a{
   color: var(--muted);
   text-decoration: none;
   outline: none;
 }
 
-/* Grille */
+/* Grid area is centered and consistent with .wrap */
 .foot-grid{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 18px 22px;
+  padding: 0 18px 24px;
   display: grid;
-  grid-template-columns: 1.35fr repeat(3, minmax(180px, 1fr));
-  gap: clamp(18px, 2.4vw, 34px);
+  grid-template-columns: 1.35fr repeat(3, minmax(190px, 1fr));
+  gap: clamp(22px, 2.8vw, 44px);
   align-items: start;
 }
 
@@ -661,63 +654,68 @@ details p{ margin:8px 0 0; }
   .foot-grid{ grid-template-columns: 1fr; }
 }
 
-/* Brand block */
+/* Brand */
 .foot-brand{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .foot-brand-title{
   font-weight: 950;
-  letter-spacing: -.25px;
+  letter-spacing: -.35px;
   color: var(--text);
-  font-size: 1.06rem;
+  font-size: 1.08rem;
   margin: 0;
 }
 
 .foot-brand-desc{
   margin: 0;
   color: var(--muted);
-  line-height: 1.6;
-  max-width: 52ch;
+  line-height: 1.62;
+  max-width: 56ch;
 }
 
 .foot-meta{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   font-size: .92rem;
   color: var(--muted2);
 }
 
-/* Column titles */
+/* Titles */
 .foot-col-title{
-  margin: 0 0 12px;
-  font-weight: 900;
-  letter-spacing: .12em;
+  margin: 0 0 14px;
+  font-weight: 950;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  font-size: .78rem;
-  color: rgba(15,23,42,.72);
+  font-size: .76rem;
+  color: rgba(15,23,42,.66);
 }
 
-/* Link list */
+/* Links list */
 .foot-links{
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
-/* Link row */
+/* Link row + micro interaction */
 .foot-links a{
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 6px 0;
   border-radius: 12px;
   position: relative;
+  transition: transform .12s ease, color .12s ease;
+}
+.foot-links a:hover{
+  color: var(--text);
+  transform: translateX(3px);
 }
 
 /* Bullet */
@@ -726,18 +724,18 @@ details p{ margin:8px 0 0; }
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--turq) 70%, white);
+  background: color-mix(in srgb, var(--turq) 72%, white);
   box-shadow: 0 0 0 3px rgba(18,207,208,.18);
   opacity: .95;
   flex: 0 0 auto;
   transform: translateY(1px);
 }
 
-/* Underline animation */
+/* Underline */
 .foot-links a::after{
   content:"";
   position:absolute;
-  left: 18px; /* après la puce */
+  left: 20px;
   bottom: 3px;
   width: 0%;
   height: 2px;
@@ -745,14 +743,11 @@ details p{ margin:8px 0 0; }
   background: color-mix(in srgb, var(--turq) 55%, transparent);
   transition: width .18s ease;
 }
-
-/* Hover + focus */
-.foot-links a:hover{
-  color: var(--text);
-}
 .foot-links a:hover::after{
-  width: calc(100% - 18px);
+  width: calc(100% - 20px);
 }
+
+/* Focus */
 .foot-links a:focus-visible{
   box-shadow: 0 0 0 3px rgba(18,207,208,.28);
 }
@@ -761,37 +756,36 @@ details p{ margin:8px 0 0; }
 .foot-bottom{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 18px 18px 0;
-  border-top: 1px solid rgba(15,23,42,.08);
+  padding: 22px 18px 0;
+  border-top: 1px solid rgba(15,23,42,.12);
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 12px;
+  gap: 14px;
   align-items: start;
   font-size: .92rem;
   color: var(--muted2);
 }
 
 @media (max-width: 760px){
-  .foot-bottom{
-    grid-template-columns: 1fr;
-  }
+  .foot-bottom{ grid-template-columns: 1fr; }
 }
 
 .foot-disclaimer{
   margin: 0;
-  max-width: 86ch;
+  max-width: 92ch;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.62;
+  background: rgba(15,23,42,.03);
+  border: 1px solid rgba(15,23,42,.06);
+  padding: 14px 16px;
+  border-radius: 14px;
 }
 
-/* Small separators */
-.sep{
-  margin: 0 6px;
-  color: rgba(15,23,42,.35);
-}
+/* Separator */
+.sep{ margin: 0 6px; color: rgba(15,23,42,.35); }
 
 /* 17) High-contrast mode improvements ------------------------------------- */
 @media (prefers-contrast: more){
-  .btn, .card, .cat, .link-card, .hero-panel, details{ border-color: rgba(15,23,42,.22); }
-  .nav a{ border-color: rgba(15,23,42,.18); }
+  .btn, .card, .cat, .link-card, .hero-panel, details{ border-color: rgba(15,23,42,.26); }
+  .nav a{ border-color: rgba(15,23,42,.22); }
 }
