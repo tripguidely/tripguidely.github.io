@@ -340,6 +340,12 @@ li{ margin: 6px 0; }
 .burger span::before{ top:-6px; }
 .burger span::after{ top:6px; }
 
+/* IMPORTANT FIX: hide drawer/scrim by default (desktop) */
+.nav-drawer,
+.nav-scrim{
+  display:none;
+}
+
 /* 5.1) Mobile nav drawer + scrim ------------------------------------------ */
 @media (max-width: 760px){
   :root{ --header-h: 64px; }
@@ -354,6 +360,12 @@ li{ margin: 6px 0; }
 
   /* Show burger on mobile */
   .burger{ display:inline-flex; }
+
+  /* Show drawer/scrim on mobile (animated via .nav-open) */
+  .nav-drawer,
+  .nav-scrim{
+    display:block;
+  }
 
   /* Drawer panel (appears when body has .nav-open) */
   .nav-drawer{
