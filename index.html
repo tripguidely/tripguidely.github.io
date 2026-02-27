@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
   <meta name="travelpayouts-verification" content="492724" />
@@ -13,27 +13,44 @@
     data-cfasync="false"
     data-wpfc-render="false"></script>
 
+  <!-- GA4 (TripGuidely) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGM5GVXJX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0GGM5GVXJX', { anonymize_ip: true });
+  </script>
+
+  <!-- Primary SEO -->
   <title>TripGuidely: Travel Guides for Cruises, Hotels & Things to Do</title>
-  <meta name="description" content="TripGuidely helps you plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy." />
+  <meta name="description" content="Plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- International hints -->
+  <link rel="alternate" hreflang="en-ca" href="https://tripguidely.github.io/" />
+  <link rel="alternate" hreflang="x-default" href="https://tripguidely.github.io/" />
+
+  <!-- UX / Rendering -->
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#12cfd0" />
   <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <!-- Favicon / App Icons -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
   <link rel="shortcut icon" href="/assets/images/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="48x48" href="/assets/images/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-48.png" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
-  <meta property="og:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries, decision-making tips, and booking strategy." />
+  <meta property="og:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
   <meta property="og:url" content="https://tripguidely.github.io/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Bright editorial travel hero image with turquoise and sand accents" />
+  <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -41,481 +58,16 @@
   <meta name="twitter:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
 
-  <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" imagesizes="100vw" />
+  <!-- Performance -->
+  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="style" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg2:#fbfcfd;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --muted2:#64748b;
-      --line:rgba(15,23,42,.10);
-      --line2:rgba(15,23,42,.14);
-
-      --turq:#12cfd0;
-      --sand:#f4a261;
-
-      --shadow: 0 18px 40px rgba(2,6,23,.10);
-      --shadow2: 0 10px 22px rgba(2,6,23,.08);
-      --radius:18px;
-      --radius2:26px;
-      --max: 1120px;
-
-      --focus: rgba(18,207,208,.42);
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 55%),
-        radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.16), transparent 60%),
-        linear-gradient(180deg, var(--bg2), var(--bg));
-      color:var(--text);
-      line-height:1.58;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{ color:inherit; }
-    a:focus-visible, button:focus-visible, summary:focus-visible{
-      outline:3px solid var(--focus);
-      outline-offset:3px;
-      border-radius:12px;
-    }
-
-    .skip{
-      position:absolute; left:-999px; top:auto;
-      width:1px; height:1px; overflow:hidden;
-    }
-    .skip:focus{
-      left:16px; top:16px;
-      width:auto; height:auto;
-      padding:10px 12px;
-      background:rgba(255,255,255,.96);
-      border:1px solid var(--line2);
-      border-radius:12px;
-      box-shadow: var(--shadow2);
-      z-index:9999;
-    }
-
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
-
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(255,255,255,.86);
-      backdrop-filter:saturate(140%) blur(12px);
-      border-bottom:1px solid var(--line);
-    }
-    .bar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none;
-      min-width: 180px;
-    }
-
-    .logo{
-      width:44px;
-      height:44px;
-      border-radius:14px;
-      background:#fff;
-      border:1px solid rgba(15,23,42,.14);
-      box-shadow:
-        0 12px 28px rgba(2,6,23,.12),
-        0 0 0 4px rgba(18,207,208,.14);
-      display:grid;
-      place-items:center;
-      padding:2px;
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-
-    .logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-      filter: contrast(1.06) saturate(1.08);
-    }
-
-    .brand span{
-      font-weight:900;
-      letter-spacing:.2px;
-      font-size:1.08rem;
-      color:var(--text);
-    }
-
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:10px;
-      padding:0;
-      margin:0;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    nav a{
-      text-decoration:none;
-      font-weight:650;
-      color:var(--muted);
-      padding:9px 12px;
-      border-radius:12px;
-      border:1px solid transparent;
-      transition: background .15s ease, border-color .15s ease, color .15s ease;
-    }
-    nav a:hover{
-      color:var(--text);
-      border-color:rgba(15,23,42,.10);
-      background:rgba(15,23,42,.03);
-    }
-    nav a[aria-current="page"]{
-      color:var(--text);
-      border-color:rgba(18,207,208,.30);
-      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
-    }
-
-    main{ padding:22px 0 44px; }
-
-    .breadcrumbs{
-      display:flex; flex-wrap:wrap; gap:8px;
-      align-items:center;
-      font-size:.92rem;
-      color:var(--muted2);
-      margin: 10px 0 14px;
-    }
-    .breadcrumbs a{
-      text-decoration:none;
-      color:var(--muted);
-      border-bottom:1px solid transparent;
-    }
-    .breadcrumbs a:hover{ border-bottom-color:rgba(15,23,42,.18); }
-
-    .hero{
-      border:1px solid var(--line);
-      border-radius:var(--radius2);
-      overflow:hidden;
-      background:
-        radial-gradient(900px 360px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
-        radial-gradient(900px 360px at 90% 20%, rgba(244,162,97,.14), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.98));
-      box-shadow: var(--shadow);
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:0;
-    }
-    @media (max-width: 860px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
-    .hero-media{
-      position:relative;
-      min-height: 280px;
-      background: rgba(2,6,23,.03);
-    }
-    .hero-media::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.28) 55%, rgba(255,255,255,.68)),
-        radial-gradient(520px 260px at 30% 30%, rgba(18,207,208,.12), transparent 60%),
-        radial-gradient(520px 260px at 70% 70%, rgba(244,162,97,.12), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-    }
-    .hero-copy{
-      padding:22px 22px 22px;
-      display:flex; flex-direction:column; justify-content:center;
-    }
-    .kicker{
-      font-size:.82rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color: rgba(15,23,42,.70);
-      margin: 0 0 8px;
-    }
-    .kicker .dot{
-      display:inline-block;
-      width:8px; height:8px; border-radius:999px;
-      background: linear-gradient(135deg, var(--turq), var(--sand));
-      margin-right:8px;
-      vertical-align:middle;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(1.85rem, 1.2rem + 2.2vw, 2.65rem);
-      line-height:1.12;
-      letter-spacing:-.45px;
-    }
-    .lede{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:1.06rem;
-      max-width: 64ch;
-    }
-
-    .actions{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 6px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:11px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.9);
-      text-decoration:none;
-      font-weight:700;
-      color:var(--text);
-      box-shadow: 0 10px 20px rgba(2,6,23,.06);
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 16px 30px rgba(2,6,23,.10);
-      background:rgba(255,255,255,1);
-    }
-    .btn.primary{
-      border-color: rgba(18,207,208,.35);
-      background: linear-gradient(135deg, rgba(18,207,208,.18), rgba(244,162,97,.16));
-    }
-    .btn .pill{
-      width:28px; height:28px; border-radius:12px;
-      display:grid; place-items:center;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.75);
-      font-size: .95rem;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 330px;
-      gap:18px;
-      margin-top:18px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    .card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.90);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow2);
-    }
-    .card .pad{ padding:18px; }
-
-    .section-title{
-      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
-      margin: 0 0 10px;
-    }
-    .section-title h2{
-      margin:0;
-      font-size:1.2rem;
-      letter-spacing:-.15px;
-    }
-    .section-title p{
-      margin:0;
-      color:var(--muted2);
-      font-size:.95rem;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:12px;
-    }
-    @media (max-width: 900px){
-      .cards{ grid-template-columns: 1fr; }
-    }
-    .cat{
-      position:relative;
-      display:block;
-      text-decoration:none;
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:16px;
-      padding:14px;
-      background:
-        radial-gradient(420px 160px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
-        radial-gradient(420px 160px at 90% 30%, rgba(244,162,97,.12), transparent 60%),
-        rgba(255,255,255,.86);
-      box-shadow: 0 10px 20px rgba(2,6,23,.06);
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-      min-height: 124px;
-    }
-    .cat:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 16px 30px rgba(2,6,23,.10);
-      border-color: rgba(18,207,208,.28);
-    }
-    .cat strong{
-      display:block;
-      font-size:1.02rem;
-      margin-bottom:6px;
-    }
-    .cat span{
-      display:block;
-      color:var(--muted);
-      font-size:.97rem;
-      max-width: 56ch;
-    }
-    .cat .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:10px;
-      font-size:.9rem;
-      color:var(--muted2);
-    }
-    .tag i{
-      width:10px; height:10px;
-      border-radius:999px;
-      background: linear-gradient(135deg, var(--turq), var(--sand));
-      display:inline-block;
-    }
-
-    .toc a{
-      text-decoration:none;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid transparent;
-      color:var(--muted);
-      transition: background .15s ease, border-color .15s ease, color .15s ease;
-    }
-    .toc a:hover{
-      color:var(--text);
-      border-color:rgba(15,23,42,.10);
-      background:rgba(15,23,42,.03);
-    }
-    .toc small{ color:var(--muted2); }
-
-    h2{
-      margin: 22px 0 8px;
-      font-size: 1.2rem;
-      letter-spacing:-.12px;
-    }
-    p{ margin: 0 0 12px; color:var(--muted); }
-    .content p strong{ color:var(--text); }
-
-    .callout{
-      margin: 12px 0 14px;
-      padding:14px 14px;
-      border-radius:16px;
-      border:1px solid rgba(18,207,208,.22);
-      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.12));
-      color:var(--muted);
-    }
-    .callout b{ color:var(--text); }
-
-    details{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:16px;
-      background:rgba(255,255,255,.82);
-      padding:12px 12px;
-      margin:10px 0;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:750;
-      color:var(--text);
-      list-style:none;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    details p{ margin:8px 0 0; }
-
-    .links{
-      display:grid;
-      gap:10px;
-    }
-    .link-card{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      padding:12px 12px;
-      border-radius:16px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.86);
-      text-decoration:none;
-      transition: background .15s ease, border-color .15s ease, transform .12s ease;
-    }
-    .link-card:hover{
-      border-color:rgba(18,207,208,.28);
-      background:rgba(255,255,255,.96);
-      transform: translateY(-1px);
-    }
-    .link-card strong{ color:var(--text); }
-    .link-card span{ color:var(--muted2); font-size:.93rem; }
-    .arrow{
-      width:34px; height:34px;
-      border-radius:14px;
-      display:grid; place-items:center;
-      border:1px solid rgba(15,23,42,.10);
-      background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
-      color:rgba(15,23,42,.92);
-      flex:0 0 auto;
-      font-weight:900;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:18px 0 24px;
-      color:var(--muted2);
-      font-size:.92rem;
-    }
-    .foot{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      flex-wrap:wrap;
-    }
-    .foot a{
-      color:var(--muted);
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-    }
-    .foot a:hover{ border-bottom-color:rgba(15,23,42,.18); }
-
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      *{ transition:none !important; }
-    }
-  </style>
-
-  <!-- JSON-LD: WebSite + Organization + CollectionPage + BreadcrumbList + FAQPage -->
+  <!-- JSON-LD (clean, Google-friendly) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://tripguidely.github.io/#website",
-        "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/",
-        "inLanguage": "en",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://tripguidely.github.io/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
       {
         "@type": "Organization",
         "@id": "https://tripguidely.github.io/#organization",
@@ -524,29 +76,35 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
-        },
-        "sameAs": [
-          "https://www.pinterest.com/REPLACE_ME",
-          "https://www.linkedin.com/in/REPLACE_ME"
-        ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tripguidely.github.io/#website",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/",
+        "inLanguage": "en-CA",
+        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://tripguidely.github.io/search/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "CollectionPage",
         "@id": "https://tripguidely.github.io/#page",
         "url": "https://tripguidely.github.io/",
         "name": "TripGuidely: Travel Guides for Cruises, Hotels & Things to Do",
-        "description": "TripGuidely helps you plan smarter trips with curated guides for cruises, hotels, and things to do. Practical itineraries and booking strategy.",
-        "inLanguage": "en",
+        "description": "Plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy.",
+        "inLanguage": "en-CA",
         "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
         "publisher": { "@id": "https://tripguidely.github.io/#organization" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
         },
-        "image": [
-          "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
-        ],
-        "dateModified": "2026-01-27"
+        "dateModified": "2026-02-27"
       },
       {
         "@type": "BreadcrumbList",
@@ -564,39 +122,23 @@
             "name": "What is TripGuidely?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "TripGuidely is a travel planning hub with practical, curated guides for cruises, hotels, and things to do, built to help you choose faster and plan smarter."
+              "text": "TripGuidely is a travel planning hub with curated guides for cruises, hotels, and things to do, built to help you choose faster and plan smarter."
             }
           },
           {
             "@type": "Question",
-            "name": "Where should I start if I’m planning my first cruise?",
+            "name": "How do your recommendations work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with the Cruises hub to understand routes, cabins, seasons, and budgeting. Then use the Best Cruises for 2026 guide to pick an itinerary that fits your style."
+              "text": "We organize options by use case, budget, and season. Each guide highlights trade-offs and practical steps so you can shortlist quickly."
             }
           },
           {
             "@type": "Question",
-            "name": "Do you provide hotel recommendations beyond Paris?",
+            "name": "Do you use affiliate links?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Hotel guides are organized by city and travel style. Start from the Hotels hub, then open a city guide to choose a neighborhood and shortlist options."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you include sample itineraries for cities?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. City guides include practical day-by-day plans and timing tips like when to go early, what to pre-book, and how to reduce lines."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How often are guides updated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Guides are refreshed as seasons, pricing patterns, and travel logistics change. Each page displays a last updated date to track freshness."
+              "text": "Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you."
             }
           }
         ]
@@ -609,17 +151,17 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header>
+  <header class="header" role="banner">
     <div class="wrap">
       <div class="bar">
         <a class="brand" href="/" aria-label="TripGuidely home">
           <span class="logo" aria-hidden="true">
-            <img src="/assets/images/tg-logo.png" alt="TripGuidely" width="44" height="44" loading="eager" decoding="async">
+            <img src="/assets/images/tg-logo.png" alt="TripGuidely logo" width="44" height="44" loading="eager" decoding="async" />
           </span>
-          <span>TripGuidely</span>
+          <span class="brand-name">TripGuidely</span>
         </a>
 
-        <nav aria-label="Primary">
+        <nav class="nav" aria-label="Primary">
           <ul>
             <li><a href="/cruises/">Cruises</a></li>
             <li><a href="/hotels/">Hotels</a></li>
@@ -627,17 +169,23 @@
             <li><a href="/car-rental/">Car Rental</a></li>
           </ul>
         </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-small" href="#featured" aria-label="Jump to featured guides">
+            <span class="pill" aria-hidden="true">★</span> Featured
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="main" role="main">
     <div class="wrap">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <span aria-current="page">Home</span>
       </nav>
 
-      <section class="hero" aria-label="TripGuidely Homepage Hero">
+      <section class="hero" aria-label="TripGuidely hero">
         <div class="hero-grid">
           <div class="hero-media" aria-hidden="true">
             <picture>
@@ -658,7 +206,7 @@
             <p class="kicker"><span class="dot" aria-hidden="true"></span>Travel planning hub</p>
             <h1>Plan smarter trips, faster.</h1>
             <p class="lede">
-              Curated travel guides designed for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
+              Curated travel guides built for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
             </p>
 
             <div class="actions" aria-label="Primary actions">
@@ -670,6 +218,16 @@
                 <span class="pill" aria-hidden="true">🏨</span>
                 Explore Hotels
               </a>
+              <a class="btn" href="/things-to-do/">
+                <span class="pill" aria-hidden="true">🗺</span>
+                Things to Do
+              </a>
+            </div>
+
+            <div class="trust">
+              <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
+              <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
+              <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
             </div>
           </div>
         </div>
@@ -687,7 +245,7 @@
               <div class="cards">
                 <a class="cat" href="/cruises/">
                   <strong>Cruises</strong>
-                  <span>Routes, seasons, cabin tips, budgeting, and booking strategy built for real decisions.</span>
+                  <span>Routes, seasons, cabins, budgeting, and booking strategy built for real decisions.</span>
                   <span class="tag"><i aria-hidden="true"></i> Planning + value</span>
                 </a>
 
@@ -699,16 +257,16 @@
 
                 <a class="cat" href="/things-to-do/">
                   <strong>Things to Do</strong>
-                  <span>Attractions, experiences, and practical itineraries with timing tips and smart planning.</span>
+                  <span>Attractions, experiences, and itineraries with timing tips and smart planning.</span>
                   <span class="tag"><i aria-hidden="true"></i> Itineraries</span>
                 </a>
               </div>
             </section>
 
-            <section id="featured">
+            <section id="featured" aria-label="Featured guides">
               <h2>Featured guides</h2>
               <p>
-                Jump into a focused guide when you already know what you’re planning. These pages are designed to reduce research time and improve outcomes.
+                Use these when you already know what you’re planning. They are designed to reduce research time and improve outcomes.
               </p>
 
               <div class="links" role="list" aria-label="Featured guide links">
@@ -739,35 +297,44 @@
                 <a class="link-card" role="listitem" href="/car-rental/">
                   <div>
                     <strong>Car Rental Hub</strong><br />
-                    <span>How to compare prices, insurance, and pickup logistics</span>
+                    <span>Compare prices, insurance, and pickup logistics</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
               </div>
 
               <div class="callout">
-                <b>Suggestion:</b> publish the hubs first (Home → Cruises/Hotels/Things to do), then expand city “money pages” next. It makes internal linking feel natural and improves crawl clarity.
+                <b>Build order:</b> publish the hubs first (Home → Cruises/Hotels/Things to do), then expand city “money pages”. This keeps internal linking natural and crawl paths clean.
               </div>
             </section>
 
-            <section id="toc" class="card toc" aria-label="Table of contents" style="margin:16px 0 0;">
-              <div class="pad">
-                <p class="kicker" style="margin:0 0 8px;"><span class="dot" aria-hidden="true"></span>On this page</p>
-                <a href="#start-here"><span>1) Start here</span><small>Choose a category</small></a>
-                <a href="#featured"><span>2) Featured guides</span><small>Go deep fast</small></a>
-                <a href="#how-to-use"><span>3) How to use TripGuidely</span><small>Best workflow</small></a>
-                <a href="#faq"><span>4) FAQ</span><small>Quick answers</small></a>
-              </div>
-            </section>
-
-            <section id="how-to-use">
+            <section id="how-to-use" aria-label="How to use TripGuidely">
               <h2>How to use TripGuidely</h2>
               <p>
-                Use hubs to set your strategy, then switch to focused guides when you’re ready to pick specifics. This keeps your planning clean: fewer tabs, fewer regrets.
+                Use hubs to set your strategy, then switch to focused guides when you’re ready to pick specifics. Fewer tabs, better choices.
               </p>
               <p>
-                Recommended flow: <strong>choose a category</strong> → <strong>scan the featured guide</strong> → <strong>save a shortlist</strong> → <strong>book with confidence</strong>.
+                Recommended flow: <strong>choose a category</strong> → <strong>scan a featured guide</strong> → <strong>save a shortlist</strong> → <strong>book with confidence</strong>.
               </p>
+
+              <div class="mini-grid" aria-label="Workflow steps">
+                <div class="mini">
+                  <div class="mini-icon" aria-hidden="true">1</div>
+                  <div><b>Decide your season</b><span>Weather, crowds, prices</span></div>
+                </div>
+                <div class="mini">
+                  <div class="mini-icon" aria-hidden="true">2</div>
+                  <div><b>Pick your area</b><span>Neighborhood, port, transit</span></div>
+                </div>
+                <div class="mini">
+                  <div class="mini-icon" aria-hidden="true">3</div>
+                  <div><b>Shortlist options</b><span>Trade-offs made obvious</span></div>
+                </div>
+                <div class="mini">
+                  <div class="mini-icon" aria-hidden="true">4</div>
+                  <div><b>Book smart</b><span>Timing + cancellation tips</span></div>
+                </div>
+              </div>
             </section>
 
             <section id="faq" aria-label="Frequently asked questions">
@@ -779,24 +346,21 @@
               </details>
 
               <details>
-                <summary>Where should I start if I’m planning my first cruise?</summary>
-                <p>Start with the Cruises hub for route selection, cabin tips, seasons, budgeting, and booking strategy. Then open the Best Cruises for 2026 guide for focused picks.</p>
+                <summary>How do your recommendations work?</summary>
+                <p>We organize options by use case, budget, and season. Each guide highlights trade-offs and practical steps so you can shortlist quickly.</p>
               </details>
 
               <details>
-                <summary>Do you provide neighborhood guidance for city hotels?</summary>
-                <p>Yes. Hotel guides are organized by area, budget, and travel style. Start from the Hotels hub, then open a city guide to choose a neighborhood and shortlist options.</p>
+                <summary>Do you use affiliate links?</summary>
+                <p>Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you.</p>
               </details>
+            </section>
 
-              <details>
-                <summary>Do city guides include sample itineraries?</summary>
-                <p>Yes. City guides include practical plans and timing tips (like when to go early, what to pre-book, and how to reduce lines).</p>
-              </details>
-
-              <details>
-                <summary>How often are guides updated?</summary>
-                <p>As travel logistics and seasonal patterns change. Each page displays a last updated date to track freshness.</p>
-              </details>
+            <section class="disclosure" aria-label="Affiliate disclosure">
+              <h2 class="sr-only">Disclosure</h2>
+              <p>
+                <strong>Disclosure:</strong> TripGuidely may earn commissions from qualifying bookings. This supports the site and helps keep guides updated.
+              </p>
             </section>
           </div>
         </article>
@@ -817,33 +381,25 @@
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
+              <a class="link-card" role="listitem" href="/hotels/">
                 <div>
-                  <strong>Best Cruises for 2026</strong><br />
-                  <span>Top itineraries & deals</span>
+                  <strong>Hotels Hub</strong><br />
+                  <span>Choose areas + shortlist</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="/hotels/best-hotels-paris/">
+              <a class="link-card" role="listitem" href="/things-to-do/">
                 <div>
-                  <strong>Best Hotels in Paris</strong><br />
-                  <span>Where to stay by area</span>
+                  <strong>Things to Do Hub</strong><br />
+                  <span>Build itineraries fast</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="/things-to-do/rome/">
-                <div>
-                  <strong>Things to Do in Rome</strong><br />
-                  <span>3-day plan + highlights</span>
-                </div>
-                <div class="arrow" aria-hidden="true">↗</div>
-              </a>
-            </div>
-
-            <div class="callout" style="margin-top:14px;">
-              <b>Next build:</b> publish <a href="/cruises/">/cruises/</a>, <a href="/hotels/">/hotels/</a> and <a href="/things-to-do/">/things-to-do/</a> for strong internal signals.
+              <div class="callout" style="margin-top:14px;">
+                <b>Next build:</b> publish <a href="/cruises/">/cruises/</a>, <a href="/hotels/">/hotels/</a> and <a href="/things-to-do/">/things-to-do/</a> for strong internal signals.
+              </div>
             </div>
           </div>
         </aside>
@@ -851,34 +407,27 @@
     </div>
   </main>
 
-  <footer>
+  <footer class="footer" role="contentinfo">
     <div class="wrap">
       <div class="foot">
-        <div>© <span id="year">2026</span> TripGuidely • <span>Last updated: <span id="lastUpdated">2026-01-27</span></span></div>
         <div>
-          <a href="/cruises/">Cruises</a> ·
-          <a href="/hotels/">Hotels</a> ·
-          <a href="/things-to-do/">Things to Do</a> ·
+          © <span id="year">2026</span> TripGuidely
+          <span class="sep" aria-hidden="true">•</span>
+          <span>Last updated: <span id="lastUpdated">2026-02-27</span></span>
+        </div>
+        <div class="foot-links">
+          <a href="/cruises/">Cruises</a>
+          <span aria-hidden="true">·</span>
+          <a href="/hotels/">Hotels</a>
+          <span aria-hidden="true">·</span>
+          <a href="/things-to-do/">Things to Do</a>
+          <span aria-hidden="true">·</span>
           <a href="/car-rental/">Car Rental</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var now = new Date();
-      var y = now.getFullYear();
-      var yearEl = document.getElementById("year");
-      if (yearEl) yearEl.textContent = String(y);
-
-      // Keep a real date visible (reviewers + trust). Update manually when you make major edits.
-      var lastUpdatedEl = document.getElementById("lastUpdated");
-      if (lastUpdatedEl && !lastUpdatedEl.textContent.trim()) {
-        var iso = now.toISOString().slice(0, 10);
-        lastUpdatedEl.textContent = iso;
-      }
-    })();
-  </script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
