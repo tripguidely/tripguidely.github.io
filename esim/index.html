@@ -48,8 +48,12 @@
   <!-- Performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+  <!-- Travelpayouts scripts can load from multiple hosts -->
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
+  <link rel="preconnect" href="https://tpemb.com" crossorigin />
+  <link rel="dns-prefetch" href="//tpemb.com" />
 
   <!-- Preload -->
   <link rel="preload" as="image" href="/assets/images/esim-hub-hero.webp" fetchpriority="high" />
@@ -185,6 +189,10 @@
               <span class="pill" aria-hidden="true">📶</span>
               Browse Airalo eSIM plans
             </a>
+            <a class="btn" href="#esim-search">
+              <span class="pill" aria-hidden="true">🔎</span>
+              Search plans
+            </a>
             <a class="btn" href="#guides">
               <span class="pill" aria-hidden="true">🗺</span>
               Jump to guides
@@ -224,6 +232,32 @@
               <div class="callout">
                 <b>Quick start:</b> If you’re traveling soon, pick a plan, install the eSIM on Wi-Fi, set the eSIM as your <strong>data line</strong>,
                 and turn off <strong>data roaming</strong> on your primary SIM to avoid charges.
+              </div>
+            </section>
+
+            <!-- ✅ NEW: eSIM Search Widget (Travelpayouts / Airalo) -->
+            <section id="esim-search" aria-label="Search eSIM plans" style="margin-top:16px;">
+              <div class="section-title">
+                <h2>Search eSIM plans by destination</h2>
+                <p>Type a country or region, then compare plans in seconds.</p>
+              </div>
+
+              <div class="callout" style="margin-top:12px;">
+                <b>Tip:</b> If you’ll cross borders (ex: France → Italy → Spain), choose a <strong>regional plan</strong>.
+                If you stay in one place, a <strong>country plan</strong> is usually best value.
+              </div>
+
+              <!-- Stable wrapper to reduce layout shifts -->
+              <div class="card" style="margin-top:14px;">
+                <div class="pad" style="padding:14px;">
+                  <div id="tp-esim-widget" style="min-height:160px;">
+                    <script async src="https://tpemb.com/content?trs=492724&shmarker=699178.esim-hub&locale=en&powered_by=true&color_button=%2312CFD0&color_focused=%2312CFD0&secondary=%23FFFFFF&dark=%230F172A&light=%23FFFFFF&special=%23CBD5E1&border_radius=16&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+                  </div>
+
+                  <p style="margin:10px 0 0;color:var(--muted2);font-size:.92rem;">
+                    Some results may contain affiliate links. If you purchase through them, TripGuidely may earn a commission at no extra cost to you.
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -502,6 +536,14 @@
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
+              <a class="link-card" role="listitem" href="#esim-search">
+                <div>
+                  <strong>Search plans</strong><br />
+                  <span>Find a destination fast</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↓</div>
+              </a>
+
               <a class="link-card" role="listitem" href="#setup">
                 <div>
                   <strong>Setup steps</strong><br />
@@ -547,12 +589,28 @@
           }
         }catch(e){}
       }
+
+      // Track clicks on your explicit affiliate buttons/links
       document.addEventListener('click', function(e){
         var a = e.target && e.target.closest ? e.target.closest('a.js-aff') : null;
         if(!a) return;
         var url = a.getAttribute('href') || '';
         if(!url) return;
         trackAffClick(url);
+      }, {passive:true});
+
+      // Lightweight tracking for widget section engagement (no fragile DOM hacks)
+      document.addEventListener('click', function(e){
+        var widget = e.target && e.target.closest ? e.target.closest('#esim-search') : null;
+        if(!widget) return;
+        try{
+          if(typeof gtag === "function"){
+            gtag('event','widget_engagement',{
+              widget: 'tp_esim_search',
+              page_type: 'hub'
+            });
+          }
+        }catch(e){}
       }, {passive:true});
     })();
   </script>
