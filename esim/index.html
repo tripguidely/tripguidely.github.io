@@ -112,6 +112,7 @@
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
         "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/esim-hub-hero.webp"},
+        "datePublished":"2026-02-27",
         "dateModified":"2026-02-27"
       },
       {
@@ -151,6 +152,28 @@
     ]
   }
   </script>
+
+  <!-- Small widget styling hook (keeps audit clean) -->
+  <style>
+    /* Keeps layout stable while widget loads */
+    #tp-esim-widget{ min-height: 180px; }
+    .tp-skeleton{
+      height: 180px;
+      border-radius: 16px;
+      border: 1px dashed rgba(15,23,42,.18);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
+      background-size: 240px 100%;
+      animation: tpShimmer 1.2s linear infinite;
+    }
+    @keyframes tpShimmer{
+      0%{ background-position: 0 0; }
+      100%{ background-position: 240px 0; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .tp-skeleton{ animation: none; }
+    }
+  </style>
 </head>
 
 <body>
@@ -235,7 +258,7 @@
               </div>
             </section>
 
-            <!-- ✅ NEW: eSIM Search Widget (Travelpayouts / Airalo) -->
+            <!-- ✅ eSIM Search Widget -->
             <section id="esim-search" aria-label="Search eSIM plans" style="margin-top:16px;">
               <div class="section-title">
                 <h2>Search eSIM plans by destination</h2>
@@ -247,10 +270,10 @@
                 If you stay in one place, a <strong>country plan</strong> is usually best value.
               </div>
 
-              <!-- Stable wrapper to reduce layout shifts -->
               <div class="card" style="margin-top:14px;">
                 <div class="pad" style="padding:14px;">
-                  <div id="tp-esim-widget" style="min-height:160px;">
+                  <div id="tp-esim-widget">
+                    <div class="tp-skeleton" aria-hidden="true"></div>
                     <script async src="https://tpemb.com/content?trs=492724&shmarker=699178.esim-hub&locale=en&powered_by=true&color_button=%2312CFD0&color_focused=%2312CFD0&secondary=%23FFFFFF&dark=%230F172A&light=%23FFFFFF&special=%23CBD5E1&border_radius=16&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
                   </div>
 
@@ -276,28 +299,28 @@
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="#coming-soon">
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-japan-2026/">
                   <div>
                     <strong>Best eSIM for Japan (2026)</strong><br />
-                    <span>Coming next: airport-proof setup + coverage tips</span>
+                    <span>Airport-proof setup + coverage tips</span>
                   </div>
-                  <div class="arrow" aria-hidden="true">⏳</div>
+                  <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="#coming-soon">
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-usa-2026/">
                   <div>
                     <strong>Best eSIM for USA (2026)</strong><br />
-                    <span>Coming next: road trip data strategy</span>
+                    <span>Road trip data strategy + coverage notes</span>
                   </div>
-                  <div class="arrow" aria-hidden="true">⏳</div>
+                  <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="#coming-soon">
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-italy-2026/">
                   <div>
                     <strong>Best eSIM for Italy (2026)</strong><br />
-                    <span>Coming next: city-to-coast travel notes</span>
+                    <span>City-to-coast travel notes + plan sizing</span>
                   </div>
-                  <div class="arrow" aria-hidden="true">⏳</div>
+                  <div class="arrow" aria-hidden="true">↗</div>
                 </a>
               </div>
 
@@ -491,10 +514,8 @@
               </div>
 
               <ul class="checklist">
-                <li><b>Japan:</b> best eSIM + setup that works even if you land late.</li>
-                <li><b>USA:</b> road trip data strategy + coverage notes.</li>
-                <li><b>Italy:</b> city + coast movement, best plan sizing.</li>
                 <li><b>UK:</b> quick plan picks + activation tips.</li>
+                <li><b>Canada:</b> best options for visitors + coverage notes.</li>
               </ul>
 
               <div class="callout" style="margin-top:14px;">
@@ -536,6 +557,30 @@
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
+              <a class="link-card" role="listitem" href="/esim/best-esim-for-japan-2026/">
+                <div>
+                  <strong>Japan guide</strong><br />
+                  <span>Best eSIM for Japan (2026)</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/best-esim-for-usa-2026/">
+                <div>
+                  <strong>USA guide</strong><br />
+                  <span>Best eSIM for USA (2026)</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/best-esim-for-italy-2026/">
+                <div>
+                  <strong>Italy guide</strong><br />
+                  <span>Best eSIM for Italy (2026)</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
               <a class="link-card" role="listitem" href="#esim-search">
                 <div>
                   <strong>Search plans</strong><br />
@@ -562,7 +607,7 @@
 
               <div class="callout" style="margin-top:14px;">
                 <b>Next clone order:</b><br />
-                Japan → USA → Italy → UK<br />
+                UK → Canada<br />
                 (copy your Europe template)
               </div>
             </div>
@@ -590,7 +635,6 @@
         }catch(e){}
       }
 
-      // Track clicks on your explicit affiliate buttons/links
       document.addEventListener('click', function(e){
         var a = e.target && e.target.closest ? e.target.closest('a.js-aff') : null;
         if(!a) return;
@@ -599,7 +643,7 @@
         trackAffClick(url);
       }, {passive:true});
 
-      // Lightweight tracking for widget section engagement (no fragile DOM hacks)
+      // Lightweight tracking for widget section engagement
       document.addEventListener('click', function(e){
         var widget = e.target && e.target.closest ? e.target.closest('#esim-search') : null;
         if(!widget) return;
