@@ -4,11 +4,60 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <!-- Preconnects (performance: third-parties) -->
+  <!-- Primary SEO -->
+  <title>TripGuidely: Travel Guides for Cruises, Hotels & Things to Do</title>
+  <meta name="description" content="Plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://tripguidely.github.io/" />
+
+  <!-- International hints -->
+  <link rel="alternate" hreflang="en-CA" href="https://tripguidely.github.io/" />
+  <link rel="alternate" hreflang="x-default" href="https://tripguidely.github.io/" />
+
+  <!-- UX / Rendering -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#12cfd0" />
+  <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="author" content="TripGuidely Editorial Team" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Favicons (root) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TripGuidely" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
+  <meta property="og:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
+  <meta property="og:url" content="https://tripguidely.github.io/" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
+  <meta name="twitter:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+
+  <!-- Performance: preconnect/dns-prefetch -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
+
+  <!-- Performance: preload -->
+  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" fetchpriority="high" />
+  <link rel="preload" as="style" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
   <meta name="travelpayouts-verification" content="492724" />
@@ -25,7 +74,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    // keep it simple + privacy-friendly
+
+    // Privacy-friendly config
     gtag('config', 'G-0GGM5GVXJX', {
       anonymize_ip: true,
       allow_google_signals: false,
@@ -33,50 +83,7 @@
     });
   </script>
 
-  <!-- Primary SEO -->
-  <title>TripGuidely: Travel Guides for Cruises, Hotels & Things to Do</title>
-  <meta name="description" content="Plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy." />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-  <link rel="canonical" href="https://tripguidely.github.io/" />
-
-  <!-- International hints -->
-  <link rel="alternate" hreflang="en-ca" href="https://tripguidely.github.io/" />
-  <link rel="alternate" hreflang="x-default" href="https://tripguidely.github.io/" />
-
-  <!-- UX / Rendering -->
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#12cfd0" />
-  <meta name="color-scheme" content="light" />
-  <meta name="format-detection" content="telephone=no" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
-  <link rel="shortcut icon" href="/assets/images/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-48.png" />
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="TripGuidely" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
-  <meta property="og:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
-  <meta property="og:url" content="https://tripguidely.github.io/" />
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TripGuidely: Travel Guides for Cruises, Hotels & Things to Do" />
-  <meta name="twitter:description" content="Plan smarter with curated travel guides: cruises, hotels, and things to do. Practical itineraries and booking strategy." />
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-
-  <!-- Performance -->
-  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" imagesizes="100vw" fetchpriority="high" />
-  <link rel="preload" as="style" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-
-  <!-- JSON-LD (clean, Google-friendly) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,7 +96,11 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
-        }
+        },
+        "sameAs": [
+          "https://www.pinterest.com/REPLACE_ME",
+          "https://www.instagram.com/REPLACE_ME"
+        ]
       },
       {
         "@type": "WebSite",
@@ -100,8 +111,8 @@
         "publisher": { "@id": "https://tripguidely.github.io/#organization" }
       },
       {
-        "@type": "CollectionPage",
-        "@id": "https://tripguidely.github.io/#page",
+        "@type": "WebPage",
+        "@id": "https://tripguidely.github.io/#webpage",
         "url": "https://tripguidely.github.io/",
         "name": "TripGuidely: Travel Guides for Cruises, Hotels & Things to Do",
         "description": "Plan smarter trips with curated guides for cruises, hotels, and things to do. Clear recommendations, practical itineraries, and booking strategy.",
@@ -188,21 +199,18 @@
   </header>
 
   <main id="main" class="main" role="main">
-    <!-- HERO full-bleed (pro) -->
+    <!-- HERO full-bleed -->
     <section class="hero hero-full" aria-label="TripGuidely hero">
       <div class="hero-bg" aria-hidden="true">
-        <picture>
-          <source srcset="/assets/images/global-travel-hero.webp" type="image/webp" />
-          <img
-            src="/assets/images/global-travel-hero.webp"
-            alt=""
-            width="1920"
-            height="900"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </picture>
+        <img
+          src="/assets/images/global-travel-hero.webp"
+          alt=""
+          width="1920"
+          height="900"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
         <div class="hero-overlay" aria-hidden="true"></div>
       </div>
 
