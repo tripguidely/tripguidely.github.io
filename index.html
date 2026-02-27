@@ -74,8 +74,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // Privacy-friendly config
     gtag('config', 'G-0GGM5GVXJX', {
       anonymize_ip: true,
       allow_google_signals: false,
@@ -96,11 +94,7 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
-        },
-        "sameAs": [
-          "https://www.pinterest.com/REPLACE_ME",
-          "https://www.instagram.com/REPLACE_ME"
-        ]
+        }
       },
       {
         "@type": "WebSite",
@@ -131,36 +125,6 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tripguidely.github.io/" }
         ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://tripguidely.github.io/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is TripGuidely?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "TripGuidely is a travel planning hub with curated guides for cruises, hotels, and things to do, built to help you choose faster and plan smarter."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do your recommendations work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We organize options by use case, budget, and season. Each guide highlights trade-offs and practical steps so you can shortlist quickly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you use affiliate links?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you."
-            }
-          }
-        ]
       }
     ]
   }
@@ -170,33 +134,8 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="header" role="banner">
-    <div class="wrap">
-      <div class="bar">
-        <a class="brand" href="/" aria-label="TripGuidely home">
-          <span class="logo" aria-hidden="true">
-            <img src="/assets/images/tg-logo.png" alt="TripGuidely logo" width="44" height="44" loading="eager" decoding="async" />
-          </span>
-          <span class="brand-name">TripGuidely</span>
-        </a>
-
-        <nav class="nav" aria-label="Primary">
-          <ul>
-            <li><a href="/cruises/">Cruises</a></li>
-            <li><a href="/hotels/">Hotels</a></li>
-            <li><a href="/things-to-do/">Things to Do</a></li>
-            <li><a href="/car-rental/">Car Rental</a></li>
-          </ul>
-        </nav>
-
-        <div class="header-cta">
-          <a class="btn btn-small" href="#featured" aria-label="Jump to featured guides">
-            <span class="pill" aria-hidden="true">★</span> Featured
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- Header injected from /partials/header.html -->
+  <div id="site-header"></div>
 
   <main id="main" class="main" role="main">
     <!-- HERO full-bleed -->
@@ -417,26 +356,8 @@
     </div>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="wrap">
-      <div class="foot">
-        <div>
-          © <span id="year">2026</span> TripGuidely
-          <span class="sep" aria-hidden="true">•</span>
-          <span>Last updated: <span id="lastUpdated">2026-02-27</span></span>
-        </div>
-        <div class="foot-links">
-          <a href="/cruises/">Cruises</a>
-          <span aria-hidden="true">·</span>
-          <a href="/hotels/">Hotels</a>
-          <span aria-hidden="true">·</span>
-          <a href="/things-to-do/">Things to Do</a>
-          <span aria-hidden="true">·</span>
-          <a href="/car-rental/">Car Rental</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer injected from /partials/footer.html -->
+  <div id="site-footer"></div>
 
   <script src="/assets/js/site.js" defer></script>
 </body>
