@@ -1,8 +1,9 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition)
+   TripGuidely styles.css (OMG Agency Edition + Mobile Fix)
    - Cross-browser friendly
    - Accessible focus states
    - Audit-friendly defaults (CLS/LCP/UX)
+   - Mobile nav fixed (no weird circle)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -155,7 +156,7 @@ ul, ol{
 }
 li{ margin: 6px 0; }
 
-/* 5) Header / Nav (OMG premium menu) -------------------------------------- */
+/* 5) Header / Nav (Desktop pill, Mobile drawer) --------------------------- */
 .header{
   position:sticky;
   top:0;
@@ -212,7 +213,7 @@ li{ margin: 6px 0; }
   filter: contrast(1.06) saturate(1.08);
 }
 
-/* Menu container: pill glass */
+/* Desktop nav pill */
 .nav ul{
   list-style:none;
   display:flex;
@@ -229,7 +230,6 @@ li{ margin: 6px 0; }
   box-shadow: 0 14px 40px rgba(2,6,23,.06);
 }
 
-/* Menu items */
 .nav a{
   position:relative;
   text-decoration:none;
@@ -240,7 +240,6 @@ li{ margin: 6px 0; }
   transition: transform .14s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
 }
 
-/* hover glow */
 .nav a:hover{
   color: var(--text);
   background: rgba(255,255,255,.72);
@@ -248,7 +247,6 @@ li{ margin: 6px 0; }
   transform: translateY(-1px);
 }
 
-/* active: premium gradient capsule */
 .nav a[aria-current="page"]{
   color: var(--text);
   background:
@@ -259,7 +257,6 @@ li{ margin: 6px 0; }
     0 0 0 4px rgba(18,207,208,.10);
 }
 
-/* tiny underline shimmer for active */
 .nav a[aria-current="page"]::after{
   content:"";
   position:absolute;
@@ -275,12 +272,131 @@ li{ margin: 6px 0; }
 /* CTA container */
 .header-cta{ display:flex; align-items:center; gap:10px; }
 
+/* Burger button (hidden desktop) */
+.burger{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.12);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 10px 22px rgba(2,6,23,.10);
+  color: rgba(255,255,255,.90);
+  cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.burger span{
+  width:18px;
+  height:2px;
+  background: currentColor;
+  border-radius:999px;
+  position:relative;
+  display:block;
+}
+.burger span::before,
+.burger span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background: currentColor;
+  border-radius:999px;
+}
+.burger span::before{ top:-6px; }
+.burger span::after{ top:6px; }
+
+/* Mobile nav drawer + fixes */
 @media (max-width: 760px){
-  .header-cta{ display:none; }
+  :root{ --header-h: 64px; }
+
+  .bar{ padding:10px 0; }
   .brand{ min-width:auto; }
+
+  .header-cta{ display:none; }
+
+  /* Hide desktop pill on mobile */
   .nav ul{
-    width:100%;
-    justify-content:center;
+    display:none;
+  }
+
+  /* Show burger on mobile */
+  .burger{ display:inline-flex; }
+
+  /* Drawer panel (appears when body has .nav-open) */
+  .nav-drawer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--header-h);
+    z-index: 60;
+    background: rgba(255,255,255,.96);
+    border-top: 1px solid rgba(255,255,255,.10);
+    border-bottom: 1px solid rgba(15,23,42,.10);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 44px rgba(2,6,23,.14);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+
+  body.nav-open .nav-drawer{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-drawer ul{
+    list-style:none;
+    margin: 0;
+    padding: 16px 18px 18px;
+    display:grid;
+    gap:10px;
+  }
+
+  .nav-drawer a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    text-decoration:none;
+    padding: 14px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(15,23,42,.10);
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 10px 22px rgba(2,6,23,.08);
+    font-weight: 900;
+    color: var(--text);
+  }
+
+  .nav-drawer a:hover{
+    border-color: rgba(18,207,208,.28);
+    transform: translateY(-1px);
+  }
+
+  .nav-drawer a[aria-current="page"]{
+    background: linear-gradient(135deg, rgba(18,207,208,.18), rgba(244,162,97,.14));
+    border-color: rgba(18,207,208,.26);
+    box-shadow: 0 16px 38px rgba(2,6,23,.12);
+  }
+
+  /* Dark overlay behind nav */
+  .nav-scrim{
+    position: fixed;
+    inset: 0;
+    top: var(--header-h);
+    z-index: 55;
+    background: rgba(2,6,23,.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease;
+  }
+  body.nav-open .nav-scrim{
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -336,9 +452,10 @@ li{ margin: 6px 0; }
   padding: 22px 20px;
 }
 
-@media (max-width: 860px){
+/* Mobile hero: stronger hierarchy + spacing */
+@media (max-width: 760px){
   .hero-inner{ padding: 26px 0 22px; }
-  .hero-panel{ padding: 18px 16px; }
+  .hero-panel{ padding: 18px 16px; border-radius: 22px; }
 }
 
 .kicker{
@@ -366,11 +483,26 @@ h1{
   letter-spacing: var(--tracking-tight);
 }
 
+@media (max-width: 760px){
+  h1{
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+  }
+}
+
 .lede{
   margin:0 0 14px;
   color:var(--muted);
   font-size:1.08rem;
   max-width: 65ch;
+}
+
+@media (max-width: 760px){
+  .lede{
+    font-size: 17px;
+    line-height: 1.6;
+  }
 }
 
 /* 8) Buttons --------------------------------------------------------------- */
@@ -423,6 +555,20 @@ h1{
 }
 
 .btn-small{ padding:9px 12px; border-radius:12px; }
+
+/* Mobile CTA: full width and dominant */
+@media (max-width: 760px){
+  .actions .btn{
+    width: 100%;
+    padding: 16px 16px;
+    border-radius: 16px;
+    font-size: 18px;
+  }
+  .actions .btn.primary{
+    background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(14,165,233,.16));
+    box-shadow: 0 18px 44px rgba(18,207,208,.14);
+  }
+}
 
 /* 9) Trust row ------------------------------------------------------------- */
 .trust{
@@ -767,7 +913,6 @@ details p{ margin:8px 0 0; }
   transition: transform .14s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
 }
 
-/* Bullet */
 .foot-links a::before{
   content:"";
   width: 9px;
@@ -780,7 +925,6 @@ details p{ margin:8px 0 0; }
   transform: translateY(1px);
 }
 
-/* Underline glow */
 .foot-links a::after{
   content:"";
   position:absolute;
@@ -814,7 +958,6 @@ details p{ margin:8px 0 0; }
     0 14px 34px rgba(0,0,0,.28);
 }
 
-/* Bottom: elegant fine print (no ugly strip) */
 .foot-bottom{
   border-top: 1px solid rgba(255,255,255,.08);
   padding-top: 18px;
@@ -826,8 +969,6 @@ details p{ margin:8px 0 0; }
   color: rgba(148,163,184,.95);
   font-size: .88rem;
   line-height: 1.6;
-
-  /* remove card look */
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -847,7 +988,7 @@ details p{ margin:8px 0 0; }
 
 /* ==========================================================================
    DARK HEADER (matches dark luxe footer)
-   - Add this at the END of your CSS (overrides)
+   - Overrides (keep at END)
    ========================================================================== */
 
 /* Header container becomes dark glass */
@@ -890,14 +1031,14 @@ details p{ margin:8px 0 0; }
     0 0 0 4px rgba(18,207,208,.16);
 }
 
-/* Menu pill becomes dark glass */
+/* Desktop menu pill becomes dark glass */
 .nav ul{
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
   box-shadow: 0 18px 50px rgba(0,0,0,.28);
 }
 
-/* Menu items */
+/* Desktop menu items */
 .nav a{
   color: rgba(226,232,240,.82);
 }
