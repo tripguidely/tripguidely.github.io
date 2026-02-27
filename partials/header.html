@@ -8,12 +8,14 @@
         <span class="brand-name">TripGuidely</span>
       </a>
 
+      <!-- Desktop nav pill (hidden on mobile via CSS) -->
       <nav class="nav" aria-label="Primary">
         <ul>
           <li><a href="/cruises/">Cruises</a></li>
           <li><a href="/hotels/">Hotels</a></li>
           <li><a href="/things-to-do/">Things to Do</a></li>
           <li><a href="/car-rental/">Car Rental</a></li>
+          <li><a href="/esim/">eSIM</a></li>
         </ul>
       </nav>
 
@@ -22,6 +24,26 @@
           <span class="pill" aria-hidden="true">★</span> Featured
         </a>
       </div>
+
+      <!-- Mobile burger (shown on mobile via CSS) -->
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+      </button>
     </div>
   </div>
+
+  <!-- Mobile scrim + drawer -->
+  <div class="nav-scrim" aria-hidden="true"></div>
+
+  <nav class="nav-drawer" aria-label="Mobile menu">
+    <ul>
+      <li><a href="/cruises/">Cruises</a></li>
+      <li><a href="/hotels/">Hotels</a></li>
+      <li><a href="/things-to-do/">Things to Do</a></li>
+      <li><a href="/car-rental/">Car Rental</a></li>
+      <li><a href="/esim/">eSIM</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
 </header>
