@@ -1,13 +1,29 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition + Mobile Fix)
+   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready)
    - Cross-browser friendly
-   - Accessible focus states
+   - Accessible focus states + reduced motion
    - Audit-friendly defaults (CLS/LCP/UX)
-   - Mobile nav fixed (no weird circle)
+   - Dark luxe header + footer
+   - Mobile nav drawer + scrim (works with .nav-open)
+   - Adds missing styles: .meta, .checklist, .steps, sidebar sticky, etc.
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
 :root{
+  /* Layout */
+  --max:1120px;
+  --header-h:72px;
+
+  /* Radii */
+  --radius:18px;
+  --radius2:26px;
+  --radius3:14px;
+
+  /* Typography */
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --tracking-tight:-0.35px;
+
+  /* Palette */
   --bg:#ffffff;
   --bg2:#fbfcfd;
   --card:#ffffff;
@@ -23,23 +39,15 @@
   --turq:#12cfd0;
   --sand:#f4a261;
 
+  /* Shadows */
   --shadow: 0 18px 40px rgba(2,6,23,.10);
   --shadow2: 0 10px 22px rgba(2,6,23,.08);
   --shadow3: 0 6px 14px rgba(2,6,23,.06);
 
-  --radius:18px;
-  --radius2:26px;
-  --radius3:14px;
-
-  --max:1120px;
-
+  /* Focus */
   --focus: rgba(18,207,208,.50);
 
-  --header-h: 72px;
-
-  --tracking-tight: -0.35px;
-
-  /* premium helpers */
+  /* Premium helpers */
   --glass: rgba(255,255,255,.72);
   --glass-strong: rgba(255,255,255,.84);
   --glow: 0 18px 50px rgba(18,207,208,.10);
@@ -58,7 +66,7 @@ html{
 
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-family: var(--font);
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 55%),
     radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.16), transparent 60%),
@@ -78,9 +86,7 @@ img, picture, video, canvas, svg{
 input, button, textarea, select{ font: inherit; }
 a{ color:inherit; }
 
-::selection{
-  background: rgba(18,207,208,.22);
-}
+::selection{ background: rgba(18,207,208,.22); }
 
 a:focus-visible,
 button:focus-visible,
@@ -149,23 +155,50 @@ hr{
   border-top:1px solid rgba(15,23,42,.12);
   margin: 26px 0;
 }
+
 ul, ol{
   margin: 0 0 14px;
   padding-left: 18px;
   color: var(--muted);
 }
+
 li{ margin: 6px 0; }
 
+/* Better default link underline behavior in content */
+.content a{
+  text-decoration: none;
+  border-bottom: 1px solid rgba(18,207,208,.35);
+}
+.content a:hover{
+  border-bottom-color: rgba(18,207,208,.75);
+}
+
 /* 5) Header / Nav (Desktop pill, Mobile drawer) --------------------------- */
+/* Dark header glass (matches footer) */
 .header{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(255,255,255,.72);
-  border-bottom:1px solid rgba(15,23,42,.10);
-  -webkit-backdrop-filter:saturate(160%) blur(14px);
-  backdrop-filter:saturate(160%) blur(14px);
+  background: rgba(7,10,18,.62);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
 }
+
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(760px 220px at 12% 0%, rgba(18,207,208,.22), transparent 60%),
+    radial-gradient(820px 260px at 88% 0%, rgba(244,162,97,.18), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,.06), transparent 55%);
+  opacity:.95;
+}
+
+.header .wrap,
+.header .bar{ position:relative; }
 
 .bar{
   min-height: var(--header-h);
@@ -188,18 +221,18 @@ li{ margin: 6px 0; }
   font-weight:950;
   letter-spacing: var(--tracking-tight);
   font-size:1.10rem;
-  color:var(--text);
+  color: rgba(255,255,255,.96);
 }
 
 .logo{
   width:44px;
   height:44px;
   border-radius:14px;
-  background:#fff;
-  border:1px solid rgba(15,23,42,.14);
+  background: rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.18);
   box-shadow:
-    0 18px 44px rgba(2,6,23,.12),
-    0 0 0 4px rgba(18,207,208,.14);
+    0 18px 44px rgba(0,0,0,.30),
+    0 0 0 4px rgba(18,207,208,.16);
   display:grid;
   place-items:center;
   padding:2px;
@@ -224,37 +257,36 @@ li{ margin: 6px 0; }
   justify-content:flex-end;
   align-items:center;
 
-  border:1px solid rgba(15,23,42,.10);
-  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
   border-radius: 999px;
-  box-shadow: 0 14px 40px rgba(2,6,23,.06);
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
 }
 
 .nav a{
   position:relative;
   text-decoration:none;
   font-weight:800;
-  color: rgba(71,85,105,.92);
+  color: rgba(226,232,240,.82);
   padding: 10px 14px;
   border-radius: 999px;
   transition: transform .14s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
 }
 
 .nav a:hover{
-  color: var(--text);
-  background: rgba(255,255,255,.72);
-  box-shadow: 0 12px 26px rgba(2,6,23,.08);
+  color: rgba(255,255,255,.95);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
   transform: translateY(-1px);
 }
 
 .nav a[aria-current="page"]{
-  color: var(--text);
-  background:
-    linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
-  border: 1px solid rgba(18,207,208,.28);
+  color: rgba(255,255,255,.96);
+  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
+  border: 1px solid rgba(18,207,208,.26);
   box-shadow:
-    0 16px 38px rgba(2,6,23,.10),
-    0 0 0 4px rgba(18,207,208,.10);
+    0 18px 44px rgba(0,0,0,.30),
+    0 0 0 4px rgba(18,207,208,.14);
 }
 
 .nav a[aria-current="page"]::after{
@@ -265,8 +297,8 @@ li{ margin: 6px 0; }
   bottom:7px;
   height:2px;
   border-radius:999px;
-  background: linear-gradient(90deg, rgba(18,207,208,.75), rgba(244,162,97,.45));
-  opacity:.85;
+  background: linear-gradient(90deg, rgba(18,207,208,.80), rgba(244,162,97,.55));
+  opacity:.95;
 }
 
 /* CTA container */
@@ -280,10 +312,10 @@ li{ margin: 6px 0; }
   width:44px;
   height:44px;
   border-radius:14px;
-  border:1px solid rgba(15,23,42,.12);
-  background: rgba(255,255,255,.10);
-  box-shadow: 0 10px 22px rgba(2,6,23,.10);
-  color: rgba(255,255,255,.90);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 18px 44px rgba(0,0,0,.30);
+  color: rgba(255,255,255,.92);
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -308,7 +340,7 @@ li{ margin: 6px 0; }
 .burger span::before{ top:-6px; }
 .burger span::after{ top:6px; }
 
-/* Mobile nav drawer + fixes */
+/* 5.1) Mobile nav drawer + scrim ------------------------------------------ */
 @media (max-width: 760px){
   :root{ --header-h: 64px; }
 
@@ -318,9 +350,7 @@ li{ margin: 6px 0; }
   .header-cta{ display:none; }
 
   /* Hide desktop pill on mobile */
-  .nav ul{
-    display:none;
-  }
+  .nav ul{ display:none; }
 
   /* Show burger on mobile */
   .burger{ display:inline-flex; }
@@ -370,11 +400,13 @@ li{ margin: 6px 0; }
     box-shadow: 0 10px 22px rgba(2,6,23,.08);
     font-weight: 900;
     color: var(--text);
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
 
   .nav-drawer a:hover{
     border-color: rgba(18,207,208,.28);
     transform: translateY(-1px);
+    box-shadow: 0 18px 44px rgba(2,6,23,.12);
   }
 
   .nav-drawer a[aria-current="page"]{
@@ -398,6 +430,12 @@ li{ margin: 6px 0; }
     opacity: 1;
     pointer-events: auto;
   }
+
+  /* Prevent background scroll when nav open (nice UX) */
+  body.nav-open{
+    overflow:hidden;
+    touch-action:none;
+  }
 }
 
 /* 6) Main / breadcrumbs ---------------------------------------------------- */
@@ -413,11 +451,18 @@ li{ margin: 6px 0; }
   margin: 14px 0 14px;
 }
 .breadcrumbs a{
-  color: var(--muted);
+  color: rgba(100,116,139,.96);
   text-decoration:none;
   border-bottom:1px solid transparent;
 }
 .breadcrumbs a:hover{ border-bottom-color: rgba(15,23,42,.18); }
+
+/* Small meta line used in hero */
+.meta{
+  margin: 10px 0 0;
+  color: var(--muted2);
+  font-size: .95rem;
+}
 
 /* 7) Hero (full-bleed) ----------------------------------------------------- */
 .hero.hero-full{
@@ -452,7 +497,6 @@ li{ margin: 6px 0; }
   padding: 22px 20px;
 }
 
-/* Mobile hero: stronger hierarchy + spacing */
 @media (max-width: 760px){
   .hero-inner{ padding: 26px 0 22px; }
   .hero-panel{ padding: 18px 16px; border-radius: 22px; }
@@ -465,7 +509,6 @@ li{ margin: 6px 0; }
   color: rgba(15,23,42,.70);
   margin: 0 0 8px;
 }
-
 .kicker .dot{
   display:inline-block;
   width:8px;
@@ -556,7 +599,6 @@ h1{
 
 .btn-small{ padding:9px 12px; border-radius:12px; }
 
-/* Mobile CTA: full width and dominant */
 @media (max-width: 760px){
   .actions .btn{
     width: 100%;
@@ -619,6 +661,14 @@ h2{
 p{ margin: 0 0 12px; color:var(--muted); }
 .content p strong{ color:var(--text); }
 
+/* Sidebar sticky (desktop only) */
+@media (min-width: 981px){
+  aside.card{
+    position: sticky;
+    top: calc(var(--header-h) + 16px);
+  }
+}
+
 .section-title{
   display:flex;
   align-items:baseline;
@@ -631,6 +681,76 @@ p{ margin: 0 0 12px; color:var(--muted); }
   margin:0;
   color:var(--muted2);
   font-size:.95rem;
+}
+
+/* 10.1) Lists used in eSIM pages ------------------------------------------ */
+.checklist,
+.steps{
+  margin: 10px 0 12px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.checklist{
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.checklist li{
+  margin:0;
+  padding-left: 28px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top: 9px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
+  border: 1px solid rgba(18,207,208,.26);
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+}
+
+.steps{
+  counter-reset: step;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.steps li{
+  margin:0;
+  padding: 12px 12px 12px 52px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.86);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+}
+
+.steps li::before{
+  counter-increment: step;
+  content: counter(step);
+  position:absolute;
+  left: 12px;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  color: rgba(15,23,42,.92);
+  background: linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.12));
+  border: 1px solid rgba(15,23,42,.10);
 }
 
 /* 11) Category cards ------------------------------------------------------- */
@@ -840,7 +960,6 @@ details p{ margin:8px 0 0; }
   .foot-grid{ grid-template-columns: 1fr; }
 }
 
-/* Brand */
 .foot-brand strong{
   display:inline-flex;
   align-items:center;
@@ -881,7 +1000,6 @@ details p{ margin:8px 0 0; }
 }
 .sep{ margin:0 6px; color: rgba(148,163,184,.55); }
 
-/* Titles */
 .foot-title{
   margin: 0 0 14px;
   font-weight: 900;
@@ -891,7 +1009,6 @@ details p{ margin:8px 0 0; }
   color: rgba(148,163,184,.95);
 }
 
-/* Links */
 .foot-links{
   list-style:none;
   padding:0;
@@ -918,7 +1035,7 @@ details p{ margin:8px 0 0; }
   width: 9px;
   height: 9px;
   border-radius:999px;
-  background: color-mix(in srgb, var(--turq) 75%, white);
+  background: rgba(18,207,208,.75);
   box-shadow: 0 0 0 4px rgba(18,207,208,.16);
   opacity:.95;
   flex:0 0 auto;
@@ -978,112 +1095,21 @@ details p{ margin:8px 0 0; }
 
 /* 17) High-contrast mode improvements ------------------------------------- */
 @media (prefers-contrast: more){
-  .btn, .card, .cat, .link-card, .hero-panel, details{
+  .btn, .card, .cat, .link-card, .hero-panel, details, .steps li{
     border-color: rgba(15,23,42,.26);
   }
-  .header{ border-bottom-color: rgba(15,23,42,.18); }
   .footer{ border-top-color: rgba(255,255,255,.18); }
   .foot-links a{ text-decoration: underline; text-underline-offset: 3px; }
 }
 
 /* ==========================================================================
-   DARK HEADER (matches dark luxe footer)
-   - Overrides (keep at END)
-   ========================================================================== */
-
-/* Header container becomes dark glass */
-.header{
-  background: rgba(7,10,18,.62);
-  border-bottom: 1px solid rgba(255,255,255,.10);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  backdrop-filter: saturate(160%) blur(14px);
-  position: sticky;
-  top: 0;
-}
-
-/* Subtle gradient glow behind header */
-.header::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(760px 220px at 12% 0%, rgba(18,207,208,.22), transparent 60%),
-    radial-gradient(820px 260px at 88% 0%, rgba(244,162,97,.18), transparent 62%),
-    linear-gradient(180deg, rgba(255,255,255,.06), transparent 55%);
-  opacity:.95;
-}
-
-.header .wrap,
-.header .bar{ position:relative; }
-
-/* Brand in white */
-.brand-name{
-  color: rgba(255,255,255,.96);
-}
-
-/* Logo ring looks better on dark */
-.logo{
-  background: rgba(255,255,255,.92);
-  border-color: rgba(255,255,255,.18);
-  box-shadow:
-    0 18px 44px rgba(0,0,0,.30),
-    0 0 0 4px rgba(18,207,208,.16);
-}
-
-/* Desktop menu pill becomes dark glass */
-.nav ul{
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  box-shadow: 0 18px 50px rgba(0,0,0,.28);
-}
-
-/* Desktop menu items */
-.nav a{
-  color: rgba(226,232,240,.82);
-}
-
-/* Hover = brighter + soft glow */
-.nav a:hover{
-  color: rgba(255,255,255,.95);
-  background: rgba(255,255,255,.08);
-  box-shadow: 0 14px 34px rgba(0,0,0,.28);
-}
-
-/* Active capsule = premium gradient + ring */
-.nav a[aria-current="page"]{
-  color: rgba(255,255,255,.96);
-  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
-  border: 1px solid rgba(18,207,208,.26);
-  box-shadow:
-    0 18px 44px rgba(0,0,0,.30),
-    0 0 0 4px rgba(18,207,208,.14);
-}
-
-/* Keep underline shimmer visible on dark */
-.nav a[aria-current="page"]::after{
-  background: linear-gradient(90deg, rgba(18,207,208,.80), rgba(244,162,97,.55));
-  opacity:.95;
-}
-
-/* Optional: make focus ring pop on dark */
-a:focus-visible,
-button:focus-visible,
-summary:focus-visible{
-  outline-color: rgba(18,207,208,.62);
-}
-
-/* ==========================================================================
    eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin
-   - Safe: styles the wrapper + soft attempts for inner elements
-   - If widget uses iframe/inline styles, wrapper still looks premium
    ========================================================================== */
 
 #esim-search{
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
-/* Outer card wrapper around the injected widget */
 #esim-search .card{
   border: 1px solid rgba(15,23,42,.10);
   background: rgba(255,255,255,.92);
@@ -1092,18 +1118,13 @@ summary:focus-visible{
   overflow: hidden;
 }
 
-/* Pad used inside the widget card */
-#esim-search .card .pad{
-  padding: 14px;
-}
+#esim-search .card .pad{ padding: 14px; }
 
-/* Stable widget mount area (reduces “jump”) */
 #tp-esim-widget{
   position: relative;
-  min-height: 170px; /* keep stable, reduce CLS */
+  min-height: 170px;
 }
 
-/* Subtle “glass” panel behind widget so it feels native */
 #tp-esim-widget::before{
   content:"";
   position:absolute;
@@ -1118,13 +1139,11 @@ summary:focus-visible{
   box-shadow: 0 16px 40px rgba(2,6,23,.08);
 }
 
-/* Keep actual injected widget above the glass layer */
 #tp-esim-widget > *{
   position: relative;
   z-index: 1;
 }
 
-/* If the widget injects inputs/buttons in DOM (not iframe), try to match style */
 #tp-esim-widget input,
 #tp-esim-widget select,
 #tp-esim-widget button{
@@ -1132,7 +1151,6 @@ summary:focus-visible{
   border-radius: 16px !important;
 }
 
-/* Inputs */
 #tp-esim-widget input,
 #tp-esim-widget select{
   border: 1px solid rgba(15,23,42,.12) !important;
@@ -1147,7 +1165,6 @@ summary:focus-visible{
   outline-offset: 2px !important;
 }
 
-/* Buttons */
 #tp-esim-widget button,
 #tp-esim-widget [type="submit"]{
   border: 1px solid rgba(18,207,208,.30) !important;
@@ -1164,24 +1181,16 @@ summary:focus-visible{
   box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
 }
 
-/* Make “powered by” subtle if it exists */
 #tp-esim-widget [class*="powered"],
 #tp-esim-widget [class*="Powered"]{
   opacity: .72 !important;
   font-size: .9rem !important;
 }
 
-/* Mobile: more breathing room, bigger tap targets */
 @media (max-width: 760px){
-  #tp-esim-widget{
-    min-height: 210px;
-  }
-  #esim-search .card .pad{
-    padding: 12px;
-  }
+  #tp-esim-widget{ min-height: 210px; }
+  #esim-search .card .pad{ padding: 12px; }
   #tp-esim-widget input,
   #tp-esim-widget select,
-  #tp-esim-widget button{
-    border-radius: 18px !important;
-  }
+  #tp-esim-widget button{ border-radius: 18px !important; }
 }
