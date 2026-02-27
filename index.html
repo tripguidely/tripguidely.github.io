@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
+  <!-- Preconnects (performance: third-parties) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="preconnect" href="https://tp-em.com" crossorigin />
+  <link rel="dns-prefetch" href="//tp-em.com" />
+
   <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
   <meta name="travelpayouts-verification" content="492724" />
   <script
@@ -19,7 +25,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-0GGM5GVXJX', { anonymize_ip: true });
+    // keep it simple + privacy-friendly
+    gtag('config', 'G-0GGM5GVXJX', {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
   </script>
 
   <!-- Primary SEO -->
@@ -51,6 +62,8 @@
   <meta property="og:url" content="https://tripguidely.github.io/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
   <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -84,12 +97,7 @@
         "name": "TripGuidely",
         "url": "https://tripguidely.github.io/",
         "inLanguage": "en-CA",
-        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://tripguidely.github.io/search/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "publisher": { "@id": "https://tripguidely.github.io/#organization" }
       },
       {
         "@type": "CollectionPage",
@@ -180,58 +188,60 @@
   </header>
 
   <main id="main" class="main" role="main">
+    <!-- HERO full-bleed (pro) -->
+    <section class="hero hero-full" aria-label="TripGuidely hero">
+      <div class="hero-bg" aria-hidden="true">
+        <picture>
+          <source srcset="/assets/images/global-travel-hero.webp" type="image/webp" />
+          <img
+            src="/assets/images/global-travel-hero.webp"
+            alt=""
+            width="1920"
+            height="900"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="wrap hero-inner">
+        <div class="hero-panel">
+          <p class="kicker"><span class="dot" aria-hidden="true"></span>Travel planning hub</p>
+          <h1>Plan smarter trips, faster.</h1>
+          <p class="lede">
+            Curated travel guides built for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
+          </p>
+
+          <div class="actions" aria-label="Primary actions">
+            <a class="btn primary" href="/cruises/">
+              <span class="pill" aria-hidden="true">⛴</span>
+              Start with Cruises
+            </a>
+            <a class="btn" href="/hotels/">
+              <span class="pill" aria-hidden="true">🏨</span>
+              Explore Hotels
+            </a>
+            <a class="btn" href="/things-to-do/">
+              <span class="pill" aria-hidden="true">🗺</span>
+              Things to Do
+            </a>
+          </div>
+
+          <div class="trust">
+            <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
+            <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
+            <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="wrap">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <span aria-current="page">Home</span>
       </nav>
-
-      <section class="hero" aria-label="TripGuidely hero">
-        <div class="hero-grid">
-          <div class="hero-media" aria-hidden="true">
-            <picture>
-              <source srcset="/assets/images/global-travel-hero.webp" type="image/webp" />
-              <img
-                src="/assets/images/global-travel-hero.webp"
-                alt=""
-                width="1200"
-                height="630"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </picture>
-          </div>
-
-          <div class="hero-copy">
-            <p class="kicker"><span class="dot" aria-hidden="true"></span>Travel planning hub</p>
-            <h1>Plan smarter trips, faster.</h1>
-            <p class="lede">
-              Curated travel guides built for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
-            </p>
-
-            <div class="actions" aria-label="Primary actions">
-              <a class="btn primary" href="/cruises/">
-                <span class="pill" aria-hidden="true">⛴</span>
-                Start with Cruises
-              </a>
-              <a class="btn" href="/hotels/">
-                <span class="pill" aria-hidden="true">🏨</span>
-                Explore Hotels
-              </a>
-              <a class="btn" href="/things-to-do/">
-                <span class="pill" aria-hidden="true">🗺</span>
-                Things to Do
-              </a>
-            </div>
-
-            <div class="trust">
-              <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
-              <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
-              <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <div class="grid">
         <article class="card content" aria-label="Homepage content">
@@ -265,9 +275,7 @@
 
             <section id="featured" aria-label="Featured guides">
               <h2>Featured guides</h2>
-              <p>
-                Use these when you already know what you’re planning. They are designed to reduce research time and improve outcomes.
-              </p>
+              <p>Use these when you already know what you’re planning. They are designed to reduce research time and improve outcomes.</p>
 
               <div class="links" role="list" aria-label="Featured guide links">
                 <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
@@ -310,12 +318,8 @@
 
             <section id="how-to-use" aria-label="How to use TripGuidely">
               <h2>How to use TripGuidely</h2>
-              <p>
-                Use hubs to set your strategy, then switch to focused guides when you’re ready to pick specifics. Fewer tabs, better choices.
-              </p>
-              <p>
-                Recommended flow: <strong>choose a category</strong> → <strong>scan a featured guide</strong> → <strong>save a shortlist</strong> → <strong>book with confidence</strong>.
-              </p>
+              <p>Use hubs to set your strategy, then switch to focused guides when you’re ready to pick specifics. Fewer tabs, better choices.</p>
+              <p>Recommended flow: <strong>choose a category</strong> → <strong>scan a featured guide</strong> → <strong>save a shortlist</strong> → <strong>book with confidence</strong>.</p>
 
               <div class="mini-grid" aria-label="Workflow steps">
                 <div class="mini">
@@ -358,9 +362,7 @@
 
             <section class="disclosure" aria-label="Affiliate disclosure">
               <h2 class="sr-only">Disclosure</h2>
-              <p>
-                <strong>Disclosure:</strong> TripGuidely may earn commissions from qualifying bookings. This supports the site and helps keep guides updated.
-              </p>
+              <p><strong>Disclosure:</strong> TripGuidely may earn commissions from qualifying bookings. This supports the site and helps keep guides updated.</p>
             </section>
           </div>
         </article>
