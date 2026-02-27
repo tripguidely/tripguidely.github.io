@@ -1072,3 +1072,116 @@ button:focus-visible,
 summary:focus-visible{
   outline-color: rgba(18,207,208,.62);
 }
+
+/* ==========================================================================
+   eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin
+   - Safe: styles the wrapper + soft attempts for inner elements
+   - If widget uses iframe/inline styles, wrapper still looks premium
+   ========================================================================== */
+
+#esim-search{
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+/* Outer card wrapper around the injected widget */
+#esim-search .card{
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.92);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow2), var(--glow);
+  overflow: hidden;
+}
+
+/* Pad used inside the widget card */
+#esim-search .card .pad{
+  padding: 14px;
+}
+
+/* Stable widget mount area (reduces “jump”) */
+#tp-esim-widget{
+  position: relative;
+  min-height: 170px; /* keep stable, reduce CLS */
+}
+
+/* Subtle “glass” panel behind widget so it feels native */
+#tp-esim-widget::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: 16px;
+  pointer-events:none;
+  background:
+    radial-gradient(560px 220px at 12% 18%, rgba(18,207,208,.10), transparent 62%),
+    radial-gradient(560px 220px at 88% 30%, rgba(244,162,97,.10), transparent 64%),
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.92));
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 16px 40px rgba(2,6,23,.08);
+}
+
+/* Keep actual injected widget above the glass layer */
+#tp-esim-widget > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* If the widget injects inputs/buttons in DOM (not iframe), try to match style */
+#tp-esim-widget input,
+#tp-esim-widget select,
+#tp-esim-widget button{
+  font: inherit !important;
+  border-radius: 16px !important;
+}
+
+/* Inputs */
+#tp-esim-widget input,
+#tp-esim-widget select{
+  border: 1px solid rgba(15,23,42,.12) !important;
+  background: rgba(255,255,255,.92) !important;
+  color: var(--text) !important;
+  padding: 14px 14px !important;
+  box-shadow: 0 10px 22px rgba(2,6,23,.06) !important;
+}
+#tp-esim-widget input:focus,
+#tp-esim-widget select:focus{
+  outline: 3px solid var(--focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Buttons */
+#tp-esim-widget button,
+#tp-esim-widget [type="submit"]{
+  border: 1px solid rgba(18,207,208,.30) !important;
+  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18)) !important;
+  color: var(--text) !important;
+  font-weight: 900 !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 18px 44px rgba(18,207,208,.12) !important;
+  transition: transform .12s ease, box-shadow .12s ease !important;
+}
+#tp-esim-widget button:hover,
+#tp-esim-widget [type="submit"]:hover{
+  transform: translateY(-1px) !important;
+  box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
+}
+
+/* Make “powered by” subtle if it exists */
+#tp-esim-widget [class*="powered"],
+#tp-esim-widget [class*="Powered"]{
+  opacity: .72 !important;
+  font-size: .9rem !important;
+}
+
+/* Mobile: more breathing room, bigger tap targets */
+@media (max-width: 760px){
+  #tp-esim-widget{
+    min-height: 210px;
+  }
+  #esim-search .card .pad{
+    padding: 12px;
+  }
+  #tp-esim-widget input,
+  #tp-esim-widget select,
+  #tp-esim-widget button{
+    border-radius: 18px !important;
+  }
+}
