@@ -1,8 +1,11 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible)
+   TripGuidely site.js (premium + compatible) — UPDATED
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
+   - Mobile nav (burger + drawer + scrim + ESC)
    - Outbound tracking (GA4 gtag) + affiliate tagging
+   - Affiliate CTA tracking (.js-aff) centralized here (remove inline scripts)
+   - Widget engagement tracking (#esim-search)
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Safe console usage + error guards
    ========================================================================== */
@@ -130,6 +133,7 @@
 
     // Common travel / affiliate patterns (safe defaults)
     if (host.indexOf("tp-em.com") !== -1) return true;
+    if (host.indexOf("tpemb.com") !== -1) return true;
     if (host.indexOf("travelpayouts") !== -1) return true;
 
     // Add your partners here as you go:
@@ -157,8 +161,6 @@
   }
 
   /* ---------- Partials injection (optional) ---------- */
-  // If you use /partials/header.html + /partials/footer.html, enable this.
-  // If you don't use partials, it will just do nothing safely.
 
   function injectPartial(targetSelector, url, cb) {
     var mount = $(targetSelector);
@@ -297,10 +299,107 @@
     });
   }
 
+  function trackAffiliateClicks() {
+    // Tracks clicks on explicit affiliate CTAs marked with .js-aff
+    on(DOC, "click", function (e) {
+      e = e || WIN.event;
+      var target = e.target || e.srcElement;
+      var a = getClosestLink(target);
+      if (!a) return;
+
+      var cls = a.className || "";
+      if ((" " + cls + " ").indexOf(" js-aff ") === -1) return;
+
+      var url = a.getAttribute("href") || a.href || "";
+      if (!url) return;
+
+      // Optional: detect program from URL
+      var program = "affiliate";
+      try {
+        var u = parseURL(url);
+        var host = (u.hostname || "").toLowerCase();
+        if (host.indexOf("airalo") !== -1) program = "airalo";
+        else if (host.indexOf("tp-em.com") !== -1 || host.indexOf("tpemb.com") !== -1) program = "travelpayouts";
+      } catch (_) {}
+
+      gtagEvent("affiliate_click", {
+        affiliate_program: program,
+        destination: url
+      });
+    }, { passive: true });
+  }
+
+  function trackWidgetEngagement() {
+    // One event per pageview when user interacts with eSIM widget section
+    var fired = false;
+
+    on(DOC, "click", function (e) {
+      if (fired) return;
+
+      var el = DOC.getElementById("esim-search");
+      if (!el) return;
+
+      var target = e.target || e.srcElement;
+
+      // closest() fallback-free check
+      try {
+        if (el.contains(target)) {
+          fired = true;
+          gtagEvent("widget_engagement", {
+            widget: "tp_esim_search"
+          });
+        }
+      } catch (_) {}
+    }, { passive: true });
+  }
+
+  function initMobileNav() {
+    // Requires: .burger, .nav-scrim, .nav-drawer (in injected header)
+    var burger = DOC.querySelector(".burger");
+    if (!burger) return;
+
+    var scrim = DOC.querySelector(".nav-scrim");
+    var drawer = DOC.querySelector(".nav-drawer");
+
+    function setOpen(open) {
+      if (open) {
+        DOC.body.classList.add("nav-open");
+        burger.setAttribute("aria-expanded", "true");
+      } else {
+        DOC.body.classList.remove("nav-open");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    on(burger, "click", function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      setOpen(!DOC.body.classList.contains("nav-open"));
+    });
+
+    if (scrim) {
+      on(scrim, "click", function () { setOpen(false); });
+    }
+
+    // ESC closes
+    on(DOC, "keydown", function (e) {
+      e = e || WIN.event;
+      var key = e.key || e.keyCode;
+      if (!DOC.body.classList.contains("nav-open")) return;
+      if (key === "Escape" || key === "Esc" || key === 27) setOpen(false);
+    });
+
+    // Clicking a link inside drawer closes
+    if (drawer) {
+      on(drawer, "click", function (e) {
+        var target = e.target || e.srcElement;
+        var a = getClosestLink(target);
+        if (a) setOpen(false);
+      });
+    }
+  }
+
   function measureVitalsHints() {
     // Lightweight “signals” you can use in GA4 (optional, safe)
-    // - first paint-ish: DOMContentLoaded time
-    // - helps you compare improvements over time
     try {
       var t0 = (WIN.performance && WIN.performance.timing) ? WIN.performance.timing : null;
       if (!t0) return;
@@ -321,13 +420,14 @@
   function initAll() {
     setFooterDates();
     highlightActiveNav();
+    initMobileNav();
     handleAnchorClicks();
     trackOutboundClicks();
+    trackAffiliateClicks();
+    trackWidgetEngagement();
     measureVitalsHints();
   }
 
-  // If you're using partials, inject them first so #year exists before we set it.
-  // If partials don't exist, initAll still runs.
   function initWithPartials() {
     var hasHeaderSlot = !!$("#site-header");
     var hasFooterSlot = !!$("#site-footer");
