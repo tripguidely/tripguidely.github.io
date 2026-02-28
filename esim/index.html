@@ -121,7 +121,7 @@
         "@id":"https://tripguidely.github.io/esim/#webpage",
         "url":"https://tripguidely.github.io/esim/",
         "name":"Travel eSIM Hub (2026): Avoid Roaming Fees, Pick Plans & Set Up Fast",
-        "description":"TripGuidely eSIM hub (2026): learn what an eSIM is, avoid roaming fees, choose the right plan, and follow step-by-step setup. Region guides + practical tips.",
+        "description":"TripGuidely eSIM hub (2026): learn what an eSIM is, avoid roaming fees, choose the right plan, and follow step-by-step setup. Region guides + practical travel tips.",
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
@@ -138,6 +138,16 @@
           {"@type":"Thing","name":"Mobile data"},
           {"@type":"Thing","name":"Roaming fees"},
           {"@type":"Thing","name":"Travel planning"}
+        ],
+        "hasPart":[
+          {"@type":"WebPage","@id":"https://tripguidely.github.io/esim/esim-setup-guide/#webpage","url":"https://tripguidely.github.io/esim/esim-setup-guide/","name":"eSIM Setup Guide (Step-by-Step)"},
+          {"@type":"WebPage","@id":"https://tripguidely.github.io/esim/esim-compatibility-check/#webpage","url":"https://tripguidely.github.io/esim/esim-compatibility-check/","name":"eSIM Compatibility Check (Is Your Phone Supported?)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-usa-2026/","name":"Best eSIM for USA (2026)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-canada-2026/","name":"Best eSIM for Canada (2026)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-uk-2026/","name":"Best eSIM for UK (2026)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-europe-2026/","name":"Best eSIM for Europe (2026)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-japan-2026/","name":"Best eSIM for Japan (2026)"},
+          {"@type":"WebPage","url":"https://tripguidely.github.io/esim/best-esim-for-italy-2026/","name":"Best eSIM for Italy (2026)"}
         ]
       },
       {
@@ -169,8 +179,13 @@
           },
           {
             "@type":"Question",
-            "name":"Can I keep my regular number while using a travel eSIM?",
-            "acceptedAnswer":{"@type":"Answer","text":"Yes in most cases. You can keep your primary SIM active for calls and texts while setting the eSIM as the data line."}
+            "name":"Where can I find setup instructions?",
+            "acceptedAnswer":{"@type":"Answer","text":"Use our eSIM Setup Guide to install on Wi-Fi, set the eSIM as your data line, and avoid roaming charges: https://tripguidely.github.io/esim/esim-setup-guide/."}
+          },
+          {
+            "@type":"Question",
+            "name":"How do I check eSIM compatibility?",
+            "acceptedAnswer":{"@type":"Answer","text":"Use our Compatibility Check page to confirm if your phone supports eSIM and where to look in settings: https://tripguidely.github.io/esim/esim-compatibility-check/."}
           }
         ]
       }
@@ -252,6 +267,32 @@
               </div>
             </section>
 
+            <!-- NEW: Two evergreen helpers (real pages) -->
+            <section aria-label="Start here">
+              <div class="section-title">
+                <h2>Start here</h2>
+                <p>Two quick pages that solve 90% of travel eSIM problems.</p>
+              </div>
+
+              <div class="links" role="list" aria-label="Start here links">
+                <a class="link-card" role="listitem" href="/esim/esim-compatibility-check/">
+                  <div>
+                    <strong>eSIM Compatibility Check</strong><br />
+                    <span>Is your phone supported? Where to look in settings</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/esim/esim-setup-guide/">
+                  <div>
+                    <strong>eSIM Setup Guide (Step-by-Step)</strong><br />
+                    <span>Install on Wi-Fi, set data line, avoid roaming charges</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+              </div>
+            </section>
+
             <!-- eSIM Search Widget -->
             <section id="esim-search" class="esim-section" aria-label="Search eSIM plans">
               <div class="section-title">
@@ -285,6 +326,30 @@
               </div>
 
               <div class="links" role="list" aria-label="eSIM guide links">
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-usa-2026/">
+                  <div>
+                    <strong>Best eSIM for USA (2026)</strong><br />
+                    <span>Road trip data strategy + coverage notes</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-canada-2026/">
+                  <div>
+                    <strong>Best eSIM for Canada (2026)</strong><br />
+                    <span>Coverage notes + plan sizing for visitors</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-uk-2026/">
+                  <div>
+                    <strong>Best eSIM for UK (2026)</strong><br />
+                    <span>City travel + day trip data strategy</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
                 <a class="link-card" role="listitem" href="/esim/best-esim-for-europe-2026/">
                   <div>
                     <strong>Best eSIM for Europe (2026)</strong><br />
@@ -301,18 +366,26 @@
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="/esim/best-esim-for-usa-2026/">
-                  <div>
-                    <strong>Best eSIM for USA (2026)</strong><br />
-                    <span>Road trip data strategy + coverage notes</span>
-                  </div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
                 <a class="link-card" role="listitem" href="/esim/best-esim-for-italy-2026/">
                   <div>
                     <strong>Best eSIM for Italy (2026)</strong><br />
                     <span>City-to-coast travel notes + plan sizing</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/esim/esim-compatibility-check/">
+                  <div>
+                    <strong>eSIM Compatibility Check</strong><br />
+                    <span>Confirm support in settings (iPhone + Android)</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/esim/esim-setup-guide/">
+                  <div>
+                    <strong>eSIM Setup Guide</strong><br />
+                    <span>Install on Wi-Fi, set data line, prevent roaming charges</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
@@ -321,36 +394,6 @@
               <div class="callout">
                 <b>Internal linking tip:</b> Each destination guide should link back to this hub
                 and to 1–2 sibling pages. That creates a clean crawl path and stronger topical authority.
-              </div>
-            </section>
-
-            <!-- NEW: Popular destinations (real pages only, no “coming next”) -->
-            <section aria-label="Popular destinations">
-              <div class="section-title">
-                <h2>Popular destinations</h2>
-                <p>Quick picks based on the guides we’ve published so far.</p>
-              </div>
-
-              <div class="links" role="list" aria-label="Popular destination links">
-                <a class="link-card" role="listitem" href="/esim/best-esim-for-usa-2026/">
-                  <div><strong>USA</strong><br /><span>Road trips + city travel</span></div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/esim/best-esim-for-europe-2026/">
-                  <div><strong>Europe</strong><br /><span>Multi-country plan strategy</span></div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/esim/best-esim-for-japan-2026/">
-                  <div><strong>Japan</strong><br /><span>Arrival-proof setup tips</span></div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/esim/best-esim-for-italy-2026/">
-                  <div><strong>Italy</strong><br /><span>City-to-coast travel</span></div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
               </div>
             </section>
 
@@ -430,6 +473,11 @@
                 <b>Most common mistake:</b> forgetting to switch the <strong>data line</strong> to the eSIM.
                 If data doesn’t work abroad, check your cellular settings first.
               </div>
+
+              <div class="actions" aria-label="Setup helper links">
+                <a class="btn" href="/esim/esim-setup-guide/"><span class="pill" aria-hidden="true">📋</span>Full setup guide</a>
+                <a class="btn" href="/esim/esim-compatibility-check/"><span class="pill" aria-hidden="true">✅</span>Compatibility check</a>
+              </div>
             </section>
 
             <section id="troubleshooting" aria-label="Troubleshooting">
@@ -493,6 +541,16 @@
                 <summary>When should I install the eSIM?</summary>
                 <p>Install it at home on Wi-Fi before your trip. That way you can troubleshoot calmly, not at the airport.</p>
               </details>
+
+              <details>
+                <summary>How do I check if my phone supports eSIM?</summary>
+                <p>Use our compatibility page to confirm support and where to look in settings: <a href="/esim/esim-compatibility-check/">eSIM Compatibility Check</a>.</p>
+              </details>
+
+              <details>
+                <summary>Where can I see full setup instructions?</summary>
+                <p>We have a step-by-step guide here: <a href="/esim/esim-setup-guide/">eSIM Setup Guide</a>.</p>
+              </details>
             </section>
 
             <section id="cta" aria-label="Primary CTA">
@@ -532,6 +590,38 @@
                 <div>
                   <strong>Airalo eSIM plans</strong><br />
                   <span>Pick a plan in minutes</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/esim-compatibility-check/">
+                <div>
+                  <strong>Compatibility check</strong><br />
+                  <span>Confirm eSIM support fast</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/esim-setup-guide/">
+                <div>
+                  <strong>Setup guide</strong><br />
+                  <span>Step-by-step install</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/best-esim-for-canada-2026/">
+                <div>
+                  <strong>Canada</strong><br />
+                  <span>Visitor-friendly plan sizing</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↗</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="/esim/best-esim-for-uk-2026/">
+                <div>
+                  <strong>United Kingdom</strong><br />
+                  <span>City travel + day trips</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
