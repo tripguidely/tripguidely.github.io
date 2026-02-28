@@ -21,6 +21,18 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="author" content="TripGuidely Editorial Team" />
 
+  <!-- Security (light CSP for GitHub Pages; adjust if needed) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:;
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline' https:;
+                 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://tp-em.com;
+                 connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com;
+                 frame-src https:;
+                 base-uri 'self';
+                 form-action 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <!-- Favicons (root) -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -78,7 +90,7 @@
     });
   </script>
 
-  <!-- JSON-LD (Article + FAQ + Breadcrumbs) -->
+  <!-- JSON-LD (Organization + Website + WebPage + Article + Breadcrumbs + FAQ) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -88,7 +100,11 @@
         "@id":"https://tripguidely.github.io/#organization",
         "name":"TripGuidely",
         "url":"https://tripguidely.github.io/",
-        "logo":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/tg-logo.png"}
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/tg-logo.png"
+        },
+        "sameAs":[]
       },
       {
         "@type":"WebSite",
@@ -107,21 +123,47 @@
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/esim-usa-hero.webp"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/esim-usa-hero.webp",
+          "width":1200,
+          "height":630
+        },
         "datePublished":"2026-02-27",
         "dateModified":"2026-02-27"
+      },
+      {
+        "@type":"Person",
+        "@id":"https://tripguidely.github.io/about/#editorial-team",
+        "name":"TripGuidely Editorial Team",
+        "url":"https://tripguidely.github.io/about/"
       },
       {
         "@type":"Article",
         "@id":"https://tripguidely.github.io/esim/best-esim-for-usa-2026/#article",
         "headline":"Best eSIM for USA (2026): Airalo Guide + Plans, Setup & Tips",
         "description":"Avoid roaming fees in the USA with an eSIM. Choose the right plan for cities and road trips, install fast, and get practical travel data tips.",
-        "image":["https://tripguidely.github.io/assets/images/esim-usa-hero.webp"],
+        "image":[
+          {
+            "@type":"ImageObject",
+            "url":"https://tripguidely.github.io/assets/images/esim-usa-hero.webp",
+            "width":1200,
+            "height":630
+          }
+        ],
         "mainEntityOfPage":{"@id":"https://tripguidely.github.io/esim/best-esim-for-usa-2026/#webpage"},
-        "author":{"@type":"Organization","name":"TripGuidely Editorial Team"},
+        "author":{"@id":"https://tripguidely.github.io/about/#editorial-team"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
         "datePublished":"2026-02-27",
-        "dateModified":"2026-02-27"
+        "dateModified":"2026-02-27",
+        "about":[
+          {"@type":"Thing","name":"eSIM"},
+          {"@type":"Place","name":"United States"},
+          {"@type":"Thing","name":"Mobile data"},
+          {"@type":"Thing","name":"Roaming fees"}
+        ],
+        "audience":{"@type":"Audience","audienceType":"Travelers"},
+        "isAccessibleForFree": true
       },
       {
         "@type":"BreadcrumbList",
@@ -154,7 +196,7 @@
           {
             "@type":"Question",
             "name":"Is my phone compatible with eSIM?",
-            "acceptedAnswer":{"@type":"Answer","text":"Most newer iPhones and many recent Android phones support eSIM. Check your device settings for an eSIM option or confirm your specific model supports eSIM."}
+            "acceptedAnswer":{"@type":"Answer","text":"Most newer iPhones and many recent Android phones support eSIM. Check your phone settings for an eSIM option or confirm your specific model supports eSIM."}
           }
         ]
       }
@@ -235,6 +277,20 @@
         <!-- Main content -->
         <article class="card content" aria-label="Best eSIM for USA content">
           <div class="pad">
+
+            <!-- Table of contents -->
+            <section aria-label="On this page">
+              <div class="callout">
+                <b>On this page:</b>
+                <ul class="checklist" style="margin-top:10px;">
+                  <li><a href="#why">Why use an eSIM in the USA</a></li>
+                  <li><a href="#plans">How to choose a plan</a></li>
+                  <li><a href="#setup">Setup steps</a></li>
+                  <li><a href="#best-practices">Best practices</a></li>
+                  <li><a href="#faq">FAQ</a></li>
+                </ul>
+              </div>
+            </section>
 
             <section aria-label="Quick answer">
               <div class="callout">
@@ -427,30 +483,7 @@
   <!-- Footer injected from /partials/footer.html -->
   <div id="site-footer"></div>
 
-  <!-- Affiliate click tracking (GA4) -->
-  <script>
-    (function(){
-      function trackAffClick(url){
-        try{
-          if(typeof gtag === "function"){
-            gtag('event','affiliate_click',{
-              affiliate_program: 'airalo',
-              page_type: 'guide',
-              destination: url
-            });
-          }
-        }catch(e){}
-      }
-      document.addEventListener('click', function(e){
-        var a = e.target && e.target.closest ? e.target.closest('a.js-aff') : null;
-        if(!a) return;
-        var url = a.getAttribute('href') || '';
-        if(!url) return;
-        trackAffClick(url);
-      }, {passive:true});
-    })();
-  </script>
-
+  <!-- Unified site script (partials + smooth anchors + outbound + affiliate tracking) -->
   <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
