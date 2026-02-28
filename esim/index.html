@@ -21,6 +21,18 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="author" content="TripGuidely Editorial Team" />
 
+  <!-- Security (light CSP for GitHub Pages; adjust if needed) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:;
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline' https:;
+                 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://tp-em.com https://tpemb.com;
+                 connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com;
+                 frame-src https:;
+                 base-uri 'self';
+                 form-action 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <!-- Favicons (root) -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -49,7 +61,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
-  <!-- Travelpayouts scripts can load from multiple hosts -->
+  <!-- Travelpayouts hosts -->
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
   <link rel="preconnect" href="https://tpemb.com" crossorigin />
@@ -59,6 +71,7 @@
   <link rel="preload" as="image" href="/assets/images/esim-hub-hero.webp" fetchpriority="high" />
   <link rel="preload" as="style" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="preload" as="script" href="/assets/js/site.js" />
 
   <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
   <meta name="travelpayouts-verification" content="492724" />
@@ -70,19 +83,19 @@
     data-wpfc-render="false"></script>
 
   <!-- GA4 (TripGuidely) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGM5GVXJX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGMM5GYXJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-0GGM5GVXJX', {
+    gtag('config', 'G-0GGMM5GYXJ', {
       anonymize_ip: true,
       allow_google_signals: false,
       allow_ad_personalization_signals: false
     });
   </script>
 
-  <!-- JSON-LD (Hub WebPage + Breadcrumbs + FAQ) -->
+  <!-- JSON-LD (Organization + Website + WebPage + Breadcrumbs + FAQ) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -92,7 +105,8 @@
         "@id":"https://tripguidely.github.io/#organization",
         "name":"TripGuidely",
         "url":"https://tripguidely.github.io/",
-        "logo":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/tg-logo.png"}
+        "logo":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/tg-logo.png"},
+        "sameAs":[]
       },
       {
         "@type":"WebSite",
@@ -111,9 +125,20 @@
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/esim-hub-hero.webp"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/esim-hub-hero.webp",
+          "width":1200,
+          "height":630
+        },
         "datePublished":"2026-02-27",
-        "dateModified":"2026-02-27"
+        "dateModified":"2026-02-27",
+        "about":[
+          {"@type":"Thing","name":"eSIM"},
+          {"@type":"Thing","name":"Mobile data"},
+          {"@type":"Thing","name":"Roaming fees"},
+          {"@type":"Thing","name":"Travel planning"}
+        ]
       },
       {
         "@type":"BreadcrumbList",
@@ -155,7 +180,6 @@
 
   <!-- Small widget styling hook (keeps audit clean) -->
   <style>
-    /* Keeps layout stable while widget loads */
     #tp-esim-widget{ min-height: 180px; }
     .tp-skeleton{
       height: 180px;
@@ -176,23 +200,11 @@
   </style>
 </head>
 
-<body>
+<body data-page="hub">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Header injected from /partials/header.html -->
   <div id="site-header"></div>
-
-  <!-- Optional slots if your header partial doesn't include them yet:
-       (Keep these ONLY if needed. If your partial already outputs scrim/drawer, delete these.) -->
-  <div class="nav-scrim" aria-hidden="true"></div>
-  <nav class="nav-drawer" aria-label="Primary (mobile)">
-    <ul>
-      <li><a href="/cruises/">Cruises</a></li>
-      <li><a href="/hotels/">Hotels</a></li>
-      <li><a href="/things-to-do/">Things to Do</a></li>
-      <li><a href="/car-rental/">Car Rental</a></li>
-    </ul>
-  </nav>
 
   <main id="main" class="main" role="main">
     <!-- HERO -->
@@ -220,22 +232,13 @@
           </p>
 
           <div class="actions" aria-label="Primary actions">
-            <a class="btn primary js-aff" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+            <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
               <span class="pill" aria-hidden="true">📶</span>
               Browse Airalo eSIM plans
             </a>
-            <a class="btn" href="#esim-search">
-              <span class="pill" aria-hidden="true">🔎</span>
-              Search plans
-            </a>
-            <a class="btn" href="#guides">
-              <span class="pill" aria-hidden="true">🗺</span>
-              Jump to guides
-            </a>
-            <a class="btn" href="#setup">
-              <span class="pill" aria-hidden="true">⚙️</span>
-              Setup steps
-            </a>
+            <a class="btn" href="#esim-search"><span class="pill" aria-hidden="true">🔎</span>Search plans</a>
+            <a class="btn" href="#guides"><span class="pill" aria-hidden="true">🗺</span>Jump to guides</a>
+            <a class="btn" href="#setup"><span class="pill" aria-hidden="true">⚙️</span>Setup steps</a>
           </div>
 
           <div class="trust">
@@ -265,7 +268,7 @@
 
             <section aria-label="Quick start">
               <div class="callout">
-                <b>Quick start:</b> If you’re traveling soon, pick a plan, install the eSIM on Wi-Fi, set the eSIM as your <strong>data line</strong>,
+                <b>Quick start:</b> Pick a plan, install the eSIM on Wi-Fi, set the eSIM as your <strong>data line</strong>,
                 and turn off <strong>data roaming</strong> on your primary SIM to avoid charges.
               </div>
             </section>
@@ -351,14 +354,13 @@
               <p>
                 An <strong>eSIM</strong> is a digital SIM built into your phone.
                 Instead of inserting a physical SIM card, you download a plan and activate it from your settings or a provider app.
-                For travelers, that means less time shopping for SIMs and more time actually arriving.
               </p>
 
               <ul class="checklist">
                 <li><b>No SIM swapping:</b> keep your main SIM in place.</li>
                 <li><b>Dual SIM flow:</b> primary SIM for calls/texts, eSIM for data.</li>
                 <li><b>Prepaid control:</b> data plan cost is predictable.</li>
-                <li><b>Install before travel:</b> setup on Wi-Fi, not in a taxi.</li>
+                <li><b>Install before travel:</b> setup on Wi-Fi, not at the airport.</li>
               </ul>
             </section>
 
@@ -388,12 +390,12 @@
               </div>
 
               <div class="callout" style="margin-top:14px;">
-                <b>Rule of thumb:</b> If you will use your phone for navigation all day plus social media,
-                size up your plan. If you’re mostly on hotel Wi-Fi, a smaller plan often works.
+                <b>Rule of thumb:</b> If you use navigation all day + socials, size up.
+                If you’re mostly on hotel Wi-Fi, a smaller plan often works.
               </div>
 
               <div class="actions" style="margin-top:14px;">
-                <a class="btn primary js-aff" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+                <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                   <span class="pill" aria-hidden="true">✅</span>
                   Compare eSIM plans
                 </a>
@@ -416,7 +418,7 @@
               </ol>
 
               <div class="callout" style="margin-top:14px;">
-                <b>Most common mistake:</b> people forget to switch the <strong>data line</strong> to the eSIM.
+                <b>Most common mistake:</b> forgetting to switch the <strong>data line</strong> to the eSIM.
                 If data doesn’t work abroad, check your cellular settings first.
               </div>
             </section>
@@ -456,26 +458,7 @@
 
               <div class="callout">
                 <b>Best for most travelers:</b> <strong>eSIM</strong> (fast, predictable, no SIM swap).
-                Roaming is convenient but can get expensive. Local SIM can be cheap but costs time and hassle.
-              </div>
-
-              <div class="mini-grid" aria-label="Comparison highlights" style="margin-top:14px;">
-                <div class="mini">
-                  <div class="mini-icon" aria-hidden="true">⚡</div>
-                  <div><b>eSIM</b><span>Fast setup, predictable cost</span></div>
-                </div>
-                <div class="mini">
-                  <div class="mini-icon" aria-hidden="true">💸</div>
-                  <div><b>Roaming</b><span>Easy, but can be pricey</span></div>
-                </div>
-                <div class="mini">
-                  <div class="mini-icon" aria-hidden="true">🏪</div>
-                  <div><b>Local SIM</b><span>Can be cheap, more effort</span></div>
-                </div>
-                <div class="mini">
-                  <div class="mini-icon" aria-hidden="true">🧩</div>
-                  <div><b>Wi-Fi only</b><span>Free, but fragile on the move</span></div>
-                </div>
+                Roaming is convenient but can get expensive. Local SIM can be cheap but costs time.
               </div>
             </section>
 
@@ -509,7 +492,7 @@
                 <p style="margin:0 0 12px;">
                   Pick a plan, install it on Wi-Fi, set the eSIM as your data line, and travel without roaming stress.
                 </p>
-                <a class="btn primary js-aff" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+                <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                   <span class="pill" aria-hidden="true">📶</span>
                   Browse Airalo plans
                 </a>
@@ -553,7 +536,7 @@
             </div>
 
             <div class="links" role="list">
-              <a class="link-card js-aff" role="listitem" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+              <a class="link-card js-aff" data-aff="airalo" role="listitem" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                 <div>
                   <strong>Airalo eSIM plans</strong><br />
                   <span>Pick a plan in minutes</span>
