@@ -37,6 +37,14 @@
     if (el) el.textContent = String(value);
   }
 
+  function getAttr(el, name) {
+    try {
+      return el && el.getAttribute ? el.getAttribute(name) : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   function parseURL(href) {
     // URL() not supported in very old browsers; fallback to anchor element.
     try {
@@ -106,6 +114,12 @@
     } catch (_) {
       WIN.scrollTo(0, y);
     }
+  }
+
+  function getPageType() {
+    // Reads <body data-page="guide|hub|...">. Default "unknown"
+    var p = getAttr(DOC.body, "data-page");
+    return p ? String(p) : "unknown";
   }
 
   /* ---------- GA helpers ---------- */
@@ -281,6 +295,9 @@
 
   function trackAffiliateClicks() {
     // Tracks clicks on explicit affiliate CTAs marked with .js-aff
+    // Supports:
+    // - <body data-page="guide|hub|...">
+    // - <a class="js-aff" data-aff="airalo" ...>
     on(DOC, "click", function (e) {
       e = e || WIN.event;
       var target = e.target || e.srcElement;
@@ -293,17 +310,28 @@
       var url = a.getAttribute("href") || a.href || "";
       if (!url) return;
 
-      var program = "affiliate";
-      try {
-        var u = parseURL(url);
-        var host = (u.hostname || "").toLowerCase();
-        if (host.indexOf("airalo") !== -1) program = "airalo";
-        else if (host.indexOf("tp-em.com") !== -1 || host.indexOf("tpemb.com") !== -1) program = "travelpayouts";
-      } catch (_) {}
+      var pageType = getPageType();
+
+      // prefer explicit program via data-aff
+      var program = getAttr(a, "data-aff");
+      if (program) program = String(program);
+
+      // fallback detection
+      if (!program) {
+        program = "affiliate";
+        try {
+          var u = parseURL(url);
+          var host = (u.hostname || "").toLowerCase();
+          if (host.indexOf("airalo") !== -1) program = "airalo";
+          else if (host.indexOf("tp-em.com") !== -1 || host.indexOf("tpemb.com") !== -1) program = "travelpayouts";
+        } catch (_) {}
+      }
 
       gtagEvent("affiliate_click", {
         affiliate_program: program,
-        destination: url
+        page_type: pageType,
+        destination: url,
+        transport_type: "beacon"
       });
     }, { passive: true });
   }
@@ -324,7 +352,7 @@
           fired = true;
           gtagEvent("widget_engagement", {
             widget: "tp_esim_search",
-            page_type: "hub"
+            page_type: getPageType()
           });
         }
       } catch (_) {}
@@ -356,7 +384,6 @@
 
     // Avoid double-binding if initAll runs again
     if (burger.getAttribute("data-nav-bound") === "1") {
-      // Still ensure aria-expanded matches state
       burger.setAttribute("aria-expanded", isOpen() ? "true" : "false");
       return;
     }
