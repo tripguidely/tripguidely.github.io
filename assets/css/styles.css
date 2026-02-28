@@ -1143,6 +1143,7 @@ details p{ margin:8px 0 0; }
    eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin — UPDATED FIXES
    - Removes weird blank space above widget (placeholder/skeleton)
    - Prevents overflow on mobile
+   - CWV guardrails: reserve space + isolate layout (CLS)
    ========================================================================== */
 
 #esim-search{
@@ -1159,12 +1160,34 @@ details p{ margin:8px 0 0; }
 
 #esim-search .card .pad{ padding: 14px; }
 
+/* Reserve height + isolate widget layout (CLS/CWV) */
 #tp-esim-widget{
   position: relative;
-  min-height: 170px; /* keeps CLS stable */
+  min-height: 320px;
+  contain: layout paint;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;  /* FIX: stop any internal overflow */
+  overflow: hidden;
+}
+
+/* Local skeleton (your own) */
+#tp-esim-widget .tp-skeleton{
+  height: 320px;
+  border-radius: 16px;
+  border: 1px dashed rgba(15,23,42,.18);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
+  background-size: 240px 100%;
+  animation: tpShimmer 1.2s linear infinite;
+}
+
+@keyframes tpShimmer{
+  0%{ background-position: 0 0; }
+  100%{ background-position: 240px 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #tp-esim-widget .tp-skeleton{ animation: none; }
 }
 
 /* FIX: if Travelpayouts injects a placeholder/skeleton above the real UI */
@@ -1258,7 +1281,8 @@ details p{ margin:8px 0 0; }
 }
 
 @media (max-width: 760px){
-  #tp-esim-widget{ min-height: 210px; }
+  #tp-esim-widget{ min-height: 280px; }
+  #tp-esim-widget .tp-skeleton{ height: 280px; }
   #esim-search .card .pad{ padding: 12px; }
   #tp-esim-widget input,
   #tp-esim-widget select,
