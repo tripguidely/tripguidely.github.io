@@ -1,9 +1,10 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready) — FINAL
+   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready) — UPDATED
    - Fixes mobile horizontal overflow (white strip on the right)
    - Fixes blank space above Travelpayouts/Airalo widget (placeholder/skeleton)
    - iOS-safe width handling (avoid 100vw side effects)
    - Premium dark header/footer + audit-friendly defaults
+   - UPDATED: Primary buttons now “brighter + more clickable” (higher contrast)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -36,6 +37,10 @@
 
   --turq:#12cfd0;
   --sand:#f4a261;
+
+  /* CTA (new) */
+  --cta1:#12cfd0;
+  --cta2:#0fb9ba;
 
   /* Shadows */
   --shadow: 0 18px 40px rgba(2,6,23,.10);
@@ -357,9 +362,7 @@ li{ margin: 6px 0; }
 
 /* Hide drawer/scrim by default (desktop) */
 .nav-drawer,
-.nav-scrim{
-  display:none;
-}
+.nav-scrim{ display:none; }
 
 /* 5.1) Mobile nav drawer + scrim ------------------------------------------ */
 @media (max-width: 760px){
@@ -372,9 +375,7 @@ li{ margin: 6px 0; }
   .burger{ display:inline-flex; }
 
   .nav-drawer,
-  .nav-scrim{
-    display:block;
-  }
+  .nav-scrim{ display:block; }
 
   .nav-drawer{
     position: fixed;
@@ -601,9 +602,21 @@ h1{
 }
 .btn:active{ transform: translateY(0px); }
 
+/* UPDATED: primary is now high-contrast + “clicky” */
 .btn.primary{
-  border-color: rgba(18,207,208,.42);
-  background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
+  background: linear-gradient(135deg, var(--cta1), var(--cta2));
+  color: #ffffff;
+  border: 1px solid rgba(18,207,208,.55);
+  box-shadow: 0 12px 30px rgba(18,207,208,.35);
+}
+.btn.primary:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(18,207,208,.45);
+  border-color: rgba(18,207,208,.70);
+}
+.btn.primary:active{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(18,207,208,.34);
 }
 
 .btn .pill{
@@ -617,6 +630,13 @@ h1{
   font-size:.95rem;
 }
 
+/* Pill contrast inside primary */
+.btn.primary .pill{
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.18);
+  color: #ffffff;
+}
+
 .btn-small{ padding:9px 12px; border-radius:12px; }
 
 @media (max-width: 760px){
@@ -627,8 +647,7 @@ h1{
     font-size: 18px;
   }
   .actions .btn.primary{
-    background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(14,165,233,.16));
-    box-shadow: 0 18px 44px rgba(18,207,208,.14);
+    box-shadow: 0 18px 44px rgba(18,207,208,.22);
   }
 }
 
@@ -1262,7 +1281,7 @@ details p{ margin:8px 0 0; }
   outline-offset: 2px !important;
 }
 
-/* Button */
+/* Button (kept premium + readable) */
 #tp-esim-widget button,
 #tp-esim-widget [type="submit"]{
   border: 1px solid rgba(18,207,208,.30) !important;
