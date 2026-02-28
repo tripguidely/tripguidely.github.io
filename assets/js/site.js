@@ -1,11 +1,11 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — UPDATED
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
-   - Mobile nav (burger + drawer + scrim + ESC)
+   - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging
    - Affiliate CTA tracking (.js-aff) centralized here (remove inline scripts)
-   - Widget engagement tracking (#esim-search)
+   - Widget engagement tracking (#esim-search) (fires once)
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Safe console usage + error guards
    ========================================================================== */
@@ -28,10 +28,6 @@
     else if (el.attachEvent) el.attachEvent("on" + evt, fn);
   }
 
-  function safeConsole() {
-    try { return WIN.console && WIN.console.log; } catch (_) { return null; }
-  }
-
   function trimStr(s) {
     return (s || "").replace(/^\s+|\s+$/g, "");
   }
@@ -41,16 +37,8 @@
     if (el) el.textContent = String(value);
   }
 
-  function isSameHost(url) {
-    try {
-      return url && url.hostname && url.hostname === WIN.location.hostname;
-    } catch (_) {
-      return true;
-    }
-  }
-
   function parseURL(href) {
-    // URL() is not supported in very old browsers; fallback to anchor element.
+    // URL() not supported in very old browsers; fallback to anchor element.
     try {
       return new URL(href, WIN.location.href);
     } catch (_) {
@@ -70,8 +58,15 @@
     }
   }
 
+  function isSameHost(urlObj) {
+    try {
+      return urlObj && urlObj.hostname && urlObj.hostname === WIN.location.hostname;
+    } catch (_) {
+      return true;
+    }
+  }
+
   function closestAnchor(el) {
-    // closest() fallback
     while (el && el !== DOC) {
       if (el.tagName && el.tagName.toLowerCase() === "a") return el;
       el = el.parentNode;
@@ -86,23 +81,21 @@
   }
 
   function getHeaderOffset() {
-    // Uses CSS var if available, fallback to actual header height
+    // Uses actual header height (most reliable with injected partials)
     var header = $(".header");
     var h = header ? header.offsetHeight : 0;
-    // If header is sticky, add a little breathing room
     return (h || 72) + 12;
   }
 
   function scrollToWithOffset(el) {
     if (!el) return;
+
+    var rect = el.getBoundingClientRect ? el.getBoundingClientRect() : null;
     var y = 0;
 
-    // compute absolute top
-    var rect = el.getBoundingClientRect ? el.getBoundingClientRect() : null;
     if (rect && typeof rect.top === "number") {
       y = rect.top + (WIN.pageYOffset || DOC.documentElement.scrollTop || 0);
     } else {
-      // fallback
       y = el.offsetTop || 0;
     }
 
@@ -127,32 +120,24 @@
   }
 
   function isAffiliateOrPartner(urlObj) {
-    // Customize this list over time
     var host = (urlObj.hostname || "").toLowerCase();
     if (!host) return false;
 
-    // Common travel / affiliate patterns (safe defaults)
     if (host.indexOf("tp-em.com") !== -1) return true;
     if (host.indexOf("tpemb.com") !== -1) return true;
     if (host.indexOf("travelpayouts") !== -1) return true;
 
-    // Add your partners here as you go:
+    // Add more partners later if needed
     // if (host.indexOf("booking.com") !== -1) return true;
-    // if (host.indexOf("agoda.com") !== -1) return true;
-    // if (host.indexOf("expedia.") !== -1) return true;
-
     return false;
   }
 
   function classifyOutbound(urlObj) {
-    // Simple categorization for GA4 reports
     var path = (urlObj.pathname || "").toLowerCase();
     var host = (urlObj.hostname || "").toLowerCase();
 
-    // Partner/affiliate
     if (isAffiliateOrPartner(urlObj)) return "affiliate";
 
-    // Travel intent guess (optional)
     if (host.indexOf("booking") !== -1 || host.indexOf("hotels") !== -1) return "booking";
     if (host.indexOf("cruise") !== -1) return "cruise";
     if (path.indexOf("car") !== -1 && path.indexOf("rent") !== -1) return "car_rental";
@@ -166,7 +151,6 @@
     var mount = $(targetSelector);
     if (!mount) { if (cb) cb(false); return; }
 
-    // fetch support check
     if (!WIN.fetch) { if (cb) cb(false); return; }
 
     WIN.fetch(url, { cache: "no-cache" })
@@ -188,10 +172,8 @@
   function setFooterDates() {
     var now = new Date();
 
-    // Year
     setTextById("year", now.getFullYear());
 
-    // Last updated (only if empty)
     var lastUpdatedEl = DOC.getElementById("lastUpdated");
     if (lastUpdatedEl) {
       var txt = trimStr(lastUpdatedEl.textContent);
@@ -200,50 +182,50 @@
   }
 
   function highlightActiveNav() {
-    // Sets aria-current="page" on best matching nav link
-    var nav = $(".nav");
-    if (!nav) return;
-
-    var links = nav.getElementsByTagName("a");
-    if (!links || !links.length) return;
-
+    // Apply aria-current="page" to best match in desktop nav + drawer
     var path = (WIN.location.pathname || "/").toLowerCase();
-
-    // Normalize: treat /index.html as /
     if (path.indexOf("/index.html") !== -1) path = path.replace("/index.html", "/");
 
-    var best = null;
-    var bestLen = -1;
+    function applyTo(containerSelector) {
+      var nav = $(containerSelector);
+      if (!nav) return;
 
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute("href") || "";
-      if (!href) continue;
+      var links = nav.getElementsByTagName("a");
+      if (!links || !links.length) return;
 
-      // Only internal paths
-      if (href.indexOf("http") === 0) continue;
+      var best = null;
+      var bestLen = -1;
 
-      // Normalize
-      var h = href.toLowerCase();
-      if (h === "/") {
-        if (path === "/") { best = links[i]; bestLen = 1; }
-        continue;
+      for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute("href") || "";
+        if (!href) continue;
+
+        // ignore external
+        if (href.indexOf("http") === 0) continue;
+
+        var h = href.toLowerCase();
+        if (h === "/") {
+          if (path === "/") { best = links[i]; bestLen = 1; }
+          continue;
+        }
+
+        if (h.charAt(0) === "/" && path.indexOf(h) === 0 && h.length > bestLen) {
+          best = links[i];
+          bestLen = h.length;
+        }
       }
 
-      // If current path starts with link path
-      if (h.charAt(0) === "/" && path.indexOf(h) === 0 && h.length > bestLen) {
-        best = links[i];
-        bestLen = h.length;
+      for (var j = 0; j < links.length; j++) {
+        if (links[j].getAttribute("aria-current") === "page") {
+          links[j].removeAttribute("aria-current");
+        }
       }
+
+      if (best) best.setAttribute("aria-current", "page");
     }
 
-    // Clear old
-    for (var j = 0; j < links.length; j++) {
-      if (links[j].getAttribute("aria-current") === "page") {
-        links[j].removeAttribute("aria-current");
-      }
-    }
-
-    if (best) best.setAttribute("aria-current", "page");
+    applyTo(".nav");
+    applyTo(".nav-drawer");
   }
 
   function handleAnchorClicks() {
@@ -257,7 +239,6 @@
       var href = a.getAttribute("href") || "";
       if (!href) return;
 
-      // Only same-page hashes like #featured
       if (href.charAt(0) === "#") {
         var id = href.slice(1);
         var el = id ? DOC.getElementById(id) : null;
@@ -278,19 +259,18 @@
       var a = getClosestLink(target);
       if (!a || !a.href) return;
 
-      // Ignore downloads/mailto/tel/javascript
       var rawHref = a.getAttribute("href") || "";
       var lower = rawHref.toLowerCase();
       if (lower.indexOf("mailto:") === 0) return;
       if (lower.indexOf("tel:") === 0) return;
       if (lower.indexOf("javascript:") === 0) return;
+      if (lower.indexOf("#") === 0) return;
 
       var urlObj = parseURL(a.href);
       if (isSameHost(urlObj)) return;
 
       var type = classifyOutbound(urlObj);
 
-      // Track
       gtagEvent("outbound_click", {
         event_category: type,
         event_label: urlObj.href,
@@ -313,7 +293,6 @@
       var url = a.getAttribute("href") || a.href || "";
       if (!url) return;
 
-      // Optional: detect program from URL
       var program = "affiliate";
       try {
         var u = parseURL(url);
@@ -336,17 +315,16 @@
     on(DOC, "click", function (e) {
       if (fired) return;
 
-      var el = DOC.getElementById("esim-search");
-      if (!el) return;
+      var wrap = DOC.getElementById("esim-search");
+      if (!wrap) return;
 
       var target = e.target || e.srcElement;
-
-      // closest() fallback-free check
       try {
-        if (el.contains(target)) {
+        if (wrap.contains(target)) {
           fired = true;
           gtagEvent("widget_engagement", {
-            widget: "tp_esim_search"
+            widget: "tp_esim_search",
+            page_type: "hub"
           });
         }
       } catch (_) {}
@@ -354,12 +332,17 @@
   }
 
   function initMobileNav() {
-    // Requires: .burger, .nav-scrim, .nav-drawer (in injected header)
-    var burger = DOC.querySelector(".burger");
+    // Important: header is injected. So we init AFTER injection (initAll).
+    // Also: use querySelector each init (no stale nodes).
+    var burger = $(".burger");
     if (!burger) return;
 
-    var scrim = DOC.querySelector(".nav-scrim");
-    var drawer = DOC.querySelector(".nav-drawer");
+    var scrim = $(".nav-scrim");
+    var drawer = $(".nav-drawer");
+
+    function isOpen() {
+      return DOC.body.classList.contains("nav-open");
+    }
 
     function setOpen(open) {
       if (open) {
@@ -371,9 +354,17 @@
       }
     }
 
+    // Avoid double-binding if initAll runs again
+    if (burger.getAttribute("data-nav-bound") === "1") {
+      // Still ensure aria-expanded matches state
+      burger.setAttribute("aria-expanded", isOpen() ? "true" : "false");
+      return;
+    }
+    burger.setAttribute("data-nav-bound", "1");
+
     on(burger, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
-      setOpen(!DOC.body.classList.contains("nav-open"));
+      setOpen(!isOpen());
     });
 
     if (scrim) {
@@ -384,11 +375,11 @@
     on(DOC, "keydown", function (e) {
       e = e || WIN.event;
       var key = e.key || e.keyCode;
-      if (!DOC.body.classList.contains("nav-open")) return;
+      if (!isOpen()) return;
       if (key === "Escape" || key === "Esc" || key === 27) setOpen(false);
     });
 
-    // Clicking a link inside drawer closes
+    // Clicking a link inside drawer closes (same page or navigation)
     if (drawer) {
       on(drawer, "click", function (e) {
         var target = e.target || e.srcElement;
@@ -396,10 +387,20 @@
         if (a) setOpen(false);
       });
     }
+
+    // Optional: clicking any normal in-page anchor while open closes too
+    on(DOC, "click", function (e) {
+      if (!isOpen()) return;
+      var target = e.target || e.srcElement;
+      var a = getClosestLink(target);
+      if (!a) return;
+
+      var href = a.getAttribute("href") || "";
+      if (href && href.charAt(0) === "#") setOpen(false);
+    });
   }
 
   function measureVitalsHints() {
-    // Lightweight “signals” you can use in GA4 (optional, safe)
     try {
       var t0 = (WIN.performance && WIN.performance.timing) ? WIN.performance.timing : null;
       if (!t0) return;
