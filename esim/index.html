@@ -178,26 +178,6 @@
   }
   </script>
 
-  <!-- Small widget styling hook (keeps audit clean) -->
-  <style>
-    #tp-esim-widget{ min-height: 180px; }
-    .tp-skeleton{
-      height: 180px;
-      border-radius: 16px;
-      border: 1px dashed rgba(15,23,42,.18);
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
-      background-size: 240px 100%;
-      animation: tpShimmer 1.2s linear infinite;
-    }
-    @keyframes tpShimmer{
-      0%{ background-position: 0 0; }
-      100%{ background-position: 240px 0; }
-    }
-    @media (prefers-reduced-motion: reduce){
-      .tp-skeleton{ animation: none; }
-    }
-  </style>
 </head>
 
 <body data-page="hub">
@@ -232,7 +212,7 @@
           </p>
 
           <div class="actions" aria-label="Primary actions">
-            <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+            <a class="btn primary js-aff" data-aff="airalo" data-pos="hero" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
               <span class="pill" aria-hidden="true">📶</span>
               Browse Airalo eSIM plans
             </a>
@@ -395,7 +375,7 @@
               </div>
 
               <div class="actions" style="margin-top:14px;">
-                <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+                <a class="btn primary js-aff" data-aff="airalo" data-pos="mid" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                   <span class="pill" aria-hidden="true">✅</span>
                   Compare eSIM plans
                 </a>
@@ -492,7 +472,7 @@
                 <p style="margin:0 0 12px;">
                   Pick a plan, install it on Wi-Fi, set the eSIM as your data line, and travel without roaming stress.
                 </p>
-                <a class="btn primary js-aff" data-aff="airalo" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+                <a class="btn primary js-aff" data-aff="airalo" data-pos="bottom" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                   <span class="pill" aria-hidden="true">📶</span>
                   Browse Airalo plans
                 </a>
@@ -536,7 +516,7 @@
             </div>
 
             <div class="links" role="list">
-              <a class="link-card js-aff" data-aff="airalo" role="listitem" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
+              <a class="link-card js-aff" data-aff="airalo" data-pos="sidebar" role="listitem" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
                 <div>
                   <strong>Airalo eSIM plans</strong><br />
                   <span>Pick a plan in minutes</span>
