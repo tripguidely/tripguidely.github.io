@@ -1,16 +1,10 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready) — UPDATED
-   - Fixes mobile horizontal overflow (white strip on the right)
-   - Fixes blank space above Travelpayouts/Airalo widget (placeholder/skeleton)
-   - iOS-safe width handling (avoid 100vw side effects)
-   - Premium dark header/footer + audit-friendly defaults
-   - Primary buttons brighter + more clickable
-   - Hero overlay opacity removed (hero image stays crisp)
-   - Hero panel + trust cards solid (no transparency)
-   - Hero tool (Trip.com-like) styles centralized here (no inline CSS)
-   - Hero image shows more (bigger hero + better crop)
-   - Hero tool can be FULL site width (Trip.com feeling)
-   - UPDATED: removes “On this page” section safely (optional helper class)
+   TripGuidely styles.css (OMG Agency Edition — eSIM Hub PERFECT)
+   - Hero = image + tool only (no hero-panel)
+   - No “On this page” (no forced hiding hacks needed)
+   - Mobile overflow hard-fixed (no 100vw traps)
+   - CWV: stable widget space, no CLS, safe contain/isolation
+   - Premium spacing + type rhythm + tighter cards
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -18,6 +12,9 @@
   /* Layout */
   --max:1120px;
   --header-h:72px;
+
+  /* Spacing */
+  --gutter:18px;
 
   /* Radii */
   --radius:18px;
@@ -59,17 +56,14 @@
   /* Premium helpers */
   --glow: 0 18px 50px rgba(18,207,208,.10);
 
-  /* Hero readability (no opacity overlays, use shadows) */
-  --hero-text-shadow: 0 12px 32px rgba(2,6,23,.26);
-  --hero-panel-shadow: 0 22px 60px rgba(2,6,23,.16);
-
-  /* Trip.com-like wide tool
-     Tip: set to var(--max) for “full site width” */
-  --tool-max: var(--max);
-
-  /* Hero image crop (tweak this) */
+  /* Hero */
+  --hero-min: 720px;           /* desktop */
+  --hero-min-m: 620px;         /* mobile */
   --hero-pos-x: 50%;
   --hero-pos-y: 35%;
+
+  /* Tool sizing */
+  --tool-max: var(--max);
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -124,6 +118,7 @@ summary:focus-visible{
   outline-offset:3px;
   border-radius:12px;
 }
+
 a:focus,
 button:focus,
 summary:focus{
@@ -174,13 +169,17 @@ summary:focus{
 .wrap{
   max-width:var(--max);
   margin:0 auto;
-  padding:0 18px;
+  padding:0 var(--gutter);
   width:100%;
   min-width:0;
 }
 
 @media (max-width: 760px){
-  .wrap{ padding:0 16px; }
+  :root{
+    --header-h:64px;
+    --gutter:16px;
+    --tool-max: 100%;
+  }
 }
 
 [id]{ scroll-margin-top: calc(var(--header-h) + 16px); }
@@ -198,16 +197,16 @@ ul, ol{
 }
 li{ margin: 6px 0; }
 
-/* Better default link underline behavior in content */
+/* Content links: clean underline */
 .content a{
-  text-decoration: none;
+  text-decoration:none;
   border-bottom: 1px solid rgba(18,207,208,.35);
 }
 .content a:hover{
   border-bottom-color: rgba(18,207,208,.75);
 }
 
-/* 5) Header / Nav (Desktop pill, Mobile drawer) --------------------------- */
+/* 5) Header / Nav ---------------------------------------------------------- */
 .header{
   position:sticky;
   top:0;
@@ -334,7 +333,7 @@ li{ margin: 6px 0; }
 /* CTA container */
 .header-cta{ display:flex; align-items:center; gap:10px; }
 
-/* Burger button (hidden desktop) */
+/* Burger */
 .burger{
   display:none;
   align-items:center;
@@ -370,14 +369,11 @@ li{ margin: 6px 0; }
 .burger span::before{ top:-6px; }
 .burger span::after{ top:6px; }
 
-/* Hide drawer/scrim by default (desktop) */
 .nav-drawer,
 .nav-scrim{ display:none; }
 
-/* 5.1) Mobile nav drawer + scrim ------------------------------------------ */
+/* Mobile nav drawer */
 @media (max-width: 760px){
-  :root{ --header-h: 64px; }
-
   .bar{ padding:10px 0; }
   .brand{ min-width:auto; }
   .header-cta{ display:none; }
@@ -486,31 +482,29 @@ li{ margin: 6px 0; }
 }
 .breadcrumbs a:hover{ border-bottom-color: rgba(15,23,42,.18); }
 
-/* Small meta line used in hero */
+/* Meta line */
 .meta{
   margin: 10px 0 0;
   color: var(--muted2);
   font-size: .95rem;
 }
 
-/* Optional helper: hide the old TOC card if you keep it in HTML by mistake */
-.toc,
-.on-this-page,
-[aria-label="On-page navigation"]{ display:none !important; }
-
-/* 7) Hero (full-bleed) ----------------------------------------------------- */
+/* 7) HERO (Tool only) ------------------------------------------------------ */
 .hero.hero-full{
   position:relative;
   overflow:hidden;
   border-bottom:1px solid var(--line);
   width:100%;
-  min-height: 680px; /* more image visible */
+  min-height: var(--hero-min);
+  display:flex;
+  align-items:stretch;
 }
 
 @media (max-width: 760px){
-  .hero.hero-full{ min-height: 600px; }
+  .hero.hero-full{ min-height: var(--hero-min-m); }
 }
 
+/* background */
 .hero-bg{ position:absolute; inset:0; }
 .hero-bg img{
   width:100%;
@@ -519,40 +513,119 @@ li{ margin: 6px 0; }
   object-position: var(--hero-pos-x) var(--hero-pos-y);
 }
 
-/* no opacity overlay. Keep the image crisp. */
+/* subtle top/bottom fade for readability without “muddy overlay” */
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:none;
   pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 60%),
+    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.14), transparent 62%),
+    linear-gradient(180deg, rgba(2,6,23,.36), rgba(2,6,23,.16) 34%, rgba(2,6,23,.10) 60%, rgba(2,6,23,.34));
+  opacity:.92;
 }
 
+/* tool container */
 .hero-inner{
   position:relative;
-  padding: 54px 0 40px;
-}
-
-/* Smaller panel so background is visible */
-.hero-panel{
-  max-width: 760px;
-  margin: 0 auto;
-  border:1px solid rgba(15,23,42,.10);
-  background: #ffffff;
-  border-radius: var(--radius2);
-  box-shadow: var(--hero-panel-shadow);
-  padding: 22px 20px;
+  width:100%;
+  padding: 56px 0 44px;
+  display:flex;
+  align-items:flex-end;
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 34px 0 22px; }
-  .hero-panel{ max-width: 100%; padding: 18px 16px; border-radius: 22px; margin: 0; }
+  .hero-inner{ padding: 38px 0 26px; }
 }
 
+/* 7.1) Hero tool ----------------------------------------------------------- */
+.hero-tool-wrap{
+  width: min(100%, var(--tool-max));
+  margin: 0 auto;
+}
+
+.hero-tool-title{
+  margin: 0 0 6px 0;
+  font-weight: 950;
+  letter-spacing: -0.2px;
+  font-size: 18px;
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 14px 30px rgba(0,0,0,.44);
+}
+
+.hero-tool-sub{
+  margin: 0 0 12px 0;
+  color: rgba(226,232,240,.86);
+  font-size: 14px;
+  text-shadow: 0 14px 30px rgba(0,0,0,.44);
+}
+
+/* shell */
+.hero-tool-shell{
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(255,255,255,.26);
+  border-radius: 22px;
+  box-shadow: 0 34px 90px rgba(2,6,23,.34);
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.hero-tool-pad{ padding: 16px 18px 18px; }
+
+@media (max-width: 760px){
+  .hero-tool-pad{ padding: 12px; }
+}
+
+/* Reserve space (CLS guard) */
+#tp-esim-widget-hero{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  contain: layout paint;
+  min-height: 120px;
+}
+
+/* Skeleton */
+#tp-esim-widget-hero .tp-skeleton{
+  height: 120px;
+  border-radius: 16px;
+  border: 1px dashed rgba(15,23,42,.18);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
+  background-size: 260px 100%;
+  animation: tpShimmerHero 1.15s linear infinite;
+}
+
+@keyframes tpShimmerHero{
+  0%{ background-position: 0 0; }
+  100%{ background-position: 260px 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #tp-esim-widget-hero .tp-skeleton{ animation: none; }
+}
+
+/* Widget iframe safety */
+#tp-esim-widget-hero iframe{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  border:0 !important;
+}
+
+@media (max-width: 760px){
+  #tp-esim-widget-hero{ min-height: 150px; }
+  #tp-esim-widget-hero .tp-skeleton{ height: 150px; }
+}
+
+/* 8) Intro card (below hero) ---------------------------------------------- */
 .kicker{
   font-size:.82rem;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color: rgba(15,23,42,.70);
+  color: rgba(15,23,42,.72);
   margin: 0 0 8px;
 }
 .kicker .dot{
@@ -571,7 +644,6 @@ h1{
   line-height:1.08;
   letter-spacing: var(--tracking-tight);
 }
-
 @media (max-width: 760px){
   h1{
     font-size: 34px;
@@ -584,9 +656,8 @@ h1{
   margin:0 0 14px;
   color:var(--muted);
   font-size:1.08rem;
-  max-width: 70ch;
+  max-width: 72ch;
 }
-
 @media (max-width: 760px){
   .lede{
     font-size: 17px;
@@ -594,93 +665,12 @@ h1{
   }
 }
 
-/* 7.1) Hero tool (Trip.com-like, wide) ------------------------------------ */
-.hero-tool-wrap{ margin-top: 18px; }
-
-.hero-tool-title{
-  margin: 0 0 6px 0;
-  font-weight: 900;
-  letter-spacing: -0.2px;
-  font-size: 18px;
-  color: #0f172a;
-}
-.hero-tool-sub{
-  margin: 0 0 12px 0;
-  color: #475569;
-  font-size: 14px;
-}
-
-/* Wide shell like Trip.com (full site width if --tool-max = var(--max)) */
-.hero-tool-shell{
-  width: min(100%, var(--tool-max));
-  margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid rgba(15,23,42,.10);
-  border-radius: 22px;
-  box-shadow: 0 30px 80px rgba(2,6,23,.22);
-  overflow: hidden;
-}
-
-/* If your tool is still inside .hero-panel, keep it neat */
-.hero-panel .hero-tool-shell{
-  width: 100%;
-  margin: 0;
-  box-shadow: 0 18px 44px rgba(2,6,23,.14);
-}
-
-.hero-tool-pad{ padding: 16px 18px 18px; }
-
-/* Reserve space to prevent layout shift while widget loads */
-#tp-esim-widget-hero{
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  contain: layout paint;
-  min-height: 110px; /* more “bar”, less “block” */
-}
-
-/* Skeleton for hero widget */
-#tp-esim-widget-hero .tp-skeleton{
-  height: 110px;
-  border-radius: 16px;
-  border: 1px dashed rgba(15,23,42,.18);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
-  background-size: 240px 100%;
-  animation: tpShimmerHero 1.2s linear infinite;
-}
-
-@keyframes tpShimmerHero{
-  0%{ background-position: 0 0; }
-  100%{ background-position: 240px 0; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #tp-esim-widget-hero .tp-skeleton{ animation: none; }
-}
-
-/* Make embedded iframes behave (hero) */
-#tp-esim-widget-hero iframe{
-  display:block !important;
-  width:100% !important;
-  max-width:100% !important;
-  border:0 !important;
-}
-
-@media (max-width: 760px){
-  :root{ --tool-max: 100%; }
-  .hero-tool-pad{ padding: 12px; }
-  #tp-esim-widget-hero{ min-height: 140px; }
-  #tp-esim-widget-hero .tp-skeleton{ height: 140px; }
-}
-
-/* 8) Buttons --------------------------------------------------------------- */
+/* 9) Buttons --------------------------------------------------------------- */
 .actions{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .btn{
@@ -699,8 +689,8 @@ h1{
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
   user-select:none;
   min-width:0;
+  -webkit-tap-highlight-color: transparent;
 }
-
 .btn:hover{
   transform: translateY(-1px);
   box-shadow: 0 18px 44px rgba(2,6,23,.12);
@@ -709,17 +699,16 @@ h1{
 }
 .btn:active{ transform: translateY(0px); }
 
-/* Primary */
 .btn.primary{
   background: linear-gradient(135deg, var(--cta1), var(--cta2));
-  color: #ffffff;
+  color:#ffffff;
   border: 1px solid rgba(18,207,208,.55);
   box-shadow: 0 12px 30px rgba(18,207,208,.35);
 }
 .btn.primary:hover{
   transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(18,207,208,.45);
-  border-color: rgba(18,207,208,.70);
+  box-shadow: 0 18px 42px rgba(18,207,208,.46);
+  border-color: rgba(18,207,208,.75);
 }
 .btn.primary:active{
   transform: translateY(-1px);
@@ -739,14 +728,12 @@ h1{
 .btn.primary .pill{
   border-color: rgba(255,255,255,.22);
   background: rgba(255,255,255,.18);
-  color: #ffffff;
+  color:#ffffff;
 }
-
-.btn-small{ padding:9px 12px; border-radius:12px; }
 
 @media (max-width: 760px){
   .actions .btn{
-    width: 100%;
+    width:100%;
     padding: 16px 16px;
     border-radius: 16px;
     font-size: 18px;
@@ -756,7 +743,7 @@ h1{
   }
 }
 
-/* 9) Trust row ------------------------------------------------------------- */
+/* 10) Trust row ------------------------------------------------------------ */
 .trust{
   display:grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -766,17 +753,16 @@ h1{
 @media (max-width: 860px){
   .trust{ grid-template-columns: 1fr; }
 }
-
 .trust-item{
   border:1px solid rgba(15,23,42,.10);
-  background:#ffffff; /* solid */
+  background:#ffffff;
   border-radius:16px;
   padding:12px;
 }
 .trust-item b{ display:block; color:var(--text); }
 .trust-item span{ color:var(--muted2); font-size:.93rem; }
 
-/* 10) Content layout ------------------------------------------------------- */
+/* 11) Content layout ------------------------------------------------------- */
 .grid{
   display:grid;
   grid-template-columns: 1fr 330px;
@@ -793,7 +779,7 @@ h1{
 
 .card{
   border:1px solid var(--line);
-  background: #ffffff;
+  background:#ffffff;
   border-radius:var(--radius);
   box-shadow: var(--shadow2);
   min-width:0;
@@ -806,6 +792,7 @@ h2{
   font-size: 1.22rem;
   letter-spacing: -.12px;
 }
+
 p{ margin: 0 0 12px; color:var(--muted); }
 .content p strong{ color:var(--text); }
 
@@ -816,6 +803,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   }
 }
 
+/* section title */
 .section-title{
   display:flex;
   align-items:baseline;
@@ -830,22 +818,18 @@ p{ margin: 0 0 12px; color:var(--muted); }
   font-size:.95rem;
 }
 
-/* 10.05) eSIM page utility classes ---------------------------------------- */
+/* eSIM utilities */
 .esim-section{ margin-top:16px; }
-.esim-card{ margin-top:14px; }
-.esim-pad{ padding:14px; }
-
 .aff-note{
   margin:10px 0 0;
   color:var(--muted2);
   font-size:.92rem;
 }
 .aff-note-lg{ font-size:.95rem; }
-
 .cta-title{ margin:0 0 6px; }
 .cta-copy{ margin:0 0 12px; }
 
-/* 10.1) Lists used in eSIM pages ------------------------------------------ */
+/* 12) Lists ---------------------------------------------------------------- */
 .checklist,
 .steps{
   margin: 10px 0 12px;
@@ -854,17 +838,17 @@ p{ margin: 0 0 12px; color:var(--muted); }
 }
 
 .checklist{
-  list-style: none;
-  padding-left: 0;
-  display: grid;
-  gap: 8px;
+  list-style:none;
+  padding-left:0;
+  display:grid;
+  gap:8px;
 }
 
 .checklist li{
   margin:0;
   padding-left: 28px;
-  position: relative;
-  line-height: 1.55;
+  position:relative;
+  line-height:1.55;
 }
 
 .checklist li::before{
@@ -872,9 +856,9 @@ p{ margin: 0 0 12px; color:var(--muted); }
   position:absolute;
   left:0;
   top: 9px;
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
+  width:14px;
+  height:14px;
+  border-radius:999px;
   background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
   border: 1px solid rgba(18,207,208,.26);
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
@@ -882,19 +866,19 @@ p{ margin: 0 0 12px; color:var(--muted); }
 
 .steps{
   counter-reset: step;
-  padding-left: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
+  padding-left:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
 }
 
 .steps li{
   margin:0;
   padding: 12px 12px 12px 52px;
   border: 1px solid rgba(15,23,42,.10);
-  background: #ffffff; /* solid */
-  border-radius: 16px;
-  position: relative;
+  background:#ffffff;
+  border-radius:16px;
+  position:relative;
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
 }
 
@@ -902,20 +886,20 @@ p{ margin: 0 0 12px; color:var(--muted); }
   counter-increment: step;
   content: counter(step);
   position:absolute;
-  left: 12px;
-  top: 12px;
-  width: 30px;
-  height: 30px;
-  border-radius: 14px;
+  left:12px;
+  top:12px;
+  width:30px;
+  height:30px;
+  border-radius:14px;
   display:grid;
   place-items:center;
-  font-weight: 950;
+  font-weight:950;
   color: rgba(15,23,42,.92);
   background: linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.12));
   border: 1px solid rgba(15,23,42,.10);
 }
 
-/* 11) Category cards ------------------------------------------------------- */
+/* 13) Category cards ------------------------------------------------------- */
 .cards{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -938,7 +922,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
     #ffffff;
   box-shadow: 0 10px 20px rgba(2,6,23,.06);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  min-height: 124px;
+  min-height:124px;
 }
 .cat:hover{
   transform: translateY(-1px);
@@ -955,7 +939,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   display:block;
   color:var(--muted);
   font-size:.97rem;
-  max-width: 56ch;
+  max-width:56ch;
 }
 
 .tag{
@@ -974,7 +958,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   display:inline-block;
 }
 
-/* 12) Link cards ----------------------------------------------------------- */
+/* 14) Link cards ----------------------------------------------------------- */
 .links{ display:grid; gap:10px; }
 
 .link-card{
@@ -1012,7 +996,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   font-weight:900;
 }
 
-/* 13) Callouts ------------------------------------------------------------- */
+/* 15) Callouts ------------------------------------------------------------- */
 .callout{
   margin: 12px 0 14px;
   padding:14px;
@@ -1023,7 +1007,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
 }
 .callout b{ color:var(--text); }
 
-/* 14) Mini grid ------------------------------------------------------------ */
+/* 16) Mini grid ------------------------------------------------------------ */
 .mini-grid{
   display:grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
@@ -1059,7 +1043,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
 .mini b{ display:block; color:var(--text); }
 .mini span{ display:block; color:var(--muted2); font-size:.93rem; }
 
-/* 15) FAQ details/summary -------------------------------------------------- */
+/* 17) FAQ details ---------------------------------------------------------- */
 details{
   border:1px solid rgba(15,23,42,.10);
   border-radius:16px;
@@ -1076,7 +1060,7 @@ summary{
 summary::-webkit-details-marker{ display:none; }
 details p{ margin:8px 0 0; }
 
-/* 16) Footer (DARK LUXE) --------------------------------------------------- */
+/* 18) Footer (DARK LUXE) --------------------------------------------------- */
 .footer{
   margin-top: 80px;
   padding: 78px 0 34px;
@@ -1109,7 +1093,6 @@ details p{ margin:8px 0 0; }
 }
 .footer a:hover{ color: rgba(255,255,255,.95); }
 
-/* Footer columns */
 .foot-grid{
   display:grid;
   grid-template-columns: 1.55fr repeat(3, minmax(190px, 1fr));
@@ -1240,9 +1223,9 @@ details p{ margin:8px 0 0; }
   line-height: 1.6;
 }
 
-/* 17) High-contrast mode improvements ------------------------------------- */
+/* 19) High-contrast mode --------------------------------------------------- */
 @media (prefers-contrast: more){
-  .btn, .card, .cat, .link-card, .hero-panel, details, .steps li{
+  .btn, .card, .cat, .link-card, details, .steps li{
     border-color: rgba(15,23,42,.26);
   }
   .footer{ border-top-color: rgba(255,255,255,.18); }
@@ -1250,28 +1233,11 @@ details p{ margin:8px 0 0; }
 }
 
 /* ==========================================================================
-   eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin — FINAL FIXES
-   - Removes blank space above widget (injected placeholder/skeleton)
-   - Prevents overflow on mobile
-   - CWV guardrails: reserve space + isolate layout (CLS)
-   - Supports both #tp-esim-widget (old section) and #tp-esim-widget-hero (hero)
+   Travelpayouts Widget Skin (Hero + optional old section)
+   - Prevents “blank space above widget”
+   - Mobile overflow guard
    ========================================================================== */
 
-#esim-search{
-  scroll-margin-top: calc(var(--header-h) + 16px);
-}
-
-#esim-search .card{
-  border: 1px solid rgba(15,23,42,.10);
-  background: #ffffff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow2), var(--glow);
-  overflow: hidden;
-}
-
-#esim-search .card .pad{ padding: 14px; }
-
-/* Shared widget base */
 #tp-esim-widget,
 #tp-esim-widget-hero{
   position: relative;
@@ -1281,30 +1247,10 @@ details p{ margin:8px 0 0; }
   overflow: hidden;
 }
 
-/* Reserve height + isolate widget layout (CLS/CWV) */
+/* Optional old widget height reserve */
 #tp-esim-widget{ min-height: 320px; }
 
-/* Local skeleton (old section) */
-#tp-esim-widget .tp-skeleton{
-  height: 320px;
-  border-radius: 16px;
-  border: 1px dashed rgba(15,23,42,.18);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
-  background-size: 240px 100%;
-  animation: tpShimmer 1.2s linear infinite;
-}
-
-@keyframes tpShimmer{
-  0%{ background-position: 0 0; }
-  100%{ background-position: 240px 0; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #tp-esim-widget .tp-skeleton{ animation: none; }
-}
-
-/* Kill injected placeholder blocks that create space */
+/* Kill injected placeholders that create spacing */
 #tp-esim-widget [class*="placeholder"],
 #tp-esim-widget [class*="skeleton"],
 #tp-esim-widget [class*="preload"],
@@ -1312,7 +1258,6 @@ details p{ margin:8px 0 0; }
 #tp-esim-widget [class*="dashed"],
 #tp-esim-widget [style*="dashed"],
 #tp-esim-widget-hero [class*="placeholder"],
-#tp-esim-widget-hero [class*="skeleton"],
 #tp-esim-widget-hero [class*="preload"],
 #tp-esim-widget-hero [class*="loading"],
 #tp-esim-widget-hero [class*="dashed"],
@@ -1325,29 +1270,6 @@ details p{ margin:8px 0 0; }
   border:0 !important;
 }
 
-/* Optional overlay on OLD widget only */
-#tp-esim-widget::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius: 16px;
-  pointer-events:none;
-  background:
-    radial-gradient(560px 220px at 12% 18%, rgba(18,207,208,.10), transparent 62%),
-    radial-gradient(560px 220px at 88% 30%, rgba(244,162,97,.10), transparent 64%),
-    linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.92));
-  border: 1px solid rgba(15,23,42,.08);
-  box-shadow: 0 16px 40px rgba(2,6,23,.08);
-}
-
-#tp-esim-widget > *,
-#tp-esim-widget-hero > *{
-  position: relative;
-  z-index: 1;
-  min-width: 0;
-}
-
-/* Make embedded iframes behave */
 #tp-esim-widget iframe,
 #tp-esim-widget-hero iframe{
   display:block !important;
@@ -1356,7 +1278,7 @@ details p{ margin:8px 0 0; }
   border:0 !important;
 }
 
-/* Inputs */
+/* Inputs inside widget */
 #tp-esim-widget input,
 #tp-esim-widget select,
 #tp-esim-widget button,
@@ -1378,6 +1300,7 @@ details p{ margin:8px 0 0; }
   box-shadow: 0 10px 22px rgba(2,6,23,.06) !important;
   max-width:100%;
 }
+
 #tp-esim-widget input:focus,
 #tp-esim-widget select:focus,
 #tp-esim-widget-hero input:focus,
@@ -1386,7 +1309,6 @@ details p{ margin:8px 0 0; }
   outline-offset: 2px !important;
 }
 
-/* Button */
 #tp-esim-widget button,
 #tp-esim-widget [type="submit"],
 #tp-esim-widget-hero button,
@@ -1417,8 +1339,6 @@ details p{ margin:8px 0 0; }
 
 @media (max-width: 760px){
   #tp-esim-widget{ min-height: 280px; }
-  #tp-esim-widget .tp-skeleton{ height: 280px; }
-  #esim-search .card .pad{ padding: 12px; }
   #tp-esim-widget input,
   #tp-esim-widget select,
   #tp-esim-widget button,
