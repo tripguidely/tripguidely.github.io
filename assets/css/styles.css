@@ -1350,3 +1350,28 @@ details p{ margin:8px 0 0; }
     border-radius: 18px !important;
   }
 }
+
+/* FIX: remove the big empty white area under the widget */
+:root{
+  --widget-min: 210px;      /* desktop reserve */
+  --widget-min-m: 240px;    /* mobile reserve */
+}
+
+#tp-esim-widget-hero{
+  min-height: var(--widget-min) !important;
+}
+
+/* IMPORTANT: don't force the iframe tall */
+#tp-esim-widget-hero iframe{
+  min-height: 0 !important;
+  height: 260px !important;     /* tune if needed */
+}
+
+@media (max-width: 760px){
+  #tp-esim-widget-hero{
+    min-height: var(--widget-min-m) !important;
+  }
+  #tp-esim-widget-hero iframe{
+    height: 300px !important;   /* tune if needed */
+  }
+}
