@@ -7,7 +7,7 @@
   <!-- Primary SEO -->
   <title>Travel eSIM Hub (2026): Avoid Roaming Fees, Pick Plans & Set Up Fast | TripGuidely</title>
   <meta name="description" content="TripGuidely eSIM hub (2026): learn what an eSIM is, avoid roaming fees, choose the right plan, and follow step-by-step setup. Region guides + practical travel tips." />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1,max-video-preview=-1" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/esim/" />
 
   <!-- International hints -->
@@ -194,7 +194,7 @@
   </script>
 </head>
 
-<body data-page="hub">
+<body data-page="hub" id="top">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Header injected from /partials/header.html -->
@@ -231,20 +231,38 @@
       <div class="wrap hero-inner">
         <div class="hero-panel">
           <p class="kicker"><span class="dot" aria-hidden="true"></span>Travel eSIM Hub (2026)</p>
-          <h1>Travel eSIMs: the smart way to avoid roaming fees</h1>
+          <h1>Find the right travel eSIM in seconds</h1>
           <p class="lede">
-            Learn what an eSIM is, how to pick the right plan for your route, and set it up before you fly.
-            Then use our region guides for quick decisions.
+            Avoid roaming fees with a prepaid eSIM. Search by destination, compare plans fast, then follow our setup steps before you fly.
           </p>
 
-          <div class="actions" aria-label="Primary actions">
+          <!-- ✅ TOOL IN HERO (Trip.com style) -->
+          <div class="hero-tool-wrap" aria-label="Hero eSIM plan search">
+            <p class="hero-tool-title">Search eSIM plans by destination</p>
+            <p class="hero-tool-sub">Type a country or region, then compare plans in seconds.</p>
+
+            <div class="hero-tool-card">
+              <div class="hero-tool-pad hero-tool-reserve">
+                <div id="tp-esim-widget-hero">
+                  <div class="tp-skeleton" aria-hidden="true"></div>
+                  <script async src="https://tpemb.com/content?trs=492724&shmarker=699178.esim-hub-hero&locale=en&powered_by=true&color_button=%2312CFD0&color_focused=%2312CFD0&secondary=%23FFFFFF&dark=%230F172A&light=%23FFFFFF&special=%23CBD5E1&border_radius=16&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+                </div>
+
+                <p class="aff-note" style="margin:10px 0 0 0;">
+                  Some results may contain affiliate links. If you purchase through them, TripGuidely may earn a commission at no extra cost to you.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions" aria-label="Primary actions" style="margin-top:16px;">
             <a class="btn primary js-aff" data-aff="airalo" data-pos="hero" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
               <span class="pill" aria-hidden="true">📶</span>
               Browse Airalo eSIM plans
             </a>
-            <a class="btn" href="#esim-search"><span class="pill" aria-hidden="true">🔎</span>Search plans</a>
+            <a class="btn" href="/esim/esim-compatibility-check/"><span class="pill" aria-hidden="true">✅</span>Compatibility check</a>
+            <a class="btn" href="/esim/esim-setup-guide/"><span class="pill" aria-hidden="true">⚙️</span>Setup guide</a>
             <a class="btn" href="#guides"><span class="pill" aria-hidden="true">🗺</span>Jump to guides</a>
-            <a class="btn" href="#setup"><span class="pill" aria-hidden="true">⚙️</span>Setup steps</a>
           </div>
 
           <div class="trust">
@@ -305,11 +323,11 @@
               </div>
             </section>
 
-            <!-- eSIM Search Widget -->
+            <!-- eSIM Search (anchor kept, tool moved to HERO) -->
             <section id="esim-search" class="esim-section" aria-label="Search eSIM plans">
               <div class="section-title">
                 <h2>Search eSIM plans by destination</h2>
-                <p>Type a country or region, then compare plans in seconds.</p>
+                <p>The search tool is now in the hero at the top for faster decisions.</p>
               </div>
 
               <div class="callout">
@@ -317,17 +335,8 @@
                 If you stay in one place, a <strong>country plan</strong> is usually best value.
               </div>
 
-              <div class="card esim-card">
-                <div class="pad esim-pad">
-                  <div id="tp-esim-widget">
-                    <div class="tp-skeleton" aria-hidden="true"></div>
-                    <script async src="https://tpemb.com/content?trs=492724&shmarker=699178.esim-hub&locale=en&powered_by=true&color_button=%2312CFD0&color_focused=%2312CFD0&secondary=%23FFFFFF&dark=%230F172A&light=%23FFFFFF&special=%23CBD5E1&border_radius=16&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
-                  </div>
-
-                  <p class="aff-note">
-                    Some results may contain affiliate links. If you purchase through them, TripGuidely may earn a commission at no extra cost to you.
-                  </p>
-                </div>
+              <div class="actions">
+                <a class="btn primary" href="#top"><span class="pill" aria-hidden="true">🔎</span>Go to the hero search</a>
               </div>
             </section>
 
@@ -673,9 +682,9 @@
               <a class="link-card" role="listitem" href="#esim-search">
                 <div>
                   <strong>Search plans</strong><br />
-                  <span>Find a destination fast</span>
+                  <span>Tool is in the hero now</span>
                 </div>
-                <div class="arrow" aria-hidden="true">↓</div>
+                <div class="arrow" aria-hidden="true">↑</div>
               </a>
 
               <a class="link-card" role="listitem" href="#setup">
