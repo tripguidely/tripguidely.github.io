@@ -41,16 +41,16 @@
   <meta property="og:title" content="Things to Do (2026): Tours, Attractions & Experiences | TripGuidely" />
   <meta property="og:description" content="Search experiences by destination. Compare fast, book smart, travel better." />
   <meta property="og:url" content="https://tripguidely.github.io/things-to-do/" />
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/things-to-do-og-1200x630.webp" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/things-to-do-travel-og-1200x630.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Travel activities collage with city skyline and tickets" />
+  <meta property="og:image:alt" content="Helicopter at sunset over a coastal city – TripGuidely Things to Do" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Things to Do (2026): Tours & Attractions | TripGuidely" />
   <meta name="twitter:description" content="Compare activities by destination and book with confidence." />
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/things-to-do-og-1200x630.webp" />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/things-to-do-travel-og-1200x630.webp" />
 
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
@@ -58,55 +58,20 @@
   <link rel="apple-touch-icon" sizes="48x48" href="/assets/images/favicon-48.png" />
 
   <!-- Performance hints -->
+  <link rel="preconnect" href="https://tp-em.com" crossorigin />
+  <link rel="dns-prefetch" href="//tp-em.com" />
   <link rel="preconnect" href="https://tpemb.com" crossorigin />
   <link rel="dns-prefetch" href="//tpemb.com" />
+
+  <!-- LCP hero preload -->
   <link rel="preload" as="image"
-    href="/assets/images/hero/things-to-do-hero-1600x900.webp"
-    imagesrcset="/assets/images/hero/things-to-do-hero-1200x675.webp 1200w, /assets/images/hero/things-to-do-hero-1600x900.webp 1600w, /assets/images/hero/things-to-do-hero-2400x1350.webp 2400w"
+    href="/assets/images/hero/things-to-do-travel-hero-1600x900.webp"
+    imagesrcset="/assets/images/hero/things-to-do-travel-hero-800x450.webp 800w, /assets/images/hero/things-to-do-travel-hero-1200x675.webp 1200w, /assets/images/hero/things-to-do-travel-hero-1600x900.webp 1600w, /assets/images/hero/things-to-do-travel-hero-2400x1350.webp 2400w"
     imagesizes="100vw"
     fetchpriority="high" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
-
-  <!-- Page-local widget reserve (CLS-safe) -->
-  <style>
-    :root{
-      --tours-widget-h: 240px;
-      --tours-widget-h-m: 320px;
-    }
-    #tp-tours-widget{
-      width:100%;
-      max-width:100%;
-      overflow:hidden;
-      contain: layout paint;
-      height: var(--tours-widget-h);
-      border-radius: 16px;
-    }
-    #tp-tours-widget iframe{
-      display:block !important;
-      width:100% !important;
-      height:100% !important;
-      max-width:100% !important;
-      border:0 !important;
-    }
-    @media (max-width:760px){
-      #tp-tours-widget{ height: var(--tours-widget-h-m); }
-    }
-    #tp-tours-widget [class*="placeholder"],
-    #tp-tours-widget [class*="skeleton"],
-    #tp-tours-widget [class*="loading"],
-    #tp-tours-widget [class*="preload"],
-    #tp-tours-widget [class*="dashed"],
-    #tp-tours-widget [style*="dashed"]{
-      display:none !important;
-      height:0 !important;
-      min-height:0 !important;
-      margin:0 !important;
-      padding:0 !important;
-      border:0 !important;
-    }
-  </style>
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -133,10 +98,12 @@
         "@id":"https://tripguidely.github.io/things-to-do/#webpage",
         "url":"https://tripguidely.github.io/things-to-do/",
         "name":"Things to Do (2026): Find Tours, Attractions & Experiences by Destination",
+        "description":"Browse tours, attractions, and experiences by destination. Compare top activities fast, then book confidently with practical planning tips.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "about":{"@id":"https://tripguidely.github.io/#org"},
         "inLanguage":"en",
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/og/things-to-do-og-1200x630.webp"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/og/things-to-do-travel-og-1200x630.webp"},
+        "datePublished":"2026-03-01",
         "dateModified":"2026-03-01"
       },
       {
@@ -145,6 +112,44 @@
         "itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://tripguidely.github.io/"},
           {"@type":"ListItem","position":2,"name":"Things to Do","item":"https://tripguidely.github.io/things-to-do/"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://tripguidely.github.io/things-to-do/#faqpage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"How do I choose the right activity for my trip?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Start with your time window and location cluster, then book your “must-do” attraction in an early slot. Keep one indoor backup for weather and leave buffer time for transit."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Should this hub force a destination?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No. A hub should stay neutral for discovery. Destination-specific pages are where you publish best-of lists, passes, itineraries, and timing strategies."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"USD or CAD for currency?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"USD is a global default. If most of your readers are Canada-first and the provider supports CAD reliably, CAD can reduce friction at checkout."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Do you use affiliate links?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Some results may contain affiliate links. If you book through them, TripGuidely may earn a commission at no extra cost to you."
+            }
+          }
         ]
       }
     ]
@@ -155,64 +160,16 @@
 <body data-page="hub">
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- If you use partials, keep these mounts.
-       If not using partials, you can paste your full header/footer instead. -->
-  <div id="site-header">
-    <!-- fallback header (optional): keep empty if partials inject -->
-    <header class="header" role="banner">
-      <div class="wrap">
-        <div class="bar">
-          <a class="brand" href="/" aria-label="TripGuidely home">
-            <span class="logo" aria-hidden="true">
-              <img src="/assets/images/brand/tg-mark-96.png" width="44" height="44" alt="" decoding="async" />
-            </span>
-            <span class="brand-name">TripGuidely</span>
-          </a>
-
-          <nav class="nav" aria-label="Primary navigation">
-            <ul>
-              <li><a href="/cruises/">Cruises</a></li>
-              <li><a href="/hotels/">Hotels</a></li>
-              <li><a href="/things-to-do/" aria-current="page">Things to Do</a></li>
-              <li><a href="/car-rental/">Car Rental</a></li>
-              <li><a href="/esim/">eSIM</a></li>
-            </ul>
-          </nav>
-
-          <div class="header-cta" aria-label="Featured">
-            <a class="btn" href="/featured/">
-              <span class="pill" aria-hidden="true">★</span>
-              Featured
-            </a>
-          </div>
-
-          <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-
-        <div class="nav-scrim" aria-hidden="true"></div>
-        <nav class="nav-drawer" aria-label="Mobile navigation">
-          <ul>
-            <li><a href="/cruises/">Cruises</a></li>
-            <li><a href="/hotels/">Hotels</a></li>
-            <li><a href="/things-to-do/" aria-current="page">Things to Do</a></li>
-            <li><a href="/car-rental/">Car Rental</a></li>
-            <li><a href="/esim/">eSIM</a></li>
-            <li><a href="/featured/">Featured</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  </div>
+  <!-- Partials mounts (header/footer injected by /assets/js/site.js) -->
+  <div id="site-header"></div>
 
   <main id="main" class="main" role="main">
-    <!-- HERO = clean, no widget -->
+    <!-- HERO -->
     <section class="hero hero-full" aria-label="Things to do hub hero">
       <div class="hero-bg" aria-hidden="true">
         <img
-          src="/assets/images/hero/things-to-do-hero-1600x900.webp"
-          srcset="/assets/images/hero/things-to-do-hero-1200x675.webp 1200w, /assets/images/hero/things-to-do-hero-1600x900.webp 1600w, /assets/images/hero/things-to-do-hero-2400x1350.webp 2400w"
+          src="/assets/images/hero/things-to-do-travel-hero-1600x900.webp"
+          srcset="/assets/images/hero/things-to-do-travel-hero-800x450.webp 800w, /assets/images/hero/things-to-do-travel-hero-1200x675.webp 1200w, /assets/images/hero/things-to-do-travel-hero-1600x900.webp 1600w, /assets/images/hero/things-to-do-travel-hero-2400x1350.webp 2400w"
           sizes="100vw"
           width="2400"
           height="1350"
@@ -225,26 +182,28 @@
 
       <div class="hero-inner">
         <div class="wrap">
-          <p class="kicker" style="color:rgba(255,255,255,.86); margin:0 0 10px;">
+          <p class="kicker">
             <span class="dot" aria-hidden="true"></span>Things to Do Hub
           </p>
-          <h1 style="color:rgba(255,255,255,.98); margin:0 0 10px;">Find the best activities, fast.</h1>
-          <p class="lede" style="color:rgba(226,232,240,.88); margin:0 0 16px; max-width:70ch;">
-            Search by destination, compare top experiences, then book with confidence. Practical tips included so your day actually flows.
+
+          <h1>Find tours, attractions, and experiences by destination</h1>
+
+          <p class="lede">
+            Compare top activities fast, book confidently, and keep your day flowing with practical timing and planning rules.
           </p>
 
-          <div class="actions" aria-label="Primary actions" style="margin-top:0;">
+          <div class="actions" aria-label="Primary actions">
             <a class="btn primary" href="#search">
               <span class="pill" aria-hidden="true">🔎</span>
               Search experiences
             </a>
-            <a class="btn" href="#cities">
+            <a class="btn" href="#destinations">
               <span class="pill" aria-hidden="true">🗺</span>
-              Browse city guides
+              Browse destinations
             </a>
           </div>
 
-          <p class="meta" style="color:rgba(226,232,240,.78); margin:14px 0 0;">
+          <p class="meta">
             Updated: <time datetime="2026-03-01">Mar 1, 2026</time>
           </p>
         </div>
@@ -258,58 +217,80 @@
         <span>Things to Do</span>
       </nav>
 
-      <!-- THE MONEY ZONE: widget in its own premium section -->
-      <section id="search" class="card pad" aria-label="Search tours and attractions">
+      <!-- Quick value + topical coverage -->
+      <section class="card pad intro" aria-label="What you’ll find on this page">
         <div class="section-title">
-          <h2 style="margin:0;">Search tours & attractions</h2>
-          <p style="margin:0;">Pick destination + category, compare, book.</p>
+          <h2>Plan better days, not longer research</h2>
+          <p>Use this hub to discover options, then jump into city guides for deeper itineraries.</p>
         </div>
 
-        <p class="lede" style="margin-top:6px;">
-          Start here. Keep the hub neutral, then your city pages can go deeper with “best-of” picks and itineraries.
+        <div class="trust" aria-label="Highlights">
+          <div class="trust-item">
+            <b>Compare quickly</b>
+            <span>Top options first, less scrolling.</span>
+          </div>
+          <div class="trust-item">
+            <b>Build an itinerary</b>
+            <span>Stack nearby activities to reduce transit time.</span>
+          </div>
+          <div class="trust-item">
+            <b>Book smarter</b>
+            <span>Timing rules to avoid peak-hour pain.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Tip:</b> Keep this hub neutral. Use destination pages to publish “best-of” picks, passes, and 1–3 day itineraries.
+        </div>
+      </section>
+
+      <!-- THE MONEY ZONE -->
+      <section id="search" class="card pad tours-search" aria-label="Search tours and attractions">
+        <div class="section-title">
+          <h2>Search tours & attractions</h2>
+          <p>Pick destination + category, compare, book.</p>
+        </div>
+
+        <p class="lede">
+          Start here if you already know where you’re going. If not, scroll to our destination guides below.
         </p>
 
-        <div class="hero-tool-shell" style="margin-top:12px;">
+        <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <div id="tp-tours-widget" aria-label="Tours & activities widget"></div>
+            <div id="tp-tours-widget" class="tp-widget" aria-label="Tours & activities widget"></div>
 
             <script
               async
               src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.things-hub&locale=en&category=3&amount=3&powered_by=true&campaign_id=137&promo_id=4497"
               charset="utf-8"></script>
 
-            <p class="aff-note aff-note-lg" style="margin-top:10px;">
+            <p class="aff-note aff-note-lg">
               Some results may contain affiliate links. If you purchase through them, TripGuidely may earn a commission at no extra cost to you.
             </p>
           </div>
         </div>
 
-        <div class="trust" aria-label="Why this works">
-          <div class="trust-item">
-            <b>Faster decisions</b>
-            <span>See the top options first.</span>
-          </div>
-          <div class="trust-item">
-            <b>Less wasted time</b>
-            <span>Plan by area, not guesswork.</span>
-          </div>
-          <div class="trust-item">
-            <b>Book smarter</b>
-            <span>Use peak-hour strategy.</span>
-          </div>
+        <div class="mini-grid" aria-label="Popular activity types">
+          <a class="pill-link" href="#categories">Museums</a>
+          <a class="pill-link" href="#categories">Tours</a>
+          <a class="pill-link" href="#categories">Day trips</a>
+          <a class="pill-link" href="#categories">Food & drink</a>
+          <a class="pill-link" href="#categories">Outdoor</a>
+          <a class="pill-link" href="#categories">Shows</a>
         </div>
       </section>
 
       <div class="grid">
         <article class="card pad content" aria-label="Things to do hub content">
 
-          <section id="cities" aria-label="Guides by city">
+          <!-- Destinations -->
+          <section id="destinations" aria-label="Guides by destination">
             <div class="section-title">
-              <h2>Guides by city</h2>
-              <p>Build your “done-for-you” itinerary.</p>
+              <h2>Guides by destination</h2>
+              <p>City guides built for timing, routes, and clear trade-offs.</p>
             </div>
 
-            <div class="cards" aria-label="City guides">
+            <div class="cards" aria-label="Destination guides">
               <a class="cat" href="/things-to-do/new-york/">
                 <strong>New York</strong>
                 <span>Iconic sights + neighborhoods + the best time slots.</span>
@@ -330,34 +311,104 @@
             </div>
 
             <div class="callout">
-              <b>Build order (fast wins):</b> create 6 city pages first (highest volume), then add “Attractions”, “Food”, “Tours” sub-pages per city.
+              <b>Build order (fast wins):</b> publish 6 destination pages first (highest demand), then add sub-pages per city:
+              <span class="nowrap">/attractions/</span>, <span class="nowrap">/tours/</span>, <span class="nowrap">/food/</span>, <span class="nowrap">/itinerary/</span>.
             </div>
           </section>
 
           <hr />
 
+          <!-- Categories (semantic coverage) -->
+          <section id="categories" aria-label="Activity categories">
+            <div class="section-title">
+              <h2>Popular activity categories</h2>
+              <p>Use these to match your trip style and time window.</p>
+            </div>
+
+            <div class="cards" aria-label="Categories">
+              <div class="cat cat-static">
+                <strong>Top attractions</strong>
+                <span>Book early slots for the “must-do” sights. Save flexible items for afternoon.</span>
+              </div>
+              <div class="cat cat-static">
+                <strong>Guided tours</strong>
+                <span>Best for orientation on day 1. Choose small-group when possible for pacing.</span>
+              </div>
+              <div class="cat cat-static">
+                <strong>Museums & culture</strong>
+                <span>Go midweek and off-peak. Reserve timed entries where available.</span>
+              </div>
+              <div class="cat cat-static">
+                <strong>Food & drink</strong>
+                <span>Pick one anchor reservation, then keep the rest walk-in for flexibility.</span>
+              </div>
+              <div class="cat cat-static">
+                <strong>Outdoor & scenic</strong>
+                <span>Check wind/rain. Always keep an indoor plan B in the same area.</span>
+              </div>
+              <div class="cat cat-static">
+                <strong>Day trips</strong>
+                <span>Protect your energy: don’t stack day trips back-to-back on a short stay.</span>
+              </div>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- How to choose -->
           <section id="how" aria-label="How to choose the right activity">
-            <h2>How to choose the right activity</h2>
+            <div class="section-title">
+              <h2>How to choose the right activity</h2>
+              <p>Simple rules that prevent itinerary chaos.</p>
+            </div>
+
             <ul class="checklist">
               <li><strong>Time window:</strong> match duration + transit so your day stays smooth.</li>
-              <li><strong>Peak hours:</strong> book early slots for the big attractions (weekends, holidays).</li>
+              <li><strong>Peak hours:</strong> book early slots for big attractions (weekends, holidays).</li>
               <li><strong>Weather backup:</strong> keep one indoor option as your plan B.</li>
-              <li><strong>Location cluster:</strong> stack activities that are close to avoid zig-zagging.</li>
+              <li><strong>Location cluster:</strong> stack nearby activities to avoid zig-zagging.</li>
+              <li><strong>Energy curve:</strong> do “standing + walking” early, save seated experiences later.</li>
             </ul>
 
             <details>
               <summary>What should I track with SubID?</summary>
               <p>
-                Keep one hub ID (ex: <code>things-hub</code>). When you add more widgets later, use different sub-IDs for
-                placements (hero, mid-page, footer) for clean attribution.
+                Keep one hub ID (example: <code>things-hub</code>). As you add more widgets or placements later, use different sub-IDs
+                (hero, mid-page, footer) for clean attribution and easier optimization.
               </p>
             </details>
           </section>
 
           <hr />
 
+          <!-- Editorial policy (trust) -->
+          <section id="methodology" aria-label="How TripGuidely organizes recommendations">
+            <div class="section-title">
+              <h2>How TripGuidely organizes recommendations</h2>
+              <p>Built for clarity: trade-offs, timing, and practical planning.</p>
+            </div>
+
+            <div class="callout">
+              <b>Our approach:</b> hubs help you decide fast; destination pages help you execute with itineraries, timing, and booking strategy.
+              We prioritize options that reduce wasted time (queues, long transits, poor time slots) and make the day flow.
+            </div>
+
+            <ul class="checklist">
+              <li><strong>Relevance:</strong> activities are grouped by destination and trip style.</li>
+              <li><strong>Timing:</strong> we highlight when to go to reduce lines and friction.</li>
+              <li><strong>Itinerary logic:</strong> we cluster by area so plans feel effortless.</li>
+              <li><strong>Updates:</strong> pages display last updated dates for transparency.</li>
+            </ul>
+          </section>
+
+          <hr />
+
+          <!-- FAQ -->
           <section id="faq" aria-label="FAQ">
-            <h2>FAQ</h2>
+            <div class="section-title">
+              <h2>FAQ</h2>
+              <p>Quick answers before you book.</p>
+            </div>
 
             <details>
               <summary>USD or CAD for currency?</summary>
@@ -369,9 +420,54 @@
             <details>
               <summary>Should this hub force a destination?</summary>
               <p>
-                No. A hub should stay neutral. The city pages are where you go hard on “best-of” lists, passes, and itineraries.
+                No. A hub should stay neutral. The destination pages are where you publish best-of lists, passes, and itineraries.
               </p>
             </details>
+
+            <details>
+              <summary>How many activities should I book in advance?</summary>
+              <p>
+                Book 1–2 “anchor” items first (top attraction or timed entry), then keep 1–2 flexible options.
+                This prevents your day from collapsing if transit or weather changes.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do you use affiliate links?</summary>
+              <p>
+                Some results may contain affiliate links. If you book through them, TripGuidely may earn a commission at no extra cost to you.
+              </p>
+            </details>
+          </section>
+
+          <hr />
+
+          <!-- Related hubs (internal linking + crawl paths) -->
+          <section aria-label="Related planning hubs">
+            <div class="section-title">
+              <h2>Keep planning</h2>
+              <p>Match activities with where you sleep and how you move.</p>
+            </div>
+
+            <div class="cards" aria-label="Related hubs">
+              <a class="cat" href="/hotels/">
+                <strong>Hotels hub</strong>
+                <span>Choose the right area fast (neighborhood fit, transit, budget).</span>
+                <span class="tag"><i aria-hidden="true"></i> Sleep smarter</span>
+              </a>
+
+              <a class="cat" href="/car-rental/">
+                <strong>Car rental hub</strong>
+                <span>Pickup strategy, insurance basics, and price comparisons.</span>
+                <span class="tag"><i aria-hidden="true"></i> Less surprise fees</span>
+              </a>
+
+              <a class="cat" href="/esim/">
+                <strong>eSIM hub</strong>
+                <span>Get data abroad and avoid roaming bills.</span>
+                <span class="tag"><i aria-hidden="true"></i> Setup in minutes</span>
+              </a>
+            </div>
           </section>
 
         </article>
@@ -391,10 +487,18 @@
               <span class="arrow" aria-hidden="true">→</span>
             </a>
 
-            <a class="link-card" href="#cities">
+            <a class="link-card" href="#destinations">
               <div>
-                <strong>City guides</strong>
-                <span>Itineraries + timing</span>
+                <strong>Destinations</strong>
+                <span>City guides + itineraries</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="link-card" href="#categories">
+              <div>
+                <strong>Categories</strong>
+                <span>Pick your trip style</span>
               </div>
               <span class="arrow" aria-hidden="true">→</span>
             </a>
@@ -407,20 +511,12 @@
               <span class="arrow" aria-hidden="true">→</span>
             </a>
 
-            <a class="link-card" href="/hotels/">
+            <a class="link-card" href="#faq">
               <div>
-                <strong>Hotels</strong>
-                <span>Choose the right area</span>
+                <strong>FAQ</strong>
+                <span>Before you book</span>
               </div>
-              <span class="arrow" aria-hidden="true">↗</span>
-            </a>
-
-            <a class="link-card" href="/car-rental/">
-              <div>
-                <strong>Car Rental</strong>
-                <span>Pickup + insurance tips</span>
-              </div>
-              <span class="arrow" aria-hidden="true">↗</span>
+              <span class="arrow" aria-hidden="true">→</span>
             </a>
           </div>
 
@@ -435,66 +531,7 @@
     </div>
   </main>
 
-  <div id="site-footer">
-    <footer class="footer" role="contentinfo">
-      <div class="wrap">
-        <div class="foot-grid">
-          <div class="foot-col">
-            <div class="foot-brand"><strong>TripGuidely</strong></div>
-            <p class="foot-desc">
-              Structured travel guides for cruises, hotels, and things to do. Clear decisions. Practical planning.
-            </p>
-            <p class="foot-meta">
-              © <span id="year">2026</span> TripGuidely
-              <span class="sep" aria-hidden="true">•</span>
-              Last updated: <span id="lastUpdated">2026-03-01</span>
-            </p>
-          </div>
-
-          <div class="foot-col">
-            <h3 class="foot-title">Explore</h3>
-            <ul class="foot-links">
-              <li><a href="/esim/">eSIM</a></li>
-              <li><a href="/cruises/">Cruises</a></li>
-              <li><a href="/hotels/">Hotels</a></li>
-              <li><a href="/things-to-do/" aria-current="page">Things to Do</a></li>
-              <li><a href="/car-rental/">Car Rental</a></li>
-            </ul>
-          </div>
-
-          <div class="foot-col">
-            <h3 class="foot-title">Company</h3>
-            <ul class="foot-links">
-              <li><a href="/about/">About</a></li>
-              <li><a href="/contact/">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="foot-col">
-            <h3 class="foot-title">Legal</h3>
-            <ul class="foot-links">
-              <li><a href="/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="/disclosure/">Disclosure</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="foot-bottom">
-          <p class="foot-disclaimer">
-            TripGuidely may earn commissions from qualifying bookings. This supports the site at no additional cost to you.
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="/about/">About</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="/contact/">Contact</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="/privacy-policy/">Privacy Policy</a>
-            <span class="sep" aria-hidden="true">•</span>
-            <a href="/disclosure/">Disclosure</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <div id="site-footer"></div>
 
   <!-- Your existing site.js (partials + nav + tracking + dates) -->
   <script src="/assets/js/site.js" defer></script>
