@@ -1,10 +1,13 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready) — UPDATED
+   TripGuidely styles.css (OMG Agency Edition - eSIM cluster ready) - UPDATED
    - Fixes mobile horizontal overflow (white strip on the right)
    - Fixes blank space above Travelpayouts/Airalo widget (placeholder/skeleton)
    - iOS-safe width handling (avoid 100vw side effects)
    - Premium dark header/footer + audit-friendly defaults
-   - UPDATED: Primary buttons now “brighter + more clickable” (higher contrast)
+   - Primary buttons brighter + more clickable
+   - UPDATED: Hero overlay opacity removed (hero image is now crisp)
+   - UPDATED: Hero panel + trust cards now solid (no transparency)
+   - UPDATED: Hero tool (Trip.com-like) styles moved here (no inline CSS)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -38,7 +41,7 @@
   --turq:#12cfd0;
   --sand:#f4a261;
 
-  /* CTA (new) */
+  /* CTA */
   --cta1:#12cfd0;
   --cta2:#0fb9ba;
 
@@ -51,9 +54,11 @@
   --focus: rgba(18,207,208,.50);
 
   /* Premium helpers */
-  --glass: rgba(255,255,255,.72);
-  --glass-strong: rgba(255,255,255,.84);
   --glow: 0 18px 50px rgba(18,207,208,.10);
+
+  /* Hero readability (no opacity overlays, use shadows) */
+  --hero-text-shadow: 0 12px 32px rgba(2,6,23,.26);
+  --hero-panel-shadow: 0 22px 60px rgba(2,6,23,.16);
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -66,7 +71,7 @@ html{
   text-size-adjust:100%;
   scroll-behavior:smooth;
   max-width:100%;
-  overflow-x:hidden; /* stop accidental horizontal scroll */
+  overflow-x:hidden;
 }
 
 body{
@@ -80,9 +85,8 @@ body{
   line-height:1.58;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-
   max-width:100%;
-  overflow-x:hidden; /* removes right-side white strip on mobile */
+  overflow-x:hidden;
 }
 
 img, picture, video, canvas, svg{
@@ -93,7 +97,7 @@ img, picture, video, canvas, svg{
 
 iframe{
   max-width:100%;
-  display:block; /* avoid inline gaps/overflow weirdness */
+  display:block;
   border:0;
 }
 
@@ -148,7 +152,7 @@ summary:focus{
   width:auto;
   height:auto;
   padding:10px 12px;
-  background:rgba(255,255,255,.96);
+  background:#ffffff;
   border:1px solid var(--line2);
   border-radius:12px;
   box-shadow: var(--shadow2);
@@ -160,8 +164,8 @@ summary:focus{
   max-width:var(--max);
   margin:0 auto;
   padding:0 18px;
-  width:100%;            /* iOS-safe */
-  min-width:0;           /* stop grid/flex overflow */
+  width:100%;
+  min-width:0;
 }
 
 @media (max-width: 760px){
@@ -383,7 +387,7 @@ li{ margin: 6px 0; }
     right: 0;
     top: var(--header-h);
     z-index: 60;
-    background: rgba(255,255,255,.96);
+    background: #ffffff;
     border-top: 1px solid rgba(255,255,255,.10);
     border-bottom: 1px solid rgba(15,23,42,.10);
     -webkit-backdrop-filter: blur(14px);
@@ -417,7 +421,7 @@ li{ margin: 6px 0; }
     padding: 14px 14px;
     border-radius: 16px;
     border: 1px solid rgba(15,23,42,.10);
-    background: rgba(255,255,255,.92);
+    background: #ffffff;
     box-shadow: 0 10px 22px rgba(2,6,23,.08);
     font-weight: 900;
     color: var(--text);
@@ -494,31 +498,30 @@ li{ margin: 6px 0; }
 .hero-bg{ position:absolute; inset:0; }
 .hero-bg img{ width:100%; height:100%; object-fit:cover; }
 
+/* UPDATED: no opacity overlay. Keep the image crisp. */
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 55%),
-    radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.18), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.92));
+  background: none;
 }
 
+/* Make the hero content readable without dimming image */
 .hero-inner{
   position:relative;
-  padding: 36px 0 30px;
+  padding: 42px 0 34px;
 }
 
 .hero-panel{
-  max-width: 790px;
+  max-width: 900px;
   border:1px solid rgba(15,23,42,.10);
-  background: rgba(255,255,255,.82);
+  background: #ffffff;             /* solid (no opacity) */
   border-radius: var(--radius2);
-  box-shadow: var(--shadow), var(--glow);
+  box-shadow: var(--hero-panel-shadow);
   padding: 22px 20px;
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 26px 0 22px; }
+  .hero-inner{ padding: 28px 0 24px; }
   .hero-panel{ padding: 18px 16px; border-radius: 22px; }
 }
 
@@ -568,6 +571,86 @@ h1{
   }
 }
 
+/* Optional: subtle text shadow for hero headings if you ever remove panel
+   Kept safe: it doesn't change image opacity. */
+.hero h1,
+.hero .lede{
+  text-shadow: none;
+}
+
+/* 7.1) Hero tool (Trip.com-like) ------------------------------------------ */
+.hero-tool-wrap{ margin-top: 18px; }
+
+.hero-tool-title{
+  margin: 0 0 10px 0;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  font-size: 18px;
+  color: #0f172a;
+}
+.hero-tool-sub{
+  margin: 0 0 14px 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.hero-tool-card{
+  background: #ffffff; /* solid */
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(2,6,23,.14);
+  overflow: hidden;
+}
+
+.hero-tool-pad{ padding: 14px; }
+
+/* Reserve space to prevent layout shift while widget loads */
+.hero-tool-reserve{ min-height: 128px; }
+
+/* If your HTML uses #tp-esim-widget-hero */
+#tp-esim-widget-hero{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  contain: layout paint;
+}
+
+/* Skeleton for hero widget */
+#tp-esim-widget-hero .tp-skeleton{
+  height: 128px;
+  border-radius: 16px;
+  border: 1px dashed rgba(15,23,42,.18);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
+  background-size: 240px 100%;
+  animation: tpShimmerHero 1.2s linear infinite;
+}
+
+@keyframes tpShimmerHero{
+  0%{ background-position: 0 0; }
+  100%{ background-position: 240px 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #tp-esim-widget-hero .tp-skeleton{ animation: none; }
+}
+
+/* Make embedded iframes behave (hero) */
+#tp-esim-widget-hero iframe{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  border:0 !important;
+}
+
+@media (max-width: 520px){
+  .hero-tool-title{ font-size: 16px; }
+  .hero-tool-pad{ padding: 12px; }
+  .hero-tool-reserve{ min-height: 140px; }
+  #tp-esim-widget-hero .tp-skeleton{ height: 140px; }
+}
+
 /* 8) Buttons --------------------------------------------------------------- */
 .actions{
   display:flex;
@@ -584,7 +667,7 @@ h1{
   padding:11px 14px;
   border-radius:14px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.92);
+  background:#ffffff;
   text-decoration:none;
   font-weight:850;
   color:var(--text);
@@ -597,12 +680,12 @@ h1{
 .btn:hover{
   transform: translateY(-1px);
   box-shadow: 0 18px 44px rgba(2,6,23,.12);
-  background:rgba(255,255,255,1);
+  background:#ffffff;
   border-color: rgba(15,23,42,.14);
 }
 .btn:active{ transform: translateY(0px); }
 
-/* UPDATED: primary is now high-contrast + “clicky” */
+/* Primary */
 .btn.primary{
   background: linear-gradient(135deg, var(--cta1), var(--cta2));
   color: #ffffff;
@@ -626,7 +709,7 @@ h1{
   display:grid;
   place-items:center;
   border:1px solid rgba(15,23,42,.10);
-  background:rgba(255,255,255,.80);
+  background:#ffffff;
   font-size:.95rem;
 }
 
@@ -664,7 +747,7 @@ h1{
 
 .trust-item{
   border:1px solid rgba(15,23,42,.10);
-  background:rgba(255,255,255,.78);
+  background:#ffffff; /* solid */
   border-radius:16px;
   padding:12px;
 }
@@ -688,7 +771,7 @@ h1{
 
 .card{
   border:1px solid var(--line);
-  background: rgba(255,255,255,.92);
+  background: #ffffff;
   border-radius:var(--radius);
   box-shadow: var(--shadow2);
   min-width:0;
@@ -726,7 +809,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   font-size:.95rem;
 }
 
-/* 10.05) eSIM page utility classes (used by your final HTML) --------------- */
+/* 10.05) eSIM page utility classes ---------------------------------------- */
 .esim-section{ margin-top:16px; }
 .esim-card{ margin-top:14px; }
 .esim-pad{ padding:14px; }
@@ -788,7 +871,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   margin:0;
   padding: 12px 12px 12px 52px;
   border: 1px solid rgba(15,23,42,.10);
-  background: rgba(255,255,255,.86);
+  background: #ffffff; /* solid */
   border-radius: 16px;
   position: relative;
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
@@ -831,7 +914,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   background:
     radial-gradient(420px 160px at 10% 10%, rgba(18,207,208,.12), transparent 60%),
     radial-gradient(420px 160px at 90% 30%, rgba(244,162,97,.12), transparent 60%),
-    rgba(255,255,255,.92);
+    #ffffff;
   box-shadow: 0 10px 20px rgba(2,6,23,.06);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   min-height: 124px;
@@ -882,14 +965,14 @@ p{ margin: 0 0 12px; color:var(--muted); }
   padding:12px;
   border-radius:16px;
   border:1px solid rgba(15,23,42,.10);
-  background:rgba(255,255,255,.88);
+  background:#ffffff;
   text-decoration:none;
   transition: background .15s ease, border-color .15s ease, transform .12s ease;
   min-width:0;
 }
 .link-card:hover{
   border-color:rgba(18,207,208,.28);
-  background:rgba(255,255,255,.98);
+  background:#ffffff;
   transform: translateY(-1px);
 }
 
@@ -936,7 +1019,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
   gap:12px;
   align-items:flex-start;
   border:1px solid rgba(15,23,42,.10);
-  background:rgba(255,255,255,.82);
+  background:#ffffff;
   border-radius:16px;
   padding:12px;
   min-width:0;
@@ -960,7 +1043,7 @@ p{ margin: 0 0 12px; color:var(--muted); }
 details{
   border:1px solid rgba(15,23,42,.10);
   border-radius:16px;
-  background:rgba(255,255,255,.86);
+  background:#ffffff;
   padding:12px;
   margin:10px 0;
 }
@@ -973,7 +1056,7 @@ summary{
 summary::-webkit-details-marker{ display:none; }
 details p{ margin:8px 0 0; }
 
-/* 16) Footer (DARK LUXE — OMG) -------------------------------------------- */
+/* 16) Footer (DARK LUXE) --------------------------------------------------- */
 .footer{
   margin-top: 80px;
   padding: 78px 0 34px;
@@ -1164,19 +1247,22 @@ details p{ margin:8px 0 0; }
 }
 
 /* ==========================================================================
-   eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin — FINAL FIXES
+   eSIM Widget (Travelpayouts / Airalo) - TripGuidely skin - FINAL FIXES
    - Removes blank space above widget (injected placeholder/skeleton)
    - Prevents overflow on mobile
    - CWV guardrails: reserve space + isolate layout (CLS)
+   - Supports both #tp-esim-widget (old section) and #tp-esim-widget-hero (hero)
    ========================================================================== */
 
+/* Keep anchor behavior */
 #esim-search{
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
+/* Optional: if you still render a widget card in #esim-search on other pages */
 #esim-search .card{
   border: 1px solid rgba(15,23,42,.10);
-  background: rgba(255,255,255,.92);
+  background: #ffffff;
   border-radius: var(--radius);
   box-shadow: var(--shadow2), var(--glow);
   overflow: hidden;
@@ -1184,15 +1270,18 @@ details p{ margin:8px 0 0; }
 
 #esim-search .card .pad{ padding: 14px; }
 
-/* Reserve height + isolate widget layout (CLS/CWV) */
-#tp-esim-widget{
+/* Shared widget base */
+#tp-esim-widget,
+#tp-esim-widget-hero{
   position: relative;
-  min-height: 320px;
   contain: layout paint;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
 }
+
+/* Reserve height + isolate widget layout (CLS/CWV) */
+#tp-esim-widget{ min-height: 320px; }
 
 /* Local skeleton (your own) */
 #tp-esim-widget .tp-skeleton{
@@ -1214,13 +1303,19 @@ details p{ margin:8px 0 0; }
   #tp-esim-widget .tp-skeleton{ animation: none; }
 }
 
-/* Kill injected placeholder blocks that create “mystery” space */
+/* Kill injected placeholder blocks that create space */
 #tp-esim-widget [class*="placeholder"],
 #tp-esim-widget [class*="skeleton"],
 #tp-esim-widget [class*="preload"],
 #tp-esim-widget [class*="loading"],
 #tp-esim-widget [class*="dashed"],
-#tp-esim-widget [style*="dashed"]{
+#tp-esim-widget [style*="dashed"],
+#tp-esim-widget-hero [class*="placeholder"],
+#tp-esim-widget-hero [class*="skeleton"],
+#tp-esim-widget-hero [class*="preload"],
+#tp-esim-widget-hero [class*="loading"],
+#tp-esim-widget-hero [class*="dashed"],
+#tp-esim-widget-hero [style*="dashed"]{
   display:none !important;
   height:0 !important;
   min-height:0 !important;
@@ -1229,7 +1324,8 @@ details p{ margin:8px 0 0; }
   border:0 !important;
 }
 
-/* Premium surface overlay (no layout gap) */
+/* Premium surface overlay on OLD widget only (safe). 
+   If you want zero overlays everywhere, you can delete this block. */
 #tp-esim-widget::before{
   content:"";
   position:absolute;
@@ -1244,14 +1340,16 @@ details p{ margin:8px 0 0; }
   box-shadow: 0 16px 40px rgba(2,6,23,.08);
 }
 
-#tp-esim-widget > *{
+#tp-esim-widget > *,
+#tp-esim-widget-hero > *{
   position: relative;
   z-index: 1;
   min-width: 0;
 }
 
 /* Make embedded iframes behave */
-#tp-esim-widget iframe{
+#tp-esim-widget iframe,
+#tp-esim-widget-hero iframe{
   display:block !important;
   width:100% !important;
   max-width:100% !important;
@@ -1261,29 +1359,38 @@ details p{ margin:8px 0 0; }
 /* Inputs */
 #tp-esim-widget input,
 #tp-esim-widget select,
-#tp-esim-widget button{
+#tp-esim-widget button,
+#tp-esim-widget-hero input,
+#tp-esim-widget-hero select,
+#tp-esim-widget-hero button{
   font: inherit !important;
   border-radius: 16px !important;
 }
 
 #tp-esim-widget input,
-#tp-esim-widget select{
+#tp-esim-widget select,
+#tp-esim-widget-hero input,
+#tp-esim-widget-hero select{
   border: 1px solid rgba(15,23,42,.12) !important;
-  background: rgba(255,255,255,.92) !important;
+  background: #ffffff !important;
   color: var(--text) !important;
   padding: 14px 14px !important;
   box-shadow: 0 10px 22px rgba(2,6,23,.06) !important;
   max-width:100%;
 }
 #tp-esim-widget input:focus,
-#tp-esim-widget select:focus{
+#tp-esim-widget select:focus,
+#tp-esim-widget-hero input:focus,
+#tp-esim-widget-hero select:focus{
   outline: 3px solid var(--focus) !important;
   outline-offset: 2px !important;
 }
 
-/* Button (kept premium + readable) */
+/* Button */
 #tp-esim-widget button,
-#tp-esim-widget [type="submit"]{
+#tp-esim-widget [type="submit"],
+#tp-esim-widget-hero button,
+#tp-esim-widget-hero [type="submit"]{
   border: 1px solid rgba(18,207,208,.30) !important;
   background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18)) !important;
   color: var(--text) !important;
@@ -1293,13 +1400,17 @@ details p{ margin:8px 0 0; }
   transition: transform .12s ease, box-shadow .12s ease !important;
 }
 #tp-esim-widget button:hover,
-#tp-esim-widget [type="submit"]:hover{
+#tp-esim-widget [type="submit"]:hover,
+#tp-esim-widget-hero button:hover,
+#tp-esim-widget-hero [type="submit"]:hover{
   transform: translateY(-1px) !important;
   box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
 }
 
 #tp-esim-widget [class*="powered"],
-#tp-esim-widget [class*="Powered"]{
+#tp-esim-widget [class*="Powered"],
+#tp-esim-widget-hero [class*="powered"],
+#tp-esim-widget-hero [class*="Powered"]{
   opacity: .72 !important;
   font-size: .9rem !important;
 }
@@ -1310,5 +1421,10 @@ details p{ margin:8px 0 0; }
   #esim-search .card .pad{ padding: 12px; }
   #tp-esim-widget input,
   #tp-esim-widget select,
-  #tp-esim-widget button{ border-radius: 18px !important; }
+  #tp-esim-widget button,
+  #tp-esim-widget-hero input,
+  #tp-esim-widget-hero select,
+  #tp-esim-widget-hero button{
+    border-radius: 18px !important;
+  }
 }
