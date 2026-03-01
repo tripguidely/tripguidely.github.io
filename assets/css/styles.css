@@ -8,6 +8,8 @@
    - UPDATED: Hero overlay opacity removed (hero image is now crisp)
    - UPDATED: Hero panel + trust cards now solid (no transparency)
    - UPDATED: Hero tool (Trip.com-like) styles moved here (no inline CSS)
+   - UPDATED: Hero image shows more (bigger hero + better crop)
+   - UPDATED: Hero tool can be FULL site width (Trip.com feeling)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -60,8 +62,13 @@
   --hero-text-shadow: 0 12px 32px rgba(2,6,23,.26);
   --hero-panel-shadow: 0 22px 60px rgba(2,6,23,.16);
 
-  /* Trip.com-like wide tool */
-  --tool-max: 980px;
+  /* Trip.com-like wide tool
+     Tip: set to var(--max) for “full site width” */
+  --tool-max: var(--max);
+
+  /* Hero image crop (tweak this) */
+  --hero-pos-x: 50%;
+  --hero-pos-y: 35%;
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -491,15 +498,20 @@ li{ margin: 6px 0; }
   overflow:hidden;
   border-bottom:1px solid var(--line);
   width:100%;
-  min-height: 560px; /* more visible image, Trip.com feel */
+  min-height: 680px; /* more image visible */
 }
 
 @media (max-width: 760px){
-  .hero.hero-full{ min-height: 520px; }
+  .hero.hero-full{ min-height: 600px; }
 }
 
 .hero-bg{ position:absolute; inset:0; }
-.hero-bg img{ width:100%; height:100%; object-fit:cover; }
+.hero-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position: var(--hero-pos-x) var(--hero-pos-y);
+}
 
 /* UPDATED: no opacity overlay. Keep the image crisp. */
 .hero-overlay{
@@ -512,21 +524,23 @@ li{ margin: 6px 0; }
 /* Make the hero content readable without dimming image */
 .hero-inner{
   position:relative;
-  padding: 48px 0 34px;
+  padding: 54px 0 40px;
 }
 
+/* Smaller panel so background is visible */
 .hero-panel{
-  max-width: 920px;
+  max-width: 760px;
+  margin: 0 auto;
   border:1px solid rgba(15,23,42,.10);
-  background: #ffffff;             /* solid (no opacity) */
+  background: #ffffff;
   border-radius: var(--radius2);
   box-shadow: var(--hero-panel-shadow);
   padding: 22px 20px;
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 30px 0 24px; }
-  .hero-panel{ padding: 18px 16px; border-radius: 22px; }
+  .hero-inner{ padding: 34px 0 22px; }
+  .hero-panel{ max-width: 100%; padding: 18px 16px; border-radius: 22px; margin: 0; }
 }
 
 .kicker{
@@ -597,17 +611,25 @@ h1{
   font-size: 14px;
 }
 
-/* Wide shell like Trip.com */
+/* Wide shell like Trip.com (full site width if --tool-max = var(--max)) */
 .hero-tool-shell{
   width: min(100%, var(--tool-max));
+  margin: 0 auto;
   background: #ffffff;
   border: 1px solid rgba(15,23,42,.10);
-  border-radius: 18px;
-  box-shadow: 0 22px 60px rgba(2,6,23,.18);
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(2,6,23,.22);
   overflow: hidden;
 }
 
-.hero-tool-pad{ padding: 14px 16px 16px; }
+/* If your tool is still inside .hero-panel, this helps it look wide anyway */
+.hero-panel .hero-tool-shell{
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 18px 44px rgba(2,6,23,.14);
+}
+
+.hero-tool-pad{ padding: 16px 18px 18px; }
 
 /* Reserve space to prevent layout shift while widget loads */
 #tp-esim-widget-hero{
@@ -616,12 +638,12 @@ h1{
   max-width: 100%;
   overflow: hidden;
   contain: layout paint;
-  min-height: 128px;
+  min-height: 110px; /* more “bar”, less “block” */
 }
 
 /* Skeleton for hero widget */
 #tp-esim-widget-hero .tp-skeleton{
-  height: 128px;
+  height: 110px;
   border-radius: 16px;
   border: 1px dashed rgba(15,23,42,.18);
   background:
