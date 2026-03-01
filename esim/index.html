@@ -47,7 +47,7 @@
   <meta property="og:description" content="Everything you need to know about travel eSIMs: how they work, how to choose plans, setup steps, and regional guides." />
   <meta property="og:url" content="https://tripguidely.github.io/esim/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/best-travel-esim-2026-og-1200x630.webp" />
-  <meta property="og:image:alt" content="Traveler in an airport lounge checking mobile connectivity near a window at golden hour" />
+  <meta property="og:image:alt" content="Traveler checking mobile connectivity while planning a trip (travel eSIM guide)" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -95,7 +95,7 @@
     });
   </script>
 
-  <!-- JSON-LD (Organization + Website + WebPage + Breadcrumbs + FAQ) -->
+  <!-- JSON-LD (Organization + Website + WebPage + Breadcrumbs + FAQ + HowTo + ItemList + Article) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -180,14 +180,67 @@
           {
             "@type":"Question",
             "name":"Where can I find setup instructions?",
-            "acceptedAnswer":{"@type":"Answer","text":"Use our eSIM Setup Guide to install on Wi-Fi, set the eSIM as your data line, and avoid roaming charges: https://tripguidely.github.io/esim/esim-setup-guide/."}
+            "acceptedAnswer":{"@type":"Answer","text":"Use our eSIM Setup Guide to install on Wi-Fi, set the eSIM as your data line, and avoid roaming charges."}
           },
           {
             "@type":"Question",
             "name":"How do I check eSIM compatibility?",
-            "acceptedAnswer":{"@type":"Answer","text":"Use our Compatibility Check page to confirm if your phone supports eSIM and where to look in settings: https://tripguidely.github.io/esim/esim-compatibility-check/."}
+            "acceptedAnswer":{"@type":"Answer","text":"Use our Compatibility Check page to confirm if your phone supports eSIM and where to look in settings."}
           }
         ]
+      },
+      {
+        "@type":"HowTo",
+        "@id":"https://tripguidely.github.io/esim/#howto",
+        "name":"How to install a travel eSIM (step by step)",
+        "description":"Quick steps to install a travel eSIM on Wi-Fi, select it as the data line, and prevent roaming charges.",
+        "totalTime":"PT10M",
+        "supply":[
+          {"@type":"HowToSupply","name":"Wi-Fi connection"},
+          {"@type":"HowToSupply","name":"eSIM plan (QR/manual/app install)"}
+        ],
+        "tool":[
+          {"@type":"HowToTool","name":"Smartphone with eSIM support"}
+        ],
+        "step":[
+          {"@type":"HowToStep","name":"Check compatibility","text":"Confirm your phone supports eSIM.","url":"https://tripguidely.github.io/esim/esim-compatibility-check/"},
+          {"@type":"HowToStep","name":"Buy a plan","text":"Choose a regional plan for multi-country trips or a country plan for one destination."},
+          {"@type":"HowToStep","name":"Install the eSIM","text":"Install using QR code, manual details, or the provider app on Wi-Fi."},
+          {"@type":"HowToStep","name":"Set data line","text":"Set the eSIM as your mobile data line in cellular settings."},
+          {"@type":"HowToStep","name":"Disable roaming on main SIM","text":"Turn off data roaming on your primary SIM to prevent charges."},
+          {"@type":"HowToStep","name":"Test before departure","text":"Verify the eSIM is installed and ready to activate abroad."}
+        ]
+      },
+      {
+        "@type":"ItemList",
+        "@id":"https://tripguidely.github.io/esim/#featured-guides",
+        "name":"Featured eSIM guides",
+        "itemListOrder":"https://schema.org/ItemListOrderAscending",
+        "numberOfItems":6,
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"url":"https://tripguidely.github.io/esim/best-esim-for-usa-2026/"},
+          {"@type":"ListItem","position":2,"url":"https://tripguidely.github.io/esim/best-esim-for-canada-2026/"},
+          {"@type":"ListItem","position":3,"url":"https://tripguidely.github.io/esim/best-esim-for-uk-2026/"},
+          {"@type":"ListItem","position":4,"url":"https://tripguidely.github.io/esim/best-esim-for-europe-2026/"},
+          {"@type":"ListItem","position":5,"url":"https://tripguidely.github.io/esim/best-esim-for-japan-2026/"},
+          {"@type":"ListItem","position":6,"url":"https://tripguidely.github.io/esim/best-esim-for-italy-2026/"}
+        ]
+      },
+      {
+        "@type":"Article",
+        "@id":"https://tripguidely.github.io/esim/#article",
+        "headline":"Travel eSIM Hub (2026): Avoid Roaming Fees, Pick Plans & Set Up Fast",
+        "description":"TripGuidely eSIM hub (2026): learn what an eSIM is, avoid roaming fees, choose the right plan, and follow step-by-step setup. Region guides + practical travel tips.",
+        "mainEntityOfPage":{"@id":"https://tripguidely.github.io/esim/#webpage"},
+        "author":{"@type":"Organization","name":"TripGuidely Editorial Team"},
+        "publisher":{"@id":"https://tripguidely.github.io/#organization"},
+        "image":[
+          "https://tripguidely.github.io/assets/images/og/best-travel-esim-2026-og-1200x630.webp",
+          "https://tripguidely.github.io/assets/images/hero/travel-esim-guide-2026-hero-1600x900.webp"
+        ],
+        "datePublished":"2026-02-27",
+        "dateModified":"2026-02-27",
+        "inLanguage":"en"
       }
     ]
   }
@@ -217,7 +270,7 @@
           />
           <img
             src="/assets/images/hero/travel-esim-guide-2026-hero-1600x900.webp"
-            alt=""
+            alt="Traveler planning a trip while checking mobile connectivity (travel eSIM guide)"
             width="1600"
             height="900"
             loading="eager"
@@ -236,26 +289,26 @@
             Avoid roaming fees with a prepaid eSIM. Search by destination, compare plans fast, then follow our setup steps before you fly.
           </p>
 
-          <!-- ✅ TOOL IN HERO (Trip.com style) -->
+          <!-- ✅ TOOL IN HERO (Trip.com style, wide shell) -->
           <div class="hero-tool-wrap" aria-label="Hero eSIM plan search">
             <p class="hero-tool-title">Search eSIM plans by destination</p>
             <p class="hero-tool-sub">Type a country or region, then compare plans in seconds.</p>
 
-            <div class="hero-tool-card">
-              <div class="hero-tool-pad hero-tool-reserve">
+            <div class="hero-tool-shell">
+              <div class="hero-tool-pad">
                 <div id="tp-esim-widget-hero">
                   <div class="tp-skeleton" aria-hidden="true"></div>
                   <script async src="https://tpemb.com/content?trs=492724&shmarker=699178.esim-hub-hero&locale=en&powered_by=true&color_button=%2312CFD0&color_focused=%2312CFD0&secondary=%23FFFFFF&dark=%230F172A&light=%23FFFFFF&special=%23CBD5E1&border_radius=16&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
                 </div>
 
-                <p class="aff-note" style="margin:10px 0 0 0;">
+                <p class="aff-note">
                   Some results may contain affiliate links. If you purchase through them, TripGuidely may earn a commission at no extra cost to you.
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="actions" aria-label="Primary actions" style="margin-top:16px;">
+          <div class="actions" aria-label="Primary actions">
             <a class="btn primary js-aff" data-aff="airalo" data-pos="hero" href="https://airalo.tpk.ro/wbHR1qbg" target="_blank" rel="nofollow sponsored noopener">
               <span class="pill" aria-hidden="true">📶</span>
               Browse Airalo eSIM plans
@@ -285,6 +338,25 @@
         <span aria-current="page">eSIM</span>
       </nav>
 
+      <!-- SEO/UX: Quick table of contents (helps users + internal jump links) -->
+      <section class="card" aria-label="On-page navigation">
+        <div class="pad">
+          <div class="section-title">
+            <h2>On this page</h2>
+            <p>Jump to the exact answer fast.</p>
+          </div>
+          <div class="links" role="list" aria-label="Table of contents">
+            <a class="link-card" role="listitem" href="#start-here"><div><strong>Start here</strong><br /><span>Compatibility + setup</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#guides"><div><strong>Featured guides</strong><br /><span>USA, Canada, UK, Europe, Japan, Italy</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#what-is-esim"><div><strong>What is an eSIM?</strong><br /><span>Simple explanation</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#choose"><div><strong>Choose a plan</strong><br /><span>Country vs regional</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#setup"><div><strong>Setup steps</strong><br /><span>Install on Wi-Fi</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#troubleshooting"><div><strong>Troubleshooting</strong><br /><span>Fast fixes</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+            <a class="link-card" role="listitem" href="#faq"><div><strong>FAQ</strong><br /><span>Quick answers</span></div><div class="arrow" aria-hidden="true">↓</div></a>
+          </div>
+        </div>
+      </section>
+
       <div class="grid">
         <!-- Main -->
         <article class="card content" aria-label="eSIM hub content">
@@ -297,8 +369,8 @@
               </div>
             </section>
 
-            <!-- NEW: Two evergreen helpers (real pages) -->
-            <section aria-label="Start here">
+            <!-- Start here -->
+            <section id="start-here" aria-label="Start here">
               <div class="section-title">
                 <h2>Start here</h2>
                 <p>Two quick pages that solve 90% of travel eSIM problems.</p>
@@ -327,7 +399,7 @@
             <section id="esim-search" class="esim-section" aria-label="Search eSIM plans">
               <div class="section-title">
                 <h2>Search eSIM plans by destination</h2>
-                <p>The search tool is now in the hero at the top for faster decisions.</p>
+                <p>The search tool is in the hero at the top for faster decisions.</p>
               </div>
 
               <div class="callout">
@@ -391,22 +463,6 @@
                   <div>
                     <strong>Best eSIM for Italy (2026)</strong><br />
                     <span>City-to-coast travel notes + plan sizing</span>
-                  </div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/esim/esim-compatibility-check/">
-                  <div>
-                    <strong>eSIM Compatibility Check</strong><br />
-                    <span>Confirm support in settings (iPhone + Android)</span>
-                  </div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/esim/esim-setup-guide/">
-                  <div>
-                    <strong>eSIM Setup Guide</strong><br />
-                    <span>Install on Wi-Fi, set data line, prevent roaming charges</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
@@ -679,28 +735,12 @@
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="#esim-search">
+              <a class="link-card" role="listitem" href="#top">
                 <div>
                   <strong>Search plans</strong><br />
-                  <span>Tool is in the hero now</span>
+                  <span>Go back to hero search</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↑</div>
-              </a>
-
-              <a class="link-card" role="listitem" href="#setup">
-                <div>
-                  <strong>Setup steps</strong><br />
-                  <span>Install before you fly</span>
-                </div>
-                <div class="arrow" aria-hidden="true">↓</div>
-              </a>
-
-              <a class="link-card" role="listitem" href="#troubleshooting">
-                <div>
-                  <strong>Troubleshooting</strong><br />
-                  <span>Fast fixes</span>
-                </div>
-                <div class="arrow" aria-hidden="true">↓</div>
               </a>
             </div>
           </div>
