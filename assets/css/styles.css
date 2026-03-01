@@ -1,15 +1,16 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition - eSIM cluster ready) - UPDATED
+   TripGuidely styles.css (OMG Agency Edition — eSIM cluster ready) — UPDATED
    - Fixes mobile horizontal overflow (white strip on the right)
    - Fixes blank space above Travelpayouts/Airalo widget (placeholder/skeleton)
    - iOS-safe width handling (avoid 100vw side effects)
    - Premium dark header/footer + audit-friendly defaults
    - Primary buttons brighter + more clickable
-   - UPDATED: Hero overlay opacity removed (hero image is now crisp)
-   - UPDATED: Hero panel + trust cards now solid (no transparency)
-   - UPDATED: Hero tool (Trip.com-like) styles moved here (no inline CSS)
-   - UPDATED: Hero image shows more (bigger hero + better crop)
-   - UPDATED: Hero tool can be FULL site width (Trip.com feeling)
+   - Hero overlay opacity removed (hero image stays crisp)
+   - Hero panel + trust cards solid (no transparency)
+   - Hero tool (Trip.com-like) styles centralized here (no inline CSS)
+   - Hero image shows more (bigger hero + better crop)
+   - Hero tool can be FULL site width (Trip.com feeling)
+   - UPDATED: removes “On this page” section safely (optional helper class)
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -492,6 +493,11 @@ li{ margin: 6px 0; }
   font-size: .95rem;
 }
 
+/* Optional helper: hide the old TOC card if you keep it in HTML by mistake */
+.toc,
+.on-this-page,
+[aria-label="On-page navigation"]{ display:none !important; }
+
 /* 7) Hero (full-bleed) ----------------------------------------------------- */
 .hero.hero-full{
   position:relative;
@@ -513,7 +519,7 @@ li{ margin: 6px 0; }
   object-position: var(--hero-pos-x) var(--hero-pos-y);
 }
 
-/* UPDATED: no opacity overlay. Keep the image crisp. */
+/* no opacity overlay. Keep the image crisp. */
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -521,7 +527,6 @@ li{ margin: 6px 0; }
   pointer-events:none;
 }
 
-/* Make the hero content readable without dimming image */
 .hero-inner{
   position:relative;
   padding: 54px 0 40px;
@@ -589,12 +594,6 @@ h1{
   }
 }
 
-/* Optional: if you ever remove the solid panel, this keeps readability */
-.hero h1,
-.hero .lede{
-  text-shadow: none;
-}
-
 /* 7.1) Hero tool (Trip.com-like, wide) ------------------------------------ */
 .hero-tool-wrap{ margin-top: 18px; }
 
@@ -622,7 +621,7 @@ h1{
   overflow: hidden;
 }
 
-/* If your tool is still inside .hero-panel, this helps it look wide anyway */
+/* If your tool is still inside .hero-panel, keep it neat */
 .hero-panel .hero-tool-shell{
   width: 100%;
   margin: 0;
@@ -1251,7 +1250,7 @@ details p{ margin:8px 0 0; }
 }
 
 /* ==========================================================================
-   eSIM Widget (Travelpayouts / Airalo) - TripGuidely skin - FINAL FIXES
+   eSIM Widget (Travelpayouts / Airalo) — TripGuidely skin — FINAL FIXES
    - Removes blank space above widget (injected placeholder/skeleton)
    - Prevents overflow on mobile
    - CWV guardrails: reserve space + isolate layout (CLS)
@@ -1326,7 +1325,7 @@ details p{ margin:8px 0 0; }
   border:0 !important;
 }
 
-/* Optional overlay on OLD widget only (safe). Remove if you want zero overlays. */
+/* Optional overlay on OLD widget only */
 #tp-esim-widget::before{
   content:"";
   position:absolute;
