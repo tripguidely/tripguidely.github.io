@@ -1,12 +1,11 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition — eSIM Hub PERFECT) — FIXED
-   - FIX: removes the ugly blank white dashed skeleton area in hero
-   - FIX: reserves stable widget height (no CLS) without visible placeholder
+   TripGuidely styles.css (OMG Agency Edition — eSIM Hub PERFECT) — UPDATED
    - Hero = image + tool only (no hero-panel)
-   - No “On this page”
+   - Tool is CENTERED nicely in hero (no “stuck to bottom” feeling)
+   - Removes the ugly blank white area under the widget
+   - Keeps layout stable: uses a realistic widget height (small, not 320/360)
    - Mobile overflow hard-fixed (no 100vw traps)
-   - CWV: stable widget space, contain/isolation
-   - Premium spacing + type rhythm + tighter cards
+   - CWV-friendly: contain/isolation + predictable widget box
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -67,9 +66,9 @@
   /* Tool sizing */
   --tool-max: var(--max);
 
-  /* Widget reserve heights (CLS-safe) */
-  --widget-min: 320px;         /* desktop */
-  --widget-min-m: 360px;       /* mobile */
+  /* IMPORTANT: widget height that matches reality (kills the big white block) */
+  --widget-h: 220px;           /* desktop */
+  --widget-h-m: 260px;         /* mobile */
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -527,27 +526,36 @@ li{ margin: 6px 0; }
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.14), transparent 62%),
-    linear-gradient(180deg, rgba(2,6,23,.34), rgba(2,6,23,.14) 34%, rgba(2,6,23,.08) 60%, rgba(2,6,23,.30));
+    linear-gradient(180deg, rgba(2,6,23,.30), rgba(2,6,23,.12) 34%, rgba(2,6,23,.06) 60%, rgba(2,6,23,.26));
   opacity:.92;
 }
 
-/* tool container */
+/* tool container (CENTER IT) */
 .hero-inner{
   position:relative;
   width:100%;
-  padding: 52px 0 40px;
+  padding: 56px 0 56px;
   display:flex;
-  align-items:flex-end;
+  align-items:center;          /* was flex-end */
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 34px 0 22px; }
+  .hero-inner{
+    padding: 40px 0 32px;
+    align-items:flex-end;      /* mobile feels better: tool sits lower */
+  }
 }
 
 /* 7.1) Hero tool ----------------------------------------------------------- */
 .hero-tool-wrap{
   width: min(100%, var(--tool-max));
   margin: 0 auto;
+  position: relative;
+}
+
+/* Make the tool feel visually centered even on huge screens */
+@media (min-width: 1200px){
+  .hero-tool-wrap{ transform: translateY(-10px); }
 }
 
 .hero-tool-title{
@@ -571,30 +579,39 @@ li{ margin: 6px 0; }
   background: rgba(255,255,255,.96);
   border: 1px solid rgba(255,255,255,.26);
   border-radius: 22px;
-  box-shadow: 0 34px 90px rgba(2,6,23,.34);
+  box-shadow:
+    0 34px 90px rgba(2,6,23,.34),
+    0 0 0 1px rgba(255,255,255,.10);
   overflow: hidden;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
-/* IMPORTANT: tighter pad so the widget looks centered (less “dead white”) */
-.hero-tool-pad{ padding: 14px 16px 16px; }
+/* tighter pad so the widget looks “alive” */
+.hero-tool-pad{ padding: 14px 16px 14px; }
 @media (max-width: 760px){
-  .hero-tool-pad{ padding: 12px 12px 14px; }
+  .hero-tool-pad{ padding: 12px 12px 12px; }
 }
 
-/* Reserve space (CLS guard) */
+/* Widget box: NO giant min-height, just a realistic height */
 #tp-esim-widget-hero{
   position: relative;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
   contain: layout paint;
-  min-height: var(--widget-min);
+  height: var(--widget-h);
+  border-radius: 16px;
 }
 
-/* FIX: kill the visible dashed “blank” skeleton completely */
-#tp-esim-widget-hero .tp-skeleton{
+/* Kill any skeleton/placeholder injected */
+#tp-esim-widget-hero .tp-skeleton,
+#tp-esim-widget-hero [class*="placeholder"],
+#tp-esim-widget-hero [class*="skeleton"],
+#tp-esim-widget-hero [class*="preload"],
+#tp-esim-widget-hero [class*="loading"],
+#tp-esim-widget-hero [class*="dashed"],
+#tp-esim-widget-hero [style*="dashed"]{
   display:none !important;
   height:0 !important;
   min-height:0 !important;
@@ -603,23 +620,18 @@ li{ margin: 6px 0; }
   border:0 !important;
 }
 
-/* Widget iframe safety + give it a sane minimum height */
+/* Widget iframe pinned to the box */
 #tp-esim-widget-hero iframe{
   display:block !important;
   width:100% !important;
+  height:100% !important;
   max-width:100% !important;
   border:0 !important;
-  min-height: var(--widget-min) !important;
 }
 
 /* Mobile */
 @media (max-width: 760px){
-  #tp-esim-widget-hero{
-    min-height: var(--widget-min-m);
-  }
-  #tp-esim-widget-hero iframe{
-    min-height: var(--widget-min-m) !important;
-  }
+  #tp-esim-widget-hero{ height: var(--widget-h-m); }
 }
 
 /* 8) Intro card (below hero) ---------------------------------------------- */
@@ -1236,7 +1248,6 @@ details p{ margin:8px 0 0; }
 
 /* ==========================================================================
    Travelpayouts Widget Skin (Hero + optional old section)
-   - Prevents “blank space above widget”
    - Mobile overflow guard
    ========================================================================== */
 
@@ -1251,26 +1262,6 @@ details p{ margin:8px 0 0; }
 
 /* Optional old widget height reserve */
 #tp-esim-widget{ min-height: 320px; }
-
-/* Kill injected placeholders that create spacing */
-#tp-esim-widget [class*="placeholder"],
-#tp-esim-widget [class*="skeleton"],
-#tp-esim-widget [class*="preload"],
-#tp-esim-widget [class*="loading"],
-#tp-esim-widget [class*="dashed"],
-#tp-esim-widget [style*="dashed"],
-#tp-esim-widget-hero [class*="placeholder"],
-#tp-esim-widget-hero [class*="preload"],
-#tp-esim-widget-hero [class*="loading"],
-#tp-esim-widget-hero [class*="dashed"],
-#tp-esim-widget-hero [style*="dashed"]{
-  display:none !important;
-  height:0 !important;
-  min-height:0 !important;
-  padding:0 !important;
-  margin:0 !important;
-  border:0 !important;
-}
 
 #tp-esim-widget iframe,
 #tp-esim-widget-hero iframe{
@@ -1348,30 +1339,5 @@ details p{ margin:8px 0 0; }
   #tp-esim-widget-hero select,
   #tp-esim-widget-hero button{
     border-radius: 18px !important;
-  }
-}
-
-/* FIX: remove the big empty white area under the widget */
-:root{
-  --widget-min: 210px;      /* desktop reserve */
-  --widget-min-m: 240px;    /* mobile reserve */
-}
-
-#tp-esim-widget-hero{
-  min-height: var(--widget-min) !important;
-}
-
-/* IMPORTANT: don't force the iframe tall */
-#tp-esim-widget-hero iframe{
-  min-height: 0 !important;
-  height: 260px !important;     /* tune if needed */
-}
-
-@media (max-width: 760px){
-  #tp-esim-widget-hero{
-    min-height: var(--widget-min-m) !important;
-  }
-  #tp-esim-widget-hero iframe{
-    height: 300px !important;   /* tune if needed */
   }
 }
