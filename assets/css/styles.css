@@ -59,6 +59,9 @@
   /* Hero readability (no opacity overlays, use shadows) */
   --hero-text-shadow: 0 12px 32px rgba(2,6,23,.26);
   --hero-panel-shadow: 0 22px 60px rgba(2,6,23,.16);
+
+  /* Trip.com-like wide tool */
+  --tool-max: 980px;
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -185,7 +188,6 @@ ul, ol{
   padding-left: 18px;
   color: var(--muted);
 }
-
 li{ margin: 6px 0; }
 
 /* Better default link underline behavior in content */
@@ -280,7 +282,6 @@ li{ margin: 6px 0; }
   flex-wrap:wrap;
   justify-content:flex-end;
   align-items:center;
-
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
   border-radius: 999px;
@@ -296,14 +297,12 @@ li{ margin: 6px 0; }
   border-radius: 999px;
   transition: transform .14s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
 }
-
 .nav a:hover{
   color: rgba(255,255,255,.95);
   background: rgba(255,255,255,.08);
   box-shadow: 0 14px 34px rgba(0,0,0,.28);
   transform: translateY(-1px);
 }
-
 .nav a[aria-current="page"]{
   color: rgba(255,255,255,.96);
   background: linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
@@ -312,7 +311,6 @@ li{ margin: 6px 0; }
     0 18px 44px rgba(0,0,0,.30),
     0 0 0 4px rgba(18,207,208,.14);
 }
-
 .nav a[aria-current="page"]::after{
   content:"";
   position:absolute;
@@ -493,6 +491,11 @@ li{ margin: 6px 0; }
   overflow:hidden;
   border-bottom:1px solid var(--line);
   width:100%;
+  min-height: 560px; /* more visible image, Trip.com feel */
+}
+
+@media (max-width: 760px){
+  .hero.hero-full{ min-height: 520px; }
 }
 
 .hero-bg{ position:absolute; inset:0; }
@@ -502,17 +505,18 @@ li{ margin: 6px 0; }
 .hero-overlay{
   position:absolute;
   inset:0;
-  background: none;
+  background:none;
+  pointer-events:none;
 }
 
 /* Make the hero content readable without dimming image */
 .hero-inner{
   position:relative;
-  padding: 42px 0 34px;
+  padding: 48px 0 34px;
 }
 
 .hero-panel{
-  max-width: 900px;
+  max-width: 920px;
   border:1px solid rgba(15,23,42,.10);
   background: #ffffff;             /* solid (no opacity) */
   border-radius: var(--radius2);
@@ -521,7 +525,7 @@ li{ margin: 6px 0; }
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 28px 0 24px; }
+  .hero-inner{ padding: 30px 0 24px; }
   .hero-panel{ padding: 18px 16px; border-radius: 22px; }
 }
 
@@ -561,7 +565,7 @@ h1{
   margin:0 0 14px;
   color:var(--muted);
   font-size:1.08rem;
-  max-width: 65ch;
+  max-width: 70ch;
 }
 
 @media (max-width: 760px){
@@ -571,49 +575,48 @@ h1{
   }
 }
 
-/* Optional: subtle text shadow for hero headings if you ever remove panel
-   Kept safe: it doesn't change image opacity. */
+/* Optional: if you ever remove the solid panel, this keeps readability */
 .hero h1,
 .hero .lede{
   text-shadow: none;
 }
 
-/* 7.1) Hero tool (Trip.com-like) ------------------------------------------ */
+/* 7.1) Hero tool (Trip.com-like, wide) ------------------------------------ */
 .hero-tool-wrap{ margin-top: 18px; }
 
 .hero-tool-title{
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   font-weight: 900;
   letter-spacing: -0.2px;
   font-size: 18px;
   color: #0f172a;
 }
 .hero-tool-sub{
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
   color: #475569;
   font-size: 14px;
 }
 
-.hero-tool-card{
-  background: #ffffff; /* solid */
+/* Wide shell like Trip.com */
+.hero-tool-shell{
+  width: min(100%, var(--tool-max));
+  background: #ffffff;
   border: 1px solid rgba(15,23,42,.10);
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(2,6,23,.14);
+  box-shadow: 0 22px 60px rgba(2,6,23,.18);
   overflow: hidden;
 }
 
-.hero-tool-pad{ padding: 14px; }
+.hero-tool-pad{ padding: 14px 16px 16px; }
 
 /* Reserve space to prevent layout shift while widget loads */
-.hero-tool-reserve{ min-height: 128px; }
-
-/* If your HTML uses #tp-esim-widget-hero */
 #tp-esim-widget-hero{
   position: relative;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
   contain: layout paint;
+  min-height: 128px;
 }
 
 /* Skeleton for hero widget */
@@ -644,10 +647,10 @@ h1{
   border:0 !important;
 }
 
-@media (max-width: 520px){
-  .hero-tool-title{ font-size: 16px; }
+@media (max-width: 760px){
+  :root{ --tool-max: 100%; }
   .hero-tool-pad{ padding: 12px; }
-  .hero-tool-reserve{ min-height: 140px; }
+  #tp-esim-widget-hero{ min-height: 140px; }
   #tp-esim-widget-hero .tp-skeleton{ height: 140px; }
 }
 
@@ -712,8 +715,6 @@ h1{
   background:#ffffff;
   font-size:.95rem;
 }
-
-/* Pill contrast inside primary */
 .btn.primary .pill{
   border-color: rgba(255,255,255,.22);
   background: rgba(255,255,255,.18);
@@ -787,7 +788,6 @@ h2{
 p{ margin: 0 0 12px; color:var(--muted); }
 .content p strong{ color:var(--text); }
 
-/* Sidebar sticky (desktop only) */
 @media (min-width: 981px){
   aside.card{
     position: sticky;
@@ -930,7 +930,6 @@ p{ margin: 0 0 12px; color:var(--muted); }
   font-size:1.02rem;
   margin-bottom:6px;
 }
-
 .cat span{
   display:block;
   color:var(--muted);
@@ -1089,6 +1088,7 @@ details p{ margin:8px 0 0; }
 }
 .footer a:hover{ color: rgba(255,255,255,.95); }
 
+/* Footer columns */
 .foot-grid{
   display:grid;
   grid-template-columns: 1.55fr repeat(3, minmax(190px, 1fr));
@@ -1096,7 +1096,6 @@ details p{ margin:8px 0 0; }
   padding-bottom: 26px;
   align-items:start;
 }
-
 @media (max-width: 980px){
   .foot-grid{ grid-template-columns: 1fr 1fr; }
 }
@@ -1113,7 +1112,6 @@ details p{ margin:8px 0 0; }
   color: rgba(255,255,255,.96);
   font-size: 1.14rem;
 }
-
 .foot-brand strong::before{
   content:"";
   width: 10px;
@@ -1173,7 +1171,6 @@ details p{ margin:8px 0 0; }
   font-weight: 750;
   transition: transform .14s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
 }
-
 .foot-links a::before{
   content:"";
   width: 9px;
@@ -1185,7 +1182,6 @@ details p{ margin:8px 0 0; }
   flex:0 0 auto;
   transform: translateY(1px);
 }
-
 .foot-links a::after{
   content:"";
   position:absolute;
@@ -1200,7 +1196,6 @@ details p{ margin:8px 0 0; }
   transform-origin:left;
   transition: opacity .16s ease, transform .16s ease;
 }
-
 .foot-links a:hover{
   background: rgba(255,255,255,.06);
   box-shadow: 0 14px 34px rgba(0,0,0,.28);
@@ -1212,29 +1207,16 @@ details p{ margin:8px 0 0; }
   transform: scaleX(1);
 }
 
-.foot-links a:focus-visible{
-  background: rgba(255,255,255,.07);
-  box-shadow:
-    0 0 0 3px rgba(18,207,208,.30),
-    0 14px 34px rgba(0,0,0,.28);
-}
-
 .foot-bottom{
   border-top: 1px solid rgba(255,255,255,.08);
   padding-top: 18px;
 }
-
 .foot-disclaimer{
   margin:0;
   max-width: 92ch;
   color: rgba(148,163,184,.95);
   font-size: .88rem;
   line-height: 1.6;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-  border-radius: 0;
 }
 
 /* 17) High-contrast mode improvements ------------------------------------- */
@@ -1254,12 +1236,10 @@ details p{ margin:8px 0 0; }
    - Supports both #tp-esim-widget (old section) and #tp-esim-widget-hero (hero)
    ========================================================================== */
 
-/* Keep anchor behavior */
 #esim-search{
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
-/* Optional: if you still render a widget card in #esim-search on other pages */
 #esim-search .card{
   border: 1px solid rgba(15,23,42,.10);
   background: #ffffff;
@@ -1283,7 +1263,7 @@ details p{ margin:8px 0 0; }
 /* Reserve height + isolate widget layout (CLS/CWV) */
 #tp-esim-widget{ min-height: 320px; }
 
-/* Local skeleton (your own) */
+/* Local skeleton (old section) */
 #tp-esim-widget .tp-skeleton{
   height: 320px;
   border-radius: 16px;
@@ -1324,8 +1304,7 @@ details p{ margin:8px 0 0; }
   border:0 !important;
 }
 
-/* Premium surface overlay on OLD widget only (safe). 
-   If you want zero overlays everywhere, you can delete this block. */
+/* Optional overlay on OLD widget only (safe). Remove if you want zero overlays. */
 #tp-esim-widget::before{
   content:"";
   position:absolute;
