@@ -1,9 +1,11 @@
 /* ==========================================================================
-   TripGuidely styles.css (OMG Agency Edition — eSIM Hub PERFECT)
+   TripGuidely styles.css (OMG Agency Edition — eSIM Hub PERFECT) — FIXED
+   - FIX: removes the ugly blank white dashed skeleton area in hero
+   - FIX: reserves stable widget height (no CLS) without visible placeholder
    - Hero = image + tool only (no hero-panel)
-   - No “On this page” (no forced hiding hacks needed)
+   - No “On this page”
    - Mobile overflow hard-fixed (no 100vw traps)
-   - CWV: stable widget space, no CLS, safe contain/isolation
+   - CWV: stable widget space, contain/isolation
    - Premium spacing + type rhythm + tighter cards
    ========================================================================== */
 
@@ -64,6 +66,10 @@
 
   /* Tool sizing */
   --tool-max: var(--max);
+
+  /* Widget reserve heights (CLS-safe) */
+  --widget-min: 320px;         /* desktop */
+  --widget-min-m: 360px;       /* mobile */
 }
 
 /* 2) Reset / base ---------------------------------------------------------- */
@@ -513,7 +519,7 @@ li{ margin: 6px 0; }
   object-position: var(--hero-pos-x) var(--hero-pos-y);
 }
 
-/* subtle top/bottom fade for readability without “muddy overlay” */
+/* subtle top/bottom fade for readability */
 .hero-overlay{
   position:absolute;
   inset:0;
@@ -521,7 +527,7 @@ li{ margin: 6px 0; }
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.14), transparent 62%),
-    linear-gradient(180deg, rgba(2,6,23,.36), rgba(2,6,23,.16) 34%, rgba(2,6,23,.10) 60%, rgba(2,6,23,.34));
+    linear-gradient(180deg, rgba(2,6,23,.34), rgba(2,6,23,.14) 34%, rgba(2,6,23,.08) 60%, rgba(2,6,23,.30));
   opacity:.92;
 }
 
@@ -529,13 +535,13 @@ li{ margin: 6px 0; }
 .hero-inner{
   position:relative;
   width:100%;
-  padding: 56px 0 44px;
+  padding: 52px 0 40px;
   display:flex;
   align-items:flex-end;
 }
 
 @media (max-width: 760px){
-  .hero-inner{ padding: 38px 0 26px; }
+  .hero-inner{ padding: 34px 0 22px; }
 }
 
 /* 7.1) Hero tool ----------------------------------------------------------- */
@@ -571,10 +577,10 @@ li{ margin: 6px 0; }
   backdrop-filter: blur(10px);
 }
 
-.hero-tool-pad{ padding: 16px 18px 18px; }
-
+/* IMPORTANT: tighter pad so the widget looks centered (less “dead white”) */
+.hero-tool-pad{ padding: 14px 16px 16px; }
 @media (max-width: 760px){
-  .hero-tool-pad{ padding: 12px; }
+  .hero-tool-pad{ padding: 12px 12px 14px; }
 }
 
 /* Reserve space (CLS guard) */
@@ -584,40 +590,36 @@ li{ margin: 6px 0; }
   max-width: 100%;
   overflow: hidden;
   contain: layout paint;
-  min-height: 120px;
+  min-height: var(--widget-min);
 }
 
-/* Skeleton */
+/* FIX: kill the visible dashed “blank” skeleton completely */
 #tp-esim-widget-hero .tp-skeleton{
-  height: 120px;
-  border-radius: 16px;
-  border: 1px dashed rgba(15,23,42,.18);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.86), rgba(255,255,255,.55));
-  background-size: 260px 100%;
-  animation: tpShimmerHero 1.15s linear infinite;
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
 }
 
-@keyframes tpShimmerHero{
-  0%{ background-position: 0 0; }
-  100%{ background-position: 260px 0; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #tp-esim-widget-hero .tp-skeleton{ animation: none; }
-}
-
-/* Widget iframe safety */
+/* Widget iframe safety + give it a sane minimum height */
 #tp-esim-widget-hero iframe{
   display:block !important;
   width:100% !important;
   max-width:100% !important;
   border:0 !important;
+  min-height: var(--widget-min) !important;
 }
 
+/* Mobile */
 @media (max-width: 760px){
-  #tp-esim-widget-hero{ min-height: 150px; }
-  #tp-esim-widget-hero .tp-skeleton{ height: 150px; }
+  #tp-esim-widget-hero{
+    min-height: var(--widget-min-m);
+  }
+  #tp-esim-widget-hero iframe{
+    min-height: var(--widget-min-m) !important;
+  }
 }
 
 /* 8) Intro card (below hero) ---------------------------------------------- */
