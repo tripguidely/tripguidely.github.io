@@ -15,7 +15,7 @@
 
   <!-- Primary SEO -->
   <title>Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries | TripGuidely</title>
-  <meta name="description" content="Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time." />
+  <meta name="description" content="Things to do in New York (2026): best attractions, tours, timing strategies, a 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time." />
   <meta name="author" content="TripGuidely" />
   <link rel="canonical" href="https://tripguidely.github.io/things-to-do/new-york/" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -85,7 +85,19 @@
         "@id":"https://tripguidely.github.io/#org",
         "name":"TripGuidely",
         "url":"https://tripguidely.github.io/",
-        "logo":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/brand/tripguidely-logo-512.png"}
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/brand/tripguidely-logo-512.png",
+          "width":512,
+          "height":512
+        }
+      },
+      {
+        "@type":"Person",
+        "@id":"https://tripguidely.github.io/#editor",
+        "name":"TripGuidely Editorial Team",
+        "url":"https://tripguidely.github.io/",
+        "worksFor":{"@id":"https://tripguidely.github.io/#org"}
       },
       {
         "@type":"WebSite",
@@ -107,15 +119,22 @@
         }
       },
       {
+        "@type":"ImageObject",
+        "@id":"https://tripguidely.github.io/things-to-do/new-york/#primaryimage",
+        "url":"https://tripguidely.github.io/assets/images/og/new-york-things-to-do-og-1200x630.webp",
+        "width":1200,
+        "height":630
+      },
+      {
         "@type":"WebPage",
         "@id":"https://tripguidely.github.io/things-to-do/new-york/#webpage",
         "url":"https://tripguidely.github.io/things-to-do/new-york/",
         "name":"Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries",
-        "description":"Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
+        "description":"Things to do in New York (2026): best attractions, tours, timing strategies, a 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "about":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#place"},
         "inLanguage":"en",
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/og/new-york-things-to-do-og-1200x630.webp"},
+        "primaryImageOfPage":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#primaryimage"},
         "datePublished":"2026-03-02",
         "dateModified":"2026-03-02",
         "breadcrumb":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#breadcrumbs"}
@@ -124,9 +143,9 @@
         "@type":"Article",
         "@id":"https://tripguidely.github.io/things-to-do/new-york/#article",
         "headline":"Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries",
-        "description":"Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
-        "image":["https://tripguidely.github.io/assets/images/og/new-york-things-to-do-og-1200x630.webp"],
-        "author":{"@id":"https://tripguidely.github.io/#org"},
+        "description":"Things to do in New York (2026): best attractions, tours, timing strategies, a 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
+        "image":[{"@id":"https://tripguidely.github.io/things-to-do/new-york/#primaryimage"}],
+        "author":{"@id":"https://tripguidely.github.io/#editor"},
         "publisher":{"@id":"https://tripguidely.github.io/#org"},
         "mainEntityOfPage":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#webpage"},
         "datePublished":"2026-03-02",
@@ -159,7 +178,7 @@
             "name":"Is a New York city pass worth it?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"A pass can be worth it if you plan to visit 3+ paid attractions. Compare the exact attractions included and the time you’ll realistically have."
+              "text":"A pass can be worth it if you plan to visit 3+ paid attractions. Compare the included attractions and the time you’ll realistically have."
             }
           },
           {
@@ -223,13 +242,13 @@
           </p>
 
           <div class="actions" aria-label="Primary actions">
-            <a href="#search" class="btn primary">
+            <a href="#decision" class="btn primary">
+              <span class="pill" aria-hidden="true">✅</span>
+              Build my plan
+            </a>
+            <a href="#search" class="btn">
               <span class="pill" aria-hidden="true">🔎</span>
               Search attractions
-            </a>
-            <a href="#itinerary" class="btn">
-              <span class="pill" aria-hidden="true">🧭</span>
-              See 2-day plan
             </a>
           </div>
 
@@ -249,6 +268,144 @@
         <span aria-hidden="true">›</span>
         <span>New York</span>
       </nav>
+
+      <!-- QUICK NAV (better intent + usability) -->
+      <section class="card pad" aria-label="Quick navigation">
+        <div class="mini-grid" aria-label="Quick category jumps">
+          <a class="pill-link" href="#decision">Build a 2-day plan</a>
+          <a class="pill-link" href="#best-times">Best times to visit</a>
+          <a class="pill-link" href="#top">Top attractions</a>
+          <a class="pill-link" href="#search">Search & book</a>
+          <a class="pill-link" href="#tours">Guided tours</a>
+          <a class="pill-link" href="#faq">FAQ</a>
+        </div>
+      </section>
+
+      <!-- TRUST / E-E-A-T -->
+      <section class="card pad content" aria-label="Why trust TripGuidely">
+        <div class="section-title">
+          <h2>Why this guide is different</h2>
+          <p>Less fluff. More “do this, then that”.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Strategy-first:</strong> we prioritize timing, clustering, and ticket rules so you waste less time.</li>
+          <li><strong>Decision-friendly:</strong> quick tables + a simple 2-day framework you can copy.</li>
+          <li><strong>Affiliate disclosure:</strong> if you book through some links/widgets, TripGuidely may earn a commission at no extra cost to you.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Editorial method:</b> We start with crowd patterns + transit friction, then pick “anchor” attractions that shape the whole day.
+          We recommend booking timed-entry when it prevents peak-hour lines.
+        </div>
+      </section>
+
+      <!-- DECISION HELPER (this is what affiliate sites rarely do well) -->
+      <section id="decision" class="card pad content" aria-label="Decision helper">
+        <div class="section-title">
+          <h2>Build your NYC plan in 60 seconds</h2>
+          <p>Choose your trip style, then follow the playbook.</p>
+        </div>
+
+        <h3>If you have 2 days</h3>
+        <ul class="checklist">
+          <li><strong>Pick 2 anchors:</strong> one observation deck + one major ticket (Liberty or 9/11 Museum).</li>
+          <li><strong>Keep each day “one side”:</strong> Midtown day + Downtown/Brooklyn day.</li>
+          <li><strong>Book the first anchor before 10 AM:</strong> it protects the whole schedule.</li>
+        </ul>
+
+        <h3>If you hate crowds</h3>
+        <ul class="checklist">
+          <li><strong>Weekdays win:</strong> choose Tue–Thu when possible.</li>
+          <li><strong>Go early or late:</strong> opening time or late evening for skyline icons.</li>
+          <li><strong>Keep a backup:</strong> one indoor option near your current neighborhood.</li>
+        </ul>
+
+        <div class="callout">
+          <b>One rule to remember:</b> Don’t criss-cross Manhattan at midday. Cluster stops, then reward yourself with a long walk or a meal.
+        </div>
+      </section>
+
+      <!-- BEST TIMES TABLE (scannable, “helpful content” signal) -->
+      <section id="best-times" class="card pad content" aria-label="Best times to visit">
+        <div class="section-title">
+          <h2>Best times to visit key NYC attractions</h2>
+          <p>Fast scanning, smarter bookings.</p>
+        </div>
+
+        <div class="callout">
+          <b>How to use this:</b> Pick 1–2 rows as “anchors”, book those first, then fill the gaps with flexible stops nearby.
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="Best times table" tabindex="0">
+          <table class="table" aria-label="NYC attractions best times">
+            <thead>
+              <tr>
+                <th scope="col">Attraction</th>
+                <th scope="col">Best time</th>
+                <th scope="col">Book ahead?</th>
+                <th scope="col">Time needed</th>
+                <th scope="col">Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Statue of Liberty</td>
+                <td>First ferry</td>
+                <td>Yes (timed)</td>
+                <td>4–6 hrs</td>
+                <td>Downtown</td>
+              </tr>
+              <tr>
+                <td>SUMMIT One Vanderbilt</td>
+                <td>Early afternoon or pre-sunset</td>
+                <td>Yes (timed)</td>
+                <td>1.5–2.5 hrs</td>
+                <td>Midtown East</td>
+              </tr>
+              <tr>
+                <td>Empire State Building</td>
+                <td>Late evening</td>
+                <td>Recommended</td>
+                <td>1.5–2.5 hrs</td>
+                <td>Midtown</td>
+              </tr>
+              <tr>
+                <td>Central Park</td>
+                <td>Morning or golden-hour walk</td>
+                <td>No</td>
+                <td>1.5–3 hrs</td>
+                <td>Uptown/Midtown</td>
+              </tr>
+              <tr>
+                <td>Brooklyn Bridge</td>
+                <td>Before 9 AM</td>
+                <td>No</td>
+                <td>1–2 hrs</td>
+                <td>Brooklyn/Downtown</td>
+              </tr>
+              <tr>
+                <td>The Met</td>
+                <td>Opening time</td>
+                <td>Recommended</td>
+                <td>2–3 hrs</td>
+                <td>Upper East Side</td>
+              </tr>
+              <tr>
+                <td>9/11 Museum</td>
+                <td>Morning (calmer)</td>
+                <td>Yes (timed)</td>
+                <td>2–3.5 hrs</td>
+                <td>Downtown</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="aff-note">
+          Note: exact crowd levels vary by season, weather, and school holidays. Use the table as a planning baseline.
+        </p>
+      </section>
 
       <!-- INTRO AUTHORITY SECTION -->
       <section class="card pad content" aria-label="How to plan New York smartly">
@@ -278,7 +435,7 @@
       </section>
 
       <!-- TOP ATTRACTIONS -->
-      <section class="card pad content" aria-label="Best attractions in New York">
+      <section id="top" class="card pad content" aria-label="Best attractions in New York">
         <div class="section-title">
           <h2>Best attractions in New York</h2>
           <p>First-timer classics + high-demand tickets.</p>
@@ -324,15 +481,26 @@
           Powerful and reflective. Pair with One World Observatory or a nearby ferry departure to keep the day flowing.
         </p>
 
+        <div class="callout">
+          <b>Official resources (non-affiliate):</b>
+          <a href="https://www.nycgo.com/" rel="noopener" target="_blank">NYC Official Guide</a>
+          <span aria-hidden="true"> • </span>
+          <a href="https://new.mta.info/" rel="noopener" target="_blank">MTA (subway info)</a>
+        </div>
+
         <!-- ATTRACTIONS WIDGET (CATEGORY 1) -->
-        <div class="callout" style="margin-top:14px;">
+        <div class="callout">
           <b>Want the best ticket options fast?</b> Compare top NYC attractions and shows below (timed-entry can save hours).
         </div>
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <div id="tp-nyc-attractions" class="tp-widget" aria-label="NYC attractions and shows"></div>
+            <!-- Reserve height to reduce CLS -->
+            <div id="tp-nyc-attractions" class="tp-widget" aria-label="NYC attractions and shows" style="min-height:420px"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-attractions&locale=en&city_id=93&category=1&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
+            <noscript>
+              <p class="aff-note">JavaScript is required to load the live ticket comparison widget.</p>
+            </noscript>
 
             <p class="aff-note aff-note-lg">
               Some results may contain affiliate links. If you book through them, TripGuidely may earn a commission at no extra cost to you.
@@ -360,7 +528,7 @@
             allowfullscreen></iframe>
         </div>
 
-        <p class="aff-note" style="margin-top:10px;">
+        <p class="aff-note">
           Tip: Use this video to identify your “anchor” attractions, then book timed entries early.
         </p>
       </section>
@@ -379,8 +547,12 @@
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <div id="tp-nyc-main" class="tp-widget" aria-label="NYC activities and experiences"></div>
+            <!-- Reserve height to reduce CLS -->
+            <div id="tp-nyc-main" class="tp-widget" aria-label="NYC activities and experiences" style="min-height:520px"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-main&locale=en&city_id=93&category=3&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
+            <noscript>
+              <p class="aff-note">JavaScript is required to load the live activity search widget.</p>
+            </noscript>
 
             <p class="aff-note aff-note-lg">
               Some results may contain affiliate links. If you book through them, TripGuidely may earn a commission at no extra cost to you.
@@ -426,14 +598,18 @@
         </p>
 
         <!-- TOURS WIDGET (CATEGORY 2) -->
-        <div class="callout" style="margin-top:14px;">
+        <div class="callout">
           <b>Best for low-stress planning:</b> Guided tours help you see more with less decision fatigue.
         </div>
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <div id="tp-nyc-tours" class="tp-widget" aria-label="NYC tours and sightseeing"></div>
+            <!-- Reserve height to reduce CLS -->
+            <div id="tp-nyc-tours" class="tp-widget" aria-label="NYC tours and sightseeing" style="min-height:420px"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-tours&locale=en&city_id=93&category=2&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
+            <noscript>
+              <p class="aff-note">JavaScript is required to load the live tours widget.</p>
+            </noscript>
 
             <p class="aff-note aff-note-lg">
               Some results may contain affiliate links. If you book through them, TripGuidely may earn a commission at no extra cost to you.
