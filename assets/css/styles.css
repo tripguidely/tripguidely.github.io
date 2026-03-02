@@ -1394,3 +1394,119 @@ details p{ margin:8px 0 0; }
     border-radius: 18px !important;
   }
 }
+
+/* ==========================================================================
+   Consent banner (GLOBAL) — TripGuidely
+   - Uses existing .btn styles (primary + default)
+   - Stable layout, safe-area iOS, no CLS
+   ========================================================================== */
+
+:root{
+  --consent-z: 9999;
+  --consent-bg: rgba(7,10,18,.88);
+  --consent-border: rgba(255,255,255,.14);
+  --consent-text: rgba(226,232,240,.92);
+  --consent-sub: rgba(148,163,184,.92);
+}
+
+.consent-banner{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--consent-z);
+  padding: 14px 0;
+  background: var(--consent-bg);
+  border-top: 1px solid var(--consent-border);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  box-shadow: 0 -18px 50px rgba(0,0,0,.30);
+  /* iOS safe area */
+  padding-bottom: calc(14px + env(safe-area-inset-bottom));
+}
+
+.consent-banner .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.consent-copy{
+  min-width: 0;
+}
+
+.consent-title{
+  margin: 0 0 4px;
+  font-weight: 950;
+  letter-spacing: var(--tracking-tight);
+  color: var(--consent-text);
+  font-size: .98rem;
+}
+
+.consent-text{
+  margin: 0;
+  color: var(--consent-sub);
+  font-size: .92rem;
+  line-height: 1.5;
+  max-width: 78ch;
+}
+
+.consent-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Make buttons feel right on dark glass */
+.consent-banner .btn{
+  border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+  box-shadow: 0 14px 34px rgba(0,0,0,.22);
+}
+.consent-banner .btn:hover{
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Primary stays your gradient, but with a bit more pop on dark */
+.consent-banner .btn.primary{
+  border-color: rgba(18,207,208,.55);
+  box-shadow: 0 16px 40px rgba(18,207,208,.22);
+}
+
+/* Optional tiny link style (for "Manage consent" somewhere) */
+.consent-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-weight: 800;
+  color: rgba(226,232,240,.88);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(18,207,208,.35);
+}
+.consent-link:hover{
+  border-bottom-color: rgba(18,207,208,.75);
+  color: rgba(255,255,255,.95);
+}
+
+@media (max-width: 760px){
+  .consent-banner .wrap{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .consent-actions{
+    width: 100%;
+  }
+  .consent-actions .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-size: 1.02rem;
+  }
+}
