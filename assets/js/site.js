@@ -1,14 +1,15 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.1)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
    - Affiliate CTA tracking (.js-aff) centralized here
-   - Widget engagement tracking (#esim-search + things-to-do widgets) (fires once per widget)
+   - Widget engagement tracking (ANY .tp-widget + #esim-search + #search) (fires once per widget)
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
-   - NEW: Consent banner (Accept/Decline) + Consent Mode v2 default denied
-   - NEW: Lazy-load GA4 only if accepted
+   - Consent Mode v2 default denied
+   - Lazy-load GA4 only if accepted
+   - Binds footer “Privacy choices” link (.js-consent) (no inline onclick)
    ========================================================================== */
 
 (function () {
@@ -29,7 +30,6 @@
       if (el.addEventListener) el.addEventListener(evt, fn, opts || false);
       else if (el.attachEvent) el.attachEvent("on" + evt, fn);
     } catch (_) {
-      // last resort
       try { if (el.addEventListener) el.addEventListener(evt, fn, false); } catch (__) {}
     }
   }
@@ -52,7 +52,6 @@
   }
 
   function parseURL(href) {
-    // URL() not supported in very old browsers; fallback to anchor element.
     try {
       return new URL(href, WIN.location.href);
     } catch (_) {
@@ -89,6 +88,16 @@
     if (!target) return null;
     if (target.closest) return target.closest("a");
     return closestAnchor(target);
+  }
+
+  function closestByClass(el, className) {
+    // compatible fallback for Element.closest(".class")
+    while (el && el !== DOC) {
+      var cn = " " + (el.className || "") + " ";
+      if (cn.indexOf(" " + className + " ") !== -1) return el;
+      el = el.parentNode;
+    }
+    return null;
   }
 
   function getHeaderOffset() {
@@ -136,7 +145,8 @@
   }
 
   function storageSet(key, value) {
-    try { if (WIN.localStorage) WIN.localStorage.setItem(key, value); } catch (_) { memConsent = value; }
+    try { if (WIN.localStorage) WIN.localStorage.setItem(key, value); }
+    catch (_) { memConsent = value; }
   }
 
   function getConsent() {
@@ -164,7 +174,7 @@
   }
 
   function setConsentModeDefault() {
-    // Consent Mode v2 "default denied" — does not require loading gtag.js
+    // Consent Mode v2: default denied (safe even before gtag.js loads)
     ensureDataLayer();
     try {
       WIN.gtag("consent", "default", {
@@ -202,7 +212,6 @@
   }
 
   function loadGA4Once() {
-    // Loads GA script once + config
     if (WIN.__tg_ga_loaded) return;
     WIN.__tg_ga_loaded = true;
 
@@ -227,6 +236,7 @@
   function removeConsentBanner() {
     var el = DOC.getElementById("tg-consent");
     if (el && el.parentNode) el.parentNode.removeChild(el);
+
     DOC.body.className = (DOC.body.className || "").replace(/\bconsent-open\b/g, "");
   }
 
@@ -238,7 +248,7 @@
     banner.className = "consent-banner";
     banner.setAttribute("role", "dialog");
     banner.setAttribute("aria-live", "polite");
-    banner.setAttribute("aria-label", "Cookie consent");
+    banner.setAttribute("aria-label", "Privacy choices");
 
     banner.innerHTML =
       '<div class="wrap">' +
@@ -278,7 +288,7 @@
   }
 
   function initConsent() {
-    // Always set default denied (safe + audit-friendly)
+    // Always set default denied (audit-friendly baseline)
     setConsentModeDefault();
 
     var c = getConsent();
@@ -294,13 +304,39 @@
     renderConsentBanner();
   }
 
-  // Optional public helper (footer link “Manage consent”)
   function openConsentManager() {
+    // allow reopening even if already decided
     renderConsentBanner();
   }
+
   WIN.TripGuidelyConsent = WIN.TripGuidelyConsent || {};
   WIN.TripGuidelyConsent.open = openConsentManager;
   WIN.TripGuidelyConsent.get = getConsent;
+
+  /* ---------- Bind footer “Privacy choices” link (.js-consent) ---------- */
+
+  function bindConsentLinks() {
+    // avoid double-binding
+    if (DOC.documentElement && DOC.documentElement.getAttribute("data-consentlink-bound") === "1") return;
+    try { DOC.documentElement.setAttribute("data-consentlink-bound", "1"); } catch (_) {}
+
+    on(DOC, "click", function (e) {
+      e = e || WIN.event;
+      var target = e.target || e.srcElement;
+      var a = getClosestLink(target);
+      if (!a) return;
+
+      var cls = a.className || "";
+      if ((" " + cls + " ").indexOf(" js-consent ") === -1) return;
+
+      if (e.preventDefault) e.preventDefault();
+      else e.returnValue = false;
+
+      try {
+        if (WIN.TripGuidelyConsent && WIN.TripGuidelyConsent.open) WIN.TripGuidelyConsent.open();
+      } catch (_) {}
+    });
+  }
 
   /* ---------- GA helpers (affiliate classification) ---------- */
 
@@ -327,12 +363,11 @@
     return "outbound";
   }
 
-  /* ---------- Partials injection (optional) ---------- */
+  /* ---------- Partials injection ---------- */
 
   function injectPartial(targetSelector, url, cb) {
     var mount = $(targetSelector);
     if (!mount) { if (cb) cb(false); return; }
-
     if (!WIN.fetch) { if (cb) cb(false); return; }
 
     WIN.fetch(url, { cache: "no-cache" })
@@ -473,7 +508,6 @@
       if (!url) return;
 
       var pageType = getPageType();
-
       var program = getAttr(a, "data-aff");
       if (program) program = String(program);
 
@@ -497,7 +531,7 @@
   }
 
   function trackWidgetEngagement() {
-    // Fires once per widget container per pageview, after consent
+    // Fires once per widget key per pageview, after consent
     var firedMap = {};
 
     function markFired(key) { firedMap[key] = true; }
@@ -516,37 +550,32 @@
       var target = e.target || e.srcElement;
       if (!target) return;
 
-      // eSIM hub widget section (your existing pattern)
+      // 1) eSIM hub section (if present)
       var esimWrap = DOC.getElementById("esim-search");
       if (esimWrap) {
         try {
           if (esimWrap.contains(target)) {
-            fire("esim-search", { widget: "tp_esim_search", page_type: getPageType() });
+            fire("esim-search", { widget: "esim-search", page_type: getPageType() });
           }
         } catch (_) {}
       }
 
-      // Things-to-do widgets (examples: tp-nyc-main / tp-nyc-attractions / tp-nyc-tours)
-      // We track by presence of these containers OR by #search section interaction.
-      var ids = ["tp-nyc-main", "tp-nyc-attractions", "tp-nyc-tours"];
-      for (var i = 0; i < ids.length; i++) {
-        var el = DOC.getElementById(ids[i]);
-        if (!el) continue;
-        try {
-          if (el.contains(target)) {
-            fire(ids[i], { widget: ids[i], page_type: getPageType() });
-          }
-        } catch (_) {}
-      }
-
-      // Generic “money zone” on hub/guide: #search section
+      // 2) Generic “money zone” section
       var search = DOC.getElementById("search");
       if (search) {
         try {
           if (search.contains(target)) {
-            fire("search-section", { widget: "search_section", page_type: getPageType() });
+            fire("search-section", { widget: "search-section", page_type: getPageType() });
           }
         } catch (_) {}
+      }
+
+      // 3) ANY Travelpayouts widget container (.tp-widget)
+      //    If it has an id, we use it; otherwise we use a safe fallback.
+      var w = closestByClass(target, "tp-widget");
+      if (w) {
+        var wid = w.id ? String(w.id) : "tp-widget";
+        fire("tp:" + wid, { widget: wid, page_type: getPageType() });
       }
     });
   }
@@ -648,6 +677,9 @@
 
     // Consent first (default denied). If granted, GA loads.
     initConsent();
+
+    // Footer “Privacy choices” link (no inline JS)
+    bindConsentLinks();
 
     trackOutboundClicks();
     trackAffiliateClicks();
