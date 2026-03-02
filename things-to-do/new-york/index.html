@@ -21,7 +21,8 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#12cfd0" />
-  <meta name="color-scheme" content="light" />
+  <!-- UPDATED: supports both light + dark UI surfaces -->
+  <meta name="color-scheme" content="light dark" />
 
   <!-- International hints -->
   <link rel="alternate" hreflang="en" href="https://tripguidely.github.io/things-to-do/new-york/" />
@@ -54,6 +55,10 @@
   <!-- Performance hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <!-- UPDATED: common GA endpoint (nice-to-have) -->
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
   <link rel="preconnect" href="https://tpemb.com" crossorigin />
@@ -123,7 +128,8 @@
         "headline":"Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries",
         "description":"Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
         "image":["https://tripguidely.github.io/assets/images/og/new-york-things-to-do-1200x630.webp"],
-        "author":{"@type":"Organization","name":"TripGuidely","url":"https://tripguidely.github.io/"},
+        <!-- UPDATED: author points to your Organization entity -->
+        "author":{"@id":"https://tripguidely.github.io/#org"},
         "publisher":{"@id":"https://tripguidely.github.io/#org"},
         "mainEntityOfPage":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#webpage"},
         "datePublished":"2026-03-02",
@@ -347,6 +353,8 @@
 
         <div class="video-embed" role="group" aria-label="YouTube video">
           <iframe
+            width="560"
+            height="315"
             src="https://www.youtube-nocookie.com/embed/flqL0IZOZvY?si=lj95NMP3PwfqL7Go"
             title="Things to do in New York (TripGuidely video guide)"
             loading="lazy"
