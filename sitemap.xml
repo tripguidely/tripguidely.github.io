@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <!-- Core -->
+  <url>
+    <loc>https://tripguidely.github.io/</loc>
+  </url>
+
+  <!-- Hubs -->
+  <url>
+    <loc>https://tripguidely.github.io/cruises/</loc>
+    <lastmod>2026-01-26</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/hotels/</loc>
+    <lastmod>2026-01-27</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/</loc>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/esim/</loc>
+    <lastmod>2026-02-27</lastmod>
+  </url>
+
+  <!-- Cruises cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/cruises/best-cruises-2026/</loc>
+    <lastmod>2026-01-26</lastmod>
+  </url>
+
+  <!-- Hotels cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/hotels/best-hotels-paris/</loc>
+    <lastmod>2026-01-26</lastmod>
+  </url>
+
+  <!-- Things to do cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/rome/</loc>
+    <lastmod>2026-01-26</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/new-york/</loc>
+    <lastmod>2026-03-02</lastmod>
+  </url>
+
+  <!-- eSIM cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/esim/best-esim-for-europe-2026/</loc>
+    <lastmod>2026-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/esim/best-esim-for-japan-2026/</loc>
+    <lastmod>2026-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/esim/best-esim-for-usa-2026/</loc>
+    <lastmod>2026-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/esim/best-esim-for-italy-2026/</loc>
+    <lastmod>2026-02-27</lastmod>
+  </url>
+
+</urlset>
