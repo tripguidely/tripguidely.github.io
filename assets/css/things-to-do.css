@@ -1,15 +1,13 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED)
-   Purpose:
-   - This file is ONLY for /things-to-do/ pages.
-   - Copy/paste as /assets/css/things-to-do.css and load it AFTER styles.css.
-   - Fixes hero readability (white text), and fixes the “ugly” widget area:
-     removes the bland grey gap + turns the “Museums/Tours/…” into real pills.
+   TripGuidely — things-to-do.css (DEDICATED) — UPDATED
+   - Dedicated to /things-to-do/ only
+   - Fixes hero readability (white text)
+   - Fixes the Tours widget ugly blank block (removes the big empty area)
+   - Turns “Museums/Tours/…” into real pills
    ========================================================================== */
 
 /* Page scope (safe) */
 body[data-page="hub"]{
-  /* OPTIONAL: tiny page-tuning tokens (does not affect other pages) */
   --ttd-hero-shadow: 0 18px 50px rgba(0,0,0,.45);
   --ttd-hero-text: rgba(255,255,255,.96);
   --ttd-hero-sub: rgba(226,232,240,.88);
@@ -30,13 +28,10 @@ body[data-page="hub"]{
    ========================================================================== */
 
 body[data-page="hub"] .hero.hero-full{
-  /* keep your base layout, but make it feel more “premium” */
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
-/* Stronger overlay so white text always works */
 body[data-page="hub"] .hero-overlay{
-  /* overwrite whatever is in styles.css */
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
@@ -48,7 +43,6 @@ body[data-page="hub"] .hero-overlay{
   opacity: .95;
 }
 
-/* Hero kicker, title, lede, meta = WHITE */
 body[data-page="hub"] .hero .kicker{
   color: rgba(255,255,255,.78);
   text-shadow: var(--ttd-hero-shadow);
@@ -76,7 +70,6 @@ body[data-page="hub"] .hero .meta{
   text-shadow: var(--ttd-hero-shadow);
 }
 
-/* Buttons: keep your global button styles, but make them pop on dark hero */
 body[data-page="hub"] .hero .btn{
   border-color: rgba(255,255,255,.22);
 }
@@ -88,18 +81,15 @@ body[data-page="hub"] .hero .btn:not(.primary):hover{
   box-shadow: 0 22px 54px rgba(2,6,23,.24);
 }
 
-/* Mobile hero readability */
 @media (max-width: 760px){
   body[data-page="hub"] .hero h1{ max-width: 20ch; }
   body[data-page="hub"] .hero .lede{ max-width: 52ch; }
 }
 
 /* ==========================================================================
-   2) THE “MONEY ZONE” widget area (remove ugly grey / make it cohesive)
-   Target: section#search .hero-tool-shell/.hero-tool-pad
+   2) THE “MONEY ZONE” widget area (remove ugly blank block)
    ========================================================================== */
 
-/* Give the widget container a richer surface + tighter spacing */
 body[data-page="hub"] #search .hero-tool-shell{
   background: var(--ttd-panel);
   border: 1px solid var(--ttd-panel-border);
@@ -108,18 +98,14 @@ body[data-page="hub"] #search .hero-tool-shell{
   overflow: hidden;
 }
 
-/* The padding wrapper: slightly roomier and cleaner */
 body[data-page="hub"] #search .hero-tool-pad{
   padding: 18px 18px 14px;
 }
-
 @media (max-width: 760px){
-  body[data-page="hub"] #search .hero-tool-pad{
-    padding: 14px 14px 12px;
-  }
+  body[data-page="hub"] #search .hero-tool-pad{ padding: 14px 14px 12px; }
 }
 
-/* Widget box: constrain height so it doesn’t create a dead “grey ocean” */
+/* The widget mount: do NOT reserve a giant empty area */
 body[data-page="hub"] #tp-tours-widget{
   width: 100%;
   max-width: 100%;
@@ -129,37 +115,71 @@ body[data-page="hub"] #tp-tours-widget{
   background: #ffffff;
   border: 1px solid rgba(15,23,42,.08);
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
+
+  /* IMPORTANT: remove your previous min-height that creates the blank block */
+  min-height: 0 !important;
+  height: auto !important;
 }
 
-/* IMPORTANT:
-   Travelpayouts script injects an iframe right after.
-   We style the iframe even if it’s not inside #tp-tours-widget. */
+/* Travelpayouts often injects an iframe and/or extra blocks.
+   Keep iframes tight and never taller than needed. */
 body[data-page="hub"] #search iframe{
   display:block !important;
   width:100% !important;
   max-width:100% !important;
   border:0 !important;
   border-radius: 18px;
+  overflow:hidden !important;
+
+  /* KEY: realistic max height so we don’t get a “white ocean” */
+  height: clamp(420px, 56vh, 620px) !important;
+  max-height: 620px !important;
 }
 
-/* Reserve a “realistic” height to avoid big empty zones before load */
-body[data-page="hub"] #tp-tours-widget{
-  min-height: 320px;
-}
+/* Mobile: a bit taller, still controlled */
 @media (max-width: 760px){
-  body[data-page="hub"] #tp-tours-widget{
-    min-height: 340px;
+  body[data-page="hub"] #search iframe{
+    height: clamp(520px, 64vh, 760px) !important;
+    max-height: 760px !important;
+    border-radius: 18px;
   }
 }
 
-/* Make “Powered by …” smaller and less awkward */
+/* Kill common “map / placeholder / spacer / skeleton” blocks inside the widget area */
+body[data-page="hub"] #search #tp-tours-widget [id*="map"],
+body[data-page="hub"] #search #tp-tours-widget [class*="map"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Map"],
+body[data-page="hub"] #search #tp-tours-widget [class*="placeholder"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Placeholder"],
+body[data-page="hub"] #search #tp-tours-widget [class*="skeleton"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Skeleton"],
+body[data-page="hub"] #search #tp-tours-widget [class*="preload"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Preload"],
+body[data-page="hub"] #search #tp-tours-widget [class*="loading"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Loading"],
+body[data-page="hub"] #search #tp-tours-widget [class*="spacer"],
+body[data-page="hub"] #search #tp-tours-widget [class*="Spacer"]{
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+/* Remove empty wrappers that become “blank lines” */
+body[data-page="hub"] #search #tp-tours-widget :where(div,section):empty{
+  display:none !important;
+}
+
+/* Powered line */
 body[data-page="hub"] #search [class*="powered"],
 body[data-page="hub"] #search [class*="Powered"]{
   opacity: .72 !important;
   font-size: .92rem !important;
 }
 
-/* Disclosure line: keep it neat and not floating in sadness */
 body[data-page="hub"] #search .aff-note{
   margin: 12px 0 0;
   padding-top: 10px;
@@ -168,9 +188,7 @@ body[data-page="hub"] #search .aff-note{
 }
 
 /* ==========================================================================
-   3) Fix the “Museums / Tours / Day trips…” not-beautiful part
-   You currently use .mini-grid with <a class="pill-link"> but no CSS.
-   This turns them into premium pills and removes the awkward look.
+   3) Pills (Museums / Tours / Day trips / ...)
    ========================================================================== */
 
 body[data-page="hub"] .mini-grid{
@@ -179,19 +197,13 @@ body[data-page="hub"] .mini-grid{
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
 }
-
 @media (max-width: 980px){
-  body[data-page="hub"] .mini-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  body[data-page="hub"] .mini-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 560px){
-  body[data-page="hub"] .mini-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  body[data-page="hub"] .mini-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* The pill style */
 body[data-page="hub"] .pill-link{
   display:flex;
   align-items:center;
@@ -208,7 +220,6 @@ body[data-page="hub"] .pill-link{
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
   white-space: nowrap;
 }
-
 body[data-page="hub"] .pill-link:hover{
   transform: translateY(-1px);
   box-shadow: var(--ttd-chip-hover);
@@ -218,12 +229,8 @@ body[data-page="hub"] .pill-link:hover{
     radial-gradient(420px 160px at 88% 60%, rgba(244,162,97,.10), transparent 60%),
     #ffffff;
 }
+body[data-page="hub"] .pill-link:active{ transform: translateY(0px); }
 
-body[data-page="hub"] .pill-link:active{
-  transform: translateY(0px);
-}
-
-/* Make pills feel clickable on mobile */
 @media (max-width: 760px){
   body[data-page="hub"] .pill-link{
     padding: 14px 12px;
@@ -232,41 +239,21 @@ body[data-page="hub"] .pill-link:active{
 }
 
 /* ==========================================================================
-   4) Make the “Search tours & attractions” section breathe nicer
+   4) Small polish (safe)
    ========================================================================== */
 
-body[data-page="hub"] #search .section-title{
-  margin-bottom: 12px;
-}
-
-body[data-page="hub"] #search .lede{
-  margin-bottom: 14px;
-}
-
-/* ==========================================================================
-   5) Small micro-polish (safe)
-   ========================================================================== */
-
-/* Prevent long words from wrecking layout */
 body[data-page="hub"] .content,
 body[data-page="hub"] .card{
-  overflow-wrap: anywhere;
+  overflow-wrap:anywhere;
 }
 
-/* Keep code inside details nice */
 body[data-page="hub"] code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: .95em;
 }
 
-/* Optional: slightly nicer hr inside this page */
-body[data-page="hub"] hr{
-  border-top-color: rgba(15,23,42,.10);
-}
-
 /* ==========================================================================
-   6) Travelpayouts input/button skin inside this page only
-   (keeps your existing look but scopes it to #search)
+   5) Widget input/button skin inside #search only
    ========================================================================== */
 
 body[data-page="hub"] #search input,
@@ -307,12 +294,3 @@ body[data-page="hub"] #search [type="submit"]:hover{
   transform: translateY(-1px) !important;
   box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
 }
-
-/* ==========================================================================
-   Done ✅
-   IMPORTANT: In your HTML, change:
-   <link rel="stylesheet" href="/assets/css/styles.css" />
-   to:
-   <link rel="stylesheet" href="/assets/css/styles.css" />
-   <link rel="stylesheet" href="/assets/css/things-to-do.css" />
-   ========================================================================== */
