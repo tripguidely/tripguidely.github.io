@@ -13,20 +13,10 @@
     data-cfasync="false"
     data-wpfc-render="false"></script>
 
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGMM5GYXJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-0GGMM5GYXJ", { anonymize_ip: true });
-  </script>
-
   <!-- Primary SEO -->
   <title>Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries | TripGuidely</title>
   <meta name="description" content="Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time." />
   <meta name="author" content="TripGuidely" />
-  <meta http-equiv="content-language" content="en" />
   <link rel="canonical" href="https://tripguidely.github.io/things-to-do/new-york/" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -103,13 +93,24 @@
         "inLanguage":"en"
       },
       {
+        "@type":"Place",
+        "@id":"https://tripguidely.github.io/things-to-do/new-york/#place",
+        "name":"New York City",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"New York",
+          "addressRegion":"NY",
+          "addressCountry":"US"
+        }
+      },
+      {
         "@type":"WebPage",
         "@id":"https://tripguidely.github.io/things-to-do/new-york/#webpage",
         "url":"https://tripguidely.github.io/things-to-do/new-york/",
         "name":"Things to Do in New York (2026): Best Attractions, Tours & Smart Itineraries",
         "description":"Things to do in New York (2026): best attractions, tours, timing strategies, 2-day itinerary framework, and smart planning rules to avoid long lines and wasted time.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
-        "about":{"@id":"https://tripguidely.github.io/#org"},
+        "about":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#place"},
         "inLanguage":"en",
         "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/og/new-york-things-to-do-1200x630.webp"},
         "datePublished":"2026-03-02",
@@ -126,7 +127,8 @@
         "publisher":{"@id":"https://tripguidely.github.io/#org"},
         "mainEntityOfPage":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#webpage"},
         "datePublished":"2026-03-02",
-        "dateModified":"2026-03-02"
+        "dateModified":"2026-03-02",
+        "about":{"@id":"https://tripguidely.github.io/things-to-do/new-york/#place"}
       },
       {
         "@type":"BreadcrumbList",
@@ -524,7 +526,7 @@
 
   <div id="site-footer"></div>
 
-  <!-- Your existing site.js (partials + nav + tracking + dates) -->
+  <!-- Your existing site.js (partials + nav + tracking + dates + consent + GA4 lazy) -->
   <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
