@@ -1074,7 +1074,7 @@ summary{
 summary::-webkit-details-marker{ display:none; }
 details p{ margin:8px 0 0; }
 
-/* 18) Footer (DARK LUXE) --------------------------------------------------- */
+/* 18) Footer (DARK LUXE) — UPDATED (2 columns) ---------------------------- */
 .footer{
   margin-top: 80px;
   padding: 78px 0 34px;
@@ -1107,18 +1107,16 @@ details p{ margin:8px 0 0; }
 }
 .footer a:hover{ color: rgba(255,255,255,.95); }
 
-/* grid */
+/* grid (UPDATED: 2 columns now) */
 .foot-grid{
   display:grid;
-  grid-template-columns: 1.55fr repeat(3, minmax(190px, 1fr));
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(26px, 3.2vw, 54px);
   padding-bottom: 26px;
   align-items:start;
 }
+
 @media (max-width: 980px){
-  .foot-grid{ grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 560px){
   .foot-grid{ grid-template-columns: 1fr; }
 }
 
@@ -1282,12 +1280,8 @@ details p{ margin:8px 0 0; }
 
 /* mobile: stack nicely */
 @media (max-width: 760px){
-  .foot-bottom-row{
-    gap:10px;
-  }
-  .foot-legal-inline{
-    justify-content:flex-start;
-  }
+  .foot-bottom-row{ gap:10px; }
+  .foot-legal-inline{ justify-content:flex-start; }
 }
 
 /* 19) High-contrast mode --------------------------------------------------- */
