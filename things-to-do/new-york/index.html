@@ -338,74 +338,100 @@
         </div>
 
         <div class="table-wrap" role="region" aria-label="Best times table" tabindex="0">
-          <table class="table" aria-label="NYC attractions best times">
-            <thead>
-              <tr>
-                <th scope="col">Attraction</th>
-                <th scope="col">Best time</th>
-                <th scope="col">Book ahead?</th>
-                <th scope="col">Time needed</th>
-                <th scope="col">Area</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Statue of Liberty</td>
-                <td>First ferry</td>
-                <td>Yes (timed)</td>
-                <td>4–6 hrs</td>
-                <td>Downtown</td>
-              </tr>
-              <tr>
-                <td>SUMMIT One Vanderbilt</td>
-                <td>Early afternoon or pre-sunset</td>
-                <td>Yes (timed)</td>
-                <td>1.5–2.5 hrs</td>
-                <td>Midtown East</td>
-              </tr>
-              <tr>
-                <td>Empire State Building</td>
-                <td>Late evening</td>
-                <td>Recommended</td>
-                <td>1.5–2.5 hrs</td>
-                <td>Midtown</td>
-              </tr>
-              <tr>
-                <td>Central Park</td>
-                <td>Morning or golden-hour walk</td>
-                <td>No</td>
-                <td>1.5–3 hrs</td>
-                <td>Uptown/Midtown</td>
-              </tr>
-              <tr>
-                <td>Brooklyn Bridge</td>
-                <td>Before 9 AM</td>
-                <td>No</td>
-                <td>1–2 hrs</td>
-                <td>Brooklyn/Downtown</td>
-              </tr>
-              <tr>
-                <td>The Met</td>
-                <td>Opening time</td>
-                <td>Recommended</td>
-                <td>2–3 hrs</td>
-                <td>Upper East Side</td>
-              </tr>
-              <tr>
-                <td>9/11 Museum</td>
-                <td>Morning (calmer)</td>
-                <td>Yes (timed)</td>
-                <td>2–3.5 hrs</td>
-                <td>Downtown</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <table class="table" aria-label="NYC attractions best times">
+    <caption class="table-cap">
+      Best times to visit key NYC attractions (use 1–2 rows as “anchors”, then fill gaps with flexible stops nearby).
+    </caption>
 
-        <p class="aff-note">
-          Note: exact crowd levels vary by season, weather, and school holidays. Use the table as a planning baseline.
-        </p>
-      </section>
+    <thead>
+      <tr>
+        <th scope="col">Attraction</th>
+        <th scope="col">Best time</th>
+        <th scope="col">Book ahead?</th>
+        <th scope="col">Time needed</th>
+        <th scope="col">Area</th>
+        <th scope="col">Priority</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td data-label="Attraction"><strong>Statue of Liberty</strong></td>
+        <td data-label="Best time">First ferry</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+        <td data-label="Time needed">4–6 hrs</td>
+        <td data-label="Area">Downtown</td>
+        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>SUMMIT One Vanderbilt</strong></td>
+        <td data-label="Best time">Early afternoon or pre-sunset</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+        <td data-label="Time needed">1.5–2.5 hrs</td>
+        <td data-label="Area">Midtown East</td>
+        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>Empire State Building</strong></td>
+        <td data-label="Best time">Late evening</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
+        <td data-label="Time needed">1.5–2.5 hrs</td>
+        <td data-label="Area">Midtown</td>
+        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>Central Park</strong></td>
+        <td data-label="Best time">Morning or golden-hour walk</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
+        <td data-label="Time needed">1.5–3 hrs</td>
+        <td data-label="Area">Uptown/Midtown</td>
+        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>Brooklyn Bridge</strong></td>
+        <td data-label="Best time">Before 9 AM</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
+        <td data-label="Time needed">1–2 hrs</td>
+        <td data-label="Area">Brooklyn/Downtown</td>
+        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>The Met</strong></td>
+        <td data-label="Best time">Opening time</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
+        <td data-label="Time needed">2–3 hrs</td>
+        <td data-label="Area">Upper East Side</td>
+        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+      </tr>
+
+      <tr>
+        <td data-label="Attraction"><strong>9/11 Museum</strong></td>
+        <td data-label="Best time">Morning (calmer)</td>
+        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+        <td data-label="Time needed">2–3.5 hrs</td>
+        <td data-label="Area">Downtown</td>
+        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-key" aria-label="Table key">
+  <span class="t-badge t-badge-anchor">Anchor</span>
+  <span class="key-text">= book first, protects the whole day</span>
+  <span class="key-sep" aria-hidden="true">•</span>
+  <span class="t-badge t-badge-flex">Flexible</span>
+  <span class="key-text">= fill gaps near your current neighborhood</span>
+</div>
+
+<p class="aff-note">
+  Note: crowd levels vary by season, weather, and school holidays. Use the table as a planning baseline.
+</p>
 
       <!-- INTRO AUTHORITY SECTION -->
       <section class="card pad content" aria-label="How to plan New York smartly">
