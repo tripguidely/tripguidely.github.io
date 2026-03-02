@@ -1,13 +1,18 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED) — UPDATED
-   - Dedicated to /things-to-do/ only
-   - Fixes hero readability (white text)
-   - Fixes the Tours widget ugly blank block (removes the big empty area)
-   - Turns “Museums/Tours/…” into real pills
+   TripGuidely — things-to-do.css (DEDICATED) — FINAL
+   Purpose:
+   - Dedicated to /things-to-do/ pages (hub + city guides)
+   - Fix hero readability (white text)
+   - Premium widget shells (no ugly gaps)
+   - Pills navigation (Tours / Itinerary / FAQ / Back to hub)
+   - Responsive YouTube embeds
    ========================================================================== */
 
-/* Page scope (safe) */
-body[data-page="hub"]{
+/* ======================================================================
+   0) Page scope tokens (Hub + Guide)
+   ====================================================================== */
+
+body:is([data-page="hub"], [data-page="guide"]){
   --ttd-hero-shadow: 0 18px 50px rgba(0,0,0,.45);
   --ttd-hero-text: rgba(255,255,255,.96);
   --ttd-hero-sub: rgba(226,232,240,.88);
@@ -23,15 +28,15 @@ body[data-page="hub"]{
   --ttd-chip-hover: 0 18px 44px rgba(2,6,23,.14);
 }
 
-/* ==========================================================================
-   1) HERO readability (make text WHITE + punchier)
-   ========================================================================== */
+/* ======================================================================
+   1) HERO readability (Hub + Guide)
+   ====================================================================== */
 
-body[data-page="hub"] .hero.hero-full{
+body:is([data-page="hub"], [data-page="guide"]) .hero.hero-full{
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
-body[data-page="hub"] .hero-overlay{
+body:is([data-page="hub"], [data-page="guide"]) .hero-overlay{
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
@@ -43,54 +48,57 @@ body[data-page="hub"] .hero-overlay{
   opacity: .95;
 }
 
-body[data-page="hub"] .hero .kicker{
+body:is([data-page="hub"], [data-page="guide"]) .hero .kicker{
   color: rgba(255,255,255,.78);
   text-shadow: var(--ttd-hero-shadow);
 }
-body[data-page="hub"] .hero .kicker .dot{
+
+body:is([data-page="hub"], [data-page="guide"]) .hero .kicker .dot{
   box-shadow:
     0 0 0 4px rgba(18,207,208,.18),
     0 18px 44px rgba(18,207,208,.18);
 }
 
-body[data-page="hub"] .hero h1{
+body:is([data-page="hub"], [data-page="guide"]) .hero h1{
   color: var(--ttd-hero-text);
   text-shadow: var(--ttd-hero-shadow);
   max-width: 22ch;
 }
 
-body[data-page="hub"] .hero .lede{
+body:is([data-page="hub"], [data-page="guide"]) .hero .lede{
   color: var(--ttd-hero-sub);
   text-shadow: var(--ttd-hero-shadow);
   max-width: 64ch;
 }
 
-body[data-page="hub"] .hero .meta{
+body:is([data-page="hub"], [data-page="guide"]) .hero .meta{
   color: var(--ttd-hero-muted);
   text-shadow: var(--ttd-hero-shadow);
 }
 
-body[data-page="hub"] .hero .btn{
+body:is([data-page="hub"], [data-page="guide"]) .hero .btn{
   border-color: rgba(255,255,255,.22);
 }
-body[data-page="hub"] .hero .btn:not(.primary){
+
+body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary){
   background: rgba(255,255,255,.94);
   box-shadow: 0 18px 44px rgba(2,6,23,.18);
 }
-body[data-page="hub"] .hero .btn:not(.primary):hover{
+
+body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary):hover{
   box-shadow: 0 22px 54px rgba(2,6,23,.24);
 }
 
 @media (max-width: 760px){
-  body[data-page="hub"] .hero h1{ max-width: 20ch; }
-  body[data-page="hub"] .hero .lede{ max-width: 52ch; }
+  body:is([data-page="hub"], [data-page="guide"]) .hero h1{ max-width: 20ch; }
+  body:is([data-page="hub"], [data-page="guide"]) .hero .lede{ max-width: 52ch; }
 }
 
-/* ==========================================================================
-   2) THE “MONEY ZONE” widget area (remove ugly blank block)
-   ========================================================================== */
+/* ======================================================================
+   2) Premium widget shells (Hub + Guide)
+   ====================================================================== */
 
-body[data-page="hub"] #search .hero-tool-shell{
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell{
   background: var(--ttd-panel);
   border: 1px solid var(--ttd-panel-border);
   box-shadow: var(--ttd-panel-shadow);
@@ -98,67 +106,68 @@ body[data-page="hub"] #search .hero-tool-shell{
   overflow: hidden;
 }
 
-body[data-page="hub"] #search .hero-tool-pad{
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
   padding: 18px 18px 14px;
 }
+
 @media (max-width: 760px){
-  body[data-page="hub"] #search .hero-tool-pad{ padding: 14px 14px 12px; }
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{ padding: 14px 14px 12px; }
 }
 
-/* The widget mount: do NOT reserve a giant empty area */
-body[data-page="hub"] #tp-tours-widget{
-  width: 100%;
-  max-width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  contain: layout paint;
-  background: #ffffff;
-  border: 1px solid rgba(15,23,42,.08);
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
-
-  /* IMPORTANT: remove your previous min-height that creates the blank block */
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-/* Travelpayouts often injects an iframe and/or extra blocks.
-   Keep iframes tight and never taller than needed. */
-body[data-page="hub"] #search iframe{
+/* Keep widgets responsive without forcing a giant blank space */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   display:block !important;
   width:100% !important;
   max-width:100% !important;
   border:0 !important;
   border-radius: 18px;
   overflow:hidden !important;
+}
 
-  /* KEY: realistic max height so we don’t get a “white ocean” */
+/* Remove empty wrappers that become “blank lines” (safe) */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget :where(div,section):empty{
+  display:none !important;
+}
+
+/* Affiliate note separator */
+body:is([data-page="hub"], [data-page="guide"]) .aff-note{
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(15,23,42,.08);
+  color: rgba(100,116,139,.95);
+}
+
+/* ======================================================================
+   2B) Hub-only: clamp the big widget height to avoid “white ocean”
+   (Guide widgets vary by category, so we don’t hard-clamp there.)
+   ====================================================================== */
+
+body[data-page="hub"] #search iframe{
   height: clamp(420px, 56vh, 620px) !important;
   max-height: 620px !important;
 }
 
-/* Mobile: a bit taller, still controlled */
 @media (max-width: 760px){
   body[data-page="hub"] #search iframe{
     height: clamp(520px, 64vh, 760px) !important;
     max-height: 760px !important;
-    border-radius: 18px;
   }
 }
 
-/* Kill common “map / placeholder / spacer / skeleton” blocks inside the widget area */
-body[data-page="hub"] #search #tp-tours-widget [id*="map"],
-body[data-page="hub"] #search #tp-tours-widget [class*="map"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Map"],
-body[data-page="hub"] #search #tp-tours-widget [class*="placeholder"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Placeholder"],
-body[data-page="hub"] #search #tp-tours-widget [class*="skeleton"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Skeleton"],
-body[data-page="hub"] #search #tp-tours-widget [class*="preload"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Preload"],
-body[data-page="hub"] #search #tp-tours-widget [class*="loading"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Loading"],
-body[data-page="hub"] #search #tp-tours-widget [class*="spacer"],
-body[data-page="hub"] #search #tp-tours-widget [class*="Spacer"]{
+/* Hub-only cleanup for common injected spacer blocks */
+body[data-page="hub"] #search [id*="map"],
+body[data-page="hub"] #search [class*="map"],
+body[data-page="hub"] #search [class*="Map"],
+body[data-page="hub"] #search [class*="placeholder"],
+body[data-page="hub"] #search [class*="Placeholder"],
+body[data-page="hub"] #search [class*="skeleton"],
+body[data-page="hub"] #search [class*="Skeleton"],
+body[data-page="hub"] #search [class*="preload"],
+body[data-page="hub"] #search [class*="Preload"],
+body[data-page="hub"] #search [class*="loading"],
+body[data-page="hub"] #search [class*="Loading"],
+body[data-page="hub"] #search [class*="spacer"],
+body[data-page="hub"] #search [class*="Spacer"]{
   height:0 !important;
   min-height:0 !important;
   max-height:0 !important;
@@ -168,43 +177,29 @@ body[data-page="hub"] #search #tp-tours-widget [class*="Spacer"]{
   overflow:hidden !important;
 }
 
-/* Remove empty wrappers that become “blank lines” */
-body[data-page="hub"] #search #tp-tours-widget :where(div,section):empty{
-  display:none !important;
-}
+/* ======================================================================
+   3) Pills (Tours / Itinerary / FAQ / Back to hub) — Hub + Guide
+   ====================================================================== */
 
-/* Powered line */
-body[data-page="hub"] #search [class*="powered"],
-body[data-page="hub"] #search [class*="Powered"]{
-  opacity: .72 !important;
-  font-size: .92rem !important;
-}
-
-body[data-page="hub"] #search .aff-note{
-  margin: 12px 0 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(15,23,42,.08);
-  color: rgba(100,116,139,.95);
-}
-
-/* ==========================================================================
-   3) Pills (Museums / Tours / Day trips / ...)
-   ========================================================================== */
-
-body[data-page="hub"] .mini-grid{
+body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
   margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
 }
+
 @media (max-width: 980px){
-  body[data-page="hub"] .mini-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 @media (max-width: 560px){
-  body[data-page="hub"] .mini-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-body[data-page="hub"] .pill-link{
+body:is([data-page="hub"], [data-page="guide"]) .pill-link{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -220,7 +215,8 @@ body[data-page="hub"] .pill-link{
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
   white-space: nowrap;
 }
-body[data-page="hub"] .pill-link:hover{
+
+body:is([data-page="hub"], [data-page="guide"]) .pill-link:hover{
   transform: translateY(-1px);
   box-shadow: var(--ttd-chip-hover);
   border-color: rgba(18,207,208,.28);
@@ -229,32 +225,35 @@ body[data-page="hub"] .pill-link:hover{
     radial-gradient(420px 160px at 88% 60%, rgba(244,162,97,.10), transparent 60%),
     #ffffff;
 }
-body[data-page="hub"] .pill-link:active{ transform: translateY(0px); }
+
+body:is([data-page="hub"], [data-page="guide"]) .pill-link:active{
+  transform: translateY(0px);
+}
 
 @media (max-width: 760px){
-  body[data-page="hub"] .pill-link{
+  body:is([data-page="hub"], [data-page="guide"]) .pill-link{
     padding: 14px 12px;
     font-size: 1.00rem;
   }
 }
 
-/* ==========================================================================
-   4) Small polish (safe)
-   ========================================================================== */
+/* ======================================================================
+   4) Small polish (Hub + Guide)
+   ====================================================================== */
 
-body[data-page="hub"] .content,
-body[data-page="hub"] .card{
+body:is([data-page="hub"], [data-page="guide"]) .content,
+body:is([data-page="hub"], [data-page="guide"]) .card{
   overflow-wrap:anywhere;
 }
 
-body[data-page="hub"] code{
+body:is([data-page="hub"], [data-page="guide"]) code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: .95em;
 }
 
-/* ==========================================================================
-   5) Widget input/button skin inside #search only
-   ========================================================================== */
+/* ======================================================================
+   5) Widget input/button skin (Hub only inside #search)
+   ====================================================================== */
 
 body[data-page="hub"] #search input,
 body[data-page="hub"] #search select,
@@ -289,106 +288,17 @@ body[data-page="hub"] #search [type="submit"]{
   box-shadow: 0 18px 44px rgba(18,207,208,.12) !important;
   transition: transform .12s ease, box-shadow .12s ease !important;
 }
+
 body[data-page="hub"] #search button:hover,
 body[data-page="hub"] #search [type="submit"]:hover{
   transform: translateY(-1px) !important;
   box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
 }
 
-/* ==========================================================================
-   TripGuidely — things-to-do.css (GUIDES)
-   Applies to /things-to-do/{city}/ pages (body[data-page="guide"])
-   - Ensures hero text readability
-   - Premium widget shells (no ugly gaps)
-   - Clean responsive YouTube embeds
-   ========================================================================== */
+/* ======================================================================
+   6) Responsive YouTube embed (Guide pages)
+   ====================================================================== */
 
-body[data-page="guide"]{
-  --ttd-hero-shadow: 0 18px 50px rgba(0,0,0,.45);
-  --ttd-hero-text: rgba(255,255,255,.96);
-  --ttd-hero-sub: rgba(226,232,240,.88);
-  --ttd-hero-muted: rgba(226,232,240,.72);
-
-  --ttd-panel: rgba(255,255,255,.96);
-  --ttd-panel-border: rgba(255,255,255,.22);
-  --ttd-panel-shadow: 0 30px 80px rgba(2,6,23,.22);
-}
-
-/* HERO readability (GUIDE) */
-body[data-page="guide"] .hero.hero-full{
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-
-body[data-page="guide"] .hero-overlay{
-  background:
-    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
-    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
-    linear-gradient(180deg,
-      rgba(2,6,23,.62) 0%,
-      rgba(2,6,23,.42) 26%,
-      rgba(2,6,23,.26) 56%,
-      rgba(2,6,23,.54) 100%);
-  opacity: .95;
-}
-
-body[data-page="guide"] .hero .kicker{
-  color: rgba(255,255,255,.78);
-  text-shadow: var(--ttd-hero-shadow);
-}
-body[data-page="guide"] .hero h1{
-  color: var(--ttd-hero-text);
-  text-shadow: var(--ttd-hero-shadow);
-}
-body[data-page="guide"] .hero .lede{
-  color: var(--ttd-hero-sub);
-  text-shadow: var(--ttd-hero-shadow);
-}
-body[data-page="guide"] .hero .meta{
-  color: var(--ttd-hero-muted);
-  text-shadow: var(--ttd-hero-shadow);
-}
-
-/* Widget shells look premium on guides too */
-body[data-page="guide"] .hero-tool-shell{
-  background: var(--ttd-panel);
-  border: 1px solid var(--ttd-panel-border);
-  box-shadow: var(--ttd-panel-shadow);
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-body[data-page="guide"] .hero-tool-pad{
-  padding: 18px 18px 14px;
-}
-@media (max-width: 760px){
-  body[data-page="guide"] .hero-tool-pad{ padding: 14px 14px 12px; }
-}
-
-/* IMPORTANT:
-   Don’t force iframe height globally (widgets differ).
-   Instead: make iframe fill its wrapper naturally and stay responsive.
-*/
-body[data-page="guide"] .tp-widget iframe{
-  display:block !important;
-  width:100% !important;
-  max-width:100% !important;
-  border:0 !important;
-}
-
-/* Slight guard: if widget injects weird empty blocks */
-body[data-page="guide"] .tp-widget :where(div,section):empty{
-  display:none !important;
-}
-
-/* Affiliate note separator looks clean */
-body[data-page="guide"] .aff-note{
-  margin: 12px 0 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(15,23,42,.08);
-  color: rgba(100,116,139,.95);
-}
-
-/* Responsive YouTube embed (for your NYC page) */
 body[data-page="guide"] .video-embed{
   position:relative;
   width:100%;
@@ -399,6 +309,7 @@ body[data-page="guide"] .video-embed{
   box-shadow: 0 10px 22px rgba(2,6,23,.08);
   background:#000;
 }
+
 body[data-page="guide"] .video-embed iframe{
   position:absolute;
   inset:0;
