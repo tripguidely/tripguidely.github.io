@@ -1,14 +1,14 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
    - Affiliate CTA tracking (.js-aff) centralized here
-   - Widget engagement tracking (#esim-search) (fires once)
+   - Widget engagement tracking (#esim-search + things-to-do widgets) (fires once per widget)
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
-   - Safe console usage + error guards
-   - NEW: Consent banner (Accept/Decline) + lazy-load GA4 only if accepted
+   - NEW: Consent banner (Accept/Decline) + Consent Mode v2 default denied
+   - NEW: Lazy-load GA4 only if accepted
    ========================================================================== */
 
 (function () {
@@ -25,8 +25,13 @@
 
   function on(el, evt, fn, opts) {
     if (!el) return;
-    if (el.addEventListener) el.addEventListener(evt, fn, opts || false);
-    else if (el.attachEvent) el.attachEvent("on" + evt, fn);
+    try {
+      if (el.addEventListener) el.addEventListener(evt, fn, opts || false);
+      else if (el.attachEvent) el.attachEvent("on" + evt, fn);
+    } catch (_) {
+      // last resort
+      try { if (el.addEventListener) el.addEventListener(evt, fn, false); } catch (__) {}
+    }
   }
 
   function trimStr(s) {
@@ -53,10 +58,7 @@
     } catch (_) {
       var a = DOC.createElement("a");
       a.href = href;
-      // IE sometimes needs absolute normalization:
-      if (!a.hostname && WIN.location && WIN.location.hostname) {
-        a.href = a.href;
-      }
+      if (!a.hostname && WIN.location && WIN.location.hostname) a.href = a.href;
       return {
         href: a.href,
         hostname: a.hostname || "",
@@ -90,7 +92,6 @@
   }
 
   function getHeaderOffset() {
-    // Uses actual header height (most reliable with injected partials)
     var header = $(".header");
     var h = header ? header.offsetHeight : 0;
     return (h || 72) + 12;
@@ -118,31 +119,24 @@
   }
 
   function getPageType() {
-    // Reads <body data-page="guide|hub|...">. Default "unknown"
     var p = getAttr(DOC.body, "data-page");
     return p ? String(p) : "unknown";
   }
 
-  /* ---------- Consent + GA4 (lazy load) ---------- */
+  /* ---------- Consent + GA4 (lazy load + Consent Mode v2) ---------- */
 
-  var CONSENT_KEY = "tg_consent_v1";
+  var CONSENT_KEY = "tg_consent_v2";
   var GA_MEASUREMENT_ID = "G-0GGMM5GYXJ";
 
-  var memConsent = null; // fallback if storage is blocked
+  var memConsent = null;
 
   function storageGet(key) {
-    try {
-      if (WIN.localStorage) return WIN.localStorage.getItem(key);
-    } catch (_) {}
+    try { if (WIN.localStorage) return WIN.localStorage.getItem(key); } catch (_) {}
     return memConsent;
   }
 
   function storageSet(key, value) {
-    try {
-      if (WIN.localStorage) WIN.localStorage.setItem(key, value);
-    } catch (_) {
-      memConsent = value;
-    }
+    try { if (WIN.localStorage) WIN.localStorage.setItem(key, value); } catch (_) { memConsent = value; }
   }
 
   function getConsent() {
@@ -156,10 +150,6 @@
     storageSet(CONSENT_KEY, value);
   }
 
-  function hasGtag() {
-    return typeof WIN.gtag === "function";
-  }
-
   function ensureDataLayer() {
     WIN.dataLayer = WIN.dataLayer || [];
     if (!WIN.gtag) {
@@ -169,6 +159,48 @@
     }
   }
 
+  function hasGtag() {
+    return typeof WIN.gtag === "function";
+  }
+
+  function setConsentModeDefault() {
+    // Consent Mode v2 "default denied" — does not require loading gtag.js
+    ensureDataLayer();
+    try {
+      WIN.gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        wait_for_update: 500
+      });
+    } catch (_) {}
+  }
+
+  function setConsentModeGranted() {
+    ensureDataLayer();
+    try {
+      WIN.gtag("consent", "update", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted"
+      });
+    } catch (_) {}
+  }
+
+  function setConsentModeDenied() {
+    ensureDataLayer();
+    try {
+      WIN.gtag("consent", "update", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied"
+      });
+    } catch (_) {}
+  }
+
   function loadGA4Once() {
     // Loads GA script once + config
     if (WIN.__tg_ga_loaded) return;
@@ -176,13 +208,11 @@
 
     ensureDataLayer();
 
-    // Inject gtag.js
     var s = DOC.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
     DOC.head.appendChild(s);
 
-    // Configure (anonymize IP)
     try {
       WIN.gtag("js", new Date());
       WIN.gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
@@ -201,7 +231,6 @@
   }
 
   function renderConsentBanner() {
-    // Don’t show twice
     if (DOC.getElementById("tg-consent")) return;
 
     var banner = DOC.createElement("div");
@@ -211,14 +240,11 @@
     banner.setAttribute("aria-live", "polite");
     banner.setAttribute("aria-label", "Cookie consent");
 
-    // Uses your existing .btn styles; CSS is in styles.css
     banner.innerHTML =
       '<div class="wrap">' +
         '<div class="consent-copy">' +
           '<p class="consent-title">Privacy choices</p>' +
-          '<p class="consent-text">We use analytics and affiliate tracking to improve TripGuidely and measure what helps travelers most. You can accept or decline.</p>' +
-          // Optional link hook (if you later want a dedicated privacy page)
-          // '<a class="consent-link" href="/privacy/">Learn more</a>' +
+          '<p class="consent-text">We use analytics to improve TripGuidely and measure what helps travelers most. You can accept or decline.</p>' +
         '</div>' +
         '<div class="consent-actions">' +
           '<button type="button" class="btn" id="tg-consent-decline">Decline</button>' +
@@ -227,7 +253,6 @@
       '</div>';
 
     DOC.body.appendChild(banner);
-
     DOC.body.className = (DOC.body.className ? DOC.body.className + " " : "") + "consent-open";
 
     var btnA = DOC.getElementById("tg-consent-accept");
@@ -236,10 +261,9 @@
     if (btnA) {
       on(btnA, "click", function () {
         setConsent("granted");
+        setConsentModeGranted();
         removeConsentBanner();
         loadGA4Once();
-
-        // Optional: fire a tiny event after consent
         gtagEvent("consent_update", { status: "granted", page_type: getPageType() });
       });
     }
@@ -247,27 +271,30 @@
     if (btnD) {
       on(btnD, "click", function () {
         setConsent("denied");
+        setConsentModeDenied();
         removeConsentBanner();
-        // No GA load.
       });
     }
   }
 
   function initConsent() {
+    // Always set default denied (safe + audit-friendly)
+    setConsentModeDefault();
+
     var c = getConsent();
     if (c === "granted") {
+      setConsentModeGranted();
       loadGA4Once();
       return;
     }
     if (c === "denied") {
-      // Do nothing
+      setConsentModeDenied();
       return;
     }
-    // Unknown: show banner
     renderConsentBanner();
   }
 
-  // Optional public helper to reopen banner (e.g., from footer “Manage consent” link)
+  // Optional public helper (footer link “Manage consent”)
   function openConsentManager() {
     renderConsentBanner();
   }
@@ -293,7 +320,6 @@
     var host = (urlObj.hostname || "").toLowerCase();
 
     if (isAffiliateOrPartner(urlObj)) return "affiliate";
-
     if (host.indexOf("booking") !== -1 || host.indexOf("hotels") !== -1) return "booking";
     if (host.indexOf("cruise") !== -1) return "cruise";
     if (path.indexOf("car") !== -1 && path.indexOf("rent") !== -1) return "car_rental";
@@ -337,7 +363,6 @@
   }
 
   function highlightActiveNav() {
-    // Apply aria-current="page" to best match in desktop nav + drawer
     var path = (WIN.location.pathname || "/").toLowerCase();
     if (path.indexOf("/index.html") !== -1) path = path.replace("/index.html", "/");
 
@@ -354,11 +379,10 @@
       for (var i = 0; i < links.length; i++) {
         var href = links[i].getAttribute("href") || "";
         if (!href) continue;
-
-        // ignore external
         if (href.indexOf("http") === 0) continue;
 
         var h = href.toLowerCase();
+
         if (h === "/") {
           if (path === "/") { best = links[i]; bestLen = 1; }
           continue;
@@ -371,9 +395,7 @@
       }
 
       for (var j = 0; j < links.length; j++) {
-        if (links[j].getAttribute("aria-current") === "page") {
-          links[j].removeAttribute("aria-current");
-        }
+        if (links[j].getAttribute("aria-current") === "page") links[j].removeAttribute("aria-current");
       }
 
       if (best) best.setAttribute("aria-current", "page");
@@ -384,7 +406,6 @@
   }
 
   function handleAnchorClicks() {
-    // Smooth scroll for internal #hash links with sticky header offset
     on(DOC, "click", function (e) {
       e = e || WIN.event;
       var target = e.target || e.srcElement;
@@ -409,7 +430,6 @@
 
   function trackOutboundClicks() {
     on(DOC, "click", function (e) {
-      // Only track after consent accepted (simple rule)
       if (getConsent() !== "granted") return;
 
       e = e || WIN.event;
@@ -438,7 +458,6 @@
   }
 
   function trackAffiliateClicks() {
-    // Tracks clicks on explicit affiliate CTAs marked with .js-aff
     on(DOC, "click", function (e) {
       if (getConsent() !== "granted") return;
 
@@ -455,11 +474,9 @@
 
       var pageType = getPageType();
 
-      // prefer explicit program via data-aff
       var program = getAttr(a, "data-aff");
       if (program) program = String(program);
 
-      // fallback detection
       if (!program) {
         program = "affiliate";
         try {
@@ -476,56 +493,94 @@
         destination: url,
         transport_type: "beacon"
       });
-    }, { passive: true });
+    });
   }
 
   function trackWidgetEngagement() {
-    // One event per pageview when user interacts with eSIM widget section
-    var fired = false;
+    // Fires once per widget container per pageview, after consent
+    var firedMap = {};
+
+    function markFired(key) { firedMap[key] = true; }
+    function isFired(key) { return !!firedMap[key]; }
+
+    function fire(key, meta) {
+      if (isFired(key)) return;
+      markFired(key);
+      gtagEvent("widget_engagement", meta);
+    }
 
     on(DOC, "click", function (e) {
-      if (fired) return;
       if (getConsent() !== "granted") return;
 
-      var wrap = DOC.getElementById("esim-search");
-      if (!wrap) return;
-
+      e = e || WIN.event;
       var target = e.target || e.srcElement;
-      try {
-        if (wrap.contains(target)) {
-          fired = true;
-          gtagEvent("widget_engagement", {
-            widget: "tp_esim_search",
-            page_type: getPageType()
-          });
-        }
-      } catch (_) {}
-    }, { passive: true });
+      if (!target) return;
+
+      // eSIM hub widget section (your existing pattern)
+      var esimWrap = DOC.getElementById("esim-search");
+      if (esimWrap) {
+        try {
+          if (esimWrap.contains(target)) {
+            fire("esim-search", { widget: "tp_esim_search", page_type: getPageType() });
+          }
+        } catch (_) {}
+      }
+
+      // Things-to-do widgets (examples: tp-nyc-main / tp-nyc-attractions / tp-nyc-tours)
+      // We track by presence of these containers OR by #search section interaction.
+      var ids = ["tp-nyc-main", "tp-nyc-attractions", "tp-nyc-tours"];
+      for (var i = 0; i < ids.length; i++) {
+        var el = DOC.getElementById(ids[i]);
+        if (!el) continue;
+        try {
+          if (el.contains(target)) {
+            fire(ids[i], { widget: ids[i], page_type: getPageType() });
+          }
+        } catch (_) {}
+      }
+
+      // Generic “money zone” on hub/guide: #search section
+      var search = DOC.getElementById("search");
+      if (search) {
+        try {
+          if (search.contains(target)) {
+            fire("search-section", { widget: "search_section", page_type: getPageType() });
+          }
+        } catch (_) {}
+      }
+    });
   }
 
   function initMobileNav() {
-    // Important: header is injected. So we init AFTER injection (initAll).
     var burger = $(".burger");
     if (!burger) return;
 
     var scrim = $(".nav-scrim");
     var drawer = $(".nav-drawer");
 
+    function hasClassList() { return !!(DOC.body && DOC.body.classList); }
+
     function isOpen() {
+      if (!hasClassList()) return ((" " + (DOC.body.className || "") + " ").indexOf(" nav-open ") !== -1);
       return DOC.body.classList.contains("nav-open");
     }
 
     function setOpen(open) {
-      if (open) {
-        DOC.body.classList.add("nav-open");
-        burger.setAttribute("aria-expanded", "true");
+      if (!DOC.body) return;
+
+      if (hasClassList()) {
+        if (open) DOC.body.classList.add("nav-open");
+        else DOC.body.classList.remove("nav-open");
       } else {
-        DOC.body.classList.remove("nav-open");
-        burger.setAttribute("aria-expanded", "false");
+        var cn = " " + (DOC.body.className || "") + " ";
+        cn = cn.replace(/\snav-open\s/g, " ");
+        if (open) cn += " nav-open ";
+        DOC.body.className = trimStr(cn);
       }
+
+      try { burger.setAttribute("aria-expanded", open ? "true" : "false"); } catch (_) {}
     }
 
-    // Avoid double-binding if initAll runs again
     if (burger.getAttribute("data-nav-bound") === "1") {
       burger.setAttribute("aria-expanded", isOpen() ? "true" : "false");
       return;
@@ -537,11 +592,8 @@
       setOpen(!isOpen());
     });
 
-    if (scrim) {
-      on(scrim, "click", function () { setOpen(false); });
-    }
+    if (scrim) on(scrim, "click", function () { setOpen(false); });
 
-    // ESC closes
     on(DOC, "keydown", function (e) {
       e = e || WIN.event;
       var key = e.key || e.keyCode;
@@ -549,7 +601,6 @@
       if (key === "Escape" || key === "Esc" || key === 27) setOpen(false);
     });
 
-    // Clicking a link inside drawer closes
     if (drawer) {
       on(drawer, "click", function (e) {
         var target = e.target || e.srcElement;
@@ -558,7 +609,6 @@
       });
     }
 
-    // Clicking any in-page anchor while open closes too
     on(DOC, "click", function (e) {
       if (!isOpen()) return;
       var target = e.target || e.srcElement;
@@ -596,7 +646,7 @@
     initMobileNav();
     handleAnchorClicks();
 
-    // Consent must run after partials so banner sits cleanly at the end of body
+    // Consent first (default denied). If granted, GA loads.
     initConsent();
 
     trackOutboundClicks();
@@ -629,10 +679,6 @@
     initAll();
   }
 
-  // DOM ready
-  if (DOC.readyState === "loading") {
-    on(DOC, "DOMContentLoaded", initWithPartials);
-  } else {
-    initWithPartials();
-  }
+  if (DOC.readyState === "loading") on(DOC, "DOMContentLoaded", initWithPartials);
+  else initWithPartials();
 })();
