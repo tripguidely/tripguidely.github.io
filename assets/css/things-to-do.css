@@ -3,7 +3,7 @@
    - Hub + Guide
    - Hero readability
    - Premium widget shells (SAFE: do not break vendor DOM)
-   - FIX: hide empty widget shells (no big blank rectangle)
+   - FIX: remove empty widget rectangle WITHOUT hiding the whole shell
    - Pills nav
    - Premium tables (scannable + mobile-friendly)
    - Responsive YouTube embeds
@@ -35,7 +35,6 @@ body:is([data-page="hub"], [data-page="guide"]){
   --ttd-radius: 22px;
   --ttd-radius2: 18px;
 
-  /* table polish */
   --ttd-row-hover: rgba(18,207,208,.07);
 }
 
@@ -106,10 +105,9 @@ body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary):hover{
 }
 
 /* ======================================================================
-   2) Premium widget shells (Hub + Guide) — FIX: NO EMPTY RECTANGLE
+   2) Premium widget shells (Hub + Guide) — NO EMPTY RECTANGLE (PRO FIX)
    ====================================================================== */
 
-/* Base shell (premium) */
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell{
   background:
     radial-gradient(780px 260px at 18% 10%, rgba(18,207,208,.10), transparent 55%),
@@ -129,6 +127,15 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
   body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{ padding: 14px 14px 12px; }
 }
 
+/* Posters inside shell: clean spacing + premium rounding */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .media{
+  margin: 0 0 14px;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .media img{
+  border-radius: var(--ttd-radius2);
+}
+
 /* Widget container hard-guards */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   max-width:100%;
@@ -139,12 +146,21 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   border: 0;
 }
 
-/* SAFE: only hide truly empty direct children (vendor wrappers) */
+/* ✅ Key fix: if widget is empty, hide ONLY the widget box (no rectangle) */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget:empty{
+  display:none !important;
+  border:0 !important;
+  background:transparent !important;
+  animation:none !important;
+  min-height:0 !important;
+}
+
+/* SAFE: hide truly empty vendor wrappers */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget > :where(div,section):empty{
   display:none !important;
 }
 
-/* If iframe is present, keep it responsive */
+/* Responsive iframe */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   display:block !important;
   width:100% !important;
@@ -152,10 +168,10 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   border:0 !important;
   border-radius: var(--ttd-radius2);
   overflow:hidden !important;
-  background: #fff;
+  background:#fff;
 }
 
-/* Affiliate note separator (default) */
+/* Affiliate note separator (default look) */
 body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   margin: 12px 0 0;
   padding-top: 10px;
@@ -163,36 +179,24 @@ body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   color: rgba(100,116,139,.95);
 }
 
+/* Optional: keep affiliate note hidden until widget iframe exists (modern browsers) */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .aff-note{
+  display:block;
+}
+
+@supports selector(:has(*)){
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .aff-note{
+    display:none;
+  }
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget iframe) .aff-note{
+    display:block;
+  }
+}
+
 /* Reduce the “white ocean” around widgets */
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid{
   margin-top: 12px;
 }
-
-/* ----------------------------------------------------------
-   FIX: Hide the entire widget shell until the iframe exists
-   (This removes the big blank rounded rectangle completely)
-   ---------------------------------------------------------- */
-
-/* By default, if the widget is empty, hide it and flatten the shell */
-body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget:empty){
-  display: none;
-}
-
-/* If the iframe exists, show the shell */
-body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget iframe){
-  display: block;
-}
-
-/* Also: if widget exists but still empty, hide notes (extra safety) */
-body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget:empty) .aff-note{
-  display:none;
-}
-
-/* IMPORTANT: removed:
-   - #tp-nyc-* min-heights (big empty blocks)
-   - .tp-widget:empty skeleton (border + shimmer)
-   That was the “rectangle” you saw. */
-
 
 /* ======================================================================
    3) Pills (Tours / Itinerary / FAQ / Back to hub) — Hub + Guide
@@ -317,13 +321,9 @@ body[data-page="guide"] .ttd-table tbody tr:hover td{
   background: var(--ttd-row-hover);
 }
 
-body[data-page="guide"] .ttd-table td:first-child{
-  font-weight: 900;
-}
+body[data-page="guide"] .ttd-table td:first-child{ font-weight: 900; }
 body[data-page="guide"] .ttd-table td:nth-child(3),
-body[data-page="guide"] .ttd-table td:nth-child(4){
-  white-space: nowrap;
-}
+body[data-page="guide"] .ttd-table td:nth-child(4){ white-space: nowrap; }
 
 body[data-page="guide"] .ttd-table thead th:first-child{ border-top-left-radius: 18px; }
 body[data-page="guide"] .ttd-table thead th:last-child{ border-top-right-radius: 18px; }
@@ -373,12 +373,8 @@ body[data-page="guide"] .table-key{
   gap: 8px 10px;
   color: rgba(71,85,105,.95);
 }
-body[data-page="guide"] .table-key .key-sep{
-  opacity: .55;
-}
-body[data-page="guide"] .table-key .key-text{
-  font-weight: 650;
-}
+body[data-page="guide"] .table-key .key-sep{ opacity: .55; }
+body[data-page="guide"] .table-key .key-text{ font-weight: 650; }
 
 @media (max-width: 760px){
   body[data-page="guide"] table.ttd-table{ min-width: 820px; }
