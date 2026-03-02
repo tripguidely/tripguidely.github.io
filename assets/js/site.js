@@ -1,13 +1,14 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
-   - Outbound tracking (GA4 gtag) + affiliate tagging
-   - Affiliate CTA tracking (.js-aff) centralized here (remove inline scripts)
+   - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
+   - Affiliate CTA tracking (.js-aff) centralized here
    - Widget engagement tracking (#esim-search) (fires once)
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Safe console usage + error guards
+   - NEW: Consent banner (Accept/Decline) + lazy-load GA4 only if accepted
    ========================================================================== */
 
 (function () {
@@ -122,16 +123,159 @@
     return p ? String(p) : "unknown";
   }
 
-  /* ---------- GA helpers ---------- */
+  /* ---------- Consent + GA4 (lazy load) ---------- */
+
+  var CONSENT_KEY = "tg_consent_v1";
+  var GA_MEASUREMENT_ID = "G-0GGMM5GYXJ";
+
+  var memConsent = null; // fallback if storage is blocked
+
+  function storageGet(key) {
+    try {
+      if (WIN.localStorage) return WIN.localStorage.getItem(key);
+    } catch (_) {}
+    return memConsent;
+  }
+
+  function storageSet(key, value) {
+    try {
+      if (WIN.localStorage) WIN.localStorage.setItem(key, value);
+    } catch (_) {
+      memConsent = value;
+    }
+  }
+
+  function getConsent() {
+    var v = storageGet(CONSENT_KEY);
+    if (v === "granted" || v === "denied") return v;
+    return "unknown";
+  }
+
+  function setConsent(value) {
+    if (value !== "granted" && value !== "denied") return;
+    storageSet(CONSENT_KEY, value);
+  }
 
   function hasGtag() {
     return typeof WIN.gtag === "function";
+  }
+
+  function ensureDataLayer() {
+    WIN.dataLayer = WIN.dataLayer || [];
+    if (!WIN.gtag) {
+      WIN.gtag = function () {
+        try { WIN.dataLayer.push(arguments); } catch (_) {}
+      };
+    }
+  }
+
+  function loadGA4Once() {
+    // Loads GA script once + config
+    if (WIN.__tg_ga_loaded) return;
+    WIN.__tg_ga_loaded = true;
+
+    ensureDataLayer();
+
+    // Inject gtag.js
+    var s = DOC.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
+    DOC.head.appendChild(s);
+
+    // Configure (anonymize IP)
+    try {
+      WIN.gtag("js", new Date());
+      WIN.gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+    } catch (_) {}
   }
 
   function gtagEvent(name, params) {
     if (!hasGtag()) return;
     try { WIN.gtag("event", name, params || {}); } catch (_) {}
   }
+
+  function removeConsentBanner() {
+    var el = DOC.getElementById("tg-consent");
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+    DOC.body.className = (DOC.body.className || "").replace(/\bconsent-open\b/g, "");
+  }
+
+  function renderConsentBanner() {
+    // Don’t show twice
+    if (DOC.getElementById("tg-consent")) return;
+
+    var banner = DOC.createElement("div");
+    banner.id = "tg-consent";
+    banner.className = "consent-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-live", "polite");
+    banner.setAttribute("aria-label", "Cookie consent");
+
+    // Uses your existing .btn styles; CSS is in styles.css
+    banner.innerHTML =
+      '<div class="wrap">' +
+        '<div class="consent-copy">' +
+          '<p class="consent-title">Privacy choices</p>' +
+          '<p class="consent-text">We use analytics and affiliate tracking to improve TripGuidely and measure what helps travelers most. You can accept or decline.</p>' +
+          // Optional link hook (if you later want a dedicated privacy page)
+          // '<a class="consent-link" href="/privacy/">Learn more</a>' +
+        '</div>' +
+        '<div class="consent-actions">' +
+          '<button type="button" class="btn" id="tg-consent-decline">Decline</button>' +
+          '<button type="button" class="btn primary" id="tg-consent-accept">Accept</button>' +
+        '</div>' +
+      '</div>';
+
+    DOC.body.appendChild(banner);
+
+    DOC.body.className = (DOC.body.className ? DOC.body.className + " " : "") + "consent-open";
+
+    var btnA = DOC.getElementById("tg-consent-accept");
+    var btnD = DOC.getElementById("tg-consent-decline");
+
+    if (btnA) {
+      on(btnA, "click", function () {
+        setConsent("granted");
+        removeConsentBanner();
+        loadGA4Once();
+
+        // Optional: fire a tiny event after consent
+        gtagEvent("consent_update", { status: "granted", page_type: getPageType() });
+      });
+    }
+
+    if (btnD) {
+      on(btnD, "click", function () {
+        setConsent("denied");
+        removeConsentBanner();
+        // No GA load.
+      });
+    }
+  }
+
+  function initConsent() {
+    var c = getConsent();
+    if (c === "granted") {
+      loadGA4Once();
+      return;
+    }
+    if (c === "denied") {
+      // Do nothing
+      return;
+    }
+    // Unknown: show banner
+    renderConsentBanner();
+  }
+
+  // Optional public helper to reopen banner (e.g., from footer “Manage consent” link)
+  function openConsentManager() {
+    renderConsentBanner();
+  }
+  WIN.TripGuidelyConsent = WIN.TripGuidelyConsent || {};
+  WIN.TripGuidelyConsent.open = openConsentManager;
+  WIN.TripGuidelyConsent.get = getConsent;
+
+  /* ---------- GA helpers (affiliate classification) ---------- */
 
   function isAffiliateOrPartner(urlObj) {
     var host = (urlObj.hostname || "").toLowerCase();
@@ -141,8 +285,6 @@
     if (host.indexOf("tpemb.com") !== -1) return true;
     if (host.indexOf("travelpayouts") !== -1) return true;
 
-    // Add more partners later if needed
-    // if (host.indexOf("booking.com") !== -1) return true;
     return false;
   }
 
@@ -185,7 +327,6 @@
 
   function setFooterDates() {
     var now = new Date();
-
     setTextById("year", now.getFullYear());
 
     var lastUpdatedEl = DOC.getElementById("lastUpdated");
@@ -268,6 +409,9 @@
 
   function trackOutboundClicks() {
     on(DOC, "click", function (e) {
+      // Only track after consent accepted (simple rule)
+      if (getConsent() !== "granted") return;
+
       e = e || WIN.event;
       var target = e.target || e.srcElement;
       var a = getClosestLink(target);
@@ -295,10 +439,9 @@
 
   function trackAffiliateClicks() {
     // Tracks clicks on explicit affiliate CTAs marked with .js-aff
-    // Supports:
-    // - <body data-page="guide|hub|...">
-    // - <a class="js-aff" data-aff="airalo" ...>
     on(DOC, "click", function (e) {
+      if (getConsent() !== "granted") return;
+
       e = e || WIN.event;
       var target = e.target || e.srcElement;
       var a = getClosestLink(target);
@@ -342,6 +485,7 @@
 
     on(DOC, "click", function (e) {
       if (fired) return;
+      if (getConsent() !== "granted") return;
 
       var wrap = DOC.getElementById("esim-search");
       if (!wrap) return;
@@ -361,7 +505,6 @@
 
   function initMobileNav() {
     // Important: header is injected. So we init AFTER injection (initAll).
-    // Also: use querySelector each init (no stale nodes).
     var burger = $(".burger");
     if (!burger) return;
 
@@ -406,7 +549,7 @@
       if (key === "Escape" || key === "Esc" || key === 27) setOpen(false);
     });
 
-    // Clicking a link inside drawer closes (same page or navigation)
+    // Clicking a link inside drawer closes
     if (drawer) {
       on(drawer, "click", function (e) {
         var target = e.target || e.srcElement;
@@ -415,7 +558,7 @@
       });
     }
 
-    // Optional: clicking any normal in-page anchor while open closes too
+    // Clicking any in-page anchor while open closes too
     on(DOC, "click", function (e) {
       if (!isOpen()) return;
       var target = e.target || e.srcElement;
@@ -429,6 +572,8 @@
 
   function measureVitalsHints() {
     try {
+      if (getConsent() !== "granted") return;
+
       var t0 = (WIN.performance && WIN.performance.timing) ? WIN.performance.timing : null;
       if (!t0) return;
 
@@ -450,6 +595,10 @@
     highlightActiveNav();
     initMobileNav();
     handleAnchorClicks();
+
+    // Consent must run after partials so banner sits cleanly at the end of body
+    initConsent();
+
     trackOutboundClicks();
     trackAffiliateClicks();
     trackWidgetEngagement();
