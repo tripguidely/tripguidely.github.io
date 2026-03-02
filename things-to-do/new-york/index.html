@@ -64,7 +64,7 @@
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
   <link rel="dns-prefetch" href="//www.youtube-nocookie.com" />
 
-  <!-- LCP hero preload (FIXED PATHS) -->
+  <!-- LCP hero preload -->
   <link rel="preload" as="image"
     href="/assets/images/hero/new-york-things-to-do-hero-1600x900.webp"
     imagesrcset="/assets/images/hero/new-york-things-to-do-hero-800x450.webp 800w, /assets/images/hero/new-york-things-to-do-hero-1200x675.webp 1200w, /assets/images/hero/new-york-things-to-do-hero-1600x900.webp 1600w, /assets/images/hero/new-york-things-to-do-hero-2400x1350.webp 2400w"
@@ -269,7 +269,7 @@
         <span>New York</span>
       </nav>
 
-      <!-- QUICK NAV (better intent + usability) -->
+      <!-- QUICK NAV -->
       <section class="card pad" aria-label="Quick navigation">
         <div class="mini-grid" aria-label="Quick category jumps">
           <a class="pill-link" href="#decision">Build a 2-day plan</a>
@@ -300,7 +300,7 @@
         </div>
       </section>
 
-      <!-- DECISION HELPER (this is what affiliate sites rarely do well) -->
+      <!-- DECISION HELPER -->
       <section id="decision" class="card pad content" aria-label="Decision helper">
         <div class="section-title">
           <h2>Build your NYC plan in 60 seconds</h2>
@@ -326,7 +326,7 @@
         </div>
       </section>
 
-      <!-- BEST TIMES TABLE (scannable, “helpful content” signal) -->
+      <!-- BEST TIMES TABLE -->
       <section id="best-times" class="card pad content" aria-label="Best times to visit">
         <div class="section-title">
           <h2>Best times to visit key NYC attractions</h2>
@@ -338,126 +338,100 @@
         </div>
 
         <div class="table-wrap" role="region" aria-label="Best times table" tabindex="0">
-  <table class="table" aria-label="NYC attractions best times">
-    <caption class="table-cap">
-      Best times to visit key NYC attractions (use 1–2 rows as “anchors”, then fill gaps with flexible stops nearby).
-    </caption>
+          <table class="table ttd-table" aria-label="NYC attractions best times">
+            <caption class="table-cap">
+              Best times to visit key NYC attractions (use 1–2 rows as “anchors”, then fill gaps with flexible stops nearby).
+            </caption>
 
-    <thead>
-      <tr>
-        <th scope="col">Attraction</th>
-        <th scope="col">Best time</th>
-        <th scope="col">Book ahead?</th>
-        <th scope="col">Time needed</th>
-        <th scope="col">Area</th>
-        <th scope="col">Priority</th>
-      </tr>
-    </thead>
+            <thead>
+              <tr>
+                <th scope="col">Attraction</th>
+                <th scope="col">Best time</th>
+                <th scope="col">Book ahead?</th>
+                <th scope="col">Time needed</th>
+                <th scope="col">Area</th>
+                <th scope="col">Priority</th>
+              </tr>
+            </thead>
 
-    <tbody>
-      <tr>
-        <td data-label="Attraction"><strong>Statue of Liberty</strong></td>
-        <td data-label="Best time">First ferry</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
-        <td data-label="Time needed">4–6 hrs</td>
-        <td data-label="Area">Downtown</td>
-        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
-      </tr>
+            <tbody>
+              <tr>
+                <td data-label="Attraction"><strong>Statue of Liberty</strong></td>
+                <td data-label="Best time">First ferry</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+                <td data-label="Time needed">4–6 hrs</td>
+                <td data-label="Area">Downtown</td>
+                <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>SUMMIT One Vanderbilt</strong></td>
-        <td data-label="Best time">Early afternoon or pre-sunset</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
-        <td data-label="Time needed">1.5–2.5 hrs</td>
-        <td data-label="Area">Midtown East</td>
-        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
-      </tr>
+              <tr>
+                <td data-label="Attraction"><strong>SUMMIT One Vanderbilt</strong></td>
+                <td data-label="Best time">Early afternoon or pre-sunset</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+                <td data-label="Time needed">1.5–2.5 hrs</td>
+                <td data-label="Area">Midtown East</td>
+                <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>Empire State Building</strong></td>
-        <td data-label="Best time">Late evening</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
-        <td data-label="Time needed">1.5–2.5 hrs</td>
-        <td data-label="Area">Midtown</td>
-        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
-      </tr>
+              <tr>
+                <td data-label="Attraction"><strong>Empire State Building</strong></td>
+                <td data-label="Best time">Late evening</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
+                <td data-label="Time needed">1.5–2.5 hrs</td>
+                <td data-label="Area">Midtown</td>
+                <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>Central Park</strong></td>
-        <td data-label="Best time">Morning or golden-hour walk</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
-        <td data-label="Time needed">1.5–3 hrs</td>
-        <td data-label="Area">Uptown/Midtown</td>
-        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
-      </tr>
+              <tr>
+                <td data-label="Attraction"><strong>Central Park</strong></td>
+                <td data-label="Best time">Morning or golden-hour walk</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
+                <td data-label="Time needed">1.5–3 hrs</td>
+                <td data-label="Area">Uptown/Midtown</td>
+                <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>Brooklyn Bridge</strong></td>
-        <td data-label="Best time">Before 9 AM</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
-        <td data-label="Time needed">1–2 hrs</td>
-        <td data-label="Area">Brooklyn/Downtown</td>
-        <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
-      </tr>
+              <tr>
+                <td data-label="Attraction"><strong>Brooklyn Bridge</strong></td>
+                <td data-label="Best time">Before 9 AM</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-no">No</span></td>
+                <td data-label="Time needed">1–2 hrs</td>
+                <td data-label="Area">Brooklyn/Downtown</td>
+                <td data-label="Priority"><span class="t-badge t-badge-flex">Flexible</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>The Met</strong></td>
-        <td data-label="Best time">Opening time</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
-        <td data-label="Time needed">2–3 hrs</td>
-        <td data-label="Area">Upper East Side</td>
-        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
-      </tr>
+              <tr>
+                <td data-label="Attraction"><strong>The Met</strong></td>
+                <td data-label="Best time">Opening time</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-maybe">Recommended</span></td>
+                <td data-label="Time needed">2–3 hrs</td>
+                <td data-label="Area">Upper East Side</td>
+                <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+              </tr>
 
-      <tr>
-        <td data-label="Attraction"><strong>9/11 Museum</strong></td>
-        <td data-label="Best time">Morning (calmer)</td>
-        <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
-        <td data-label="Time needed">2–3.5 hrs</td>
-        <td data-label="Area">Downtown</td>
-        <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="table-key" aria-label="Table key">
-  <span class="t-badge t-badge-anchor">Anchor</span>
-  <span class="key-text">= book first, protects the whole day</span>
-  <span class="key-sep" aria-hidden="true">•</span>
-  <span class="t-badge t-badge-flex">Flexible</span>
-  <span class="key-text">= fill gaps near your current neighborhood</span>
-</div>
-
-<p class="aff-note">
-  Note: crowd levels vary by season, weather, and school holidays. Use the table as a planning baseline.
-</p>
-
-      <!-- INTRO AUTHORITY SECTION -->
-      <section class="card pad content" aria-label="How to plan New York smartly">
-        <div class="section-title">
-          <h2>How to plan New York the smart way</h2>
-          <p>Timing + clustering = smoother days.</p>
+              <tr>
+                <td data-label="Attraction"><strong>9/11 Museum</strong></td>
+                <td data-label="Best time">Morning (calmer)</td>
+                <td data-label="Book ahead?"><span class="t-badge t-badge-yes">Yes (timed)</span></td>
+                <td data-label="Time needed">2–3.5 hrs</td>
+                <td data-label="Area">Downtown</td>
+                <td data-label="Priority"><span class="t-badge t-badge-anchor">Anchor</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <p>
-          New York rewards strategy. The difference between an average trip and a smooth one usually comes down to
-          <strong>timing</strong> (when you go) and <strong>clustering</strong> (where you group your stops).
-          Use the rules below to cut lines, reduce transit, and keep energy for the best moments.
+        <div class="table-key" aria-label="Table key">
+          <span class="t-badge t-badge-anchor">Anchor</span>
+          <span class="key-text">= book first, protects the whole day</span>
+          <span class="key-sep" aria-hidden="true">•</span>
+          <span class="t-badge t-badge-flex">Flexible</span>
+          <span class="key-text">= fill gaps near your current neighborhood</span>
+        </div>
+
+        <p class="aff-note">
+          Note: crowd levels vary by season, weather, and school holidays. Use the table as a planning baseline.
         </p>
-
-        <ul class="checklist">
-          <li><strong>Timed-entry before 10 AM:</strong> lock 1–2 “anchor” tickets early.</li>
-          <li><strong>Cluster Midtown:</strong> avoid subway zig-zags that eat half your day.</li>
-          <li><strong>Weather backup:</strong> keep one indoor option in the same area.</li>
-          <li><strong>Observation decks:</strong> opening time or ~60 minutes before sunset.</li>
-          <li><strong>One long block:</strong> leave a 2–3 hour “open” window for surprises.</li>
-        </ul>
-
-        <div class="callout">
-          <b>Pro tip:</b> If you only do one optimization, book your top attraction early and build around it.
-          The rest of your itinerary becomes easier.
-        </div>
       </section>
 
       <!-- TOP ATTRACTIONS -->
@@ -514,15 +488,13 @@
           <a href="https://new.mta.info/" rel="noopener" target="_blank">MTA (subway info)</a>
         </div>
 
-        <!-- ATTRACTIONS WIDGET (CATEGORY 1) -->
         <div class="callout">
           <b>Want the best ticket options fast?</b> Compare top NYC attractions and shows below (timed-entry can save hours).
         </div>
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <!-- Reserve height to reduce CLS -->
-            <div id="tp-nyc-attractions" class="tp-widget" aria-label="NYC attractions and shows" style="min-height:420px"></div>
+            <div id="tp-nyc-attractions" class="tp-widget" aria-label="NYC attractions and shows"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-attractions&locale=en&city_id=93&category=1&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
             <noscript>
               <p class="aff-note">JavaScript is required to load the live ticket comparison widget.</p>
@@ -559,7 +531,7 @@
         </p>
       </section>
 
-      <!-- SEARCH WIDGET MONEY ZONE (MAIN CATEGORY 3) -->
+      <!-- SEARCH WIDGET MONEY ZONE -->
       <section id="search" class="card pad content" aria-label="Search tours and attractions in NYC">
         <div class="section-title">
           <h2>Search tours & attractions in NYC</h2>
@@ -573,8 +545,7 @@
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <!-- Reserve height to reduce CLS -->
-            <div id="tp-nyc-main" class="tp-widget" aria-label="NYC activities and experiences" style="min-height:520px"></div>
+            <div id="tp-nyc-main" class="tp-widget" aria-label="NYC activities and experiences"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-main&locale=en&city_id=93&category=3&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
             <noscript>
               <p class="aff-note">JavaScript is required to load the live activity search widget.</p>
@@ -623,15 +594,13 @@
           Book in advance for peak seasons. Weeknight shows can be slightly easier to secure and often feel less hectic.
         </p>
 
-        <!-- TOURS WIDGET (CATEGORY 2) -->
         <div class="callout">
           <b>Best for low-stress planning:</b> Guided tours help you see more with less decision fatigue.
         </div>
 
         <div class="hero-tool-shell">
           <div class="hero-tool-pad">
-            <!-- Reserve height to reduce CLS -->
-            <div id="tp-nyc-tours" class="tp-widget" aria-label="NYC tours and sightseeing" style="min-height:420px"></div>
+            <div id="tp-nyc-tours" class="tp-widget" aria-label="NYC tours and sightseeing"></div>
             <script async src="https://tpemb.com/content?currency=USD&trs=492724&shmarker=699178.ttd-nyc-tours&locale=en&city_id=93&category=2&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>
             <noscript>
               <p class="aff-note">JavaScript is required to load the live tours widget.</p>
@@ -732,8 +701,6 @@
   </main>
 
   <div id="site-footer"></div>
-
-  <!-- Your existing site.js (partials + nav + tracking + dates + consent + GA4 lazy) -->
   <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
