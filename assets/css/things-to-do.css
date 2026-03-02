@@ -1,8 +1,9 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (PREMIUM + SAFE)
+   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (NO EMPTY RECTANGLE)
    - Hub + Guide
    - Hero readability
    - Premium widget shells (SAFE: do not break vendor DOM)
+   - FIX: hide empty widget shells (no big blank rectangle)
    - Pills nav
    - Premium tables (scannable + mobile-friendly)
    - Responsive YouTube embeds
@@ -105,9 +106,10 @@ body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary):hover{
 }
 
 /* ======================================================================
-   2) Premium widget shells (Hub + Guide) — PREMIUM LOOK (SAFE)
+   2) Premium widget shells (Hub + Guide) — FIX: NO EMPTY RECTANGLE
    ====================================================================== */
 
+/* Base shell (premium) */
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell{
   background:
     radial-gradient(780px 260px at 18% 10%, rgba(18,207,208,.10), transparent 55%),
@@ -127,29 +129,22 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
   body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{ padding: 14px 14px 12px; }
 }
 
-/* Widget container hard-guards (prevents horizontal “wiggle”) */
+/* Widget container hard-guards */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   max-width:100%;
   overflow:hidden;
   contain: layout paint;
   border-radius: var(--ttd-radius2);
-  /* IMPORTANT: default state should NOT look like a big empty card */
   background: transparent;
   border: 0;
 }
 
-/* SAFE: only hide truly empty direct children */
+/* SAFE: only hide truly empty direct children (vendor wrappers) */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget > :where(div,section):empty{
   display:none !important;
 }
 
-/* When iframe is present, remove any “extra container look” */
-body:is([data-page="hub"], [data-page="guide"]) .tp-widget:has(iframe){
-  background: transparent;
-  border: 0;
-}
-
-/* Keep widgets responsive */
+/* If iframe is present, keep it responsive */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   display:block !important;
   width:100% !important;
@@ -160,12 +155,7 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   background: #fff;
 }
 
-/* Reduce the “white ocean” around widgets */
-body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid{
-  margin-top: 12px;
-}
-
-/* Affiliate note separator */
+/* Affiliate note separator (default) */
 body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   margin: 12px 0 0;
   padding-top: 10px;
@@ -173,33 +163,36 @@ body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   color: rgba(100,116,139,.95);
 }
 
-/* Reserve space so widget load doesn’t look broken (CLS-friendly)
-   Set these once, remove inline min-height in HTML */
-body[data-page="guide"] #tp-nyc-attractions{ min-height: 440px; }
-body[data-page="guide"] #tp-nyc-main{        min-height: 540px; }
-body[data-page="guide"] #tp-nyc-tours{       min-height: 440px; }
-
-@media (max-width: 760px){
-  body[data-page="guide"] #tp-nyc-attractions{ min-height: 480px; }
-  body[data-page="guide"] #tp-nyc-main{        min-height: 600px; }
-  body[data-page="guide"] #tp-nyc-tours{       min-height: 480px; }
+/* Reduce the “white ocean” around widgets */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid{
+  margin-top: 12px;
 }
 
-/* Subtle skeleton while empty (ONLY when empty) */
-body:is([data-page="hub"], [data-page="guide"]) .tp-widget:empty{
-  position: relative;
-  border-radius: var(--ttd-radius2);
-  border: 1px solid rgba(15,23,42,.08);
-  background:
-    linear-gradient(90deg, rgba(2,6,23,.05) 0%, rgba(2,6,23,.09) 50%, rgba(2,6,23,.05) 100%);
-  background-size: 220% 100%;
-  animation: ttd-shimmer 1.25s ease-in-out infinite;
+/* ----------------------------------------------------------
+   FIX: Hide the entire widget shell until the iframe exists
+   (This removes the big blank rounded rectangle completely)
+   ---------------------------------------------------------- */
+
+/* By default, if the widget is empty, hide it and flatten the shell */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget:empty){
+  display: none;
 }
 
-@keyframes ttd-shimmer{
-  0%{ background-position: 0% 50%; }
-  100%{ background-position: 100% 50%; }
+/* If the iframe exists, show the shell */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget iframe){
+  display: block;
 }
+
+/* Also: if widget exists but still empty, hide notes (extra safety) */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget:empty) .aff-note{
+  display:none;
+}
+
+/* IMPORTANT: removed:
+   - #tp-nyc-* min-heights (big empty blocks)
+   - .tp-widget:empty skeleton (border + shimmer)
+   That was the “rectangle” you saw. */
+
 
 /* ======================================================================
    3) Pills (Tours / Itinerary / FAQ / Back to hub) — Hub + Guide
@@ -267,11 +260,9 @@ body:is([data-page="hub"], [data-page="guide"]) .pill-link:active{
 }
 
 /* ======================================================================
-   4) PREMIUM TABLES (Guide pages) — Fix “lait” table
-   Scope on .ttd-table to avoid collateral
+   4) PREMIUM TABLES (Guide pages)
    ====================================================================== */
 
-/* Wrapper becomes a real card */
 body[data-page="guide"] .table-wrap{
   margin-top: 12px;
   border-radius: var(--ttd-radius);
@@ -284,7 +275,6 @@ body[data-page="guide"] .table-wrap{
   -webkit-overflow-scrolling: touch;
 }
 
-/* Optional caption */
 body[data-page="guide"] .table-cap{
   text-align: left;
   padding: 14px 14px 0;
@@ -293,15 +283,13 @@ body[data-page="guide"] .table-cap{
   font-size: .95rem;
 }
 
-/* Table itself */
 body[data-page="guide"] table.ttd-table{
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 860px; /* gives columns air, scroll on small screens */
+  min-width: 860px;
 }
 
-/* Header */
 body[data-page="guide"] .ttd-table thead th{
   position: sticky;
   top: 0;
@@ -315,7 +303,6 @@ body[data-page="guide"] .ttd-table thead th{
   color: rgba(15,23,42,.92);
 }
 
-/* Cells */
 body[data-page="guide"] .ttd-table td{
   padding: 14px 14px;
   border-bottom: 1px solid rgba(15,23,42,.08);
@@ -323,7 +310,6 @@ body[data-page="guide"] .ttd-table td{
   vertical-align: top;
 }
 
-/* Zebra + hover */
 body[data-page="guide"] .ttd-table tbody tr:nth-child(odd) td{
   background: rgba(2,6,23,.015);
 }
@@ -331,7 +317,6 @@ body[data-page="guide"] .ttd-table tbody tr:hover td{
   background: var(--ttd-row-hover);
 }
 
-/* Column tuning */
 body[data-page="guide"] .ttd-table td:first-child{
   font-weight: 900;
 }
@@ -340,13 +325,11 @@ body[data-page="guide"] .ttd-table td:nth-child(4){
   white-space: nowrap;
 }
 
-/* Round corners */
 body[data-page="guide"] .ttd-table thead th:first-child{ border-top-left-radius: 18px; }
 body[data-page="guide"] .ttd-table thead th:last-child{ border-top-right-radius: 18px; }
 body[data-page="guide"] .ttd-table tbody tr:last-child td:first-child{ border-bottom-left-radius: 18px; }
 body[data-page="guide"] .ttd-table tbody tr:last-child td:last-child{ border-bottom-right-radius: 18px; }
 
-/* Badges (Anchor/Flexible/Yes/No/Recommended) */
 body[data-page="guide"] .t-badge{
   display:inline-flex;
   align-items:center;
@@ -382,7 +365,6 @@ body[data-page="guide"] .t-badge-maybe{
   background: rgba(244,162,97,.12);
 }
 
-/* Table key row */
 body[data-page="guide"] .table-key{
   margin-top: 12px;
   display:flex;
@@ -398,7 +380,6 @@ body[data-page="guide"] .table-key .key-text{
   font-weight: 650;
 }
 
-/* Mobile: allow easier horizontal scroll without looking broken */
 @media (max-width: 760px){
   body[data-page="guide"] table.ttd-table{ min-width: 820px; }
   body[data-page="guide"] .ttd-table thead th,
