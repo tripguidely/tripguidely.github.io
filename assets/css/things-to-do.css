@@ -1,11 +1,12 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED) — FINAL
+   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (SAFER)
    Purpose:
    - Dedicated to /things-to-do/ pages (hub + city guides)
    - Fix hero readability (white text)
    - Premium widget shells (no ugly gaps)
    - Pills navigation (Tours / Itinerary / FAQ / Back to hub)
    - Responsive YouTube embeds
+   - UPDATED: safer widget cleanup (avoid breaking vendor DOM)
    ========================================================================== */
 
 /* ======================================================================
@@ -114,7 +115,14 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
   body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{ padding: 14px 14px 12px; }
 }
 
-/* Keep widgets responsive without forcing a giant blank space */
+/* Widget container hard-guards (prevents horizontal “wiggle”) */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
+  max-width:100%;
+  overflow:hidden;
+  contain: layout paint;
+}
+
+/* Keep widgets responsive */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   display:block !important;
   width:100% !important;
@@ -124,8 +132,10 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   overflow:hidden !important;
 }
 
-/* Remove empty wrappers that become “blank lines” (safe) */
-body:is([data-page="hub"], [data-page="guide"]) .tp-widget :where(div,section):empty{
+/* UPDATED (SAFER):
+   Remove only truly empty generic spacer nodes close to widget root.
+   Avoid :empty on every div/section (can break vendor layouts). */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget > :where(div,section):empty{
   display:none !important;
 }
 
@@ -139,42 +149,24 @@ body:is([data-page="hub"], [data-page="guide"]) .aff-note{
 
 /* ======================================================================
    2B) Hub-only: clamp the big widget height to avoid “white ocean”
-   (Guide widgets vary by category, so we don’t hard-clamp there.)
+   UPDATED: clamp the iframe only, do not nuke random map/loading classes.
    ====================================================================== */
 
-body[data-page="hub"] #search iframe{
+body[data-page="hub"] #search .tp-widget iframe{
   height: clamp(420px, 56vh, 620px) !important;
   max-height: 620px !important;
 }
 
 @media (max-width: 760px){
-  body[data-page="hub"] #search iframe{
+  body[data-page="hub"] #search .tp-widget iframe{
     height: clamp(520px, 64vh, 760px) !important;
     max-height: 760px !important;
   }
 }
 
-/* Hub-only cleanup for common injected spacer blocks */
-body[data-page="hub"] #search [id*="map"],
-body[data-page="hub"] #search [class*="map"],
-body[data-page="hub"] #search [class*="Map"],
-body[data-page="hub"] #search [class*="placeholder"],
-body[data-page="hub"] #search [class*="Placeholder"],
-body[data-page="hub"] #search [class*="skeleton"],
-body[data-page="hub"] #search [class*="Skeleton"],
-body[data-page="hub"] #search [class*="preload"],
-body[data-page="hub"] #search [class*="Preload"],
-body[data-page="hub"] #search [class*="loading"],
-body[data-page="hub"] #search [class*="Loading"],
-body[data-page="hub"] #search [class*="spacer"],
-body[data-page="hub"] #search [class*="Spacer"]{
-  height:0 !important;
-  min-height:0 !important;
-  max-height:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  overflow:hidden !important;
+/* Optional: if the vendor injects a wrapper with huge min-height, neutralize softly */
+body[data-page="hub"] #search .tp-widget :where([style*="min-height"]){
+  min-height: 0 !important;
 }
 
 /* ======================================================================
