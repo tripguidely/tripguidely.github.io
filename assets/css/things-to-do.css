@@ -1,12 +1,11 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (SAFER)
-   Purpose:
-   - Dedicated to /things-to-do/ pages (hub + city guides)
-   - Fix hero readability (white text)
-   - Premium widget shells (no ugly gaps)
-   - Pills navigation (Tours / Itinerary / FAQ / Back to hub)
+   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (PREMIUM + SAFE)
+   - Hub + Guide
+   - Hero readability
+   - Premium widget shells (SAFE: do not break vendor DOM)
+   - Pills nav
+   - Premium tables
    - Responsive YouTube embeds
-   - UPDATED: safer widget cleanup (avoid breaking vendor DOM)
    ========================================================================== */
 
 /* ======================================================================
@@ -20,13 +19,20 @@ body:is([data-page="hub"], [data-page="guide"]){
   --ttd-hero-muted: rgba(226,232,240,.72);
 
   --ttd-panel: rgba(255,255,255,.96);
-  --ttd-panel-border: rgba(255,255,255,.22);
-  --ttd-panel-shadow: 0 30px 80px rgba(2,6,23,.22);
+  --ttd-panel-border: rgba(15,23,42,.10);
+  --ttd-panel-shadow: 0 30px 80px rgba(2,6,23,.18);
 
   --ttd-chip-bg: #ffffff;
   --ttd-chip-border: rgba(15,23,42,.10);
   --ttd-chip-shadow: 0 10px 22px rgba(2,6,23,.08);
   --ttd-chip-hover: 0 18px 44px rgba(2,6,23,.14);
+
+  --ttd-line: rgba(15,23,42,.10);
+  --ttd-line2: rgba(15,23,42,.14);
+  --ttd-soft: rgba(2,6,23,.04);
+
+  --ttd-radius: 22px;
+  --ttd-radius2: 18px;
 }
 
 /* ======================================================================
@@ -96,14 +102,17 @@ body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary):hover{
 }
 
 /* ======================================================================
-   2) Premium widget shells (Hub + Guide)
+   2) Premium widget shells (Hub + Guide) — PREMIUM LOOK (SAFE)
    ====================================================================== */
 
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell{
-  background: var(--ttd-panel);
+  background:
+    radial-gradient(780px 260px at 18% 10%, rgba(18,207,208,.10), transparent 55%),
+    radial-gradient(860px 320px at 86% 55%, rgba(244,162,97,.10), transparent 58%),
+    var(--ttd-panel);
   border: 1px solid var(--ttd-panel-border);
   box-shadow: var(--ttd-panel-shadow);
-  border-radius: 22px;
+  border-radius: var(--ttd-radius);
   overflow: hidden;
 }
 
@@ -120,6 +129,9 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   max-width:100%;
   overflow:hidden;
   contain: layout paint;
+  border-radius: var(--ttd-radius2);
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(15,23,42,.08);
 }
 
 /* Keep widgets responsive */
@@ -128,45 +140,55 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   width:100% !important;
   max-width:100% !important;
   border:0 !important;
-  border-radius: 18px;
+  border-radius: var(--ttd-radius2);
   overflow:hidden !important;
+  background: #fff;
 }
 
-/* UPDATED (SAFER):
-   Remove only truly empty generic spacer nodes close to widget root.
-   Avoid :empty on every div/section (can break vendor layouts). */
+/* IMPORTANT:
+   No aggressive DOM nuking.
+   Only hide truly empty direct children (safe) */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget > :where(div,section):empty{
   display:none !important;
+}
+
+/* Reduce the “white ocean” above/below widgets */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid{
+  margin-top: 12px;
 }
 
 /* Affiliate note separator */
 body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   margin: 12px 0 0;
   padding-top: 10px;
-  border-top: 1px solid rgba(15,23,42,.08);
+  border-top: 1px solid rgba(15,23,42,.10);
   color: rgba(100,116,139,.95);
 }
 
-/* ======================================================================
-   2B) Hub-only: clamp the big widget height to avoid “white ocean”
-   UPDATED: clamp the iframe only, do not nuke random map/loading classes.
-   ====================================================================== */
-
-body[data-page="hub"] #search .tp-widget iframe{
-  height: clamp(420px, 56vh, 620px) !important;
-  max-height: 620px !important;
-}
+/* Reserve space so widget load doesn’t look broken (CLS-friendly)
+   Set these once, remove inline min-height in HTML */
+body[data-page="guide"] #tp-nyc-attractions{ min-height: 440px; }
+body[data-page="guide"] #tp-nyc-main{        min-height: 540px; }
+body[data-page="guide"] #tp-nyc-tours{       min-height: 440px; }
 
 @media (max-width: 760px){
-  body[data-page="hub"] #search .tp-widget iframe{
-    height: clamp(520px, 64vh, 760px) !important;
-    max-height: 760px !important;
-  }
+  body[data-page="guide"] #tp-nyc-attractions{ min-height: 480px; }
+  body[data-page="guide"] #tp-nyc-main{        min-height: 600px; }
+  body[data-page="guide"] #tp-nyc-tours{       min-height: 480px; }
 }
 
-/* Optional: if the vendor injects a wrapper with huge min-height, neutralize softly */
-body[data-page="hub"] #search .tp-widget :where([style*="min-height"]){
-  min-height: 0 !important;
+/* Subtle skeleton while empty */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget:empty{
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(2,6,23,.05) 0%, rgba(2,6,23,.09) 50%, rgba(2,6,23,.05) 100%);
+  background-size: 220% 100%;
+  animation: ttd-shimmer 1.25s ease-in-out infinite;
+}
+
+@keyframes ttd-shimmer{
+  0%{ background-position: 0% 50%; }
+  100%{ background-position: 100% 50%; }
 }
 
 /* ======================================================================
@@ -218,6 +240,11 @@ body:is([data-page="hub"], [data-page="guide"]) .pill-link:hover{
     #ffffff;
 }
 
+body:is([data-page="hub"], [data-page="guide"]) .pill-link:focus-visible{
+  outline: 3px solid rgba(18,207,208,.45);
+  outline-offset: 2px;
+}
+
 body:is([data-page="hub"], [data-page="guide"]) .pill-link:active{
   transform: translateY(0px);
 }
@@ -230,7 +257,77 @@ body:is([data-page="hub"], [data-page="guide"]) .pill-link:active{
 }
 
 /* ======================================================================
-   4) Small polish (Hub + Guide)
+   4) PREMIUM TABLES (Guide pages) — Fix “lait” table
+   ====================================================================== */
+
+/* The wrapper becomes a real card */
+body[data-page="guide"] .table-wrap{
+  margin-top: 12px;
+  border-radius: var(--ttd-radius);
+  border: 1px solid var(--ttd-line);
+  background:
+    radial-gradient(760px 260px at 20% 0%, rgba(18,207,208,.08), transparent 58%),
+    rgba(255,255,255,.96);
+  box-shadow: 0 18px 44px rgba(2,6,23,.10);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table itself */
+body[data-page="guide"] table.table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 780px; /* ensures columns breathe, scroll on small screens */
+}
+
+/* Header */
+body[data-page="guide"] .table thead th{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: rgba(255,255,255,.98);
+  border-bottom: 1px solid var(--ttd-line2);
+  font-weight: 900;
+  letter-spacing: .2px;
+  padding: 14px 14px;
+  text-align: left;
+  color: rgba(15,23,42,.92);
+}
+
+/* Cells */
+body[data-page="guide"] .table td{
+  padding: 14px 14px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  color: rgba(15,23,42,.92);
+  vertical-align: top;
+}
+
+/* Zebra + hover */
+body[data-page="guide"] .table tbody tr:nth-child(odd) td{
+  background: rgba(2,6,23,.015);
+}
+body[data-page="guide"] .table tbody tr:hover td{
+  background: rgba(18,207,208,.07);
+}
+
+/* Column tuning for readability */
+body[data-page="guide"] .table td:first-child{
+  font-weight: 850;
+}
+body[data-page="guide"] .table td:nth-child(3),
+body[data-page="guide"] .table td:nth-child(4){
+  white-space: nowrap;
+}
+
+/* Round corners */
+body[data-page="guide"] .table thead th:first-child{ border-top-left-radius: 18px; }
+body[data-page="guide"] .table thead th:last-child{ border-top-right-radius: 18px; }
+body[data-page="guide"] .table tbody tr:last-child td:first-child{ border-bottom-left-radius: 18px; }
+body[data-page="guide"] .table tbody tr:last-child td:last-child{ border-bottom-right-radius: 18px; }
+
+/* ======================================================================
+   5) Small polish (Hub + Guide)
    ====================================================================== */
 
 body:is([data-page="hub"], [data-page="guide"]) .content,
@@ -244,7 +341,7 @@ body:is([data-page="hub"], [data-page="guide"]) code{
 }
 
 /* ======================================================================
-   5) Widget input/button skin (Hub only inside #search)
+   6) Widget input/button skin (Hub only inside #search)
    ====================================================================== */
 
 body[data-page="hub"] #search input,
@@ -288,7 +385,7 @@ body[data-page="hub"] #search [type="submit"]:hover{
 }
 
 /* ======================================================================
-   6) Responsive YouTube embed (Guide pages)
+   7) Responsive YouTube embed (Guide pages)
    ====================================================================== */
 
 body[data-page="guide"] .video-embed{
