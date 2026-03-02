@@ -294,3 +294,116 @@ body[data-page="hub"] #search [type="submit"]:hover{
   transform: translateY(-1px) !important;
   box-shadow: 0 22px 54px rgba(2,6,23,.14) !important;
 }
+
+/* ==========================================================================
+   TripGuidely — things-to-do.css (GUIDES)
+   Applies to /things-to-do/{city}/ pages (body[data-page="guide"])
+   - Ensures hero text readability
+   - Premium widget shells (no ugly gaps)
+   - Clean responsive YouTube embeds
+   ========================================================================== */
+
+body[data-page="guide"]{
+  --ttd-hero-shadow: 0 18px 50px rgba(0,0,0,.45);
+  --ttd-hero-text: rgba(255,255,255,.96);
+  --ttd-hero-sub: rgba(226,232,240,.88);
+  --ttd-hero-muted: rgba(226,232,240,.72);
+
+  --ttd-panel: rgba(255,255,255,.96);
+  --ttd-panel-border: rgba(255,255,255,.22);
+  --ttd-panel-shadow: 0 30px 80px rgba(2,6,23,.22);
+}
+
+/* HERO readability (GUIDE) */
+body[data-page="guide"] .hero.hero-full{
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+body[data-page="guide"] .hero-overlay{
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
+    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
+    linear-gradient(180deg,
+      rgba(2,6,23,.62) 0%,
+      rgba(2,6,23,.42) 26%,
+      rgba(2,6,23,.26) 56%,
+      rgba(2,6,23,.54) 100%);
+  opacity: .95;
+}
+
+body[data-page="guide"] .hero .kicker{
+  color: rgba(255,255,255,.78);
+  text-shadow: var(--ttd-hero-shadow);
+}
+body[data-page="guide"] .hero h1{
+  color: var(--ttd-hero-text);
+  text-shadow: var(--ttd-hero-shadow);
+}
+body[data-page="guide"] .hero .lede{
+  color: var(--ttd-hero-sub);
+  text-shadow: var(--ttd-hero-shadow);
+}
+body[data-page="guide"] .hero .meta{
+  color: var(--ttd-hero-muted);
+  text-shadow: var(--ttd-hero-shadow);
+}
+
+/* Widget shells look premium on guides too */
+body[data-page="guide"] .hero-tool-shell{
+  background: var(--ttd-panel);
+  border: 1px solid var(--ttd-panel-border);
+  box-shadow: var(--ttd-panel-shadow);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+body[data-page="guide"] .hero-tool-pad{
+  padding: 18px 18px 14px;
+}
+@media (max-width: 760px){
+  body[data-page="guide"] .hero-tool-pad{ padding: 14px 14px 12px; }
+}
+
+/* IMPORTANT:
+   Don’t force iframe height globally (widgets differ).
+   Instead: make iframe fill its wrapper naturally and stay responsive.
+*/
+body[data-page="guide"] .tp-widget iframe{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  border:0 !important;
+}
+
+/* Slight guard: if widget injects weird empty blocks */
+body[data-page="guide"] .tp-widget :where(div,section):empty{
+  display:none !important;
+}
+
+/* Affiliate note separator looks clean */
+body[data-page="guide"] .aff-note{
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(15,23,42,.08);
+  color: rgba(100,116,139,.95);
+}
+
+/* Responsive YouTube embed (for your NYC page) */
+body[data-page="guide"] .video-embed{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(15,23,42,.10);
+  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+  background:#000;
+}
+body[data-page="guide"] .video-embed iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
