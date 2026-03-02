@@ -2,11 +2,12 @@
   <div class="wrap">
     <div class="foot-grid">
 
-      <!-- Brand / Legal -->
+      <!-- Brand -->
       <div class="foot-col">
         <div class="foot-brand">
           <strong>TripGuidely</strong>
         </div>
+
         <p class="foot-desc">
           Structured travel guides for cruises, hotels, and things to do.
           Clear decisions. Practical planning.
@@ -50,8 +51,12 @@
           <span class="dot" aria-hidden="true">•</span>
           <a href="/disclosure/">Disclosure</a>
           <span class="dot" aria-hidden="true">•</span>
-          <a href="#"
-             onclick="if(window.TripGuidelyConsent&&TripGuidelyConsent.open){TripGuidelyConsent.open();} return false;">
+
+          <!-- Opens consent banner -->
+          <a href="#privacy-choices"
+             class="js-consent"
+             role="button"
+             aria-controls="tg-consent">
             Privacy choices
           </a>
         </nav>
