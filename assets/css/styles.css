@@ -1396,9 +1396,11 @@ details p{ margin:8px 0 0; }
 }
 
 /* ==========================================================================
-   Consent banner (GLOBAL) — TripGuidely
+   Consent banner (GLOBAL) — TripGuidely — UPDATED
    - Uses existing .btn styles (primary + default)
    - Stable layout, safe-area iOS, no CLS
+   - Adds scroll-padding-bottom so anchored sections aren’t hidden
+   - Optional: body.consent-open can add breathing room
    ========================================================================== */
 
 :root{
@@ -1407,7 +1409,19 @@ details p{ margin:8px 0 0; }
   --consent-border: rgba(255,255,255,.14);
   --consent-text: rgba(226,232,240,.92);
   --consent-sub: rgba(148,163,184,.92);
+
+  /* Prevent banner from covering anchored sections */
+  --consent-hint: 84px;
 }
+@media (max-width: 760px){
+  :root{ --consent-hint: 160px; }
+}
+
+/* Helps #hash anchor jumps + in-page scrolling */
+body{ scroll-padding-bottom: var(--consent-hint); }
+
+/* Optional: if JS adds .consent-open, give a bit of breathing room */
+body.consent-open{ padding-bottom: var(--consent-hint); }
 
 .consent-banner{
   position: fixed;
@@ -1415,14 +1429,18 @@ details p{ margin:8px 0 0; }
   right: 0;
   bottom: 0;
   z-index: var(--consent-z);
-  padding: 14px 0;
+
   background: var(--consent-bg);
   border-top: 1px solid var(--consent-border);
+
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   backdrop-filter: saturate(160%) blur(14px);
+
   box-shadow: 0 -18px 50px rgba(0,0,0,.30);
-  /* iOS safe area */
-  padding-bottom: calc(14px + env(safe-area-inset-bottom));
+
+  /* spacing */
+  padding: 14px 0;
+  padding-bottom: calc(14px + env(safe-area-inset-bottom)); /* iOS safe area */
 }
 
 .consent-banner .wrap{
@@ -1432,9 +1450,7 @@ details p{ margin:8px 0 0; }
   gap: 14px;
 }
 
-.consent-copy{
-  min-width: 0;
-}
+.consent-copy{ min-width: 0; }
 
 .consent-title{
   margin: 0 0 4px;
@@ -1501,6 +1517,7 @@ details p{ margin:8px 0 0; }
   }
   .consent-actions{
     width: 100%;
+    white-space: normal;
   }
   .consent-actions .btn{
     width: 100%;
