@@ -1,1 +1,301 @@
+/* ==========================================================================
+   TripGuidely — hotels.css (DEDICATED)
+   Purpose:
+   - ONLY for /hotels/ pages (neighborhood guides, booking rules, tables)
+   - Keeps styles.css global and stable
+   - Adds: pill-link, mini-grid polish, area table + badges, section rhythms
+   - CWV-friendly: no layout thrash, safe overflow guards
+   ========================================================================== */
 
+/* Page scope: your Paris hotels page uses <body data-page="guide"> */
+body[data-page="guide"]{
+  /* Hotels-tuning tokens (local, safe) */
+  --h-pill-bg: rgba(255,255,255,.96);
+  --h-pill-border: rgba(15,23,42,.10);
+  --h-pill-shadow: 0 10px 22px rgba(2,6,23,.08);
+
+  --h-soft: rgba(15,23,42,.06);
+  --h-soft2: rgba(15,23,42,.10);
+
+  --h-table-radius: 18px;
+  --h-table-line: rgba(15,23,42,.10);
+
+  --h-badge-text: rgba(15,23,42,.92);
+}
+
+/* --------------------------------------------------------------------------
+   Quick Nav pills + “pill-link”
+   (Used multiple times in your HTML: quick nav + decision helper + booking)
+   -------------------------------------------------------------------------- */
+
+.pill-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding: 12px 14px;
+  border-radius: 999px;
+
+  text-decoration:none;
+  font-weight: 900;
+  letter-spacing: -0.15px;
+
+  color: var(--text);
+  background: var(--h-pill-bg);
+  border: 1px solid var(--h-pill-border);
+  box-shadow: var(--h-pill-shadow);
+
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pill-link:hover{
+  transform: translateY(-1px);
+  border-color: rgba(18,207,208,.28);
+  box-shadow: 0 18px 44px rgba(2,6,23,.12);
+  background: #ffffff;
+}
+
+.pill-link:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+}
+
+/* Optional: make some pills feel “primary” without adding new classes */
+.pill-link[href*="#book"],
+.pill-link[href*="Search"],
+.pill-link[target="_blank"]{
+  background: linear-gradient(135deg, rgba(18,207,208,.14), rgba(244,162,97,.12));
+  border-color: rgba(18,207,208,.22);
+}
+
+/* Mini-grid on hotels pages: tighter + nicer on small screens */
+body[data-page="guide"] .mini-grid{
+  gap: 10px;
+}
+
+@media (max-width: 760px){
+  .pill-link{
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+    border-radius: 18px;
+    font-size: 1.02rem;
+    white-space: normal;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Section rhythm for “area” content
+   Your hotels page uses: .content h3 + lists + callouts
+   -------------------------------------------------------------------------- */
+
+body[data-page="guide"] .content h3{
+  margin: 18px 0 10px;
+  font-size: 1.06rem;
+  letter-spacing: -0.12px;
+  color: var(--text);
+}
+
+body[data-page="guide"] .content h3 + .checklist{
+  margin-top: 8px;
+}
+
+/* Make checklists read more “guide” and less “generic” */
+body[data-page="guide"] .checklist li strong{
+  color: var(--text);
+}
+
+/* Callouts: slightly more premium for hotel guides */
+body[data-page="guide"] .callout{
+  border-color: rgba(18,207,208,.20);
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+}
+
+/* --------------------------------------------------------------------------
+   Table system for “Area quick table”
+   Your HTML uses: <div class="table-wrap"> + <table class="table ttd-table">
+   We'll support both .table and .ttd-table so you don't need to rename HTML.
+   -------------------------------------------------------------------------- */
+
+.table-wrap{
+  width:100%;
+  overflow:auto;
+  border-radius: var(--h-table-radius);
+  border: 1px solid var(--h-table-line);
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+}
+
+/* Keyboard focus for scroll container */
+.table-wrap:focus{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.table{
+  width:100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 720px; /* allows horizontal scroll on small screens */
+}
+
+.table-cap{
+  caption-side: top;
+  text-align: left;
+  padding: 12px 12px 10px;
+  color: var(--muted2);
+  font-size: .92rem;
+}
+
+.table thead th{
+  position: sticky;
+  top: 0;
+  background:
+    radial-gradient(520px 160px at 12% 0%, rgba(18,207,208,.10), transparent 60%),
+    radial-gradient(560px 180px at 88% 0%, rgba(244,162,97,.10), transparent 62%),
+    #ffffff;
+  z-index: 1;
+
+  text-align: left;
+  padding: 12px 12px;
+  font-size: .92rem;
+  letter-spacing: .02em;
+  color: rgba(15,23,42,.86);
+  border-bottom: 1px solid rgba(15,23,42,.10);
+}
+
+.table tbody td{
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  color: var(--muted);
+  vertical-align: top;
+}
+
+.table tbody tr:hover td{
+  background: rgba(15,23,42,.02);
+}
+
+.table tbody tr:last-child td{
+  border-bottom: 0;
+}
+
+.table strong{
+  color: var(--text);
+}
+
+/* Badges (your HTML uses: .t-badge + variants) */
+.t-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(15,23,42,.04);
+
+  font-weight: 900;
+  font-size: .86rem;
+  line-height: 1;
+  color: var(--h-badge-text);
+  white-space: nowrap;
+}
+
+.t-badge-yes{
+  background: linear-gradient(135deg, rgba(18,207,208,.18), rgba(18,207,208,.08));
+  border-color: rgba(18,207,208,.22);
+}
+
+.t-badge-maybe{
+  background: linear-gradient(135deg, rgba(244,162,97,.16), rgba(244,162,97,.08));
+  border-color: rgba(244,162,97,.22);
+}
+
+.t-badge-no{
+  background: rgba(15,23,42,.05);
+  border-color: rgba(15,23,42,.14);
+}
+
+.t-badge-anchor{
+  background: linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.12));
+  border-color: rgba(18,207,208,.20);
+}
+
+.t-badge-flex{
+  background: rgba(15,23,42,.04);
+  border-color: rgba(15,23,42,.12);
+}
+
+/* Mobile table: “stacked labels” support (your HTML uses data-label attr) */
+@media (max-width: 760px){
+  .table{ min-width: 0; }
+  .table thead{ display:none; }
+
+  .table tbody tr{
+    display:block;
+    border-bottom: 1px solid rgba(15,23,42,.10);
+  }
+
+  .table tbody td{
+    display:flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 0;
+    padding: 10px 12px;
+  }
+
+  .table tbody td::before{
+    content: attr(data-label);
+    font-weight: 900;
+    color: rgba(15,23,42,.72);
+    font-size: .86rem;
+    flex: 0 0 auto;
+    max-width: 46%;
+  }
+
+  .table-wrap{
+    overflow: hidden; /* no horizontal scroll in stacked mode */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Booking “callout” mini-grid links inside callout
+   You used inline style margin-top; this makes it look consistent everywhere.
+   -------------------------------------------------------------------------- */
+
+body[data-page="guide"] .callout .mini-grid{
+  margin-top: .75rem;
+}
+
+body[data-page="guide"] .callout .mini-grid .pill-link{
+  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+}
+
+/* --------------------------------------------------------------------------
+   Small polish: breadcrumbs spacing + card headings feel “hotel guide”
+   -------------------------------------------------------------------------- */
+
+body[data-page="guide"] .breadcrumbs{
+  margin-top: 16px;
+}
+
+body[data-page="guide"] .section-title h2{
+  letter-spacing: -0.12px;
+}
+
+body[data-page="guide"] .aff-note{
+  color: var(--muted2);
+}
+
+/* Overflow guard (safe) */
+body[data-page="guide"] .wrap,
+body[data-page="guide"] .card{
+  min-width: 0;
+}
