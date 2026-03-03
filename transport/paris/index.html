@@ -29,22 +29,25 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
-  <meta property="og:type" content="article" />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Paris Transport Guide (2026): Airport Transfers, Metro Passes & Train Tickets" />
   <meta property="og:description" content="Decide your best airport transfer, pick the right metro pass, and plan day-trip trains with fewer mistakes." />
   <meta property="og:url" content="https://tripguidely.github.io/transport/paris/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/paris-transport-og-1200x630.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Paris metro sign and a train platform with travelers rolling suitcases in daylight" />
+  <meta property="og:image:alt" content="Green Paris metro train inside a curved tiled underground station, no people" />
+  <meta property="article:published_time" content="2026-03-03" />
+  <meta property="article:modified_time" content="2026-03-03" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Paris Transport Guide (2026) | TripGuidely" />
   <meta name="twitter:description" content="Airport transfers, metro passes, and train tickets for Paris." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/paris-transport-og-1200x630.webp" />
-  <meta name="twitter:image:alt" content="Paris metro sign and a train platform with travelers rolling suitcases in daylight" />
+  <meta name="twitter:image:alt" content="Green Paris metro train inside a curved tiled underground station, no people" />
+  <meta name="twitter:site" content="@tripguidely" />
 
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
@@ -64,8 +67,7 @@
                 /assets/images/hero/paris-transport-hero-1200x675.webp 1200w,
                 /assets/images/hero/paris-transport-hero-1600x900.webp 1600w,
                 /assets/images/hero/paris-transport-hero-2400x1350.webp 2400w"
-    imagesizes="100vw"
-    fetchpriority="high" />
+    imagesizes="100vw" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -101,7 +103,7 @@
         "url":"https://tripguidely.github.io/",
         "name":"TripGuidely",
         "publisher":{"@id":"https://tripguidely.github.io/#org"},
-        "inLanguage":"en"
+        "inLanguage":"en-CA"
       },
       {
         "@type":"Place",
@@ -129,7 +131,7 @@
         "description":"Paris transport guide (2026): best airport transfers (CDG, Orly, Beauvais), metro & pass options (Navigo, Paris Visite), and rail tickets/day-trip planning. Save time, avoid scams, and book smart.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "about":{"@id":"https://tripguidely.github.io/transport/paris/#place"},
-        "inLanguage":"en",
+        "inLanguage":"en-CA",
         "primaryImageOfPage":{"@id":"https://tripguidely.github.io/transport/paris/#primaryimage"},
         "datePublished":"2026-03-03",
         "dateModified":"2026-03-03",
@@ -194,19 +196,24 @@
     <!-- HERO -->
     <section class="hero hero-full" aria-label="Paris transport hero">
       <div class="hero-bg" aria-hidden="true">
-        <img
-          src="/assets/images/hero/paris-transport-hero-1600x900.webp"
-          srcset="/assets/images/hero/paris-transport-hero-800x450.webp 800w,
-                  /assets/images/hero/paris-transport-hero-1200x675.webp 1200w,
-                  /assets/images/hero/paris-transport-hero-1600x900.webp 1600w,
-                  /assets/images/hero/paris-transport-hero-2400x1350.webp 2400w"
-          sizes="100vw"
-          width="2400"
-          height="1350"
-          alt="Paris metro entrance and train platform with travelers rolling suitcases in daylight"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/assets/images/hero/paris-transport-hero-800x450.webp 800w,
+                    /assets/images/hero/paris-transport-hero-1200x675.webp 1200w,
+                    /assets/images/hero/paris-transport-hero-1600x900.webp 1600w,
+                    /assets/images/hero/paris-transport-hero-2400x1350.webp 2400w"
+            sizes="100vw" />
+          <img
+            src="/assets/images/hero/paris-transport-hero-1600x900.webp"
+            width="1600"
+            height="900"
+            alt="Green Paris metro train inside a curved tiled underground station, no people"
+            decoding="async"
+            fetchpriority="high"
+            loading="eager"
+          />
+        </picture>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
