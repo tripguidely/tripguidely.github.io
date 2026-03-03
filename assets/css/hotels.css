@@ -299,3 +299,40 @@ body[data-page="guide"] .wrap,
 body[data-page="guide"] .card{
   min-width: 0;
 }
+
+/* ==========================================================================
+   HERO text: force white (Paris hotels)
+   Add this at the END of hotels.css
+   ========================================================================== */
+
+body[data-page="guide"][data-section="hotels"] .hero{
+  /* Optional: local tokens for hero readability */
+  --hero-white: rgba(255,255,255,.96);
+  --hero-white-soft: rgba(226,232,240,.90);
+}
+
+/* Make hero typography white */
+body[data-page="guide"][data-section="hotels"] .hero .kicker,
+body[data-page="guide"][data-section="hotels"] .hero h1,
+body[data-page="guide"][data-section="hotels"] .hero .lede,
+body[data-page="guide"][data-section="hotels"] .hero .meta,
+body[data-page="guide"][data-section="hotels"] .hero .meta time,
+body[data-page="guide"][data-section="hotels"] .hero a{
+  color: var(--hero-white) !important;
+}
+
+/* If your hero has small subtext that should be slightly softer */
+body[data-page="guide"][data-section="hotels"] .hero .lede{
+  color: var(--hero-white-soft) !important;
+}
+
+/* Optional: slightly stronger overlay so white reads on bright façades */
+body[data-page="guide"][data-section="hotels"] .hero .hero-overlay{
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.45) 42%,
+    rgba(0,0,0,.20) 70%,
+    rgba(0,0,0,.10) 100%
+  );
+}
