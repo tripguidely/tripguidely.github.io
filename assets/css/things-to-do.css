@@ -7,6 +7,7 @@
    - Pills nav
    - Premium tables (scannable + mobile-friendly)
    - Responsive YouTube embeds
+   - Sticker destinations (pro)
    ========================================================================== */
 
 /* ======================================================================
@@ -468,6 +469,7 @@ body[data-page="guide"] .video-embed iframe{
    8) Sticker Nav (Explore cities) — Hub pages
    - Premium city sticker cards (fast, no CLS, scoped)
    - Works with your /assets/images/stickers/*-512.webp
+   - EXTRA: prevents ugly broken-image box styling inside sticker area
    ====================================================================== */
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-nav{
@@ -550,13 +552,24 @@ body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media{
   height: 64px;
   display: grid;
   place-items: center;
+  flex: none;
 }
 
+/* IMPORTANT: do NOT add borders/background to the IMG itself (prevents ugly broken-box look) */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media img{
   width: 64px;
   height: 64px;
   object-fit: contain;
   display: block;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* If the global CSS applies weird styles to images inside links, neutralize only here */
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card img{
+  max-width: 100%;
+  height: auto;
 }
 
 /* Text */
