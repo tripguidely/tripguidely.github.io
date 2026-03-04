@@ -1,286 +1,500 @@
 /* ==========================================================================
    /assets/css/itinerary.css
    TripGuidely — Itinerary pages (Paris, etc.)
-   - Page-scoped overrides + missing components (pill-link, hero text on image)
-   - Improves: TOC UX, mobile readability, focus states, section rhythm
+   Updated: mobile hero optimization + better readability + spacing polish
    ========================================================================== */
 
 body[data-page="itinerary"]{
-  /* Itinerary pages are text-heavy: keep them crisp */
-  --hero-min: 720px;
-  --hero-min-m: 620px;
+
+  /* HERO sizing (responsive instead of huge fixed heights) */
+  --hero-min: clamp(520px, 64vh, 760px);
+  --hero-min-m: 54vh;
+
   --hero-pos-x: 50%;
   --hero-pos-y: 35%;
 
-  /* New: section rhythm + readable line length */
+  --hero-pad-top: calc(var(--header-h,72px) + env(safe-area-inset-top));
+  --hero-pad-bottom: 18px;
+  --hero-inner-max: 1120px;
+
+  /* content */
   --content-max: 74ch;
   --card-gap: 14px;
-  --toc-top: 92px; /* below header */
+  --toc-top: 92px;
 }
 
+
 /* ==========================================================================
-   HERO (image background + readable text)
+   HERO
    ========================================================================== */
+
 body[data-page="itinerary"] .hero.hero-full{
   min-height: var(--hero-min);
 }
 
-@media (max-width: 760px){
-  body[data-page="itinerary"] .hero.hero-full{ min-height: var(--hero-min-m); }
-}
-
-/* Stronger overlay for legibility (itinerary hero has text + buttons) */
-body[data-page="itinerary"] .hero-overlay{
-  opacity: .96;
-  background:
-    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
-    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
-    linear-gradient(180deg, rgba(2,6,23,.66), rgba(2,6,23,.30) 38%, rgba(2,6,23,.20) 62%, rgba(2,6,23,.58));
-}
-
-/* Center the hero content nicely for itinerary pages */
-body[data-page="itinerary"] .hero-inner{
-  padding: 64px 0 64px;
-  align-items: center;
-}
-
-@media (max-width: 760px){
-  body[data-page="itinerary"] .hero-inner{
-    padding: 46px 0 36px;
-    align-items: flex-end;
+@media (max-width:760px){
+  body[data-page="itinerary"] .hero.hero-full{
+    min-height: var(--hero-min-m);
   }
 }
 
-/* White hero typography (you wanted white in hero) */
-body[data-page="itinerary"] .kicker{
-  color: rgba(255,255,255,.86);
-  text-shadow: 0 14px 30px rgba(0,0,0,.46);
-}
-body[data-page="itinerary"] h1{
-  color: rgba(255,255,255,.98);
-  text-shadow: 0 18px 44px rgba(0,0,0,.52);
-}
-body[data-page="itinerary"] .lede{
-  color: rgba(226,232,240,.92);
-  text-shadow: 0 14px 30px rgba(0,0,0,.46);
-  max-width: 70ch;
-}
-body[data-page="itinerary"] .meta{
-  color: rgba(226,232,240,.82);
-  text-shadow: 0 14px 30px rgba(0,0,0,.46);
+
+/* overlay improves contrast for white text */
+body[data-page="itinerary"] .hero-overlay{
+
+  opacity:1;
+
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
+    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
+    linear-gradient(
+      180deg,
+      rgba(2,6,23,.42) 0%,
+      rgba(2,6,23,.52) 35%,
+      rgba(2,6,23,.64) 60%,
+      rgba(2,6,23,.82) 100%
+    );
+
 }
 
-/* Buttons on dark hero: make default buttons “glass” so they pop */
-body[data-page="itinerary"] .hero .btn{
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.18);
-  color: rgba(255,255,255,.92);
-  box-shadow: 0 18px 44px rgba(0,0,0,.26);
+
+/* hero content container */
+
+body[data-page="itinerary"] .hero-inner{
+
+  width:min(var(--hero-inner-max), calc(100% - 2*var(--gutter,18px)));
+  margin:0 auto;
+
+  padding:calc(var(--hero-pad-top) + 22px) 0 var(--hero-pad-bottom);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+
+  gap:12px;
+
 }
-body[data-page="itinerary"] .hero .btn:hover{
-  background: rgba(255,255,255,.16);
-  border-color: rgba(255,255,255,.22);
-  box-shadow: 0 22px 54px rgba(0,0,0,.30);
+
+
+@media (min-width:761px){
+
+  body[data-page="itinerary"] .hero-inner{
+
+    padding:calc(var(--hero-pad-top) + 34px) 0 26px;
+    gap:14px;
+
+  }
+
 }
-body[data-page="itinerary"] .hero .btn .pill{
-  background: rgba(255,255,255,.14);
-  border-color: rgba(255,255,255,.20);
-  color: rgba(255,255,255,.92);
+
+
+@media (max-width:760px){
+
+  body[data-page="itinerary"] .hero-inner{
+
+    padding:calc(var(--hero-pad-top) + 14px) 0 14px;
+    gap:10px;
+
+  }
+
 }
-body[data-page="itinerary"] .hero .btn.primary{
-  background: linear-gradient(135deg, var(--cta1), var(--cta2));
-  border-color: rgba(18,207,208,.65);
-  color:#fff;
-  box-shadow: 0 18px 46px rgba(18,207,208,.24);
-}
-body[data-page="itinerary"] .hero .btn.primary:hover{
-  box-shadow: 0 24px 60px rgba(18,207,208,.32);
-}
+
 
 /* ==========================================================================
-   Content readability helpers
+   HERO TEXT
    ========================================================================== */
+
+body[data-page="itinerary"] .kicker{
+
+  color:rgba(255,255,255,.90);
+  text-shadow:0 10px 26px rgba(0,0,0,.52);
+
+}
+
+
+body[data-page="itinerary"] h1{
+
+  color:rgba(255,255,255,.98);
+  text-shadow:0 18px 46px rgba(0,0,0,.58);
+
+  line-height:1.05;
+  text-wrap:balance;
+
+  margin:6px 0 6px;
+
+  font-size:clamp(32px,4.8vw,54px);
+
+}
+
+
+@media (max-width:760px){
+
+  body[data-page="itinerary"] h1{
+    font-size:clamp(28px,8.2vw,40px);
+  }
+
+}
+
+
+body[data-page="itinerary"] .lede{
+
+  color:rgba(255,255,255,.88);
+  text-shadow:0 12px 28px rgba(0,0,0,.52);
+
+  max-width:min(70ch,100%);
+  line-height:1.5;
+  font-size:1.05rem;
+
+}
+
+
+@media (max-width:760px){
+
+  body[data-page="itinerary"] .lede{
+
+    font-size:1rem;
+    max-width:42ch;
+
+  }
+
+}
+
+
+body[data-page="itinerary"] .meta{
+
+  color:rgba(255,255,255,.72);
+  text-shadow:0 10px 26px rgba(0,0,0,.50);
+
+}
+
+
+/* ==========================================================================
+   HERO BUTTONS
+   ========================================================================== */
+
+body[data-page="itinerary"] .hero .hero-actions{
+
+  display:grid;
+  gap:12px;
+
+  width:100%;
+  max-width:560px;
+
+  margin-top:10px;
+
+}
+
+
+@media (max-width:760px){
+
+  body[data-page="itinerary"] .hero .hero-actions{
+
+    max-width:100%;
+    gap:10px;
+    margin-top:8px;
+
+  }
+
+}
+
+
+body[data-page="itinerary"] .hero .btn{
+
+  width:100%;
+  justify-content:center;
+
+  border-radius:18px;
+
+  padding:16px 16px;
+
+  font-weight:900;
+  font-size:18px;
+
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.20);
+
+  color:rgba(255,255,255,.95);
+
+  box-shadow:0 16px 40px rgba(0,0,0,.26);
+
+  backdrop-filter:blur(10px);
+
+}
+
+
+body[data-page="itinerary"] .hero .btn:hover{
+
+  background:rgba(255,255,255,.16);
+  border-color:rgba(255,255,255,.26);
+
+  box-shadow:0 20px 52px rgba(0,0,0,.30);
+
+}
+
+
+body[data-page="itinerary"] .hero .btn .pill{
+
+  background:rgba(255,255,255,.14);
+  border-color:rgba(255,255,255,.22);
+  color:rgba(255,255,255,.95);
+
+}
+
+
+/* primary CTA */
+
+body[data-page="itinerary"] .hero .btn.primary{
+
+  background:linear-gradient(135deg,var(--cta1),var(--cta2));
+
+  border-color:rgba(18,207,208,.55);
+
+  color:#fff;
+
+  box-shadow:0 18px 46px rgba(18,207,208,.22);
+
+}
+
+
+body[data-page="itinerary"] .hero .btn.primary:hover{
+
+  box-shadow:0 24px 60px rgba(18,207,208,.30);
+
+}
+
+
+@media (max-width:760px){
+
+  body[data-page="itinerary"] .hero .btn{
+
+    font-size:17px;
+    padding:15px 14px;
+    border-radius:16px;
+
+  }
+
+}
+
+
+/* ==========================================================================
+   CONTENT READABILITY
+   ========================================================================== */
+
 body[data-page="itinerary"] .section-title p,
 body[data-page="itinerary"] .card.content > p{
-  max-width: var(--content-max);
+
+  max-width:var(--content-max);
+
 }
 
-/* Make headings breathe a bit more (reduces “wall of text” feeling) */
+
 body[data-page="itinerary"] .card.content h2{
-  scroll-margin-top: 110px; /* for anchor jumps */
+  scroll-margin-top:110px;
 }
+
+
 body[data-page="itinerary"] .card.content h3{
-  scroll-margin-top: 110px;
-  margin: 18px 0 8px;
-  font-size: 1.08rem;
-  letter-spacing: -.12px;
+
+  scroll-margin-top:110px;
+  margin:18px 0 8px;
+
+  font-size:1.08rem;
+  letter-spacing:-.12px;
+
 }
 
+
 /* ==========================================================================
-   Section spacing polish for itinerary pages
+   SECTION SPACING
    ========================================================================== */
+
 body[data-page="itinerary"] .wrap > .card{
-  margin-top: var(--card-gap);
+  margin-top:var(--card-gap);
 }
 
-/* Optional: tighter breadcrumb spacing under hero */
+
 body[data-page="itinerary"] .breadcrumbs{
-  margin-top: 18px;
+  margin-top:18px;
 }
+
 
 /* ==========================================================================
-   Pill links (you use .pill-link everywhere but it wasn’t in styles.css)
-   - Upgrades: better focus, better tap targets, nicer wrapping
+   PILL LINKS
    ========================================================================== */
+
 .pill-link{
+
   display:flex;
   align-items:center;
-  justify-content:flex-start;
   gap:10px;
-  padding: 12px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(15,23,42,.10);
+
+  padding:12px 14px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(15,23,42,.10);
+
   background:
     radial-gradient(380px 140px at 10% 20%, rgba(18,207,208,.10), transparent 60%),
     radial-gradient(380px 140px at 90% 30%, rgba(244,162,97,.10), transparent 60%),
     #ffffff;
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+
+  box-shadow:0 10px 22px rgba(2,6,23,.06);
+
   text-decoration:none;
-  font-weight: 900;
-  color: var(--text);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
-  min-width:0;
-  line-height: 1.15;
-  word-break: normal;
+  font-weight:900;
+
+  color:var(--text);
+
+  transition:transform .12s ease, box-shadow .12s ease;
+
 }
+
+
 .pill-link:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 18px 44px rgba(2,6,23,.12);
-  border-color: rgba(18,207,208,.26);
-}
-.pill-link:active{ transform: translateY(0); }
 
-/* Focus-visible = audit-friendly + premium feel */
+  transform:translateY(-1px);
+  box-shadow:0 18px 44px rgba(2,6,23,.12);
+
+}
+
+
 .pill-link:focus-visible{
-  outline: 3px solid rgba(18,207,208,.40);
-  outline-offset: 3px;
-  border-color: rgba(18,207,208,.42);
+
+  outline:3px solid rgba(18,207,208,.40);
+  outline-offset:3px;
+
 }
 
-@media (max-width: 760px){
+
+@media (max-width:760px){
+
   .pill-link{
-    padding: 14px 16px;
-    border-radius: 18px;
+
+    padding:14px 16px;
+    border-radius:18px;
+
   }
+
 }
 
+
 /* ==========================================================================
-   TOC / “On this page” (best UX upgrade)
-   - If you use id="toc" on that section, it becomes sticky on desktop
+   TOC
    ========================================================================== */
-@media (min-width: 980px){
+
+@media (min-width:980px){
+
   body[data-page="itinerary"] #toc{
-    position: sticky;
-    top: var(--toc-top);
-    z-index: 2;
-    backdrop-filter: blur(10px);
+
+    position:sticky;
+    top:var(--toc-top);
+    z-index:2;
+
+    backdrop-filter:blur(10px);
+
   }
+
   body[data-page="itinerary"] #toc.card{
-    background: rgba(255,255,255,.86);
+
+    background:rgba(255,255,255,.86);
+
   }
+
 }
 
+
 /* ==========================================================================
-   Monetization blocks: quick-book + most-booked
+   MONETIZATION BLOCKS
    ========================================================================== */
+
 .quick-book{
-  border-color: rgba(18,207,208,.18);
+
+  border-color:rgba(18,207,208,.18);
+
   background:
     radial-gradient(520px 180px at 12% 20%, rgba(18,207,208,.14), transparent 60%),
     radial-gradient(520px 180px at 88% 30%, rgba(244,162,97,.12), transparent 60%),
     #ffffff;
-}
-.most-booked{
-  border-color: rgba(15,23,42,.10);
+
 }
 
-/* Make the “section-title” wrap nicer when text is long */
-.section-title{
-  flex-wrap: wrap;
+.most-booked{
+  border-color:rgba(15,23,42,.10);
 }
-.section-title p{
-  max-width: 72ch;
-}
+
 
 /* ==========================================================================
-   FAQ details: nicer affordance + better tap/focus
+   FAQ
    ========================================================================== */
+
 body[data-page="itinerary"] details{
-  transition: border-color .12s ease, box-shadow .12s ease, transform .12s ease;
+
+  transition:border-color .12s ease, box-shadow .12s ease;
+
 }
+
 body[data-page="itinerary"] details:hover{
-  border-color: rgba(18,207,208,.18);
-  box-shadow: 0 18px 44px rgba(2,6,23,.10);
-  transform: translateY(-1px);
+
+  border-color:rgba(18,207,208,.18);
+  box-shadow:0 18px 44px rgba(2,6,23,.10);
+
 }
 
 body[data-page="itinerary"] summary{
+
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:12px;
-}
-body[data-page="itinerary"] summary:focus-visible{
-  outline: 3px solid rgba(18,207,208,.35);
-  outline-offset: 4px;
-  border-radius: 14px;
+  align-items:center;
+
 }
 
-/* Add a subtle indicator on summary */
+
 body[data-page="itinerary"] summary::after{
+
   content:"+";
-  width: 28px;
-  height: 28px;
-  border-radius: 12px;
+
+  width:28px;
+  height:28px;
+
+  border-radius:12px;
+
   display:grid;
   place-items:center;
-  border: 1px solid rgba(15,23,42,.10);
-  background: linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
-  color: rgba(15,23,42,.92);
-  flex:0 0 auto;
-  font-weight: 950;
-}
-body[data-page="itinerary"] details[open] summary::after{ content:"–"; }
 
-/* ==========================================================================
-   Small safety: cards inside cards (your combos block is a .card inside plan)
-   ========================================================================== */
-body[data-page="itinerary"] .card .card{
-  box-shadow: none;
-  border-color: rgba(15,23,42,.10);
-  background: rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.10);
+
+  background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+
+  font-weight:950;
+
 }
 
-/* ==========================================================================
-   Muted helpers used in your HTML
-   ========================================================================== */
-.muted{ color: var(--muted2); }
-.micro{ font-size: .92rem; }
+
+body[data-page="itinerary"] details[open] summary::after{
+  content:"–";
+}
+
 
 /* ==========================================================================
-   Optional micro-upgrade: reduce motion for users who prefer it
+   HELPERS
    ========================================================================== */
+
+.muted{ color:var(--muted2); }
+
+.micro{ font-size:.92rem; }
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
 @media (prefers-reduced-motion: reduce){
+
   .pill-link,
   body[data-page="itinerary"] details{
-    transition: none !important;
+    transition:none !important;
   }
-  .pill-link:hover,
-  body[data-page="itinerary"] details:hover{
-    transform: none !important;
-  }
-}
 
-/* ==========================================================================
-   End
-   ========================================================================== */
+}
