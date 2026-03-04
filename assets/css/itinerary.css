@@ -2,7 +2,7 @@
    /assets/css/itinerary.css
    TripGuidely — Itinerary pages (Paris, etc.)
    - Page-scoped overrides + missing components (pill-link, hero text on image)
-   - Works with your global styles.css tokens + card system
+   - Improves: TOC UX, mobile readability, focus states, section rhythm
    ========================================================================== */
 
 body[data-page="itinerary"]{
@@ -11,6 +11,11 @@ body[data-page="itinerary"]{
   --hero-min-m: 620px;
   --hero-pos-x: 50%;
   --hero-pos-y: 35%;
+
+  /* New: section rhythm + readable line length */
+  --content-max: 74ch;
+  --card-gap: 14px;
+  --toc-top: 92px; /* below header */
 }
 
 /* ==========================================================================
@@ -30,7 +35,7 @@ body[data-page="itinerary"] .hero-overlay{
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
-    linear-gradient(180deg, rgba(2,6,23,.62), rgba(2,6,23,.26) 38%, rgba(2,6,23,.18) 62%, rgba(2,6,23,.54));
+    linear-gradient(180deg, rgba(2,6,23,.66), rgba(2,6,23,.30) 38%, rgba(2,6,23,.20) 62%, rgba(2,6,23,.58));
 }
 
 /* Center the hero content nicely for itinerary pages */
@@ -93,7 +98,39 @@ body[data-page="itinerary"] .hero .btn.primary:hover{
 }
 
 /* ==========================================================================
+   Content readability helpers
+   ========================================================================== */
+body[data-page="itinerary"] .section-title p,
+body[data-page="itinerary"] .card.content > p{
+  max-width: var(--content-max);
+}
+
+/* Make headings breathe a bit more (reduces “wall of text” feeling) */
+body[data-page="itinerary"] .card.content h2{
+  scroll-margin-top: 110px; /* for anchor jumps */
+}
+body[data-page="itinerary"] .card.content h3{
+  scroll-margin-top: 110px;
+  margin: 18px 0 8px;
+  font-size: 1.08rem;
+  letter-spacing: -.12px;
+}
+
+/* ==========================================================================
+   Section spacing polish for itinerary pages
+   ========================================================================== */
+body[data-page="itinerary"] .wrap > .card{
+  margin-top: var(--card-gap);
+}
+
+/* Optional: tighter breadcrumb spacing under hero */
+body[data-page="itinerary"] .breadcrumbs{
+  margin-top: 18px;
+}
+
+/* ==========================================================================
    Pill links (you use .pill-link everywhere but it wasn’t in styles.css)
+   - Upgrades: better focus, better tap targets, nicer wrapping
    ========================================================================== */
 .pill-link{
   display:flex;
@@ -113,6 +150,8 @@ body[data-page="itinerary"] .hero .btn.primary:hover{
   color: var(--text);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
   min-width:0;
+  line-height: 1.15;
+  word-break: normal;
 }
 .pill-link:hover{
   transform: translateY(-1px);
@@ -120,6 +159,13 @@ body[data-page="itinerary"] .hero .btn.primary:hover{
   border-color: rgba(18,207,208,.26);
 }
 .pill-link:active{ transform: translateY(0); }
+
+/* Focus-visible = audit-friendly + premium feel */
+.pill-link:focus-visible{
+  outline: 3px solid rgba(18,207,208,.40);
+  outline-offset: 3px;
+  border-color: rgba(18,207,208,.42);
+}
 
 @media (max-width: 760px){
   .pill-link{
@@ -129,20 +175,20 @@ body[data-page="itinerary"] .hero .btn.primary:hover{
 }
 
 /* ==========================================================================
-   Section spacing polish for itinerary pages
+   TOC / “On this page” (best UX upgrade)
+   - If you use id="toc" on that section, it becomes sticky on desktop
    ========================================================================== */
-body[data-page="itinerary"] .wrap > .card{
-  margin-top: 14px;
+@media (min-width: 980px){
+  body[data-page="itinerary"] #toc{
+    position: sticky;
+    top: var(--toc-top);
+    z-index: 2;
+    backdrop-filter: blur(10px);
+  }
+  body[data-page="itinerary"] #toc.card{
+    background: rgba(255,255,255,.86);
+  }
 }
-body[data-page="itinerary"] .card.content h3{
-  margin: 18px 0 8px;
-  font-size: 1.08rem;
-  letter-spacing: -.12px;
-}
-
-/* Muted helpers used in your HTML */
-.muted{ color: var(--muted2); }
-.micro{ font-size: .92rem; }
 
 /* ==========================================================================
    Monetization blocks: quick-book + most-booked
@@ -167,7 +213,7 @@ body[data-page="itinerary"] .card.content h3{
 }
 
 /* ==========================================================================
-   FAQ details: nicer affordance
+   FAQ details: nicer affordance + better tap/focus
    ========================================================================== */
 body[data-page="itinerary"] details{
   transition: border-color .12s ease, box-shadow .12s ease, transform .12s ease;
@@ -178,13 +224,19 @@ body[data-page="itinerary"] details:hover{
   transform: translateY(-1px);
 }
 
-/* Add a subtle indicator on summary */
 body[data-page="itinerary"] summary{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
 }
+body[data-page="itinerary"] summary:focus-visible{
+  outline: 3px solid rgba(18,207,208,.35);
+  outline-offset: 4px;
+  border-radius: 14px;
+}
+
+/* Add a subtle indicator on summary */
 body[data-page="itinerary"] summary::after{
   content:"+";
   width: 28px;
@@ -210,10 +262,23 @@ body[data-page="itinerary"] .card .card{
 }
 
 /* ==========================================================================
-   Optional: tighter breadcrumb spacing under hero
+   Muted helpers used in your HTML
    ========================================================================== */
-body[data-page="itinerary"] .breadcrumbs{
-  margin-top: 18px;
+.muted{ color: var(--muted2); }
+.micro{ font-size: .92rem; }
+
+/* ==========================================================================
+   Optional micro-upgrade: reduce motion for users who prefer it
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  .pill-link,
+  body[data-page="itinerary"] details{
+    transition: none !important;
+  }
+  .pill-link:hover,
+  body[data-page="itinerary"] details:hover{
+    transform: none !important;
+  }
 }
 
 /* ==========================================================================
