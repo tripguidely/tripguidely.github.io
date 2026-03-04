@@ -15,6 +15,7 @@
   <url><loc>https://tripguidely.github.io/hotels/</loc></url>
   <url><loc>https://tripguidely.github.io/things-to-do/</loc></url>
   <url><loc>https://tripguidely.github.io/car-rental/</loc></url>
+
   <url>
     <loc>https://tripguidely.github.io/esim/</loc>
     <lastmod>2026-03-01</lastmod>
@@ -23,6 +24,23 @@
   <!-- eSIM cluster (known guides) -->
   <url><loc>https://tripguidely.github.io/esim/best-esim-for-europe-2026/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/best-esim-for-usa-2026/</loc></url>
+
+  <!-- Itinerary hubs -->
+  <url><loc>https://tripguidely.github.io/itinerary/</loc></url>
+  <url><loc>https://tripguidely.github.io/itinerary/paris/</loc></url>
+
+  <!-- Paris itinerary cluster -->
+  <url><loc>https://tripguidely.github.io/itinerary/paris/2-days/</loc></url>
+  <url><loc>https://tripguidely.github.io/itinerary/paris/3-days/</loc></url>
+  <url><loc>https://tripguidely.github.io/itinerary/paris/4-days/</loc></url>
+  <url><loc>https://tripguidely.github.io/itinerary/paris/first-time/</loc></url>
+  <url><loc>https://tripguidely.github.io/itinerary/paris/rainy-day/</loc></url>
+
+  <!-- Supporting Paris pages (if published) -->
+  <url><loc>https://tripguidely.github.io/transport/paris/</loc></url>
+  <url><loc>https://tripguidely.github.io/hotels/paris/</loc></url>
+  <url><loc>https://tripguidely.github.io/things-to-do/paris/</loc></url>
+  <url><loc>https://tripguidely.github.io/esim/france/</loc></url>
 
   <!-- Things to do (if these folders exist) -->
   <url><loc>https://tripguidely.github.io/things-to-do/new-york/</loc></url>
