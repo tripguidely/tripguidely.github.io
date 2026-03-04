@@ -42,7 +42,7 @@ data-wpfc-render="false"></script>
 <meta property="og:image:height" content="630" />
 
 <meta property="article:published_time" content="2026-03-03" />
-<meta property="article:modified_time" content="2026-03-03" />
+<meta property="article:modified_time" content="2026-03-04" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -59,78 +59,126 @@ data-wpfc-render="false"></script>
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@graph":[
-
-{
-"@type":"Organization",
-"@id":"https://tripguidely.github.io/#org",
-"name":"TripGuidely",
-"url":"https://tripguidely.github.io/"
-},
-
-{
-"@type":"WebSite",
-"@id":"https://tripguidely.github.io/#website",
-"url":"https://tripguidely.github.io/",
-"name":"TripGuidely",
-"publisher":{"@id":"https://tripguidely.github.io/#org"}
-},
-
-{
-"@type":"WebPage",
-"@id":"https://tripguidely.github.io/itinerary/paris-3-days/#webpage",
-"url":"https://tripguidely.github.io/itinerary/paris-3-days/",
-"name":"Paris 3-Day Itinerary",
-"isPartOf":{"@id":"https://tripguidely.github.io/#website"},
-"inLanguage":"en"
-},
-
-{
-"@type":"Article",
-"headline":"Paris 3-Day Itinerary (2026)",
-"description":"A smart 3-day Paris itinerary with timed tickets and efficient routes.",
-"mainEntityOfPage":{
-"@type":"WebPage",
-"@id":"https://tripguidely.github.io/itinerary/paris-3-days/#webpage"
-},
-"datePublished":"2026-03-03",
-"dateModified":"2026-03-03",
-"author":{
-"@type":"Organization",
-"name":"TripGuidely Editorial Team"
-},
-"publisher":{
-"@id":"https://tripguidely.github.io/#org"
-},
-"image":"https://tripguidely.github.io/assets/images/og/paris-3-day-itinerary-og-1200x630.webp"
-},
-
-{
-"@type":"BreadcrumbList",
-"itemListElement":[
-{
-"@type":"ListItem",
-"position":1,
-"name":"Home",
-"item":"https://tripguidely.github.io/"
-},
-{
-"@type":"ListItem",
-"position":2,
-"name":"Itinerary",
-"item":"https://tripguidely.github.io/itinerary/"
-},
-{
-"@type":"ListItem",
-"position":3,
-"name":"Paris 3 Day Itinerary",
-"item":"https://tripguidely.github.io/itinerary/paris-3-days/"
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://tripguidely.github.io/#org",
+      "name":"TripGuidely",
+      "url":"https://tripguidely.github.io/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://tripguidely.github.io/assets/images/favicon-48.png",
+        "width":48,
+        "height":48
+      }
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://tripguidely.github.io/#website",
+      "url":"https://tripguidely.github.io/",
+      "name":"TripGuidely",
+      "publisher":{"@id":"https://tripguidely.github.io/#org"},
+      "inLanguage":"en"
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://tripguidely.github.io/itinerary/paris-3-days/#webpage",
+      "url":"https://tripguidely.github.io/itinerary/paris-3-days/",
+      "name":"Paris 3-Day Itinerary",
+      "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
+      "inLanguage":"en"
+    },
+    {
+      "@type":"Article",
+      "@id":"https://tripguidely.github.io/itinerary/paris-3-days/#article",
+      "headline":"Paris 3-Day Itinerary (2026)",
+      "description":"A smart 3-day Paris itinerary with timed tickets and efficient routes.",
+      "mainEntityOfPage":{"@id":"https://tripguidely.github.io/itinerary/paris-3-days/#webpage"},
+      "datePublished":"2026-03-03",
+      "dateModified":"2026-03-04",
+      "inLanguage":"en",
+      "author":{
+        "@type":"Organization",
+        "name":"TripGuidely Editorial Team",
+        "@id":"https://tripguidely.github.io/#editorial"
+      },
+      "publisher":{"@id":"https://tripguidely.github.io/#org"},
+      "image":{
+        "@type":"ImageObject",
+        "url":"https://tripguidely.github.io/assets/images/og/paris-3-day-itinerary-og-1200x630.webp",
+        "width":1200,
+        "height":630
+      },
+      "isPartOf":{"@id":"https://tripguidely.github.io/#website"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://tripguidely.github.io/"},
+        {"@type":"ListItem","position":2,"name":"Itinerary","item":"https://tripguidely.github.io/itinerary/"},
+        {"@type":"ListItem","position":3,"name":"Paris 3 Day Itinerary","item":"https://tripguidely.github.io/itinerary/paris-3-days/"}
+      ]
+    }
+  ]
 }
-]
-}
+</script>
 
-]
+<!-- FAQ structured data (matches the on-page FAQ) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is 3 days enough for Paris?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes for highlights, as long as you use timed tickets and keep a neighborhood flow. Paris gets overwhelming when you try to do everything."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What should I book first?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Start with your anchors: Louvre, Eiffel, Orsay, Catacombs (if you want it), and Versailles (if that’s your Day 3). Add cruises and tours after."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How early should I arrive for timed entry?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Aim for 20–30 minutes early. Security and entry buffers are the difference between a smooth day and a domino of delays."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Versailles or Disneyland on Day 3?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Pick one. Versailles is a culture + gardens day. Disneyland is a full-day theme park commitment. Doing both is usually a rushed, expensive mistake."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What if tickets are sold out?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Swap anchors across days and keep the neighborhood concept. Replace with nearby wins (Sainte-Chapelle, Orangerie, Rodin) while you hunt new slots."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do I avoid wasting time commuting?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Cluster your day: one area at a time, one anchor per day. Your feet and your mood will thank you."
+      }
+    }
+  ]
 }
 </script>
 
@@ -139,6 +187,10 @@ data-wpfc-render="false"></script>
 <body data-page="itinerary">
   <a class="skip" href="#main">Skip to content</a>
 
+  <!-- Reserve header height to avoid CLS when site.js injects header -->
+  <style>
+    #site-header{ min-height: var(--header-h, 72px); }
+  </style>
   <div id="site-header"></div>
 
   <main id="main" class="main" role="main">
@@ -176,7 +228,7 @@ data-wpfc-render="false"></script>
           <h1>Paris 3-Day Itinerary (2026): Done Smart</h1>
 
           <p class="lede">
-            A low-friction plan built around timed tickets, neighborhood flow, and one anchor per day.
+            A low-friction plan built around neighborhood loops, one anchor per day, and timed tickets where they matter.
             Spend less time in lines, more time actually enjoying Paris.
           </p>
 
@@ -187,7 +239,7 @@ data-wpfc-render="false"></script>
           </div>
 
           <p class="meta">
-            Updated: <time datetime="2026-03-03">Mar 3, 2026</time>
+            Updated: <time datetime="2026-03-04">Mar 4, 2026</time>
           </p>
         </div>
       </div>
@@ -212,6 +264,7 @@ data-wpfc-render="false"></script>
         <div class="mini-grid" aria-label="Quick jumps">
           <a class="pill-link" href="#summary">⚡ 60-second plan</a>
           <a class="pill-link" href="#quick-book">🎟️ Book highlights</a>
+          <a class="pill-link" href="#bundles">🎁 Best bundles</a>
           <a class="pill-link" href="#plan">🗺️ 3-day itinerary</a>
           <a class="pill-link" href="#tickets">🎫 Timed tickets</a>
           <a class="pill-link" href="#variants">🔁 Variants (rain/season)</a>
@@ -230,15 +283,15 @@ data-wpfc-render="false"></script>
         </div>
 
         <ul class="checklist">
-          <li><strong>Day 1 (icons + wow):</strong> Louvre (timed) → Eiffel (timed) → Seine cruise.</li>
-          <li><strong>Day 2 (art + neighborhoods):</strong> Orsay (timed) → Montmartre (tour) → Arc at sunset.</li>
+          <li><strong>Day 1 (Right Bank loop):</strong> Louvre (timed) → Tuileries/Seine walk → Eiffel (timed) → Seine cruise.</li>
+          <li><strong>Day 2 (Left Bank + North):</strong> Orsay (timed) → Saint-Germain café break → Montmartre (tour) → Arc at sunset.</li>
           <li><strong>Day 3 (one big choice):</strong> Versailles (timed) <em>or</em> Disneyland (full day).</li>
           <li><strong>Booking order:</strong> Book your anchors first (Louvre/Eiffel/Orsay/Versailles or Disney). Add extras after.</li>
-          <li><strong>Anti-chaos rule:</strong> 1 anchor per day. No cross-city zig-zag.</li>
+          <li><strong>Anti-chaos rule:</strong> 1 anchor per day. 1 neighborhood loop. No cross-city zig-zag.</li>
         </ul>
 
         <div class="callout">
-          <b>Best first move:</b> Open the timed-ticket section, lock 2–3 time slots, then come back to refine the flow.
+          <b>Best first move:</b> Lock 2–3 anchor time slots, then fill your day with nearby “wins” (walks, cafés, viewpoints).
           <div class="mini-grid" style="margin-top:.75rem">
             <a class="pill-link" href="#tickets">🎫 Timed tickets checklist</a>
             <a class="pill-link" href="/transport/paris/">🚇 Transport in Paris</a>
@@ -290,11 +343,34 @@ data-wpfc-render="false"></script>
         </div>
       </section>
 
+      <!-- BUNDLES (move higher for AOV) -->
+      <section id="bundles" class="card pad content" aria-label="Best bundles">
+        <div class="section-title">
+          <h2>Best bundles (fewer bookings, better value)</h2>
+          <p>If you want less admin and more “it just works”, bundles are the move.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Louvre + Seine cruise:</strong> classic first-timer combo that fits Day 1 perfectly.</li>
+          <li><strong>Eiffel Tower + dinner cruise:</strong> premium “finale night” experience.</li>
+          <li><strong>Paris Museum Pass:</strong> only worth it if you’re doing a dense museum schedule.</li>
+        </ul>
+
+        <div class="mini-grid" aria-label="Bundle booking links">
+          <a class="pill-link" href="https://klook.tpk.ro/dT4X3hIM" target="_blank" rel="sponsored noopener">🎟️ Paris Museum Pass</a>
+          <a class="pill-link" href="https://klook.tpk.ro/PDwV4IQd" target="_blank" rel="sponsored noopener">🍽️ Premium dinner cruise</a>
+        </div>
+
+        <div class="callout" style="margin-top:1rem">
+          <b>Quick check:</b> If you’re only doing 2–3 museums total, skip the pass and buy timed tickets instead.
+        </div>
+      </section>
+
       <!-- 3-DAY PLAN -->
       <section id="plan" class="card pad content" aria-label="3-day Paris itinerary">
         <div class="section-title">
           <h2>The 3-day Paris itinerary (the flow)</h2>
-          <p>Each day has one anchor, then a realistic loop around nearby areas.</p>
+          <p>Each day has one anchor, then a realistic neighborhood loop around nearby areas.</p>
         </div>
 
         <div class="callout">
@@ -305,9 +381,9 @@ data-wpfc-render="false"></script>
         <section class="card pad" aria-label="Itinerary table" style="margin-top:1.25rem">
           <h3>At-a-glance itinerary (copy/paste view)</h3>
           <ul class="checklist">
-            <li><strong>Day 1:</strong> Louvre (AM) → Tuileries/Seine walk → Eiffel (PM) → Seine cruise (Evening).</li>
-            <li><strong>Day 2:</strong> Orsay (AM) → Montmartre (midday) → Arc (sunset) → Catacombs (optional).</li>
-            <li><strong>Day 3:</strong> Versailles (half/full day) <em>or</em> Disneyland (full day) → dinner cruise (optional finale).</li>
+            <li><strong>Day 1 (Right Bank + Seine):</strong> Louvre (AM) → Tuileries/Seine walk → Eiffel (PM) → Seine cruise (Evening).</li>
+            <li><strong>Day 2 (Left Bank + North):</strong> Orsay (AM) → Saint-Germain break → Montmartre (midday) → Arc (sunset) → Catacombs (optional).</li>
+            <li><strong>Day 3 (Day trip):</strong> Versailles (half/full day) <em>or</em> Disneyland (full day) → dinner cruise (optional finale).</li>
           </ul>
           <p class="muted">Tip: make your anchors earlier than you think. Late-day slots magnify delays.</p>
         </section>
@@ -316,7 +392,7 @@ data-wpfc-render="false"></script>
         <h3 id="day1">Day 1: Louvre → Eiffel Tower → Seine</h3>
         <ul class="checklist">
           <li><strong>Morning (Anchor):</strong> Louvre timed-entry (arrive 20–30 min early).</li>
-          <li><strong>Midday:</strong> Easy lunch + short scenic walk (don’t over-pack).</li>
+          <li><strong>Loop (nearby wins):</strong> Tuileries → Seine stroll → quick café stop (keep it easy).</li>
           <li><strong>Afternoon:</strong> Eiffel Tower timed-entry (choose the slot you’ll actually make).</li>
           <li><strong>Evening:</strong> Seine sightseeing cruise (low effort, high Paris vibes).</li>
         </ul>
@@ -335,6 +411,7 @@ data-wpfc-render="false"></script>
         <h3 id="day2">Day 2: Orsay → Montmartre → Arc → Catacombs (optional)</h3>
         <ul class="checklist">
           <li><strong>Morning (Anchor):</strong> Musée d’Orsay timed-entry.</li>
+          <li><strong>Loop (Left Bank):</strong> short Saint-Germain walk + café break before heading north.</li>
           <li><strong>Midday:</strong> Montmartre guided walk (best way to avoid wandering aimlessly).</li>
           <li><strong>Late afternoon:</strong> Arc de Triomphe (golden-to-blue hour slot if possible).</li>
           <li><strong>Optional evening:</strong> Catacombs timed-entry (only if you’re not exhausted).</li>
@@ -350,24 +427,6 @@ data-wpfc-render="false"></script>
         <div class="callout">
           <b>Energy rule:</b> Catacombs are great, but not if you’re running on fumes. Put it on the “optional” shelf.
         </div>
-
-        <!-- COMBOS (higher AOV) -->
-        <section class="card pad" aria-label="Best Paris combos" style="margin-top:1.25rem">
-          <h3>Best Paris combos (save time)</h3>
-          <p class="muted">If you want fewer bookings with better value, combos are the move.</p>
-
-          <ul class="checklist">
-            <li>Louvre + Seine cruise (classic first-timer combo)</li>
-            <li>Eiffel Tower + dinner cruise (premium experience)</li>
-            <li>Versailles Palace + gardens (half or full day)</li>
-            <li>Paris Museum Pass (dense museum schedule)</li>
-          </ul>
-
-          <div class="mini-grid" aria-label="Combo booking links">
-            <a class="pill-link" href="https://klook.tpk.ro/dT4X3hIM" target="_blank" rel="sponsored noopener">🎟️ Paris Museum Pass</a>
-            <a class="pill-link" href="https://klook.tpk.ro/PDwV4IQd" target="_blank" rel="sponsored noopener">🍽️ Premium dinner cruise</a>
-          </div>
-        </section>
 
         <!-- DAY 3 -->
         <h3 id="day3">Day 3: Choose your Day Trip (Versailles OR Disneyland)</h3>
@@ -423,11 +482,11 @@ data-wpfc-render="false"></script>
         <ul class="checklist">
           <li><strong>Rainy Paris:</strong> swap long walks for museums, covered passages, and café breaks. Keep anchors early.</li>
           <li><strong>Summer crowds:</strong> choose earlier timed entries, and protect midday with indoor stops (Orsay/Orangerie).</li>
-          <li><strong>Low-energy trip:</strong> reduce “optional” add-ons; cruise becomes your best-value evening.</li>
+          <li><strong>Low-energy trip:</strong> reduce optional add-ons; cruise becomes your best-value evening.</li>
         </ul>
 
         <div class="callout">
-          <b>Rule stays the same:</b> one anchor per day. Variants only change the filler.
+          <b>Rule stays the same:</b> one anchor per day + one loop by area. Variants only change the filler.
         </div>
       </section>
 
@@ -445,7 +504,7 @@ data-wpfc-render="false"></script>
         </ul>
 
         <div class="callout">
-          <b>Stress killer:</b> don’t try to “make up” missed items by adding more. Swap, don’t stack.
+          <b>Stress killer:</b> don’t try to make up missed items by adding more. Swap, don’t stack.
         </div>
       </section>
 
@@ -477,10 +536,10 @@ data-wpfc-render="false"></script>
         </div>
 
         <ul class="checklist">
-          <li><strong>Attractions tickets:</strong> $120–$220</li>
-          <li><strong>Museums:</strong> $40–$80</li>
-          <li><strong>Seine cruise:</strong> $20–$60</li>
-          <li><strong>Versailles:</strong> $25–$40</li>
+          <li><strong>Attractions tickets:</strong> €110–€200</li>
+          <li><strong>Museums:</strong> €35–€70</li>
+          <li><strong>Seine cruise:</strong> €18–€55</li>
+          <li><strong>Versailles:</strong> €25–€40</li>
         </ul>
 
         <p>Booking timed tickets in advance is the best way to avoid long lines and sold-out slots during peak season.</p>
@@ -502,7 +561,7 @@ data-wpfc-render="false"></script>
           <li><strong>Book realistic slots:</strong> your best plan is the plan you can actually make.</li>
           <li><strong>Cluster by area:</strong> stop zig-zagging across Paris for tiny wins.</li>
           <li><strong>Arrive early:</strong> 20–30 minutes early removes stress and surprises.</li>
-          <li><strong>Protect your evenings:</strong> keep at least one night “open” for strolling, cafés, and vibes.</li>
+          <li><strong>Protect your evenings:</strong> keep at least one night open for strolling, cafés, and vibes.</li>
         </ul>
 
         <div class="callout">
@@ -515,13 +574,13 @@ data-wpfc-render="false"></script>
       <section class="card pad content" aria-label="How we build this itinerary" id="method">
         <div class="section-title">
           <h2>How we build this itinerary (TripGuidely method)</h2>
-          <p>Transparent logic so you can adapt it without breaking it.</p>
+          <p>We plan around real-world constraints: timed entry slots, transit, and queues. The goal is a calm trip that still hits the icons.</p>
         </div>
 
         <ul class="checklist">
           <li><strong>Anchor-first planning:</strong> book 1 timed highlight per day, then build around it.</li>
-          <li><strong>Neighborhood flow:</strong> reduce cross-city moves; cluster stops by area.</li>
-          <li><strong>Buffers:</strong> Paris runs on queues, security checks, and transit. We plan for it.</li>
+          <li><strong>Neighborhood loops:</strong> reduce cross-city moves; keep each day in one “zone” as much as possible.</li>
+          <li><strong>Buffers:</strong> Paris runs on security checks, lines, and transit. We plan for it.</li>
           <li><strong>Optional layers:</strong> upgrades only after the core schedule is stable.</li>
         </ul>
       </section>
@@ -534,12 +593,12 @@ data-wpfc-render="false"></script>
         </div>
 
         <ul class="checklist">
-          <li>Louvre official site (hours / timed entry rules)</li>
-          <li>Eiffel Tower official site (ticket types / security)</li>
-          <li>Musée d’Orsay official site (hours / closures)</li>
-          <li>Catacombs official site (timed entry availability)</li>
-          <li>Versailles official site (passport / gardens access)</li>
-          <li>RATP / Île-de-France Mobilités (metro/RER updates)</li>
+          <li><a href="https://www.louvre.fr/en" target="_blank" rel="noopener">Louvre official site</a> (hours / timed entry rules)</li>
+          <li><a href="https://www.toureiffel.paris/en" target="_blank" rel="noopener">Eiffel Tower official site</a> (ticket types / security)</li>
+          <li><a href="https://www.musee-orsay.fr/en" target="_blank" rel="noopener">Musée d’Orsay official site</a> (hours / closures)</li>
+          <li><a href="https://www.catacombes.paris.fr/en" target="_blank" rel="noopener">Paris Catacombs official site</a> (timed entry availability)</li>
+          <li><a href="https://en.chateauversailles.fr/" target="_blank" rel="noopener">Versailles official site</a> (passport / gardens access)</li>
+          <li><a href="https://www.iledefrance-mobilites.fr/en" target="_blank" rel="noopener">Île-de-France Mobilités</a> (metro/RER updates)</li>
         </ul>
 
         <p class="muted">Tip: check weekly closure days and exceptional closures before choosing your anchors.</p>
