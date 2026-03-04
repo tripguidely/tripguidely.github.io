@@ -1,11 +1,10 @@
 /* ==========================================================================
    /assets/css/itinerary.css
    TripGuidely — Itinerary pages (Paris, etc.)
-   Updated: mobile hero optimization + better readability + spacing polish
+   Updated: desktop hero CTA polish + better readability + spacing
    ========================================================================== */
 
 body[data-page="itinerary"]{
-
   /* HERO sizing (responsive instead of huge fixed heights) */
   --hero-min: clamp(520px, 64vh, 760px);
   --hero-min-m: 54vh;
@@ -21,8 +20,15 @@ body[data-page="itinerary"]{
   --content-max: 74ch;
   --card-gap: 14px;
   --toc-top: 92px;
-}
 
+  /* CTA feel */
+  --cta-radius: 18px;
+  --cta-blur: 10px;
+  --cta-glass: rgba(255,255,255,.12);
+  --cta-glass-2: rgba(10,14,20,.38);
+  --cta-border: rgba(255,255,255,.20);
+  --cta-border-hover: rgba(255,255,255,.26);
+}
 
 /* ==========================================================================
    HERO
@@ -38,12 +44,9 @@ body[data-page="itinerary"] .hero.hero-full{
   }
 }
 
-
 /* overlay improves contrast for white text */
 body[data-page="itinerary"] .hero-overlay{
-
   opacity:1;
-
   background:
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.18), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
@@ -54,14 +57,10 @@ body[data-page="itinerary"] .hero-overlay{
       rgba(2,6,23,.64) 60%,
       rgba(2,6,23,.82) 100%
     );
-
 }
 
-
 /* hero content container */
-
 body[data-page="itinerary"] .hero-inner{
-
   width:min(var(--hero-inner-max), calc(100% - 2*var(--gutter,18px)));
   margin:0 auto;
 
@@ -73,48 +72,32 @@ body[data-page="itinerary"] .hero-inner{
   align-items:flex-start;
 
   gap:12px;
-
 }
-
 
 @media (min-width:761px){
-
   body[data-page="itinerary"] .hero-inner{
-
     padding:calc(var(--hero-pad-top) + 34px) 0 26px;
     gap:14px;
-
   }
-
 }
-
 
 @media (max-width:760px){
-
   body[data-page="itinerary"] .hero-inner{
-
     padding:calc(var(--hero-pad-top) + 14px) 0 14px;
     gap:10px;
-
   }
-
 }
-
 
 /* ==========================================================================
    HERO TEXT
    ========================================================================== */
 
 body[data-page="itinerary"] .kicker{
-
   color:rgba(255,255,255,.90);
   text-shadow:0 10px 26px rgba(0,0,0,.52);
-
 }
 
-
 body[data-page="itinerary"] h1{
-
   color:rgba(255,255,255,.98);
   text-shadow:0 18px 46px rgba(0,0,0,.58);
 
@@ -122,160 +105,175 @@ body[data-page="itinerary"] h1{
   text-wrap:balance;
 
   margin:6px 0 6px;
-
   font-size:clamp(32px,4.8vw,54px);
-
 }
 
-
 @media (max-width:760px){
-
   body[data-page="itinerary"] h1{
     font-size:clamp(28px,8.2vw,40px);
   }
-
 }
 
-
 body[data-page="itinerary"] .lede{
-
   color:rgba(255,255,255,.88);
   text-shadow:0 12px 28px rgba(0,0,0,.52);
 
   max-width:min(70ch,100%);
   line-height:1.5;
   font-size:1.05rem;
-
 }
-
 
 @media (max-width:760px){
-
   body[data-page="itinerary"] .lede{
-
     font-size:1rem;
     max-width:42ch;
-
   }
-
 }
-
 
 body[data-page="itinerary"] .meta{
-
   color:rgba(255,255,255,.72);
   text-shadow:0 10px 26px rgba(0,0,0,.50);
-
 }
 
-
 /* ==========================================================================
-   HERO BUTTONS
+   HERO BUTTONS (UPDATED: desktop looks premium, not 3 huge bars)
+   NOTE: your HTML uses .actions, but older CSS used .hero-actions.
+   We style BOTH so it works everywhere.
    ========================================================================== */
 
+body[data-page="itinerary"] .hero .actions,
 body[data-page="itinerary"] .hero .hero-actions{
-
-  display:grid;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
   gap:12px;
 
   width:100%;
-  max-width:560px;
+  max-width:740px;
 
   margin-top:10px;
-
 }
 
-
 @media (max-width:760px){
-
+  body[data-page="itinerary"] .hero .actions,
   body[data-page="itinerary"] .hero .hero-actions{
-
     max-width:100%;
     gap:10px;
     margin-top:8px;
-
   }
-
 }
 
-
+/* Base button */
 body[data-page="itinerary"] .hero .btn{
-
-  width:100%;
+  width:auto;
   justify-content:center;
+  text-align:center;
 
-  border-radius:18px;
-
-  padding:16px 16px;
+  border-radius:var(--cta-radius);
+  padding:12px 16px;
 
   font-weight:900;
-  font-size:18px;
+  font-size:17px;
+  line-height:1.1;
+
+  color:rgba(255,255,255,.95);
+
+  background:var(--cta-glass);
+  border-color:var(--cta-border);
+
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.26),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+  backdrop-filter:blur(var(--cta-blur));
+  -webkit-backdrop-filter:blur(var(--cta-blur));
+
+  transition:transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+
+/* Hover/active */
+body[data-page="itinerary"] .hero .btn:hover{
+  background:rgba(255,255,255,.16);
+  border-color:var(--cta-border-hover);
+  box-shadow:
+    0 20px 52px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.10);
+  transform:translateY(-1px);
+}
+
+body[data-page="itinerary"] .hero .btn:active{
+  transform:translateY(0);
+}
+
+/* Secondary buttons slightly darker (more contrast, less "banner") */
+body[data-page="itinerary"] .hero .btn:not(.primary){
+  background:var(--cta-glass-2);
+  border-color:rgba(255,255,255,.16);
+}
+
+/* Icon pill inside button */
+body[data-page="itinerary"] .hero .btn .pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:28px;
+  height:28px;
+
+  border-radius:10px;
 
   background:rgba(255,255,255,.12);
-  border-color:rgba(255,255,255,.20);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10);
 
   color:rgba(255,255,255,.95);
-
-  box-shadow:0 16px 40px rgba(0,0,0,.26);
-
-  backdrop-filter:blur(10px);
-
 }
 
-
-body[data-page="itinerary"] .hero .btn:hover{
-
-  background:rgba(255,255,255,.16);
-  border-color:rgba(255,255,255,.26);
-
-  box-shadow:0 20px 52px rgba(0,0,0,.30);
-
-}
-
-
-body[data-page="itinerary"] .hero .btn .pill{
-
-  background:rgba(255,255,255,.14);
-  border-color:rgba(255,255,255,.22);
-  color:rgba(255,255,255,.95);
-
-}
-
-
-/* primary CTA */
-
+/* Primary CTA */
 body[data-page="itinerary"] .hero .btn.primary{
-
   background:linear-gradient(135deg,var(--cta1),var(--cta2));
-
   border-color:rgba(18,207,208,.55);
-
   color:#fff;
-
-  box-shadow:0 18px 46px rgba(18,207,208,.22);
-
+  box-shadow:
+    0 18px 46px rgba(18,207,208,.22),
+    0 14px 34px rgba(0,0,0,.24);
 }
-
 
 body[data-page="itinerary"] .hero .btn.primary:hover{
-
-  box-shadow:0 24px 60px rgba(18,207,208,.30);
-
+  box-shadow:
+    0 24px 60px rgba(18,207,208,.30),
+    0 18px 44px rgba(0,0,0,.26);
 }
 
-
-@media (max-width:760px){
-
-  body[data-page="itinerary"] .hero .btn{
-
-    font-size:17px;
-    padding:15px 14px;
-    border-radius:16px;
-
+/* Desktop: single clean row + compact sizing */
+@media (min-width:980px){
+  body[data-page="itinerary"] .hero .actions,
+  body[data-page="itinerary"] .hero .hero-actions{
+    flex-wrap:nowrap;
+    gap:14px;
+    max-width:820px;
   }
 
+  body[data-page="itinerary"] .hero .btn{
+    padding:13px 18px;
+    font-size:16.5px;
+  }
 }
 
+/* Mobile: keep full width for comfort */
+@media (max-width:760px){
+  body[data-page="itinerary"] .hero .btn{
+    width:100%;
+    padding:15px 14px;
+    border-radius:16px;
+    font-size:17px;
+  }
+
+  body[data-page="itinerary"] .hero .actions,
+  body[data-page="itinerary"] .hero .hero-actions{
+    display:grid;
+  }
+}
 
 /* ==========================================================================
    CONTENT READABILITY
@@ -283,27 +281,20 @@ body[data-page="itinerary"] .hero .btn.primary:hover{
 
 body[data-page="itinerary"] .section-title p,
 body[data-page="itinerary"] .card.content > p{
-
   max-width:var(--content-max);
-
 }
-
 
 body[data-page="itinerary"] .card.content h2{
   scroll-margin-top:110px;
 }
 
-
 body[data-page="itinerary"] .card.content h3{
-
   scroll-margin-top:110px;
   margin:18px 0 8px;
 
   font-size:1.08rem;
   letter-spacing:-.12px;
-
 }
-
 
 /* ==========================================================================
    SECTION SPACING
@@ -313,24 +304,20 @@ body[data-page="itinerary"] .wrap > .card{
   margin-top:var(--card-gap);
 }
 
-
 body[data-page="itinerary"] .breadcrumbs{
   margin-top:18px;
 }
-
 
 /* ==========================================================================
    PILL LINKS
    ========================================================================== */
 
 .pill-link{
-
   display:flex;
   align-items:center;
   gap:10px;
 
   padding:12px 14px;
-
   border-radius:999px;
 
   border:1px solid rgba(15,23,42,.10);
@@ -344,117 +331,83 @@ body[data-page="itinerary"] .breadcrumbs{
 
   text-decoration:none;
   font-weight:900;
-
   color:var(--text);
 
   transition:transform .12s ease, box-shadow .12s ease;
-
 }
-
 
 .pill-link:hover{
-
   transform:translateY(-1px);
   box-shadow:0 18px 44px rgba(2,6,23,.12);
-
 }
-
 
 .pill-link:focus-visible{
-
   outline:3px solid rgba(18,207,208,.40);
   outline-offset:3px;
-
 }
-
 
 @media (max-width:760px){
-
   .pill-link{
-
     padding:14px 16px;
     border-radius:18px;
-
   }
-
 }
-
 
 /* ==========================================================================
    TOC
    ========================================================================== */
 
 @media (min-width:980px){
-
   body[data-page="itinerary"] #toc{
-
     position:sticky;
     top:var(--toc-top);
     z-index:2;
-
     backdrop-filter:blur(10px);
-
+    -webkit-backdrop-filter:blur(10px);
   }
 
   body[data-page="itinerary"] #toc.card{
-
     background:rgba(255,255,255,.86);
-
   }
-
 }
-
 
 /* ==========================================================================
    MONETIZATION BLOCKS
    ========================================================================== */
 
 .quick-book{
-
   border-color:rgba(18,207,208,.18);
-
   background:
     radial-gradient(520px 180px at 12% 20%, rgba(18,207,208,.14), transparent 60%),
     radial-gradient(520px 180px at 88% 30%, rgba(244,162,97,.12), transparent 60%),
     #ffffff;
-
 }
 
 .most-booked{
   border-color:rgba(15,23,42,.10);
 }
 
-
 /* ==========================================================================
    FAQ
    ========================================================================== */
 
 body[data-page="itinerary"] details{
-
   transition:border-color .12s ease, box-shadow .12s ease;
-
 }
 
 body[data-page="itinerary"] details:hover{
-
   border-color:rgba(18,207,208,.18);
   box-shadow:0 18px 44px rgba(2,6,23,.10);
-
 }
 
 body[data-page="itinerary"] summary{
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
 }
 
-
 body[data-page="itinerary"] summary::after{
-
   content:"+";
-
   width:28px;
   height:28px;
 
@@ -464,37 +417,29 @@ body[data-page="itinerary"] summary::after{
   place-items:center;
 
   border:1px solid rgba(15,23,42,.10);
-
   background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
-
   font-weight:950;
-
 }
-
 
 body[data-page="itinerary"] details[open] summary::after{
   content:"–";
 }
-
 
 /* ==========================================================================
    HELPERS
    ========================================================================== */
 
 .muted{ color:var(--muted2); }
-
 .micro{ font-size:.92rem; }
-
 
 /* ==========================================================================
    REDUCED MOTION
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce){
-
   .pill-link,
-  body[data-page="itinerary"] details{
+  body[data-page="itinerary"] details,
+  body[data-page="itinerary"] .hero .btn{
     transition:none !important;
   }
-
 }
