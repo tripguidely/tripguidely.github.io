@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+  <!-- Travelpayouts verification -->
+  <meta name="travelpayouts-verification" content="492724" />
+  <script
+    src="https://tp-em.com/NDkyNzI0.js?t=492724"
+    async
+    data-noptimize="1"
+    data-cfasync="false"
+    data-wpfc-render="false"></script>
+
+  <!-- Primary SEO -->
+  <title>Paris in 4 Days (2026): Neighborhood Loops, Timed Tickets & One Day Trip | TripGuidely</title>
+  <meta name="description" content="Paris in 4 days (2026): a calm, high-value itinerary built around timed-ticket anchors and neighborhood loops. Louvre, Eiffel, Orsay, Montmartre, Le Marais, and a day trip (Versailles or Disneyland)." />
+  <meta name="author" content="TripGuidely" />
+
+  <link rel="canonical" href="https://tripguidely.github.io/itinerary/paris/4-days/" />
+
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#12cfd0" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://tripguidely.github.io/itinerary/paris/4-days/" />
+  <link rel="alternate" hreflang="x-default" href="https://tripguidely.github.io/itinerary/paris/4-days/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TripGuidely" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Paris in 4 Days (2026): Done-Smart Itinerary" />
+  <meta property="og:description" content="A 4-day Paris plan with timed-ticket anchors + neighborhood loops + one day trip." />
+  <meta property="og:url" content="https://tripguidely.github.io/itinerary/paris/4-days/" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/paris-4-day-itinerary-og-1200x630.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta property="article:published_time" content="2026-03-04" />
+  <meta property="article:modified_time" content="2026-03-04" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paris in 4 Days (2026) | TripGuidely" />
+  <meta name="twitter:description" content="Timed-ticket anchors + neighborhood loops for a calm 4-day Paris trip." />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/paris-4-day-itinerary-og-1200x630.webp" />
+
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/itinerary.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://tripguidely.github.io/#org",
+        "name":"TripGuidely",
+        "url":"https://tripguidely.github.io/",
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/favicon-48.png",
+          "width":48,
+          "height":48
+        }
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://tripguidely.github.io/#website",
+        "url":"https://tripguidely.github.io/",
+        "name":"TripGuidely",
+        "publisher":{"@id":"https://tripguidely.github.io/#org"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://tripguidely.github.io/itinerary/paris/4-days/#webpage",
+        "url":"https://tripguidely.github.io/itinerary/paris/4-days/",
+        "name":"Paris in 4 Days (2026)",
+        "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"Article",
+        "@id":"https://tripguidely.github.io/itinerary/paris/4-days/#article",
+        "headline":"Paris in 4 Days (2026): Neighborhood Loops, Timed Tickets & One Day Trip",
+        "description":"A calm 4-day Paris itinerary using timed-ticket anchors and neighborhood loops, plus one day trip.",
+        "mainEntityOfPage":{"@id":"https://tripguidely.github.io/itinerary/paris/4-days/#webpage"},
+        "datePublished":"2026-03-04",
+        "dateModified":"2026-03-04",
+        "inLanguage":"en",
+        "author":{
+          "@type":"Organization",
+          "name":"TripGuidely Editorial Team",
+          "@id":"https://tripguidely.github.io/#editorial"
+        },
+        "publisher":{"@id":"https://tripguidely.github.io/#org"},
+        "image":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/og/paris-4-day-itinerary-og-1200x630.webp",
+          "width":1200,
+          "height":630
+        },
+        "isPartOf":{"@id":"https://tripguidely.github.io/#website"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://tripguidely.github.io/"},
+          {"@type":"ListItem","position":2,"name":"Itinerary","item":"https://tripguidely.github.io/itinerary/"},
+          {"@type":"ListItem","position":3,"name":"Paris","item":"https://tripguidely.github.io/itinerary/paris/"},
+          {"@type":"ListItem","position":4,"name":"4 Days","item":"https://tripguidely.github.io/itinerary/paris/4-days/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Is 4 days enough for Paris?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Four days is the sweet spot for icons plus one deeper neighborhood day or a day trip. Keep one timed-ticket anchor per day and build the rest as neighborhood loops."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Versailles or Disneyland for the day trip?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Pick Versailles for culture, gardens, and classic Paris history. Pick Disneyland for full-day entertainment. Don’t try to do both in a 4-day trip unless you drop major Paris icons."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What should I book first for a 4-day trip?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Book your anchors first: Louvre, Eiffel Tower, Musée d’Orsay, and Versailles (if you choose it). Then add cruises, tours, and optional museums after your anchor slots are locked."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body data-page="itinerary">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Reserve header height to avoid CLS when site.js injects header -->
+  <style>
+    #site-header{ min-height: var(--header-h, 72px); }
+  </style>
+  <div id="site-header"></div>
+
+  <main id="main" class="main" role="main">
+
+    <!-- HERO -->
+    <section class="hero hero-full" aria-label="Paris 4-day itinerary hero">
+      <div class="hero-bg" aria-hidden="true">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="/assets/images/hero/paris-4-day-itinerary-hero-800x450.webp 800w,
+                    /assets/images/hero/paris-4-day-itinerary-hero-1200x675.webp 1200w,
+                    /assets/images/hero/paris-4-day-itinerary-hero-1600x900.webp 1600w,
+                    /assets/images/hero/paris-4-day-itinerary-hero-2400x1350.webp 2400w"
+            sizes="100vw" />
+          <img
+            src="/assets/images/hero/paris-4-day-itinerary-hero-1600x900.webp"
+            width="1600"
+            height="900"
+            alt="Premium Paris 4-day itinerary collage with iconic landmarks and neighborhood scenes"
+            decoding="async"
+            fetchpriority="high"
+            loading="eager"
+          />
+        </picture>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="wrap">
+          <p class="kicker">
+            <span class="dot" aria-hidden="true"></span>Paris Itinerary
+          </p>
+
+          <h1>Paris in 4 Days (2026): Done Smart</h1>
+
+          <p class="lede">
+            The calm upgrade: timed-ticket anchors + neighborhood loops + one day trip.
+            You get icons <em>and</em> breathing room.
+          </p>
+
+          <div class="actions" aria-label="Primary actions">
+            <a href="#summary" class="btn primary"><span class="pill" aria-hidden="true">⚡</span> Get the 60-second plan</a>
+            <a href="#plan" class="btn"><span class="pill" aria-hidden="true">🗺️</span> See the 4-day plan</a>
+            <a href="#tickets" class="btn"><span class="pill" aria-hidden="true">🎫</span> Timed tickets</a>
+          </div>
+
+          <p class="meta">
+            Updated: <time datetime="2026-03-04">Mar 4, 2026</time>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+
+      <nav class="breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/itinerary/">Itinerary</a>
+        <span aria-hidden="true">›</span>
+        <a href="/itinerary/paris/">Paris</a>
+        <span aria-hidden="true">›</span>
+        <span>4 Days</span>
+      </nav>
+
+      <!-- TOC -->
+      <section class="card pad" aria-label="On this page" id="toc">
+        <div class="section-title">
+          <h2>On this page</h2>
+          <p>Jump to the exact intent you have right now.</p>
+        </div>
+        <div class="mini-grid" aria-label="Quick jumps">
+          <a class="pill-link" href="#summary">⚡ 60-second plan</a>
+          <a class="pill-link" href="#quick-book">🎟️ Book anchors</a>
+          <a class="pill-link" href="#plan">🗺️ 4-day itinerary</a>
+          <a class="pill-link" href="#daytrip">🏰 Day trip choice</a>
+          <a class="pill-link" href="#tickets">🎫 Timed tickets</a>
+          <a class="pill-link" href="#variants">🔁 Variants</a>
+          <a class="pill-link" href="#soldout">🚨 If sold out</a>
+          <a class="pill-link" href="#rules">✅ Rules</a>
+          <a class="pill-link" href="#faq">❓ FAQ</a>
+        </div>
+      </section>
+
+      <!-- SUMMARY -->
+      <section id="summary" class="card pad content" aria-label="60-second Paris 4-day plan">
+        <div class="section-title">
+          <h2>The 60-second Paris plan (4 days)</h2>
+          <p>Anchors + loops + one day trip. That’s the whole game.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Day 1 (icons loop):</strong> Louvre (timed) → Tuileries/Seine → Eiffel (timed) → Seine cruise (optional).</li>
+          <li><strong>Day 2 (art + neighborhoods):</strong> Orsay (timed) → Saint-Germain → Montmartre → Arc at sunset.</li>
+          <li><strong>Day 3 (day trip):</strong> Versailles (timed) <em>or</em> Disneyland (full day).</li>
+          <li><strong>Day 4 (deep Paris):</strong> Le Marais + Île de la Cité loop (Sainte-Chapelle / Notre-Dame area) + flexible museum add-on.</li>
+          <li><strong>Booking order:</strong> anchors first (Louvre/Eiffel/Orsay + Versailles/Disney). Add extras after.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Best first move:</b> lock 3 anchor slots (Louvre, Eiffel, Orsay) + choose your day trip.
+          <div class="mini-grid" style="margin-top:.75rem">
+            <a class="pill-link" href="#tickets">🎫 Timed tickets checklist</a>
+            <a class="pill-link" href="/transport/paris/">🚇 Transport reality check</a>
+            <a class="pill-link" href="/hotels/paris/">🏨 Choose the right base</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK BOOK -->
+      <section id="quick-book" class="card pad quick-book" aria-label="Quick booking links">
+        <div class="section-title">
+          <h2>Book your anchors (2 minutes)</h2>
+          <p>These time slots make the whole 4-day plan stable.</p>
+        </div>
+
+        <div class="mini-grid">
+          <a class="pill-link" href="https://klook.tpk.ro/wfE7X4Hz" target="_blank" rel="sponsored noopener">🎫 Louvre timed ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/IdqXypl6" target="_blank" rel="sponsored noopener">🗼 Eiffel Tower ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/LccOCPi8" target="_blank" rel="sponsored noopener">🎨 Musée d’Orsay ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/DpABrxdE" target="_blank" rel="sponsored noopener">🏰 Versailles ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/mIt3rvye" target="_blank" rel="sponsored noopener">🎡 Disneyland Paris ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/asEPlwc3" target="_blank" rel="sponsored noopener">🛳️ Seine cruise (optional)</a>
+        </div>
+
+        <div class="callout" style="margin-top:1rem">
+          <b>Fast rule:</b> Book Louvre + Eiffel + Orsay first. Then choose Versailles <em>or</em> Disneyland.
+        </div>
+      </section>
+
+      <!-- PLAN -->
+      <section id="plan" class="card pad content" aria-label="4-day Paris itinerary">
+        <div class="section-title">
+          <h2>The 4-day Paris itinerary (the flow)</h2>
+          <p>One anchor per day. Everything else stays in the same “zone”.</p>
+        </div>
+
+        <div class="callout">
+          <b>Affiliate note:</b> Some ticket buttons below are affiliate links (Klook). If you book through them, TripGuidely may earn a commission at no extra cost to you.
+        </div>
+
+        <!-- DAY 1 -->
+        <h3 id="d1">Day 1: Louvre → Eiffel Tower → Seine</h3>
+        <ul class="checklist">
+          <li><strong>Morning (Anchor):</strong> Louvre timed-entry (arrive 20–30 min early).</li>
+          <li><strong>Loop:</strong> Tuileries → Seine stroll → easy lunch near the river.</li>
+          <li><strong>Afternoon (Anchor):</strong> Eiffel Tower timed-entry.</li>
+          <li><strong>Evening (optional):</strong> Seine sightseeing cruise (low effort, high payoff).</li>
+        </ul>
+        <div class="mini-grid" aria-label="Day 1 booking links">
+          <a class="pill-link" href="https://klook.tpk.ro/wfE7X4Hz" target="_blank" rel="sponsored noopener">🎫 Louvre timed ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/IdqXypl6" target="_blank" rel="sponsored noopener">🎫 Eiffel timed ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/asEPlwc3" target="_blank" rel="sponsored noopener">🛳️ Seine cruise</a>
+        </div>
+
+        <!-- DAY 2 -->
+        <h3 id="d2">Day 2: Orsay → Saint-Germain → Montmartre → Arc</h3>
+        <ul class="checklist">
+          <li><strong>Morning (Anchor):</strong> Musée d’Orsay timed-entry.</li>
+          <li><strong>Loop (Left Bank):</strong> Saint-Germain café break + short stroll (reset energy).</li>
+          <li><strong>Midday:</strong> Montmartre (best as a guided walk if you want structure).</li>
+          <li><strong>Sunset:</strong> Arc de Triomphe (golden-to-blue hour if possible).</li>
+          <li><strong>Optional night add-on:</strong> Catacombs only if you still have battery.</li>
+        </ul>
+        <div class="mini-grid" aria-label="Day 2 booking links">
+          <a class="pill-link" href="https://klook.tpk.ro/LccOCPi8" target="_blank" rel="sponsored noopener">🎫 Orsay timed ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/P1TtFcP9" target="_blank" rel="sponsored noopener">👣 Montmartre tour</a>
+          <a class="pill-link" href="https://klook.tpk.ro/LlrdHG46" target="_blank" rel="sponsored noopener">🎫 Arc ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/6ZKLH6kx" target="_blank" rel="sponsored noopener">🎫 Catacombs (optional)</a>
+        </div>
+
+        <!-- DAY 3 -->
+        <h3 id="daytrip">Day 3: Day trip choice (Versailles OR Disneyland)</h3>
+        <ul class="checklist">
+          <li><strong>Option A (Classic):</strong> Versailles timed-entry + gardens (half-to-full day).</li>
+          <li><strong>Option B (Full-day fun):</strong> Disneyland Paris ticket (full commitment day).</li>
+          <li><strong>Evening:</strong> keep it light: dinner near your hotel, short stroll, early night.</li>
+        </ul>
+        <div class="mini-grid" aria-label="Day 3 booking links">
+          <a class="pill-link" href="https://klook.tpk.ro/DpABrxdE" target="_blank" rel="sponsored noopener">🏰 Versailles ticket</a>
+          <a class="pill-link" href="https://klook.tpk.ro/mIt3rvye" target="_blank" rel="sponsored noopener">🎡 Disneyland ticket</a>
+        </div>
+        <div class="callout">
+          <b>Decision shortcut:</b> Versailles = culture + gardens. Disneyland = entertainment. Pick one.
+        </div>
+
+        <!-- DAY 4 -->
+        <h3 id="d4">Day 4: Le Marais + Île de la Cité loop (deep Paris)</h3>
+        <ul class="checklist">
+          <li><strong>Morning (Loop):</strong> Le Marais stroll (shops, cafés, easy museums).</li>
+          <li><strong>Midday:</strong> Île de la Cité loop (Sainte-Chapelle area + riverside walk).</li>
+          <li><strong>Afternoon (flex anchor):</strong> choose one: Orangerie / Rodin / Pompidou-style “one museum max”.</li>
+          <li><strong>Evening:</strong> keep it open for “vibes” (no strict scheduling).</li>
+        </ul>
+
+        <section class="card pad" aria-label="Optional premium finale" style="margin-top:1.25rem">
+          <h3>Optional premium finale (if you want one “wow” night)</h3>
+          <p class="muted">Only if you’re not exhausted after the day trip.</p>
+          <div class="mini-grid" aria-label="Premium links">
+            <a class="pill-link" href="https://klook.tpk.ro/PDwV4IQd" target="_blank" rel="sponsored noopener">🍽️ Dinner cruise upgrade</a>
+          </div>
+        </section>
+      </section>
+
+      <!-- TICKETS -->
+      <section id="tickets" class="card pad content" aria-label="Timed tickets checklist">
+        <div class="section-title">
+          <h2>Timed tickets checklist (4-day essentials)</h2>
+          <p>Book these early to keep the plan stable.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Louvre:</strong> timed entry (Day 1 anchor).</li>
+          <li><strong>Eiffel Tower:</strong> timed entry (Day 1 anchor).</li>
+          <li><strong>Musée d’Orsay:</strong> timed entry (Day 2 anchor).</li>
+          <li><strong>Arc de Triomphe:</strong> tickets recommended for sunset slots.</li>
+          <li><strong>Versailles:</strong> timed entry if you choose it (Day 3 option).</li>
+          <li><strong>Disneyland:</strong> choose your date early if it’s your Day 3 choice.</li>
+          <li><strong>Catacombs (optional):</strong> timed entry if you add it.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Order of operations:</b> anchors → transport reality check → fill the loops.
+          <div class="mini-grid" style="margin-top:.75rem">
+            <a class="pill-link" href="/transport/paris/">🚇 Paris transport guide</a>
+            <a class="pill-link" href="/hotels/paris/">🏨 Where to stay</a>
+            <a class="pill-link" href="/itinerary/paris-3-days/">🗺️ Prefer a tighter plan? Use 3 days</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- VARIANTS -->
+      <section id="variants" class="card pad content" aria-label="Itinerary variants">
+        <div class="section-title">
+          <h2>Variants (rainy Paris, summer crowds, low-energy)</h2>
+          <p>Same structure. Different tuning knobs.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Rainy Paris:</strong> move more time indoors (museums, covered passages, cafés). Keep anchors early.</li>
+          <li><strong>Summer crowds:</strong> pick early timed entries and protect midday with indoor stops.</li>
+          <li><strong>Low-energy trip:</strong> drop optional add-ons; keep evenings mostly open.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Rule stays the same:</b> one anchor per day + neighborhood loops. Variants only change the filler.
+        </div>
+      </section>
+
+      <!-- SOLD OUT -->
+      <section id="soldout" class="card pad content" aria-label="If tickets are sold out">
+        <div class="section-title">
+          <h2>If tickets are sold out (backup playbook)</h2>
+          <p>Swap anchors. Keep loops. Don’t stack.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>Swap anchors:</strong> move Orsay earlier and shift Day 2 flow, or adjust Eiffel time slots.</li>
+          <li><strong>Replace with nearby wins:</strong> Sainte-Chapelle, Orangerie, Rodin, or a Seine loop walk.</li>
+          <li><strong>Anchor by area:</strong> pick one neighborhood cluster and stop fighting the map.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Stress killer:</b> swap, don’t stack.
+        </div>
+      </section>
+
+      <!-- RULES -->
+      <section id="rules" class="card pad content" aria-label="Rules that save time">
+        <div class="section-title">
+          <h2>Rules that save time (4-day version)</h2>
+          <p>More days doesn’t mean more chaos. Keep the structure.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><strong>One anchor per day:</strong> one timed must-do, everything else stays flexible.</li>
+          <li><strong>Keep loops tight:</strong> build around the anchor neighborhood.</li>
+          <li><strong>Arrive early:</strong> 20–30 minutes early makes days predictable.</li>
+          <li><strong>Protect evenings:</strong> keep at least one night open for strolling and cafés.</li>
+          <li><strong>Don’t over-museum:</strong> one big museum per day is plenty for most people.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Next step:</b> Complete the Paris stack:
+          <div class="mini-grid" style="margin-top:.75rem">
+            <a class="pill-link" href="/transport/paris/">🚇 Transport</a>
+            <a class="pill-link" href="/hotels/paris/">🏨 Hotels</a>
+            <a class="pill-link" href="/things-to-do/paris/">✨ Things to do</a>
+            <a class="pill-link" href="/esim/france/">📶 France eSIM</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFICIAL SOURCES -->
+      <section class="card pad content" aria-label="Official sources" id="sources">
+        <div class="section-title">
+          <h2>Official sources (double-check before you book)</h2>
+          <p>Verify hours, closures, and ticket rules here.</p>
+        </div>
+
+        <ul class="checklist">
+          <li><a href="https://www.louvre.fr/en" target="_blank" rel="noopener">Louvre official site</a></li>
+          <li><a href="https://www.toureiffel.paris/en" target="_blank" rel="noopener">Eiffel Tower official site</a></li>
+          <li><a href="https://www.musee-orsay.fr/en" target="_blank" rel="noopener">Musée d’Orsay official site</a></li>
+          <li><a href="https://www.catacombes.paris.fr/en" target="_blank" rel="noopener">Paris Catacombs official site</a></li>
+          <li><a href="https://en.chateauversailles.fr/" target="_blank" rel="noopener">Versailles official site</a></li>
+          <li><a href="https://www.iledefrance-mobilites.fr/en" target="_blank" rel="noopener">Île-de-France Mobilités</a></li>
+        </ul>
+
+        <p class="muted">Tip: check weekly closure days and exceptional closures before choosing your anchor days.</p>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="card pad content" aria-label="FAQ">
+        <div class="section-title">
+          <h2>FAQ</h2>
+          <p>Quick answers for planning.</p>
+        </div>
+
+        <details>
+          <summary>Is 4 days enough for Paris?</summary>
+          <p>Yes. Four days is the sweet spot for icons plus one deeper neighborhood day or a day trip, as long as you keep one anchor per day.</p>
+        </details>
+
+        <details>
+          <summary>Versailles or Disneyland for the day trip?</summary>
+          <p>Versailles is culture + gardens. Disneyland is full-day entertainment. Pick one.</p>
+        </details>
+
+        <details>
+          <summary>What should I book first?</summary>
+          <p>Book Louvre, Eiffel, Orsay, then your day trip choice (Versailles or Disneyland). Add extras after anchors are locked.</p>
+        </details>
+      </section>
+
+      <!-- INTERNAL LINKS -->
+      <section class="card pad" aria-label="Keep planning">
+        <div class="section-title">
+          <h2>Keep planning</h2>
+          <p>More Paris options and trip essentials.</p>
+        </div>
+
+        <div class="cards" aria-label="Related guides">
+          <a class="cat" href="/itinerary/paris/">
+            <strong>Paris itineraries hub</strong>
+            <span>Pick 2–4 day plans by trip length.</span>
+            <span class="tag"><i aria-hidden="true"></i> Hub</span>
+          </a>
+
+          <a class="cat" href="/itinerary/paris-3-days/">
+            <strong>Paris 3-day itinerary</strong>
+            <span>The best overall plan for most first trips.</span>
+            <span class="tag"><i aria-hidden="true"></i> Best overall</span>
+          </a>
+
+          <a class="cat" href="/transport/paris/">
+            <strong>Paris transport guide</strong>
+            <span>Airport transfers, metro passes, train tickets.</span>
+            <span class="tag"><i aria-hidden="true"></i> Move smart</span>
+          </a>
+
+          <a class="cat" href="/hotels/paris/">
+            <strong>Where to stay in Paris</strong>
+            <span>Neighborhood strategy and hotel planning.</span>
+            <span class="tag"><i aria-hidden="true"></i> Sleep better</span>
+          </a>
+
+          <a class="cat" href="/esim/france/">
+            <strong>France eSIM guide</strong>
+            <span>Avoid roaming fees and set up fast.</span>
+            <span class="tag"><i aria-hidden="true"></i> Stay connected</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- DISCLOSURE -->
+      <section class="card pad" aria-label="Affiliate disclosure">
+        <p class="aff-note">
+          Disclosure: TripGuidely may earn a commission if you book through some links on this page, at no extra cost to you.
+          We recommend options that fit the TripGuidely method: timed entry anchors and low-friction planning.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
