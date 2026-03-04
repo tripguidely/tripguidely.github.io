@@ -1,0 +1,202 @@
+/* ==========================================================================
+   TripGuidely home.css (HOME ONLY) — UPDATED
+   - Keeps global styles.css intact
+   - Makes HERO text fully white + more readable
+   - Adds premium "Explore cities" grid (stickers)
+   - Safe scoping: only affects pages with body[data-page="home"]
+   ========================================================================== */
+
+/* -----------------------------
+   0) Scope helper
+   ----------------------------- */
+body[data-page="home"]{}
+
+/* -----------------------------
+   1) HERO readability (white text)
+   ----------------------------- */
+body[data-page="home"] .hero.hero-full{
+  position: relative;
+}
+
+/* Stronger overlay so white text pops on any hero photo */
+body[data-page="home"] .hero-overlay{
+  opacity: .96;
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.16), transparent 60%),
+    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.16), transparent 62%),
+    linear-gradient(180deg,
+      rgba(2,6,23,.62),
+      rgba(2,6,23,.32) 34%,
+      rgba(2,6,23,.22) 58%,
+      rgba(2,6,23,.52)
+    );
+}
+
+/* Make ALL hero copy white (kicker, title, lede) */
+body[data-page="home"] .hero-panel{
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 14px 30px rgba(0,0,0,.40);
+}
+
+body[data-page="home"] .hero-panel .kicker{
+  color: rgba(226,232,240,.92);
+}
+
+body[data-page="home"] .hero-panel h1{
+  color: rgba(255,255,255,.98);
+  text-shadow: 0 18px 44px rgba(0,0,0,.44);
+}
+
+body[data-page="home"] .hero-panel .lede{
+  color: rgba(226,232,240,.92);
+  text-shadow: 0 18px 44px rgba(0,0,0,.42);
+}
+
+/* Buttons: keep premium look + better contrast on hero */
+body[data-page="home"] .hero-panel .actions .btn{
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+}
+
+body[data-page="home"] .hero-panel .actions .btn:hover{
+  border-color: rgba(255,255,255,.26);
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 26px 58px rgba(0,0,0,.22);
+}
+
+body[data-page="home"] .hero-panel .actions .btn.primary{
+  background: linear-gradient(135deg, var(--cta1), var(--cta2));
+  color:#ffffff;
+  border-color: rgba(18,207,208,.55);
+  box-shadow: 0 18px 44px rgba(18,207,208,.26);
+}
+
+/* Trust cards: keep light cards but align spacing on hero */
+body[data-page="home"] .hero-panel .trust{
+  margin-top: 16px;
+}
+body[data-page="home"] .hero-panel .trust-item{
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.92);
+}
+
+/* Optional: on very bright hero images, add a subtle glass plate behind text */
+body[data-page="home"] .hero-panel{
+  background: none;
+}
+@media (min-width: 981px){
+  body[data-page="home"] .hero-panel{
+    padding: 0;
+  }
+}
+
+/* -----------------------------
+   2) Explore cities (premium grid)
+   Use with the HTML:
+   <section class="cities"> ... <div class="cities-grid"> <a class="city-card">...</a>
+   ----------------------------- */
+body[data-page="home"] .cities{
+  margin-top: 18px;
+}
+
+body[data-page="home"] .cities-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin-top:12px;
+}
+
+@media (max-width: 900px){
+  body[data-page="home"] .cities-grid{ grid-template-columns: 1fr; }
+}
+
+body[data-page="home"] .city-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+
+  text-decoration:none;
+  padding:14px;
+  border-radius:18px;
+  border:1px solid rgba(15,23,42,.10);
+  background:
+    radial-gradient(420px 160px at 10% 10%, rgba(18,207,208,.10), transparent 60%),
+    radial-gradient(420px 160px at 90% 30%, rgba(244,162,97,.10), transparent 60%),
+    #ffffff;
+  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  min-width:0;
+}
+
+body[data-page="home"] .city-card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 18px 44px rgba(2,6,23,.12);
+  border-color: rgba(18,207,208,.28);
+}
+
+body[data-page="home"] .city-ico{
+  width:64px;
+  height:64px;
+  flex:0 0 auto;
+  object-fit:contain;
+}
+
+body[data-page="home"] .city-meta{
+  min-width:0;
+  flex:1 1 auto;
+}
+
+body[data-page="home"] .city-meta strong{
+  display:block;
+  font-weight:950;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height:1.1;
+}
+
+body[data-page="home"] .city-meta span{
+  display:block;
+  margin-top:4px;
+  color: var(--muted2);
+  font-size: .93rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body[data-page="home"] .city-arrow{
+  width:34px;
+  height:34px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(15,23,42,.10);
+  background: linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.10));
+  color: rgba(15,23,42,.92);
+  flex:0 0 auto;
+  font-weight:900;
+}
+
+/* Mobile: slightly larger tap targets */
+@media (max-width: 760px){
+  body[data-page="home"] .city-card{
+    padding:16px;
+    border-radius:20px;
+  }
+  body[data-page="home"] .city-ico{
+    width:68px;
+    height:68px;
+  }
+}
+
+/* -----------------------------
+   3) Small polish (optional)
+   ----------------------------- */
+
+/* Make section title text look consistent with your premium style */
+body[data-page="home"] .section-title p{
+  color: var(--muted2);
+}
