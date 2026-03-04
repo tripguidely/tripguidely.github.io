@@ -463,3 +463,135 @@ body[data-page="guide"] .video-embed iframe{
   border:0;
   display:block;
 }
+
+/* ======================================================================
+   8) Sticker Nav (Explore cities) — Hub pages
+   - Premium city sticker cards (fast, no CLS, scoped)
+   - Works with your /assets/images/stickers/*-512.webp
+   ====================================================================== */
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-nav{
+  padding: clamp(18px, 3vw, 34px) 0;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head{
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head h2{
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 28px);
+  letter-spacing: .2px;
+  color: rgba(15,23,42,.92);
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head p{
+  margin: 0;
+  opacity: .85;
+  max-width: 70ch;
+  color: rgba(71,85,105,.95);
+}
+
+/* Grid */
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (min-width: 720px){
+  body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-grid{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Card */
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card{
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: var(--ttd-radius);
+
+  text-decoration: none;
+  color: inherit;
+
+  background:
+    radial-gradient(520px 180px at 12% 20%, rgba(18,207,208,.08), transparent 55%),
+    radial-gradient(520px 180px at 88% 60%, rgba(244,162,97,.08), transparent 60%),
+    rgba(255,255,255,.96);
+
+  border: 1px solid var(--ttd-panel-border);
+  box-shadow: 0 18px 44px rgba(2,6,23,.10);
+
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  will-change: transform;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 26px 60px rgba(2,6,23,.14);
+  border-color: rgba(18,207,208,.28);
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card:focus-visible{
+  outline: 3px solid rgba(18,207,208,.45);
+  outline-offset: 2px;
+}
+
+/* Sticker box (no CLS) */
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media{
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media img{
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text */
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text{
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text strong{
+  font-size: .95rem;
+  line-height: 1.15;
+  color: rgba(15,23,42,.92);
+}
+
+body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text span{
+  font-size: .82rem;
+  opacity: .78;
+  line-height: 1.25;
+  color: rgba(71,85,105,.95);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mobile polish */
+@media (max-width: 420px){
+  body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card{
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    padding: 12px 12px;
+  }
+  body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media,
+  body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media img{
+    width: 56px;
+    height: 56px;
+  }
+}
