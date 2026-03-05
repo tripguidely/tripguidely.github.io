@@ -223,3 +223,24 @@ body[data-page="home"] .city-arrow{
 
 /* Keep section subtitle tone consistent */
 body[data-page="home"] .section-title p{ color: var(--muted2); }
+
+/* ==========================================================================
+   HOME — HERO MOBILE GUTTER FIX (anti "collé sur le bord")
+   ========================================================================== */
+
+@media (max-width: 760px){
+  /* Force des marges horizontales dans le HERO uniquement */
+  body[data-page="home"] .hero.hero-full > .wrap.hero-inner{
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Optionnel: si tu veux un peu plus d’air sur iPhone */
+  body[data-page="home"] .hero-panel{
+    width: 100%;
+    max-width: 680px;
+  }
+}
