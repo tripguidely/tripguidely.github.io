@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Root -->
-  <url><loc>https://tripguidely.github.io/</loc></url>
+  <url>
+    <loc>https://tripguidely.github.io/</loc>
+    <lastmod>2026-03-05</lastmod>
+  </url>
 
   <!-- Primary pages -->
   <url><loc>https://tripguidely.github.io/about/</loc></url>
@@ -16,25 +19,31 @@
   <url><loc>https://tripguidely.github.io/things-to-do/</loc></url>
   <url><loc>https://tripguidely.github.io/car-rental/</loc></url>
 
+  <!-- eSIM hub -->
   <url>
     <loc>https://tripguidely.github.io/esim/</loc>
     <lastmod>2026-03-01</lastmod>
   </url>
 
-  <!-- Cruises cluster (moved under /cruises/) -->
+  <!-- Cruises cluster -->
   <url><loc>https://tripguidely.github.io/cruises/best-cruises-2026/</loc></url>
   <url><loc>https://tripguidely.github.io/cruises/caribbean/</loc></url>
   <url><loc>https://tripguidely.github.io/cruises/mediterranean/</loc></url>
 
-  <!-- Car rental cluster (moved under /car-rental/) -->
+  <!-- Car rental cluster -->
   <url><loc>https://tripguidely.github.io/car-rental/paris/</loc></url>
   <url><loc>https://tripguidely.github.io/car-rental/rome/</loc></url>
+  <url><loc>https://tripguidely.github.io/car-rental/new-york/</loc></url>
+
+  <!-- Hotels city pages -->
+  <url><loc>https://tripguidely.github.io/hotels/london/</loc></url>
+  <url><loc>https://tripguidely.github.io/hotels/paris/</loc></url>
 
   <!-- eSIM cluster -->
   <url><loc>https://tripguidely.github.io/esim/best-esim-europe/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/best-esim-for-usa-2026/</loc></url>
 
-  <!-- eSIM country hubs (folders exist in repo) -->
+  <!-- eSIM country hubs -->
   <url><loc>https://tripguidely.github.io/esim/canada/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/france/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/italy/</loc></url>
@@ -42,7 +51,7 @@
   <url><loc>https://tripguidely.github.io/esim/uk/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/usa/</loc></url>
 
-  <!-- eSIM guides (folders exist in repo) -->
+  <!-- eSIM guides -->
   <url><loc>https://tripguidely.github.io/esim/esim-compatibility-check/</loc></url>
   <url><loc>https://tripguidely.github.io/esim/esim-setup-guide/</loc></url>
 
@@ -57,12 +66,11 @@
   <url><loc>https://tripguidely.github.io/itinerary/paris/first-time/</loc></url>
   <url><loc>https://tripguidely.github.io/itinerary/paris/rainy-day/</loc></url>
 
-  <!-- Supporting city pages (if published) -->
+  <!-- Supporting city pages -->
   <url><loc>https://tripguidely.github.io/transport/paris/</loc></url>
-  <url><loc>https://tripguidely.github.io/hotels/paris/</loc></url>
   <url><loc>https://tripguidely.github.io/things-to-do/paris/</loc></url>
 
-  <!-- Things to do (folders exist in repo) -->
+  <!-- Things to do -->
   <url><loc>https://tripguidely.github.io/things-to-do/london/</loc></url>
   <url><loc>https://tripguidely.github.io/things-to-do/new-york/</loc></url>
   <url><loc>https://tripguidely.github.io/things-to-do/rome/</loc></url>
