@@ -6,6 +6,7 @@
    - Keeps layout stable: uses a realistic widget height (small, not 320/360)
    - Mobile overflow hard-fixed (no 100vw traps)
    - CWV-friendly: contain/isolation + predictable widget box
+   - UPDATED NOW: iOS safe-area left/right + hero gutter + mobile buttons breathing room
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -97,6 +98,10 @@ body{
   text-rendering:optimizeLegibility;
   max-width:100%;
   overflow-x:hidden;
+
+  /* UPDATED: iOS notch safe-area (prevents content touching screen edges) */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 img, picture, video, canvas, svg{
@@ -179,11 +184,26 @@ summary:focus{
   min-width:0;
 }
 
+/* =========================================================
+   UPDATED: Mobile/Edge breathing room (prevents side stretching)
+   - Hero inner had 0 side padding -> match site gutter
+   ========================================================= */
+.hero-inner{
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
 @media (max-width: 760px){
   :root{
     --header-h:64px;
     --gutter:16px;
     --tool-max: 100%;
+  }
+
+  /* Optional: keep hero tool from feeling too wide on big phones */
+  .hero-tool-wrap{
+    width: 100%;
+    max-width: 720px;
   }
 }
 
@@ -766,6 +786,10 @@ h1{
     padding: 16px 16px;
     border-radius: 16px;
     font-size: 18px;
+
+    /* UPDATED: breathing room (no edge-to-edge feeling) */
+    max-width: 720px;
+    margin-inline: auto;
   }
   .actions .btn.primary{
     box-shadow: 0 18px 44px rgba(18,207,208,.22);
