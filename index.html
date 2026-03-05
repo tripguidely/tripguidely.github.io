@@ -24,6 +24,18 @@
   <!-- PWA -->
   <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Security (light CSP for GitHub Pages; adjust if needed) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:;
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline' https:;
+                 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://tp-em.com;
+                 connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com;
+                 frame-src https:;
+                 base-uri 'self';
+                 form-action 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <!-- Favicons (root) -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -49,8 +61,6 @@
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
 
   <!-- Performance: preconnect/dns-prefetch -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
 
@@ -86,7 +96,8 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
-        }
+        },
+        "sameAs": []
       },
       {
         "@type": "WebSite",
@@ -107,9 +118,12 @@
         "publisher": { "@id": "https://tripguidely.github.io/#organization" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp"
+          "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp",
+          "width": 1200,
+          "height": 630
         },
-        "dateModified": "2026-03-04"
+        "datePublished": "2026-03-05",
+        "dateModified": "2026-03-05"
       },
       {
         "@type": "BreadcrumbList",
@@ -130,7 +144,7 @@
   <div id="site-header"></div>
 
   <main id="main" class="main" role="main">
-    <!-- HERO full-bleed -->
+    <!-- HERO full-bleed (MATCHES styles.css: hero = image-only) -->
     <section class="hero hero-full" aria-label="TripGuidely hero">
       <div class="hero-bg" aria-hidden="true">
         <img
@@ -146,34 +160,45 @@
       </div>
 
       <div class="wrap hero-inner">
-        <div class="hero-panel">
-          <p class="kicker"><span class="dot" aria-hidden="true"></span>International travel planning hub</p>
-          <h1>Plan smarter trips, faster.</h1>
-          <p class="lede">
-            Curated travel guides built for clarity: cruise planning, hotels by neighborhood, and city itineraries you can actually follow.
-          </p>
+        <!-- TOOL-STYLE HERO CONTENT (fits your CSS system) -->
+        <div class="hero-tool-wrap">
+          <p class="hero-tool-title">Plan smarter trips, faster.</p>
+          <p class="hero-tool-sub">Curated travel guides for cruises, hotels, and things to do — built for clarity and real decisions.</p>
 
-          <div class="actions" aria-label="Primary actions">
-            <a class="btn primary" href="/cruises/">
-              <span class="pill" aria-hidden="true">⛴</span>
-              Start with Cruises
-            </a>
-            <a class="btn" href="/hotels/">
-              <span class="pill" aria-hidden="true">🏨</span>
-              Explore Hotels
-            </a>
-            <a class="btn" href="/things-to-do/">
-              <span class="pill" aria-hidden="true">🗺</span>
-              Things to Do
-            </a>
-          </div>
+          <div class="hero-tool-shell">
+            <div class="hero-tool-pad">
+              <div class="actions" aria-label="Primary actions" style="margin-top:0;">
+                <a class="btn primary" href="/cruises/">
+                  <span class="pill" aria-hidden="true">⛴</span>
+                  Start with Cruises
+                </a>
+                <a class="btn" href="/hotels/">
+                  <span class="pill" aria-hidden="true">🏨</span>
+                  Explore Hotels
+                </a>
+                <a class="btn" href="/things-to-do/">
+                  <span class="pill" aria-hidden="true">🗺</span>
+                  Things to Do
+                </a>
+                <a class="btn" href="/esim/">
+                  <span class="pill" aria-hidden="true">📶</span>
+                  eSIM Guides
+                </a>
+              </div>
 
-          <div class="trust">
-            <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
-            <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
-            <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
+              <div class="trust" aria-label="Trust highlights">
+                <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
+                <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
+                <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
+              </div>
+
+              <p class="meta" style="margin-top:12px;">
+                Updated: <time datetime="2026-03-05">Mar 5, 2026</time>
+              </p>
+            </div>
           </div>
         </div>
+        <!-- /hero-tool-wrap -->
       </div>
     </section>
 
@@ -212,7 +237,7 @@
               </div>
             </section>
 
-            <!-- Explore Cities (stickers) — UPDATED markup for home.css -->
+            <!-- Explore Cities (stickers) -->
             <section class="cities" aria-labelledby="cities-title">
               <div class="section-title" style="margin-top:22px;">
                 <h2 id="cities-title">Explore cities</h2>
@@ -236,7 +261,7 @@
                   <span class="city-arrow" aria-hidden="true">↗</span>
                 </a>
 
-                <a class="city-card" role="listitem" href="/things-to-do/paris/" aria-label="Things to do in Paris">
+                <a class="city-card" role="listitem" href="/itinerary/paris/" aria-label="Paris itinerary">
                   <img class="city-ico"
                     src="/assets/images/stickers/eiffel-tower-sticker-512.webp"
                     width="96"
@@ -247,7 +272,7 @@
                   />
                   <span class="city-meta">
                     <strong>Paris</strong>
-                    <span>Museums, day trips, and routes</span>
+                    <span>Itineraries + planning flow</span>
                   </span>
                   <span class="city-arrow" aria-hidden="true">↗</span>
                 </a>
@@ -295,23 +320,23 @@
                 <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
                   <div>
                     <strong>Best Cruises for 2026</strong><br />
-                    <span>Top itineraries, ships, seasons & deals</span>
+                    <span>Top regions, itineraries, seasons & strategy</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="/hotels/best-hotels-paris/">
+                <a class="link-card" role="listitem" href="/cruises/mediterranean/">
                   <div>
-                    <strong>Best Hotels in Paris</strong><br />
-                    <span>Where to stay by area, budget & style</span>
+                    <strong>Mediterranean Cruises</strong><br />
+                    <span>Routes, ports, timing & booking tips</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
-                <a class="link-card" role="listitem" href="/things-to-do/rome/">
+                <a class="link-card" role="listitem" href="/esim/best-esim-for-europe-2026/">
                   <div>
-                    <strong>Things to Do in Rome</strong><br />
-                    <span>Must-sees, hidden gems & 3-day plan</span>
+                    <strong>Best eSIM for Europe (2026)</strong><br />
+                    <span>Plan guidance + setup steps</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
@@ -397,18 +422,18 @@
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="/hotels/">
+              <a class="link-card" role="listitem" href="/cruises/best-cruises-2026/">
                 <div>
-                  <strong>Hotels Hub</strong><br />
-                  <span>Choose areas + shortlist</span>
+                  <strong>Best Cruises (2026)</strong><br />
+                  <span>Top picks + booking strategy</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
 
-              <a class="link-card" role="listitem" href="/things-to-do/">
+              <a class="link-card" role="listitem" href="/esim/">
                 <div>
-                  <strong>Things to Do Hub</strong><br />
-                  <span>Build itineraries fast</span>
+                  <strong>eSIM Hub</strong><br />
+                  <span>Setup + country guides</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
