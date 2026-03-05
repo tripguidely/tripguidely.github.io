@@ -1,7 +1,8 @@
 /* ==========================================================================
-   TripGuidely home.css (HOME ONLY) — UPDATED (v2)
+   TripGuidely home.css (HOME ONLY) — UPDATED (v3)
    - Scope: ONLY body[data-page="home"]
    - HERO: white text + better contrast + optional glass plate (desktop)
+   - HERO mobile: guaranteed side gutters + safe-area support (no “collé sur le bord”)
    - Explore cities: FIXED layout (no weird empty space) + 2 cols desktop / 1 col mobile
    - Better icon alignment + consistent spacing
    ========================================================================== */
@@ -90,6 +91,40 @@ body[data-page="home"] .hero-panel .trust{ margin-top: 16px; }
 body[data-page="home"] .hero-panel .trust-item{
   border-color: rgba(255,255,255,.18);
   background: rgba(255,255,255,.92);
+}
+
+/* -----------------------------
+   1.1) HERO mobile gutters (FIX)
+   ----------------------------- */
+/* IMPORTANT: your HTML is <div class="wrap hero-inner"> ... </div>
+   So we MUST target ".wrap.hero-inner" (not a child ".wrap"). */
+@media (max-width: 760px){
+  body[data-page="home"] .wrap.hero-inner{
+    /* overrides base .hero-inner padding in styles.css (top/bottom stay there) */
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+
+    /* extra safety if something is forcing 100vw somewhere */
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Keep content readable and not edge-to-edge */
+  body[data-page="home"] .hero-panel{
+    width: 100%;
+    max-width: 680px;
+  }
+
+  /* If any child tries to overflow, clamp it */
+  body[data-page="home"] .hero-panel,
+  body[data-page="home"] .hero-panel *{
+    max-width: 100%;
+  }
+
+  /* Optional: tiny breathing room below buttons/trust on small screens */
+  body[data-page="home"] .hero-panel .trust{ margin-top: 14px; }
 }
 
 /* -----------------------------
@@ -223,24 +258,3 @@ body[data-page="home"] .city-arrow{
 
 /* Keep section subtitle tone consistent */
 body[data-page="home"] .section-title p{ color: var(--muted2); }
-
-/* ==========================================================================
-   HOME — HERO MOBILE GUTTER FIX (anti "collé sur le bord")
-   ========================================================================== */
-
-@media (max-width: 760px){
-  /* Force des marges horizontales dans le HERO uniquement */
-  body[data-page="home"] .hero.hero-full > .wrap.hero-inner{
-    padding-left: max(16px, env(safe-area-inset-left)) !important;
-    padding-right: max(16px, env(safe-area-inset-right)) !important;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Optionnel: si tu veux un peu plus d’air sur iPhone */
-  body[data-page="home"] .hero-panel{
-    width: 100%;
-    max-width: 680px;
-  }
-}
