@@ -55,6 +55,18 @@
   <link rel="preconnect" href="https://tpemb.com" crossorigin />
   <link rel="dns-prefetch" href="//tpemb.com" />
 
+  <!-- Hero preload -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero/new-york-rainy-day-1600x900.webp"
+    imagesrcset="
+      /assets/images/hero/new-york-rainy-day-800x450.webp 800w,
+      /assets/images/hero/new-york-rainy-day-1200x675.webp 1200w,
+      /assets/images/hero/new-york-rainy-day-1600x900.webp 1600w,
+      /assets/images/hero/new-york-rainy-day-2400x1350.webp 2400w"
+    imagesizes="100vw" />
+
   <!-- CSS -->
   <link rel="preload" href="/assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -96,6 +108,12 @@
         "inLanguage":"en"
       },
       {
+        "@type":"TouristDestination",
+        "@id":"https://tripguidely.github.io/itinerary/new-york/rainy-day/#place",
+        "name":"New York City",
+        "sameAs":"https://en.wikipedia.org/wiki/New_York_City"
+      },
+      {
         "@type":"ImageObject",
         "@id":"https://tripguidely.github.io/itinerary/new-york/rainy-day/#primaryimage",
         "url":"https://tripguidely.github.io/assets/images/og/new-york-rainy-day-og-1200x630.webp",
@@ -109,6 +127,7 @@
         "name":"New York on a Rainy Day (2026): Indoor Plans, Museum Loops & Weather-Proof Backups",
         "description":"New York rainy day guide (2026): indoor itineraries, museum clusters, covered backup moves, skyline replacements, and what to do when weather ruins your original NYC plan.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
+        "about":{"@id":"https://tripguidely.github.io/itinerary/new-york/rainy-day/#place"},
         "inLanguage":"en",
         "primaryImageOfPage":{"@id":"https://tripguidely.github.io/itinerary/new-york/rainy-day/#primaryimage"},
         "datePublished":"2026-03-06",
@@ -253,6 +272,22 @@
         <span>Rainy Day</span>
       </nav>
 
+      <!-- INTRO -->
+      <section class="card pad content" aria-label="Rainy day intro">
+        <div class="section-title">
+          <h2>How to save a rainy day in New York</h2>
+          <p>The goal is not to keep the same itinerary. The goal is to keep the same part of the city and protect the value of the day.</p>
+        </div>
+
+        <p>
+          Rain changes New York fastest when your plan depends on views, long walks, or outdoor transitions. This guide helps you pivot without rebuilding everything. Instead of crossing the city for a totally new plan, keep the original cluster whenever possible, swap the attraction, and shorten the walking.
+        </p>
+
+        <p>
+          If your trip includes multiple days, use the weather to reshuffle the order. Move view-based attractions like observation decks or open-air routes to a clearer day, and bring museums or indoor neighborhoods forward instead.
+        </p>
+      </section>
+
       <!-- QUICK FIX -->
       <section id="quick-fix" class="card pad content" aria-label="Fast rainy day backup">
         <div class="section-title">
@@ -309,6 +344,18 @@
         </div>
       </section>
 
+      <!-- LOOPS INTRO -->
+      <section id="loops" class="card pad content" aria-label="Rainy day indoor loops overview">
+        <div class="section-title">
+          <h2>Best indoor loops by part of the city</h2>
+          <p>Choose the loop that matches where you already are or where your original day was supposed to happen.</p>
+        </div>
+
+        <p>
+          The best rainy-day pivot is usually geographic, not thematic. If the plan was Uptown, stay Uptown. If it was Midtown, keep Midtown. If it was Lower Manhattan, do not jump across town just because it started raining.
+        </p>
+      </section>
+
       <!-- UPTOWN LOOP -->
       <section id="uptown-loop" class="card pad content" aria-label="Uptown rainy day loop">
         <div class="section-title">
@@ -343,8 +390,7 @@
 
         <h3>Base cluster: Grand Central, Bryant Park edge, Rockefeller area</h3>
         <p>
-          Midtown still works well in rain if you shorten the walking and use indoor-heavy stops.
-          Grand Central is one of the easiest rainy-day anchors because it is visually strong and naturally connected to the area around it.
+          Midtown still works well in rain if you shorten the walking and use indoor-heavy stops. Grand Central is one of the easiest rainy-day anchors because it is visually strong and naturally connected to the area around it.
         </p>
 
         <h3>If your skyline deck is ruined by visibility</h3>
