@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.1)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.2)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
@@ -10,6 +10,7 @@
    - Consent Mode v2 default denied
    - Lazy-load GA4 only if accepted
    - Binds footer “Privacy choices” link (.js-consent) (no inline onclick)
+   - Contact form AJAX + success/error UI for Formspree
    ========================================================================== */
 
 (function () {
@@ -91,7 +92,6 @@
   }
 
   function closestByClass(el, className) {
-    // compatible fallback for Element.closest(".class")
     while (el && el !== DOC) {
       var cn = " " + (el.className || "") + " ";
       if (cn.indexOf(" " + className + " ") !== -1) return el;
@@ -174,7 +174,6 @@
   }
 
   function setConsentModeDefault() {
-    // Consent Mode v2: default denied (safe even before gtag.js loads)
     ensureDataLayer();
     try {
       WIN.gtag("consent", "default", {
@@ -238,6 +237,7 @@
     if (el && el.parentNode) el.parentNode.removeChild(el);
 
     DOC.body.className = (DOC.body.className || "").replace(/\bconsent-open\b/g, "");
+    DOC.body.className = trimStr(DOC.body.className || "");
   }
 
   function renderConsentBanner() {
@@ -263,7 +263,7 @@
       '</div>';
 
     DOC.body.appendChild(banner);
-    DOC.body.className = (DOC.body.className ? DOC.body.className + " " : "") + "consent-open";
+    DOC.body.className = trimStr((DOC.body.className ? DOC.body.className + " " : "") + "consent-open");
 
     var btnA = DOC.getElementById("tg-consent-accept");
     var btnD = DOC.getElementById("tg-consent-decline");
@@ -288,7 +288,6 @@
   }
 
   function initConsent() {
-    // Always set default denied (audit-friendly baseline)
     setConsentModeDefault();
 
     var c = getConsent();
@@ -305,7 +304,6 @@
   }
 
   function openConsentManager() {
-    // allow reopening even if already decided
     renderConsentBanner();
   }
 
@@ -316,7 +314,6 @@
   /* ---------- Bind footer “Privacy choices” link (.js-consent) ---------- */
 
   function bindConsentLinks() {
-    // avoid double-binding
     if (DOC.documentElement && DOC.documentElement.getAttribute("data-consentlink-bound") === "1") return;
     try { DOC.documentElement.setAttribute("data-consentlink-bound", "1"); } catch (_) {}
 
@@ -531,7 +528,6 @@
   }
 
   function trackWidgetEngagement() {
-    // Fires once per widget key per pageview, after consent
     var firedMap = {};
 
     function markFired(key) { firedMap[key] = true; }
@@ -550,7 +546,6 @@
       var target = e.target || e.srcElement;
       if (!target) return;
 
-      // 1) eSIM hub section (if present)
       var esimWrap = DOC.getElementById("esim-search");
       if (esimWrap) {
         try {
@@ -560,7 +555,6 @@
         } catch (_) {}
       }
 
-      // 2) Generic “money zone” section
       var search = DOC.getElementById("search");
       if (search) {
         try {
@@ -570,8 +564,6 @@
         } catch (_) {}
       }
 
-      // 3) ANY Travelpayouts widget container (.tp-widget)
-      //    If it has an id, we use it; otherwise we use a safe fallback.
       var w = closestByClass(target, "tp-widget");
       if (w) {
         var wid = w.id ? String(w.id) : "tp-widget";
@@ -649,6 +641,132 @@
     });
   }
 
+  function initContactForm() {
+    var form = DOC.querySelector(".contact-form");
+    if (!form) return;
+    if (form.getAttribute("data-contact-bound") === "1") return;
+    form.setAttribute("data-contact-bound", "1");
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var endpoint = form.getAttribute("action");
+    if (!endpoint) return;
+
+    var status = DOC.createElement("div");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    form.appendChild(status);
+
+    function showStatus(type, message) {
+      status.className = "form-status is-visible " + (type === "success" ? "is-success" : "is-error");
+      status.textContent = message;
+    }
+
+    function clearInvalid() {
+      var fields = form.querySelectorAll("input, select, textarea");
+      var i;
+      for (i = 0; i < fields.length; i++) {
+        fields[i].removeAttribute("aria-invalid");
+      }
+    }
+
+    function validateForm() {
+      var required = form.querySelectorAll("[required]");
+      var i, field, tag, value;
+
+      clearInvalid();
+
+      for (i = 0; i < required.length; i++) {
+        field = required[i];
+        tag = (field.tagName || "").toLowerCase();
+        value = trimStr(field.value || "");
+
+        if (!value) {
+          field.setAttribute("aria-invalid", "true");
+          try { field.focus(); } catch (_) {}
+          return false;
+        }
+
+        if (tag === "select" && (!field.value || field.value === "")) {
+          field.setAttribute("aria-invalid", "true");
+          try { field.focus(); } catch (_) {}
+          return false;
+        }
+
+        if ((field.type || "").toLowerCase() === "email") {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            field.setAttribute("aria-invalid", "true");
+            try { field.focus(); } catch (_) {}
+            return false;
+          }
+        }
+      }
+
+      return true;
+    }
+
+    on(form, "submit", function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      else e.returnValue = false;
+
+      if (!WIN.fetch) {
+        form.submit();
+        return;
+      }
+
+      if (!validateForm()) {
+        showStatus("error", "Please complete the required fields before sending your message.");
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute("aria-busy", "true");
+        submitBtn.textContent = "Sending...";
+      }
+
+      status.className = "form-status";
+      status.textContent = "";
+
+      var formData = new FormData(form);
+
+      WIN.fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      })
+        .then(function (res) {
+          if (!res || !res.ok) throw new Error("Form submit failed");
+          return res.json ? res.json() : {};
+        })
+        .then(function () {
+          form.reset();
+          clearInvalid();
+          showStatus("success", "Thanks. Your message has been sent successfully.");
+          try { status.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (_) {}
+
+          if (getConsent() === "granted") {
+            gtagEvent("contact_form_submit", {
+              form_name: "tripguidely_contact",
+              page_type: getPageType()
+            });
+          }
+        })
+        .catch(function () {
+          showStatus("error", "Sorry, something went wrong while sending your message. Please try again or email us directly.");
+        })
+        .then(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute("aria-busy");
+            submitBtn.textContent = "Send Message";
+          }
+        });
+    });
+  }
+
   function measureVitalsHints() {
     try {
       if (getConsent() !== "granted") return;
@@ -675,11 +793,10 @@
     initMobileNav();
     handleAnchorClicks();
 
-    // Consent first (default denied). If granted, GA loads.
     initConsent();
-
-    // Footer “Privacy choices” link (no inline JS)
     bindConsentLinks();
+
+    initContactForm();
 
     trackOutboundClicks();
     trackAffiliateClicks();
@@ -692,19 +809,21 @@
     var hasFooterSlot = !!$("#site-footer");
 
     if (hasHeaderSlot || hasFooterSlot) {
+      var total = 0;
       var done = 0;
 
       function next() {
         done++;
-        if (done >= 2) initAll();
+        if (done >= total) initAll();
       }
 
+      if (hasHeaderSlot) total++;
+      if (hasFooterSlot) total++;
+
       if (hasHeaderSlot) injectPartial("#site-header", "/partials/header.html", next);
-      else next();
-
       if (hasFooterSlot) injectPartial("#site-footer", "/partials/footer.html", next);
-      else next();
 
+      if (total === 0) initAll();
       return;
     }
 
