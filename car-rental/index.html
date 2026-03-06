@@ -47,8 +47,8 @@
   <meta property="og:title" content="Car Rental Hub (2026): Compare Prices, Insurance & Pickup Tips" />
   <meta property="og:description" content="Compare prices, choose the right insurance, avoid pickup traps, and book the best option for your route." />
   <meta property="og:url" content="https://tripguidely.github.io/car-rental/" />
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Travel planning hero image with turquoise and sand accents" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/car-rental-og-1200x630.webp" />
+  <meta property="og:image:alt" content="Rental car driving through scenic mountain highway during golden hour road trip" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -56,11 +56,20 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Car Rental Hub (2026): Compare Prices, Insurance & Pickup Tips" />
   <meta name="twitter:description" content="Compare prices, choose the right insurance, avoid pickup traps, and book the best option for your route." />
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/car-rental-og-1200x630.webp" />
+  <meta name="twitter:image:alt" content="Rental car driving through scenic mountain highway during golden hour road trip" />
 
   <!-- Performance -->
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
+  <link rel="preload"
+        as="image"
+        href="/assets/images/hero/car-rental-hero-2400x1350.webp"
+        imagesrcset="/assets/images/hero/car-rental-hero-800x450.webp 800w,
+                     /assets/images/hero/car-rental-hero-1200x675.webp 1200w,
+                     /assets/images/hero/car-rental-hero-1600x900.webp 1600w,
+                     /assets/images/hero/car-rental-hero-2400x1350.webp 2400w"
+        imagesizes="100vw" />
 
   <!-- CSS -->
   <link rel="preload" as="style" href="/assets/css/styles.css" />
@@ -105,7 +114,13 @@
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/global-travel-hero.webp","width":1200,"height":630},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/og/car-rental-og-1200x630.webp",
+          "width":1200,
+          "height":630
+        },
+        "breadcrumb":{"@id":"https://tripguidely.github.io/car-rental/#breadcrumbs"},
         "datePublished":"2026-03-05",
         "dateModified":"2026-03-05"
       },
@@ -134,10 +149,16 @@
     <section class="hero hero-full" aria-label="Car rental hub hero">
       <div class="hero-bg" aria-hidden="true">
         <img
-          src="/assets/images/global-travel-hero.webp"
+          src="/assets/images/hero/car-rental-hero-2400x1350.webp"
+          srcset="
+            /assets/images/hero/car-rental-hero-800x450.webp 800w,
+            /assets/images/hero/car-rental-hero-1200x675.webp 1200w,
+            /assets/images/hero/car-rental-hero-1600x900.webp 1600w,
+            /assets/images/hero/car-rental-hero-2400x1350.webp 2400w"
+          sizes="100vw"
           alt=""
-          width="1920"
-          height="900"
+          width="2400"
+          height="1350"
           loading="eager"
           decoding="async"
           fetchpriority="high"
