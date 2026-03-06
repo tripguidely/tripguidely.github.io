@@ -140,26 +140,26 @@
         "mainEntity":[
           {
             "@type":"Question",
-            "name":"How do I choose the right activity for my trip?",
+            "name":"How do I choose the best activity for my trip?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Start with your time window and location cluster, then book your must-do attraction in an early slot. Keep one indoor backup for weather and leave buffer time for transit."
+              "text":"Start with your destination, available time, and travel style. Book one main anchor activity first, then add one or two flexible options nearby to keep the day smooth."
             }
           },
           {
             "@type":"Question",
-            "name":"Should this hub force a destination?",
+            "name":"How many activities should I book in advance?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"No. A hub should stay neutral for discovery. Destination-specific pages are where you publish best-of lists, passes, itineraries, and timing strategies."
+              "text":"For most trips, booking one or two key attractions in advance is enough. This protects your itinerary without making the day too rigid."
             }
           },
           {
             "@type":"Question",
-            "name":"USD or CAD for currency?",
+            "name":"Should I book attractions for the morning or afternoon?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"USD is a global default. If most of your readers are Canada-first and the provider supports CAD reliably, CAD can reduce friction at checkout."
+              "text":"Major attractions usually work best earlier in the day, especially in busy destinations. This gives you more flexibility later if weather, queues, or transit plans change."
             }
           },
           {
@@ -195,8 +195,7 @@
           alt=""
           aria-hidden="true"
           decoding="async"
-          fetchpriority="high"
-        />
+          fetchpriority="high" />
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -260,7 +259,7 @@
         </div>
 
         <div class="callout">
-          <b>TripGuidely approach:</b> this hub stays neutral for discovery. Destination pages are where you go deeper with city-specific picks, passes, itineraries, and timing strategy.
+          <b>Use this hub as your starting point:</b> compare activity types fast, then move into destination guides for route planning, timing, and smarter booking decisions.
         </div>
       </section>
 
@@ -479,14 +478,6 @@
                 <span class="tag"><i aria-hidden="true"></i> Smart pacing</span>
               </a>
             </div>
-
-            <div class="callout">
-              <b>Best publishing order:</b> build your highest-demand city pages first, then expand each destination with sub-pages like
-              <span class="nowrap">/attractions/</span>,
-              <span class="nowrap">/tours/</span>,
-              <span class="nowrap">/food/</span>, and
-              <span class="nowrap">/itinerary/</span>.
-            </div>
           </section>
 
           <hr />
@@ -542,13 +533,6 @@
               <li><strong>Location cluster:</strong> stack nearby activities to avoid zig-zagging.</li>
               <li><strong>Energy curve:</strong> do the most demanding walking earlier and save seated experiences later.</li>
             </ul>
-
-            <details>
-              <summary>What should I track with SubID?</summary>
-              <p>
-                Keep one hub ID, such as <code>things-hub</code>. As you add more widgets or placements later, use more specific sub-IDs such as hero, mid-page, or footer for cleaner attribution and easier optimization.
-              </p>
-            </details>
           </section>
 
           <hr />
@@ -557,11 +541,11 @@
           <section id="methodology" aria-label="How TripGuidely organizes recommendations">
             <div class="section-title">
               <h2>How TripGuidely organizes recommendations</h2>
-              <p>Built for clarity, trade-offs, and practical planning.</p>
+              <p>Clearer routes, smarter timing, and practical travel decisions.</p>
             </div>
 
             <div class="callout">
-              <b>Our approach:</b> hub pages help you decide faster; destination pages help you execute with itineraries, timing, and booking strategy. We prioritize options that reduce wasted time, long transits, weak time slots, and route friction.
+              <b>How we organize this hub:</b> activities are grouped by destination, timing, and route logic so it is easier to compare options and build smoother travel days.
             </div>
 
             <ul class="checklist">
@@ -582,23 +566,23 @@
             </div>
 
             <details>
-              <summary>USD or CAD for currency?</summary>
+              <summary>How do I choose the best activity for my trip?</summary>
               <p>
-                USD is a global default. If most of your traffic is Canada-first and the widget supports CAD reliably, CAD can reduce friction.
-              </p>
-            </details>
-
-            <details>
-              <summary>Should this hub force a destination?</summary>
-              <p>
-                No. A hub should stay neutral. Destination pages are where you publish best-of lists, passes, and itineraries.
+                Start with your destination, available time, and travel style. Book one main anchor activity first, then add one or two flexible options nearby to keep the day smooth.
               </p>
             </details>
 
             <details>
               <summary>How many activities should I book in advance?</summary>
               <p>
-                Book one or two anchor items first, then keep one or two flexible options. This helps the day stay intact if weather, transit, or queues change.
+                For most trips, booking one or two key attractions in advance is enough. This protects your itinerary without making the day too rigid.
+              </p>
+            </details>
+
+            <details>
+              <summary>Should I book attractions for the morning or afternoon?</summary>
+              <p>
+                Major attractions usually work best earlier in the day, especially in busy destinations. This gives you more flexibility later if weather, queues, or transit plans change.
               </p>
             </details>
 
