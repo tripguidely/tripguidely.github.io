@@ -55,6 +55,18 @@
   <link rel="preconnect" href="https://tpemb.com" crossorigin />
   <link rel="dns-prefetch" href="//tpemb.com" />
 
+  <!-- Hero preload -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero/new-york-first-time-1600x900.webp"
+    imagesrcset="
+      /assets/images/hero/new-york-first-time-800x450.webp 800w,
+      /assets/images/hero/new-york-first-time-1200x675.webp 1200w,
+      /assets/images/hero/new-york-first-time-1600x900.webp 1600w,
+      /assets/images/hero/new-york-first-time-2400x1350.webp 2400w"
+    imagesizes="100vw" />
+
   <!-- CSS -->
   <link rel="preload" href="/assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -96,6 +108,12 @@
         "inLanguage":"en"
       },
       {
+        "@type":"TouristDestination",
+        "@id":"https://tripguidely.github.io/itinerary/new-york/first-time/#place",
+        "name":"New York City",
+        "sameAs":"https://en.wikipedia.org/wiki/New_York_City"
+      },
+      {
         "@type":"ImageObject",
         "@id":"https://tripguidely.github.io/itinerary/new-york/first-time/#primaryimage",
         "url":"https://tripguidely.github.io/assets/images/og/new-york-first-time-og-1200x630.webp",
@@ -109,6 +127,7 @@
         "name":"New York for First-Timers (2026): Where to Stay, What to Book First & How to Avoid Wasting Time",
         "description":"New York for first-timers (2026): where to stay, what to book first, which skyline deck to choose, how to group neighborhoods, and how to avoid wasting time on a first NYC trip.",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
+        "about":{"@id":"https://tripguidely.github.io/itinerary/new-york/first-time/#place"},
         "inLanguage":"en",
         "primaryImageOfPage":{"@id":"https://tripguidely.github.io/itinerary/new-york/first-time/#primaryimage"},
         "datePublished":"2026-03-06",
@@ -253,6 +272,22 @@
         <span>First Time</span>
       </nav>
 
+      <!-- INTRO -->
+      <section class="card pad content" aria-label="Intro for first-time visitors">
+        <div class="section-title">
+          <h2>Planning your first trip to New York</h2>
+          <p>The city gets much easier once you stop treating it like one giant checklist.</p>
+        </div>
+
+        <p>
+          For most first-time visitors, New York is not hard because there is too little to do. It is hard because too many major sights look close together on paper but create messy routing in real life. This page helps you choose the right hotel base, book the attractions that actually shape your trip, and group neighborhoods in a way that makes the city feel exciting instead of exhausting.
+        </p>
+
+        <p>
+          If you want the simplest first-time route, start with the <a href="/itinerary/new-york/3-days/">New York 3-day itinerary</a>. If you are still deciding what to see, use <a href="/things-to-do/new-york/">Things to Do in New York</a> first, then come back here to lock the structure.
+        </p>
+      </section>
+
       <!-- QUICK START -->
       <section id="start" class="card pad content" aria-label="Quick start for first-timers">
         <div class="section-title">
@@ -261,8 +296,7 @@
         </div>
 
         <div class="callout">
-          <b>Best first-trip formula:</b> stay in <strong>Midtown</strong>, book <strong>one Downtown anchor</strong>, choose <strong>one skyline deck</strong>,
-          and build the rest of the trip around clean neighborhood clusters.
+          <b>Best first-trip formula:</b> stay in <strong>Midtown</strong>, book <strong>one Downtown anchor</strong>, choose <strong>one skyline deck</strong>, and build the rest of the trip around clean neighborhood clusters.
         </div>
 
         <div class="mini-grid" aria-label="Quick planning links" style="margin-top:1rem">
@@ -282,8 +316,7 @@
 
         <h3>1. Your main anchor</h3>
         <p>
-          For many first-timers, the main anchor is either <strong>Statue of Liberty</strong> or <strong>9/11 Museum</strong>.
-          This is the reservation that shapes the whole Downtown day.
+          For many first-timers, the main anchor is either <strong>Statue of Liberty</strong> or <strong>9/11 Museum</strong>. This is the reservation that shapes the whole Downtown day.
         </p>
 
         <div class="mini-grid" aria-label="Downtown anchor links" style="margin-top:1rem">
@@ -320,14 +353,12 @@
 
         <h3>Midtown: easiest first-timer base</h3>
         <p>
-          Midtown is the default answer for a reason. It is practical, central, and gives easy access to subway lines, skyline decks, and first-trip landmarks.
-          If you want the least friction, this is usually the best choice.
+          Midtown is the default answer for a reason. It is practical, central, and gives easy access to subway lines, skyline decks, and first-trip landmarks. If you want the least friction, this is usually the best choice.
         </p>
 
         <h3>Downtown: best if your priorities are Statue + 9/11 + Brooklyn</h3>
         <p>
-          Downtown works well if your first days are heavy on Financial District, ferry access, and Brooklyn routes.
-          It can feel less central for classic Midtown-heavy sightseeing, but more efficient for the southern part of the city.
+          Downtown works well if your first days are heavy on Financial District, ferry access, and Brooklyn routes. It can feel less central for classic Midtown-heavy sightseeing, but more efficient for the southern part of the city.
         </p>
 
         <h3>Upper West Side: calmer, greener, better pace</h3>
@@ -444,8 +475,7 @@
         </div>
 
         <p>
-          If you want one splurge, a helicopter tour is the cleanest premium add-on for a first trip.
-          It works best when the rest of the day stays intentionally light.
+          If you want one splurge, a helicopter tour is the cleanest premium add-on for a first trip. It works best when the rest of the day stays intentionally light.
         </p>
 
         <p>
@@ -467,7 +497,7 @@
           <a class="pill-link" href="/hotels/new-york/">🏨 Where to stay in NYC</a>
           <a class="pill-link" href="/things-to-do/new-york/">✨ Attractions & tours</a>
           <a class="pill-link" href="/esim/usa/">📶 USA eSIM</a>
-          <a class="pill-link" href="/car-rental/new-york/">🚗 Car rental in New York</a>
+          <a class="pill-link" href="/transport/new-york/">🚇 NYC transport guide</a>
         </div>
 
         <div class="callout" style="margin-top:1rem">
