@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en-CA">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <!-- Primary SEO -->
-  <title>About | TripGuidely</title>
-  <meta name="description" content="Learn what TripGuidely is, how we build travel guides, and how our recommendations and affiliate links work." />
+  <title>About TripGuidely | How We Build Travel Guides & Recommendations</title>
+  <meta name="description" content="Learn what TripGuidely is, how we create practical travel guides, how we evaluate recommendations, and how affiliate links may support the site." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/about/" />
 
   <!-- International -->
-  <link rel="alternate" hreflang="en-CA" href="https://tripguidely.github.io/about/" />
+  <link rel="alternate" hreflang="en" href="https://tripguidely.github.io/about/" />
   <link rel="alternate" hreflang="x-default" href="https://tripguidely.github.io/about/" />
 
   <!-- UX / Rendering -->
@@ -23,21 +23,21 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="TripGuidely" />
-  <meta property="og:type" content="article" />
-  <meta property="og:locale" content="en_CA" />
-  <meta property="og:title" content="About | TripGuidely" />
-  <meta property="og:description" content="What TripGuidely is, how we create guides, and what to expect from our recommendations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About TripGuidely | How We Build Travel Guides & Recommendations" />
+  <meta property="og:description" content="Learn what TripGuidely is, how we create practical travel guides, and what to expect from our recommendations and affiliate links." />
   <meta property="og:url" content="https://tripguidely.github.io/about/" />
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/about-tripguidely-1200x630.jpg" />
+  <meta property="og:image:alt" content="About TripGuidely and how the site builds practical travel guides." />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About | TripGuidely" />
-  <meta name="twitter:description" content="What TripGuidely is, how we create guides, and what to expect from our recommendations." />
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta name="twitter:title" content="About TripGuidely | How We Build Travel Guides & Recommendations" />
+  <meta name="twitter:description" content="Learn what TripGuidely is, how we create practical travel guides, and what to expect from our recommendations and affiliate links." />
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/about-tripguidely-1200x630.jpg" />
+  <meta name="twitter:image:alt" content="About TripGuidely and how the site builds practical travel guides." />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -58,21 +58,49 @@
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https://tripguidely.github.io/#website",
+        "name": "TripGuidely",
+        "url": "https://tripguidely.github.io/",
+        "publisher": {
+          "@id": "https://tripguidely.github.io/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://tripguidely.github.io/about/#webpage",
         "url": "https://tripguidely.github.io/about/",
-        "name": "About",
-        "description": "Learn what TripGuidely is, how we build travel guides, and how our recommendations and affiliate links work.",
-        "inLanguage": "en-CA",
-        "isPartOf": { "@id": "https://tripguidely.github.io/#organization" },
-        "dateModified": "2026-02-27"
+        "name": "About TripGuidely",
+        "description": "Learn what TripGuidely is, how we create practical travel guides, how we evaluate recommendations, and how affiliate links may support the site.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://tripguidely.github.io/#website"
+        },
+        "about": {
+          "@id": "https://tripguidely.github.io/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://tripguidely.github.io/about/#breadcrumbs"
+        },
+        "dateModified": "2026-03-06"
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://tripguidely.github.io/about/#breadcrumbs",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tripguidely.github.io/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://tripguidely.github.io/about/" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tripguidely.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://tripguidely.github.io/about/"
+          }
         ]
       }
     ]
@@ -80,7 +108,7 @@
   </script>
 </head>
 
-<body>
+<body data-page="about">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Header (partial) -->
@@ -88,7 +116,7 @@
 
   <main id="main" class="main" role="main">
     <div class="wrap">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
         <a href="/">Home</a>
         <span aria-hidden="true">›</span>
         <span aria-current="page">About</span>
@@ -97,77 +125,96 @@
       <article class="card content">
         <div class="pad">
           <h1>About TripGuidely</h1>
-          <p><strong>Last updated:</strong> <span id="lastUpdated">2026-02-27</span></p>
+          <p><strong>Last updated:</strong> <span id="lastUpdated">2026-03-06</span></p>
 
-          <p class="lede" style="max-width:72ch;">
+          <p class="lede about-intro">
             TripGuidely is a travel planning hub built for one goal: <strong>help you choose faster</strong>.
-            We turn messy research into clear, practical guides for cruises, hotels, and things to do.
+            We turn scattered travel research into clear, practical guides for cruises, hotels, things to do,
+            car rentals, and trip-planning decisions.
           </p>
 
           <div class="callout">
-            <b>Our promise:</b> clear trade-offs, practical steps, and “what actually matters” guidance, without the fluff.
+            <b>Our promise:</b> clear trade-offs, practical steps, and “what actually matters” guidance without unnecessary fluff.
           </div>
+
+          <h2>What TripGuidely is for</h2>
+          <p>
+            TripGuidely is designed for travelers who want faster answers, better shortlists, and more practical decision support.
+            Instead of making you compare dozens of tabs on your own, we aim to organize the information that actually affects your next step.
+          </p>
 
           <h2>What we cover</h2>
           <ul>
             <li><strong>Cruises:</strong> routes, seasons, cabin choices, budgeting, and booking strategy.</li>
             <li><strong>Hotels:</strong> where to stay by neighborhood, budget, and travel style.</li>
-            <li><strong>Things to do:</strong> attraction shortlists and itineraries you can follow.</li>
-            <li><strong>Car rentals:</strong> pricing, insurance basics, and pickup logistics.</li>
+            <li><strong>Things to do:</strong> attraction shortlists, booking priorities, and practical itineraries.</li>
+            <li><strong>Car rentals:</strong> pricing, insurance basics, pickup logistics, and common trade-offs.</li>
+            <li><strong>Travel planning:</strong> practical comparisons, decision workflows, and destination-specific guidance.</li>
           </ul>
 
           <h2>How our guides are built</h2>
           <p>
-            We organize each guide around decisions people actually make. That usually means:
-            <strong>season</strong>, <strong>location</strong>, <strong>budget</strong>, and <strong>trade-offs</strong>.
+            We organize each guide around decisions travelers actually make. That usually means evaluating
+            <strong>season</strong>, <strong>location</strong>, <strong>budget</strong>, <strong>timing</strong>,
+            and <strong>trade-offs</strong>.
           </p>
 
           <div class="mini-grid" aria-label="How we write">
             <div class="mini">
               <div class="mini-icon" aria-hidden="true">1</div>
-              <div><b>Start with the decision</b><span>What the reader is trying to choose</span></div>
+              <div><b>Start with the decision</b><span>What the reader is actually trying to choose</span></div>
             </div>
             <div class="mini">
               <div class="mini-icon" aria-hidden="true">2</div>
-              <div><b>Explain trade-offs</b><span>Pros/cons that actually change outcomes</span></div>
+              <div><b>Explain trade-offs</b><span>Pros and cons that meaningfully change outcomes</span></div>
             </div>
             <div class="mini">
               <div class="mini-icon" aria-hidden="true">3</div>
-              <div><b>Give a simple workflow</b><span>Shortlist → compare → book</span></div>
+              <div><b>Give a practical workflow</b><span>Shortlist → compare → book</span></div>
             </div>
             <div class="mini">
               <div class="mini-icon" aria-hidden="true">4</div>
-              <div><b>Update for seasons</b><span>Timing, crowd patterns, price swings</span></div>
+              <div><b>Update for travel reality</b><span>Timing, seasonality, crowd patterns, and price swings</span></div>
             </div>
           </div>
 
+          <h2>What you can expect from our recommendations</h2>
+          <p>
+            We aim to make recommendations that are practical, easy to compare, and relevant to traveler intent.
+            That means focusing on usability, fit, booking logic, and real planning value rather than vague hype.
+          </p>
+
+          <p>
+            We also try to highlight the trade-offs that matter most, including cost, convenience, flexibility,
+            timing, and destination fit.
+          </p>
+
           <h2>Recommendations and affiliate links</h2>
           <p>
-            Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you.
-            This supports the site and helps keep guides updated.
+            Some links on TripGuidely may be affiliate links. If you book or buy through them, we may earn a commission
+            at no extra cost to you. These commissions help support the site and ongoing content updates.
           </p>
           <p>
-            For details, read our <a href="/disclosure/">Disclosure</a> and <a href="/privacy-policy/">Privacy Policy</a>.
+            For more details, read our <a href="/disclosure/">Affiliate Disclosure</a> and
+            <a href="/privacy-policy/">Privacy Policy</a>.
           </p>
 
           <h2>Contact</h2>
           <p>
-            Want to suggest a destination or request a guide?
+            Want to suggest a destination, request a guide, report an update, or send general feedback?
+            Visit our <a href="/contact/">Contact page</a> or email us directly:
           </p>
           <ul>
-            <li><strong>Email:</strong> <a href="mailto:REPLACE_ME@example.com">REPLACE_ME@example.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:tripguidely@hotmail.com">tripguidely@hotmail.com</a></li>
           </ul>
 
           <details>
             <summary>Quick disclaimer</summary>
             <p>
-              Travel information can change (pricing, policies, schedules). Always verify details directly with the provider before booking.
+              Travel information can change, including pricing, schedules, provider rules, availability, and booking policies.
+              Always verify final details directly with the provider before making a reservation or purchase.
             </p>
           </details>
-
-          <div class="callout">
-            <b>Next step:</b> add this page to your header or footer for trust signals and better site quality in audits.
-          </div>
         </div>
       </article>
     </div>
