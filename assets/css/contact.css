@@ -6,7 +6,22 @@
 .contact-form{
   display:grid;
   gap:14px;
-  margin-top: 10px;
+  margin-top:10px;
+}
+
+.contact-honeypot{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  clip-path:inset(50%) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+  opacity:0 !important;
+  pointer-events:none !important;
 }
 
 .form-row{
@@ -22,6 +37,7 @@
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
+.contact-form input[type="url"],
 .contact-form select,
 .contact-form textarea{
   width:100%;
@@ -34,7 +50,7 @@
   color:var(--text);
   border-radius:16px;
   padding:14px 16px;
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  box-shadow:0 10px 22px rgba(2,6,23,.06);
   transition:
     border-color .14s ease,
     box-shadow .14s ease,
@@ -68,14 +84,14 @@
 .contact-form input:hover,
 .contact-form select:hover,
 .contact-form textarea:hover{
-  border-color: rgba(15,23,42,.18);
+  border-color:rgba(15,23,42,.18);
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus{
   outline:none;
-  border-color: rgba(18,207,208,.46);
+  border-color:rgba(18,207,208,.46);
   box-shadow:
     0 0 0 4px rgba(18,207,208,.16),
     0 14px 28px rgba(2,6,23,.08);
@@ -85,7 +101,7 @@
 .contact-form input[aria-invalid="true"],
 .contact-form select[aria-invalid="true"],
 .contact-form textarea[aria-invalid="true"]{
-  border-color: rgba(220,38,38,.44);
+  border-color:rgba(220,38,38,.44);
   box-shadow:
     0 0 0 4px rgba(220,38,38,.10),
     0 10px 22px rgba(2,6,23,.06);
@@ -100,7 +116,7 @@
     radial-gradient(420px 160px at 10% 10%, rgba(18,207,208,.10), transparent 60%),
     radial-gradient(420px 160px at 90% 30%, rgba(244,162,97,.10), transparent 60%),
     #ffffff;
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  box-shadow:0 10px 22px rgba(2,6,23,.06);
 }
 
 .form-note p{
@@ -115,7 +131,7 @@
   padding:13px 14px;
   border-radius:16px;
   border:1px solid rgba(15,23,42,.10);
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+  box-shadow:0 10px 22px rgba(2,6,23,.06);
   font-weight:700;
 }
 
@@ -125,14 +141,25 @@
 
 .form-status.is-success{
   color:#065f46;
-  border-color: rgba(16,185,129,.24);
-  background: linear-gradient(135deg, rgba(16,185,129,.12), rgba(18,207,208,.10));
+  border-color:rgba(16,185,129,.24);
+  background:linear-gradient(135deg, rgba(16,185,129,.12), rgba(18,207,208,.10));
 }
 
 .form-status.is-error{
   color:#991b1b;
-  border-color: rgba(239,68,68,.24);
-  background: linear-gradient(135deg, rgba(239,68,68,.12), rgba(244,162,97,.10));
+  border-color:rgba(239,68,68,.24);
+  background:linear-gradient(135deg, rgba(239,68,68,.12), rgba(244,162,97,.10));
+}
+
+.contact-intro{
+  max-width:72ch;
+}
+
+.section-divider{
+  border:0;
+  border-top:1px solid rgba(15,23,42,.12);
+  margin:32px 0;
+  opacity:.15;
 }
 
 .contact-form .btn,
@@ -143,18 +170,18 @@
 .contact-form .btn.primary,
 .contact-form .btn.btn-primary,
 .contact-form button[type="submit"].btn-primary{
-  background: linear-gradient(135deg, var(--cta1), var(--cta2));
+  background:linear-gradient(135deg, var(--cta1), var(--cta2));
   color:#ffffff;
-  border: 1px solid rgba(18,207,208,.55);
-  box-shadow: 0 12px 30px rgba(18,207,208,.35);
+  border:1px solid rgba(18,207,208,.55);
+  box-shadow:0 12px 30px rgba(18,207,208,.35);
 }
 
 .contact-form .btn.primary:hover,
 .contact-form .btn.btn-primary:hover,
 .contact-form button[type="submit"].btn-primary:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 18px 42px rgba(18,207,208,.46);
-  border-color: rgba(18,207,208,.75);
+  transform:translateY(-3px);
+  box-shadow:0 18px 42px rgba(18,207,208,.46);
+  border-color:rgba(18,207,208,.75);
 }
 
 .contact-form .btn[disabled],
@@ -162,16 +189,17 @@
   opacity:.72;
   cursor:not-allowed;
   transform:none !important;
-  box-shadow: 0 8px 18px rgba(2,6,23,.08) !important;
+  box-shadow:0 8px 18px rgba(2,6,23,.08) !important;
 }
 
-@media (max-width: 760px){
+@media (max-width:760px){
   .contact-form{
     gap:12px;
   }
 
   .contact-form input[type="text"],
   .contact-form input[type="email"],
+  .contact-form input[type="url"],
   .contact-form select,
   .contact-form textarea{
     padding:15px 15px;
