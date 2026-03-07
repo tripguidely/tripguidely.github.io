@@ -1,13 +1,13 @@
 /* ==========================================================================
-   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (NO EMPTY RECTANGLE)
+   TripGuidely — things-to-do.css (DEDICATED) — UPDATED (SAFER SCOPING)
    - Hub + Guide
    - Hero readability
-   - Premium widget shells (SAFE: do not break vendor DOM)
-   - FIX: remove empty widget rectangle WITHOUT hiding the whole shell
-   - Pills nav
-   - Premium tables (scannable + mobile-friendly)
+   - Premium widget shells
+   - Safer empty-widget handling
+   - Pills nav scoped better (avoids generic .mini-grid collisions)
+   - Premium tables
    - Responsive YouTube embeds
-   - Sticker destinations (pro)
+   - Sticker destinations
    ========================================================================== */
 
 /* ======================================================================
@@ -56,7 +56,7 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-overlay{
       rgba(2,6,23,.42) 26%,
       rgba(2,6,23,.26) 56%,
       rgba(2,6,23,.54) 100%);
-  opacity: .95;
+  opacity:.95;
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .hero .kicker{
@@ -106,7 +106,9 @@ body:is([data-page="hub"], [data-page="guide"]) .hero .btn:not(.primary):hover{
 }
 
 /* ======================================================================
-   2) Premium widget shells (Hub + Guide) — NO EMPTY RECTANGLE (PRO FIX)
+   2) Premium widget shells (Hub + Guide)
+   - Safer empty widget handling
+   - Avoid generic vendor-DOM overreach
    ====================================================================== */
 
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell{
@@ -125,10 +127,12 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
 }
 
 @media (max-width: 760px){
-  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{ padding: 14px 14px 12px; }
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-pad{
+    padding: 14px 14px 12px;
+  }
 }
 
-/* Posters inside shell: clean spacing + premium rounding */
+/* Posters inside shell */
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .media{
   margin: 0 0 14px;
 }
@@ -137,7 +141,7 @@ body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .media img{
   border-radius: var(--ttd-radius2);
 }
 
-/* Widget container hard-guards */
+/* Widget container */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   max-width:100%;
   overflow:hidden;
@@ -145,23 +149,27 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget{
   border-radius: var(--ttd-radius2);
   background: transparent;
   border: 0;
+  min-height: 0;
 }
 
-/* ✅ Key fix: if widget is empty, hide ONLY the widget box (no rectangle) */
+/* Hide only truly empty widget mount */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget:empty{
   display:none !important;
+  min-height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
   border:0 !important;
   background:transparent !important;
-  animation:none !important;
-  min-height:0 !important;
+  box-shadow:none !important;
 }
 
-/* SAFE: hide truly empty vendor wrappers */
-body:is([data-page="hub"], [data-page="guide"]) .tp-widget > :where(div,section):empty{
+/* Hide only truly empty first-level wrappers */
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget > div:empty,
+body:is([data-page="hub"], [data-page="guide"]) .tp-widget > section:empty{
   display:none !important;
 }
 
-/* Responsive iframe */
+/* iframe */
 body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   display:block !important;
   width:100% !important;
@@ -172,52 +180,83 @@ body:is([data-page="hub"], [data-page="guide"]) .tp-widget iframe{
   background:#fff;
 }
 
-/* Affiliate note separator (default look) */
+/* Default affiliate note style */
 body:is([data-page="hub"], [data-page="guide"]) .aff-note{
   margin: 12px 0 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(15,23,42,.10);
   color: rgba(100,116,139,.95);
 }
 
-/* Optional: keep affiliate note hidden until widget iframe exists (modern browsers) */
+/* Only widget-shell notes get the separator */
 body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .aff-note{
+  padding-top: 10px;
+  border-top: 1px solid rgba(15,23,42,.10);
   display:block;
 }
 
+/* Modern browsers: show note only when widget rendered */
 @supports selector(:has(*)){
   body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell .aff-note{
     display:none;
   }
-  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget iframe) .aff-note{
+
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget iframe) .aff-note,
+  body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell:has(.tp-widget > *:not(:empty)) .aff-note{
     display:block;
   }
 }
 
-/* Reduce the “white ocean” around widgets */
-body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid{
+/* Spacing after widget shell */
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .mini-grid,
+body:is([data-page="hub"], [data-page="guide"]) .hero-tool-shell + .pill-grid{
   margin-top: 12px;
 }
 
 /* ======================================================================
-   3) Pills (Tours / Itinerary / FAQ / Back to hub) — Hub + Guide
+   3) Pills nav (scoped better)
+   - Supports current .mini-grid markup
+   - Adds .pill-grid for future cleaner HTML
+   - Avoids overriding every generic .mini-grid block
    ====================================================================== */
 
-body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
+/* Preferred future class */
+body:is([data-page="hub"], [data-page="guide"]) .pill-grid{
   margin-top: 14px;
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
 }
 
-@media (max-width: 980px){
-  body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Backward-compatible: style .mini-grid as pills only when it contains pill links */
+@supports selector(.mini-grid:has(.pill-link)){
+  body:is([data-page="hub"], [data-page="guide"]) .mini-grid:has(.pill-link){
+    margin-top: 14px;
+    display:grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
   }
 }
+
+@media (max-width: 980px){
+  body:is([data-page="hub"], [data-page="guide"]) .pill-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @supports selector(.mini-grid:has(.pill-link)){
+    body:is([data-page="hub"], [data-page="guide"]) .mini-grid:has(.pill-link){
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
 @media (max-width: 560px){
-  body:is([data-page="hub"], [data-page="guide"]) .mini-grid{
+  body:is([data-page="hub"], [data-page="guide"]) .pill-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @supports selector(.mini-grid:has(.pill-link)){
+    body:is([data-page="hub"], [data-page="guide"]) .mini-grid:has(.pill-link){
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 }
 
@@ -226,16 +265,21 @@ body:is([data-page="hub"], [data-page="guide"]) .pill-link{
   align-items:center;
   justify-content:center;
   text-decoration:none;
-  font-weight: 850;
-  font-size: .96rem;
+  font-weight:850;
+  font-size:.96rem;
   color: rgba(15,23,42,.92);
   padding: 12px 12px;
   border-radius: 999px;
   background: var(--ttd-chip-bg);
   border: 1px solid var(--ttd-chip-border);
   box-shadow: var(--ttd-chip-shadow);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+  transition:
+    transform .12s ease,
+    box-shadow .12s ease,
+    border-color .12s ease,
+    background .12s ease;
   white-space: nowrap;
+  min-width: 0;
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .pill-link:hover{
@@ -254,13 +298,13 @@ body:is([data-page="hub"], [data-page="guide"]) .pill-link:focus-visible{
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .pill-link:active{
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 @media (max-width: 760px){
   body:is([data-page="hub"], [data-page="guide"]) .pill-link{
     padding: 14px 12px;
-    font-size: 1.00rem;
+    font-size: 1rem;
   }
 }
 
@@ -318,13 +362,19 @@ body[data-page="guide"] .ttd-table td{
 body[data-page="guide"] .ttd-table tbody tr:nth-child(odd) td{
   background: rgba(2,6,23,.015);
 }
+
 body[data-page="guide"] .ttd-table tbody tr:hover td{
   background: var(--ttd-row-hover);
 }
 
-body[data-page="guide"] .ttd-table td:first-child{ font-weight: 900; }
+body[data-page="guide"] .ttd-table td:first-child{
+  font-weight: 900;
+}
+
 body[data-page="guide"] .ttd-table td:nth-child(3),
-body[data-page="guide"] .ttd-table td:nth-child(4){ white-space: nowrap; }
+body[data-page="guide"] .ttd-table td:nth-child(4){
+  white-space: nowrap;
+}
 
 body[data-page="guide"] .ttd-table thead th:first-child{ border-top-left-radius: 18px; }
 body[data-page="guide"] .ttd-table thead th:last-child{ border-top-right-radius: 18px; }
@@ -349,18 +399,22 @@ body[data-page="guide"] .t-badge-anchor{
   border-color: rgba(18,207,208,.28);
   background: rgba(18,207,208,.10);
 }
+
 body[data-page="guide"] .t-badge-flex{
   border-color: rgba(244,162,97,.30);
   background: rgba(244,162,97,.12);
 }
+
 body[data-page="guide"] .t-badge-yes{
   border-color: rgba(18,207,208,.28);
   background: rgba(18,207,208,.10);
 }
+
 body[data-page="guide"] .t-badge-no{
   border-color: rgba(15,23,42,.14);
   background: rgba(2,6,23,.04);
 }
+
 body[data-page="guide"] .t-badge-maybe{
   border-color: rgba(244,162,97,.30);
   background: rgba(244,162,97,.12);
@@ -374,13 +428,24 @@ body[data-page="guide"] .table-key{
   gap: 8px 10px;
   color: rgba(71,85,105,.95);
 }
-body[data-page="guide"] .table-key .key-sep{ opacity: .55; }
-body[data-page="guide"] .table-key .key-text{ font-weight: 650; }
+
+body[data-page="guide"] .table-key .key-sep{
+  opacity:.55;
+}
+
+body[data-page="guide"] .table-key .key-text{
+  font-weight:650;
+}
 
 @media (max-width: 760px){
-  body[data-page="guide"] table.ttd-table{ min-width: 820px; }
+  body[data-page="guide"] table.ttd-table{
+    min-width: 820px;
+  }
+
   body[data-page="guide"] .ttd-table thead th,
-  body[data-page="guide"] .ttd-table td{ padding: 12px 12px; }
+  body[data-page="guide"] .ttd-table td{
+    padding: 12px 12px;
+  }
 }
 
 /* ======================================================================
@@ -394,7 +459,7 @@ body:is([data-page="hub"], [data-page="guide"]) .card{
 
 body:is([data-page="hub"], [data-page="guide"]) code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: .95em;
+  font-size:.95em;
 }
 
 /* ======================================================================
@@ -466,10 +531,7 @@ body[data-page="guide"] .video-embed iframe{
 }
 
 /* ======================================================================
-   8) Sticker Nav (Explore cities) — Hub pages
-   - Premium city sticker cards (fast, no CLS, scoped)
-   - Works with your /assets/images/stickers/*-512.webp
-   - EXTRA: prevents ugly broken-image box styling inside sticker area
+   8) Sticker Nav (Explore cities) — Hub + Guide
    ====================================================================== */
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-nav{
@@ -477,60 +539,53 @@ body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-nav{
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head{
-  display: grid;
-  gap: 8px;
-  margin-bottom: 14px;
+  display:grid;
+  gap:8px;
+  margin-bottom:14px;
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head h2{
-  margin: 0;
+  margin:0;
   font-size: clamp(20px, 2.2vw, 28px);
-  letter-spacing: .2px;
+  letter-spacing:.2px;
   color: rgba(15,23,42,.92);
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-head p{
-  margin: 0;
-  opacity: .85;
-  max-width: 70ch;
+  margin:0;
+  opacity:.85;
+  max-width:70ch;
   color: rgba(71,85,105,.95);
 }
 
-/* Grid */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-grid{
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap:12px;
 }
 
 @media (min-width: 720px){
   body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-grid{
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap:14px;
   }
 }
 
-/* Card */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card{
-  display: grid;
+  display:grid;
   grid-template-columns: 64px 1fr;
-  align-items: center;
-  gap: 12px;
-
+  align-items:center;
+  gap:12px;
   padding: 12px 14px;
   border-radius: var(--ttd-radius);
-
-  text-decoration: none;
+  text-decoration:none;
   color: inherit;
-
   background:
     radial-gradient(520px 180px at 12% 20%, rgba(18,207,208,.08), transparent 55%),
     radial-gradient(520px 180px at 88% 60%, rgba(244,162,97,.08), transparent 60%),
     rgba(255,255,255,.96);
-
   border: 1px solid var(--ttd-panel-border);
   box-shadow: 0 18px 44px rgba(2,6,23,.10);
-
   transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
   will-change: transform;
 }
@@ -546,65 +601,61 @@ body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card:focus-visible{
   outline-offset: 2px;
 }
 
-/* Sticker box (no CLS) */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media{
-  width: 64px;
-  height: 64px;
-  display: grid;
-  place-items: center;
-  flex: none;
+  width:64px;
+  height:64px;
+  display:grid;
+  place-items:center;
+  flex:none;
 }
 
-/* IMPORTANT: do NOT add borders/background to the IMG itself (prevents ugly broken-box look) */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media img{
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  display: block;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  display:block;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
 }
 
-/* If the global CSS applies weird styles to images inside links, neutralize only here */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card img{
-  max-width: 100%;
-  height: auto;
+  max-width:100%;
+  height:auto;
 }
 
-/* Text */
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text{
-  display: grid;
-  gap: 2px;
-  min-width: 0;
+  display:grid;
+  gap:2px;
+  min-width:0;
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text strong{
-  font-size: .95rem;
-  line-height: 1.15;
+  font-size:.95rem;
+  line-height:1.15;
   color: rgba(15,23,42,.92);
 }
 
 body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-text span{
-  font-size: .82rem;
-  opacity: .78;
-  line-height: 1.25;
+  font-size:.82rem;
+  opacity:.78;
+  line-height:1.25;
   color: rgba(71,85,105,.95);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Mobile polish */
 @media (max-width: 420px){
   body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-card{
     grid-template-columns: 56px 1fr;
     gap: 10px;
     padding: 12px 12px;
   }
+
   body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media,
   body:is([data-page="hub"], [data-page="guide"]) .tg-sticker-media img{
-    width: 56px;
-    height: 56px;
+    width:56px;
+    height:56px;
   }
 }
