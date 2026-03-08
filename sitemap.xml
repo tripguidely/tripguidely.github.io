@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/esim/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-08</lastmod>
   </url>
   <url>
     <loc>https://tripguidely.github.io/itinerary/</loc>
@@ -127,6 +127,10 @@
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
+    <loc>https://tripguidely.github.io/esim/uae/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
     <loc>https://tripguidely.github.io/esim/uk/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
@@ -154,6 +158,10 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/itinerary/dubai/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
 
@@ -247,15 +255,15 @@
 
   <!-- Dubai itinerary cluster -->
   <url>
-    <loc>https://tripguidely.github.io/itinerary/dubai/2-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/dubai/days-2/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/itinerary/dubai/3-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/dubai/days-3/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/itinerary/dubai/4-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/dubai/days-4/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
@@ -264,6 +272,28 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/itinerary/dubai/rainy-day/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+
+  <!-- London itinerary cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/2-days/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/3-days/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/4-days/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/first-time/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/rainy-day/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
 
@@ -282,6 +312,10 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/transport/dubai/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/transport/london/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
 
