@@ -4,9 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
+  <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
+  <meta name="travelpayouts-verification" content="492724" />
+  <script
+    src="https://tp-em.com/NDkyNzI0.js?t=492724"
+    async
+    data-noptimize="1"
+    data-cfasync="false"
+    data-wpfc-render="false"></script>
+
   <!-- Primary SEO -->
-  <title>TripGuidely: Smart City Travel Guides, Itineraries, Transport & Hotel Tips</title>
-  <meta name="description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, and booking-focused things to do." />
+  <title>TripGuidely: Smart City Travel Guides, Itineraries, Transport, Hotels & eSIM Tips</title>
+  <meta name="description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, eSIM help, and booking-focused things to do." />
+  <meta name="author" content="TripGuidely Editorial Team" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1,max-video-preview=-1" />
   <link rel="canonical" href="https://tripguidely.github.io/" />
 
@@ -19,7 +29,6 @@
   <meta name="theme-color" content="#12cfd0" />
   <meta name="color-scheme" content="light" />
   <meta name="format-detection" content="telephone=no" />
-  <meta name="author" content="TripGuidely Editorial Team" />
 
   <!-- PWA -->
   <link rel="manifest" href="/site.webmanifest" />
@@ -36,7 +45,7 @@
                  form-action 'self' https:;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
 
-  <!-- Favicons (root) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" href="/favicon.ico" />
@@ -46,121 +55,122 @@
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="TripGuidely: Smart City Travel Guides, Itineraries, Transport & Hotel Tips" />
-  <meta property="og:description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, and booking-focused things to do." />
+  <meta property="og:title" content="TripGuidely: Smart City Travel Guides, Itineraries, Transport, Hotels & eSIM Tips" />
+  <meta property="og:description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, eSIM help, and booking-focused things to do." />
   <meta property="og:url" content="https://tripguidely.github.io/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
-  <meta property="og:image:alt" content="Editorial travel hero image with turquoise and sand accents" />
+  <meta property="og:image:alt" content="Editorial city travel planning hero image for TripGuidely" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TripGuidely: Smart City Travel Guides, Itineraries, Transport & Hotel Tips" />
-  <meta name="twitter:description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, and booking-focused things to do." />
+  <meta name="twitter:title" content="TripGuidely: Smart City Travel Guides, Itineraries, Transport, Hotels & eSIM Tips" />
+  <meta name="twitter:description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, eSIM help, and booking-focused things to do." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/global-travel-hero.webp" />
+  <meta name="twitter:image:alt" content="Editorial city travel planning hero image for TripGuidely" />
 
-  <!-- Performance: preconnect/dns-prefetch -->
+  <!-- Performance -->
   <link rel="preconnect" href="https://tp-em.com" crossorigin />
   <link rel="dns-prefetch" href="//tp-em.com" />
 
-  <!-- Performance: preload -->
-  <link rel="preload" as="image" href="/assets/images/global-travel-hero.webp" fetchpriority="high" />
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/global-travel-hero.webp"
+    imagesrcset="/assets/images/global-travel-hero.webp 1920w"
+    imagesizes="100vw"
+    fetchpriority="high" />
 
   <!-- CSS -->
   <link rel="preload" as="style" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="preload" as="style" href="/assets/css/home.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/home.css" />
 
-  <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
-  <meta name="travelpayouts-verification" content="492724" />
-  <script
-    src="https://tp-em.com/NDkyNzI0.js?t=492724"
-    async
-    data-noptimize="1"
-    data-cfasync="false"
-    data-wpfc-render="false"></script>
+  <!-- JS -->
+  <script defer src="/assets/js/site.js"></script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
+    "@context":"https://schema.org",
+    "@graph":[
       {
-        "@type": "Organization",
-        "@id": "https://tripguidely.github.io/#organization",
-        "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://tripguidely.github.io/assets/images/tg-logo.png"
+        "@type":"Organization",
+        "@id":"https://tripguidely.github.io/#organization",
+        "name":"TripGuidely",
+        "url":"https://tripguidely.github.io/",
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/tg-logo.png"
         }
       },
       {
-        "@type": "WebSite",
-        "@id": "https://tripguidely.github.io/#website",
-        "name": "TripGuidely",
-        "url": "https://tripguidely.github.io/",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://tripguidely.github.io/#organization" }
+        "@type":"WebSite",
+        "@id":"https://tripguidely.github.io/#website",
+        "name":"TripGuidely",
+        "url":"https://tripguidely.github.io/",
+        "inLanguage":"en",
+        "publisher":{"@id":"https://tripguidely.github.io/#organization"}
       },
       {
-        "@type": "WebPage",
-        "@id": "https://tripguidely.github.io/#webpage",
-        "url": "https://tripguidely.github.io/",
-        "name": "TripGuidely: Smart City Travel Guides, Itineraries, Transport & Hotel Tips",
-        "description": "Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, and booking-focused things to do.",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://tripguidely.github.io/#website" },
-        "publisher": { "@id": "https://tripguidely.github.io/#organization" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://tripguidely.github.io/assets/images/global-travel-hero.webp",
-          "width": 1200,
-          "height": 630
+        "@type":"WebPage",
+        "@id":"https://tripguidely.github.io/#webpage",
+        "url":"https://tripguidely.github.io/",
+        "name":"TripGuidely: Smart City Travel Guides, Itineraries, Transport, Hotels & eSIM Tips",
+        "description":"Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, eSIM help, and booking-focused things to do.",
+        "inLanguage":"en",
+        "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
+        "publisher":{"@id":"https://tripguidely.github.io/#organization"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/global-travel-hero.webp",
+          "width":1200,
+          "height":630
         },
-        "datePublished": "2026-03-05",
-        "dateModified": "2026-03-07",
-        "potentialAction": {
-          "@type": "ReadAction",
-          "target": ["https://tripguidely.github.io/"]
+        "datePublished":"2026-03-05",
+        "dateModified":"2026-03-08",
+        "mainEntity":{"@id":"https://tripguidely.github.io/#faq"},
+        "potentialAction":{
+          "@type":"ReadAction",
+          "target":["https://tripguidely.github.io/"]
         }
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://tripguidely.github.io/#faq",
-        "mainEntity": [
+        "@type":"FAQPage",
+        "@id":"https://tripguidely.github.io/#faq",
+        "mainEntity":[
           {
-            "@type": "Question",
-            "name": "What is TripGuidely?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "TripGuidely is a travel planning hub with city travel guides, itineraries, transport advice, hotels, eSIM guidance, and selected cruise content designed to help you choose faster and plan smarter."
+            "@type":"Question",
+            "name":"What is TripGuidely?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"TripGuidely is a travel planning hub with city travel guides, itineraries, transport advice, hotels, eSIM guidance, and selected cruise content designed to help you choose faster and plan smarter."
             }
           },
           {
-            "@type": "Question",
-            "name": "How do your recommendations work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We organize options by use case, route fit, budget, and timing. Each guide is designed to highlight trade-offs and practical planning steps so you can shortlist quickly."
+            "@type":"Question",
+            "name":"How do your recommendations work?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"We organize options by use case, route fit, budget, and timing. Each guide is designed to highlight trade-offs and practical planning steps so you can shortlist quickly."
             }
           },
           {
-            "@type": "Question",
-            "name": "What can I find on TripGuidely?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can find city guides for things to do, first-time itineraries, airport and public transport advice, hotel area planning, eSIM guides, and selected travel booking resources."
+            "@type":"Question",
+            "name":"What can I find on TripGuidely?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"You can find city guides for things to do, first-time itineraries, airport and public transport advice, hotel area planning, eSIM guides, and selected travel booking resources."
             }
           },
           {
-            "@type": "Question",
-            "name": "Do you use affiliate links?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you."
+            "@type":"Question",
+            "name":"Do you use affiliate links?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Some links may be affiliate links. If you book through them, we may earn a commission at no extra cost to you."
             }
           }
         ]
@@ -173,9 +183,9 @@
 <body data-page="home">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div id="site-header"></div>
+  <div id="site-header" style="min-height:var(--header-h,72px)"></div>
 
-  <main id="main" class="main">
+  <main id="main" class="main" role="main">
     <section class="hero hero-full" aria-label="TripGuidely hero">
       <div class="hero-bg" aria-hidden="true">
         <img
@@ -185,8 +195,7 @@
           height="900"
           loading="eager"
           decoding="async"
-          fetchpriority="high"
-        />
+          fetchpriority="high" />
         <div class="hero-overlay" aria-hidden="true"></div>
       </div>
 
@@ -194,7 +203,10 @@
         <div class="hero-tool-wrap">
           <p class="hero-tool-title">Plan smarter trips, faster.</p>
           <h1>Plan Smarter City Trips</h1>
-          <p class="hero-tool-sub">TripGuidely helps first-time and short-stay travelers compare attractions, transport, hotel areas, and itinerary trade-offs without wasting time on scattered research.</p>
+          <p class="hero-tool-sub">
+            TripGuidely helps first-time and short-stay travelers compare attractions, transport, hotel areas,
+            and itinerary trade-offs without wasting time on scattered research.
+          </p>
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
@@ -204,7 +216,7 @@
                   Explore Things to Do
                 </a>
                 <a class="btn" href="/itinerary/">
-                  <span class="pill" aria-hidden="true">🗺</span>
+                  <span class="pill" aria-hidden="true">🗺️</span>
                   Plan an Itinerary
                 </a>
                 <a class="btn" href="/transport/">
@@ -224,7 +236,7 @@
               </div>
 
               <p class="meta" style="margin-top:12px;">
-                Updated: <time datetime="2026-03-07">Mar 7, 2026</time>
+                Updated: <time datetime="2026-03-08">Mar 8, 2026</time>
               </p>
             </div>
           </div>
@@ -236,6 +248,7 @@
       <div class="grid">
         <article class="card content" aria-label="Homepage content">
           <div class="pad">
+
             <section id="start-here" aria-label="Start here">
               <div class="section-title">
                 <h2>Start here</h2>
@@ -290,14 +303,14 @@
               <ul class="cities-grid" aria-label="City hubs">
                 <li>
                   <a class="city-card" href="/things-to-do/new-york/" aria-label="Things to do in New York">
-                    <img class="city-ico"
+                    <img
+                      class="city-ico"
                       src="/assets/images/stickers/statue-of-liberty-sticker-512.webp"
                       width="96"
                       height="96"
                       alt="New York sticker icon (Statue of Liberty)"
                       loading="lazy"
-                      decoding="async"
-                    />
+                      decoding="async" />
                     <span class="city-meta">
                       <strong>New York</strong>
                       <span>Attractions, tours, and planning shortcuts</span>
@@ -308,14 +321,14 @@
 
                 <li>
                   <a class="city-card" href="/things-to-do/paris/" aria-label="Things to do in Paris">
-                    <img class="city-ico"
+                    <img
+                      class="city-ico"
                       src="/assets/images/stickers/eiffel-tower-sticker-512.webp"
                       width="96"
                       height="96"
                       alt="Paris sticker icon (Eiffel Tower)"
                       loading="lazy"
-                      decoding="async"
-                    />
+                      decoding="async" />
                     <span class="city-meta">
                       <strong>Paris</strong>
                       <span>Attractions, tickets, and route flow</span>
@@ -326,14 +339,14 @@
 
                 <li>
                   <a class="city-card" href="/things-to-do/rome/" aria-label="Things to do in Rome">
-                    <img class="city-ico"
+                    <img
+                      class="city-ico"
                       src="/assets/images/stickers/colosseum-sticker-512.webp"
                       width="96"
                       height="96"
                       alt="Rome sticker icon (Colosseum)"
                       loading="lazy"
-                      decoding="async"
-                    />
+                      decoding="async" />
                     <span class="city-meta">
                       <strong>Rome</strong>
                       <span>Must-sees and smart timing</span>
@@ -344,17 +357,89 @@
 
                 <li>
                   <a class="city-card" href="/things-to-do/tokyo/" aria-label="Things to do in Tokyo">
-                    <img class="city-ico"
+                    <img
+                      class="city-ico"
                       src="/assets/images/stickers/mount-fuji-sticker-512.webp"
                       width="96"
                       height="96"
                       alt="Tokyo sticker icon (Mount Fuji)"
                       loading="lazy"
-                      decoding="async"
-                    />
+                      decoding="async" />
                     <span class="city-meta">
                       <strong>Tokyo</strong>
                       <span>Neighborhoods and day plans</span>
+                    </span>
+                    <span class="city-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="city-card" href="/things-to-do/dubai/" aria-label="Things to do in Dubai">
+                    <img
+                      class="city-ico"
+                      src="/assets/images/stickers/dubai-burj-khalifa-sticker-512.webp"
+                      width="96"
+                      height="96"
+                      alt="Dubai sticker icon (Burj Khalifa)"
+                      loading="lazy"
+                      decoding="async" />
+                    <span class="city-meta">
+                      <strong>Dubai</strong>
+                      <span>Landmarks, tickets, and modern city highlights</span>
+                    </span>
+                    <span class="city-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="city-card" href="/things-to-do/london/" aria-label="Things to do in London">
+                    <img
+                      class="city-ico"
+                      src="/assets/images/stickers/london-big-ben-sticker-512.webp"
+                      width="96"
+                      height="96"
+                      alt="London sticker icon (Big Ben)"
+                      loading="lazy"
+                      decoding="async" />
+                    <span class="city-meta">
+                      <strong>London</strong>
+                      <span>Classic sights, museums, and route planning</span>
+                    </span>
+                    <span class="city-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="city-card" href="/things-to-do/bangkok/" aria-label="Things to do in Bangkok">
+                    <img
+                      class="city-ico"
+                      src="/assets/images/stickers/bangkok-wat-arun-sticker-512.webp"
+                      width="96"
+                      height="96"
+                      alt="Bangkok sticker icon (Wat Arun)"
+                      loading="lazy"
+                      decoding="async" />
+                    <span class="city-meta">
+                      <strong>Bangkok</strong>
+                      <span>Temples, river routes, and first-time planning</span>
+                    </span>
+                    <span class="city-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="city-card" href="/things-to-do/quebec/" aria-label="Things to do in Quebec City">
+                    <img
+                      class="city-ico"
+                      src="/assets/images/stickers/quebec-chateau-frontenac-sticker-512.webp"
+                      width="96"
+                      height="96"
+                      alt="Quebec City sticker icon (Château Frontenac)"
+                      loading="lazy"
+                      decoding="async" />
+                    <span class="city-meta">
+                      <strong>Quebec City</strong>
+                      <span>Old Town highlights and practical city planning</span>
                     </span>
                     <span class="city-arrow" aria-hidden="true">↗</span>
                   </a>
@@ -393,6 +478,22 @@
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
 
+                <a class="link-card" role="listitem" href="/things-to-do/dubai/">
+                  <div>
+                    <strong>Things to Do in Dubai</strong><br />
+                    <span>Burj Khalifa, desert experiences, and booking priorities</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
+                <a class="link-card" role="listitem" href="/things-to-do/london/">
+                  <div>
+                    <strong>Things to Do in London</strong><br />
+                    <span>Major landmarks, museums, and smart route planning</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
+
                 <a class="link-card" role="listitem" href="/itinerary/new-york/first-time/">
                   <div>
                     <strong>New York for First-Timers</strong><br />
@@ -405,14 +506,6 @@
                   <div>
                     <strong>Tokyo for First-Timers</strong><br />
                     <span>Smart structure, neighborhoods, and trip flow</span>
-                  </div>
-                  <div class="arrow" aria-hidden="true">↗</div>
-                </a>
-
-                <a class="link-card" role="listitem" href="/itinerary/rome/first-time/">
-                  <div>
-                    <strong>Rome for First-Timers</strong><br />
-                    <span>Priority sights, route planning, and realistic timing</span>
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
@@ -432,13 +525,23 @@
                   </div>
                   <div class="arrow" aria-hidden="true">↗</div>
                 </a>
+
+                <a class="link-card" role="listitem" href="/transport/dubai/">
+                  <div>
+                    <strong>Dubai Transport Guide</strong><br />
+                    <span>Airport transfers, metro logic, taxis, and city routing</span>
+                  </div>
+                  <div class="arrow" aria-hidden="true">↗</div>
+                </a>
               </div>
 
               <div class="mini-grid" aria-label="Popular planning shortcuts" style="margin-top:1rem;">
                 <a class="pill-link" href="/things-to-do/new-york/">🗽 New York attractions</a>
+                <a class="pill-link" href="/things-to-do/dubai/">🌆 Dubai attractions</a>
                 <a class="pill-link" href="/transport/tokyo/">🚇 Tokyo transport</a>
                 <a class="pill-link" href="/transport/rome/">🚇 Rome transport</a>
-                <a class="pill-link" href="/itinerary/paris/first-time/">🗺 Paris first-time itinerary</a>
+                <a class="pill-link" href="/itinerary/paris/first-time/">🗺️ Paris first-time itinerary</a>
+                <a class="pill-link" href="/itinerary/london/first-time/">🗺️ London first-time itinerary</a>
               </div>
             </section>
 
@@ -451,7 +554,7 @@
             <section id="what-tripguidely-covers" aria-label="What TripGuidely covers">
               <h2>Travel planning guides for major cities and trip types</h2>
               <p>TripGuidely covers the planning layers that matter most before a trip: <strong>things to do</strong>, <strong>itineraries</strong>, <strong>transport</strong>, <strong>hotels</strong>, <strong>eSIM</strong>, and selected <strong>cruise planning</strong> content.</p>
-              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, and <strong>New York</strong>, with city pages designed to reduce research time, simplify booking decisions, and improve route logic.</p>
+              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, <strong>New York</strong>, <strong>Dubai</strong>, <strong>London</strong>, <strong>Bangkok</strong>, and <strong>Quebec City</strong>, with city pages designed to reduce research time, simplify booking decisions, and improve route logic.</p>
             </section>
 
             <section id="how-to-use" aria-label="How to use TripGuidely">
@@ -596,7 +699,5 @@
   </main>
 
   <div id="site-footer"></div>
-
-  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
