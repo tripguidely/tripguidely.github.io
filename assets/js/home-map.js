@@ -70,6 +70,21 @@
 
       if (!svg) throw new Error("Invalid SVG.");
 
+      const rawViewBox = svg.getAttribute("viewBox") || svg.getAttribute("viewbox");
+      const widthAttr = svg.getAttribute("width");
+      const heightAttr = svg.getAttribute("height");
+
+      if (rawViewBox) {
+        svg.setAttribute("viewBox", rawViewBox);
+      } else if (widthAttr && heightAttr) {
+        svg.setAttribute("viewBox", `0 0 ${parseFloat(widthAttr)} ${parseFloat(heightAttr)}`);
+      }
+
+      svg.removeAttribute("viewbox");
+      svg.removeAttribute("width");
+      svg.removeAttribute("height");
+      svg.removeAttribute("baseprofile");
+
       svg.classList.add("map-explorer__svg");
       svg.setAttribute("aria-label", "World map with TripGuidely city markers");
       svg.setAttribute("role", "img");
@@ -79,7 +94,7 @@
       markerLayer.setAttribute("class", "map-explorer__markers");
 
       cities.forEach((city) => {
-        const marker = createMarker(city, svg, canvas, tooltip);
+        const marker = createMarker(city, canvas, tooltip);
         markerLayer.appendChild(marker);
       });
 
@@ -93,7 +108,7 @@
       loading.textContent = "Map unavailable. Check /assets/images/ui/world-map.svg and /assets/js/home-map.js.";
     });
 
-  function createMarker(city, svg, canvas, tooltip) {
+  function createMarker(city, canvas, tooltip) {
     const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
     g.setAttribute("class", "map-city-marker");
     g.setAttribute("tabindex", "0");
