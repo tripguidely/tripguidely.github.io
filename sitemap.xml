@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/car-rental/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-08</lastmod>
   </url>
   <url>
     <loc>https://tripguidely.github.io/esim/</loc>
@@ -71,16 +71,36 @@
 
   <!-- Car rental cluster -->
   <url>
+    <loc>https://tripguidely.github.io/car-rental/bangkok/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/dubai/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/london/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/new-york/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
     <loc>https://tripguidely.github.io/car-rental/paris/</loc>
     <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/quebec-city/</loc>
+    <lastmod>2026-03-08</lastmod>
   </url>
   <url>
     <loc>https://tripguidely.github.io/car-rental/rome/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/car-rental/new-york/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://tripguidely.github.io/car-rental/tokyo/</loc>
+    <lastmod>2026-03-08</lastmod>
   </url>
 
   <!-- Hotels city pages -->
@@ -90,10 +110,6 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/hotels/paris/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/hotels/tokyo/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
 
@@ -141,11 +157,19 @@
 
   <!-- Itinerary hubs -->
   <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://tripguidely.github.io/itinerary/dubai/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/london/</loc>
+    <lastmod>2026-03-08</lastmod>
   </url>
   <url>
     <loc>https://tripguidely.github.io/itinerary/new-york/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
@@ -154,102 +178,6 @@
   </url>
   <url>
     <loc>https://tripguidely.github.io/itinerary/tokyo/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/dubai/</loc>
-    <lastmod>2026-03-08</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/london/</loc>
-    <lastmod>2026-03-08</lastmod>
-  </url>
-
-  <!-- Paris itinerary cluster -->
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/2-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/3-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/4-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/first-time/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/paris/rainy-day/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-
-  <!-- New York itinerary cluster -->
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/new-york/2-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/new-york/3-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/new-york/4-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/new-york/first-time/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/new-york/rainy-day/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-
-  <!-- Rome itinerary cluster -->
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/rome/2-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/rome/3-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/rome/4-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/rome/first-time/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/rome/rainy-day/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-
-  <!-- Tokyo itinerary cluster -->
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/tokyo/2-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/tokyo/3-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/tokyo/4-days/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/tokyo/first-time/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/itinerary/tokyo/rainy-day/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
 
@@ -277,15 +205,15 @@
 
   <!-- London itinerary cluster -->
   <url>
-    <loc>https://tripguidely.github.io/itinerary/london/2-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/london/days-2/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/itinerary/london/3-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/london/days-3/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/itinerary/london/4-days/</loc>
+    <loc>https://tripguidely.github.io/itinerary/london/days-4/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
@@ -297,19 +225,95 @@
     <lastmod>2026-03-08</lastmod>
   </url>
 
-  <!-- Supporting city pages -->
+  <!-- New York itinerary cluster -->
   <url>
-    <loc>https://tripguidely.github.io/transport/paris/</loc>
+    <loc>https://tripguidely.github.io/itinerary/new-york/2-days/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/transport/new-york/</loc>
+    <loc>https://tripguidely.github.io/itinerary/new-york/3-days/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://tripguidely.github.io/transport/tokyo/</loc>
+    <loc>https://tripguidely.github.io/itinerary/new-york/4-days/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/new-york/first-time/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/new-york/rainy-day/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Paris itinerary cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/2-days/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/3-days/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/4-days/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/first-time/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/paris/rainy-day/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Rome itinerary cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/rome/days-2/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/rome/days-3/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/rome/days-4/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/rome/first-time/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/rome/rainy-day/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Tokyo itinerary cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/tokyo/days-2/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/tokyo/days-3/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/tokyo/days-4/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/tokyo/first-time/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/tokyo/rainy-day/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Transport cluster -->
   <url>
     <loc>https://tripguidely.github.io/transport/dubai/</loc>
     <lastmod>2026-03-08</lastmod>
@@ -318,8 +322,28 @@
     <loc>https://tripguidely.github.io/transport/london/</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
+  <url>
+    <loc>https://tripguidely.github.io/transport/new-york/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/transport/paris/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/transport/rome/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/transport/tokyo/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
 
-  <!-- Things to do -->
+  <!-- Things to do cluster -->
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/dubai/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
   <url>
     <loc>https://tripguidely.github.io/things-to-do/london/</loc>
     <lastmod>2026-03-06</lastmod>
@@ -333,16 +357,16 @@
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
+    <loc>https://tripguidely.github.io/things-to-do/quebec-city/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
     <loc>https://tripguidely.github.io/things-to-do/rome/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
     <loc>https://tripguidely.github.io/things-to-do/tokyo/</loc>
     <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tripguidely.github.io/things-to-do/dubai/</loc>
-    <lastmod>2026-03-08</lastmod>
   </url>
 
 </urlset>
