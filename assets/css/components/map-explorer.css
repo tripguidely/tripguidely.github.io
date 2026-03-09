@@ -1,0 +1,466 @@
+/* ==========================================================================
+   TripGuidely — components/map-explorer.css
+   Purpose: reusable destination map explorer section
+   Usage:
+   - Homepage
+   - /travel-guides/
+   - Any destination hub page with a world/country map block
+   ========================================================================== */
+
+.map-explorer{
+  --map-bg:#f5f7fa;
+  --map-panel:#ffffff;
+  --map-panel-2:#f8fafc;
+  --map-border:rgba(15,23,42,.10);
+  --map-border-soft:rgba(15,23,42,.06);
+  --map-text:#0f172a;
+  --map-muted:#475569;
+  --map-accent:#3d7f93;
+  --map-accent-strong:#1fa1b5;
+  --map-country:#cfd8e3;
+  --map-stroke:#ffffff;
+  --map-shadow:0 18px 45px rgba(15,23,42,.08);
+  --map-shadow-hover:0 16px 34px rgba(15,23,42,.10);
+  --map-radius:24px;
+  --map-radius-lg:28px;
+  --map-tooltip-bg:#0f172a;
+  --map-tooltip-text:#ffffff;
+  --map-link:#0f766e;
+  --map-link-hover:#0b5f5a;
+  --map-focus:0 0 0 3px rgba(31,161,181,.22);
+
+  margin:48px 0 56px;
+  color:var(--map-text);
+}
+
+.map-explorer__shell{
+  background:var(--map-panel);
+  border:1px solid var(--map-border);
+  border-radius:var(--map-radius-lg);
+  box-shadow:var(--map-shadow);
+  overflow:hidden;
+}
+
+.map-explorer__head{
+  padding:28px 24px 16px;
+  border-bottom:1px solid var(--map-border-soft);
+  background:
+    radial-gradient(circle at top right, rgba(18,207,208,.10), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,1));
+}
+
+.map-explorer__eyebrow{
+  margin:0 0 10px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#0f766e;
+}
+
+.map-explorer__title{
+  margin:0 0 8px;
+  font-size:clamp(1.65rem, 2vw, 2.2rem);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  color:var(--map-text);
+}
+
+.map-explorer__desc{
+  margin:0;
+  max-width:860px;
+  color:var(--map-muted);
+  font-size:1rem;
+  line-height:1.7;
+}
+
+.map-explorer__stage{
+  position:relative;
+  background:var(--map-bg);
+  padding:18px;
+}
+
+.map-explorer__toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 0 14px;
+}
+
+.map-explorer__legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+  color:var(--map-muted);
+  font-size:.92rem;
+}
+
+.map-explorer__legend-item{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.map-explorer__swatch{
+  display:inline-block;
+  width:14px;
+  height:14px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.08);
+}
+
+.map-explorer__swatch--active{
+  background:var(--map-accent);
+}
+
+.map-explorer__swatch--inactive{
+  background:var(--map-country);
+}
+
+.map-explorer__hint{
+  color:var(--map-muted);
+  font-size:.92rem;
+}
+
+.map-explorer__canvas{
+  position:relative;
+  width:100%;
+  min-height:360px;
+  background:var(--map-panel-2);
+  border:1px solid var(--map-border-soft);
+  border-radius:22px;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.map-explorer__loading{
+  min-height:360px;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  color:var(--map-muted);
+  font-size:.98rem;
+  text-align:center;
+}
+
+.map-explorer__svg{
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:360px;
+}
+
+.map-explorer__tooltip{
+  position:absolute;
+  z-index:8;
+  top:0;
+  left:0;
+  transform:translate(-50%, calc(-100% - 12px));
+  background:var(--map-tooltip-bg);
+  color:var(--map-tooltip-text);
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:.88rem;
+  line-height:1.35;
+  white-space:nowrap;
+  pointer-events:none;
+  box-shadow:0 14px 34px rgba(15,23,42,.25);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .16s ease, visibility .16s ease;
+}
+
+.map-explorer__tooltip.is-visible{
+  opacity:1;
+  visibility:visible;
+}
+
+.map-explorer__tooltip::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:12px;
+  height:12px;
+  background:var(--map-tooltip-bg);
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.map-explorer__body{
+  padding:22px 24px 26px;
+}
+
+.map-explorer__groups{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+}
+
+.map-explorer__group{
+  background:#fff;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:18px;
+  padding:16px;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.map-explorer__group:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--map-shadow-hover);
+  border-color:rgba(15,23,42,.12);
+}
+
+.map-explorer__group-title{
+  margin:0 0 10px;
+  font-size:1rem;
+  line-height:1.25;
+  color:var(--map-text);
+}
+
+.map-explorer__links{
+  display:grid;
+  gap:8px;
+}
+
+.map-explorer__links a{
+  color:var(--map-link);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.map-explorer__links a:hover{
+  color:var(--map-link-hover);
+  text-decoration:underline;
+}
+
+.map-explorer__footer{
+  padding:0 24px 26px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.map-explorer__cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  min-height:46px;
+  padding:.78rem 1rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  line-height:1;
+  border:1px solid rgba(15,23,42,.08);
+  background:#fff;
+  color:var(--map-text);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
+}
+
+.map-explorer__cta:hover{
+  transform:translateY(-1px);
+  border-color:rgba(15,23,42,.14);
+  box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+
+.map-explorer__cta--primary{
+  background:linear-gradient(135deg, #12cfd0, #0ea5a8);
+  color:#083344;
+  border-color:transparent;
+}
+
+.map-explorer__cta--primary:hover{
+  box-shadow:0 14px 28px rgba(18,207,208,.24);
+}
+
+.map-explorer__note{
+  color:var(--map-muted);
+  font-size:.92rem;
+}
+
+/* ==========================================================================
+   SVG country states
+   ========================================================================== */
+
+.map-explorer [data-country],
+.map-explorer .country-link{
+  cursor:pointer;
+  transition:fill .18s ease, opacity .18s ease, filter .18s ease, transform .18s ease;
+  outline:none;
+}
+
+.map-explorer [data-country].is-active,
+.map-explorer .country-link.is-active{
+  fill:var(--map-accent) !important;
+  opacity:1 !important;
+}
+
+.map-explorer [data-country].is-active:hover,
+.map-explorer [data-country].is-active:focus,
+.map-explorer .country-link.is-active:hover,
+.map-explorer .country-link.is-active:focus{
+  fill:var(--map-accent-strong) !important;
+  filter:brightness(1.02);
+}
+
+.map-explorer [data-country].is-inactive,
+.map-explorer .country-link.is-inactive{
+  fill:var(--map-country) !important;
+  opacity:1 !important;
+}
+
+.map-explorer svg path,
+.map-explorer svg polygon,
+.map-explorer svg rect,
+.map-explorer svg ellipse,
+.map-explorer svg circle{
+  stroke:var(--map-stroke) !important;
+  stroke-width:1 !important;
+  vector-effect:non-scaling-stroke;
+}
+
+.map-explorer svg a{
+  text-decoration:none;
+}
+
+.map-explorer [role="link"]:focus-visible,
+.map-explorer__links a:focus-visible,
+.map-explorer__cta:focus-visible{
+  outline:none;
+  box-shadow:var(--map-focus);
+  border-radius:12px;
+}
+
+/* ==========================================================================
+   Compact / inset variant
+   ========================================================================== */
+
+.map-explorer--compact{
+  margin:32px 0 40px;
+}
+
+.map-explorer--compact .map-explorer__head{
+  padding:22px 20px 14px;
+}
+
+.map-explorer--compact .map-explorer__stage{
+  padding:14px;
+}
+
+.map-explorer--compact .map-explorer__body{
+  padding:18px 20px 22px;
+}
+
+.map-explorer--compact .map-explorer__footer{
+  padding:0 20px 22px;
+}
+
+/* ==========================================================================
+   Dark media tolerance
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark){
+  .map-explorer{
+    --map-bg:#0f172a;
+    --map-panel:#111827;
+    --map-panel-2:#0b1220;
+    --map-border:rgba(255,255,255,.08);
+    --map-border-soft:rgba(255,255,255,.06);
+    --map-text:#e5eef8;
+    --map-muted:#b8c7d9;
+    --map-country:#526174;
+    --map-stroke:#0f172a;
+    --map-link:#5eead4;
+    --map-link-hover:#99f6e4;
+    --map-shadow:0 18px 45px rgba(0,0,0,.28);
+    --map-shadow-hover:0 18px 38px rgba(0,0,0,.30);
+    --map-tooltip-bg:#020617;
+    --map-tooltip-text:#f8fafc;
+  }
+
+  .map-explorer__head{
+    background:
+      radial-gradient(circle at top right, rgba(18,207,208,.14), transparent 28%),
+      linear-gradient(180deg, rgba(17,24,39,.98), rgba(17,24,39,1));
+  }
+
+  .map-explorer__group,
+  .map-explorer__cta{
+    background:#0f172a;
+    color:var(--map-text);
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width:1100px){
+  .map-explorer__groups{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width:720px){
+  .map-explorer{
+    margin:36px 0 42px;
+  }
+
+  .map-explorer__head{
+    padding:22px 18px 14px;
+  }
+
+  .map-explorer__stage{
+    padding:14px;
+  }
+
+  .map-explorer__toolbar{
+    gap:8px;
+    align-items:flex-start;
+  }
+
+  .map-explorer__canvas,
+  .map-explorer__loading,
+  .map-explorer__svg{
+    min-height:240px;
+  }
+
+  .map-explorer__body{
+    padding:18px;
+  }
+
+  .map-explorer__groups{
+    grid-template-columns:1fr;
+  }
+
+  .map-explorer__footer{
+    padding:0 18px 20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .map-explorer__tooltip{
+    display:none;
+  }
+}
+
+/* ==========================================================================
+   Accessibility helpers
+   ========================================================================== */
+
+.map-explorer .sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
