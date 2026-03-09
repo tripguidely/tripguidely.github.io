@@ -1,59 +1,56 @@
 (function () {
   const MAP_FILE = "/assets/images/ui/world-map.svg";
 
-  const destinations = {
-    CA: {
-      name: "Canada",
-      label: "Quebec City travel guide",
-      url: "/travel-guides/quebec-city/"
+  const cities = [
+    {
+      name: "New York",
+      x: 405,
+      y: 305,
+      url: "/things-to-do/new-york/"
     },
-    US: {
-      name: "United States",
-      label: "New York travel guide",
-      url: "/travel-guides/new-york/"
+    {
+      name: "Paris",
+      x: 980,
+      y: 235,
+      url: "/things-to-do/paris/"
     },
-    FR: {
-      name: "France",
-      label: "Paris travel guide",
-      url: "/travel-guides/paris/"
+    {
+      name: "London",
+      x: 955,
+      y: 215,
+      url: "/things-to-do/london/"
     },
-    GB: {
-      name: "United Kingdom",
-      label: "London travel guide",
-      url: "/travel-guides/london/"
+    {
+      name: "Rome",
+      x: 1025,
+      y: 265,
+      url: "/things-to-do/rome/"
     },
-    IT: {
-      name: "Italy",
-      label: "Rome travel guide",
-      url: "/travel-guides/rome/"
+    {
+      name: "Dubai",
+      x: 1165,
+      y: 350,
+      url: "/things-to-do/dubai/"
     },
-    JP: {
-      name: "Japan",
-      label: "Tokyo travel guide",
-      url: "/travel-guides/tokyo/"
+    {
+      name: "Tokyo",
+      x: 1570,
+      y: 320,
+      url: "/things-to-do/tokyo/"
     },
-    TH: {
-      name: "Thailand",
-      label: "Bangkok travel guide",
-      url: "/travel-guides/bangkok/"
+    {
+      name: "Bangkok",
+      x: 1360,
+      y: 470,
+      url: "/things-to-do/bangkok/"
     },
-    AE: {
-      name: "United Arab Emirates",
-      label: "Dubai travel guide",
-      url: "/travel-guides/dubai/"
+    {
+      name: "Quebec City",
+      x: 430,
+      y: 250,
+      url: "/things-to-do/quebec-city/"
     }
-  };
-
-  const selectorMap = {
-    CA: ["#CA", "#ca", "#Canada", "#canada"],
-    US: ["#US", "#us", "#USA", "#usa", "#UnitedStates", "#united-states"],
-    FR: ["#FR", "#fr", "#France", "#france"],
-    GB: ["#GB", "#gb", "#UK", "#uk", "#UnitedKingdom", "#united-kingdom"],
-    IT: ["#IT", "#it", "#Italy", "#italy"],
-    JP: ["#JP", "#jp", "#Japan", "#japan"],
-    TH: ["#TH", "#th", "#Thailand", "#thailand"],
-    AE: ["#AE", "#ae", "#UAE", "#uae", "#UnitedArabEmirates", "#united-arab-emirates"]
-  };
+  ];
 
   const canvas = document.getElementById("home-map-explorer-canvas");
   const loading = document.getElementById("home-map-explorer-loading");
@@ -74,73 +71,19 @@
       if (!svg) throw new Error("Invalid SVG.");
 
       svg.classList.add("map-explorer__svg");
-      svg.setAttribute("aria-label", "World map with clickable TripGuidely destinations");
+      svg.setAttribute("aria-label", "World map with TripGuidely city markers");
       svg.setAttribute("role", "img");
       svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
-      const shapes = svg.querySelectorAll("path, polygon");
-      shapes.forEach((node) => {
-        node.classList.add("is-inactive");
+      const markerLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      markerLayer.setAttribute("class", "map-explorer__markers");
+
+      cities.forEach((city) => {
+        const marker = createMarker(city, svg, canvas, tooltip);
+        markerLayer.appendChild(marker);
       });
 
-      Object.keys(destinations).forEach((code) => {
-        const selectors = selectorMap[code] || [];
-        const meta = destinations[code];
-        const matched = new Set();
-
-        selectors.forEach((selector) => {
-          svg.querySelectorAll(selector).forEach((el) => matched.add(el));
-        });
-
-        matched.forEach((node) => {
-          node.classList.remove("is-inactive");
-          node.classList.add("is-active");
-          node.setAttribute("data-country", code);
-          node.setAttribute("data-label", meta.label);
-          node.setAttribute("data-url", meta.url);
-          node.setAttribute("tabindex", "0");
-          node.setAttribute("role", "link");
-
-          node.addEventListener("mouseenter", () => {
-            tooltip.textContent = meta.label;
-            tooltip.classList.add("is-visible");
-          });
-
-          node.addEventListener("mousemove", (e) => {
-            const rect = canvas.getBoundingClientRect();
-            tooltip.style.left = (e.clientX - rect.left) + "px";
-            tooltip.style.top = (e.clientY - rect.top) + "px";
-          });
-
-          node.addEventListener("mouseleave", () => {
-            tooltip.classList.remove("is-visible");
-          });
-
-          node.addEventListener("focus", () => {
-            tooltip.textContent = meta.label;
-            tooltip.classList.add("is-visible");
-            const rect = node.getBoundingClientRect();
-            const canvasRect = canvas.getBoundingClientRect();
-            tooltip.style.left = (rect.left + rect.width / 2 - canvasRect.left) + "px";
-            tooltip.style.top = (rect.top - canvasRect.top) + "px";
-          });
-
-          node.addEventListener("blur", () => {
-            tooltip.classList.remove("is-visible");
-          });
-
-          node.addEventListener("click", () => {
-            window.location.href = meta.url;
-          });
-
-          node.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              window.location.href = meta.url;
-            }
-          });
-        });
-      });
+      svg.appendChild(markerLayer);
 
       loading.remove();
       canvas.insertBefore(svg, tooltip);
@@ -149,4 +92,90 @@
       console.error(error);
       loading.textContent = "Map unavailable. Check /assets/images/ui/world-map.svg and /assets/js/home-map.js.";
     });
+
+  function createMarker(city, svg, canvas, tooltip) {
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.setAttribute("class", "map-city-marker");
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("role", "link");
+    g.setAttribute("aria-label", city.name);
+    g.setAttribute("data-url", city.url);
+    g.style.cursor = "pointer";
+
+    const pulse = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    pulse.setAttribute("cx", city.x);
+    pulse.setAttribute("cy", city.y);
+    pulse.setAttribute("r", "14");
+    pulse.setAttribute("class", "map-city-marker__pulse");
+
+    const outer = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    outer.setAttribute("cx", city.x);
+    outer.setAttribute("cy", city.y);
+    outer.setAttribute("r", "8");
+    outer.setAttribute("class", "map-city-marker__outer");
+
+    const inner = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    inner.setAttribute("cx", city.x);
+    inner.setAttribute("cy", city.y);
+    inner.setAttribute("r", "4");
+    inner.setAttribute("class", "map-city-marker__inner");
+
+    const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    label.setAttribute("x", city.x + 14);
+    label.setAttribute("y", city.y - 10);
+    label.setAttribute("class", "map-city-marker__label");
+    label.textContent = city.name;
+
+    g.appendChild(pulse);
+    g.appendChild(outer);
+    g.appendChild(inner);
+    g.appendChild(label);
+
+    g.addEventListener("mouseenter", (e) => {
+      tooltip.textContent = city.name;
+      tooltip.classList.add("is-visible");
+      positionTooltip(e.clientX, e.clientY, canvas, tooltip);
+    });
+
+    g.addEventListener("mousemove", (e) => {
+      positionTooltip(e.clientX, e.clientY, canvas, tooltip);
+    });
+
+    g.addEventListener("mouseleave", () => {
+      tooltip.classList.remove("is-visible");
+    });
+
+    g.addEventListener("focus", () => {
+      tooltip.textContent = city.name;
+      tooltip.classList.add("is-visible");
+
+      const rect = g.getBoundingClientRect();
+      const canvasRect = canvas.getBoundingClientRect();
+      tooltip.style.left = rect.left + rect.width / 2 - canvasRect.left + "px";
+      tooltip.style.top = rect.top - canvasRect.top + "px";
+    });
+
+    g.addEventListener("blur", () => {
+      tooltip.classList.remove("is-visible");
+    });
+
+    g.addEventListener("click", () => {
+      window.location.href = city.url;
+    });
+
+    g.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.location.href = city.url;
+      }
+    });
+
+    return g;
+  }
+
+  function positionTooltip(clientX, clientY, canvas, tooltip) {
+    const rect = canvas.getBoundingClientRect();
+    tooltip.style.left = clientX - rect.left + "px";
+    tooltip.style.top = clientY - rect.top + "px";
+  }
 })();
