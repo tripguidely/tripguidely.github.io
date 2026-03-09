@@ -1,267 +1,446 @@
 /* ==========================================================================
    TripGuidely travel-guides.css
-   - Travel Guides hub page
-   - Uses styles.css tokens
+   Travel Guides Hub Page
+   - Compatible with styles.css tokens
+   - Hero optimized
+   - Grid layout stable
    - CWV friendly
    ========================================================================== */
 
 
 /* =========================================================
-   HERO (Travel Guides)
+   HERO — Travel Guides
    ========================================================= */
 
 .hero-guides{
   position:relative;
   overflow:hidden;
   border-bottom:1px solid var(--line);
-  min-height:560px;
+
   display:flex;
   align-items:center;
+
+  min-height:520px;
 }
 
+/* background image */
+
+.hero-guides-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.hero-guides-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* overlay for readability */
+
+.hero-guides-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 55%),
+    radial-gradient(1000px 600px at 88% 8%, rgba(244,162,97,.14), transparent 60%),
+    linear-gradient(180deg, rgba(2,6,23,.30), rgba(2,6,23,.08) 40%, rgba(2,6,23,.25));
+
+  pointer-events:none;
+}
+
+/* content */
+
 .hero-guides .hero-inner{
+  position:relative;
+  z-index:2;
+
   padding:70px 0;
+  width:100%;
 }
 
 .hero-guides h1{
   margin:0 0 12px;
   max-width:760px;
+  color:#fff;
 }
 
 .hero-guides .lede{
   max-width:720px;
+  color:rgba(226,232,240,.9);
 }
+
+@media (max-width:760px){
+
+  .hero-guides{
+    min-height:420px;
+  }
+
+  .hero-guides .hero-inner{
+    padding:46px 0;
+  }
+
+}
+
 
 /* =========================================================
    MAP SECTION
    ========================================================= */
 
 .map-section{
-  margin-top:34px;
+  margin-top:36px;
 }
 
 .world-map{
   border:1px solid var(--line);
   border-radius: var(--radius);
-  background: #ffffff;
+
+  background:#ffffff;
+
   box-shadow: var(--shadow2);
+
   padding:18px;
   overflow:hidden;
 }
 
-/* SVG map */
 .world-map svg{
   width:100%;
   height:auto;
   display:block;
 }
 
-/* Map markers */
+/* markers */
+
 .map-marker{
   cursor:pointer;
-  transition: transform .18s ease, opacity .18s ease;
+
+  transition:
+    transform .18s ease,
+    opacity .18s ease;
 }
 
 .map-marker:hover{
-  transform: scale(1.08);
+  transform:scale(1.08);
   opacity:.9;
 }
+
 
 /* =========================================================
    DESTINATION GRID
    ========================================================= */
 
 .destinations-grid{
-  margin-top:24px;
+  margin-top:26px;
+
   display:grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap:16px;
 }
 
 @media (max-width:980px){
+
   .destinations-grid{
     grid-template-columns:1fr;
   }
+
 }
 
 .destination-card{
+
   border:1px solid var(--line);
   border-radius:18px;
+
   background:#ffffff;
+
   padding:16px;
+
   box-shadow: var(--shadow3);
-  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+
+  transition:
+    transform .14s ease,
+    box-shadow .14s ease,
+    border-color .14s ease;
+
   text-decoration:none;
 }
 
 .destination-card:hover{
-  transform: translateY(-2px);
+
+  transform:translateY(-2px);
+
   box-shadow: var(--shadow);
+
   border-color: rgba(18,207,208,.32);
+
 }
 
 .destination-card strong{
+
   display:block;
   font-size:1.05rem;
   margin-bottom:6px;
+
 }
 
 .destination-card span{
+
   font-size:.95rem;
-  color: var(--muted);
+  color:var(--muted);
+
 }
+
 
 /* =========================================================
    GUIDE GRID
    ========================================================= */
 
 .guide-grid{
-  margin-top:22px;
+
+  margin-top:24px;
+
   display:grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap:16px;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+
+  gap:18px;
+
 }
 
 @media (max-width:900px){
+
   .guide-grid{
     grid-template-columns:1fr;
   }
+
 }
 
-/* Guide card */
+/* card */
 
 .guide-card{
+
   border:1px solid var(--line);
   border-radius: var(--radius);
+
   background:#ffffff;
+
   overflow:hidden;
+
   box-shadow: var(--shadow2);
-  transition: transform .14s ease, box-shadow .14s ease;
+
+  transition:
+    transform .14s ease,
+    box-shadow .14s ease;
+
 }
 
 .guide-card:hover{
-  transform: translateY(-2px);
+
+  transform:translateY(-2px);
+
   box-shadow: var(--shadow);
+
 }
 
-/* Image */
+
+/* image */
 
 .guide-card picture,
 .guide-card img{
+
   width:100%;
   height:auto;
   display:block;
+
 }
 
-/* Content */
+
+/* body */
 
 .guide-body{
+
   padding:16px;
+
 }
 
 .guide-body h3{
+
   margin:0 0 6px;
+
   font-size:1.08rem;
+
 }
 
 .guide-body p{
+
   margin:0;
+
   font-size:.95rem;
+
+  color:var(--muted);
+
 }
+
 
 /* =========================================================
    CITY GRID
    ========================================================= */
 
 .city-grid{
-  margin-top:18px;
+
+  margin-top:20px;
+
   display:grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
+
+  grid-template-columns: repeat(4,minmax(0,1fr));
+
   gap:14px;
+
 }
 
 @media (max-width:900px){
+
   .city-grid{
-    grid-template-columns: repeat(2, minmax(0,1fr));
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
   }
+
 }
 
 @media (max-width:600px){
+
   .city-grid{
+
     grid-template-columns:1fr;
+
   }
+
 }
 
 .city-card{
+
   display:block;
+
   border:1px solid var(--line);
+
   border-radius:16px;
+
   padding:14px;
+
   text-decoration:none;
+
   background:#ffffff;
+
   box-shadow: var(--shadow3);
-  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+
+  transition:
+    transform .14s ease,
+    box-shadow .14s ease,
+    border-color .14s ease;
+
 }
 
 .city-card:hover{
-  transform: translateY(-2px);
+
+  transform:translateY(-2px);
+
   box-shadow: var(--shadow2);
+
   border-color: rgba(18,207,208,.28);
+
 }
 
 .city-card strong{
+
   display:block;
   margin-bottom:4px;
+
 }
 
 .city-card span{
-  color: var(--muted2);
+
+  color:var(--muted2);
   font-size:.92rem;
+
 }
+
 
 /* =========================================================
    CTA STRIP
    ========================================================= */
 
 .guides-cta{
-  margin-top:34px;
-  padding:20px;
+
+  margin-top:36px;
+
+  padding:22px;
+
   border-radius: var(--radius);
+
   border:1px solid rgba(18,207,208,.24);
+
   background:
-    linear-gradient(135deg,
-    rgba(18,207,208,.12),
-    rgba(244,162,97,.10));
+    linear-gradient(
+      135deg,
+      rgba(18,207,208,.12),
+      rgba(244,162,97,.10)
+    );
+
 }
 
 .guides-cta h2{
+
   margin:0 0 8px;
+
 }
 
 .guides-cta p{
+
   margin:0 0 12px;
+
 }
+
 
 /* =========================================================
    MAP TOOLTIP
    ========================================================= */
 
 .map-tooltip{
+
   position:absolute;
+
   pointer-events:none;
+
   background:#ffffff;
+
   border:1px solid var(--line);
+
   border-radius:14px;
+
   padding:8px 10px;
+
   font-size:.9rem;
+
   color:var(--text);
+
   box-shadow: var(--shadow3);
+
   opacity:0;
-  transform: translateY(4px);
-  transition: opacity .14s ease, transform .14s ease;
+
+  transform:translateY(4px);
+
+  transition:
+    opacity .14s ease,
+    transform .14s ease;
+
 }
 
 .map-tooltip.visible{
+
   opacity:1;
-  transform: translateY(0);
+
+  transform:translateY(0);
+
 }
