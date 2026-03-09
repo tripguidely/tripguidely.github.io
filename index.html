@@ -17,7 +17,7 @@
   <title>TripGuidely: Smart City Travel Guides, Itineraries, Transport, Hotels & eSIM Tips</title>
   <meta name="description" content="Plan smarter city trips with practical travel guides, first-time itineraries, transport comparisons, hotel area advice, eSIM help, and booking-focused things to do." />
   <meta name="author" content="TripGuidely Editorial Team" />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet=-1,max-video-preview=-1" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/" />
 
   <!-- International hints -->
@@ -87,9 +87,11 @@
   <link rel="preload" as="style" href="/assets/css/home.css" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/home.css" />
+  <link rel="stylesheet" href="/assets/css/components/map-explorer.css" />
 
   <!-- JS -->
   <script defer src="/assets/js/site.js"></script>
+  <script defer src="/assets/js/home-map.js"></script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -130,7 +132,7 @@
           "height":630
         },
         "datePublished":"2026-03-05",
-        "dateModified":"2026-03-08",
+        "dateModified":"2026-03-09",
         "mainEntity":{"@id":"https://tripguidely.github.io/#faq"},
         "potentialAction":{
           "@type":"ReadAction",
@@ -236,7 +238,7 @@
               </div>
 
               <p class="meta" style="margin-top:12px;">
-                Updated: <time datetime="2026-03-08">Mar 8, 2026</time>
+                Updated: <time datetime="2026-03-09">Mar 9, 2026</time>
               </p>
             </div>
           </div>
@@ -578,6 +580,89 @@
                 <div class="mini">
                   <div class="mini-icon" aria-hidden="true">4</div>
                   <div><b>Book smart</b><span>Timing and planning tips included</span></div>
+                </div>
+              </div>
+            </section>
+
+            <section id="explore-by-map" class="map-explorer map-explorer--compact" aria-labelledby="explore-by-map-title">
+              <div class="map-explorer__shell">
+                <div class="map-explorer__head">
+                  <p class="map-explorer__eyebrow">Explore by destination</p>
+                  <h2 class="map-explorer__title" id="explore-by-map-title">Explore destinations by map</h2>
+                  <p class="map-explorer__desc">
+                    Browse TripGuidely destinations visually, then jump into the city guide, itinerary, transport,
+                    hotel, and activity pages that help you plan faster.
+                  </p>
+                </div>
+
+                <div class="map-explorer__stage">
+                  <div class="map-explorer__toolbar">
+                    <div class="map-explorer__legend" aria-hidden="true">
+                      <span class="map-explorer__legend-item">
+                        <span class="map-explorer__swatch map-explorer__swatch--active"></span>
+                        Guides available
+                      </span>
+                      <span class="map-explorer__legend-item">
+                        <span class="map-explorer__swatch map-explorer__swatch--inactive"></span>
+                        Not active yet
+                      </span>
+                    </div>
+                    <div class="map-explorer__hint">Hover or tap a country</div>
+                  </div>
+
+                  <div class="map-explorer__canvas" id="home-map-explorer-canvas">
+                    <div class="map-explorer__loading" id="home-map-explorer-loading">Loading map…</div>
+                    <div class="map-explorer__tooltip" id="home-map-explorer-tooltip" role="status" aria-live="polite"></div>
+                  </div>
+                </div>
+
+                <div class="map-explorer__body">
+                  <div class="map-explorer__groups">
+                    <div class="map-explorer__group">
+                      <h3 class="map-explorer__group-title">Europe</h3>
+                      <div class="map-explorer__links">
+                        <a href="/travel-guides/paris/">Paris travel guide</a>
+                        <a href="/travel-guides/london/">London travel guide</a>
+                        <a href="/travel-guides/rome/">Rome travel guide</a>
+                      </div>
+                    </div>
+
+                    <div class="map-explorer__group">
+                      <h3 class="map-explorer__group-title">Asia</h3>
+                      <div class="map-explorer__links">
+                        <a href="/travel-guides/tokyo/">Tokyo travel guide</a>
+                        <a href="/travel-guides/bangkok/">Bangkok travel guide</a>
+                        <a href="/travel-guides/dubai/">Dubai travel guide</a>
+                      </div>
+                    </div>
+
+                    <div class="map-explorer__group">
+                      <h3 class="map-explorer__group-title">North America</h3>
+                      <div class="map-explorer__links">
+                        <a href="/travel-guides/new-york/">New York travel guide</a>
+                        <a href="/travel-guides/quebec-city/">Quebec City travel guide</a>
+                      </div>
+                    </div>
+
+                    <div class="map-explorer__group">
+                      <h3 class="map-explorer__group-title">Core planning hubs</h3>
+                      <div class="map-explorer__links">
+                        <a href="/things-to-do/">Things to Do hub</a>
+                        <a href="/itinerary/">Itinerary hub</a>
+                        <a href="/transport/">Transport hub</a>
+                        <a href="/hotels/">Hotels hub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="map-explorer__footer">
+                  <a class="map-explorer__cta map-explorer__cta--primary" href="/travel-guides/">
+                    Open all travel guides
+                  </a>
+                  <p class="map-explorer__note">
+                    Keep the text links below the map for clean internal linking and crawlability.
+                  </p>
                 </div>
               </div>
             </section>
