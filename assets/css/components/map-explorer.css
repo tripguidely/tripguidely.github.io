@@ -464,3 +464,59 @@
   white-space:nowrap;
   border:0;
 }
+
+.map-explorer__markers .map-city-marker__pulse{
+  fill:rgba(18,207,208,.18);
+  stroke:none !important;
+  animation:mapMarkerPulse 2.2s ease-in-out infinite;
+}
+
+.map-explorer__markers .map-city-marker__outer{
+  fill:#12cfd0;
+  stroke:#083344 !important;
+  stroke-width:2 !important;
+}
+
+.map-explorer__markers .map-city-marker__inner{
+  fill:#ffffff;
+  stroke:none !important;
+}
+
+.map-explorer__markers .map-city-marker__label{
+  fill:var(--map-text);
+  font-size:22px;
+  font-weight:800;
+  paint-order:stroke;
+  stroke:rgba(255,255,255,.9);
+  stroke-width:4px;
+  stroke-linejoin:round;
+  pointer-events:none;
+}
+
+.map-explorer__markers .map-city-marker:hover .map-city-marker__outer,
+.map-explorer__markers .map-city-marker:focus .map-city-marker__outer{
+  fill:#1fa1b5;
+}
+
+.map-explorer__markers .map-city-marker:focus-visible{
+  outline:none;
+}
+
+@keyframes mapMarkerPulse{
+  0%{
+    opacity:.55;
+    transform-origin:center;
+  }
+  50%{
+    opacity:.15;
+  }
+  100%{
+    opacity:.55;
+  }
+}
+
+@media (max-width:720px){
+  .map-explorer__markers .map-city-marker__label{
+    font-size:18px;
+  }
+}
