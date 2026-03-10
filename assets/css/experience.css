@@ -1,0 +1,219 @@
+/* ==========================================================================
+   TripGuidely experience.css
+   Activity / experience page components
+   - Works on top of /assets/css/styles.css
+   - For comparison tables, offer cards, quick links, and hero tuning
+   ========================================================================== */
+
+/* 1) Hero tuning ----------------------------------------------------------- */
+.hero.hero-drift{
+  --hero-min: 760px;
+  --hero-min-m: 660px;
+  --hero-pos-x: 50%;
+  --hero-pos-y: 46%;
+}
+
+.hero-copy{
+  max-width: 780px;
+}
+
+.hero-copy .actions{
+  margin-top: 18px;
+}
+
+.hero-copy .btn{
+  backdrop-filter: blur(8px);
+}
+
+.hero-copy .btn:not(.primary){
+  background: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.24);
+}
+
+/* 2) Offer comparison table ------------------------------------------------ */
+.offer-table{
+  width:100%;
+  border-collapse: collapse;
+  border-spacing:0;
+  overflow:hidden;
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:16px;
+  box-shadow: var(--shadow3);
+  background:#ffffff;
+}
+
+.offer-table th,
+.offer-table td{
+  padding:14px 14px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid rgba(15,23,42,.08);
+}
+
+.offer-table th{
+  font-size:.92rem;
+  color:var(--muted2);
+  background:linear-gradient(180deg, rgba(248,250,252,.96), rgba(255,255,255,1));
+  font-weight:900;
+}
+
+.offer-table tr:last-child td{
+  border-bottom:0;
+}
+
+.offer-table td strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--text);
+}
+
+.offer-table td span{
+  color:var(--muted2);
+  font-size:.94rem;
+}
+
+/* 3) Highlight chips ------------------------------------------------------- */
+.chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0 0;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 11px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#ffffff;
+  box-shadow: var(--shadow3);
+  color:var(--muted2);
+  font-size:.9rem;
+  font-weight:800;
+}
+
+.chip i{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--turq), var(--sand));
+  display:inline-block;
+}
+
+/* 4) Mobile offer cards ---------------------------------------------------- */
+.offer-stack{
+  display:grid;
+  gap:12px;
+}
+
+.offer-card{
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow: var(--shadow3);
+  padding:16px;
+}
+
+.offer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  margin-bottom:8px;
+}
+
+.offer-top strong{
+  display:block;
+  color:var(--text);
+  font-size:1.03rem;
+}
+
+.offer-tag{
+  flex:0 0 auto;
+  padding:8px 10px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:900;
+  letter-spacing:.03em;
+  color:var(--text);
+  border:1px solid rgba(15,23,42,.10);
+  background:linear-gradient(135deg, rgba(18,207,208,.12), rgba(244,162,97,.12));
+}
+
+.offer-meta{
+  color:var(--muted2);
+  font-size:.95rem;
+  margin:0 0 10px;
+}
+
+.offer-points{
+  display:grid;
+  gap:8px;
+  margin:0 0 14px;
+  padding-left:0;
+  list-style:none;
+}
+
+.offer-points li{
+  position:relative;
+  padding-left:24px;
+  margin:0;
+  color:var(--muted);
+}
+
+.offer-points li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:12px;
+  height:12px;
+  border-radius:999px;
+  border:1px solid rgba(18,207,208,.26);
+  background:linear-gradient(135deg, rgba(18,207,208,.22), rgba(244,162,97,.18));
+}
+
+.aside-cta .btn,
+.offer-card .btn{
+  width:100%;
+}
+
+/* 5) Quick links ----------------------------------------------------------- */
+.quick-links{
+  display:grid;
+  gap:10px;
+  margin-top:12px;
+}
+
+.quick-links a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:850;
+  padding:12px 13px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#ffffff;
+  box-shadow: var(--shadow3);
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.quick-links a:hover{
+  transform:translateY(-1px);
+  box-shadow: var(--shadow2);
+  border-color: rgba(18,207,208,.28);
+}
+
+/* 6) Responsive switches --------------------------------------------------- */
+@media (max-width: 900px){
+  .offer-table{
+    display:none;
+  }
+}
+
+@media (min-width: 901px){
+  .offer-stack{
+    display:none;
+  }
+}
