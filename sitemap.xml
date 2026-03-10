@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-core.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-core.xml</loc>
     <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-bangkok.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-bangkok.xml</loc>
     <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-dubai.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-dubai.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-london.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-london.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-new-york.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-new-york.xml</loc>
     <lastmod>2026-03-06</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-paris.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-paris.xml</loc>
     <lastmod>2026-03-06</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-quebec-city.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-quebec-city.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-rome.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-rome.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-tokyo.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-tokyo.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-esim.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-esim.xml</loc>
     <lastmod>2026-03-08</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tripguidely.github.io/sitemaps/sitemap-cruises.xml</loc>
+    <loc>https://tripguidely.github.io/sitemap-cruises.xml</loc>
     <lastmod>2026-03-06</lastmod>
   </sitemap>
 </sitemapindex>
