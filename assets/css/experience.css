@@ -3,6 +3,7 @@
    Activity / experience page components
    - Works on top of /assets/css/styles.css
    - For comparison tables, offer cards, quick links, and hero tuning
+   - Updated for stronger hero readability on experience pages
    ========================================================================== */
 
 /* 1) Hero tuning ----------------------------------------------------------- */
@@ -11,6 +12,20 @@
   --hero-min-m: 660px;
   --hero-pos-x: 50%;
   --hero-pos-y: 46%;
+}
+
+.hero.hero-drift .hero-overlay{
+  background:
+    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.12), transparent 60%),
+    radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.12), transparent 62%),
+    linear-gradient(
+      180deg,
+      rgba(2,6,23,.56) 0%,
+      rgba(2,6,23,.36) 34%,
+      rgba(2,6,23,.24) 60%,
+      rgba(2,6,23,.50) 100%
+    );
+  opacity: 1;
 }
 
 .hero-copy{
@@ -28,6 +43,45 @@
 .hero-copy .btn:not(.primary){
   background: rgba(255,255,255,.92);
   border-color: rgba(255,255,255,.24);
+}
+
+.hero.hero-drift .hero-copy p:not(.kicker):not(.lede){
+  color: rgba(255,255,255,.88);
+}
+
+.hero.hero-drift .trust-item{
+  background: rgba(255,255,255,.94);
+  border-color: rgba(255,255,255,.22);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 760px){
+  .hero.hero-drift{
+    --hero-pos-x: 52%;
+    --hero-pos-y: 44%;
+  }
+
+  .hero.hero-drift .hero-overlay{
+    background:
+      radial-gradient(760px 420px at 12% 0%, rgba(18,207,208,.10), transparent 60%),
+      radial-gradient(760px 420px at 88% 8%, rgba(244,162,97,.10), transparent 62%),
+      linear-gradient(
+        180deg,
+        rgba(2,6,23,.64) 0%,
+        rgba(2,6,23,.42) 36%,
+        rgba(2,6,23,.28) 62%,
+        rgba(2,6,23,.56) 100%
+      );
+  }
+
+  .chip-row{
+    gap:10px;
+  }
+
+  .chip{
+    width:100%;
+    justify-content:flex-start;
+  }
 }
 
 /* 2) Offer comparison table ------------------------------------------------ */
