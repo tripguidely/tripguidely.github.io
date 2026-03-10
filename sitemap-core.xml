@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Root -->
+  <url>
+    <loc>https://tripguidely.github.io/</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://tripguidely.github.io/about/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/contact/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/disclosure/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/privacy-policy/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Main hubs -->
+  <url>
+    <loc>https://tripguidely.github.io/cruises/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/hotels/</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/car-rental/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/esim/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/transport/</loc>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+
+  <!-- Travel guides -->
+  <url>
+    <loc>https://tripguidely.github.io/travel-guides/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+
+</urlset>
