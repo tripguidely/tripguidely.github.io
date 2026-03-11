@@ -6,49 +6,73 @@
       name: "New York",
       x: 405,
       y: 305,
+      labelDx: 14,
+      labelDy: -10,
       url: "/things-to-do/new-york/"
     },
     {
-      name: "Paris",
-      x: 980,
-      y: 235,
-      url: "/things-to-do/paris/"
+      name: "Las Vegas",
+      x: 382,
+      y: 360,
+      labelDx: 14,
+      labelDy: -10,
+      url: "/things-to-do/las-vegas/"
+    },
+    {
+      name: "Quebec City",
+      x: 428,
+      y: 248,
+      labelDx: 14,
+      labelDy: -10,
+      url: "/things-to-do/quebec-city/"
     },
     {
       name: "London",
-      x: 955,
-      y: 215,
+      x: 952,
+      y: 214,
+      labelDx: 10,
+      labelDy: -12,
       url: "/things-to-do/london/"
     },
     {
+      name: "Paris",
+      x: 982,
+      y: 234,
+      labelDx: 10,
+      labelDy: 18,
+      url: "/things-to-do/paris/"
+    },
+    {
       name: "Rome",
-      x: 1025,
-      y: 265,
+      x: 1020,
+      y: 262,
+      labelDx: 10,
+      labelDy: 18,
       url: "/things-to-do/rome/"
     },
     {
       name: "Dubai",
-      x: 1165,
-      y: 350,
+      x: 1160,
+      y: 348,
+      labelDx: 12,
+      labelDy: -12,
       url: "/things-to-do/dubai/"
-    },
-    {
-      name: "Tokyo",
-      x: 1570,
-      y: 320,
-      url: "/things-to-do/tokyo/"
     },
     {
       name: "Bangkok",
       x: 1360,
       y: 470,
+      labelDx: 12,
+      labelDy: -12,
       url: "/things-to-do/bangkok/"
     },
     {
-      name: "Quebec City",
-      x: 430,
-      y: 250,
-      url: "/things-to-do/quebec-city/"
+      name: "Tokyo",
+      x: 1568,
+      y: 320,
+      labelDx: 14,
+      labelDy: -10,
+      url: "/things-to-do/tokyo/"
     }
   ];
 
@@ -136,8 +160,8 @@
     inner.setAttribute("class", "map-city-marker__inner");
 
     const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    label.setAttribute("x", city.x + 14);
-    label.setAttribute("y", city.y - 10);
+    label.setAttribute("x", city.x + (city.labelDx ?? 14));
+    label.setAttribute("y", city.y + (city.labelDy ?? -10));
     label.setAttribute("class", "map-city-marker__label");
     label.textContent = city.name;
 
