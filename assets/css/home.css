@@ -1,11 +1,12 @@
 /* ==========================================================================
-   TripGuidely home.css (HOME ONLY) — UPDATED (v4)
+   TripGuidely home.css (HOME ONLY) — UPDATED (v5)
    - Scope: ONLY body[data-page="home"]
    - Synced with current home HTML
    - HERO: targets .hero-tool-* structure (not old .hero-panel)
    - HERO mobile: guaranteed side gutters + safe-area support
    - Top destinations: fixed layout, 2 cols desktop / 1 col mobile
    - Better icon alignment + consistent spacing
+   - NEW: homepage map moved before footer in a wider dedicated container
    ========================================================================== */
 
 /* -----------------------------
@@ -233,7 +234,47 @@ body[data-page="home"] .city-arrow{
 }
 
 /* -----------------------------
-   3) Small polish
+   3) Homepage map band
+   - Dedicated wider container before footer
+   ----------------------------- */
+body[data-page="home"] .home-map-band{
+  margin:72px 0 28px;
+  padding:0 20px;
+}
+
+body[data-page="home"] .home-map-wrap{
+  width:min(1400px, 100%);
+  margin:0 auto;
+}
+
+body[data-page="home"] .home-map-wrap .map-explorer{
+  margin:0;
+}
+
+body[data-page="home"] .home-map-wrap .map-explorer__shell{
+  box-shadow:
+    0 22px 56px rgba(2,6,23,.10),
+    0 0 0 1px rgba(255,255,255,.50);
+}
+
+@media (min-width: 1280px){
+  body[data-page="home"] .home-map-wrap .map-explorer__canvas,
+  body[data-page="home"] .home-map-wrap .map-explorer__loading,
+  body[data-page="home"] .home-map-wrap .map-explorer__svg{
+    min-height:420px;
+  }
+}
+
+@media (max-width: 760px){
+  body[data-page="home"] .home-map-band{
+    margin:48px 0 20px;
+    padding-left:max(16px, env(safe-area-inset-left));
+    padding-right:max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* -----------------------------
+   4) Small polish
    ----------------------------- */
 body[data-page="home"] .section-title p{
   color: var(--muted2);
