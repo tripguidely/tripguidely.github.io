@@ -4,72 +4,72 @@
   const cities = [
     {
       name: "New York",
-      x: 575,
-      y: 285,
+      lat: 40.7128,
+      lon: -74.0060,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/new-york/"
     },
     {
       name: "Las Vegas",
-      x: 430,
-      y: 345,
+      lat: 36.1699,
+      lon: -115.1398,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/las-vegas/"
     },
     {
       name: "Quebec City",
-      x: 545,
-      y: 210,
+      lat: 46.8139,
+      lon: -71.2080,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/quebec-city/"
     },
     {
       name: "London",
-      x: 960,
-      y: 235,
+      lat: 51.5074,
+      lon: -0.1278,
       labelDx: 10,
       labelDy: -12,
       url: "/things-to-do/london/"
     },
     {
       name: "Paris",
-      x: 990,
-      y: 265,
+      lat: 48.8566,
+      lon: 2.3522,
       labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/paris/"
     },
     {
       name: "Rome",
-      x: 1040,
-      y: 315,
+      lat: 41.9028,
+      lon: 12.4964,
       labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/rome/"
     },
     {
       name: "Dubai",
-      x: 1310,
-      y: 420,
+      lat: 25.2048,
+      lon: 55.2708,
       labelDx: 12,
       labelDy: -12,
       url: "/things-to-do/dubai/"
     },
     {
       name: "Bangkok",
-      x: 1390,
-      y: 420,
+      lat: 13.7563,
+      lon: 100.5018,
       labelDx: 12,
       labelDy: -12,
       url: "/things-to-do/bangkok/"
     },
     {
       name: "Tokyo",
-      x: 1595,
-      y: 305,
+      lat: 35.6762,
+      lon: 139.6503,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/tokyo/"
@@ -95,19 +95,28 @@
       if (!svg) throw new Error("Invalid SVG.");
 
       const rawViewBox = svg.getAttribute("viewBox") || svg.getAttribute("viewbox");
-      const widthAttr = svg.getAttribute("width");
-      const heightAttr = svg.getAttribute("height");
+      const widthAttr = parseFloat(svg.getAttribute("width")) || 2000;
+      const heightAttr = parseFloat(svg.getAttribute("height")) || 857;
 
       if (rawViewBox) {
         svg.setAttribute("viewBox", rawViewBox);
-      } else if (widthAttr && heightAttr) {
-        svg.setAttribute("viewBox", `0 0 ${parseFloat(widthAttr)} ${parseFloat(heightAttr)}`);
+      } else {
+        svg.setAttribute("viewBox", `0 0 ${widthAttr} ${heightAttr}`);
       }
 
       svg.removeAttribute("viewbox");
       svg.removeAttribute("width");
       svg.removeAttribute("height");
       svg.removeAttribute("baseprofile");
+
+      const viewBox = (svg.getAttribute("viewBox") || `0 0 ${widthAttr} ${heightAttr}`)
+        .split(/\s+/)
+        .map(Number);
+
+      const vbX = viewBox[0];
+      const vbY = viewBox[1];
+      const vbW = viewBox[2];
+      const vbH = viewBox[3];
 
       svg.classList.add("map-explorer__svg");
       svg.setAttribute("aria-label", "World map with TripGuidely city markers");
@@ -118,7 +127,16 @@
       markerLayer.setAttribute("class", "map-explorer__markers");
 
       cities.forEach((city) => {
-        const marker = createMarker(city, canvas, tooltip);
+        const point = latLonToSvg(city.lat, city.lon, vbX, vbY, vbW, vbH);
+        const marker = createMarker(
+          {
+            ...city,
+            x: point.x,
+            y: point.y
+          },
+          canvas,
+          tooltip
+        );
         markerLayer.appendChild(marker);
       });
 
@@ -131,6 +149,12 @@
       console.error(error);
       loading.textContent = "Map unavailable. Check /assets/images/ui/world-map.svg and /assets/js/home-map.js.";
     });
+
+  function latLonToSvg(lat, lon, vbX, vbY, vbW, vbH) {
+    const x = vbX + ((lon + 180) / 360) * vbW;
+    const y = vbY + ((90 - lat) / 180) * vbH;
+    return { x, y };
+  }
 
   function createMarker(city, canvas, tooltip) {
     const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
