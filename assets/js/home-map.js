@@ -4,24 +4,24 @@
   const cities = [
     {
       name: "New York",
-      x: 405,
-      y: 305,
+      x: 505,
+      y: 278,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/new-york/"
     },
     {
       name: "Las Vegas",
-      x: 382,
-      y: 360,
+      x: 400,
+      y: 320,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/las-vegas/"
     },
     {
       name: "Quebec City",
-      x: 428,
-      y: 248,
+      x: 470,
+      y: 230,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/quebec-city/"
