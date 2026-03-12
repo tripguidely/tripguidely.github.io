@@ -1,17 +1,18 @@
 /* =========================================================
    Hero buttons + quick cards only
    Do NOT change the big hero block behind the H1
+   Scoped only to the hero so content buttons below stay normal
    ========================================================= */
 
 /* Buttons row */
-.actions{
+.hero-tool-wrap .actions{
   display:flex;
   flex-wrap:wrap;
   gap:14px;
   margin-top:14px;
 }
 
-.actions .btn{
+.hero-tool-wrap .actions .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -31,14 +32,14 @@
   backdrop-filter:blur(14px) saturate(140%);
 }
 
-.actions .btn:hover{
+.hero-tool-wrap .actions .btn:hover{
   transform:translateY(-1px);
   box-shadow:
     0 22px 54px rgba(2,6,23,.22),
     inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-.actions .btn.primary{
+.hero-tool-wrap .actions .btn.primary{
   background:linear-gradient(135deg, #16d4d6, #11bfc1);
   color:#ffffff;
   border:1px solid rgba(255,255,255,.20);
@@ -47,14 +48,14 @@
     inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-.actions .btn.primary:hover{
+.hero-tool-wrap .actions .btn.primary:hover{
   transform:translateY(-1px);
   box-shadow:
     0 22px 54px rgba(18,207,208,.34),
     inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-.actions .btn .pill{
+.hero-tool-wrap .actions .btn .pill{
   width:34px;
   height:34px;
   border-radius:999px;
@@ -66,20 +67,20 @@
   font-size:1rem;
 }
 
-.actions .btn.primary .pill{
+.hero-tool-wrap .actions .btn.primary .pill{
   background:rgba(255,255,255,.16);
   border:1px solid rgba(255,255,255,.22);
 }
 
 /* Quick cards only */
-.quick-picks{
+.hero-tool-wrap .quick-picks{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:14px;
   margin-top:20px;
 }
 
-.quick-pick{
+.hero-tool-wrap .quick-pick{
   padding:18px 18px 16px;
   border-radius:22px;
   background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.10));
@@ -91,7 +92,7 @@
   backdrop-filter:blur(14px) saturate(140%);
 }
 
-.quick-pick strong{
+.hero-tool-wrap .quick-pick strong{
   display:block;
   margin-bottom:8px;
   font-size:1.02rem;
@@ -100,7 +101,7 @@
   letter-spacing:-.01em;
 }
 
-.quick-pick span{
+.hero-tool-wrap .quick-pick span{
   display:block;
   font-size:.98rem;
   line-height:1.55;
@@ -108,23 +109,23 @@
 }
 
 @media (max-width:1100px){
-  .quick-picks{
+  .hero-tool-wrap .quick-picks{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
 @media (max-width:760px){
-  .actions .btn{
+  .hero-tool-wrap .actions .btn{
     width:100%;
   }
 
-  .quick-picks{
+  .hero-tool-wrap .quick-picks{
     grid-template-columns:1fr;
     gap:10px;
     margin-top:14px;
   }
 
-  .quick-pick{
+  .hero-tool-wrap .quick-pick{
     padding:16px;
     border-radius:18px;
   }
