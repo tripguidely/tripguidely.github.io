@@ -4,72 +4,72 @@
   const cities = [
     {
       name: "New York",
-      x: 465,
-      y: 328,
+      x: 575,
+      y: 285,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/new-york/"
     },
     {
       name: "Las Vegas",
-      x: 360,
-      y: 390,
+      x: 430,
+      y: 345,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/las-vegas/"
     },
     {
       name: "Quebec City",
-      x: 430,
-      y: 255,
+      x: 545,
+      y: 210,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/quebec-city/"
     },
     {
       name: "London",
-      x: 955,
-      y: 228,
-      labelDx: 8,
+      x: 1025,
+      y: 190,
+      labelDx: 10,
       labelDy: -12,
       url: "/things-to-do/london/"
     },
     {
       name: "Paris",
-      x: 985,
-      y: 258,
-      labelDx: 8,
+      x: 1055,
+      y: 225,
+      labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/paris/"
     },
     {
       name: "Rome",
-      x: 1025,
-      y: 300,
-      labelDx: 8,
+      x: 1100,
+      y: 275,
+      labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/rome/"
     },
     {
       name: "Dubai",
-      x: 1170,
-      y: 425,
+      x: 1310,
+      y: 420,
       labelDx: 12,
       labelDy: -12,
       url: "/things-to-do/dubai/"
     },
     {
       name: "Bangkok",
-      x: 1395,
-      y: 600,
+      x: 1500,
+      y: 500,
       labelDx: 12,
       labelDy: -12,
       url: "/things-to-do/bangkok/"
     },
     {
       name: "Tokyo",
-      x: 1600,
-      y: 385,
+      x: 1700,
+      y: 340,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/tokyo/"
