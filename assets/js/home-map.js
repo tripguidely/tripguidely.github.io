@@ -28,24 +28,24 @@
     },
     {
       name: "London",
-      x: 1025,
-      y: 190,
+      x: 960,
+      y: 235,
       labelDx: 10,
       labelDy: -12,
       url: "/things-to-do/london/"
     },
     {
       name: "Paris",
-      x: 1055,
-      y: 225,
+      x: 990,
+      y: 265,
       labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/paris/"
     },
     {
       name: "Rome",
-      x: 1100,
-      y: 275,
+      x: 1040,
+      y: 315,
       labelDx: 10,
       labelDy: 18,
       url: "/things-to-do/rome/"
@@ -60,16 +60,16 @@
     },
     {
       name: "Bangkok",
-      x: 1500,
-      y: 500,
+      x: 1390,
+      y: 420,
       labelDx: 12,
       labelDy: -12,
       url: "/things-to-do/bangkok/"
     },
     {
       name: "Tokyo",
-      x: 1700,
-      y: 340,
+      x: 1595,
+      y: 305,
       labelDx: 14,
       labelDy: -10,
       url: "/things-to-do/tokyo/"
