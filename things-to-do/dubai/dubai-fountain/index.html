@@ -17,7 +17,7 @@
   <meta property="og:description" content="See where to watch Dubai Fountain, compare the Lake Ride and Boardwalk, and plan the best Downtown Dubai itinerary." />
   <meta property="og:url" content="https://tripguidely.github.io/things-to-do/dubai/dubai-fountain/" />
   <meta property="og:site_name" content="TripGuidely" />
-  <meta property="og:locale" content="en_CA" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/dubai-fountain-1200x630.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -27,6 +27,7 @@
   <meta name="twitter:title" content="Dubai Fountain: Best Viewing Spots, Lake Ride & Visitor Guide" />
   <meta name="twitter:description" content="Find the best Dubai Fountain viewing spots, compare the Lake Ride and Boardwalk, and plan nearby Downtown Dubai attractions." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/dubai-fountain-1200x630.jpg" />
+  <meta name="twitter:image:alt" content="Dubai Fountain show in Downtown Dubai with water jets in front of Burj Khalifa" />
 
   <link
     rel="preload"
@@ -37,6 +38,33 @@
   />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #0f172a;
+      box-shadow: 0 18px 40px rgba(2, 6, 23, 0.22);
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-note {
+      margin-top: 12px;
+      color: var(--muted, #94a3b8);
+      font-size: 0.95rem;
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -122,6 +150,23 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
+    "@type":"VideoObject",
+    "name":"Amazing Dancing Fountain Show in Dubai",
+    "description":"Official-style overview video showing the Dubai Fountain performance in Downtown Dubai with the Burj Khalifa backdrop.",
+    "thumbnailUrl":"https://i.ytimg.com/vi/8c68Adj-PtU/maxresdefault.jpg",
+    "embedUrl":"https://www.youtube.com/embed/8c68Adj-PtU",
+    "contentUrl":"https://www.youtube.com/watch?v=8c68Adj-PtU",
+    "uploadDate":"2015-03-29",
+    "publisher":{
+      "@type":"Organization",
+      "name":"YouTube"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
     "@type":"Article",
     "headline":"Dubai Fountain: Best Viewing Spots, Lake Ride & Visitor Guide",
     "description":"Plan your Dubai Fountain visit with the best viewing spots, Boardwalk and Lake Ride options, best time to go, and nearby Downtown Dubai attractions.",
@@ -144,7 +189,7 @@
       "@type":"WebPage",
       "@id":"https://tripguidely.github.io/things-to-do/dubai/dubai-fountain/"
     },
-    "inLanguage":"en-CA"
+    "inLanguage":"en"
   }
   </script>
 
@@ -167,6 +212,22 @@
         "acceptedAnswer":{
           "@type":"Answer",
           "text":"The best way depends on your goal. Free viewing areas are best for most visitors, while the Lake Ride or Boardwalk are better if you want a closer, more immersive paid experience."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is the best time to see Dubai Fountain?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"For most first-time visitors, the best time to see Dubai Fountain is around sunset into the evening, when the Downtown Dubai skyline lights add more atmosphere and the fountain fits naturally into a wider evening itinerary."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Where are the best free viewing spots for Dubai Fountain?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"For most visitors, the best free viewing spots are along the public waterfront promenade in Downtown Dubai near Burj Lake, where you can watch the show without paying for a closer add-on experience."
         }
       },
       {
@@ -206,15 +267,20 @@
   <main id="main" class="main">
     <section class="hero hero-full" aria-label="Dubai Fountain hero">
       <div class="hero-bg">
-        <img
-          src="/assets/images/hero/dubai-fountain-1600x900.webp"
-          srcset="/assets/images/hero/dubai-fountain-800x450.webp 800w, /assets/images/hero/dubai-fountain-1600x900.webp 1600w, /assets/images/hero/dubai-fountain-2400x1350.webp 2400w"
-          sizes="100vw"
-          width="1600"
-          height="900"
-          alt="Dubai Fountain show in Downtown Dubai with water jets and skyline lights"
-          fetchpriority="high"
-        />
+        <picture>
+          <source srcset="/assets/images/hero/dubai-fountain-2400x1350.webp" media="(min-width: 1200px)" />
+          <source srcset="/assets/images/hero/dubai-fountain-1600x900.webp" media="(min-width: 768px)" />
+          <img
+            src="/assets/images/hero/dubai-fountain-1200x675.webp"
+            srcset="/assets/images/hero/dubai-fountain-800x450.webp 800w, /assets/images/hero/dubai-fountain-1200x675.webp 1200w, /assets/images/hero/dubai-fountain-1600x900.webp 1600w, /assets/images/hero/dubai-fountain-2400x1350.webp 2400w"
+            sizes="100vw"
+            width="1200"
+            height="675"
+            alt="Dubai Fountain show in Downtown Dubai with water jets, skyline lights, and a traditional lake boat"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -389,6 +455,30 @@
 
           <hr />
 
+          <section id="video" aria-labelledby="dubai-fountain-video">
+            <div class="section-title">
+              <h2 id="dubai-fountain-video">Watch Dubai Fountain in Action</h2>
+              <p>A quick look at the atmosphere, fountain choreography, and Burj Khalifa backdrop before you choose your viewing option.</p>
+            </div>
+
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/8c68Adj-PtU?si=UflUh5JfaTGfy9E6"
+                title="Dubai Fountain show in Downtown Dubai"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-note">
+              This video gives a strong overview of the fountain show atmosphere before comparing the Lake Ride, Boardwalk, and free public viewing spots.
+            </p>
+          </section>
+
+          <hr />
+
           <section id="best-spots">
             <div class="section-title">
               <h2>Best viewing spots for Dubai Fountain</h2>
@@ -495,22 +585,55 @@
           <section id="best-time">
             <div class="section-title">
               <h2>Best time to see Dubai Fountain</h2>
-              <p>Most visitors should treat it as an evening-friendly attraction.</p>
+              <p>One of the strongest long-tail angles for this page and one of the easiest ways to plan a better visit.</p>
             </div>
 
             <p>
-              The fountain works best when built into an <strong>evening Downtown Dubai plan</strong>. That is when the wider area feels most atmospheric and when the fountain pairs most naturally with skyline lights and nearby attractions.
+              For most travelers, the <strong>best time to see Dubai Fountain</strong> is around <strong>sunset into the evening</strong>.
+              That is usually when the wider <strong>Downtown Dubai</strong> setting feels most atmospheric and when the show pairs best with skyline lights, waterfront views, and nearby attractions.
             </p>
 
             <p>
-              If your goal is a quick, convenient stop, plan it around another attraction in the same area rather than visiting only for the fountain.
+              In practical terms, Dubai Fountain works best when it is part of a broader evening route rather than your only activity of the day.
+              If you are already visiting <a href="/things-to-do/dubai/burj-khalifa/">Burj Khalifa</a> or spending time around Dubai Mall,
+              it becomes one of the easiest high-value stops to add without much extra planning.
             </p>
 
+            <h3>Best time for first-time visitors</h3>
+            <p>
+              If this is your first Dubai trip, aim for a visit shortly before sunset and stay into the evening.
+              This gives you daylight context for the area, then a stronger atmosphere once the lights of Downtown Dubai and the surrounding skyline come on.
+            </p>
+
+            <h3>Best time for photos and atmosphere</h3>
+            <p>
+              Early evening usually gives the best balance of skyline visibility, water reflections, and a more polished overall feel.
+              If your priority is a memorable visual stop rather than simply checking the fountain off your list, evening is usually the strongest choice.
+            </p>
+
+            <h3>Best free viewing strategy</h3>
+            <p>
+              If you are not booking the Lake Ride or Boardwalk, the best strategy is to arrive a bit earlier, choose a public waterfront viewing area,
+              watch the show, and then continue with the rest of your Downtown Dubai itinerary.
+              This is the most efficient option for travelers who want the experience without turning it into a major time commitment.
+            </p>
+
+            <h3>Best paid viewing timing</h3>
+            <p>
+              Paid options such as the <strong>Lake Ride</strong> or <strong>Boardwalk</strong> make the most sense in the evening,
+              when the fountain feels more like a featured experience rather than a quick stop.
+              That is usually the point where paying for a closer view feels easier to justify.
+            </p>
+
+            <div class="callout">
+              <b>Best simple plan:</b> pair Dubai Fountain with Burj Khalifa or Dubai Mall, arrive around sunset, stay into the evening, and use a paid viewing option only if you want the fountain itself to feel like a featured activity.
+            </div>
+
             <ul class="checklist">
-              <li>Evening usually feels strongest for atmosphere and skyline context.</li>
-              <li>Best used as part of a wider Downtown Dubai route rather than on its own.</li>
-              <li>Works especially well after Burj Khalifa or during a Dubai Mall visit.</li>
-              <li>Paid viewing makes the most sense when you want to elevate the stop beyond a quick free watch.</li>
+              <li>Sunset into evening is usually the best time for first-time visitors.</li>
+              <li>Evening gives the strongest skyline atmosphere and visual payoff.</li>
+              <li>Free viewing is enough for most travelers unless closeness matters a lot.</li>
+              <li>The Lake Ride and Boardwalk make the most sense when treated as premium add-ons.</li>
             </ul>
           </section>
 
@@ -630,6 +753,16 @@
             </details>
 
             <details>
+              <summary>What is the best time to see Dubai Fountain?</summary>
+              <p>For most first-time visitors, the best time is around sunset into the evening, when the Downtown Dubai skyline lights add more atmosphere and the fountain fits naturally into a wider evening itinerary.</p>
+            </details>
+
+            <details>
+              <summary>Where are the best free viewing spots for Dubai Fountain?</summary>
+              <p>For most visitors, the best free viewing spots are along the public waterfront promenade near Burj Lake, where you can watch the show without paying for a closer add-on experience.</p>
+            </details>
+
+            <details>
               <summary>Is Dubai Fountain Lake Ride worth it?</summary>
               <p>It can be worth it if you want the fountain to feel like a more memorable paid experience instead of just a quick free stop from the public viewing area.</p>
             </details>
@@ -720,6 +853,14 @@
               <div>
                 <strong>Why visit</strong>
                 <span>Main reasons this attraction works.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+
+            <a class="link-card" href="#video">
+              <div>
+                <strong>Watch the show</strong>
+                <span>Preview the atmosphere before choosing an option.</span>
               </div>
               <span class="arrow">→</span>
             </a>
