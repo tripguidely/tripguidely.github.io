@@ -52,7 +52,7 @@
       /assets/images/hero/aquaventure-waterpark-dubai-1200x675.webp 1200w,
       /assets/images/hero/aquaventure-waterpark-dubai-1600x900.webp 1600w,
       /assets/images/hero/aquaventure-waterpark-dubai-2400x1350.webp 2400w"
-    imagesizes="100vw" />
+    imagesizes="(max-width: 900px) 100vw, 1200px" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/site.js"></script>
@@ -73,17 +73,18 @@
             /assets/images/hero/aquaventure-waterpark-dubai-1200x675.webp 1200w,
             /assets/images/hero/aquaventure-waterpark-dubai-1600x900.webp 1600w,
             /assets/images/hero/aquaventure-waterpark-dubai-2400x1350.webp 2400w"
-          sizes="100vw"
+          sizes="(max-width: 900px) 100vw, 1200px"
           width="1600"
           height="900"
           alt="Aerial view of Aquaventure Waterpark and Atlantis The Palm in Dubai"
-          fetchpriority="high"
-          decoding="async" />
+          loading="eager"
+          decoding="async"
+          fetchpriority="high" />
       </div>
-      <div class="hero-overlay"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="hero-inner wrap">
-        <div class="hero-copy">
+      <div class="wrap hero-inner">
+        <div class="hero-tool-wrap">
           <p class="kicker"><span class="dot"></span>Dubai attraction guide</p>
           <h1>Aquaventure Waterpark Dubai Tickets: Best Pass, Tips &amp; Visitor Guide</h1>
           <p class="lede">
@@ -121,6 +122,8 @@
               <span>Start with the standard Aquaventure ticket, then compare combo add-ons only if they fit your plan</span>
             </div>
           </div>
+
+          <p class="meta">Practical attraction guide for TripGuidely readers • Designed for families, first-time Atlantis visitors, and Dubai trip planners • Affiliate links may earn us a commission at no extra cost to you.</p>
         </div>
       </div>
     </section>
@@ -135,8 +138,6 @@
         <span>/</span>
         <span aria-current="page">Aquaventure Waterpark</span>
       </nav>
-
-      <p class="meta">Reviewed regularly for ticket-planning accuracy. Final inclusions, availability, and pricing should always be confirmed on the live booking page.</p>
 
       <div class="grid">
         <article class="card pad content">
@@ -162,6 +163,8 @@
               <b>Best use case:</b> choose Aquaventure when you want a high-energy resort attraction day with slides, pools, and beach time built into the same visit.
             </div>
           </section>
+
+          <hr />
 
           <section id="best-ticket">
             <div class="section-title">
@@ -232,6 +235,8 @@
             </p>
           </section>
 
+          <hr />
+
           <section id="included">
             <div class="section-title">
               <h2>What is included with Aquaventure tickets?</h2>
@@ -253,6 +258,8 @@
               <b>Best approach:</b> assume the standard ticket is the right baseline, then upgrade only when an extra inclusion clearly adds value to your day.
             </div>
           </section>
+
+          <hr />
 
           <section id="worth-it">
             <div class="section-title">
@@ -283,31 +290,37 @@
             </div>
           </section>
 
+          <hr />
+
           <section id="video">
             <div class="section-title">
-              <h2>See the park before you book</h2>
-              <p>Visitor video overview</p>
+              <h2>Watch the Aquaventure experience first</h2>
+              <p>A quick way to see the scale, atmosphere, and visitor experience before you book.</p>
             </div>
 
             <p>
-              Watching a visitor walkthrough can help you judge the scale of the park, the general atmosphere, and whether the ride mix fits your travel style before you book.
+              If you want a better feel for the attraction before choosing a ticket, this video gives a useful preview of the overall <strong>Aquaventure Waterpark</strong> experience. It helps readers understand the park size, the slide mix, and the kind of resort-style day they can expect at <strong>Atlantis Dubai</strong>.
             </p>
 
-            <div class="video-shell card">
-              <a
-                href="https://www.youtube.com/watch?v=jl1IPPEOPLI"
-                target="_blank"
-                rel="nofollow sponsored noopener"
-                aria-label="Watch Aquaventure Waterpark Dubai video on YouTube">
-                <img
-                  src="/assets/images/hero/aquaventure-waterpark-dubai-1200x675.webp"
-                  alt="Aquaventure Waterpark Dubai video preview"
-                  loading="lazy"
-                  width="1200"
-                  height="675" />
-              </a>
+            <div class="video-embed">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/jl1IPPEOPLI"
+                title="Aquaventure Waterpark Dubai visitor experience video"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
+
+            <p class="aff-note aff-note-lg">
+              Useful for first-time visitors who want to preview the park atmosphere and ride mix before booking.
+            </p>
           </section>
+
+          <hr />
 
           <section id="what-to-expect">
             <div class="section-title">
@@ -331,6 +344,8 @@
             </div>
           </section>
 
+          <hr />
+
           <section id="best-time">
             <div class="section-title">
               <h2>Best time to visit Aquaventure</h2>
@@ -348,6 +363,8 @@
               <li>Give yourself enough time to enjoy the park without rushing transport on and off Palm Jumeirah</li>
             </ul>
           </section>
+
+          <hr />
 
           <section id="tips">
             <div class="section-title">
@@ -399,6 +416,8 @@
             </div>
           </section>
 
+          <hr />
+
           <section id="how-to-get-there">
             <div class="section-title">
               <h2>How to get to Atlantis Dubai</h2>
@@ -419,6 +438,8 @@
               </a>
             </div>
           </section>
+
+          <hr />
 
           <section id="nearby">
             <div class="section-title">
@@ -464,6 +485,8 @@
               </a>
             </div>
           </section>
+
+          <hr />
 
           <section id="faq">
             <div class="section-title">
@@ -519,6 +542,54 @@
 
           <div class="callout">
             <b>Best booking move:</b> compare the standard ticket first, then consider combos only if they clearly improve your Dubai plan.
+          </div>
+
+          <hr />
+
+          <div class="section-title">
+            <h2>On this page</h2>
+          </div>
+
+          <div class="links">
+            <a class="link-card" href="#overview">
+              <div>
+                <strong>Overview</strong>
+                <span>What Aquaventure is and who it suits best.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+
+            <a class="link-card" href="#best-ticket">
+              <div>
+                <strong>Best ticket</strong>
+                <span>How to choose the right pass for your trip.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+
+            <a class="link-card" href="#video">
+              <div>
+                <strong>Video preview</strong>
+                <span>See the park atmosphere before booking.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+
+            <a class="link-card" href="#best-time">
+              <div>
+                <strong>Best time</strong>
+                <span>When the visit usually feels smoother.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+
+            <a class="link-card" href="#faq">
+              <div>
+                <strong>FAQ</strong>
+                <span>Quick answers before you book.</span>
+              </div>
+              <span class="arrow">→</span>
+            </a>
           </div>
 
           <hr />
@@ -693,12 +764,16 @@
       {
         "@type": "VideoObject",
         "@id": "https://tripguidely.github.io/things-to-do/dubai/aquaventure-waterpark/#video",
-        "name": "Atlantis Aquaventure Waterpark 2025, Dubai, Emirates (UAE) - All Major Slides",
-        "description": "Visitor video overview showing the scale, atmosphere, and major slides at Aquaventure Waterpark in Dubai.",
-        "url": "https://www.youtube.com/watch?v=jl1IPPEOPLI",
+        "name": "Aquaventure Waterpark Dubai visitor experience video",
+        "description": "Watch an Aquaventure Waterpark visitor experience video before booking tickets and planning your Atlantis Dubai visit.",
+        "thumbnailUrl": "https://i.ytimg.com/vi/jl1IPPEOPLI/hqdefault.jpg",
+        "uploadDate": "2025-01-01",
+        "embedUrl": "https://www.youtube.com/embed/jl1IPPEOPLI",
         "contentUrl": "https://www.youtube.com/watch?v=jl1IPPEOPLI",
-        "thumbnailUrl": "https://tripguidely.github.io/assets/images/hero/aquaventure-waterpark-dubai-1200x675.webp",
-        "uploadDate": "2025-01-01"
+        "publisher": {
+          "@type": "Organization",
+          "name": "YouTube"
+        }
       }
     ]
   }
