@@ -1,341 +1,132 @@
-/* ==========================================================================
-   yacht-charter.css
-   TripGuidely page-level overrides for yacht charter pages
-   Load AFTER /assets/css/styles.css
-   - Better hero readability over bright imagery
-   - Stronger text contrast
-   - Cleaner white glass card
-   - Better CTA visibility
-   - Slightly more premium content cards
-   ========================================================================== */
+/* =========================================================
+   Hero buttons + quick cards only
+   Do NOT change the big hero block behind the H1
+   Scoped only to the hero so content buttons below stay normal
+   ========================================================= */
 
-/* 1) Page-level tuning ---------------------------------------------------- */
-body[data-page^="yacht-charter"]{
-  background:
-    radial-gradient(980px 560px at 12% 0%, rgba(18,207,208,.12), transparent 58%),
-    radial-gradient(1100px 620px at 88% 8%, rgba(244,162,97,.14), transparent 62%),
-    linear-gradient(180deg, #f8fbfc, #ffffff);
+/* Buttons row */
+.hero-tool-wrap .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:14px;
 }
 
-/* 2) Hero: stronger readability ------------------------------------------ */
-body[data-page^="yacht-charter"] .hero.hero-full{
-  min-height: 760px;
-  border-bottom: 1px solid rgba(15,23,42,.08);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .hero-bg img{
-  object-position: 52% 34%;
-  filter: saturate(1.02) contrast(1.02);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .hero-overlay{
-  background:
-    linear-gradient(180deg, rgba(2,6,23,.44) 0%, rgba(2,6,23,.20) 22%, rgba(2,6,23,.10) 48%, rgba(2,6,23,.44) 100%),
-    linear-gradient(90deg, rgba(2,6,23,.34) 0%, rgba(2,6,23,.12) 36%, rgba(2,6,23,.10) 62%, rgba(2,6,23,.28) 100%),
-    radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.10), transparent 58%),
-    radial-gradient(940px 540px at 88% 6%, rgba(244,162,97,.10), transparent 62%);
-  opacity: 1;
-}
-
-/* 3) Hero spacing --------------------------------------------------------- */
-body[data-page^="yacht-charter"] .hero.hero-full .hero-inner{
-  padding-top: 84px;
-  padding-bottom: 74px;
-  align-items: center;
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-wrap{
-  width: min(100%, 1160px);
-  transform: none;
-}
-
-/* 4) Hero text hierarchy -------------------------------------------------- */
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-title,
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-sub,
-body[data-page^="yacht-charter"] .hero.hero-full .kicker,
-body[data-page^="yacht-charter"] .hero.hero-full h1,
-body[data-page^="yacht-charter"] .hero.hero-full .lede{
-  position: relative;
-  z-index: 2;
-  text-shadow:
-    0 2px 8px rgba(0,0,0,.22),
-    0 12px 30px rgba(0,0,0,.26);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-title{
-  margin-bottom: 8px;
-  font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem);
-  line-height: 1.2;
-  font-weight: 950;
-  color: rgba(255,255,255,.98);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-sub{
-  margin-bottom: 18px;
-  max-width: 72ch;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: rgba(241,245,249,.92);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .kicker{
-  color: rgba(226,232,240,.92);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full h1{
-  max-width: 12ch;
-  margin-bottom: 14px;
-  font-size: clamp(2.5rem, 1.7rem + 2.7vw, 4.2rem);
-  line-height: 1.04;
-  color: rgba(255,255,255,.99);
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .lede{
-  max-width: 63ch;
-  font-size: 1.08rem;
-  line-height: 1.68;
-  color: rgba(241,245,249,.92);
-}
-
-/* 5) Hero card shell ------------------------------------------------------ */
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-shell{
-  background: rgba(255,255,255,.88);
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 24px;
+.hero-tool-wrap .actions .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:20px;
+  font-weight:900;
+  font-size:1.02rem;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.10));
+  color:rgba(255,255,255,.96);
   box-shadow:
-    0 26px 70px rgba(2,6,23,.22),
-    0 0 0 1px rgba(255,255,255,.08);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+    0 18px 44px rgba(2,6,23,.18),
+    inset 0 1px 0 rgba(255,255,255,.16);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  backdrop-filter:blur(14px) saturate(140%);
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-pad{
-  padding: 20px 20px 18px;
+.hero-tool-wrap .actions .btn:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    0 22px 54px rgba(2,6,23,.22),
+    inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-/* 6) CTA clarity ---------------------------------------------------------- */
-body[data-page^="yacht-charter"] .hero.hero-full .actions{
-  gap: 12px;
-  margin-top: 12px;
+.hero-tool-wrap .actions .btn.primary{
+  background:linear-gradient(135deg, #16d4d6, #11bfc1);
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:
+    0 18px 44px rgba(18,207,208,.28),
+    inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .btn{
-  border-color: rgba(15,23,42,.10);
-  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+.hero-tool-wrap .actions .btn.primary:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    0 22px 54px rgba(18,207,208,.34),
+    inset 0 1px 0 rgba(255,255,255,.18);
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .btn:hover{
-  box-shadow: 0 18px 36px rgba(2,6,23,.12);
+.hero-tool-wrap .actions .btn .pill{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.18);
+  color:inherit;
+  font-size:1rem;
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .btn.primary{
-  box-shadow: 0 16px 36px rgba(18,207,208,.28);
+.hero-tool-wrap .actions .btn.primary .pill{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.22);
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .btn.primary:hover{
-  box-shadow: 0 20px 42px rgba(18,207,208,.36);
+/* Quick cards only */
+.hero-tool-wrap .quick-picks{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin-top:20px;
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .btn .pill{
-  background: rgba(255,255,255,.92);
+.hero-tool-wrap .quick-pick{
+  padding:18px 18px 16px;
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.10));
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:
+    0 18px 44px rgba(2,6,23,.18),
+    inset 0 1px 0 rgba(255,255,255,.16);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  backdrop-filter:blur(14px) saturate(140%);
 }
 
-/* 7) Trust row legibility ------------------------------------------------- */
-body[data-page^="yacht-charter"] .hero.hero-full .trust{
-  gap: 12px;
-  margin-top: 16px;
+.hero-tool-wrap .quick-pick strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:1.02rem;
+  font-weight:900;
+  color:rgba(255,255,255,.96);
+  letter-spacing:-.01em;
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .trust-item{
-  background: rgba(255,255,255,.84);
-  border: 1px solid rgba(15,23,42,.08);
-  box-shadow: 0 10px 22px rgba(2,6,23,.06);
+.hero-tool-wrap .quick-pick span{
+  display:block;
+  font-size:.98rem;
+  line-height:1.55;
+  color:rgba(226,232,240,.90);
 }
 
-body[data-page^="yacht-charter"] .hero.hero-full .trust-item b{
-  font-size: 1rem;
-}
-
-body[data-page^="yacht-charter"] .hero.hero-full .trust-item span{
-  color: #475569;
-}
-
-/* 8) Affiliate note in hero ---------------------------------------------- */
-body[data-page^="yacht-charter"] .hero.hero-full .aff-note{
-  color: rgba(241,245,249,.88);
-  text-shadow: 0 8px 20px rgba(0,0,0,.24);
-}
-
-/* 9) Content area polish -------------------------------------------------- */
-body[data-page^="yacht-charter"] .breadcrumbs{
-  margin-top: 18px;
-}
-
-body[data-page^="yacht-charter"] .meta{
-  margin-top: 8px;
-}
-
-body[data-page^="yacht-charter"] .card{
-  border-color: rgba(15,23,42,.08);
-  box-shadow: 0 12px 26px rgba(2,6,23,.06);
-}
-
-body[data-page^="yacht-charter"] .pad{
-  padding: 20px;
-}
-
-body[data-page^="yacht-charter"] h2{
-  font-size: 1.28rem;
-  letter-spacing: -.2px;
-}
-
-body[data-page^="yacht-charter"] .section-title{
-  margin-bottom: 12px;
-}
-
-body[data-page^="yacht-charter"] .section-title p{
-  font-size: .94rem;
-}
-
-/* 10) Category cards ------------------------------------------------------ */
-body[data-page^="yacht-charter"] .cat{
-  min-height: 138px;
-  border-color: rgba(15,23,42,.08);
-  box-shadow: 0 12px 24px rgba(2,6,23,.06);
-}
-
-body[data-page^="yacht-charter"] .cat:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 20px 42px rgba(2,6,23,.10);
-}
-
-body[data-page^="yacht-charter"] .cat strong{
-  font-size: 1.06rem;
-}
-
-body[data-page^="yacht-charter"] .cat span{
-  line-height: 1.58;
-}
-
-/* 11) Link cards ---------------------------------------------------------- */
-body[data-page^="yacht-charter"] .link-card{
-  border-color: rgba(15,23,42,.08);
-  box-shadow: 0 8px 18px rgba(2,6,23,.04);
-}
-
-body[data-page^="yacht-charter"] .link-card:hover{
-  box-shadow: 0 16px 34px rgba(2,6,23,.08);
-}
-
-body[data-page^="yacht-charter"] .arrow{
-  background: linear-gradient(135deg, rgba(18,207,208,.14), rgba(244,162,97,.12));
-}
-
-/* 12) Steps / mini cards / callouts -------------------------------------- */
-body[data-page^="yacht-charter"] .steps li,
-body[data-page^="yacht-charter"] .mini,
-body[data-page^="yacht-charter"] details{
-  border-color: rgba(15,23,42,.08);
-}
-
-body[data-page^="yacht-charter"] .callout{
-  border-color: rgba(18,207,208,.18);
-  background: linear-gradient(135deg, rgba(18,207,208,.10), rgba(244,162,97,.10));
-}
-
-/* 13) Sticky sidebar ------------------------------------------------------ */
-@media (min-width: 981px){
-  body[data-page^="yacht-charter"] aside.card{
-    top: calc(var(--header-h) + 18px);
+@media (max-width:1100px){
+  .hero-tool-wrap .quick-picks{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
-/* 14) Tablet -------------------------------------------------------------- */
-@media (max-width: 980px){
-  body[data-page^="yacht-charter"] .hero.hero-full{
-    min-height: 700px;
+@media (max-width:760px){
+  .hero-tool-wrap .actions .btn{
+    width:100%;
   }
 
-  body[data-page^="yacht-charter"] .hero.hero-full h1{
-    max-width: none;
-  }
-}
-
-/* 15) Mobile -------------------------------------------------------------- */
-@media (max-width: 760px){
-  body[data-page^="yacht-charter"] .hero.hero-full{
-    min-height: 650px;
+  .hero-tool-wrap .quick-picks{
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:14px;
   }
 
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-overlay{
-    background:
-      linear-gradient(180deg, rgba(2,6,23,.42) 0%, rgba(2,6,23,.24) 22%, rgba(2,6,23,.16) 48%, rgba(2,6,23,.56) 100%),
-      linear-gradient(90deg, rgba(2,6,23,.26) 0%, rgba(2,6,23,.12) 48%, rgba(2,6,23,.24) 100%);
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-bg img{
-    object-position: 56% 36%;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-inner{
-    padding-top: 42px;
-    padding-bottom: 28px;
-    align-items: flex-end;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-title{
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-sub{
-    font-size: .98rem;
-    line-height: 1.55;
-    margin-bottom: 14px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-shell{
-    background: rgba(255,255,255,.92);
-    border-radius: 20px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-pad{
-    padding: 16px 14px 14px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full h1{
-    font-size: clamp(2rem, 1.7rem + 1.6vw, 2.5rem);
-    line-height: 1.08;
-    margin-bottom: 12px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .lede{
-    font-size: 1rem;
-    line-height: 1.58;
-    margin-bottom: 14px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .trust{
-    grid-template-columns: 1fr;
-  }
-
-  body[data-page^="yacht-charter"] .pad{
-    padding: 16px;
-  }
-
-  body[data-page^="yacht-charter"] .cards,
-  body[data-page^="yacht-charter"] .mini-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 16) Very large screens -------------------------------------------------- */
-@media (min-width: 1280px){
-  body[data-page^="yacht-charter"] .hero.hero-full{
-    min-height: 790px;
-  }
-
-  body[data-page^="yacht-charter"] .hero.hero-full .hero-tool-wrap{
-    width: min(100%, 1180px);
+  .hero-tool-wrap .quick-pick{
+    padding:16px;
+    border-radius:18px;
   }
 }
