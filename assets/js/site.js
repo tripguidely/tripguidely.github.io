@@ -11,6 +11,7 @@
    - Lazy-load GA4 only if accepted
    - Binds footer “Privacy choices” link (.js-consent) (no inline onclick)
    - Contact form AJAX + success/error UI for Formspree
+   - Supports generic [data-include] partial injection
    ========================================================================== */
 
 (function () {
@@ -379,6 +380,45 @@
       .catch(function () {
         if (cb) cb(false);
       });
+  }
+
+  function injectDataIncludes(cb) {
+    var nodes = DOC.querySelectorAll("[data-include]");
+    var total = nodes ? nodes.length : 0;
+    var done = 0;
+
+    if (!total) {
+      if (cb) cb();
+      return;
+    }
+
+    function next() {
+      done++;
+      if (done >= total && cb) cb();
+    }
+
+    for (var i = 0; i < total; i++) {
+      (function (node) {
+        var url = getAttr(node, "data-include");
+        if (!url || !WIN.fetch) {
+          next();
+          return;
+        }
+
+        WIN.fetch(url, { cache: "no-cache" })
+          .then(function (res) {
+            if (!res || !res.ok) throw new Error("Partial fetch failed");
+            return res.text();
+          })
+          .then(function (html) {
+            node.innerHTML = html;
+            next();
+          })
+          .catch(function () {
+            next();
+          });
+      })(nodes[i]);
+    }
   }
 
   /* ---------- DOM init tasks ---------- */
@@ -807,27 +847,30 @@
   function initWithPartials() {
     var hasHeaderSlot = !!$("#site-header");
     var hasFooterSlot = !!$("#site-footer");
+    var total = 0;
+    var done = 0;
 
-    if (hasHeaderSlot || hasFooterSlot) {
-      var total = 0;
-      var done = 0;
+    function afterCorePartials() {
+      injectDataIncludes(function () {
+        initAll();
+      });
+    }
 
-      function next() {
-        done++;
-        if (done >= total) initAll();
-      }
+    function next() {
+      done++;
+      if (done >= total) afterCorePartials();
+    }
 
-      if (hasHeaderSlot) total++;
-      if (hasFooterSlot) total++;
+    if (hasHeaderSlot) total++;
+    if (hasFooterSlot) total++;
 
-      if (hasHeaderSlot) injectPartial("#site-header", "/partials/header.html", next);
-      if (hasFooterSlot) injectPartial("#site-footer", "/partials/footer.html", next);
-
-      if (total === 0) initAll();
+    if (total === 0) {
+      afterCorePartials();
       return;
     }
 
-    initAll();
+    if (hasHeaderSlot) injectPartial("#site-header", "/partials/header.html", next);
+    if (hasFooterSlot) injectPartial("#site-footer", "/partials/footer.html", next);
   }
 
   if (DOC.readyState === "loading") on(DOC, "DOMContentLoaded", initWithPartials);
