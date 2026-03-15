@@ -164,8 +164,10 @@
   opacity:.9;
 }
 
-.yacht-footer-types .wrap{
+.yacht-footer-types .wrap,
+.yacht-footer-types .container{
   position:relative;
+  z-index:1;
 }
 
 .yacht-footer-types__intro{
