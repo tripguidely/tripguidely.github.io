@@ -1,7 +1,13 @@
+/* ==========================================================================
+   yacht-charter.css
+   - Hero buttons + quick cards only
+   - Do NOT change the big hero block behind the H1
+   - Scoped only to the hero so content buttons below stay normal
+   - Includes footer-top boat types section for yacht pages
+   ========================================================================== */
+
 /* =========================================================
    Hero buttons + quick cards only
-   Do NOT change the big hero block behind the H1
-   Scoped only to the hero so content buttons below stay normal
    ========================================================= */
 
 /* Buttons row */
@@ -128,5 +134,238 @@
   .hero-tool-wrap .quick-pick{
     padding:16px;
     border-radius:18px;
+  }
+}
+
+/* =========================================================
+   Yacht footer types section
+   Section shown above the global footer on yacht pages only
+   ========================================================= */
+
+.yacht-footer-types{
+  position:relative;
+  margin-top:34px;
+  padding:72px 0 28px;
+  background:
+    radial-gradient(900px 420px at 8% 0%, rgba(18,207,208,.10), transparent 60%),
+    radial-gradient(820px 380px at 92% 10%, rgba(244,162,97,.10), transparent 62%),
+    linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
+  border-top:1px solid rgba(15,23,42,.08);
+}
+
+.yacht-footer-types::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.46), transparent 42%),
+    radial-gradient(720px 260px at 50% 0%, rgba(255,255,255,.30), transparent 62%);
+  opacity:.9;
+}
+
+.yacht-footer-types .wrap{
+  position:relative;
+}
+
+.yacht-footer-types__intro{
+  max-width:760px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+
+.yacht-footer-types__eyebrow{
+  margin:0 0 10px;
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--turq);
+}
+
+.yacht-footer-types__intro h2{
+  margin:0;
+  font-size:clamp(1.9rem, 1.2rem + 2vw, 2.7rem);
+  line-height:1.1;
+  letter-spacing:var(--tracking-tight);
+  color:var(--text);
+}
+
+.yacht-footer-types__lead{
+  margin:14px auto 0;
+  max-width:700px;
+  color:var(--muted);
+  font-size:1.02rem;
+  line-height:1.72;
+}
+
+.yacht-footer-types__grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:18px;
+  align-items:stretch;
+}
+
+.yacht-footer-types__card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  overflow:hidden;
+  border-radius:22px;
+  text-decoration:none;
+  color:inherit;
+  background:
+    radial-gradient(420px 160px at 10% 8%, rgba(18,207,208,.10), transparent 62%),
+    radial-gradient(420px 160px at 90% 18%, rgba(244,162,97,.10), transparent 62%),
+    rgba(255,255,255,.84);
+  border:1px solid rgba(15,23,42,.10);
+  box-shadow:
+    0 18px 40px rgba(2,6,23,.08),
+    0 8px 18px rgba(2,6,23,.05);
+  -webkit-backdrop-filter:blur(10px) saturate(135%);
+  backdrop-filter:blur(10px) saturate(135%);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+.yacht-footer-types__card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(18,207,208,.28);
+  box-shadow:
+    0 24px 54px rgba(2,6,23,.12),
+    0 10px 22px rgba(2,6,23,.08);
+}
+
+.yacht-footer-types__card:focus-visible{
+  outline:3px solid var(--focus);
+  outline-offset:3px;
+  transform:translateY(-2px);
+  border-color:rgba(18,207,208,.34);
+}
+
+.yacht-footer-types__media{
+  position:relative;
+  margin:0;
+  aspect-ratio:16 / 10;
+  overflow:hidden;
+  background:#dbeafe;
+}
+
+.yacht-footer-types__media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(15,23,42,0) 52%, rgba(15,23,42,.08) 100%);
+  pointer-events:none;
+}
+
+.yacht-footer-types__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+
+.yacht-footer-types__card:hover .yacht-footer-types__media img,
+.yacht-footer-types__card:focus-visible .yacht-footer-types__media img{
+  transform:scale(1.04);
+}
+
+.yacht-footer-types__content{
+  display:flex;
+  flex:1 1 auto;
+  flex-direction:column;
+  padding:18px 18px 20px;
+}
+
+.yacht-footer-types__content h3{
+  margin:0 0 10px;
+  font-size:1.14rem;
+  line-height:1.25;
+  color:var(--text);
+  letter-spacing:-.01em;
+}
+
+.yacht-footer-types__content p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.62;
+}
+
+.yacht-footer-types__cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:auto;
+  padding-top:16px;
+  font-size:.94rem;
+  font-weight:900;
+  line-height:1.2;
+  color:#0f766e;
+}
+
+.yacht-footer-types__cta::after{
+  content:"→";
+  transform:translateX(0);
+  transition:transform .18s ease;
+}
+
+.yacht-footer-types__card:hover .yacht-footer-types__cta::after,
+.yacht-footer-types__card:focus-visible .yacht-footer-types__cta::after{
+  transform:translateX(3px);
+}
+
+@media (max-width:1100px){
+  .yacht-footer-types{
+    padding:64px 0 24px;
+  }
+
+  .yacht-footer-types__grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width:760px){
+  .yacht-footer-types{
+    margin-top:24px;
+    padding:56px 0 20px;
+  }
+
+  .yacht-footer-types__intro{
+    margin-bottom:22px;
+  }
+
+  .yacht-footer-types__lead{
+    font-size:.97rem;
+    line-height:1.7;
+  }
+
+  .yacht-footer-types__grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .yacht-footer-types__content{
+    padding:16px 16px 18px;
+  }
+
+  .yacht-footer-types__content h3{
+    font-size:1.08rem;
+  }
+
+  .yacht-footer-types__content p{
+    font-size:.94rem;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .yacht-footer-types__card,
+  .yacht-footer-types__media img,
+  .yacht-footer-types__cta::after{
+    transition:none;
   }
 }
