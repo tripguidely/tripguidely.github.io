@@ -166,10 +166,15 @@
           </p>
           <p class="meta">Best for island hopping, coastal vacations, luxury escapes, family trips, and first-time yacht planning.</p>
 
-          <form class="yacht-search-widget card pad" id="yacht-search-form" aria-label="Custom yacht search">
-            <div class="section-title">
-              <h2>Start your yacht search</h2>
-              <p>Use this quick search to continue on our booking partner</p>
+          <form class="yacht-search-widget" id="yacht-search-form" aria-label="Custom yacht search">
+            <div class="yacht-search-widget__top">
+              <div class="section-title">
+                <h2>Start your yacht search</h2>
+                <p>Search style, destination, and travel dates</p>
+              </div>
+              <p class="yacht-search-widget__partner-note">
+                Use this quick search to continue on our booking partner
+              </p>
             </div>
 
             <div class="yacht-search-widget__grid">
@@ -205,22 +210,18 @@
               </label>
             </div>
 
-            <div class="actions" aria-label="Yacht charter search actions">
-              <a
-                class="btn primary js-aff"
-                id="yacht-search-btn"
-                href="https://searadar.tpk.ro/CsqEzB72"
-                target="_blank"
-                rel="sponsored noopener"
-                data-aff="travelpayouts"
-                data-subid="tg_yacht_hub_popular"
+            <div class="yacht-search-widget__actions" aria-label="Yacht charter search actions">
+              <button
+                type="submit"
+                class="yacht-search-widget__submit"
+                id="yacht-search-submit"
                 aria-label="Search yacht charters">
                 <span class="pill">⛵</span>
                 <span>Search Yacht Charters</span>
-              </a>
+              </button>
 
               <a
-                class="btn js-aff"
+                class="btn yacht-search-widget__secondary js-aff"
                 href="https://searadar.tpk.ro/jcWNaKHN"
                 target="_blank"
                 rel="sponsored noopener"
@@ -231,6 +232,10 @@
                 <span>See Best Deals</span>
               </a>
             </div>
+
+            <p class="yacht-search-widget__trust">
+              Compare recommended yachts, discounted listings, and special offers worldwide.
+            </p>
 
             <p class="aff-note">
               Search results open on our booking partner. Listings may include different yacht types depending on destination, dates, and available fleet inventory.
@@ -714,48 +719,67 @@
   <script>
     (function () {
       const form = document.getElementById('yacht-search-form');
-      const searchBtn = document.getElementById('yacht-search-btn');
       const destinationInput = document.getElementById('yacht-destination');
       const boatTypeInput = document.getElementById('yacht-boat-type');
       const dateFromInput = document.getElementById('yacht-date-from');
       const dateToInput = document.getElementById('yacht-date-to');
 
-      if (!form || !searchBtn) return;
+      if (!form) return;
 
-      function buildSearchLabel() {
-        const destination = destinationInput ? destinationInput.value.trim() : '';
-        const boatType = boatTypeInput ? boatTypeInput.value.trim() : '';
-        const dateFrom = dateFromInput ? dateFromInput.value : '';
-        const dateTo = dateToInput ? dateToInput.value : '';
+      const AFFILIATE_URLS = {
+        popular: 'https://searadar.tpk.ro/CsqEzB72',
+        discount: 'https://searadar.tpk.ro/jcWNaKHN',
+        special: 'https://searadar.tpk.ro/tmDum15L'
+      };
 
-        const parts = [];
-        if (destination) parts.push(destination);
-        if (boatType) parts.push(boatType.replace('-', ' '));
-        if (dateFrom && dateTo) parts.push(dateFrom + ' to ' + dateTo);
-
-        return parts.length ? parts.join(' • ') : 'Search Yacht Charters';
+      function normalizeDate(value) {
+        return value ? value.trim() : '';
       }
 
-      function redirectToAffiliate() {
-        const url = searchBtn.getAttribute('href');
-        if (!url) return;
-        window.open(url, '_blank', 'noopener');
+      function isDateRangeValid(from, to) {
+        if (!from || !to) return true;
+        return new Date(from).getTime() <= new Date(to).getTime();
+      }
+
+      function chooseAffiliateUrl() {
+        const boatType = boatTypeInput ? boatTypeInput.value : '';
+        const destination = destinationInput ? destinationInput.value.trim().toLowerCase() : '';
+
+        if (
+          boatType === 'motor-yacht' ||
+          destination.includes('monaco') ||
+          destination.includes('riviera') ||
+          destination.includes('amalfi')
+        ) {
+          return AFFILIATE_URLS.popular;
+        }
+
+        return AFFILIATE_URLS.popular;
+      }
+
+      function openAffiliateSearch() {
+        const dateFrom = normalizeDate(dateFromInput ? dateFromInput.value : '');
+        const dateTo = normalizeDate(dateToInput ? dateToInput.value : '');
+
+        if (!isDateRangeValid(dateFrom, dateTo)) {
+          alert('Please make sure the end date is after the start date.');
+          return;
+        }
+
+        const targetUrl = chooseAffiliateUrl();
+        window.open(targetUrl, '_blank', 'noopener');
       }
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-        redirectToAffiliate();
+        openAffiliateSearch();
       });
 
       form.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' && event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') {
+        if (event.key === 'Enter') {
           event.preventDefault();
-          redirectToAffiliate();
+          openAffiliateSearch();
         }
-      });
-
-      searchBtn.addEventListener('mouseenter', function () {
-        searchBtn.setAttribute('aria-label', buildSearchLabel());
       });
     }());
   </script>
