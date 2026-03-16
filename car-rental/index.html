@@ -73,7 +73,9 @@
 
   <!-- CSS -->
   <link rel="preload" as="style" href="/assets/css/styles.css" />
+  <link rel="preload" as="style" href="/assets/css/car-rental.css" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/car-rental.css" />
 
   <!-- Travelpayouts verification (KEEP HIGH IN <head>) -->
   <meta name="travelpayouts-verification" content="492724" />
@@ -146,7 +148,7 @@
         },
         "breadcrumb":{"@id":"https://tripguidely.github.io/car-rental/#breadcrumbs"},
         "datePublished":"2026-03-05",
-        "dateModified":"2026-03-08"
+        "dateModified":"2026-03-16"
       },
       {
         "@type":"BreadcrumbList",
@@ -199,7 +201,7 @@
 
   <main id="main" class="main" role="main">
 
-    <!-- HERO (matches your styles.css hero system) -->
+    <!-- HERO -->
     <section class="hero hero-full" aria-label="Car rental hub hero">
       <div class="hero-bg" aria-hidden="true">
         <img
@@ -227,6 +229,88 @@
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
+
+              <section class="car-hero-search" aria-label="Car rental search">
+                <form
+                  class="car-search-form"
+                  id="car-search-form"
+                  data-affiliate-base="https://klook.tpk.ro/Bpq9pPtf"
+                  data-subid="tg_car_rental_hub"
+                  novalidate
+                >
+                  <div class="car-search-grid">
+                    <div class="car-search-field car-search-field-location">
+                      <label for="car-pickup-location">Pick-up location</label>
+                      <input
+                        id="car-pickup-location"
+                        name="pickup_location"
+                        type="text"
+                        placeholder="City, airport, or address"
+                        autocomplete="off"
+                        required
+                      />
+                    </div>
+
+                    <div class="car-search-field">
+                      <label for="car-pickup-date">Pick-up date</label>
+                      <input
+                        id="car-pickup-date"
+                        name="pickup_date"
+                        type="date"
+                        required
+                      />
+                    </div>
+
+                    <div class="car-search-field">
+                      <label for="car-pickup-time">Time</label>
+                      <input
+                        id="car-pickup-time"
+                        name="pickup_time"
+                        type="time"
+                        value="10:00"
+                        required
+                      />
+                    </div>
+
+                    <div class="car-search-field">
+                      <label for="car-dropoff-date">Drop-off date</label>
+                      <input
+                        id="car-dropoff-date"
+                        name="dropoff_date"
+                        type="date"
+                        required
+                      />
+                    </div>
+
+                    <div class="car-search-field">
+                      <label for="car-dropoff-time">Time</label>
+                      <input
+                        id="car-dropoff-time"
+                        name="dropoff_time"
+                        type="time"
+                        value="10:00"
+                        required
+                      />
+                    </div>
+
+                    <button
+                      class="car-search-submit js-aff"
+                      id="car-search-submit"
+                      type="submit"
+                      data-aff="travelpayouts"
+                    >
+                      Search
+                    </button>
+                  </div>
+
+                  <p class="car-search-note">
+                    Powered by Klook affiliate tracking. Sub ID: <strong>tg_car_rental_hub</strong>
+                  </p>
+
+                  <p class="car-search-error" id="car-search-error" aria-live="polite"></p>
+                </form>
+              </section>
+
               <div class="actions" aria-label="Primary actions" style="margin-top:0;">
                 <a class="btn primary" href="#start">
                   <span class="pill" aria-hidden="true">🚗</span>
@@ -253,7 +337,7 @@
               </div>
 
               <p class="meta" style="margin-top:12px;">
-                Updated: <time datetime="2026-03-08">Mar 8, 2026</time>
+                Updated: <time datetime="2026-03-16">Mar 16, 2026</time>
               </p>
             </div>
           </div>
