@@ -639,7 +639,7 @@ body[data-page="hub"] .hero-panel .lede{
 }
 
 /* ==========================================================================
-   18) Hero custom car-rental search widget
+   18) Hero custom car-rental search widget + premium datepicker
    ========================================================================== */
 .car-hero-search{
   margin: 0 0 16px;
@@ -816,6 +816,223 @@ body[data-page="hub"] .hero-panel .lede{
   color: #b91c1c;
 }
 
+/* premium date popover */
+.car-date-popover{
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 760px);
+  z-index: 35;
+}
+
+.car-date-popover[hidden]{
+  display: none !important;
+}
+
+.car-date-popover__inner{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(2,6,23,.18);
+  overflow: hidden;
+}
+
+.car-date-popover__header{
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 18px 10px;
+}
+
+.car-date-popover__months{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.car-cal-title{
+  text-align: center;
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.car-cal-nav{
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow3);
+  cursor: pointer;
+}
+
+.car-cal-nav:hover{
+  border-color: rgba(18,207,208,.28);
+}
+
+.car-date-popover__calendars{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0 18px 0;
+}
+
+.car-cal{
+  min-width: 0;
+  padding: 8px 12px 16px;
+}
+
+.car-cal + .car-cal{
+  border-left: 1px solid rgba(15,23,42,.08);
+}
+
+.car-cal__weekdays,
+.car-cal__grid{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0,1fr));
+  gap: 6px;
+}
+
+.car-cal__weekdays{
+  margin-bottom: 10px;
+}
+
+.car-cal__weekday{
+  text-align: center;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--muted2);
+}
+
+.car-cal__day{
+  position: relative;
+  height: 42px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text);
+  font-size: .96rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.car-cal__day:hover{
+  background: rgba(18,207,208,.08);
+}
+
+.car-cal__day.is-muted{
+  color: rgba(100,116,139,.42);
+  cursor: default;
+}
+
+.car-cal__day.is-disabled{
+  color: rgba(100,116,139,.30);
+  cursor: not-allowed;
+}
+
+.car-cal__day.is-start,
+.car-cal__day.is-end{
+  background: linear-gradient(135deg, var(--cta1), var(--cta2));
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(18,207,208,.24);
+}
+
+.car-cal__day.is-in-range{
+  background: linear-gradient(135deg, rgba(18,207,208,.10), rgba(244,162,97,.10));
+  border-radius: 0;
+}
+
+.car-cal__day.is-range-left{
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.car-cal__day.is-range-right{
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.car-date-popover__times{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 16px 18px;
+  background: linear-gradient(180deg, rgba(248,250,252,.82), rgba(255,255,255,.98));
+  border-top: 1px solid rgba(15,23,42,.08);
+}
+
+.car-time-box{
+  min-width: 0;
+}
+
+.car-time-box__title{
+  margin: 0 0 8px;
+  font-size: .95rem;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.car-time-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.car-time-row select{
+  min-width: 74px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: #ffffff;
+  color: var(--text);
+  padding: 0 10px;
+  font-weight: 800;
+  box-shadow: var(--shadow3);
+}
+
+.car-time-sep{
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.car-date-popover__footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px 18px;
+  border-top: 1px solid rgba(15,23,42,.08);
+}
+
+.car-date-popover__hint{
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted2);
+}
+
+.car-date-popover__actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.car-date-display.is-active{
+  border-color: rgba(18,207,208,.42);
+  box-shadow:
+    0 0 0 4px rgba(18,207,208,.12),
+    0 10px 22px rgba(2,6,23,.08);
+  background: #ffffff;
+}
+
 @media (max-width: 1080px){
   .car-search-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -838,6 +1055,13 @@ body[data-page="hub"] .hero-panel .lede{
   }
 
   .car-search-submit{
+    width: 100%;
+  }
+
+  .car-date-popover{
+    left: 0;
+    right: 0;
+    transform: none;
     width: 100%;
   }
 }
@@ -867,6 +1091,60 @@ body[data-page="hub"] .hero-panel .lede{
     width: 100%;
     min-height: 56px;
     border-radius: 16px;
+  }
+
+  .car-date-popover{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: 50%;
+    width: auto;
+    transform: translateY(-50%);
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+  }
+
+  .car-date-popover__header{
+    grid-template-columns: 44px 1fr 44px;
+    padding: 14px 14px 10px;
+  }
+
+  .car-date-popover__months,
+  .car-date-popover__calendars,
+  .car-date-popover__times,
+  .car-date-popover__footer{
+    grid-template-columns: 1fr;
+  }
+
+  .car-date-popover__calendars{
+    padding: 0 14px 0;
+  }
+
+  .car-cal{
+    padding: 8px 4px 14px;
+  }
+
+  .car-cal + .car-cal{
+    border-left: 0;
+    border-top: 1px solid rgba(15,23,42,.08);
+  }
+
+  .car-date-popover__times{
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .car-date-popover__footer{
+    padding: 14px;
+  }
+
+  .car-date-popover__actions{
+    width: 100%;
+  }
+
+  .car-date-popover__actions .btn{
+    flex: 1 1 auto;
+    justify-content: center;
   }
 }
 
@@ -912,7 +1190,8 @@ body[data-page="hub"] .hero-panel .lede{
   #site-header,
   #site-footer,
   aside.card,
-  .actions{
+  .actions,
+  .car-date-popover{
     display: none !important;
   }
 
