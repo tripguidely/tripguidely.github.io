@@ -1,11 +1,12 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.2)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.3)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
    - Affiliate CTA tracking (.js-aff) centralized here
    - Widget engagement tracking (ANY .tp-widget + #esim-search + #search) (fires once per widget)
+   - Custom page tracking for clearer GA4 reporting by page_type / path / title
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Consent Mode v2 default denied
    - Lazy-load GA4 only if accepted
@@ -139,6 +140,7 @@
   var GA_MEASUREMENT_ID = "G-0GGMM5GYXJ";
 
   var memConsent = null;
+  var pageViewTracked = false;
 
   function storageGet(key) {
     try { if (WIN.localStorage) return WIN.localStorage.getItem(key); } catch (_) {}
@@ -224,13 +226,33 @@
 
     try {
       WIN.gtag("js", new Date());
-      WIN.gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+      WIN.gtag("config", GA_MEASUREMENT_ID, {
+        anonymize_ip: true,
+        page_location: WIN.location.href || "",
+        page_path: WIN.location.pathname || "",
+        page_title: DOC.title || ""
+      });
     } catch (_) {}
   }
 
   function gtagEvent(name, params) {
     if (!hasGtag()) return;
     try { WIN.gtag("event", name, params || {}); } catch (_) {}
+  }
+
+  function trackPageViewDetails() {
+    if (pageViewTracked) return;
+    if (getConsent() !== "granted") return;
+    if (!hasGtag()) return;
+
+    pageViewTracked = true;
+
+    gtagEvent("tripguidely_page_view", {
+      page_type: getPageType(),
+      page_title: DOC.title || "",
+      page_path: WIN.location.pathname || "",
+      page_location: WIN.location.href || ""
+    });
   }
 
   function removeConsentBanner() {
@@ -276,6 +298,7 @@
         removeConsentBanner();
         loadGA4Once();
         gtagEvent("consent_update", { status: "granted", page_type: getPageType() });
+        trackPageViewDetails();
       });
     }
 
@@ -295,6 +318,7 @@
     if (c === "granted") {
       setConsentModeGranted();
       loadGA4Once();
+      trackPageViewDetails();
       return;
     }
     if (c === "denied") {
@@ -842,6 +866,7 @@
     trackAffiliateClicks();
     trackWidgetEngagement();
     measureVitalsHints();
+    trackPageViewDetails();
   }
 
   function initWithPartials() {
