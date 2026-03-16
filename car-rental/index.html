@@ -283,14 +283,28 @@
                     </div>
 
                     <div class="car-search-display-wrap">
-                      <button class="car-date-display" type="button" id="car-pickup-display" aria-label="Pick-up date and time">
+                      <button
+                        class="car-date-display"
+                        type="button"
+                        id="car-pickup-display"
+                        aria-label="Pick-up date and time"
+                        aria-haspopup="dialog"
+                        aria-controls="car-date-popover"
+                      >
                         <span class="car-date-display__label">Pick-up date &amp; time</span>
                         <span class="car-date-display__value" id="car-pickup-display-value">—</span>
                       </button>
 
                       <div class="car-duration-badge" id="car-duration-badge" aria-live="polite">—</div>
 
-                      <button class="car-date-display" type="button" id="car-dropoff-display" aria-label="Drop-off date and time">
+                      <button
+                        class="car-date-display"
+                        type="button"
+                        id="car-dropoff-display"
+                        aria-label="Drop-off date and time"
+                        aria-haspopup="dialog"
+                        aria-controls="car-date-popover"
+                      >
                         <span class="car-date-display__label">Drop-off date &amp; time</span>
                         <span class="car-date-display__value" id="car-dropoff-display-value">—</span>
                       </button>
@@ -307,10 +321,63 @@
                   </div>
 
                   <div class="car-search-hidden-inputs">
-                    <input id="car-pickup-date" name="pickup_date" type="date" required />
-                    <input id="car-pickup-time" name="pickup_time" type="time" required />
-                    <input id="car-dropoff-date" name="dropoff_date" type="date" required />
-                    <input id="car-dropoff-time" name="dropoff_time" type="time" required />
+                    <input id="car-pickup-date" name="pickup_date" type="hidden" required />
+                    <input id="car-pickup-time" name="pickup_time" type="hidden" required />
+                    <input id="car-dropoff-date" name="dropoff_date" type="hidden" required />
+                    <input id="car-dropoff-time" name="dropoff_time" type="hidden" required />
+                  </div>
+
+                  <div
+                    class="car-date-popover"
+                    id="car-date-popover"
+                    role="dialog"
+                    aria-modal="false"
+                    aria-label="Choose pick-up and drop-off dates and times"
+                    hidden
+                  >
+                    <div class="car-date-popover__inner">
+                      <div class="car-date-popover__header">
+                        <button type="button" class="car-cal-nav" id="car-cal-prev" aria-label="Previous month">‹</button>
+                        <div class="car-date-popover__months">
+                          <div class="car-cal-title" id="car-cal-title-left">—</div>
+                          <div class="car-cal-title" id="car-cal-title-right">—</div>
+                        </div>
+                        <button type="button" class="car-cal-nav" id="car-cal-next" aria-label="Next month">›</button>
+                      </div>
+
+                      <div class="car-date-popover__calendars">
+                        <div class="car-cal" id="car-cal-left"></div>
+                        <div class="car-cal" id="car-cal-right"></div>
+                      </div>
+
+                      <div class="car-date-popover__times">
+                        <div class="car-time-box">
+                          <p class="car-time-box__title">Pick up</p>
+                          <div class="car-time-row">
+                            <select id="car-pickup-hour" aria-label="Pick-up hour"></select>
+                            <span class="car-time-sep">:</span>
+                            <select id="car-pickup-minute" aria-label="Pick-up minute"></select>
+                          </div>
+                        </div>
+
+                        <div class="car-time-box">
+                          <p class="car-time-box__title">Drop off</p>
+                          <div class="car-time-row">
+                            <select id="car-dropoff-hour" aria-label="Drop-off hour"></select>
+                            <span class="car-time-sep">:</span>
+                            <select id="car-dropoff-minute" aria-label="Drop-off minute"></select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="car-date-popover__footer">
+                        <p class="car-date-popover__hint">Choose your rental period, then confirm the dates and times.</p>
+                        <div class="car-date-popover__actions">
+                          <button type="button" class="btn" id="car-date-cancel">Cancel</button>
+                          <button type="button" class="btn primary" id="car-date-apply">Apply</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <p class="car-search-note">Powered by Klook</p>
