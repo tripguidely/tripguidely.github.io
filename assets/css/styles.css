@@ -7,6 +7,7 @@
    - Mobile overflow hard-fixed (no 100vw traps)
    - CWV-friendly: contain/isolation + predictable widget box
    - UPDATED NOW: iOS safe-area left/right + hero gutter + mobile buttons breathing room
+   - UPDATED NOW: hero shell can support custom popovers like car-rental datepicker
    ========================================================================== */
 
 /* 1) Design tokens --------------------------------------------------------- */
@@ -517,12 +518,13 @@ li{ margin: 6px 0; }
 /* 7) HERO (Tool only) ------------------------------------------------------ */
 .hero.hero-full{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   border-bottom:1px solid var(--line);
   width:100%;
   min-height: var(--hero-min);
   display:flex;
   align-items:stretch;
+  z-index: 1;
 }
 
 @media (max-width: 760px){
@@ -547,7 +549,7 @@ li{ margin: 6px 0; }
     radial-gradient(900px 520px at 12% 0%, rgba(18,207,208,.14), transparent 60%),
     radial-gradient(980px 560px at 88% 6%, rgba(244,162,97,.14), transparent 62%),
     linear-gradient(180deg, rgba(2,6,23,.30), rgba(2,6,23,.12) 34%, rgba(2,6,23,.06) 60%, rgba(2,6,23,.26));
-  opacity:.96; /* UPDATED: a bit stronger so hero text stays readable */
+  opacity:.96;
 }
 
 /* UPDATED: Hero text color (H1, kicker, lede, meta) when those elements are inside the hero */
@@ -571,13 +573,15 @@ li{ margin: 6px 0; }
   width:100%;
   padding: 56px 0 56px;
   display:flex;
-  align-items:center;          /* was flex-end */
+  align-items:center;
+  overflow: visible;
+  z-index: 2;
 }
 
 @media (max-width: 760px){
   .hero-inner{
     padding: 40px 0 32px;
-    align-items:flex-end;      /* mobile feels better: tool sits lower */
+    align-items:flex-end;
   }
 }
 
@@ -586,6 +590,8 @@ li{ margin: 6px 0; }
   width: min(100%, var(--tool-max));
   margin: 0 auto;
   position: relative;
+  overflow: visible;
+  z-index: 3;
 }
 
 /* Make the tool feel visually centered even on huge screens */
@@ -617,13 +623,19 @@ li{ margin: 6px 0; }
   box-shadow:
     0 34px 90px rgba(2,6,23,.34),
     0 0 0 1px rgba(255,255,255,.10);
-  overflow: hidden;
+  overflow: visible;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 4;
 }
 
 /* tighter pad so the widget looks “alive” */
-.hero-tool-pad{ padding: 14px 16px 14px; }
+.hero-tool-pad{
+  padding: 14px 16px 14px;
+  position: relative;
+  overflow: visible;
+}
 @media (max-width: 760px){
   .hero-tool-pad{ padding: 12px 12px 12px; }
 }
@@ -786,8 +798,6 @@ h1{
     padding: 16px 16px;
     border-radius: 16px;
     font-size: 18px;
-
-    /* UPDATED: breathing room (no edge-to-edge feeling) */
     max-width: 720px;
     margin-inline: auto;
   }
@@ -1473,7 +1483,7 @@ body.consent-open{ padding-bottom: var(--consent-hint); }
 
   /* spacing */
   padding: 14px 0;
-  padding-bottom: calc(14px + env(safe-area-inset-bottom)); /* iOS safe area */
+  padding-bottom: calc(14px + env(safe-area-inset-bottom));
 }
 
 .consent-banner .wrap{
