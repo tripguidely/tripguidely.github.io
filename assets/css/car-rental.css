@@ -2,7 +2,7 @@
    TripGuidely — car-rental.css
    - Dedicated styles for /car-rental/ hub + city pages
    - Works with global /assets/css/styles.css
-   - Premium editorial hero (NOT widget-first)
+   - Premium editorial hero + custom car-rental search
    - Optimized for guide pages like /car-rental/new-york/
    ========================================================================== */
 
@@ -610,7 +610,139 @@ body[data-page="hub"] .hero-panel .lede{
 }
 
 /* ==========================================================================
-   18) Mobile polish
+   18) Hero custom car-rental search widget
+   ========================================================================== */
+.car-hero-search{
+  margin: 0 0 16px;
+}
+
+.car-search-form{
+  display: block;
+}
+
+.car-search-grid{
+  display: grid;
+  grid-template-columns: minmax(240px, 2.2fr) minmax(150px, 1fr) minmax(115px, .72fr) minmax(150px, 1fr) minmax(115px, .72fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.car-search-field{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.car-search-field label{
+  font-size: .84rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--muted2);
+}
+
+.car-search-field input,
+.car-search-field select{
+  width: 100%;
+  min-height: 58px;
+  border-radius: 16px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: #ffffff;
+  color: var(--text);
+  padding: 0 14px;
+  box-shadow: var(--shadow3);
+  outline: none;
+  transition: border-color .14s ease, box-shadow .14s ease, transform .12s ease, background .14s ease;
+}
+
+.car-search-field input::placeholder{
+  color: rgba(100,116,139,.78);
+}
+
+.car-search-field input:focus,
+.car-search-field select:focus{
+  border-color: rgba(18,207,208,.42);
+  box-shadow:
+    0 0 0 4px rgba(18,207,208,.12),
+    0 10px 22px rgba(2,6,23,.08);
+  background: #ffffff;
+}
+
+.car-search-submit{
+  min-width: 148px;
+  min-height: 58px;
+  border: 1px solid rgba(18,207,208,.55);
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--cta1), var(--cta2));
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1rem;
+  box-shadow: 0 16px 38px rgba(18,207,208,.24);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.car-search-submit:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(18,207,208,.30);
+}
+
+.car-search-submit:active{
+  transform: translateY(0);
+}
+
+.car-search-note{
+  margin: 10px 2px 0;
+  font-size: .92rem;
+  color: var(--muted2);
+}
+
+.car-search-error{
+  margin: 8px 2px 0;
+  min-height: 1.4em;
+  font-size: .92rem;
+  color: #b91c1c;
+}
+
+@media (max-width: 1080px){
+  .car-search-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .car-search-field-location{
+    grid-column: 1 / -1;
+  }
+
+  .car-search-submit{
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px){
+  .car-hero-search{
+    margin-bottom: 14px;
+  }
+
+  .car-search-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .car-search-field input,
+  .car-search-field select{
+    min-height: 56px;
+    border-radius: 16px;
+  }
+
+  .car-search-submit{
+    width: 100%;
+    min-height: 56px;
+    border-radius: 16px;
+  }
+}
+
+/* ==========================================================================
+   19) Mobile polish
    ========================================================================== */
 @media (max-width: 760px){
   .table-wrap{
@@ -642,7 +774,7 @@ body[data-page="hub"] .hero-panel .lede{
 }
 
 /* ==========================================================================
-   19) Print
+   20) Print
    ========================================================================== */
 @media print{
   .header,
