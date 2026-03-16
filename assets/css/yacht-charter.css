@@ -28,6 +28,7 @@
   border-radius:20px;
   font-weight:900;
   font-size:1.02rem;
+  line-height:1.2;
   text-decoration:none;
   border:1px solid rgba(255,255,255,.22);
   background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.10));
@@ -240,9 +241,76 @@
 .hero-tool-wrap .yacht-search-widget__submit{
   appearance:none;
   -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 24px;
+  border-radius:18px;
   border:1px solid rgba(255,255,255,.20);
+  background:linear-gradient(135deg, #16d4d6, #11bfc1);
+  box-shadow:
+    0 18px 44px rgba(18,207,208,.28),
+    inset 0 1px 0 rgba(255,255,255,.18);
   cursor:pointer;
   font-family:inherit;
+  font-size:1.02rem;
+  font-weight:900;
+  line-height:1.2;
+  text-decoration:none;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    background .18s ease;
+}
+
+.hero-tool-wrap .yacht-search-widget__submit,
+.hero-tool-wrap .yacht-search-widget__submit span,
+.hero-tool-wrap .yacht-search-widget__submit .pill{
+  color:#ffffff !important;
+}
+
+.hero-tool-wrap .yacht-search-widget__submit:hover{
+  transform:translateY(-1px);
+  background:linear-gradient(135deg, #19dcde, #12c8ca);
+  box-shadow:
+    0 22px 54px rgba(18,207,208,.34),
+    inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.hero-tool-wrap .yacht-search-widget__submit .pill{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.18) !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+  font-size:1rem;
+  flex:0 0 34px;
+}
+
+.hero-tool-wrap .yacht-search-widget__submit span:last-child{
+  color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:0 1px 1px rgba(0,0,0,.12);
+}
+
+.hero-tool-wrap .yacht-search-widget__secondary{
+  color:#0f172a !important;
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.92)) !important;
+  border:1px solid rgba(15,23,42,.10) !important;
+}
+
+.hero-tool-wrap .yacht-search-widget__secondary span,
+.hero-tool-wrap .yacht-search-widget__secondary .pill{
+  color:#0f172a !important;
+}
+
+.hero-tool-wrap .yacht-search-widget__secondary .pill{
+  background:rgba(15,23,42,.06) !important;
+  border:1px solid rgba(15,23,42,.10) !important;
 }
 
 .hero-tool-wrap .yacht-search-widget__trust{
@@ -573,6 +641,7 @@
 
 @media (prefers-reduced-motion:reduce){
   .hero-tool-wrap .actions .btn,
+  .hero-tool-wrap .yacht-search-widget__submit,
   .yacht-footer-types__card,
   .yacht-footer-types__media img,
   .yacht-footer-types__cta::after{
