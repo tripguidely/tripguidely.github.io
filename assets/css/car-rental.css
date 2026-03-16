@@ -273,14 +273,24 @@ body[data-page="hub"]{
     #ffffff;
 }
 
+/* FIX: allow external widget dropdowns to breathe and avoid clipping */
 .tp-widget,
 .car-rental-widget{
   position: relative;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 18px;
-  contain: layout paint;
+  contain: none;
+  z-index: 20;
+}
+
+/* FIX: give the Klook / embedded widget enough vertical room for the calendar */
+#search .tp-widget,
+#search .car-rental-widget,
+.hero .tp-widget,
+.hero .car-rental-widget{
+  min-height: 620px;
 }
 
 .tp-widget iframe,
@@ -288,7 +298,10 @@ body[data-page="hub"]{
   display: block !important;
   width: 100% !important;
   max-width: 100% !important;
+  min-height: 620px !important;
   border: 0 !important;
+  border-radius: 18px;
+  overflow: visible !important;
 }
 
 .widget-placeholder{
@@ -648,6 +661,7 @@ body[data-page="hub"] .hero-panel .lede{
 .car-search-form{
   display: block;
   position: relative;
+  z-index: 30;
 }
 
 .car-search-grid{
@@ -1064,6 +1078,16 @@ body[data-page="hub"] .hero-panel .lede{
     transform: none;
     width: 100%;
   }
+
+  /* Keep embedded widget tall enough on tablet too */
+  #search .tp-widget,
+  #search .car-rental-widget,
+  .hero .tp-widget,
+  .hero .car-rental-widget,
+  .tp-widget iframe,
+  .car-rental-widget iframe{
+    min-height: 700px !important;
+  }
 }
 
 @media (max-width: 760px){
@@ -1145,6 +1169,16 @@ body[data-page="hub"] .hero-panel .lede{
   .car-date-popover__actions .btn{
     flex: 1 1 auto;
     justify-content: center;
+  }
+
+  /* Mobile: a bit more room for the embedded datepicker */
+  #search .tp-widget,
+  #search .car-rental-widget,
+  .hero .tp-widget,
+  .hero .car-rental-widget,
+  .tp-widget iframe,
+  .car-rental-widget iframe{
+    min-height: 760px !important;
   }
 }
 
