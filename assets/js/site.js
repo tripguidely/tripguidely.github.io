@@ -13,6 +13,7 @@
    - Binds footer “Privacy choices” link (.js-consent) (no inline onclick)
    - Contact form AJAX + success/error UI for Formspree
    - Supports generic [data-include] partial injection
+   - Car rental hero search redirect (Klook)
    ========================================================================== */
 
 (function () {
@@ -369,6 +370,7 @@
     if (host.indexOf("tp-em.com") !== -1) return true;
     if (host.indexOf("tpemb.com") !== -1) return true;
     if (host.indexOf("travelpayouts") !== -1) return true;
+    if (host.indexOf("klook.tpk.ro") !== -1) return true;
 
     return false;
   }
@@ -579,6 +581,7 @@
           var host = (u.hostname || "").toLowerCase();
           if (host.indexOf("airalo") !== -1) program = "airalo";
           else if (host.indexOf("tp-em.com") !== -1 || host.indexOf("tpemb.com") !== -1) program = "travelpayouts";
+          else if (host.indexOf("klook") !== -1) program = "klook";
         } catch (_) {}
       }
 
@@ -624,6 +627,15 @@
         try {
           if (search.contains(target)) {
             fire("search-section", { widget: "search-section", page_type: getPageType() });
+          }
+        } catch (_) {}
+      }
+
+      var carSearchForm = DOC.getElementById("car-search-form");
+      if (carSearchForm) {
+        try {
+          if (carSearchForm.contains(target)) {
+            fire("car-search-form", { widget: "car-search-form", page_type: getPageType() });
           }
         } catch (_) {}
       }
@@ -831,6 +843,169 @@
     });
   }
 
+  function initCarRentalSearch() {
+    var form = DOC.getElementById("car-search-form");
+    if (!form) return;
+    if (form.getAttribute("data-car-search-bound") === "1") return;
+    form.setAttribute("data-car-search-bound", "1");
+
+    var pickupLocation = DOC.getElementById("car-pickup-location");
+    var pickupDate = DOC.getElementById("car-pickup-date");
+    var pickupTime = DOC.getElementById("car-pickup-time");
+    var dropoffDate = DOC.getElementById("car-dropoff-date");
+    var dropoffTime = DOC.getElementById("car-dropoff-time");
+    var errorBox = DOC.getElementById("car-search-error");
+
+    function pad2(n) {
+      n = String(n);
+      return n.length < 2 ? "0" + n : n;
+    }
+
+    function formatDateLocal(d) {
+      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+    }
+
+    function formatTimeLocal(d) {
+      return pad2(d.getHours()) + ":" + pad2(d.getMinutes());
+    }
+
+    function roundToNext30(d) {
+      var copy = new Date(d.getTime());
+      copy.setSeconds(0);
+      copy.setMilliseconds(0);
+
+      var mins = copy.getMinutes();
+      if (mins === 0 || mins === 30) return copy;
+
+      if (mins < 30) copy.setMinutes(30);
+      else {
+        copy.setHours(copy.getHours() + 1);
+        copy.setMinutes(0);
+      }
+      return copy;
+    }
+
+    function setDefaultDates() {
+      var now = new Date();
+      var pickupDefault = roundToNext30(now);
+      var dropoffDefault = new Date(pickupDefault.getTime() + 2 * 60 * 60 * 1000);
+
+      if (pickupLocation && !trimStr(pickupLocation.value)) {
+        pickupLocation.value = "";
+      }
+
+      /* Date présente du jour pour les deux champs */
+      if (pickupDate) pickupDate.value = formatDateLocal(pickupDefault);
+      if (dropoffDate) dropoffDate.value = formatDateLocal(dropoffDefault);
+
+      /* Heure dynamique basée sur maintenant, pour éviter une valeur expirée */
+      if (pickupTime) pickupTime.value = formatTimeLocal(pickupDefault);
+      if (dropoffTime) dropoffTime.value = formatTimeLocal(dropoffDefault);
+
+      if (pickupDate) pickupDate.min = formatDateLocal(now);
+      if (dropoffDate) dropoffDate.min = formatDateLocal(now);
+    }
+
+    function syncDropoffMin() {
+      if (!pickupDate || !dropoffDate) return;
+
+      if (pickupDate.value) {
+        dropoffDate.min = pickupDate.value;
+
+        if (!dropoffDate.value || dropoffDate.value < pickupDate.value) {
+          dropoffDate.value = pickupDate.value;
+        }
+      }
+    }
+
+    function validate(data) {
+      if (!trimStr(data.pickup_location)) {
+        return "Enter a pick-up location.";
+      }
+
+      if (!data.pickup_date || !data.dropoff_date) {
+        return "Select valid dates.";
+      }
+
+      var start = new Date(data.pickup_date + "T" + data.pickup_time);
+      var end = new Date(data.dropoff_date + "T" + data.dropoff_time);
+
+      if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+        return "Select valid dates and times.";
+      }
+
+      if (end <= start) {
+        return "Drop-off must be after pick-up.";
+      }
+
+      return "";
+    }
+
+    function buildAffiliateUrl(data) {
+      var base = form.getAttribute("data-affiliate-base") || "https://klook.tpk.ro/Bpq9pPtf";
+      var subid = form.getAttribute("data-subid") || "tg_car_rental_hub";
+
+      try {
+        var url = new URL(base, WIN.location.href);
+
+        url.searchParams.set("sub_id", subid);
+        url.searchParams.set("pickup_location", data.pickup_location);
+        url.searchParams.set("pickup_date", data.pickup_date);
+        url.searchParams.set("pickup_time", data.pickup_time);
+        url.searchParams.set("dropoff_date", data.dropoff_date);
+        url.searchParams.set("dropoff_time", data.dropoff_time);
+
+        return url.toString();
+      } catch (_) {
+        return base;
+      }
+    }
+
+    setDefaultDates();
+    syncDropoffMin();
+
+    on(pickupDate, "change", function () {
+      syncDropoffMin();
+    });
+
+    on(form, "submit", function (e) {
+      var data, error, targetUrl;
+
+      if (e && e.preventDefault) e.preventDefault();
+      else e.returnValue = false;
+
+      if (errorBox) errorBox.textContent = "";
+
+      data = {
+        pickup_location: pickupLocation ? trimStr(pickupLocation.value) : "",
+        pickup_date: pickupDate ? pickupDate.value : "",
+        pickup_time: pickupTime ? pickupTime.value : "10:00",
+        dropoff_date: dropoffDate ? dropoffDate.value : "",
+        dropoff_time: dropoffTime ? dropoffTime.value : "12:00"
+      };
+
+      error = validate(data);
+      if (error) {
+        if (errorBox) errorBox.textContent = error;
+        return;
+      }
+
+      targetUrl = buildAffiliateUrl(data);
+
+      if (getConsent() === "granted") {
+        gtagEvent("car_rental_search", {
+          page_type: getPageType(),
+          pickup_location: data.pickup_location,
+          pickup_date: data.pickup_date,
+          dropoff_date: data.dropoff_date,
+          affiliate_program: "klook"
+        });
+      }
+
+      WIN.location.href = targetUrl;
+    });
+  }
+
   function measureVitalsHints() {
     try {
       if (getConsent() !== "granted") return;
@@ -861,6 +1036,7 @@
     bindConsentLinks();
 
     initContactForm();
+    initCarRentalSearch();
 
     trackOutboundClicks();
     trackAffiliateClicks();
