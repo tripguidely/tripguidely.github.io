@@ -37,7 +37,7 @@ body[data-page="hub"]{
 }
 
 /* ==========================================================================
-   2) Hero (editorial panel)
+   2) Hero (car-rental specific)
    ========================================================================== */
 .hero.hero-full[aria-label*="Car rental"],
 .hero.hero-full[aria-label*="car rental"]{
@@ -59,6 +59,20 @@ body[data-page="hub"]{
     linear-gradient(180deg, rgba(2,6,23,.44), rgba(2,6,23,.18) 38%, rgba(2,6,23,.16) 62%, rgba(2,6,23,.50));
 }
 
+.hero-microcopy{
+  margin: 10px 2px 0;
+  color: rgba(71,85,105,.96);
+  font-size: .93rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px){
+  .hero-microcopy{
+    font-size: .92rem;
+  }
+}
+
+/* Legacy hero-panel support for other car-rental pages if reused */
 .hero-panel{
   width: min(100%, 760px);
   max-width: 760px;
@@ -219,8 +233,23 @@ body[data-page="hub"]{
 }
 
 /* ==========================================================================
-   6) “On this page” box
+   6) Intro / jump links polish
    ========================================================================== */
+.jump-links .section-title{
+  margin-bottom: 12px;
+}
+
+.jump-links .links{
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px){
+  .jump-links .links{
+    grid-template-columns: 1fr;
+  }
+}
+
 .content .callout ul.checklist{
   margin-top: 10px;
 }
