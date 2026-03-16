@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.3)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.4)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
@@ -14,6 +14,7 @@
    - Contact form AJAX + success/error UI for Formspree
    - Supports generic [data-include] partial injection
    - Car rental hero search redirect (Klook)
+   - Guards against double init / duplicate event listeners
    ========================================================================== */
 
 (function () {
@@ -133,6 +134,20 @@
   function getPageType() {
     var p = getAttr(DOC.body, "data-page");
     return p ? String(p) : "unknown";
+  }
+
+  function setDocFlag(name) {
+    try {
+      if (DOC.documentElement) DOC.documentElement.setAttribute(name, "1");
+    } catch (_) {}
+  }
+
+  function hasDocFlag(name) {
+    try {
+      return !!(DOC.documentElement && DOC.documentElement.getAttribute(name) === "1");
+    } catch (_) {
+      return false;
+    }
   }
 
   /* ---------- Consent + GA4 (lazy load + Consent Mode v2) ---------- */
@@ -313,6 +328,9 @@
   }
 
   function initConsent() {
+    if (hasDocFlag("data-consent-init")) return;
+    setDocFlag("data-consent-init");
+
     setConsentModeDefault();
 
     var c = getConsent();
@@ -340,8 +358,8 @@
   /* ---------- Bind footer “Privacy choices” link (.js-consent) ---------- */
 
   function bindConsentLinks() {
-    if (DOC.documentElement && DOC.documentElement.getAttribute("data-consentlink-bound") === "1") return;
-    try { DOC.documentElement.setAttribute("data-consentlink-bound", "1"); } catch (_) {}
+    if (hasDocFlag("data-consentlink-bound")) return;
+    setDocFlag("data-consentlink-bound");
 
     on(DOC, "click", function (e) {
       e = e || WIN.event;
@@ -504,6 +522,9 @@
   }
 
   function handleAnchorClicks() {
+    if (hasDocFlag("data-anchorclicks-bound")) return;
+    setDocFlag("data-anchorclicks-bound");
+
     on(DOC, "click", function (e) {
       e = e || WIN.event;
       var target = e.target || e.srcElement;
@@ -527,6 +548,9 @@
   }
 
   function trackOutboundClicks() {
+    if (hasDocFlag("data-outbound-bound")) return;
+    setDocFlag("data-outbound-bound");
+
     on(DOC, "click", function (e) {
       if (getConsent() !== "granted") return;
 
@@ -556,6 +580,9 @@
   }
 
   function trackAffiliateClicks() {
+    if (hasDocFlag("data-affiliateclicks-bound")) return;
+    setDocFlag("data-affiliateclicks-bound");
+
     on(DOC, "click", function (e) {
       if (getConsent() !== "granted") return;
 
@@ -595,6 +622,9 @@
   }
 
   function trackWidgetEngagement() {
+    if (hasDocFlag("data-widgetengagement-bound")) return;
+    setDocFlag("data-widgetengagement-bound");
+
     var firedMap = {};
 
     function markFired(key) { firedMap[key] = true; }
@@ -862,6 +892,9 @@
     var dropoffDisplayValue = DOC.getElementById("car-dropoff-display-value");
     var durationBadge = DOC.getElementById("car-duration-badge");
 
+    var shouldOpenPickupTime = false;
+    var shouldOpenDropoffTime = false;
+
     function pad2(n) {
       n = String(n);
       return n.length < 2 ? "0" + n : n;
@@ -1018,12 +1051,23 @@
       try { input.click(); } catch (_) {}
     }
 
+    function openDateThenTime(dateInput, timeInput, which) {
+      if (which === "pickup") shouldOpenPickupTime = true;
+      if (which === "dropoff") shouldOpenDropoffTime = true;
+      openNativePicker(dateInput);
+    }
+
     setDefaultDates();
     syncDropoffMin();
 
     on(pickupDate, "change", function () {
       syncDropoffMin();
       updateDisplay();
+
+      if (shouldOpenPickupTime) {
+        shouldOpenPickupTime = false;
+        openNativePicker(pickupTime);
+      }
     });
 
     on(pickupTime, "change", function () {
@@ -1032,6 +1076,11 @@
 
     on(dropoffDate, "change", function () {
       updateDisplay();
+
+      if (shouldOpenDropoffTime) {
+        shouldOpenDropoffTime = false;
+        openNativePicker(dropoffTime);
+      }
     });
 
     on(dropoffTime, "change", function () {
@@ -1039,11 +1088,11 @@
     });
 
     on(pickupDisplay, "click", function () {
-      openNativePicker(pickupDate);
+      openDateThenTime(pickupDate, pickupTime, "pickup");
     });
 
     on(dropoffDisplay, "click", function () {
-      openNativePicker(dropoffDate);
+      openDateThenTime(dropoffDate, dropoffTime, "dropoff");
     });
 
     on(form, "submit", function (e) {
@@ -1085,6 +1134,9 @@
   }
 
   function measureVitalsHints() {
+    if (hasDocFlag("data-vitals-bound")) return;
+    setDocFlag("data-vitals-bound");
+
     try {
       if (getConsent() !== "granted") return;
 
@@ -1105,6 +1157,9 @@
   /* ---------- Init order (works with partials) ---------- */
 
   function initAll() {
+    if (WIN.__tg_site_initialized) return;
+    WIN.__tg_site_initialized = true;
+
     setFooterDates();
     highlightActiveNav();
     initMobileNav();
@@ -1124,6 +1179,9 @@
   }
 
   function initWithPartials() {
+    if (WIN.__tg_partials_bootstrapped) return;
+    WIN.__tg_partials_bootstrapped = true;
+
     var hasHeaderSlot = !!$("#site-header");
     var hasFooterSlot = !!$("#site-footer");
     var total = 0;
