@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <!-- Primary SEO -->
-  <title>Hotels: Where to Stay (2026) — City Guides, Neighborhood Picks & Booking Tips | TripGuidely</title>
-  <meta name="description" content="TripGuidely Hotels hub (2026): choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips." />
+  <title>Hotels: Where to Stay — City Guides, Neighborhood Picks & Booking Tips | TripGuidely</title>
+  <meta name="description" content="TripGuidely Hotels hub: choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/hotels/" />
 
@@ -43,7 +43,7 @@
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Hotels Hub (2026): Where to Stay by Neighborhood & Budget | TripGuidely" />
+  <meta property="og:title" content="Hotels Hub: Where to Stay by Neighborhood & Budget | TripGuidely" />
   <meta property="og:description" content="Choose where to stay by neighborhood, budget, and travel style. City hotel guides, shortlists, and booking tips." />
   <meta property="og:url" content="https://tripguidely.github.io/hotels/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/hotels-hero.webp" />
@@ -53,7 +53,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hotels Hub (2026): Where to Stay by Neighborhood & Budget | TripGuidely" />
+  <meta name="twitter:title" content="Hotels Hub: Where to Stay by Neighborhood & Budget | TripGuidely" />
   <meta name="twitter:description" content="Choose where to stay by neighborhood, budget, and travel style. City hotel guides, shortlists, and booking tips." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/hotels-hero.webp" />
 
@@ -101,14 +101,15 @@
         "@type":"WebPage",
         "@id":"https://tripguidely.github.io/hotels/#webpage",
         "url":"https://tripguidely.github.io/hotels/",
-        "name":"Hotels: Where to Stay (2026) — City Guides, Neighborhood Picks & Booking Tips | TripGuidely",
-        "description":"TripGuidely Hotels hub (2026): choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips.",
+        "name":"Hotels: Where to Stay — City Guides, Neighborhood Picks & Booking Tips | TripGuidely",
+        "description":"TripGuidely Hotels hub: choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips.",
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
         "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/hotels-hero.webp","width":1200,"height":630},
+        "breadcrumb":{"@id":"https://tripguidely.github.io/hotels/#breadcrumbs"},
         "datePublished":"2026-03-05",
-        "dateModified":"2026-03-05"
+        "dateModified":"2026-03-16"
       },
       {
         "@type":"BreadcrumbList",
@@ -130,7 +131,7 @@
   <div id="site-header"></div>
 
   <main id="main" class="main" role="main">
-    <!-- HERO (image-only; matches your system) -->
+    <!-- HERO -->
     <section class="hero hero-full" aria-label="Hotels hub hero">
       <div class="hero-bg" aria-hidden="true">
         <img
@@ -146,7 +147,117 @@
       </div>
 
       <div class="wrap hero-inner">
-        <!-- Optional: add a hotel-search tool here later using .hero-tool-wrap/.hero-tool-shell -->
+        <div class="hero-tool-wrap">
+          <h1 class="hero-tool-title">Hotels</h1>
+          <p class="hero-tool-sub">Choose where to stay by neighborhood, travel style, and budget — then search deals through our hotel partner.</p>
+
+          <div class="hero-tool-shell">
+            <div class="hero-tool-pad">
+              <form
+                id="hotel-search-form"
+                class="js-aff"
+                data-aff="klook"
+                data-affiliate-base="https://klook.tpk.ro/ZiRVfSud"
+                data-subid="tg_hotels_hub"
+                novalidate
+                style="display:grid;gap:12px;"
+              >
+                <div
+                  style="display:grid;grid-template-columns:minmax(220px,2fr) minmax(180px,1.2fr) minmax(180px,1.2fr) minmax(170px,1fr) auto;gap:10px;align-items:end;">
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Where to?</span>
+                    <input
+                      id="hotel-destination"
+                      name="destination"
+                      type="text"
+                      placeholder="City, neighborhood, or hotel"
+                      autocomplete="off"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);"
+                    />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Check-in</span>
+                    <input
+                      id="hotel-checkin"
+                      name="checkin"
+                      type="date"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);"
+                    />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Check-out</span>
+                    <input
+                      id="hotel-checkout"
+                      name="checkout"
+                      type="date"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);"
+                    />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Guests</span>
+                    <select
+                      id="hotel-guests"
+                      name="guests"
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);">
+                      <option value="1">1 guest</option>
+                      <option value="2" selected>2 guests</option>
+                      <option value="3">3 guests</option>
+                      <option value="4">4 guests</option>
+                      <option value="5">5 guests</option>
+                      <option value="6">6+ guests</option>
+                    </select>
+                  </label>
+
+                  <button
+                    id="hotel-search-submit"
+                    class="btn primary"
+                    type="submit"
+                    style="min-height:58px;padding:0 22px;white-space:nowrap;">
+                    Search
+                  </button>
+                </div>
+
+                <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                  Powered by Klook. Press Enter or Search to continue to our hotel partner.
+                </p>
+                <p id="hotel-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
+              </form>
+
+              <p class="hero-microcopy">Best for hotel planning by neighborhood, centrality, cancellation flexibility, and trip style — not just the cheapest nightly rate.</p>
+
+              <div class="actions" aria-label="Primary actions" style="margin-top:0;">
+                <a class="btn primary" href="#cities">
+                  <span class="pill" aria-hidden="true">🏙️</span>
+                  Browse city hotel guides
+                </a>
+                <a class="btn" href="#how">
+                  <span class="pill" aria-hidden="true">🧭</span>
+                  How to choose
+                </a>
+                <a class="btn" href="#tips">
+                  <span class="pill" aria-hidden="true">✅</span>
+                  Booking tips
+                </a>
+              </div>
+
+              <div class="trust" aria-label="Trust highlights">
+                <div class="trust-item"><b>Neighborhood-first</b><span>Transit + walkability</span></div>
+                <div class="trust-item"><b>Shortlists</b><span>Fewer tabs, better picks</span></div>
+                <div class="trust-item"><b>Practical</b><span>Check-in, fees, noise</span></div>
+              </div>
+
+              <p class="meta" style="margin-top:12px;">
+                Updated regularly
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -160,8 +271,8 @@
       <!-- Intro card -->
       <section class="card" aria-label="Hotels hub intro">
         <div class="pad">
-          <p class="kicker"><span class="dot" aria-hidden="true"></span>Hotels (2026)</p>
-          <h1>Hotels: Where to Stay (2026)</h1>
+          <p class="kicker"><span class="dot" aria-hidden="true"></span>Hotels</p>
+          <h1>Hotels: Where to Stay</h1>
 
           <p class="lede">
             Hotels are mostly a <strong>location decision</strong>. Use this hub to pick the right neighborhood fast,
@@ -189,9 +300,7 @@
             <div class="trust-item"><b>Practical</b><span>Check-in, fees, noise</span></div>
           </div>
 
-          <p class="meta">
-            Updated: <time datetime="2026-03-05">Mar 5, 2026</time>
-          </p>
+          <p class="meta">Updated regularly</p>
         </div>
       </section>
 
@@ -397,6 +506,110 @@
 
   <!-- Footer injected from /partials/footer.html -->
   <div id="site-footer"></div>
+
+  <script>
+    (function(){
+      var form = document.getElementById('hotel-search-form');
+      if(!form) return;
+
+      var dest = document.getElementById('hotel-destination');
+      var checkin = document.getElementById('hotel-checkin');
+      var checkout = document.getElementById('hotel-checkout');
+      var guests = document.getElementById('hotel-guests');
+      var error = document.getElementById('hotel-search-error');
+
+      function todayISO(){
+        var d = new Date();
+        var m = String(d.getMonth() + 1).padStart(2, '0');
+        var day = String(d.getDate()).padStart(2, '0');
+        return d.getFullYear() + '-' + m + '-' + day;
+      }
+
+      function addDaysISO(days){
+        var d = new Date();
+        d.setDate(d.getDate() + days);
+        var m = String(d.getMonth() + 1).padStart(2, '0');
+        var day = String(d.getDate()).padStart(2, '0');
+        return d.getFullYear() + '-' + m + '-' + day;
+      }
+
+      if(checkin && !checkin.value){
+        checkin.value = addDaysISO(30);
+      }
+      if(checkout && !checkout.value){
+        checkout.value = addDaysISO(33);
+      }
+
+      if(checkin){
+        checkin.min = todayISO();
+      }
+
+      if(checkout && checkin){
+        checkout.min = checkin.value || todayISO();
+
+        checkin.addEventListener('change', function(){
+          checkout.min = checkin.value || todayISO();
+          if(checkout.value && checkin.value && checkout.value <= checkin.value){
+            var nextDay = new Date(checkin.value);
+            nextDay.setDate(nextDay.getDate() + 1);
+            var m = String(nextDay.getMonth() + 1).padStart(2, '0');
+            var day = String(nextDay.getDate()).padStart(2, '0');
+            checkout.value = nextDay.getFullYear() + '-' + m + '-' + day;
+          }
+        });
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        var affiliateBase = form.getAttribute('data-affiliate-base') || '';
+        var subid = form.getAttribute('data-subid') || '';
+        var destination = dest ? dest.value.replace(/\s+/g, ' ').trim() : '';
+        var inDate = checkin ? checkin.value : '';
+        var outDate = checkout ? checkout.value : '';
+        var guestCount = guests ? guests.value : '2';
+
+        if(error) error.textContent = '';
+
+        if(!affiliateBase){
+          if(error) error.textContent = 'Affiliate link missing.';
+          return;
+        }
+
+        if(!destination){
+          if(error) error.textContent = 'Please enter a destination.';
+          if(dest) dest.focus();
+          return;
+        }
+
+        if(!inDate || !outDate){
+          if(error) error.textContent = 'Please choose check-in and check-out dates.';
+          return;
+        }
+
+        if(outDate <= inDate){
+          if(error) error.textContent = 'Check-out must be after check-in.';
+          if(checkout) checkout.focus();
+          return;
+        }
+
+        var target = new URL(affiliateBase);
+        target.searchParams.set('subid', subid);
+
+        try {
+          sessionStorage.setItem('tg_hotels_search_context', JSON.stringify({
+            destination: destination,
+            checkin: inDate,
+            checkout: outDate,
+            guests: guestCount,
+            subid: subid
+          }));
+        } catch (err) {}
+
+        window.location.href = target.toString();
+      });
+    })();
+  </script>
 
   <!-- Global JS (includes affiliate tracking + GA4 in site.js) -->
   <script src="/assets/js/site.js" defer></script>
