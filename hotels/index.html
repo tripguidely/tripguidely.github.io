@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <!-- Primary SEO -->
-  <title>Hotels: Where to Stay — City Guides, Neighborhood Picks & Booking Tips | TripGuidely</title>
-  <meta name="description" content="TripGuidely Hotels hub: choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips." />
+  <title>Where to Stay: Hotel Area Guides, Neighborhood Picks & Booking Tips | TripGuidely</title>
+  <meta name="description" content="Find where to stay by neighborhood, budget, transit access, and travel style. Explore TripGuidely hotel guides, city shortlists, and practical booking tips." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://tripguidely.github.io/hotels/" />
 
@@ -43,8 +43,8 @@
   <meta property="og:site_name" content="TripGuidely" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Hotels Hub: Where to Stay by Neighborhood & Budget | TripGuidely" />
-  <meta property="og:description" content="Choose where to stay by neighborhood, budget, and travel style. City hotel guides, shortlists, and booking tips." />
+  <meta property="og:title" content="Where to Stay: Hotel Area Guides & Booking Tips | TripGuidely" />
+  <meta property="og:description" content="Choose where to stay by neighborhood, budget, transit access, and travel style with TripGuidely hotel guides and booking tips." />
   <meta property="og:url" content="https://tripguidely.github.io/hotels/" />
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/hotels-hero.webp" />
   <meta property="og:image:alt" content="Luxury hotel lobby scene with warm lighting and turquoise accents" />
@@ -53,8 +53,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hotels Hub: Where to Stay by Neighborhood & Budget | TripGuidely" />
-  <meta name="twitter:description" content="Choose where to stay by neighborhood, budget, and travel style. City hotel guides, shortlists, and booking tips." />
+  <meta name="twitter:title" content="Where to Stay: Hotel Area Guides & Booking Tips | TripGuidely" />
+  <meta name="twitter:description" content="Choose where to stay by neighborhood, budget, transit access, and travel style with TripGuidely hotel guides and booking tips." />
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/hotels-hero.webp" />
 
   <!-- Performance -->
@@ -86,7 +86,10 @@
         "@id":"https://tripguidely.github.io/#organization",
         "name":"TripGuidely",
         "url":"https://tripguidely.github.io/",
-        "logo":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/tg-logo.png"},
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/tg-logo.png"
+        },
         "sameAs":[]
       },
       {
@@ -98,15 +101,20 @@
         "publisher":{"@id":"https://tripguidely.github.io/#organization"}
       },
       {
-        "@type":"WebPage",
+        "@type":"CollectionPage",
         "@id":"https://tripguidely.github.io/hotels/#webpage",
         "url":"https://tripguidely.github.io/hotels/",
-        "name":"Hotels: Where to Stay — City Guides, Neighborhood Picks & Booking Tips | TripGuidely",
-        "description":"TripGuidely Hotels hub: choose where to stay by neighborhood, budget, and travel style. City hotel guides, quick shortlists, and booking tips.",
+        "name":"Where to Stay: Hotel Area Guides, Neighborhood Picks & Booking Tips | TripGuidely",
+        "description":"Find where to stay by neighborhood, budget, transit access, and travel style. Explore TripGuidely hotel guides, city shortlists, and practical booking tips.",
         "inLanguage":"en",
         "isPartOf":{"@id":"https://tripguidely.github.io/#website"},
         "publisher":{"@id":"https://tripguidely.github.io/#organization"},
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://tripguidely.github.io/assets/images/hotels-hero.webp","width":1200,"height":630},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://tripguidely.github.io/assets/images/hotels-hero.webp",
+          "width":1200,
+          "height":630
+        },
         "breadcrumb":{"@id":"https://tripguidely.github.io/hotels/#breadcrumbs"},
         "datePublished":"2026-03-05",
         "dateModified":"2026-03-16"
@@ -117,6 +125,76 @@
         "itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://tripguidely.github.io/"},
           {"@type":"ListItem","position":2,"name":"Hotels","item":"https://tripguidely.github.io/hotels/"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://tripguidely.github.io/hotels/#faq",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Is it better to stay in the city center?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"For first-time visitors, usually yes. A central stay reduces daily transit time and makes sightseeing easier. If budget is tighter, staying near a major transit line is often the next best option."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"What matters more: hotel quality or location?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Location usually matters more. A practical, well-connected area saves time, reduces stress, and improves the overall trip more than a nicer room in the wrong area."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How far from the center should you stay?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"That depends on the city, but the key is not distance alone. Good transit access and easy walking routes matter more than being technically central on a map."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"What hidden hotel costs should you check before booking?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Common extras include city taxes, resort fees in some destinations, breakfast add-ons, paid early check-in, late check-out, and parking charges."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Should families stay in quieter neighborhoods?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Often yes. Families usually benefit from quieter streets, easier transport, larger rooms, and less nightlife noise, even if the area is slightly less central."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How many hotels should you compare before booking?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Three to five is usually enough. More than that often creates decision fatigue without leading to a better final choice."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Is flexible cancellation worth paying for?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes when your trip details may still change. It can be especially useful for longer trips, multi-city plans, or travel that depends on flights and train schedules."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Should you stay near a train station?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Sometimes. It can be very practical for short stays or early departures, but some station areas are less pleasant at night, so the exact neighborhood matters."
+            }
+          }
         ]
       }
     ]
@@ -148,8 +226,8 @@
 
       <div class="wrap hero-inner">
         <div class="hero-tool-wrap">
-          <h1 class="hero-tool-title">Hotels</h1>
-          <p class="hero-tool-sub">Choose where to stay by neighborhood, travel style, and budget — then search deals through our hotel partner.</p>
+          <h1 class="hero-tool-title">Hotels: Where to Stay</h1>
+          <p class="hero-tool-sub">Choose where to stay by neighborhood, transit access, budget, and travel style — then continue to our hotel partner to search deals.</p>
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
@@ -224,7 +302,7 @@
                 </div>
 
                 <p style="margin:0;color:var(--muted2);font-size:.92rem;">
-                  Powered by Klook. Press Enter or Search to continue to our hotel partner.
+                  Continue to our hotel partner to search deals by destination and travel dates.
                 </p>
                 <p id="hotel-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
               </form>
@@ -234,7 +312,7 @@
               <div class="actions" aria-label="Primary actions" style="margin-top:0;">
                 <a class="btn primary" href="#cities">
                   <span class="pill" aria-hidden="true">🏙️</span>
-                  Browse city hotel guides
+                  Browse hotel guides
                 </a>
                 <a class="btn" href="#how">
                   <span class="pill" aria-hidden="true">🧭</span>
@@ -249,12 +327,10 @@
               <div class="trust" aria-label="Trust highlights">
                 <div class="trust-item"><b>Neighborhood-first</b><span>Transit + walkability</span></div>
                 <div class="trust-item"><b>Shortlists</b><span>Fewer tabs, better picks</span></div>
-                <div class="trust-item"><b>Practical</b><span>Check-in, fees, noise</span></div>
+                <div class="trust-item"><b>Practical</b><span>Fees, noise, logistics</span></div>
               </div>
 
-              <p class="meta" style="margin-top:12px;">
-                Updated regularly
-              </p>
+              <p class="meta" style="margin-top:12px;">Updated regularly</p>
             </div>
           </div>
         </div>
@@ -272,35 +348,15 @@
       <section class="card" aria-label="Hotels hub intro">
         <div class="pad">
           <p class="kicker"><span class="dot" aria-hidden="true"></span>Hotels</p>
-          <h1>Hotels: Where to Stay</h1>
+          <h2>How to use this hotels hub</h2>
 
           <p class="lede">
-            Hotels are mostly a <strong>location decision</strong>. Use this hub to pick the right neighborhood fast,
-            then jump into a city guide for shortlists by budget and travel style.
+            Choosing a hotel is usually a location decision first. Use this hub to narrow down the right area, compare travel styles, and move quickly to city-specific hotel guides.
           </p>
 
-          <div class="actions" aria-label="Primary actions">
-            <a class="btn primary" href="#cities">
-              <span class="pill" aria-hidden="true">🏙️</span>
-              Browse city hotel guides
-            </a>
-            <a class="btn" href="#how">
-              <span class="pill" aria-hidden="true">🧭</span>
-              How to choose
-            </a>
-            <a class="btn" href="#tips">
-              <span class="pill" aria-hidden="true">✅</span>
-              Booking tips
-            </a>
-          </div>
-
-          <div class="trust" aria-label="Trust highlights">
-            <div class="trust-item"><b>Neighborhood-first</b><span>Transit + walkability</span></div>
-            <div class="trust-item"><b>Shortlists</b><span>Fewer tabs, better picks</span></div>
-            <div class="trust-item"><b>Practical</b><span>Check-in, fees, noise</span></div>
-          </div>
-
-          <p class="meta">Updated regularly</p>
+          <p>
+            We focus on practical booking factors that affect real trips: neighborhood fit, transit access, walkability, hidden fees, room trade-offs, and cancellation flexibility.
+          </p>
         </div>
       </section>
 
@@ -313,147 +369,292 @@
               <div class="callout">
                 <b>On this page:</b>
                 <ul class="checklist" style="margin-top:10px;">
-                  <li><a href="#cities">City hotel guides</a></li>
-                  <li><a href="#how">How to choose a hotel (fast)</a></li>
-                  <li><a href="#areas">Neighborhood rules that usually win</a></li>
-                  <li><a href="#tips">Booking tips (fees, cancellations, noise)</a></li>
+                  <li><a href="#cities">Popular city hotel guides</a></li>
+                  <li><a href="#trip-types">Browse by trip type</a></li>
+                  <li><a href="#how">How to choose a hotel fast</a></li>
+                  <li><a href="#areas">Best area rules that usually win</a></li>
+                  <li><a href="#compare">Hotel comparison checklist</a></li>
+                  <li><a href="#tips">Booking tips and hidden fees</a></li>
+                  <li><a href="#related">Related trip-planning hubs</a></li>
                   <li><a href="#faq">FAQ</a></li>
                 </ul>
               </div>
             </section>
 
-            <section id="cities" aria-label="City hotel guides">
+            <section id="cities" aria-label="Popular city hotel guides">
               <div class="section-title">
-                <h2>City hotel guides</h2>
-                <p>Jump into a city, then choose by area + budget.</p>
+                <h2>Popular city hotel guides</h2>
+                <p>Choose a destination, then narrow your stay by neighborhood, budget, and travel style.</p>
               </div>
 
               <div class="cards" aria-label="Hotel city guide cards">
                 <a class="cat" href="/hotels/paris/">
                   <strong>Paris hotels</strong>
-                  <span>Where to stay by arrondissement, transit access, and trip style (first-timers vs repeat visits).</span>
+                  <span>Choose where to stay by arrondissement, transit access, and trip style for first-timers and repeat visits.</span>
                   <span class="tag"><i aria-hidden="true"></i> Neighborhood picks</span>
                 </a>
 
                 <a class="cat" href="/hotels/london/">
                   <strong>London hotels</strong>
-                  <span>Best areas for sightseeing vs business, plus Tube-first shortlists.</span>
+                  <span>Compare areas by Tube access, sightseeing convenience, and business-friendly location trade-offs.</span>
                   <span class="tag"><i aria-hidden="true"></i> Transit-first</span>
                 </a>
 
                 <a class="cat" href="/hotels/rome/">
                   <strong>Rome hotels</strong>
-                  <span>Historic core vs quieter stays, walkability, and late-night noise trade-offs.</span>
+                  <span>Pick between the historic core, quieter areas, and practical bases with better sleep and walkability.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Walkability</span>
+                </a>
+
+                <a class="cat" href="/hotels/new-york/">
+                  <strong>New York hotels</strong>
+                  <span>Choose where to stay by borough access, subway convenience, and sightseeing priorities.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Area strategy</span>
+                </a>
+
+                <a class="cat" href="/hotels/tokyo/">
+                  <strong>Tokyo hotels</strong>
+                  <span>Compare neighborhoods by rail access, station complexity, and day-trip convenience.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Transit-first</span>
+                </a>
+
+                <a class="cat" href="/hotels/barcelona/">
+                  <strong>Barcelona hotels</strong>
+                  <span>Balance beach access, old town atmosphere, nightlife noise, and overall walkability.</span>
                   <span class="tag"><i aria-hidden="true"></i> Walkability</span>
                 </a>
               </div>
 
               <div class="callout" style="margin-top:14px;">
-                <b>Internal linking:</b> Pair city hotel guides with <a href="/things-to-do/">things to do</a> and
-                <a href="/itinerary/">itineraries</a> for stronger trip-planning clusters.
+                <b>Best use of this hub:</b> start with the city, narrow down the right neighborhood, then compare only a few hotel options with the best location and cancellation terms.
+              </div>
+            </section>
+
+            <section id="trip-types" aria-label="Browse by trip type">
+              <div class="section-title">
+                <h2>Browse by trip type</h2>
+                <p>Different trips need different hotel locations and priorities.</p>
+              </div>
+
+              <div class="cards" aria-label="Trip type hotel guides">
+                <a class="cat" href="/hotels/family-travel/">
+                  <strong>Family-friendly stays</strong>
+                  <span>Prioritize room size, elevators, quieter streets, and easy transit.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Family travel</span>
+                </a>
+
+                <a class="cat" href="/hotels/first-time-visitors/">
+                  <strong>First-time visitors</strong>
+                  <span>Stay central enough to reduce transit time and simplify sightseeing.</span>
+                  <span class="tag"><i aria-hidden="true"></i> First trip</span>
+                </a>
+
+                <a class="cat" href="/hotels/couples/">
+                  <strong>Hotels for couples</strong>
+                  <span>Look for neighborhood atmosphere, dining access, and quieter evenings.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Couples</span>
+                </a>
+
+                <a class="cat" href="/hotels/business-travel/">
+                  <strong>Business stays</strong>
+                  <span>Focus on reliable transit, check-in flexibility, and practical convenience.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Business</span>
+                </a>
               </div>
             </section>
 
             <section id="how" aria-label="How to choose a hotel">
               <div class="section-title">
-                <h2>How to choose a hotel (fast)</h2>
-                <p>Decide in the right order to avoid wasting time.</p>
+                <h2>How to choose a hotel fast</h2>
+                <p>Use a simple decision order to avoid wasting time on the wrong options.</p>
               </div>
 
               <ol class="steps">
-                <li><b>Pick the neighborhood:</b> prioritize transit + walkability over “nice rooms”.</li>
-                <li><b>Set your non-negotiables:</b> A/C (summer), elevator, quiet, breakfast, 24h desk.</li>
-                <li><b>Define your trip style:</b> early sightseeing vs nightlife vs business.</li>
-                <li><b>Shortlist 3–5 options:</b> compare total cost, not just nightly rate.</li>
-                <li><b>Lock cancellation rules:</b> choose flexible if your trip might change.</li>
+                <li><b>Choose the right area first:</b> focus on neighborhood fit, transit access, and walkability before room aesthetics.</li>
+                <li><b>Set your real non-negotiables:</b> air conditioning, elevator, quiet nights, breakfast, family room size, or late check-in.</li>
+                <li><b>Match the stay to your trip style:</b> first-time sightseeing, nightlife, business, family travel, or a short city break.</li>
+                <li><b>Compare only 3 to 5 hotels:</b> too many tabs usually create decision fatigue without improving the outcome.</li>
+                <li><b>Check total value, not just the nightly rate:</b> review fees, cancellation terms, breakfast, and room trade-offs before booking.</li>
               </ol>
 
               <div class="callout" style="margin-top:14px;">
-                <b>Quick rule:</b> If you’re taking transit daily, a “better location” beats a “better hotel” almost every time.
+                <b>Quick rule:</b> a better location with a simpler room usually beats a better room in the wrong area.
               </div>
             </section>
 
-            <section id="areas" aria-label="Neighborhood rules">
+            <section id="areas" aria-label="Best area rules">
               <div class="section-title">
-                <h2>Neighborhood rules that usually win</h2>
-                <p>Simple heuristics that reduce bad stays.</p>
+                <h2>Best area rules that usually win</h2>
+                <p>These simple location rules help avoid the most common hotel mistakes.</p>
               </div>
 
               <div class="mini-grid" aria-label="Neighborhood heuristics">
                 <div class="mini">
                   <div class="mini-icon" aria-hidden="true">🚇</div>
-                  <div><b>Transit access</b><span>Stay near a major line or interchange</span></div>
+                  <div><b>Transit access</b><span>Stay near a major line, station, or easy interchange</span></div>
                 </div>
                 <div class="mini">
                   <div class="mini-icon" aria-hidden="true">🚶</div>
-                  <div><b>Walkability</b><span>Good for short breaks + early starts</span></div>
+                  <div><b>Walkability</b><span>Good walking access saves time on short city stays</span></div>
                 </div>
                 <div class="mini">
                   <div class="mini-icon" aria-hidden="true">🌙</div>
-                  <div><b>Noise check</b><span>Bars + main roads = bring earplugs or pick quieter blocks</span></div>
+                  <div><b>Noise exposure</b><span>Bars, nightlife strips, and main roads can affect sleep</span></div>
                 </div>
                 <div class="mini">
                   <div class="mini-icon" aria-hidden="true">🧳</div>
-                  <div><b>Arrival logistics</b><span>Late arrival? prioritize easy check-in + safe route</span></div>
+                  <div><b>Arrival logistics</b><span>Late arrivals need simple access, safe routes, and flexible check-in</span></div>
                 </div>
               </div>
 
               <ul class="checklist" style="margin-top:14px;">
-                <li><b>Families:</b> prioritize elevators, room size, and easy transit — not nightlife zones.</li>
-                <li><b>First-timers:</b> stay central enough to avoid long daily commutes.</li>
-                <li><b>Repeat visits:</b> choose calmer areas with better value and local food.</li>
+                <li><b>Families:</b> prioritize space, elevators, quieter blocks, and easy metro or taxi access.</li>
+                <li><b>First-time visitors:</b> stay central enough to cut daily transit time.</li>
+                <li><b>Repeat visitors:</b> calmer local neighborhoods often offer better value and a better food scene.</li>
+                <li><b>Light sleepers:</b> avoid nightlife-heavy streets and confirm room orientation when possible.</li>
               </ul>
+            </section>
+
+            <section id="compare" aria-label="Hotel comparison checklist">
+              <div class="section-title">
+                <h2>Hotel comparison checklist</h2>
+                <p>Use the same checklist on every shortlist so you compare hotels fairly.</p>
+              </div>
+
+              <ul class="checklist">
+                <li><b>Area fit:</b> does the neighborhood match your trip style?</li>
+                <li><b>Transit access:</b> how easy is it to reach the main places you plan to visit?</li>
+                <li><b>Total cost:</b> are taxes, breakfast, and extra fees included?</li>
+                <li><b>Room reality:</b> is the room size clearly shown and acceptable for your stay?</li>
+                <li><b>Cancellation policy:</b> can you change plans without losing money?</li>
+                <li><b>Arrival and check-in:</b> will your arrival time create friction?</li>
+                <li><b>Noise risk:</b> is the hotel on a nightlife street or busy road?</li>
+                <li><b>Guest feedback patterns:</b> do reviews repeatedly mention cleanliness, comfort, or location issues?</li>
+              </ul>
+
+              <div class="callout" style="margin-top:14px;">
+                <b>Best practice:</b> shortlist 3 options, compare them with the same criteria, then book the best location-value combination.
+              </div>
             </section>
 
             <section id="tips" aria-label="Booking tips">
               <div class="section-title">
-                <h2>Booking tips (fees, cancellations, and traps)</h2>
-                <p>Hotels can look cheap until add-ons appear.</p>
+                <h2>Booking tips and hidden fees</h2>
+                <p>Hotels often look affordable until extra costs and small trade-offs appear.</p>
               </div>
 
               <ul class="checklist">
-                <li><b>Total price:</b> confirm taxes, city fees, resort fees, and breakfast costs.</li>
-                <li><b>Room type details:</b> “small double” can be very small; check square meters/ft² when available.</li>
-                <li><b>Cancellation:</b> flexible rates are worth it when plans might shift.</li>
-                <li><b>Noise:</b> ask for courtyard-facing rooms if you sleep lightly.</li>
-                <li><b>Air conditioning:</b> confirm it explicitly in warm months.</li>
-                <li><b>Late check-in:</b> make sure your arrival time is supported.</li>
+                <li><b>Total price first:</b> check taxes, city fees, resort fees, breakfast, and any cleaning or service charges.</li>
+                <li><b>Room type details:</b> small doubles can be tight; check room dimensions when available.</li>
+                <li><b>Flexible cancellation:</b> worth prioritizing if plans, flights, or train timings may change.</li>
+                <li><b>Noise exposure:</b> nightlife zones and major roads may need more caution than the photo gallery suggests.</li>
+                <li><b>Climate essentials:</b> confirm air conditioning in warm months and heating in colder seasons.</li>
+                <li><b>Arrival timing:</b> late arrivals should verify check-in hours and access instructions.</li>
+                <li><b>Breakfast value:</b> compare the add-on cost against nearby café options.</li>
+                <li><b>Location trade-off:</b> a slightly simpler hotel in the right area often beats a nicer hotel far from everything.</li>
               </ul>
 
               <div class="callout" style="margin-top:14px;">
-                <b>Decision shortcut:</b> After you shortlist 3 options, stop browsing and book the best location with the best cancellation policy you can afford.
+                <b>Decision shortcut:</b> once you have 3 solid options, stop browsing and book the hotel with the best location and most useful cancellation policy within budget.
               </div>
             </section>
 
+            <section id="related" aria-label="Related trip-planning hubs">
+              <div class="section-title">
+                <h2>Related trip-planning hubs</h2>
+                <p>Build the rest of your trip around the right hotel location.</p>
+              </div>
+
+              <div class="cards" aria-label="Related travel hubs">
+                <a class="cat" href="/things-to-do/">
+                  <strong>Things to do</strong>
+                  <span>Plan attractions and daily priorities around the area where you stay.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Activities</span>
+                </a>
+
+                <a class="cat" href="/itinerary/">
+                  <strong>Itineraries</strong>
+                  <span>Turn your hotel location into a more efficient day-by-day plan.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Itinerary planning</span>
+                </a>
+
+                <a class="cat" href="/car-rental/">
+                  <strong>Car rental</strong>
+                  <span>Useful when you are staying outside central urban areas or planning day trips.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Transport</span>
+                </a>
+
+                <a class="cat" href="/esim/">
+                  <strong>eSIM guides</strong>
+                  <span>Stay connected for maps, bookings, check-in details, and local transport.</span>
+                  <span class="tag"><i aria-hidden="true"></i> Connectivity</span>
+                </a>
+              </div>
+            </section>
+
+            <section aria-label="How TripGuidely evaluates hotels">
+              <div class="section-title">
+                <h2>How TripGuidely evaluates where to stay</h2>
+                <p>We focus on practical factors that shape real travel outcomes.</p>
+              </div>
+
+              <ul class="checklist">
+                <li><b>Neighborhood fit:</b> matching the area to the purpose of the trip.</li>
+                <li><b>Transit and walkability:</b> reducing daily friction and commute time.</li>
+                <li><b>Noise and sleep quality:</b> identifying common area trade-offs.</li>
+                <li><b>Fee visibility:</b> checking how “cheap” rates change once extras appear.</li>
+                <li><b>Flexibility:</b> valuing cancellation terms when plans may shift.</li>
+              </ul>
+            </section>
+
             <section id="faq" aria-label="FAQ">
-              <h2>FAQ</h2>
+              <h2>Frequently asked questions about choosing hotels</h2>
 
               <details>
                 <summary>Is it better to stay in the city center?</summary>
-                <p>Often yes for first-time visitors, because it reduces daily transit time. If you’re on a tighter budget, stay near a major transit line instead of far suburbs.</p>
+                <p>For first-time visitors, usually yes. A central stay reduces daily transit time and makes sightseeing easier. If budget is tighter, staying near a major transit line is often the next best option.</p>
               </details>
 
               <details>
-                <summary>What matters most: hotel quality or location?</summary>
-                <p>Location usually wins. A good location saves time and stress, and it makes the whole trip feel easier.</p>
+                <summary>What matters more: hotel quality or location?</summary>
+                <p>Location usually matters more. A practical, well-connected area saves time, reduces stress, and improves the overall trip more than a nicer room in the wrong area.</p>
               </details>
 
               <details>
-                <summary>What are the most common hidden costs?</summary>
-                <p>City taxes, resort fees (in some destinations), breakfast add-ons, and paid early check-in/late check-out are common extras.</p>
+                <summary>How far from the center should you stay?</summary>
+                <p>That depends on the city, but the key is not distance alone. Good transit access and easy walking routes matter more than being technically central on a map.</p>
               </details>
 
               <details>
-                <summary>How many hotels should I shortlist?</summary>
-                <p>Three to five. More than that usually creates decision fatigue and doesn’t improve outcomes.</p>
+                <summary>What hidden hotel costs should you check before booking?</summary>
+                <p>Common extras include city taxes, resort fees in some destinations, breakfast add-ons, paid early check-in, late check-out, and parking charges.</p>
+              </details>
+
+              <details>
+                <summary>Should families stay in quieter neighborhoods?</summary>
+                <p>Often yes. Families usually benefit from quieter streets, easier transport, larger rooms, and less nightlife noise, even if the area is slightly less central.</p>
+              </details>
+
+              <details>
+                <summary>How many hotels should you compare before booking?</summary>
+                <p>Three to five is usually enough. More than that often creates decision fatigue without leading to a better final choice.</p>
+              </details>
+
+              <details>
+                <summary>Is flexible cancellation worth paying for?</summary>
+                <p>Yes when your trip details may still change. It can be especially useful for longer trips, multi-city plans, or travel that depends on flights and train schedules.</p>
+              </details>
+
+              <details>
+                <summary>Should you stay near a train station?</summary>
+                <p>Sometimes. It can be very practical for short stays or early departures, but some station areas are less pleasant at night, so the exact neighborhood matters.</p>
               </details>
             </section>
 
             <section class="disclosure" aria-label="Affiliate disclosure">
               <h2 class="sr-only">Disclosure</h2>
-              <p><strong>Disclosure:</strong> TripGuidely may earn commissions from qualifying bookings. This supports the site and helps keep guides updated.</p>
+              <p><strong>Disclosure:</strong> TripGuidely may earn commissions from qualifying bookings made through partner links. This helps support the site and keeps travel guides updated.</p>
             </section>
-
           </div>
         </article>
 
@@ -468,16 +669,24 @@
             <div class="links" role="list">
               <a class="link-card" role="listitem" href="#cities">
                 <div>
-                  <strong>Browse cities</strong><br />
-                  <span>Paris, London, Rome</span>
+                  <strong>Popular city guides</strong><br />
+                  <span>Browse top destinations</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↓</div>
               </a>
 
-              <a class="link-card" role="listitem" href="#how">
+              <a class="link-card" role="listitem" href="#trip-types">
                 <div>
-                  <strong>How to choose</strong><br />
-                  <span>Pick neighborhood first</span>
+                  <strong>Trip type stays</strong><br />
+                  <span>Family, couples, business</span>
+                </div>
+                <div class="arrow" aria-hidden="true">↓</div>
+              </a>
+
+              <a class="link-card" role="listitem" href="#compare">
+                <div>
+                  <strong>Compare hotels</strong><br />
+                  <span>Use one checklist</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↓</div>
               </a>
@@ -485,7 +694,7 @@
               <a class="link-card" role="listitem" href="/things-to-do/">
                 <div>
                   <strong>Things to do</strong><br />
-                  <span>Build your itinerary</span>
+                  <span>Build your trip around your stay</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
@@ -493,7 +702,7 @@
               <a class="link-card" role="listitem" href="/itinerary/">
                 <div>
                   <strong>Itineraries</strong><br />
-                  <span>Day-by-day planning</span>
+                  <span>Plan day by day</span>
                 </div>
                 <div class="arrow" aria-hidden="true">↗</div>
               </a>
@@ -518,18 +727,22 @@
       var guests = document.getElementById('hotel-guests');
       var error = document.getElementById('hotel-search-error');
 
+      function pad2(n){
+        return n < 10 ? '0' + n : '' + n;
+      }
+
       function todayISO(){
         var d = new Date();
-        var m = String(d.getMonth() + 1).padStart(2, '0');
-        var day = String(d.getDate()).padStart(2, '0');
+        var m = pad2(d.getMonth() + 1);
+        var day = pad2(d.getDate());
         return d.getFullYear() + '-' + m + '-' + day;
       }
 
       function addDaysISO(days){
         var d = new Date();
         d.setDate(d.getDate() + days);
-        var m = String(d.getMonth() + 1).padStart(2, '0');
-        var day = String(d.getDate()).padStart(2, '0');
+        var m = pad2(d.getMonth() + 1);
+        var day = pad2(d.getDate());
         return d.getFullYear() + '-' + m + '-' + day;
       }
 
@@ -552,8 +765,8 @@
           if(checkout.value && checkin.value && checkout.value <= checkin.value){
             var nextDay = new Date(checkin.value);
             nextDay.setDate(nextDay.getDate() + 1);
-            var m = String(nextDay.getMonth() + 1).padStart(2, '0');
-            var day = String(nextDay.getDate()).padStart(2, '0');
+            var m = pad2(nextDay.getMonth() + 1);
+            var day = pad2(nextDay.getDate());
             checkout.value = nextDay.getFullYear() + '-' + m + '-' + day;
           }
         });
