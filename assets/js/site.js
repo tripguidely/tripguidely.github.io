@@ -856,6 +856,12 @@
     var dropoffTime = DOC.getElementById("car-dropoff-time");
     var errorBox = DOC.getElementById("car-search-error");
 
+    var pickupDisplay = DOC.getElementById("car-pickup-display");
+    var dropoffDisplay = DOC.getElementById("car-dropoff-display");
+    var pickupDisplayValue = DOC.getElementById("car-pickup-display-value");
+    var dropoffDisplayValue = DOC.getElementById("car-dropoff-display-value");
+    var durationBadge = DOC.getElementById("car-duration-badge");
+
     function pad2(n) {
       n = String(n);
       return n.length < 2 ? "0" + n : n;
@@ -885,25 +891,62 @@
       return copy;
     }
 
+    function parseInputDateTime(dateStr, timeStr) {
+      return new Date(dateStr + "T" + timeStr);
+    }
+
+    function formatPretty(dateStr, timeStr) {
+      var d = parseInputDateTime(dateStr, timeStr);
+      if (isNaN(d.getTime())) return "—";
+
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      return pad2(d.getDate()) + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + pad2(d.getHours()) + ":" + pad2(d.getMinutes());
+    }
+
+    function diffDays(start, end) {
+      var ms = end.getTime() - start.getTime();
+      var days = Math.round(ms / 86400000);
+      if (days < 0) days = 0;
+      return days;
+    }
+
+    function updateDisplay() {
+      var start = parseInputDateTime(pickupDate.value, pickupTime.value);
+      var end = parseInputDateTime(dropoffDate.value, dropoffTime.value);
+
+      if (pickupDisplayValue) {
+        pickupDisplayValue.textContent = formatPretty(pickupDate.value, pickupTime.value);
+      }
+
+      if (dropoffDisplayValue) {
+        dropoffDisplayValue.textContent = formatPretty(dropoffDate.value, dropoffTime.value);
+      }
+
+      if (durationBadge) {
+        if (!isNaN(start.getTime()) && !isNaN(end.getTime()) && end > start) {
+          durationBadge.textContent = diffDays(start, end) + " day(s)";
+        } else {
+          durationBadge.textContent = "—";
+        }
+      }
+    }
+
     function setDefaultDates() {
       var now = new Date();
       var pickupDefault = roundToNext30(now);
-      var dropoffDefault = new Date(pickupDefault.getTime() + 2 * 60 * 60 * 1000);
+      var dropoffDefault = new Date(pickupDefault.getTime() + (3 * 24 * 60 * 60 * 1000));
 
-      if (pickupLocation && !trimStr(pickupLocation.value)) {
-        pickupLocation.value = "";
-      }
-
-      /* Date présente du jour pour les deux champs */
       if (pickupDate) pickupDate.value = formatDateLocal(pickupDefault);
-      if (dropoffDate) dropoffDate.value = formatDateLocal(dropoffDefault);
-
-      /* Heure dynamique basée sur maintenant, pour éviter une valeur expirée */
       if (pickupTime) pickupTime.value = formatTimeLocal(pickupDefault);
-      if (dropoffTime) dropoffTime.value = formatTimeLocal(dropoffDefault);
+
+      if (dropoffDate) dropoffDate.value = formatDateLocal(dropoffDefault);
+      if (dropoffTime) dropoffTime.value = formatTimeLocal(pickupDefault);
 
       if (pickupDate) pickupDate.min = formatDateLocal(now);
       if (dropoffDate) dropoffDate.min = formatDateLocal(now);
+
+      updateDisplay();
     }
 
     function syncDropoffMin() {
@@ -916,6 +959,8 @@
           dropoffDate.value = pickupDate.value;
         }
       }
+
+      updateDisplay();
     }
 
     function validate(data) {
@@ -961,11 +1006,44 @@
       }
     }
 
+    function openNativePicker(input) {
+      if (!input) return;
+      try {
+        if (typeof input.showPicker === "function") {
+          input.showPicker();
+          return;
+        }
+      } catch (_) {}
+      try { input.focus(); } catch (_) {}
+      try { input.click(); } catch (_) {}
+    }
+
     setDefaultDates();
     syncDropoffMin();
 
     on(pickupDate, "change", function () {
       syncDropoffMin();
+      updateDisplay();
+    });
+
+    on(pickupTime, "change", function () {
+      updateDisplay();
+    });
+
+    on(dropoffDate, "change", function () {
+      updateDisplay();
+    });
+
+    on(dropoffTime, "change", function () {
+      updateDisplay();
+    });
+
+    on(pickupDisplay, "click", function () {
+      openNativePicker(pickupDate);
+    });
+
+    on(dropoffDisplay, "click", function () {
+      openNativePicker(dropoffDate);
     });
 
     on(form, "submit", function (e) {
@@ -981,7 +1059,7 @@
         pickup_date: pickupDate ? pickupDate.value : "",
         pickup_time: pickupTime ? pickupTime.value : "10:00",
         dropoff_date: dropoffDate ? dropoffDate.value : "",
-        dropoff_time: dropoffTime ? dropoffTime.value : "12:00"
+        dropoff_time: dropoffTime ? dropoffTime.value : "10:00"
       };
 
       error = validate(data);
