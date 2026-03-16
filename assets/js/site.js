@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.4)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.5)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
@@ -14,6 +14,7 @@
    - Contact form AJAX + success/error UI for Formspree
    - Supports generic [data-include] partial injection
    - Car rental hero search redirect (Klook)
+   - Premium custom date-range popover for car rental
    - Guards against double init / duplicate event listeners
    ========================================================================== */
 
@@ -892,8 +893,34 @@
     var dropoffDisplayValue = DOC.getElementById("car-dropoff-display-value");
     var durationBadge = DOC.getElementById("car-duration-badge");
 
-    var shouldOpenPickupTime = false;
-    var shouldOpenDropoffTime = false;
+    var popover = DOC.getElementById("car-date-popover");
+    var calLeft = DOC.getElementById("car-cal-left");
+    var calRight = DOC.getElementById("car-cal-right");
+    var calTitleLeft = DOC.getElementById("car-cal-title-left");
+    var calTitleRight = DOC.getElementById("car-cal-title-right");
+    var calPrev = DOC.getElementById("car-cal-prev");
+    var calNext = DOC.getElementById("car-cal-next");
+    var applyBtn = DOC.getElementById("car-date-apply");
+    var cancelBtn = DOC.getElementById("car-date-cancel");
+
+    var pickupHour = DOC.getElementById("car-pickup-hour");
+    var pickupMinute = DOC.getElementById("car-pickup-minute");
+    var dropoffHour = DOC.getElementById("car-dropoff-hour");
+    var dropoffMinute = DOC.getElementById("car-dropoff-minute");
+
+    if (!pickupLocation || !pickupDate || !pickupTime || !dropoffDate || !dropoffTime) return;
+    if (!pickupDisplay || !dropoffDisplay || !pickupDisplayValue || !dropoffDisplayValue || !durationBadge) return;
+    if (!popover || !calLeft || !calRight || !calTitleLeft || !calTitleRight || !calPrev || !calNext || !applyBtn || !cancelBtn) return;
+    if (!pickupHour || !pickupMinute || !dropoffHour || !dropoffMinute) return;
+
+    var activeTarget = "pickup";
+    var viewYear = 0;
+    var viewMonth = 0;
+
+    var draftStartDate = "";
+    var draftEndDate = "";
+    var appliedStartDate = "";
+    var appliedEndDate = "";
 
     function pad2(n) {
       n = String(n);
@@ -906,6 +933,58 @@
 
     function formatTimeLocal(d) {
       return pad2(d.getHours()) + ":" + pad2(d.getMinutes());
+    }
+
+    function parseDateOnly(dateStr) {
+      var parts = String(dateStr || "").split("-");
+      if (parts.length !== 3) return null;
+      return new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+    }
+
+    function parseInputDateTime(dateStr, timeStr) {
+      return new Date(dateStr + "T" + timeStr);
+    }
+
+    function cloneDate(d) {
+      return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    }
+
+    function dateISO(d) {
+      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+    }
+
+    function compareISO(a, b) {
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    }
+
+    function startOfMonth(year, month) {
+      return new Date(year, month, 1);
+    }
+
+    function daysInMonth(year, month) {
+      return new Date(year, month + 1, 0).getDate();
+    }
+
+    function monthLabel(year, month) {
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return months[month] + " " + year;
+    }
+
+    function prettyDateTime(dateStr, timeStr) {
+      var d = parseInputDateTime(dateStr, timeStr);
+      if (isNaN(d.getTime())) return "—";
+
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return pad2(d.getDate()) + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + pad2(d.getHours()) + ":" + pad2(d.getMinutes());
+    }
+
+    function diffDays(start, end) {
+      var ms = end.getTime() - start.getTime();
+      var days = Math.round(ms / 86400000);
+      if (days < 0) days = 0;
+      return days;
     }
 
     function roundToNext30(d) {
@@ -924,44 +1003,54 @@
       return copy;
     }
 
-    function parseInputDateTime(dateStr, timeStr) {
-      return new Date(dateStr + "T" + timeStr);
+    function populateTimeSelects() {
+      var i;
+      var hours = [];
+      var mins = ["00", "30"];
+
+      function fill(select, values) {
+        var html = "";
+        var j;
+        for (j = 0; j < values.length; j++) {
+          html += '<option value="' + values[j] + '">' + values[j] + '</option>';
+        }
+        select.innerHTML = html;
+      }
+
+      for (i = 0; i < 24; i++) hours.push(pad2(i));
+
+      fill(pickupHour, hours);
+      fill(dropoffHour, hours);
+      fill(pickupMinute, mins);
+      fill(dropoffMinute, mins);
     }
 
-    function formatPretty(dateStr, timeStr) {
-      var d = parseInputDateTime(dateStr, timeStr);
-      if (isNaN(d.getTime())) return "—";
+    function syncTimeSelectsFromHidden() {
+      var p = (pickupTime.value || "10:00").split(":");
+      var d = (dropoffTime.value || "10:00").split(":");
 
-      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-      return pad2(d.getDate()) + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + pad2(d.getHours()) + ":" + pad2(d.getMinutes());
+      pickupHour.value = p[0] || "10";
+      pickupMinute.value = p[1] || "00";
+      dropoffHour.value = d[0] || "10";
+      dropoffMinute.value = d[1] || "00";
     }
 
-    function diffDays(start, end) {
-      var ms = end.getTime() - start.getTime();
-      var days = Math.round(ms / 86400000);
-      if (days < 0) days = 0;
-      return days;
+    function syncHiddenTimesFromSelects() {
+      pickupTime.value = pickupHour.value + ":" + pickupMinute.value;
+      dropoffTime.value = dropoffHour.value + ":" + dropoffMinute.value;
     }
 
     function updateDisplay() {
       var start = parseInputDateTime(pickupDate.value, pickupTime.value);
       var end = parseInputDateTime(dropoffDate.value, dropoffTime.value);
 
-      if (pickupDisplayValue) {
-        pickupDisplayValue.textContent = formatPretty(pickupDate.value, pickupTime.value);
-      }
+      pickupDisplayValue.textContent = prettyDateTime(pickupDate.value, pickupTime.value);
+      dropoffDisplayValue.textContent = prettyDateTime(dropoffDate.value, dropoffTime.value);
 
-      if (dropoffDisplayValue) {
-        dropoffDisplayValue.textContent = formatPretty(dropoffDate.value, dropoffTime.value);
-      }
-
-      if (durationBadge) {
-        if (!isNaN(start.getTime()) && !isNaN(end.getTime()) && end > start) {
-          durationBadge.textContent = diffDays(start, end) + " day(s)";
-        } else {
-          durationBadge.textContent = "—";
-        }
+      if (!isNaN(start.getTime()) && !isNaN(end.getTime()) && end > start) {
+        durationBadge.textContent = diffDays(start, end) + " day(s)";
+      } else {
+        durationBadge.textContent = "—";
       }
     }
 
@@ -970,28 +1059,14 @@
       var pickupDefault = roundToNext30(now);
       var dropoffDefault = new Date(pickupDefault.getTime() + (3 * 24 * 60 * 60 * 1000));
 
-      if (pickupDate) pickupDate.value = formatDateLocal(pickupDefault);
-      if (pickupTime) pickupTime.value = formatTimeLocal(pickupDefault);
+      pickupDate.value = formatDateLocal(pickupDefault);
+      pickupTime.value = formatTimeLocal(pickupDefault);
 
-      if (dropoffDate) dropoffDate.value = formatDateLocal(dropoffDefault);
-      if (dropoffTime) dropoffTime.value = formatTimeLocal(pickupDefault);
+      dropoffDate.value = formatDateLocal(dropoffDefault);
+      dropoffTime.value = formatTimeLocal(pickupDefault);
 
-      if (pickupDate) pickupDate.min = formatDateLocal(now);
-      if (dropoffDate) dropoffDate.min = formatDateLocal(now);
-
-      updateDisplay();
-    }
-
-    function syncDropoffMin() {
-      if (!pickupDate || !dropoffDate) return;
-
-      if (pickupDate.value) {
-        dropoffDate.min = pickupDate.value;
-
-        if (!dropoffDate.value || dropoffDate.value < pickupDate.value) {
-          dropoffDate.value = pickupDate.value;
-        }
-      }
+      appliedStartDate = pickupDate.value;
+      appliedEndDate = dropoffDate.value;
 
       updateDisplay();
     }
@@ -1039,60 +1114,202 @@
       }
     }
 
-    function openNativePicker(input) {
-      if (!input) return;
-      try {
-        if (typeof input.showPicker === "function") {
-          input.showPicker();
-          return;
-        }
-      } catch (_) {}
-      try { input.focus(); } catch (_) {}
-      try { input.click(); } catch (_) {}
+    function openPopover(which) {
+      activeTarget = which || "pickup";
+      draftStartDate = pickupDate.value;
+      draftEndDate = dropoffDate.value;
+      appliedStartDate = pickupDate.value;
+      appliedEndDate = dropoffDate.value;
+
+      var base = parseDateOnly(activeTarget === "dropoff" ? dropoffDate.value : pickupDate.value) || new Date();
+      viewYear = base.getFullYear();
+      viewMonth = base.getMonth();
+
+      pickupDisplay.className = pickupDisplay.className.replace(/\bis-active\b/g, "");
+      dropoffDisplay.className = dropoffDisplay.className.replace(/\bis-active\b/g, "");
+      if (activeTarget === "pickup") pickupDisplay.className += " is-active";
+      if (activeTarget === "dropoff") dropoffDisplay.className += " is-active";
+
+      syncTimeSelectsFromHidden();
+      renderCalendars();
+      popover.hidden = false;
     }
 
-    function openDateThenTime(dateInput, timeInput, which) {
-      if (which === "pickup") shouldOpenPickupTime = true;
-      if (which === "dropoff") shouldOpenDropoffTime = true;
-      openNativePicker(dateInput);
+    function closePopover() {
+      popover.hidden = true;
+      pickupDisplay.className = pickupDisplay.className.replace(/\bis-active\b/g, "");
+      dropoffDisplay.className = dropoffDisplay.className.replace(/\bis-active\b/g, "");
     }
 
+    function applyDraftSelection() {
+      pickupDate.value = draftStartDate;
+      dropoffDate.value = draftEndDate;
+      syncHiddenTimesFromSelects();
+      updateDisplay();
+      closePopover();
+    }
+
+    function cancelDraftSelection() {
+      draftStartDate = appliedStartDate;
+      draftEndDate = appliedEndDate;
+      syncTimeSelectsFromHidden();
+      closePopover();
+    }
+
+    function renderMonth(container, titleEl, year, month) {
+      var first = startOfMonth(year, month);
+      var startWeekday = first.getDay();
+      var totalDays = daysInMonth(year, month);
+      var today = dateISO(cloneDate(new Date()));
+      var minDate = today;
+      var weekdays = ['<div class="car-cal__weekdays">'];
+      var names = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+      var i;
+
+      titleEl.textContent = monthLabel(year, month);
+
+      for (i = 0; i < names.length; i++) {
+        weekdays.push('<div class="car-cal__weekday">' + names[i] + '</div>');
+      }
+      weekdays.push("</div>");
+
+      var grid = ['<div class="car-cal__grid">'];
+
+      for (i = 0; i < startWeekday; i++) {
+        grid.push('<div aria-hidden="true"></div>');
+      }
+
+      for (i = 1; i <= totalDays; i++) {
+        var d = new Date(year, month, i);
+        var iso = dateISO(d);
+        var cls = "car-cal__day";
+        var disabled = compareISO(iso, minDate) < 0;
+        var inRange = draftStartDate && draftEndDate && compareISO(iso, draftStartDate) >= 0 && compareISO(iso, draftEndDate) <= 0;
+        var isStart = draftStartDate === iso;
+        var isEnd = draftEndDate === iso;
+
+        if (disabled) cls += " is-disabled";
+        if (inRange) cls += " is-in-range";
+        if (isStart) cls += " is-start";
+        if (isEnd) cls += " is-end";
+        if (inRange && iso === draftStartDate) cls += " is-range-left";
+        if (inRange && iso === draftEndDate) cls += " is-range-right";
+
+        grid.push(
+          '<button type="button" class="' + cls + '" data-date="' + iso + '"' + (disabled ? ' disabled' : '') + '>' +
+            i +
+          '</button>'
+        );
+      }
+
+      grid.push("</div>");
+
+      container.innerHTML = weekdays.join("") + grid.join("");
+    }
+
+    function renderCalendars() {
+      renderMonth(calLeft, calTitleLeft, viewYear, viewMonth);
+
+      var rightMonth = viewMonth + 1;
+      var rightYear = viewYear;
+      if (rightMonth > 11) {
+        rightMonth = 0;
+        rightYear += 1;
+      }
+
+      renderMonth(calRight, calTitleRight, rightYear, rightMonth);
+    }
+
+    function onDayClick(dateStr) {
+      if (!draftStartDate || (draftStartDate && draftEndDate)) {
+        draftStartDate = dateStr;
+        draftEndDate = dateStr;
+        activeTarget = "dropoff";
+        renderCalendars();
+        return;
+      }
+
+      if (compareISO(dateStr, draftStartDate) < 0) {
+        draftStartDate = dateStr;
+        draftEndDate = dateStr;
+        activeTarget = "dropoff";
+        renderCalendars();
+        return;
+      }
+
+      draftEndDate = dateStr;
+      renderCalendars();
+    }
+
+    populateTimeSelects();
     setDefaultDates();
-    syncDropoffMin();
-
-    on(pickupDate, "change", function () {
-      syncDropoffMin();
-      updateDisplay();
-
-      if (shouldOpenPickupTime) {
-        shouldOpenPickupTime = false;
-        openNativePicker(pickupTime);
-      }
-    });
-
-    on(pickupTime, "change", function () {
-      updateDisplay();
-    });
-
-    on(dropoffDate, "change", function () {
-      updateDisplay();
-
-      if (shouldOpenDropoffTime) {
-        shouldOpenDropoffTime = false;
-        openNativePicker(dropoffTime);
-      }
-    });
-
-    on(dropoffTime, "change", function () {
-      updateDisplay();
-    });
+    syncTimeSelectsFromHidden();
 
     on(pickupDisplay, "click", function () {
-      openDateThenTime(pickupDate, pickupTime, "pickup");
+      openPopover("pickup");
     });
 
     on(dropoffDisplay, "click", function () {
-      openDateThenTime(dropoffDate, dropoffTime, "dropoff");
+      openPopover("dropoff");
+    });
+
+    on(calPrev, "click", function () {
+      viewMonth -= 1;
+      if (viewMonth < 0) {
+        viewMonth = 11;
+        viewYear -= 1;
+      }
+      renderCalendars();
+    });
+
+    on(calNext, "click", function () {
+      viewMonth += 1;
+      if (viewMonth > 11) {
+        viewMonth = 0;
+        viewYear += 1;
+      }
+      renderCalendars();
+    });
+
+    on(calLeft, "click", function (e) {
+      e = e || WIN.event;
+      var t = e.target || e.srcElement;
+      if (!t || !getAttr(t, "data-date")) return;
+      onDayClick(getAttr(t, "data-date"));
+    });
+
+    on(calRight, "click", function (e) {
+      e = e || WIN.event;
+      var t = e.target || e.srcElement;
+      if (!t || !getAttr(t, "data-date")) return;
+      onDayClick(getAttr(t, "data-date"));
+    });
+
+    on(applyBtn, "click", function () {
+      applyDraftSelection();
+    });
+
+    on(cancelBtn, "click", function () {
+      cancelDraftSelection();
+    });
+
+    on(DOC, "click", function (e) {
+      e = e || WIN.event;
+      var target = e.target || e.srcElement;
+      if (popover.hidden) return;
+      if (popover.contains(target)) return;
+      if (pickupDisplay.contains(target)) return;
+      if (dropoffDisplay.contains(target)) return;
+      closePopover();
+    });
+
+    on(DOC, "keydown", function (e) {
+      e = e || WIN.event;
+      var key = e.key || e.keyCode;
+      if (popover.hidden) return;
+      if (key === "Escape" || key === "Esc" || key === 27) {
+        cancelDraftSelection();
+      }
     });
 
     on(form, "submit", function (e) {
