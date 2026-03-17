@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ========================================================================== 
    TripGuidely — hotels.css (DEDICATED)
    Purpose:
    - ONLY for /hotels/ pages (neighborhood guides, booking rules, tables)
@@ -7,9 +7,7 @@
    - CWV-friendly: no layout thrash, safe overflow guards
    ========================================================================== */
 
-/* Page scope: your Paris hotels page uses <body data-page="guide"> */
 body[data-page="guide"]{
-  /* Hotels-tuning tokens (local, safe) */
   --h-pill-bg: rgba(255,255,255,.96);
   --h-pill-border: rgba(15,23,42,.10);
   --h-pill-shadow: 0 10px 22px rgba(2,6,23,.08);
@@ -25,7 +23,6 @@ body[data-page="guide"]{
 
 /* --------------------------------------------------------------------------
    Quick Nav pills + “pill-link”
-   (Used multiple times in your HTML: quick nav + decision helper + booking)
    -------------------------------------------------------------------------- */
 
 .pill-link{
@@ -33,19 +30,15 @@ body[data-page="guide"]{
   align-items:center;
   justify-content:center;
   gap:10px;
-
   padding: 12px 14px;
   border-radius: 999px;
-
   text-decoration:none;
   font-weight: 900;
   letter-spacing: -0.15px;
-
   color: var(--text);
   background: var(--h-pill-bg);
   border: 1px solid var(--h-pill-border);
   box-shadow: var(--h-pill-shadow);
-
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
   min-width: 0;
   max-width: 100%;
@@ -66,15 +59,14 @@ body[data-page="guide"]{
   box-shadow: 0 10px 22px rgba(2,6,23,.08);
 }
 
-/* Optional: make some pills feel “primary” without adding new classes */
-.pill-link[href*="#book"],
-.pill-link[href*="Search"],
+/* Highlight higher-value hotel actions / key sections */
+.pill-link[href*="#compare-hotels"],
+.pill-link[href*="#tips"],
 .pill-link[target="_blank"]{
   background: linear-gradient(135deg, rgba(18,207,208,.14), rgba(244,162,97,.12));
   border-color: rgba(18,207,208,.22);
 }
 
-/* Mini-grid on hotels pages: tighter + nicer on small screens */
 body[data-page="guide"] .mini-grid{
   gap: 10px;
 }
@@ -91,8 +83,7 @@ body[data-page="guide"] .mini-grid{
 }
 
 /* --------------------------------------------------------------------------
-   Section rhythm for “area” content
-   Your hotels page uses: .content h3 + lists + callouts
+   Section rhythm
    -------------------------------------------------------------------------- */
 
 body[data-page="guide"] .content h3{
@@ -106,21 +97,17 @@ body[data-page="guide"] .content h3 + .checklist{
   margin-top: 8px;
 }
 
-/* Make checklists read more “guide” and less “generic” */
 body[data-page="guide"] .checklist li strong{
   color: var(--text);
 }
 
-/* Callouts: slightly more premium for hotel guides */
 body[data-page="guide"] .callout{
   border-color: rgba(18,207,208,.20);
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
 }
 
 /* --------------------------------------------------------------------------
-   Table system for “Area quick table”
-   Your HTML uses: <div class="table-wrap"> + <table class="table ttd-table">
-   We'll support both .table and .ttd-table so you don't need to rename HTML.
+   Table system
    -------------------------------------------------------------------------- */
 
 .table-wrap{
@@ -132,7 +119,6 @@ body[data-page="guide"] .callout{
   box-shadow: 0 10px 22px rgba(2,6,23,.06);
 }
 
-/* Keyboard focus for scroll container */
 .table-wrap:focus{
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -142,7 +128,7 @@ body[data-page="guide"] .callout{
   width:100%;
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 720px; /* base fallback */
+  min-width: 720px;
 }
 
 .table-cap{
@@ -161,7 +147,6 @@ body[data-page="guide"] .callout{
     radial-gradient(560px 180px at 88% 0%, rgba(244,162,97,.10), transparent 62%),
     #ffffff;
   z-index: 1;
-
   text-align: left;
   padding: 12px 12px;
   font-size: .92rem;
@@ -189,17 +174,14 @@ body[data-page="guide"] .callout{
   color: var(--text);
 }
 
-/* Badges (your HTML uses: .t-badge + variants) */
 .t-badge{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   padding: 7px 10px;
   border-radius: 999px;
   border: 1px solid rgba(15,23,42,.10);
   background: rgba(15,23,42,.04);
-
   font-weight: 900;
   font-size: .86rem;
   line-height: 1;
@@ -232,7 +214,6 @@ body[data-page="guide"] .callout{
   border-color: rgba(15,23,42,.12);
 }
 
-/* Mobile table: “stacked labels” support (your HTML uses data-label attr) */
 @media (max-width: 760px){
   .table{ min-width: 0; }
   .table thead{ display:none; }
@@ -261,13 +242,12 @@ body[data-page="guide"] .callout{
   }
 
   .table-wrap{
-    overflow: hidden; /* no horizontal scroll in stacked mode */
+    overflow: hidden;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Booking “callout” mini-grid links inside callout
-   You used inline style margin-top; this makes it look consistent everywhere.
+   Callout mini-grid
    -------------------------------------------------------------------------- */
 
 body[data-page="guide"] .callout .mini-grid{
@@ -279,7 +259,7 @@ body[data-page="guide"] .callout .mini-grid .pill-link{
 }
 
 /* --------------------------------------------------------------------------
-   Small polish: breadcrumbs spacing + card headings feel “hotel guide”
+   General polish
    -------------------------------------------------------------------------- */
 
 body[data-page="guide"] .breadcrumbs{
@@ -294,14 +274,13 @@ body[data-page="guide"] .aff-note{
   color: var(--muted2);
 }
 
-/* Overflow guard (safe) */
 body[data-page="guide"] .wrap,
 body[data-page="guide"] .card{
   min-width: 0;
 }
 
 /* ==========================================================================
-   HERO text: force white (Paris hotels)
+   HERO text: force white
    ========================================================================== */
 
 body[data-page="guide"][data-section="hotels"] .hero{
@@ -309,7 +288,6 @@ body[data-page="guide"][data-section="hotels"] .hero{
   --hero-white-soft: rgba(226,232,240,.90);
 }
 
-/* Make hero typography white */
 body[data-page="guide"][data-section="hotels"] .hero .kicker,
 body[data-page="guide"][data-section="hotels"] .hero h1,
 body[data-page="guide"][data-section="hotels"] .hero .lede,
@@ -319,12 +297,10 @@ body[data-page="guide"][data-section="hotels"] .hero a{
   color: var(--hero-white) !important;
 }
 
-/* If your hero has small subtext that should be slightly softer */
 body[data-page="guide"][data-section="hotels"] .hero .lede{
   color: var(--hero-white-soft) !important;
 }
 
-/* Overlay only across the image, without dark bottom band */
 body[data-page="guide"][data-section="hotels"] .hero .hero-overlay{
   background: linear-gradient(
     90deg,
@@ -337,9 +313,6 @@ body[data-page="guide"][data-section="hotels"] .hero .hero-overlay{
 
 /* ==========================================================================
    HERO readability + summary cards polish
-   - Fixes weak contrast in meta text
-   - Replaces ugly emoji feel with cleaner monochrome icon styling
-   - Fixes empty / unreadable hero secondary button
    ========================================================================== */
 
 body[data-page="guide"][data-section="hotels"] .hero .meta,
@@ -383,13 +356,11 @@ body[data-page="guide"][data-section="hotels"] .hero .mini-icon{
   display: grid;
   place-items: center;
   flex: 0 0 42px;
-
   font-family: "Segoe UI Symbol","Segoe UI",Arial,sans-serif;
   font-size: 1rem;
   font-weight: 900;
   line-height: 1;
   color: #0f172a;
-
   background: linear-gradient(135deg, rgba(18,207,208,.18), rgba(244,162,97,.14));
   border: 1px solid rgba(15,23,42,.10);
   box-shadow: 0 8px 18px rgba(2,6,23,.08);
@@ -442,7 +413,7 @@ body[data-page="guide"][data-section="hotels"] .hero .btn:not(.primary):hover{
 }
 
 /* ==========================================================================
-   Paris hotels page — richer table + neighborhood content polish
+   Hotels page — richer table + neighborhood content polish
    ========================================================================== */
 
 body[data-page="guide"][data-section="hotels"] .table{
