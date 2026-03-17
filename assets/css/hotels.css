@@ -142,7 +142,7 @@ body[data-page="guide"] .callout{
   width:100%;
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 720px; /* allows horizontal scroll on small screens */
+  min-width: 720px; /* base fallback */
 }
 
 .table-cap{
@@ -302,11 +302,9 @@ body[data-page="guide"] .card{
 
 /* ==========================================================================
    HERO text: force white (Paris hotels)
-   Add this at the END of hotels.css
    ========================================================================== */
 
 body[data-page="guide"][data-section="hotels"] .hero{
-  /* Optional: local tokens for hero readability */
   --hero-white: rgba(255,255,255,.96);
   --hero-white-soft: rgba(226,232,240,.90);
 }
@@ -440,5 +438,53 @@ body[data-page="guide"][data-section="hotels"] .hero .btn:not(.primary):hover{
     height: 40px;
     flex-basis: 40px;
     font-size: .95rem;
+  }
+}
+
+/* ==========================================================================
+   Paris hotels page — richer table + neighborhood content polish
+   ========================================================================== */
+
+body[data-page="guide"][data-section="hotels"] .table{
+  min-width: 980px;
+}
+
+body[data-page="guide"][data-section="hotels"] .table thead th,
+body[data-page="guide"][data-section="hotels"] .table tbody td{
+  vertical-align: top;
+}
+
+body[data-page="guide"][data-section="hotels"] .table tbody td{
+  line-height: 1.5;
+}
+
+body[data-page="guide"][data-section="hotels"] .table td strong{
+  display: inline-block;
+  color: var(--text);
+}
+
+body[data-page="guide"][data-section="hotels"] .content h3{
+  margin-top: 22px;
+}
+
+body[data-page="guide"][data-section="hotels"] .content h3:first-of-type{
+  margin-top: 8px;
+}
+
+body[data-page="guide"][data-section="hotels"] details summary{
+  line-height: 1.45;
+}
+
+body[data-page="guide"][data-section="hotels"] .pill-link.js-aff{
+  font-weight: 900;
+}
+
+@media (max-width: 760px){
+  body[data-page="guide"][data-section="hotels"] .table tbody td{
+    align-items: flex-start;
+  }
+
+  body[data-page="guide"][data-section="hotels"] .table tbody td::before{
+    max-width: 42%;
   }
 }
