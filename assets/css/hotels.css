@@ -336,3 +336,109 @@ body[data-page="guide"][data-section="hotels"] .hero .hero-overlay{
     rgba(0,0,0,.10) 100%
   );
 }
+
+/* ==========================================================================
+   HERO readability + summary cards polish
+   - Fixes weak contrast in meta text
+   - Replaces ugly emoji feel with cleaner monochrome icon styling
+   - Fixes empty / unreadable hero secondary button
+   ========================================================================== */
+
+body[data-page="guide"][data-section="hotels"] .hero .meta,
+body[data-page="guide"][data-section="hotels"] .hero .meta p{
+  color: rgba(255,255,255,.92) !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,.28);
+}
+
+body[data-page="guide"][data-section="hotels"] .hero h1,
+body[data-page="guide"][data-section="hotels"] .hero .kicker,
+body[data-page="guide"][data-section="hotels"] .hero .lede{
+  text-shadow: 0 2px 14px rgba(0,0,0,.26);
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .mini-grid{
+  gap: 14px;
+  margin-top: 18px;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .mini{
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(255,255,255,.28);
+  box-shadow: 0 16px 34px rgba(0,0,0,.16);
+  border-radius: 18px;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .mini b{
+  color: #0f172a;
+  font-weight: 900;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .mini span{
+  color: #475569;
+  font-weight: 600;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .mini-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+
+  font-family: "Segoe UI Symbol","Segoe UI",Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #0f172a;
+
+  background: linear-gradient(135deg, rgba(18,207,208,.18), rgba(244,162,97,.14));
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 8px 18px rgba(2,6,23,.08);
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .actions{
+  margin-top: 18px;
+  gap: 12px;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .btn{
+  min-height: 56px;
+  font-weight: 900;
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .btn.primary{
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.10) !important;
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .btn:not(.primary){
+  background: rgba(255,255,255,.96);
+  border-color: rgba(15,23,42,.10);
+  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+}
+
+body[data-page="guide"][data-section="hotels"] .hero .btn:not(.primary):hover{
+  background: #ffffff;
+  border-color: rgba(18,207,208,.24);
+  box-shadow: 0 18px 44px rgba(2,6,23,.12);
+}
+
+@media (max-width: 760px){
+  body[data-page="guide"][data-section="hotels"] .hero .mini-grid{
+    gap: 12px;
+  }
+
+  body[data-page="guide"][data-section="hotels"] .hero .mini{
+    border-radius: 16px;
+  }
+
+  body[data-page="guide"][data-section="hotels"] .hero .mini-icon{
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: .95rem;
+  }
+}
