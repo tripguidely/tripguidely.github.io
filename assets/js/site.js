@@ -1,11 +1,11 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.5)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.6)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
    - Affiliate CTA tracking (.js-aff) centralized here
-   - Widget engagement tracking (ANY .tp-widget + #esim-search + #search) (fires once per widget)
+   - Widget engagement tracking (ANY .tp-widget + #esim-search + #search + #car-search-form + #home-hotel-search-form) (fires once per widget)
    - Custom page tracking for clearer GA4 reporting by page_type / path / title
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Consent Mode v2 default denied
@@ -14,6 +14,7 @@
    - Contact form AJAX + success/error UI for Formspree
    - Supports generic [data-include] partial injection
    - Car rental hero search redirect (Klook)
+   - Home hotel hero search redirect
    - Premium custom date-range popover for car rental
    - Guards against double init / duplicate event listeners
    ========================================================================== */
@@ -671,6 +672,15 @@
         } catch (_) {}
       }
 
+      var homeHotelForm = DOC.getElementById("home-hotel-search-form");
+      if (homeHotelForm) {
+        try {
+          if (homeHotelForm.contains(target)) {
+            fire("home-hotel-search-form", { widget: "home-hotel-search-form", page_type: getPageType() });
+          }
+        } catch (_) {}
+      }
+
       var w = closestByClass(target, "tp-widget");
       if (w) {
         var wid = w.id ? String(w.id) : "tp-widget";
@@ -871,6 +881,140 @@
             submitBtn.textContent = "Send Message";
           }
         });
+    });
+  }
+
+  function initHomeHotelSearch() {
+    var form = DOC.getElementById("home-hotel-search-form");
+    if (!form) return;
+    if (form.getAttribute("data-home-hotel-bound") === "1") return;
+    form.setAttribute("data-home-hotel-bound", "1");
+
+    var dest = DOC.getElementById("home-hotel-destination");
+    var checkin = DOC.getElementById("home-hotel-checkin");
+    var checkout = DOC.getElementById("home-hotel-checkout");
+    var guests = DOC.getElementById("home-hotel-guests");
+    var errorBox = DOC.getElementById("home-hotel-search-error");
+
+    if (!dest || !checkin || !checkout || !guests) return;
+
+    function pad2(n) {
+      n = Number(n);
+      return n < 10 ? "0" + n : "" + n;
+    }
+
+    function todayISO() {
+      var d = new Date();
+      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+    }
+
+    function addDaysISO(days) {
+      var d = new Date();
+      d.setDate(d.getDate() + Number(days || 0));
+      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+    }
+
+    function nextDayISO(iso) {
+      var d = new Date(iso);
+      d.setDate(d.getDate() + 1);
+      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+    }
+
+    function validate(data) {
+      if (!trimStr(data.destination)) {
+        return "Please enter a destination.";
+      }
+
+      if (!data.checkin || !data.checkout) {
+        return "Please choose check-in and check-out dates.";
+      }
+
+      if (data.checkout <= data.checkin) {
+        return "Check-out must be after check-in.";
+      }
+
+      return "";
+    }
+
+    function buildAffiliateUrl(data) {
+      var base = form.getAttribute("data-affiliate-base") || "";
+      var subid = form.getAttribute("data-subid") || "tg_home_hotels_hero";
+
+      try {
+        var url = new URL(base, WIN.location.href);
+        url.searchParams.set("subid", subid);
+
+        return url.toString();
+      } catch (_) {
+        return base;
+      }
+    }
+
+    if (!checkin.value) checkin.value = addDaysISO(30);
+    if (!checkout.value) checkout.value = addDaysISO(33);
+
+    checkin.min = todayISO();
+    checkout.min = checkin.value || todayISO();
+
+    on(checkin, "change", function () {
+      checkout.min = checkin.value || todayISO();
+
+      if (checkout.value && checkin.value && checkout.value <= checkin.value) {
+        checkout.value = nextDayISO(checkin.value);
+      }
+    });
+
+    on(form, "submit", function (e) {
+      var data, error, targetUrl;
+
+      if (e && e.preventDefault) e.preventDefault();
+      else e.returnValue = false;
+
+      if (errorBox) errorBox.textContent = "";
+
+      data = {
+        destination: dest ? trimStr((dest.value || "").replace(/\s+/g, " ")) : "",
+        checkin: checkin ? checkin.value : "",
+        checkout: checkout ? checkout.value : "",
+        guests: guests ? guests.value : "2"
+      };
+
+      error = validate(data);
+      if (error) {
+        if (errorBox) errorBox.textContent = error;
+
+        if (!data.destination && dest) {
+          try { dest.focus(); } catch (_) {}
+        } else if (data.checkout && data.checkin && data.checkout <= data.checkin && checkout) {
+          try { checkout.focus(); } catch (_) {}
+        }
+        return;
+      }
+
+      targetUrl = buildAffiliateUrl(data);
+
+      try {
+        WIN.sessionStorage.setItem("tg_home_hotels_search_context", JSON.stringify({
+          destination: data.destination,
+          checkin: data.checkin,
+          checkout: data.checkout,
+          guests: data.guests,
+          subid: form.getAttribute("data-subid") || "tg_home_hotels_hero"
+        }));
+      } catch (_) {}
+
+      if (getConsent() === "granted") {
+        gtagEvent("hotel_search", {
+          page_type: getPageType(),
+          destination: data.destination,
+          checkin: data.checkin,
+          checkout: data.checkout,
+          guests: data.guests,
+          affiliate_program: String(getAttr(form, "data-aff") || "klook")
+        });
+      }
+
+      WIN.location.href = targetUrl;
     });
   }
 
@@ -1386,6 +1530,7 @@
     bindConsentLinks();
 
     initContactForm();
+    initHomeHotelSearch();
     initCarRentalSearch();
 
     trackOutboundClicks();
