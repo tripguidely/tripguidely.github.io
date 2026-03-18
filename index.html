@@ -132,7 +132,7 @@
           "height":630
         },
         "datePublished":"2026-03-05",
-        "dateModified":"2026-03-09",
+        "dateModified":"2026-03-18",
         "mainEntity":{"@id":"https://tripguidely.github.io/#faq"},
         "potentialAction":{
           "@type":"ReadAction",
@@ -206,14 +206,85 @@
           <p class="hero-tool-title">Plan smarter trips, faster.</p>
           <h1>Plan Smarter City Trips</h1>
           <p class="hero-tool-sub">
-            TripGuidely helps first-time and short-stay travelers compare attractions, transport, hotel areas,
-            and itinerary trade-offs without wasting time on scattered research.
+            Compare hotel locations, attractions, transport, and itinerary trade-offs without wasting time on scattered research.
           </p>
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
-              <div class="actions" aria-label="Primary actions" style="margin-top:0;">
-                <a class="btn primary" href="/things-to-do/">
+              <form
+                id="home-hotel-search-form"
+                class="js-aff"
+                data-aff="klook"
+                data-affiliate-base="https://klook.tpk.ro/ZiRVfSud"
+                data-subid="tg_home_hotels_hero"
+                novalidate
+                style="display:grid;gap:12px;">
+                <div
+                  style="display:grid;grid-template-columns:minmax(220px,2fr) minmax(180px,1.15fr) minmax(180px,1.15fr) minmax(160px,1fr) auto;gap:10px;align-items:end;">
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Where to?</span>
+                    <input
+                      id="home-hotel-destination"
+                      name="destination"
+                      type="text"
+                      placeholder="City, neighborhood, or hotel"
+                      autocomplete="off"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);" />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Check-in</span>
+                    <input
+                      id="home-hotel-checkin"
+                      name="checkin"
+                      type="date"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);" />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Check-out</span>
+                    <input
+                      id="home-hotel-checkout"
+                      name="checkout"
+                      type="date"
+                      required
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);" />
+                  </label>
+
+                  <label style="display:grid;gap:6px;min-width:0;">
+                    <span style="font-size:.84rem;font-weight:800;color:var(--muted2);">Guests</span>
+                    <select
+                      id="home-hotel-guests"
+                      name="guests"
+                      style="width:100%;min-height:58px;border-radius:16px;border:1px solid rgba(15,23,42,.10);background:#ffffff;color:var(--text);padding:0 14px;box-shadow:var(--shadow3);">
+                      <option value="1">1 guest</option>
+                      <option value="2" selected>2 guests</option>
+                      <option value="3">3 guests</option>
+                      <option value="4">4 guests</option>
+                      <option value="5">5 guests</option>
+                      <option value="6">6+ guests</option>
+                    </select>
+                  </label>
+
+                  <button
+                    id="home-hotel-search-submit"
+                    class="btn primary"
+                    type="submit"
+                    style="min-height:58px;padding:0 22px;white-space:nowrap;">
+                    Search Hotels
+                  </button>
+                </div>
+
+                <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                  Start with the right area, dates, and trip context — then continue to our hotel partner to compare deals.
+                </p>
+                <p id="home-hotel-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
+              </form>
+
+              <div class="actions" aria-label="Secondary actions" style="margin-top:6px;">
+                <a class="btn" href="/things-to-do/">
                   <span class="pill" aria-hidden="true">✨</span>
                   Explore Things to Do
                 </a>
@@ -227,18 +298,18 @@
                 </a>
                 <a class="btn" href="/hotels/">
                   <span class="pill" aria-hidden="true">🏨</span>
-                  Find Hotels
+                  Hotels Hub
                 </a>
               </div>
 
               <div class="trust" aria-label="Trust highlights">
-                <div class="trust-item"><b>Clear trade-offs</b><span>Not hype, just decisions</span></div>
-                <div class="trust-item"><b>Practical itineraries</b><span>Timing + booking tips</span></div>
-                <div class="trust-item"><b>Fresh updates</b><span>Pages show dates</span></div>
+                <div class="trust-item"><b>Hotel-first decisions</b><span>Area + transit + fit</span></div>
+                <div class="trust-item"><b>Practical planning</b><span>Not hype, just trade-offs</span></div>
+                <div class="trust-item"><b>Fast comparisons</b><span>Fewer tabs, better picks</span></div>
               </div>
 
               <p class="meta" style="margin-top:12px;">
-                Updated: <time datetime="2026-03-09">Mar 9, 2026</time>
+                Updated: <time datetime="2026-03-18">Mar 18, 2026</time>
               </p>
             </div>
           </div>
@@ -430,18 +501,18 @@
                 </li>
 
                 <li>
-                  <a class="city-card" href="/things-to-do/quebec-city/" aria-label="Things to do in Quebec City">
+                  <a class="city-card" href="/things-to-do/las-vegas/" aria-label="Things to do in Las Vegas">
                     <img
                       class="city-ico"
-                      src="/assets/images/stickers/quebec-chateau-frontenac-sticker-512.webp"
+                      src="/assets/images/stickers/las-vegas-strip-sticker-512.webp"
                       width="96"
                       height="96"
-                      alt="Quebec City sticker icon (Château Frontenac)"
+                      alt="Las Vegas sticker icon (Las Vegas Strip)"
                       loading="lazy"
                       decoding="async" />
                     <span class="city-meta">
-                      <strong>Quebec City</strong>
-                      <span>Old Town highlights and practical city planning</span>
+                      <strong>Las Vegas</strong>
+                      <span>Shows, attractions, hotels, and Strip planning</span>
                     </span>
                     <span class="city-arrow" aria-hidden="true">↗</span>
                   </a>
@@ -556,7 +627,7 @@
             <section id="what-tripguidely-covers" aria-label="What TripGuidely covers">
               <h2>Travel planning guides for major cities and trip types</h2>
               <p>TripGuidely covers the planning layers that matter most before a trip: <strong>things to do</strong>, <strong>itineraries</strong>, <strong>transport</strong>, <strong>hotels</strong>, <strong>eSIM</strong>, and selected <strong>cruise planning</strong> content.</p>
-              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, <strong>New York</strong>, <strong>Dubai</strong>, <strong>London</strong>, <strong>Bangkok</strong>, and <strong>Quebec City</strong>, with city pages designed to reduce research time, simplify booking decisions, and improve route logic.</p>
+              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, <strong>New York</strong>, <strong>Dubai</strong>, <strong>London</strong>, <strong>Bangkok</strong>, and <strong>Las Vegas</strong>, with city pages designed to reduce research time, simplify booking decisions, and improve route logic.</p>
             </section>
 
             <section id="how-to-use" aria-label="How to use TripGuidely">
@@ -735,33 +806,33 @@
           </div>
 
           <div class="map-explorer__body">
-  <div class="map-explorer__groups">
-    <div class="map-explorer__group">
-      <h3 class="map-explorer__group-title">Europe</h3>
-      <div class="map-explorer__links">
-        <a href="/things-to-do/paris/">Paris travel guide</a>
-        <a href="/things-to-do/london/">London travel guide</a>
-        <a href="/things-to-do/rome/">Rome travel guide</a>
-      </div>
-    </div>
+            <div class="map-explorer__groups">
+              <div class="map-explorer__group">
+                <h3 class="map-explorer__group-title">Europe</h3>
+                <div class="map-explorer__links">
+                  <a href="/things-to-do/paris/">Paris travel guide</a>
+                  <a href="/things-to-do/london/">London travel guide</a>
+                  <a href="/things-to-do/rome/">Rome travel guide</a>
+                </div>
+              </div>
 
-    <div class="map-explorer__group">
-      <h3 class="map-explorer__group-title">Asia</h3>
-      <div class="map-explorer__links">
-        <a href="/things-to-do/tokyo/">Tokyo travel guide</a>
-        <a href="/things-to-do/bangkok/">Bangkok travel guide</a>
-        <a href="/things-to-do/dubai/">Dubai travel guide</a>
-      </div>
-    </div>
+              <div class="map-explorer__group">
+                <h3 class="map-explorer__group-title">Asia</h3>
+                <div class="map-explorer__links">
+                  <a href="/things-to-do/tokyo/">Tokyo travel guide</a>
+                  <a href="/things-to-do/bangkok/">Bangkok travel guide</a>
+                  <a href="/things-to-do/dubai/">Dubai travel guide</a>
+                </div>
+              </div>
 
-    <div class="map-explorer__group">
-      <h3 class="map-explorer__group-title">North America</h3>
-      <div class="map-explorer__links">
-        <a href="/things-to-do/new-york/">New York travel guide</a>
-        <a href="/things-to-do/las-vegas/">Las Vegas travel guide</a>
-        <a href="/things-to-do/quebec-city/">Quebec City travel guide</a>
-      </div>
-    </div>
+              <div class="map-explorer__group">
+                <h3 class="map-explorer__group-title">North America</h3>
+                <div class="map-explorer__links">
+                  <a href="/things-to-do/new-york/">New York travel guide</a>
+                  <a href="/things-to-do/las-vegas/">Las Vegas travel guide</a>
+                  <a href="/things-to-do/quebec-city/">Quebec City travel guide</a>
+                </div>
+              </div>
 
               <div class="map-explorer__group">
                 <h3 class="map-explorer__group-title">Core planning hubs</h3>
