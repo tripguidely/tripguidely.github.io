@@ -1,12 +1,13 @@
 /* ==========================================================================
-   TripGuidely home.css (HOME ONLY) — UPDATED (v5)
+   TripGuidely home.css (HOME ONLY) — UPDATED (v6)
    - Scope: ONLY body[data-page="home"]
    - Synced with current home HTML
-   - HERO: targets .hero-tool-* structure (not old .hero-panel)
+   - HERO: targets .hero-tool-* structure
    - HERO mobile: guaranteed side gutters + safe-area support
+   - HERO hotel form: fixed button cut-off + responsive grid cleanup
    - Top destinations: fixed layout, 2 cols desktop / 1 col mobile
    - Better icon alignment + consistent spacing
-   - NEW: homepage map moved before footer in a wider dedicated container
+   - Homepage map moved before footer in a wider dedicated container
    ========================================================================== */
 
 /* -----------------------------
@@ -62,6 +63,96 @@ body[data-page="home"] .hero-tool-sub{
     box-shadow:
       0 34px 90px rgba(2,6,23,.34),
       0 0 0 1px rgba(255,255,255,.10);
+  }
+}
+
+/* -----------------------------
+   1.05) HERO hotel search form
+   - fixes button cut-off
+   - removes fragile inline layout dependency
+   ----------------------------- */
+body[data-page="home"] #home-hotel-search-form{
+  display:grid;
+  gap:12px;
+}
+
+body[data-page="home"] #home-hotel-search-form > .hotel-search-grid{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(0,1.12fr) minmax(0,1.12fr) minmax(0,.95fr) auto;
+  gap:10px;
+  align-items:end;
+}
+
+body[data-page="home"] #home-hotel-search-form .hotel-field{
+  display:grid;
+  gap:6px;
+  min-width:0;
+}
+
+body[data-page="home"] #home-hotel-search-form .hotel-label{
+  font-size:.84rem;
+  font-weight:800;
+  color:var(--muted2);
+}
+
+body[data-page="home"] #home-hotel-search-form .hotel-control{
+  width:100%;
+  min-width:0;
+  min-height:58px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#ffffff;
+  color:var(--text);
+  padding:0 14px;
+  box-shadow:var(--shadow3);
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+body[data-page="home"] #home-hotel-search-form select.hotel-control{
+  padding-right:42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(15,23,42,.72) 50%),
+    linear-gradient(135deg, rgba(15,23,42,.72) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size:6px 6px, 6px 6px;
+  background-repeat:no-repeat;
+}
+
+body[data-page="home"] #home-hotel-search-submit.hotel-submit{
+  min-height:58px;
+  padding:0 18px;
+  white-space:nowrap;
+  align-self:end;
+  justify-self:stretch;
+}
+
+body[data-page="home"] .hero-tool-shell,
+body[data-page="home"] .hero-tool-pad{
+  overflow:visible;
+}
+
+@media (max-width: 1200px){
+  body[data-page="home"] #home-hotel-search-form > .hotel-search-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+
+  body[data-page="home"] #home-hotel-search-submit.hotel-submit{
+    grid-column:1 / -1;
+    width:100%;
+  }
+}
+
+@media (max-width: 680px){
+  body[data-page="home"] #home-hotel-search-form > .hotel-search-grid{
+    grid-template-columns:1fr;
+  }
+
+  body[data-page="home"] #home-hotel-search-submit.hotel-submit{
+    grid-column:auto;
+    width:100%;
   }
 }
 
