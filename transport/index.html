@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-  <title>Transport Booking Hub | Trains, Rail Passes, Car Rentals & Airport Transfers | TripGuidely</title>
-  <meta name="description" content="Compare trains, rail passes, car rentals, airport transfers, and metro passes with TripGuidely’s transport booking hub. Find the right transport option faster and continue to trusted booking partners.">
+  <title>Transport Booking Hub | Trains, Rail Passes, Car Rentals, Ferries & Cruises | TripGuidely</title>
+  <meta name="description" content="Compare trains, rail passes, car rentals, airport transfers, airport trains and buses, ferries, cruises, and metro passes with TripGuidely’s transport booking hub.">
   <meta name="author" content="TripGuidely Editorial Team">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -19,7 +19,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Transport Booking Hub | TripGuidely">
-  <meta property="og:description" content="Compare trains, rail passes, car rentals, airport transfers, and metro passes in one transport planning hub.">
+  <meta property="og:description" content="Compare trains, rail passes, car rentals, airport transfers, ferries, cruises, and more in one transport planning hub.">
   <meta property="og:url" content="https://tripguidely.github.io/transport/">
   <meta property="og:site_name" content="TripGuidely">
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/transport-hub-og-1200x630.jpg">
@@ -28,7 +28,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Transport Booking Hub | TripGuidely">
-  <meta name="twitter:description" content="Compare trains, rail passes, car rentals, airport transfers, and metro passes in one transport planning hub.">
+  <meta name="twitter:description" content="Compare trains, rail passes, car rentals, airport transfers, ferries, cruises, and more in one transport planning hub.">
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/transport-hub-og-1200x630.jpg">
 
   <link
@@ -48,7 +48,7 @@
     "@type":"WebPage",
     "name":"Transport Booking Hub",
     "url":"https://tripguidely.github.io/transport/",
-    "description":"Compare trains, rail passes, car rentals, airport transfers, and metro passes with TripGuidely’s transport booking hub.",
+    "description":"Compare trains, rail passes, car rentals, airport transfers, airport trains and buses, ferries, cruises, and metro passes with TripGuidely’s transport booking hub.",
     "isPartOf":{
       "@type":"WebSite",
       "name":"TripGuidely",
@@ -123,6 +123,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="trains"
                     data-transport-link="https://klook.tpk.ro/LQXw15L2"
+                    data-transport-subid="tg_transport_trains"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🚆</span>
                     <span class="transport-tab__text">Trains</span>
@@ -137,6 +138,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="rail-passes"
                     data-transport-link="https://klook.tpk.ro/X7Ksor1o"
+                    data-transport-subid="tg_transport_rail_passes"
                     tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🎫</span>
@@ -152,6 +154,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="car-rentals"
                     data-transport-link="https://klook.tpk.ro/5t8ofxGh"
+                    data-transport-subid="tg_transport_car_rentals"
                     tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🚗</span>
@@ -167,6 +170,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="airport-transfers"
                     data-transport-link="https://klook.tpk.ro/iB78IJzo"
+                    data-transport-subid="tg_transport_airport_transfers"
                     tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🛬</span>
@@ -176,26 +180,92 @@
                   <button
                     type="button"
                     class="transport-tab"
-                    id="transport-tab-metro-passes"
+                    id="transport-tab-airport-trains-buses"
                     role="tab"
                     aria-selected="false"
                     aria-controls="transport-panel"
-                    data-transport-tab="metro-passes"
+                    data-transport-tab="airport-trains-buses"
                     data-transport-link="https://klook.tpk.ro/OoM3hbHE"
+                    data-transport-subid="tg_transport_airport_trains_buses"
                     tabindex="-1"
                   >
-                    <span class="transport-tab__icon" aria-hidden="true">🚇</span>
-                    <span class="transport-tab__text">Metro passes &amp; cards</span>
+                    <span class="transport-tab__icon" aria-hidden="true">🚉</span>
+                    <span class="transport-tab__text">Airport trains &amp; buses</span>
                   </button>
 
                   <button
                     type="button"
-                    class="transport-tab transport-tab--more"
-                    aria-hidden="true"
+                    class="transport-tab transport-tab--overflow"
+                    id="transport-tab-overflow-active"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="transport-panel"
+                    data-transport-tab=""
+                    data-transport-link=""
+                    data-transport-subid=""
+                    hidden
                     tabindex="-1"
                   >
-                    <span class="transport-tab__text">···</span>
+                    <span class="transport-tab__icon" aria-hidden="true">🛳️</span>
+                    <span class="transport-tab__text">Cruises</span>
                   </button>
+
+                  <div class="transport-more" id="transport-more">
+                    <button
+                      type="button"
+                      class="transport-tab transport-tab--more"
+                      id="transport-more-toggle"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-controls="transport-more-menu"
+                    >
+                      <span class="transport-tab__text">···</span>
+                    </button>
+
+                    <div class="transport-more__menu" id="transport-more-menu" role="menu" hidden>
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
+                        data-transport-tab="ferries"
+                        data-transport-link="https://klook.tpk.ro/h975PijE"
+                        data-transport-subid="tg_transport_ferries"
+                        data-transport-label="Ferries"
+                        data-transport-icon="⛴️"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">⛴️</span>
+                        <span class="transport-more__text">Ferries</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
+                        data-transport-tab="cruises"
+                        data-transport-link="https://klook.tpk.ro/z6Hs7Grs"
+                        data-transport-subid="tg_transport_cruises"
+                        data-transport-label="Cruises"
+                        data-transport-icon="🛳️"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">🛳️</span>
+                        <span class="transport-more__text">Cruises</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
+                        data-transport-tab="metro-passes"
+                        data-transport-link="https://klook.tpk.ro/OoM3hbHE"
+                        data-transport-subid="tg_transport_metro_passes"
+                        data-transport-label="Metro passes &amp; cards"
+                        data-transport-icon="🚇"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">🚇</span>
+                        <span class="transport-more__text">Metro passes &amp; cards</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <form
@@ -208,6 +278,7 @@
                 >
                   <input type="hidden" id="transport-active-tab" name="transport_type" value="trains">
                   <input type="hidden" id="transport-active-link" name="affiliate_link" value="https://klook.tpk.ro/LQXw15L2">
+                  <input type="hidden" id="transport-active-subid" name="subid" value="tg_transport_trains">
 
                   <div
                     class="transport-panel__body"
@@ -323,12 +394,13 @@
             This page is built for travelers who need a faster way to compare common transport options before booking.
             Instead of jumping between separate pages, you can start with the category that matches your trip:
             <strong>trains</strong>, <strong>rail passes</strong>, <strong>car rentals</strong>,
-            <strong>airport transfers</strong>, or <strong>metro passes and cards</strong>.
+            <strong>airport transfers</strong>, <strong>airport trains and buses</strong>,
+            <strong>ferries</strong>, <strong>cruises</strong>, or <strong>metro passes and cards</strong>.
           </p>
 
           <div class="callout">
             <b>Best use case:</b> start here when you already know you need transport, but you have not yet decided
-            which booking category matches your route, airport arrival, or city stay.
+            which booking category matches your route, airport arrival, island crossing, or cruise region.
           </div>
 
           <h2 id="what-you-can-book">What you can compare here</h2>
@@ -362,17 +434,31 @@
               </div>
             </div>
             <div class="mini">
+              <div class="mini-icon" aria-hidden="true">🚉</div>
+              <div>
+                <b>Airport trains &amp; buses</b>
+                <span>Better for airport-to-city public transport and lower-cost arrival planning.</span>
+              </div>
+            </div>
+            <div class="mini">
+              <div class="mini-icon" aria-hidden="true">⛴️</div>
+              <div>
+                <b>Ferries</b>
+                <span>Useful for island routes, port-to-port crossings, and coastal transport planning.</span>
+              </div>
+            </div>
+            <div class="mini">
+              <div class="mini-icon" aria-hidden="true">🛳️</div>
+              <div>
+                <b>Cruises</b>
+                <span>Good for region-first cruise discovery and itinerary planning.</span>
+              </div>
+            </div>
+            <div class="mini">
               <div class="mini-icon" aria-hidden="true">🚇</div>
               <div>
                 <b>Metro passes &amp; cards</b>
                 <span>Better for urban transit planning and city movement after arrival.</span>
-              </div>
-            </div>
-            <div class="mini">
-              <div class="mini-icon" aria-hidden="true">🧭</div>
-              <div>
-                <b>Search-first workflow</b>
-                <span>Pick the category first, then continue to a more relevant booking page.</span>
               </div>
             </div>
           </div>
@@ -380,7 +466,7 @@
           <h2 id="how-to-use">How to use this page</h2>
           <ol class="steps">
             <li>Choose the transport category that best matches your travel intent.</li>
-            <li>Enter a destination to keep your search flow more focused.</li>
+            <li>Enter a destination or pick a region when the category is region-based.</li>
             <li>Select a departure date and traveler count if relevant for your planning.</li>
             <li>Press Enter or click Search to continue to the matching booking category.</li>
           </ol>
@@ -417,7 +503,7 @@
           <ul class="checklist">
             <li>Matches broad transport search intent without forcing one booking type too early.</li>
             <li>Helps segment users by transport need before sending them outbound.</li>
-            <li>Creates a cleaner internal linking hub for city transport pages.</li>
+            <li>Creates a cleaner internal linking hub for city, ferry, and cruise region pages.</li>
             <li>Supports better affiliate UX by reducing mismatched clicks.</li>
           </ul>
 
@@ -440,10 +526,10 @@
           </details>
 
           <details>
-            <summary>Are airport transfers different from metro passes?</summary>
+            <summary>When should I use ferries or cruises?</summary>
             <p>
-              Yes. Airport transfers focus on arrival and departure transport, often with direct routing. Metro passes
-              are better for getting around once you are already in the city.
+              Use ferries for direct island or port-to-port transport. Use cruises when the goal is itinerary-based
+              travel across a broader destination region.
             </p>
           </details>
         </article>
@@ -489,6 +575,30 @@
 
             <a class="link-card js-aff" href="https://klook.tpk.ro/OoM3hbHE" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
               <div>
+                <strong>Airport trains &amp; buses</strong>
+                <span>Airport-to-city rail and bus access</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="link-card js-aff" href="https://klook.tpk.ro/h975PijE" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
+              <div>
+                <strong>Explore ferries</strong>
+                <span>Island routes, coastal crossings, and port-to-port planning</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="link-card js-aff" href="https://klook.tpk.ro/z6Hs7Grs" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
+              <div>
+                <strong>Explore cruises</strong>
+                <span>Region-first cruise discovery and itinerary planning</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="link-card js-aff" href="https://klook.tpk.ro/OoM3hbHE" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
+              <div>
                 <strong>Check metro passes</strong>
                 <span>City cards and local transit access</span>
               </div>
@@ -506,7 +616,7 @@
             <div class="transport-aff-item">Rail passes</div>
             <div class="transport-aff-item">Car rentals</div>
             <div class="transport-aff-item">Transfers</div>
-            <div class="transport-aff-item">Metro cards</div>
+            <div class="transport-aff-item">Ferries</div>
           </div>
 
           <p class="aff-note aff-note-lg">
