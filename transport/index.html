@@ -31,7 +31,13 @@
   <meta name="twitter:description" content="Compare trains, rail passes, car rentals, airport transfers, and metro passes in one transport planning hub.">
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/transport-hub-og-1200x630.jpg">
 
-  <link rel="preload" as="image" href="/assets/images/hero/transport/transport-hero-1600x900.webp" imagesrcset="/assets/images/hero/transport/transport-hero-1600x900.webp 1600w" imagesizes="100vw">
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero/transport/transport-trains-1600x900.webp"
+    imagesrcset="/assets/images/hero/transport/transport-trains-1600x900.webp 1600w"
+    imagesizes="100vw"
+  >
 
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/transport.css">
@@ -77,7 +83,7 @@
     <section class="hero hero-full transport-hero transport-hero--compact" aria-labelledby="transport-widget-title">
       <div class="hero-bg" aria-hidden="true">
         <img
-          src="/assets/images/hero/transport/transport-hero-1600x900.webp"
+          src="/assets/images/hero/transport/transport-trains-1600x900.webp"
           width="1600"
           height="900"
           alt=""
@@ -131,6 +137,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="rail-passes"
                     data-transport-link="https://klook.tpk.ro/X7Ksor1o"
+                    tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🎫</span>
                     <span class="transport-tab__text">Rail passes</span>
@@ -145,6 +152,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="car-rentals"
                     data-transport-link="https://klook.tpk.ro/5t8ofxGh"
+                    tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🚗</span>
                     <span class="transport-tab__text">Car rentals</span>
@@ -159,6 +167,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="airport-transfers"
                     data-transport-link="https://klook.tpk.ro/iB78IJzo"
+                    tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🛬</span>
                     <span class="transport-tab__text">Airport transfers</span>
@@ -173,6 +182,7 @@
                     aria-controls="transport-panel"
                     data-transport-tab="metro-passes"
                     data-transport-link="https://klook.tpk.ro/OoM3hbHE"
+                    tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🚇</span>
                     <span class="transport-tab__text">Metro passes &amp; cards</span>
@@ -199,27 +209,25 @@
                   <input type="hidden" id="transport-active-tab" name="transport_type" value="trains">
                   <input type="hidden" id="transport-active-link" name="affiliate_link" value="https://klook.tpk.ro/LQXw15L2">
 
-                  <div class="transport-panel__body" id="transport-panel" role="tabpanel" aria-labelledby="transport-tab-trains" tabindex="-1">
-                    <div class="transport-subtabs" aria-label="Transport type options">
-                      <button type="button" class="transport-subtab is-active">
-                        <span class="transport-subtab__dot" aria-hidden="true"></span>
-                        Japan trains
-                      </button>
-                      <button type="button" class="transport-subtab">China High Speed Rail</button>
-                      <button type="button" class="transport-subtab">Europe trains</button>
-                      <button type="button" class="transport-subtab">Others</button>
-                    </div>
+                  <div
+                    class="transport-panel__body"
+                    id="transport-panel"
+                    role="tabpanel"
+                    aria-labelledby="transport-tab-trains"
+                    tabindex="-1"
+                  >
+                    <div class="transport-subtabs" aria-label="Transport type options"></div>
 
                     <div class="transport-grid transport-grid--klook">
                       <label class="transport-field transport-field--wide transport-field--card" for="transport-destination">
-                        <span class="transport-field__label">Destination</span>
+                        <span class="transport-field__label">Route or destination</span>
                         <input
                           id="transport-destination"
                           name="destination"
                           type="text"
                           inputmode="text"
                           autocomplete="off"
-                          placeholder="Tokyo, Osaka, Paris, London"
+                          placeholder="Tokyo, Osaka, Kyoto, Hiroshima"
                         >
                       </label>
 
@@ -250,14 +258,14 @@
                         <p class="transport-meta__eyebrow">Selected category</p>
                         <p class="transport-meta__title" id="transport-panel-title">Trains</p>
                         <p class="transport-meta__text" id="transport-panel-copy">
-                          Find train tickets and rail routes for city-to-city travel and longer overland journeys.
+                          Compare Japan train routes for major city-to-city journeys and faster intercity travel.
                         </p>
                       </div>
 
                       <ul class="transport-highlights" aria-label="Booking highlights">
-                        <li id="transport-highlight-1">Good fit for point-to-point transport searches</li>
-                        <li id="transport-highlight-2">Useful for intercity travel planning</li>
-                        <li id="transport-highlight-3">Fast redirect to the relevant booking category</li>
+                        <li id="transport-highlight-1">Strong fit for Japan rail planning</li>
+                        <li id="transport-highlight-2">Useful for major city routes like Tokyo and Osaka</li>
+                        <li id="transport-highlight-3">Fast redirect to the relevant train booking category</li>
                       </ul>
                     </div>
 
@@ -512,6 +520,7 @@
 
   <div id="site-footer"></div>
 
+  <script src="/assets/js/transport.js" defer></script>
   <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
