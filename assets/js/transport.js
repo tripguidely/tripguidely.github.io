@@ -4,8 +4,9 @@
    Fixes:
    - Restores "..." more-menu open on hover / focus / click
    - Makes Airport trains & buses tab switch correctly
-   - Adds missing configs for airport-trains-buses / ferries / cruises
-   - Supports overflow active tab state (ferries / cruises / metro passes)
+   - Adds missing config for airport-trains-buses / ferries / cruises / metro passes
+   - Keeps Ferries and Cruises as normal visible tabs
+   - Uses overflow only for Metro passes
    - Syncs active affiliate link + subid correctly
    - Auto-inits on DOM ready
    - Safe for older browsers
@@ -559,7 +560,7 @@
   }
 
   function isOverflowTab(tabKey) {
-    return tabKey === "ferries" || tabKey === "cruises" || tabKey === "metro-passes";
+    return tabKey === "metro-passes";
   }
 
   function setOverflowButton(els, tabKey, link, subid) {
