@@ -3,10 +3,8 @@
    TripGuidely — transport.js
    Purpose:
    - Real tab switching for the transport widget
-   - Supports primary tabs + overflow tabs (ferries / cruises / metro)
-   - Supports standard search layouts + region-grid layouts
-   - Syncs active tab, panel copy, highlights, placeholders, hero image, and affiliate link
-   - Uses the current HTML structure
+   - Syncs active tab, panel copy, highlights, placeholders, and affiliate link
+   - Uses the CURRENT HTML structure you pasted
    - Safe for older browsers
    ========================================================================== */
 
@@ -28,10 +26,7 @@
     "rail-passes": "/assets/images/hero/transport/transport-rail-passes-1600x900.webp",
     "car-rentals": "/assets/images/hero/transport/transport-car-rentals-1600x900.webp",
     "airport-transfers": "/assets/images/hero/transport/transport-airport-transfers-1600x900.webp",
-    "airport-trains-buses": "/assets/images/hero/transport/transport-airport-trains-buses-1600x900.webp",
-    "metro-passes": "/assets/images/hero/transport/transport-metro-passes-1600x900.webp",
-    "ferries": "/assets/images/hero/transport/transport-ferries-1600x900.webp",
-    "cruises": "/assets/images/hero/transport/transport-cruises-1600x900.webp"
+    "metro-passes": "/assets/images/hero/transport/transport-metro-passes-1600x900.webp"
   };
 
   var TAB_CONFIG = {
@@ -177,61 +172,6 @@
       subtabs: []
     },
 
-    "airport-trains-buses": {
-      title: "Airport trains & buses",
-      copy: "Compare airport rail links, bus transfers, and city access routes before continuing to the booking partner.",
-      h1: "Useful for airport-to-city public transport",
-      h2: "Good for lower-cost arrival planning",
-      h3: "Helps narrow the right airport transfer mode",
-      destinationLabel: "Airport or city",
-      destinationPlaceholder: "Tokyo, Seoul, Hong Kong, Singapore",
-      travelersLabel: "Travelers",
-      travelersVisible: false,
-      dateVisible: false,
-      subtabs: [
-        {
-          key: "japan",
-          label: "Japan",
-          title: "Airport trains & buses",
-          copy: "Explore airport rail links and bus routes across Japan for city access planning.",
-          h1: "Useful for airport-to-city rail transfers",
-          h2: "Good for lower-cost arrival options",
-          h3: "Helps narrow the right airport access route",
-          destinationPlaceholder: "Tokyo, Osaka, Kyoto"
-        },
-        {
-          key: "europe",
-          label: "Europe",
-          title: "Airport trains & buses",
-          copy: "Compare airport rail and bus connections across major European cities.",
-          h1: "Useful for airport public transport planning",
-          h2: "Good for arrival routing into city centers",
-          h3: "Helps narrow the right airport access option",
-          destinationPlaceholder: "Paris, London, Rome, Barcelona"
-        },
-        {
-          key: "asia",
-          label: "Asia",
-          title: "Airport trains & buses",
-          copy: "Compare airport trains and buses across major Asian destinations.",
-          h1: "Useful for airport-to-city transport",
-          h2: "Good for public transit arrival planning",
-          h3: "Helps narrow the right airport access route",
-          destinationPlaceholder: "Seoul, Hong Kong, Singapore, Taipei"
-        },
-        {
-          key: "others",
-          label: "Others",
-          title: "Airport trains & buses",
-          copy: "Explore airport trains and buses outside the main presets.",
-          h1: "Useful for arrival transport planning",
-          h2: "Good for airport public transport",
-          h3: "Best when you want lower-cost city access",
-          destinationPlaceholder: "Enter airport or city"
-        }
-      ]
-    },
-
     "metro-passes": {
       title: "Metro passes & cards",
       copy: "Check metro cards and transit passes for getting around the city once you arrive.",
@@ -285,55 +225,6 @@
           destinationPlaceholder: "Enter city name"
         }
       ]
-    },
-
-    "ferries": {
-      title: "Ferries",
-      copy: "Compare ferry routes and regional crossings before continuing to the booking partner.",
-      h1: "Useful for island routes and regional crossings",
-      h2: "Good for port-to-port transport planning",
-      h3: "Helps narrow the right ferry market before booking",
-      destinationLabel: "Ferry route or destination",
-      destinationPlaceholder: "Hong Kong, South Korea, Singapore, Taiwan",
-      travelersLabel: "Travelers",
-      travelersVisible: false,
-      dateVisible: false,
-      regionGridClass: "transport-grid--regions-4",
-      regions: [
-        "Hong Kong & Macau",
-        "South Korea",
-        "Singapore",
-        "Taiwan",
-        "Thailand",
-        "Malaysia",
-        "Indonesia",
-        "United States",
-        "Mainland China",
-        "Australia & New Zealand",
-        "Philippines",
-        "Vietnam"
-      ],
-      subtabs: []
-    },
-
-    "cruises": {
-      title: "Cruises",
-      copy: "Compare cruise regions and start with the right destination area before continuing to the booking partner.",
-      h1: "Best for region-first cruise discovery",
-      h2: "Useful when choosing between major cruise markets",
-      h3: "Good fit for destination-led cruise planning",
-      destinationLabel: "Cruise region or destination",
-      destinationPlaceholder: "Asia, Australia & New Zealand, Nordic",
-      travelersLabel: "Travelers",
-      travelersVisible: false,
-      dateVisible: false,
-      regionGridClass: "transport-grid--regions-3",
-      regions: [
-        "Asia",
-        "Australia & New Zealand",
-        "Nordic"
-      ],
-      subtabs: []
     }
   };
 
@@ -348,8 +239,11 @@
 
   function on(el, eventName, handler) {
     if (!el || !eventName || !handler) return;
-    if (el.addEventListener) el.addEventListener(eventName, handler, false);
-    else if (el.attachEvent) el.attachEvent("on" + eventName, handler);
+    if (el.addEventListener) {
+      el.addEventListener(eventName, handler, false);
+    } else if (el.attachEvent) {
+      el.attachEvent("on" + eventName, handler);
+    }
   }
 
   function safeArray(nodeList) {
@@ -424,7 +318,6 @@
       subtabs: safeArray(DOC.querySelectorAll(".transport-subtab")),
       activeTabInput: DOC.getElementById("transport-active-tab"),
       activeLinkInput: DOC.getElementById("transport-active-link"),
-      activeSubidInput: DOC.getElementById("transport-active-subid"),
       panel: DOC.getElementById("transport-panel"),
       panelTitle: DOC.getElementById("transport-panel-title"),
       panelCopy: DOC.getElementById("transport-panel-copy"),
@@ -439,15 +332,6 @@
       destinationField: DOC.querySelector('label[for="transport-destination"]'),
       departureField: DOC.querySelector('label[for="transport-start-date"]'),
       travelersField: DOC.querySelector('label[for="transport-travelers"]')
-    };
-  }
-
-  function getOverflowElements() {
-    return {
-      overflowTab: DOC.getElementById("transport-tab-overflow-active"),
-      moreWrap: DOC.getElementById("transport-more"),
-      moreToggle: DOC.getElementById("transport-more-toggle"),
-      moreMenu: DOC.getElementById("transport-more-menu")
     };
   }
 
@@ -606,124 +490,10 @@
     }
   }
 
-  function openMoreMenu(parts) {
-    if (!parts.moreMenu || !parts.moreToggle) return;
-    parts.moreMenu.hidden = false;
-    parts.moreToggle.setAttribute("aria-expanded", "true");
-  }
-
-  function closeMoreMenu(parts) {
-    if (!parts.moreMenu || !parts.moreToggle) return;
-    parts.moreMenu.hidden = true;
-    parts.moreToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function setOverflowActive(parts, tabKey, label, icon, link, subid) {
-    var iconEl, textEl;
-
-    if (!parts.overflowTab) return;
-
-    iconEl = parts.overflowTab.querySelector(".transport-tab__icon");
-    textEl = parts.overflowTab.querySelector(".transport-tab__text");
-
-    if (!tabKey) {
-      parts.overflowTab.hidden = true;
-      parts.overflowTab.setAttribute("data-transport-tab", "");
-      parts.overflowTab.setAttribute("data-transport-link", "");
-      parts.overflowTab.setAttribute("data-transport-subid", "");
-      if (textEl) textEl.textContent = "";
-      if (iconEl) iconEl.textContent = "";
-      return;
-    }
-
-    parts.overflowTab.hidden = false;
-    parts.overflowTab.setAttribute("data-transport-tab", tabKey);
-    parts.overflowTab.setAttribute("data-transport-link", link || "");
-    parts.overflowTab.setAttribute("data-transport-subid", subid || "");
-    if (textEl) textEl.textContent = label || "";
-    if (iconEl) iconEl.textContent = icon || "";
-  }
-
-  function syncOverflowMenuCurrent(parts, activeTab) {
-    var items, i;
-
-    if (!parts.moreMenu) return;
-
-    items = parts.moreMenu.querySelectorAll(".transport-more__item");
-    for (i = 0; i < items.length; i++) {
-      if (getAttr(items[i], "data-transport-tab") === activeTab) addClass(items[i], "is-current");
-      else removeClass(items[i], "is-current");
-    }
-  }
-
-  function renderRegionGrid(els, config) {
-    var grid;
-    var html;
-    var i;
-
-    if (!config || !config.regions || !config.regions.length) return false;
-    if (!els.form) return false;
-
-    grid = els.form.querySelector(".transport-grid");
-    if (!grid) return false;
-
-    removeClass(grid, "transport-grid--regions-3");
-    removeClass(grid, "transport-grid--regions-4");
-    addClass(grid, config.regionGridClass || "transport-grid--regions-3");
-
-    html = "";
-    for (i = 0; i < config.regions.length; i++) {
-      html += '<button type="submit" class="transport-region-btn" data-region-value="' + config.regions[i].replace(/"/g, "&quot;") + '">' + config.regions[i] + '</button>';
-    }
-
-    grid.innerHTML = html;
-    return true;
-  }
-
-  function renderDefaultFields(els, config, subtabConfig) {
-    var grid = els.form ? els.form.querySelector(".transport-grid") : null;
-    var placeholder = subtabConfig && subtabConfig.destinationPlaceholder ? subtabConfig.destinationPlaceholder : config.destinationPlaceholder;
-    var travelerLabel = config.travelersLabel || "Travelers";
-
-    if (!grid) return;
-
-    removeClass(grid, "transport-grid--regions-3");
-    removeClass(grid, "transport-grid--regions-4");
-
-    grid.innerHTML =
-      '<label class="transport-field transport-field--wide transport-field--card" for="transport-destination">' +
-        '<span class="transport-field__label">' + (config.destinationLabel || "Destination") + '</span>' +
-        '<input id="transport-destination" name="destination" type="text" inputmode="text" autocomplete="off" placeholder="' + (placeholder || "Enter destination") + '">' +
-      '</label>' +
-      '<label class="transport-field transport-field--card" for="transport-start-date">' +
-        '<span class="transport-field__label">Departure date</span>' +
-        '<input id="transport-start-date" name="departure_date" type="date">' +
-      '</label>' +
-      '<label class="transport-field transport-field--card" for="transport-travelers">' +
-        '<span class="transport-field__label">' + travelerLabel + '</span>' +
-        '<select id="transport-travelers" name="travelers"></select>' +
-      '</label>' +
-      '<button class="transport-submit btn primary" type="submit" aria-label="Search transport options">Search</button>';
-
-    els.destination = DOC.getElementById("transport-destination");
-    els.departure = DOC.getElementById("transport-start-date");
-    els.travelers = DOC.getElementById("transport-travelers");
-    els.destinationField = DOC.querySelector('label[for="transport-destination"]');
-    els.departureField = DOC.querySelector('label[for="transport-start-date"]');
-    els.travelersField = DOC.querySelector('label[for="transport-travelers"]');
-
-    if (els.departure && !els.departure.value) {
-      els.departure.value = addDaysISO(DEFAULTS.defaultDepartureOffsetDays);
-    }
-  }
-
   function setActiveTab(els, state, tabKey, tabEl) {
     var config = TAB_CONFIG[tabKey];
     var link = tabEl ? getAttr(tabEl, "data-transport-link") : "";
-    var subid = tabEl ? getAttr(tabEl, "data-transport-subid") : "";
     var subtabConfig;
-    var overflow = getOverflowElements();
-    var isOverflowTab = hasClass(tabEl, "transport-tab--overflow");
 
     if (!config) return;
 
@@ -739,39 +509,20 @@
 
     if (els.activeTabInput) els.activeTabInput.value = tabKey;
     if (els.activeLinkInput) els.activeLinkInput.value = link || "";
-    if (els.activeSubidInput) els.activeSubidInput.value = subid || "";
     if (els.panel && tabEl && tabEl.id) els.panel.setAttribute("aria-labelledby", tabEl.id);
 
     DOC.body.setAttribute("data-transport-active", tabKey);
-    DOC.body.setAttribute("data-transport-active-subtab", "");
-
-    if (!isOverflowTab) {
-      setOverflowActive(overflow, "", "", "", "", "");
-    }
 
     syncTabClasses(els, tabEl);
     renderSubtabs(els, state, tabKey);
 
     subtabConfig = getSubtabConfig(tabKey, state.activeSubtab);
 
-    if (!renderRegionGrid(els, config)) {
-      renderDefaultFields(els, config, subtabConfig);
-      updateTravelerOptions(els, config);
-      updateFieldVisibility(els, config);
-      updateFieldLabels(els, config, subtabConfig);
-    } else {
-      els.destination = null;
-      els.departure = null;
-      els.travelers = null;
-      els.destinationField = null;
-      els.departureField = null;
-      els.travelersField = null;
-      hide(els.subtabsWrap);
-    }
-
     setPanelContent(els, subtabConfig || config);
+    updateFieldLabels(els, config, subtabConfig);
+    updateFieldVisibility(els, config);
+    updateTravelerOptions(els, config);
     setHeroImage(els, tabKey);
-    syncOverflowMenuCurrent(overflow, tabKey);
     clearError(els);
   }
 
@@ -783,7 +534,6 @@
     if (!config || !subtabConfig) return;
 
     state.activeSubtab = subtabKey;
-    DOC.body.setAttribute("data-transport-active-subtab", subtabKey || "");
 
     for (i = 0; i < els.subtabs.length; i++) {
       toggleClass(els.subtabs[i], "is-active", els.subtabs[i] === subtabEl);
@@ -799,12 +549,10 @@
   }
 
   function collectFormData(els) {
-    var hiddenRegion = DOC.getElementById("transport-region-hidden");
-
     return {
       tab: els.activeTabInput ? els.activeTabInput.value : "",
       subtab: DOC.body.getAttribute("data-transport-active-subtab") || "",
-      destination: els.destination ? normalizeInputValue(els.destination.value) : normalizeInputValue(hiddenRegion ? hiddenRegion.value : ""),
+      destination: els.destination ? normalizeInputValue(els.destination.value) : "",
       departure_date: els.departure ? els.departure.value : "",
       travelers: els.travelers ? els.travelers.value : ""
     };
@@ -886,7 +634,6 @@
       (function (tab) {
         on(tab, "click", function () {
           var tabKey = getAttr(tab, "data-transport-tab");
-          if (!tabKey) return;
           setActiveTab(els, state, tabKey, tab);
         });
       })(els.tabs[i]);
@@ -907,107 +654,24 @@
       if (!btn || btn === els.subtabsWrap) return;
 
       setActiveSubtab(els, state, getAttr(btn, "data-transport-subtab"), btn);
-    });
-  }
-
-  function bindMoreMenuEvents(els, state) {
-    var parts = getOverflowElements();
-
-    if (!parts.moreToggle || !parts.moreMenu) return;
-
-    on(parts.moreToggle, "click", function (e) {
-      if (e && e.preventDefault) e.preventDefault();
-
-      if (parts.moreMenu.hidden) openMoreMenu(parts);
-      else closeMoreMenu(parts);
-    });
-
-    on(parts.moreMenu, "click", function (e) {
-      var target = e.target || e.srcElement;
-      var btn = target;
-
-      while (btn && btn !== parts.moreMenu && !hasClass(btn, "transport-more__item")) {
-        btn = btn.parentNode;
-      }
-
-      if (!btn || btn === parts.moreMenu) return;
-
-      setOverflowActive(
-        parts,
-        getAttr(btn, "data-transport-tab"),
-        getAttr(btn, "data-transport-label"),
-        getAttr(btn, "data-transport-icon"),
-        getAttr(btn, "data-transport-link"),
-        getAttr(btn, "data-transport-subid")
-      );
-
-      closeMoreMenu(parts);
-      setActiveTab(els, state, getAttr(btn, "data-transport-tab"), parts.overflowTab);
-    });
-
-    on(DOC, "click", function (e) {
-      var target = e.target || e.srcElement;
-      if (parts.moreMenu.hidden) return;
-      if (parts.moreMenu.contains(target)) return;
-      if (parts.moreToggle.contains(target)) return;
-      closeMoreMenu(parts);
-    });
-
-    on(DOC, "keydown", function (e) {
-      var key;
-      e = e || WIN.event;
-      key = e.key || e.keyCode;
-
-      if (parts.moreMenu.hidden) return;
-      if (key === "Escape" || key === "Esc" || key === 27) {
-        closeMoreMenu(parts);
-      }
+      DOC.body.setAttribute("data-transport-active-subtab", getAttr(btn, "data-transport-subtab") || "");
     });
   }
 
   function bindSubmitEvents(els) {
     if (!els.form) return;
 
-    on(els.form, "click", function (e) {
-      var target = e.target || e.srcElement;
-      var regionBtn = target;
-      var hiddenDest;
-
-      while (regionBtn && regionBtn !== els.form && !hasClass(regionBtn, "transport-region-btn")) {
-        regionBtn = regionBtn.parentNode;
-      }
-
-      if (!regionBtn || regionBtn === els.form) return;
-
-      if (els.destination) {
-        els.destination.value = getAttr(regionBtn, "data-region-value") || trimStr(regionBtn.textContent || "");
-      } else {
-        hiddenDest = DOC.getElementById("transport-region-hidden");
-        if (!hiddenDest) {
-          hiddenDest = DOC.createElement("input");
-          hiddenDest.type = "hidden";
-          hiddenDest.name = "destination";
-          hiddenDest.id = "transport-region-hidden";
-          els.form.appendChild(hiddenDest);
-        }
-        hiddenDest.value = getAttr(regionBtn, "data-region-value") || trimStr(regionBtn.textContent || "");
-      }
-    });
-
     on(els.form, "submit", function (e) {
       handleTransportSubmit(e, els);
     });
   }
 
-  function bindEvents(els, state) {
-    bindTabEvents(els, state);
-    bindSubtabEvents(els, state);
-    bindMoreMenuEvents(els, state);
-    bindSubmitEvents(els);
-  }
-
   function applyInitialDefaults(els, state) {
     var firstTab;
+
+    if (els.departure && !els.departure.value) {
+      els.departure.value = addDaysISO(DEFAULTS.defaultDepartureOffsetDays);
+    }
 
     firstTab = DOC.getElementById("transport-tab-" + DEFAULTS.initialTab) || (els.tabs.length ? els.tabs[0] : null);
     if (firstTab) {
@@ -1027,7 +691,9 @@
     state = createState();
 
     applyInitialDefaults(els, state);
-    bindEvents(els, state);
+    bindTabEvents(els, state);
+    bindSubtabEvents(els, state);
+    bindSubmitEvents(els);
   }
 
   WIN.initTransportSearch = initTransportSearch;
