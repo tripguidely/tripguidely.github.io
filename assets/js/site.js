@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.6)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.7)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
@@ -15,8 +15,7 @@
    - Supports generic [data-include] partial injection
    - Car rental hero search redirect (Klook)
    - Home hotel hero search redirect
-   - Transport hub hero search redirect
-   - Premium custom date-range popover for car rental
+   - Transport feature delegated to transport.js
    - Guards against double init / duplicate event listeners
    ========================================================================== */
 
@@ -357,6 +356,15 @@
   WIN.TripGuidelyConsent = WIN.TripGuidelyConsent || {};
   WIN.TripGuidelyConsent.open = openConsentManager;
   WIN.TripGuidelyConsent.get = getConsent;
+
+  /* ---------- expose shared helpers for feature bundles ---------- */
+
+  WIN.on = on;
+  WIN.getAttr = getAttr;
+  WIN.trimStr = trimStr;
+  WIN.getConsent = getConsent;
+  WIN.gtagEvent = gtagEvent;
+  WIN.getPageType = getPageType;
 
   /* ---------- Bind footer “Privacy choices” link (.js-consent) ---------- */
 
@@ -953,7 +961,6 @@
       try {
         var url = new URL(base, WIN.location.href);
         url.searchParams.set("subid", subid);
-
         return url.toString();
       } catch (_) {
         return base;
@@ -1504,193 +1511,11 @@
     });
   }
 
-  function initTransportSearch() {
-    var form = DOC.getElementById("transport-search-form");
-    if (!form) return;
-    if (form.getAttribute("data-transport-bound") === "1") return;
-    form.setAttribute("data-transport-bound", "1");
-
-    var tabs = DOC.querySelectorAll(".transport-tab");
-    var activeTabInput = DOC.getElementById("transport-active-tab");
-    var activeLinkInput = DOC.getElementById("transport-active-link");
-    var panel = DOC.getElementById("transport-panel");
-    var panelTitle = DOC.getElementById("transport-panel-title");
-    var panelCopy = DOC.getElementById("transport-panel-copy");
-    var highlight1 = DOC.getElementById("transport-highlight-1");
-    var highlight2 = DOC.getElementById("transport-highlight-2");
-    var highlight3 = DOC.getElementById("transport-highlight-3");
-    var destination = DOC.getElementById("transport-destination");
-    var departure = DOC.getElementById("transport-start-date");
-    var travelers = DOC.getElementById("transport-travelers");
-    var errorBox = DOC.getElementById("transport-search-error");
-
-    var contentMap = {
-      "trains": {
-        title: "Trains",
-        copy: "Find train tickets and rail routes for city-to-city travel and longer overland journeys.",
-        h1: "Good fit for point-to-point transport searches",
-        h2: "Useful for intercity travel planning",
-        h3: "Fast redirect to the relevant booking category"
-      },
-      "rail-passes": {
-        title: "Rail passes",
-        copy: "Compare rail pass options for multi-city trips, broader rail access, and more flexible itineraries.",
-        h1: "Better for multiple train journeys",
-        h2: "Useful for longer regional or country-level trips",
-        h3: "Helps compare pass-first rail planning"
-      },
-      "car-rentals": {
-        title: "Car rentals",
-        copy: "Search car rental options when you need more flexibility beyond central city transport.",
-        h1: "Good for road trips and flexible routing",
-        h2: "Useful for airport pick-up and wider-area travel",
-        h3: "Better fit when transit coverage is limited"
-      },
-      "airport-transfers": {
-        title: "Airport transfers",
-        copy: "Book airport transfer options for smoother arrivals, hotel drop-offs, and departure planning.",
-        h1: "Strong fit for arrival and departure logistics",
-        h2: "Useful after long-haul or late-night flights",
-        h3: "Helps simplify airport-to-city transport planning"
-      },
-      "metro-passes": {
-        title: "Metro passes & cards",
-        copy: "Check metro cards and transit passes for getting around the city once you arrive.",
-        h1: "Good for local city movement",
-        h2: "Useful after airport arrival or hotel check-in",
-        h3: "Better fit for public transit planning inside the city"
-      }
-    };
-
-    function pad2(n) {
-      n = Number(n);
-      return n < 10 ? "0" + n : "" + n;
-    }
-
-    function addDaysISO(days) {
-      var d = new Date();
-      d.setDate(d.getDate() + Number(days || 0));
-      return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
-    }
-
-    function setActiveTab(tabKey, tabEl) {
-      var i;
-      var map = contentMap[tabKey];
-      var link = tabEl ? (getAttr(tabEl, "data-transport-link") || "") : "";
-
-      if (!map || !link) return;
-
-      if (activeTabInput) activeTabInput.value = tabKey;
-      if (activeLinkInput) activeLinkInput.value = link;
-      if (panel && tabEl && tabEl.id) panel.setAttribute("aria-labelledby", tabEl.id);
-
-      for (i = 0; i < tabs.length; i++) {
-        var isActive = tabs[i] === tabEl;
-        tabs[i].classList.toggle("is-active", isActive);
-        tabs[i].setAttribute("aria-selected", isActive ? "true" : "false");
-      }
-
-      if (panelTitle) panelTitle.textContent = map.title;
-      if (panelCopy) panelCopy.textContent = map.copy;
-      if (highlight1) highlight1.textContent = map.h1;
-      if (highlight2) highlight2.textContent = map.h2;
-      if (highlight3) highlight3.textContent = map.h3;
-    }
-
-    function validate(data) {
-      if (!trimStr(data.destination)) {
-        return "Please enter a destination.";
-      }
-      return "";
-    }
-
-    if (departure && !departure.value) {
-      departure.value = addDaysISO(30);
-    }
-
-    for (var i = 0; i < tabs.length; i++) {
-      (function (tab) {
-        on(tab, "click", function () {
-          setActiveTab(getAttr(tab, "data-transport-tab"), tab);
-        });
-      })(tabs[i]);
-    }
-
-    on(form, "submit", function (e) {
-      var data, error, targetUrl;
-
-      if (e && e.preventDefault) e.preventDefault();
-      else e.returnValue = false;
-
-      if (errorBox) errorBox.textContent = "";
-
-      data = {
-        tab: activeTabInput ? activeTabInput.value : "",
-        destination: destination ? trimStr((destination.value || "").replace(/\s+/g, " ")) : "",
-        departure_date: departure ? departure.value : "",
-        travelers: travelers ? travelers.value : "2"
-      };
-
-      error = validate(data);
-      if (error) {
-        if (errorBox) errorBox.textContent = error;
-        if (destination) {
-          try { destination.focus(); } catch (_) {}
-        }
-        return;
-      }
-
-      targetUrl = activeLinkInput ? activeLinkInput.value : "";
-      if (!targetUrl) return;
-
+  function initTransportFeature() {
+    if (typeof WIN.initTransportSearch === "function") {
       try {
-        if (WIN.sessionStorage) {
-          WIN.sessionStorage.setItem("tg_transport_search_context", JSON.stringify({
-            tab: data.tab,
-            destination: data.destination,
-            departure_date: data.departure_date,
-            travelers: data.travelers
-          }));
-        }
+        WIN.initTransportSearch();
       } catch (_) {}
-
-      if (getConsent() === "granted") {
-        gtagEvent("transport_search", {
-          page_type: getPageType(),
-          transport_category: data.tab,
-          destination: data.destination,
-          departure_date: data.departure_date,
-          travelers: data.travelers,
-          affiliate_program: String(getAttr(form, "data-aff") || "klook")
-        });
-      }
-
-      WIN.location.href = targetUrl;
-    });
-
-    on(form, "keydown", function (e) {
-      e = e || WIN.event;
-      var key = e.key || e.keyCode;
-      if (key === "Enter" || key === 13) {
-        if (e.preventDefault) e.preventDefault();
-        else e.returnValue = false;
-
-        if (form.requestSubmit) form.requestSubmit();
-        else if (form.submit) {
-          var evt;
-          try {
-            evt = DOC.createEvent("Event");
-            evt.initEvent("submit", true, true);
-            form.dispatchEvent(evt);
-          } catch (_) {
-            form.submit();
-          }
-        }
-      }
-    });
-
-    if (tabs.length) {
-      setActiveTab("trains", tabs[0]);
     }
   }
 
@@ -1732,7 +1557,7 @@
     initContactForm();
     initHomeHotelSearch();
     initCarRentalSearch();
-    initTransportSearch();
+    initTransportFeature();
 
     trackOutboundClicks();
     trackAffiliateClicks();
