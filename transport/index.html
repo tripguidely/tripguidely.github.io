@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-  <title>Transport Booking Hub | Trains, Rail Passes, Car Rentals, Ferries & Cruises | TripGuidely</title>
+  <title>Transport Booking Hub | Trains, Rail Passes, Car Rentals, Airport Transfers, Ferries & Cruises | TripGuidely</title>
   <meta name="description" content="Compare trains, rail passes, car rentals, airport transfers, airport trains and buses, ferries, cruises, and metro passes with TripGuidely’s transport booking hub.">
   <meta name="author" content="TripGuidely Editorial Team">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -19,7 +19,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Transport Booking Hub | TripGuidely">
-  <meta property="og:description" content="Compare trains, rail passes, car rentals, airport transfers, ferries, cruises, and more in one transport planning hub.">
+  <meta property="og:description" content="Compare trains, rail passes, car rentals, airport transfers, airport trains and buses, ferries, cruises, and more in one transport planning hub.">
   <meta property="og:url" content="https://tripguidely.github.io/transport/">
   <meta property="og:site_name" content="TripGuidely">
   <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/transport-hub-og-1200x630.jpg">
@@ -28,7 +28,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Transport Booking Hub | TripGuidely">
-  <meta name="twitter:description" content="Compare trains, rail passes, car rentals, airport transfers, ferries, cruises, and more in one transport planning hub.">
+  <meta name="twitter:description" content="Compare trains, rail passes, car rentals, airport transfers, airport trains and buses, ferries, cruises, and more in one transport planning hub.">
   <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/transport-hub-og-1200x630.jpg">
 
   <link
@@ -195,6 +195,38 @@
 
                   <button
                     type="button"
+                    class="transport-tab"
+                    id="transport-tab-ferries"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="transport-panel"
+                    data-transport-tab="ferries"
+                    data-transport-link="https://klook.tpk.ro/h975PijE"
+                    data-transport-subid="tg_transport_ferries"
+                    tabindex="-1"
+                  >
+                    <span class="transport-tab__icon" aria-hidden="true">⛴️</span>
+                    <span class="transport-tab__text">Ferries</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="transport-tab"
+                    id="transport-tab-cruises"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="transport-panel"
+                    data-transport-tab="cruises"
+                    data-transport-link="https://klook.tpk.ro/z6Hs7Grs"
+                    data-transport-subid="tg_transport_cruises"
+                    tabindex="-1"
+                  >
+                    <span class="transport-tab__icon" aria-hidden="true">🛳️</span>
+                    <span class="transport-tab__text">Cruises</span>
+                  </button>
+
+                  <button
+                    type="button"
                     class="transport-tab transport-tab--overflow"
                     id="transport-tab-overflow-active"
                     role="tab"
@@ -206,8 +238,8 @@
                     hidden
                     tabindex="-1"
                   >
-                    <span class="transport-tab__icon" aria-hidden="true">🛳️</span>
-                    <span class="transport-tab__text">Cruises</span>
+                    <span class="transport-tab__icon" aria-hidden="true">🚇</span>
+                    <span class="transport-tab__text">Metro passes &amp; cards</span>
                   </button>
 
                   <div class="transport-more" id="transport-more">
@@ -223,34 +255,6 @@
                     </button>
 
                     <div class="transport-more__menu" id="transport-more-menu" role="menu" hidden>
-                      <button
-                        type="button"
-                        class="transport-more__item"
-                        role="menuitem"
-                        data-transport-tab="ferries"
-                        data-transport-link="https://klook.tpk.ro/h975PijE"
-                        data-transport-subid="tg_transport_ferries"
-                        data-transport-label="Ferries"
-                        data-transport-icon="⛴️"
-                      >
-                        <span class="transport-more__icon" aria-hidden="true">⛴️</span>
-                        <span class="transport-more__text">Ferries</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        class="transport-more__item"
-                        role="menuitem"
-                        data-transport-tab="cruises"
-                        data-transport-link="https://klook.tpk.ro/z6Hs7Grs"
-                        data-transport-subid="tg_transport_cruises"
-                        data-transport-label="Cruises"
-                        data-transport-icon="🛳️"
-                      >
-                        <span class="transport-more__icon" aria-hidden="true">🛳️</span>
-                        <span class="transport-more__text">Cruises</span>
-                      </button>
-
                       <button
                         type="button"
                         class="transport-more__item"
