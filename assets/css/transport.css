@@ -1,15 +1,11 @@
 /* ==========================================================================
-   TripGuidely — transport widget REFINEMENT PATCH
+   TripGuidely — transport widget REFINEMENT PATCH (UPDATED)
    Goal:
-   - Much closer to Klook premium widget structure
-   - Cleaner connected tab bar
-   - Stronger active tab treatment
-   - Better shell / panel / input rhythm
-   - Keeps TripGuidely turquoise branding
+   - Keep the premium Klook-like shell
+   - Restore the CTA/search buttons to the strong colored style
+   - Keep overflow / region buttons polished
+   - Better active tab treatment
    - Drop this AFTER your current transport.css
-   --------------------------------------------------------------------------
-   Note:
-   For a true near-1:1 finish, replace emoji tab icons with SVG icons.
    ========================================================================== */
 
 body[data-page="transport-hub"]{
@@ -25,7 +21,7 @@ body[data-page="transport-hub"]{
 
   --transport-tab-text: #263247;
   --transport-tab-text-muted: #3b4658;
-  --transport-tab-text-active: #0fb9ba;
+  --transport-tab-text-active: #ff5b00;
 
   --transport-field-bg: #f5f6f8;
   --transport-field-line: #e4e8ef;
@@ -45,7 +41,11 @@ body[data-page="transport-hub"]{
     0 10px 24px rgba(2,6,23,.08);
 
   --transport-btn-shadow:
-    0 16px 36px rgba(18,207,208,.24);
+    0 16px 36px rgba(255,91,0,.24);
+
+  --transport-cta-bg: linear-gradient(135deg, #ff7a00, #ff5b00);
+  --transport-cta-border: rgba(255,91,0,.42);
+  --transport-cta-text: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
@@ -114,7 +114,7 @@ body[data-page="transport-hub"] .transport-topbar__scope:hover{
 }
 
 /* --------------------------------------------------------------------------
-   TAB BAR — closer to Klook
+   TAB BAR
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-tabs{
@@ -128,9 +128,7 @@ body[data-page="transport-hub"] .transport-tabs{
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: none;
-
-  background:
-    linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
+  background: linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
   border: 1px solid var(--transport-tab-rail);
   border-bottom: 0;
   border-radius: 22px 22px 0 0;
@@ -182,7 +180,7 @@ body[data-page="transport-hub"] .transport-tab:hover{
 
 body[data-page="transport-hub"] .transport-tab.is-active,
 body[data-page="transport-hub"] .transport-tab[aria-selected="true"],
-body[data-page="transport-hub"] .transport-tab--overflow{
+body[data-page="transport-hub"] .transport-tab--overflow.is-active{
   background: var(--transport-tab-bg-active);
   color: var(--transport-tab-text-active);
   z-index: 3;
@@ -193,7 +191,7 @@ body[data-page="transport-hub"] .transport-tab--overflow{
 
 body[data-page="transport-hub"] .transport-tab.is-active::after,
 body[data-page="transport-hub"] .transport-tab[aria-selected="true"]::after,
-body[data-page="transport-hub"] .transport-tab--overflow::after{
+body[data-page="transport-hub"] .transport-tab--overflow.is-active::after{
   content: "";
   position: absolute;
   left: 0;
@@ -227,6 +225,11 @@ body[data-page="transport-hub"] .transport-tab--more{
   font-size: 1.1rem;
 }
 
+body[data-page="transport-hub"] .transport-more.is-open .transport-tab--more{
+  background: rgba(255,255,255,.92);
+  color: #111827;
+}
+
 /* --------------------------------------------------------------------------
    MORE MENU
    -------------------------------------------------------------------------- */
@@ -236,6 +239,7 @@ body[data-page="transport-hub"] .transport-more{
   display: flex;
   align-items: stretch;
   flex: 0 0 auto;
+  z-index: 30;
 }
 
 body[data-page="transport-hub"] .transport-more__menu{
@@ -248,7 +252,7 @@ body[data-page="transport-hub"] .transport-more__menu{
   border-radius: 18px;
   box-shadow: 0 22px 48px rgba(2,6,23,.16);
   padding: 10px;
-  z-index: 30;
+  z-index: 40;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
@@ -277,8 +281,8 @@ body[data-page="transport-hub"] .transport-more__item:hover{
 }
 
 body[data-page="transport-hub"] .transport-more__item.is-current{
-  background: rgba(18,207,208,.10);
-  color: var(--transport-brand-2);
+  background: rgba(255,91,0,.10);
+  color: #ff5b00;
 }
 
 body[data-page="transport-hub"] .transport-more__icon{
@@ -309,7 +313,7 @@ body[data-page="transport-hub"] .transport-panel__body{
 }
 
 /* --------------------------------------------------------------------------
-   SUB TABS (radio style row)
+   SUB TABS
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-subtabs{
@@ -350,9 +354,8 @@ body[data-page="transport-hub"] .transport-subtab.is-active{
 }
 
 body[data-page="transport-hub"] .transport-subtab.is-active::before{
-  border-color: var(--transport-brand-2);
-  background:
-    radial-gradient(circle at 50% 50%, var(--transport-brand-2) 0 48%, transparent 52%);
+  border-color: #ff5b00;
+  background: radial-gradient(circle at 50% 50%, #ff5b00 0 48%, transparent 52%);
 }
 
 body[data-page="transport-hub"] .transport-subtab__dot{
@@ -434,30 +437,42 @@ body[data-page="transport-hub"] .transport-field input::placeholder{
   font-weight: 700;
 }
 
-body[data-page="transport-hub"] .transport-submit{
-  display: inline-flex;
+/* --------------------------------------------------------------------------
+   CTA BUTTONS — restored colored style
+   -------------------------------------------------------------------------- */
+
+body[data-page="transport-hub"] .transport-submit,
+body[data-page="transport-hub"] .btn.transport-submit,
+body[data-page="transport-hub"] button.transport-submit{
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
-  padding: 0 16px;
-  min-height: 100%;
-  font-size: 1.02rem;
-  font-weight: 950;
+  border-radius: 16px !important;
+  padding: 0 18px !important;
+  min-height: 100% !important;
+  min-width: 0;
+  font-size: 1.02rem !important;
+  font-weight: 950 !important;
   letter-spacing: -.01em;
-  border: 1px solid rgba(18,207,208,.42) !important;
-  background: linear-gradient(135deg, var(--transport-brand), var(--transport-brand-2)) !important;
-  color: #ffffff !important;
+  border: 1px solid var(--transport-cta-border) !important;
+  background: var(--transport-cta-bg) !important;
+  color: var(--transport-cta-text) !important;
   box-shadow: var(--transport-btn-shadow) !important;
   transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
 }
 
-body[data-page="transport-hub"] .transport-submit:hover{
+body[data-page="transport-hub"] .transport-submit:hover,
+body[data-page="transport-hub"] .btn.transport-submit:hover,
+body[data-page="transport-hub"] button.transport-submit:hover{
   transform: translateY(-1px);
-  box-shadow: 0 18px 40px rgba(18,207,208,.32) !important;
+  box-shadow: 0 18px 40px rgba(255,91,0,.30) !important;
   filter: brightness(1.02);
+  color: #ffffff !important;
 }
 
-body[data-page="transport-hub"] .transport-submit:active{
+body[data-page="transport-hub"] .transport-submit:active,
+body[data-page="transport-hub"] .btn.transport-submit:active,
+body[data-page="transport-hub"] button.transport-submit:active{
   transform: translateY(0);
 }
 
@@ -465,7 +480,9 @@ body[data-page="transport-hub"] .transport-submit .pill{
   display: none;
 }
 
-/* region mode */
+/* --------------------------------------------------------------------------
+   REGION MODE
+   -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -477,7 +494,7 @@ body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4 .transport-submit,
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3 .transport-submit{
-  display: none;
+  display: none !important;
 }
 
 body[data-page="transport-hub"] .transport-region-btn{
@@ -491,18 +508,27 @@ body[data-page="transport-hub"] .transport-region-btn{
   color: #111827;
   cursor: pointer;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
-  transition: background .14s ease, transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+  transition: background .14s ease, transform .14s ease, border-color .14s ease, box-shadow .14s ease, color .14s ease;
 }
 
 body[data-page="transport-hub"] .transport-region-btn:hover{
   background: #ffffff;
-  border-color: rgba(18,207,208,.24);
+  border-color: rgba(255,91,0,.24);
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(2,6,23,.05);
+  color: #111827;
+}
+
+body[data-page="transport-hub"] .transport-region-btn:focus{
+  outline: none;
+  border-color: rgba(255,91,0,.34);
+  box-shadow:
+    0 0 0 4px rgba(255,91,0,.08),
+    0 8px 18px rgba(2,6,23,.05);
 }
 
 /* --------------------------------------------------------------------------
-   LOWER META — cleaner Klook-like support cards
+   LOWER META
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
@@ -570,8 +596,8 @@ body[data-page="transport-hub"] .transport-highlights li::before{
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: rgba(18,207,208,.18);
-  border: 1px solid rgba(18,207,208,.32);
+  background: rgba(255,91,0,.16);
+  border: 1px solid rgba(255,91,0,.28);
 }
 
 /* --------------------------------------------------------------------------
@@ -644,7 +670,7 @@ body[data-page="transport-hub"] .transport-benefit__body span{
   }
 
   body[data-page="transport-hub"] .transport-submit{
-    min-height: 60px;
+    min-height: 60px !important;
     grid-column: 1 / -1;
   }
 
@@ -709,13 +735,13 @@ body[data-page="transport-hub"] .transport-benefit__body span{
 
   body[data-page="transport-hub"] .transport-tab.is-active,
   body[data-page="transport-hub"] .transport-tab[aria-selected="true"],
-  body[data-page="transport-hub"] .transport-tab--overflow{
+  body[data-page="transport-hub"] .transport-tab--overflow.is-active{
     box-shadow: 0 12px 24px rgba(2,6,23,.08);
   }
 
   body[data-page="transport-hub"] .transport-tab.is-active::after,
   body[data-page="transport-hub"] .transport-tab[aria-selected="true"]::after,
-  body[data-page="transport-hub"] .transport-tab--overflow::after{
+  body[data-page="transport-hub"] .transport-tab--overflow.is-active::after{
     display: none;
   }
 
