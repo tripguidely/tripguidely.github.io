@@ -1,16 +1,16 @@
 /* ==========================================================================
-   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.7)
+   TripGuidely site.js (premium + compatible) — FULL (UPDATED + CONSENT v2.8)
    - Works even if header/footer are injected later
    - Old browser friendly (no arrow funcs, no optional chaining)
    - Mobile nav (burger + drawer + scrim + ESC) + close on link click
    - Outbound tracking (GA4 gtag) + affiliate tagging (only after consent)
    - Affiliate CTA tracking (.js-aff) centralized here
-   - Widget engagement tracking (ANY .tp-widget + #esim-search + #search + #car-search-form + #home-hotel-search-form + #transport-search-form) (fires once per widget)
+   - Widget engagement tracking (ANY .tp-widget + #esim-search + #search + #car-search-form + #home-hotel-search-form + #transport-search-form)
    - Custom page tracking for clearer GA4 reporting by page_type / path / title
    - Smooth internal anchors w/ sticky header offset (fallback-safe)
    - Consent Mode v2 default denied
    - Lazy-load GA4 only if accepted
-   - Binds footer “Privacy choices” link (.js-consent) (no inline onclick)
+   - Binds footer “Privacy choices” link (.js-consent)
    - Contact form AJAX + success/error UI for Formspree
    - Supports generic [data-include] partial injection
    - Car rental hero search redirect (Klook)
@@ -37,12 +37,14 @@
       if (el.addEventListener) el.addEventListener(evt, fn, opts || false);
       else if (el.attachEvent) el.attachEvent("on" + evt, fn);
     } catch (_) {
-      try { if (el.addEventListener) el.addEventListener(evt, fn, false); } catch (__) {}
+      try {
+        if (el.addEventListener) el.addEventListener(evt, fn, false);
+      } catch (__) {}
     }
   }
 
   function trimStr(s) {
-    return (s || "").replace(/^\s+|\s+$/g, "");
+    return String(s || "").replace(/^\s+|\s+$/g, "");
   }
 
   function setTextById(id, value) {
@@ -52,9 +54,9 @@
 
   function getAttr(el, name) {
     try {
-      return el && el.getAttribute ? el.getAttribute(name) : null;
+      return el && el.getAttribute ? (el.getAttribute(name) || "") : "";
     } catch (_) {
-      return null;
+      return "";
     }
   }
 
@@ -64,7 +66,6 @@
     } catch (_) {
       var a = DOC.createElement("a");
       a.href = href;
-      if (!a.hostname && WIN.location && WIN.location.hostname) a.href = a.href;
       return {
         href: a.href,
         hostname: a.hostname || "",
@@ -77,7 +78,7 @@
 
   function isSameHost(urlObj) {
     try {
-      return urlObj && urlObj.hostname && urlObj.hostname === WIN.location.hostname;
+      return !!(urlObj && urlObj.hostname && urlObj.hostname === WIN.location.hostname);
     } catch (_) {
       return true;
     }
@@ -161,13 +162,18 @@
   var pageViewTracked = false;
 
   function storageGet(key) {
-    try { if (WIN.localStorage) return WIN.localStorage.getItem(key); } catch (_) {}
+    try {
+      if (WIN.localStorage) return WIN.localStorage.getItem(key);
+    } catch (_) {}
     return memConsent;
   }
 
   function storageSet(key, value) {
-    try { if (WIN.localStorage) WIN.localStorage.setItem(key, value); }
-    catch (_) { memConsent = value; }
+    try {
+      if (WIN.localStorage) WIN.localStorage.setItem(key, value);
+    } catch (_) {
+      memConsent = value;
+    }
   }
 
   function getConsent() {
@@ -185,7 +191,9 @@
     WIN.dataLayer = WIN.dataLayer || [];
     if (!WIN.gtag) {
       WIN.gtag = function () {
-        try { WIN.dataLayer.push(arguments); } catch (_) {}
+        try {
+          WIN.dataLayer.push(arguments);
+        } catch (_) {}
       };
     }
   }
@@ -255,7 +263,9 @@
 
   function gtagEvent(name, params) {
     if (!hasGtag()) return;
-    try { WIN.gtag("event", name, params || {}); } catch (_) {}
+    try {
+      WIN.gtag("event", name, params || {});
+    } catch (_) {}
   }
 
   function trackPageViewDetails() {
@@ -385,7 +395,9 @@
       else e.returnValue = false;
 
       try {
-        if (WIN.TripGuidelyConsent && WIN.TripGuidelyConsent.open) WIN.TripGuidelyConsent.open();
+        if (WIN.TripGuidelyConsent && WIN.TripGuidelyConsent.open) {
+          WIN.TripGuidelyConsent.open();
+        }
       } catch (_) {}
     });
   }
@@ -420,8 +432,14 @@
 
   function injectPartial(targetSelector, url, cb) {
     var mount = $(targetSelector);
-    if (!mount) { if (cb) cb(false); return; }
-    if (!WIN.fetch) { if (cb) cb(false); return; }
+    if (!mount) {
+      if (cb) cb(false);
+      return;
+    }
+    if (!WIN.fetch) {
+      if (cb) cb(false);
+      return;
+    }
 
     WIN.fetch(url, { cache: "no-cache" })
       .then(function (res) {
@@ -511,7 +529,10 @@
         var h = href.toLowerCase();
 
         if (h === "/") {
-          if (path === "/") { best = links[i]; bestLen = 1; }
+          if (path === "/") {
+            best = links[i];
+            bestLen = 1;
+          }
           continue;
         }
 
@@ -522,7 +543,9 @@
       }
 
       for (var j = 0; j < links.length; j++) {
-        if (links[j].getAttribute("aria-current") === "page") links[j].removeAttribute("aria-current");
+        if (links[j].getAttribute("aria-current") === "page") {
+          links[j].removeAttribute("aria-current");
+        }
       }
 
       if (best) best.setAttribute("aria-current", "page");
@@ -638,8 +661,13 @@
 
     var firedMap = {};
 
-    function markFired(key) { firedMap[key] = true; }
-    function isFired(key) { return !!firedMap[key]; }
+    function markFired(key) {
+      firedMap[key] = true;
+    }
+
+    function isFired(key) {
+      return !!firedMap[key];
+    }
 
     function fire(key, meta) {
       if (isFired(key)) return;
@@ -714,10 +742,14 @@
     var scrim = $(".nav-scrim");
     var drawer = $(".nav-drawer");
 
-    function hasClassList() { return !!(DOC.body && DOC.body.classList); }
+    function hasClassList() {
+      return !!(DOC.body && DOC.body.classList);
+    }
 
     function isOpen() {
-      if (!hasClassList()) return ((" " + (DOC.body.className || "") + " ").indexOf(" nav-open ") !== -1);
+      if (!hasClassList()) {
+        return ((" " + (DOC.body.className || "") + " ").indexOf(" nav-open ") !== -1);
+      }
       return DOC.body.classList.contains("nav-open");
     }
 
@@ -734,7 +766,9 @@
         DOC.body.className = trimStr(cn);
       }
 
-      try { burger.setAttribute("aria-expanded", open ? "true" : "false"); } catch (_) {}
+      try {
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+      } catch (_) {}
     }
 
     if (burger.getAttribute("data-nav-bound") === "1") {
@@ -748,7 +782,11 @@
       setOpen(!isOpen());
     });
 
-    if (scrim) on(scrim, "click", function () { setOpen(false); });
+    if (scrim) {
+      on(scrim, "click", function () {
+        setOpen(false);
+      });
+    }
 
     on(DOC, "keydown", function (e) {
       e = e || WIN.event;
@@ -818,20 +856,26 @@
 
         if (!value) {
           field.setAttribute("aria-invalid", "true");
-          try { field.focus(); } catch (_) {}
+          try {
+            field.focus();
+          } catch (_) {}
           return false;
         }
 
         if (tag === "select" && (!field.value || field.value === "")) {
           field.setAttribute("aria-invalid", "true");
-          try { field.focus(); } catch (_) {}
+          try {
+            field.focus();
+          } catch (_) {}
           return false;
         }
 
         if ((field.type || "").toLowerCase() === "email") {
           if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
             field.setAttribute("aria-invalid", "true");
-            try { field.focus(); } catch (_) {}
+            try {
+              field.focus();
+            } catch (_) {}
             return false;
           }
         }
@@ -880,7 +924,9 @@
           form.reset();
           clearInvalid();
           showStatus("success", "Thanks. Your message has been sent successfully.");
-          try { status.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (_) {}
+          try {
+            status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } catch (_) {}
 
           if (getConsent() === "granted") {
             gtagEvent("contact_form_submit", {
@@ -933,7 +979,9 @@
     }
 
     function nextDayISO(iso) {
-      var d = new Date(iso);
+      var parts = String(iso || "").split("-");
+      if (parts.length !== 3) return addDaysISO(1);
+      var d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
       d.setDate(d.getDate() + 1);
       return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
     }
@@ -1001,9 +1049,13 @@
         if (errorBox) errorBox.textContent = error;
 
         if (!data.destination && dest) {
-          try { dest.focus(); } catch (_) {}
+          try {
+            dest.focus();
+          } catch (_) {}
         } else if (data.checkout && data.checkin && data.checkout <= data.checkin && checkout) {
-          try { checkout.focus(); } catch (_) {}
+          try {
+            checkout.focus();
+          } catch (_) {}
         }
         return;
       }
@@ -1103,7 +1155,18 @@
     }
 
     function parseInputDateTime(dateStr, timeStr) {
-      return new Date(dateStr + "T" + timeStr);
+      var dParts = String(dateStr || "").split("-");
+      var tParts = String(timeStr || "").split(":");
+      if (dParts.length !== 3 || tParts.length !== 2) return new Date("invalid");
+      return new Date(
+        Number(dParts[0]),
+        Number(dParts[1]) - 1,
+        Number(dParts[2]),
+        Number(tParts[0]),
+        Number(tParts[1]),
+        0,
+        0
+      );
     }
 
     function cloneDate(d) {
@@ -1241,8 +1304,8 @@
         return "Select valid dates.";
       }
 
-      var start = new Date(data.pickup_date + "T" + data.pickup_time);
-      var end = new Date(data.dropoff_date + "T" + data.dropoff_time);
+      var start = parseInputDateTime(data.pickup_date, data.pickup_time);
+      var end = parseInputDateTime(data.dropoff_date, data.dropoff_time);
 
       if (isNaN(start.getTime()) || isNaN(end.getTime())) {
         return "Select valid dates and times.";
@@ -1261,14 +1324,12 @@
 
       try {
         var url = new URL(base, WIN.location.href);
-
         url.searchParams.set("sub_id", subid);
         url.searchParams.set("pickup_location", data.pickup_location);
         url.searchParams.set("pickup_date", data.pickup_date);
         url.searchParams.set("pickup_time", data.pickup_time);
         url.searchParams.set("dropoff_date", data.dropoff_date);
         url.searchParams.set("dropoff_time", data.dropoff_time);
-
         return url.toString();
       } catch (_) {
         return base;
