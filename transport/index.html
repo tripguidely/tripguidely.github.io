@@ -185,44 +185,12 @@
                     aria-selected="false"
                     aria-controls="transport-panel"
                     data-transport-tab="airport-trains-buses"
-                    data-transport-link="https://klook.tpk.ro/OoM3hbHE"
+                    data-transport-link="https://klook.tpk.ro/VByndotO"
                     data-transport-subid="tg_transport_airport_trains_buses"
                     tabindex="-1"
                   >
                     <span class="transport-tab__icon" aria-hidden="true">🚉</span>
                     <span class="transport-tab__text">Airport trains &amp; buses</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    class="transport-tab"
-                    id="transport-tab-ferries"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="transport-panel"
-                    data-transport-tab="ferries"
-                    data-transport-link="https://klook.tpk.ro/h975PijE"
-                    data-transport-subid="tg_transport_ferries"
-                    tabindex="-1"
-                  >
-                    <span class="transport-tab__icon" aria-hidden="true">⛴️</span>
-                    <span class="transport-tab__text">Ferries</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    class="transport-tab"
-                    id="transport-tab-cruises"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="transport-panel"
-                    data-transport-tab="cruises"
-                    data-transport-link="https://klook.tpk.ro/z6Hs7Grs"
-                    data-transport-subid="tg_transport_cruises"
-                    tabindex="-1"
-                  >
-                    <span class="transport-tab__icon" aria-hidden="true">🛳️</span>
-                    <span class="transport-tab__text">Cruises</span>
                   </button>
 
                   <button
@@ -259,6 +227,48 @@
                         type="button"
                         class="transport-more__item"
                         role="menuitem"
+                        data-transport-tab="car-charters"
+                        data-transport-link="https://klook.tpk.ro/5t8ofxGh"
+                        data-transport-subid="tg_transport_car_rentals"
+                        data-transport-label="Car charters"
+                        data-transport-icon="🚖"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">🚖</span>
+                        <span class="transport-more__text">Car charters</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
+                        data-transport-tab="ferries"
+                        data-transport-link="https://klook.tpk.ro/h975PijE"
+                        data-transport-subid="tg_transport_ferries"
+                        data-transport-label="Ferries"
+                        data-transport-icon="⛴️"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">⛴️</span>
+                        <span class="transport-more__text">Ferries</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
+                        data-transport-tab="cruises"
+                        data-transport-link="https://klook.tpk.ro/z6Hs7Grs"
+                        data-transport-subid="tg_transport_cruises"
+                        data-transport-label="Cruises"
+                        data-transport-icon="🛳️"
+                      >
+                        <span class="transport-more__icon" aria-hidden="true">🛳️</span>
+                        <span class="transport-more__text">Cruises</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="transport-more__item"
+                        role="menuitem"
                         data-transport-tab="metro-passes"
                         data-transport-link="https://klook.tpk.ro/OoM3hbHE"
                         data-transport-subid="tg_transport_metro_passes"
@@ -273,7 +283,7 @@
                 </div>
 
                 <form
-                  class="transport-panel"
+                  class="transport-panel transport-panel--regions"
                   id="transport-search-form"
                   action="#"
                   method="get"
@@ -283,6 +293,8 @@
                   <input type="hidden" id="transport-active-tab" name="transport_type" value="trains">
                   <input type="hidden" id="transport-active-link" name="affiliate_link" value="https://klook.tpk.ro/LQXw15L2">
                   <input type="hidden" id="transport-active-subid" name="subid" value="tg_transport_trains">
+                  <input type="hidden" id="transport-active-region" name="region" value="">
+                  <input type="hidden" id="transport-active-region-label" name="region_label" value="">
 
                   <div
                     class="transport-panel__body"
@@ -293,55 +305,124 @@
                   >
                     <div class="transport-subtabs" aria-label="Transport type options"></div>
 
-                    <div class="transport-grid transport-grid--klook">
-                      <label class="transport-field transport-field--wide transport-field--card" for="transport-destination">
-                        <span class="transport-field__label">Route or destination</span>
-                        <input
-                          id="transport-destination"
-                          name="destination"
-                          type="text"
-                          inputmode="text"
-                          autocomplete="off"
-                          placeholder="Tokyo, Osaka, Kyoto, Hiroshima"
-                        >
-                      </label>
+                    <div class="transport-region-switches" id="transport-region-switches" hidden></div>
 
-                      <label class="transport-field transport-field--card" for="transport-start-date">
-                        <span class="transport-field__label">Departure date</span>
-                        <input id="transport-start-date" name="departure_date" type="date">
-                      </label>
+                    <div
+                      class="transport-grid transport-grid--klook transport-grid--regions transport-grid--regions-4"
+                      id="transport-region-grid"
+                      aria-label="Transport regions"
+                    >
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="japan"
+                        data-transport-region-label="Japan"
+                      >Japan</button>
 
-                      <label class="transport-field transport-field--card" for="transport-travelers">
-                        <span class="transport-field__label">Travelers</span>
-                        <select id="transport-travelers" name="travelers">
-                          <option value="1">1 traveler</option>
-                          <option value="2" selected>2 travelers</option>
-                          <option value="3">3 travelers</option>
-                          <option value="4">4 travelers</option>
-                          <option value="5">5 travelers</option>
-                          <option value="6">6+ travelers</option>
-                        </select>
-                      </label>
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="europe"
+                        data-transport-region-label="Europe"
+                      >Europe</button>
 
-                      <button class="transport-submit btn primary" type="submit" aria-label="Search transport options">
-                        Search
-                      </button>
-                    </div>
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="hong-kong-macau"
+                        data-transport-region-label="Hong Kong &amp; Macau"
+                      >Hong Kong &amp; Macau</button>
 
-                    <div class="transport-meta transport-meta--klook">
-                      <div class="transport-meta__copy">
-                        <p class="transport-meta__eyebrow">Selected category</p>
-                        <p class="transport-meta__title" id="transport-panel-title">Trains</p>
-                        <p class="transport-meta__text" id="transport-panel-copy">
-                          Compare Japan train routes for major city-to-city journeys and faster intercity travel.
-                        </p>
-                      </div>
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="south-korea"
+                        data-transport-region-label="South Korea"
+                      >South Korea</button>
 
-                      <ul class="transport-highlights" aria-label="Booking highlights">
-                        <li id="transport-highlight-1">Strong fit for Japan rail planning</li>
-                        <li id="transport-highlight-2">Useful for major city routes like Tokyo and Osaka</li>
-                        <li id="transport-highlight-3">Fast redirect to the relevant train booking category</li>
-                      </ul>
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="singapore"
+                        data-transport-region-label="Singapore"
+                      >Singapore</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="taiwan"
+                        data-transport-region-label="Taiwan"
+                      >Taiwan</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="thailand"
+                        data-transport-region-label="Thailand"
+                      >Thailand</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="malaysia"
+                        data-transport-region-label="Malaysia"
+                      >Malaysia</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="indonesia"
+                        data-transport-region-label="Indonesia"
+                      >Indonesia</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="united-states"
+                        data-transport-region-label="United States"
+                      >United States</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="mainland-china"
+                        data-transport-region-label="Mainland China"
+                      >Mainland China</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="uae"
+                        data-transport-region-label="UAE"
+                      >UAE</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="australia-new-zealand"
+                        data-transport-region-label="Australia &amp; New Zealand"
+                      >Australia &amp; New Zealand</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="philippines"
+                        data-transport-region-label="Philippines"
+                      >Philippines</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="vietnam"
+                        data-transport-region-label="Vietnam"
+                      >Vietnam</button>
+
+                      <button
+                        type="button"
+                        class="transport-region-btn"
+                        data-transport-region="others"
+                        data-transport-region-label="Others"
+                      >Others</button>
                     </div>
 
                     <p class="transport-search-error" id="transport-search-error" aria-live="polite"></p>
@@ -372,7 +453,7 @@
               <span class="transport-benefit__icon" aria-hidden="true">🛟</span>
               <div class="transport-benefit__body">
                 <b>Reliable booking flow</b>
-                <span>Search intent first, then redirect to the category that fits the trip best.</span>
+                <span>Choose the category first, then click the region that matches the trip best.</span>
               </div>
             </div>
           </div>
@@ -470,9 +551,9 @@
           <h2 id="how-to-use">How to use this page</h2>
           <ol class="steps">
             <li>Choose the transport category that best matches your travel intent.</li>
-            <li>Enter a destination or pick a region when the category is region-based.</li>
-            <li>Select a departure date and traveler count if relevant for your planning.</li>
-            <li>Press Enter or click Search to continue to the matching booking category.</li>
+            <li>Use the large region buttons shown inside the active tab panel.</li>
+            <li>Click the region that best matches the route, airport arrival, or destination area.</li>
+            <li>Continue to the matching booking category through the affiliate partner link.</li>
           </ol>
 
           <h2 id="popular-cities">Popular transport city pages</h2>
@@ -577,7 +658,7 @@
               <span class="arrow" aria-hidden="true">→</span>
             </a>
 
-            <a class="link-card js-aff" href="https://klook.tpk.ro/OoM3hbHE" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
+            <a class="link-card js-aff" href="https://klook.tpk.ro/VByndotO" data-aff="klook" rel="nofollow sponsored noopener" target="_blank">
               <div>
                 <strong>Airport trains &amp; buses</strong>
                 <span>Airport-to-city rail and bus access</span>
