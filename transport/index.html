@@ -74,7 +74,7 @@
   <div id="site-header"></div>
 
   <main id="main" class="main">
-    <section class="hero hero-full" aria-labelledby="transport-hero-title">
+    <section class="hero hero-full transport-hero transport-hero--compact" aria-labelledby="transport-widget-title">
       <div class="hero-bg" aria-hidden="true">
         <img
           src="/assets/images/hero/transport/transport-hero-1600x900.webp"
@@ -90,18 +90,22 @@
 
       <div class="hero-inner">
         <div class="hero-tool-wrap">
-          <p class="kicker"><span class="dot"></span>TripGuidely Transport</p>
-          <h1 id="transport-hero-title">Compare trains, rail passes, car rentals, airport transfers, and metro passes</h1>
-          <p class="lede">
-            Plan transport faster with one search-first hub. Pick the transport type that matches your trip,
-            then press Enter or click Search to continue to our recommended booking partner.
-          </p>
+          <div class="transport-topbar" aria-label="Transport widget header">
+            <h1 id="transport-widget-title" class="transport-topbar__title">Transport</h1>
+
+            <button
+              type="button"
+              class="transport-topbar__scope"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              Around the world
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
-              <p class="hero-tool-title">Book transport</p>
-              <p class="hero-tool-sub">Switch categories without leaving the hero, then continue to the right booking page.</p>
-
               <div class="transport-search tp-widget" id="transport-search" data-aff="klook" data-widget="transport">
                 <div class="transport-tabs" role="tablist" aria-label="Transport categories">
                   <button
@@ -114,7 +118,8 @@
                     data-transport-tab="trains"
                     data-transport-link="https://klook.tpk.ro/LQXw15L2"
                   >
-                    Trains
+                    <span class="transport-tab__icon" aria-hidden="true">🚆</span>
+                    <span class="transport-tab__text">Trains</span>
                   </button>
 
                   <button
@@ -127,7 +132,8 @@
                     data-transport-tab="rail-passes"
                     data-transport-link="https://klook.tpk.ro/X7Ksor1o"
                   >
-                    Rail passes
+                    <span class="transport-tab__icon" aria-hidden="true">🎫</span>
+                    <span class="transport-tab__text">Rail passes</span>
                   </button>
 
                   <button
@@ -140,7 +146,8 @@
                     data-transport-tab="car-rentals"
                     data-transport-link="https://klook.tpk.ro/5t8ofxGh"
                   >
-                    Car rentals
+                    <span class="transport-tab__icon" aria-hidden="true">🚗</span>
+                    <span class="transport-tab__text">Car rentals</span>
                   </button>
 
                   <button
@@ -153,7 +160,8 @@
                     data-transport-tab="airport-transfers"
                     data-transport-link="https://klook.tpk.ro/iB78IJzo"
                   >
-                    Airport transfers
+                    <span class="transport-tab__icon" aria-hidden="true">🛬</span>
+                    <span class="transport-tab__text">Airport transfers</span>
                   </button>
 
                   <button
@@ -166,7 +174,17 @@
                     data-transport-tab="metro-passes"
                     data-transport-link="https://klook.tpk.ro/OoM3hbHE"
                   >
-                    Metro passes &amp; cards
+                    <span class="transport-tab__icon" aria-hidden="true">🚇</span>
+                    <span class="transport-tab__text">Metro passes &amp; cards</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="transport-tab transport-tab--more"
+                    aria-hidden="true"
+                    tabindex="-1"
+                  >
+                    <span class="transport-tab__text">···</span>
                   </button>
                 </div>
 
@@ -182,8 +200,18 @@
                   <input type="hidden" id="transport-active-link" name="affiliate_link" value="https://klook.tpk.ro/LQXw15L2">
 
                   <div class="transport-panel__body" id="transport-panel" role="tabpanel" aria-labelledby="transport-tab-trains" tabindex="-1">
-                    <div class="transport-grid">
-                      <label class="transport-field transport-field--wide" for="transport-destination">
+                    <div class="transport-subtabs" aria-label="Transport type options">
+                      <button type="button" class="transport-subtab is-active">
+                        <span class="transport-subtab__dot" aria-hidden="true"></span>
+                        Japan trains
+                      </button>
+                      <button type="button" class="transport-subtab">China High Speed Rail</button>
+                      <button type="button" class="transport-subtab">Europe trains</button>
+                      <button type="button" class="transport-subtab">Others</button>
+                    </div>
+
+                    <div class="transport-grid transport-grid--klook">
+                      <label class="transport-field transport-field--wide transport-field--card" for="transport-destination">
                         <span class="transport-field__label">Destination</span>
                         <input
                           id="transport-destination"
@@ -191,16 +219,16 @@
                           type="text"
                           inputmode="text"
                           autocomplete="off"
-                          placeholder="City, airport, or country"
+                          placeholder="Tokyo, Osaka, Paris, London"
                         >
                       </label>
 
-                      <label class="transport-field" for="transport-start-date">
-                        <span class="transport-field__label">Departure</span>
+                      <label class="transport-field transport-field--card" for="transport-start-date">
+                        <span class="transport-field__label">Departure date</span>
                         <input id="transport-start-date" name="departure_date" type="date">
                       </label>
 
-                      <label class="transport-field" for="transport-travelers">
+                      <label class="transport-field transport-field--card" for="transport-travelers">
                         <span class="transport-field__label">Travelers</span>
                         <select id="transport-travelers" name="travelers">
                           <option value="1">1 traveler</option>
@@ -213,12 +241,11 @@
                       </label>
 
                       <button class="transport-submit btn primary" type="submit" aria-label="Search transport options">
-                        <span class="pill" aria-hidden="true">→</span>
                         Search
                       </button>
                     </div>
 
-                    <div class="transport-meta">
+                    <div class="transport-meta transport-meta--klook">
                       <div class="transport-meta__copy">
                         <p class="transport-meta__eyebrow">Selected category</p>
                         <p class="transport-meta__title" id="transport-panel-title">Trains</p>
@@ -241,18 +268,29 @@
             </div>
           </div>
 
-          <div class="trust" aria-label="Why use this transport tool">
-            <div class="trust-item">
-              <b>Multi-category planning</b>
-              <span>Switch between trains, rail passes, rentals, transfers, and metro products in one place.</span>
+          <div class="transport-benefits" aria-label="Transport booking highlights">
+            <div class="transport-benefit">
+              <span class="transport-benefit__icon" aria-hidden="true">✈️</span>
+              <div class="transport-benefit__body">
+                <b>Worldwide coverage</b>
+                <span>Plan routes, transfers, and local transport with one clean starting point.</span>
+              </div>
             </div>
-            <div class="trust-item">
-              <b>Cleaner transport intent matching</b>
-              <span>Choose the transport type first before continuing to a booking page.</span>
+
+            <div class="transport-benefit">
+              <span class="transport-benefit__icon" aria-hidden="true">🏅</span>
+              <div class="transport-benefit__body">
+                <b>Your brand colors</b>
+                <span>TripGuidely turquoise stays the main CTA color, with sand accents for premium warmth.</span>
+              </div>
             </div>
-            <div class="trust-item">
-              <b>Affiliate-ready but user-first</b>
-              <span>Value first, clear labels, and faster access to the right transport category.</span>
+
+            <div class="transport-benefit">
+              <span class="transport-benefit__icon" aria-hidden="true">🛟</span>
+              <div class="transport-benefit__body">
+                <b>Reliable booking flow</b>
+                <span>Search intent first, then redirect to the category that fits the trip best.</span>
+              </div>
             </div>
           </div>
         </div>
