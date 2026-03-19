@@ -1,10 +1,13 @@
 /* ==========================================================================
    /assets/js/transport.js
    TripGuidely — transport.js
-   Purpose:
-   - Real tab switching for the transport widget
-   - Syncs active tab, panel copy, highlights, placeholders, and affiliate link
-   - Uses the CURRENT HTML structure you pasted
+   Fixes:
+   - Restores "..." more-menu open on hover / focus / click
+   - Makes Airport trains & buses tab switch correctly
+   - Adds missing configs for airport-trains-buses / ferries / cruises
+   - Supports overflow active tab state (ferries / cruises / metro passes)
+   - Syncs active affiliate link + subid correctly
+   - Auto-inits on DOM ready
    - Safe for older browsers
    ========================================================================== */
 
@@ -26,6 +29,9 @@
     "rail-passes": "/assets/images/hero/transport/transport-rail-passes-1600x900.webp",
     "car-rentals": "/assets/images/hero/transport/transport-car-rentals-1600x900.webp",
     "airport-transfers": "/assets/images/hero/transport/transport-airport-transfers-1600x900.webp",
+    "airport-trains-buses": "/assets/images/hero/transport/transport-airport-trains-buses-1600x900.webp",
+    "ferries": "/assets/images/hero/transport/transport-ferries-1600x900.webp",
+    "cruises": "/assets/images/hero/transport/transport-cruises-1600x900.webp",
     "metro-passes": "/assets/images/hero/transport/transport-metro-passes-1600x900.webp"
   };
 
@@ -168,6 +174,72 @@
         { value: "4", label: "4 passengers" },
         { value: "5", label: "5 passengers" },
         { value: "6+", label: "6+ passengers" }
+      ],
+      subtabs: []
+    },
+
+    "airport-trains-buses": {
+      title: "Airport trains & buses",
+      copy: "Compare airport-to-city trains and bus links for lower-cost arrivals and practical public transport planning.",
+      h1: "Better for airport-to-city public transport",
+      h2: "Useful when you want a lower-cost arrival option",
+      h3: "Good fit for train and bus airport connections",
+      destinationLabel: "Airport or city",
+      destinationPlaceholder: "Narita Airport, Haneda, Heathrow, Shinjuku",
+      travelersLabel: "Passengers",
+      travelersVisible: true,
+      dateVisible: true,
+      travelerOptions: [
+        { value: "1", label: "1 passenger" },
+        { value: "2", label: "2 passengers" },
+        { value: "3", label: "3 passengers" },
+        { value: "4", label: "4 passengers" },
+        { value: "5", label: "5 passengers" },
+        { value: "6+", label: "6+ passengers" }
+      ],
+      subtabs: []
+    },
+
+    "ferries": {
+      title: "Ferries",
+      copy: "Compare ferry routes for island crossings, port-to-port journeys, and coastal transport planning.",
+      h1: "Useful for island and port-to-port routes",
+      h2: "Good for coastal crossings and practical sea transport",
+      h3: "Best when your route depends on a ferry connection",
+      destinationLabel: "Port, island, or route",
+      destinationPlaceholder: "Santorini, Mykonos, Capri, Hong Kong",
+      travelersLabel: "Passengers",
+      travelersVisible: true,
+      dateVisible: true,
+      travelerOptions: [
+        { value: "1", label: "1 passenger" },
+        { value: "2", label: "2 passengers" },
+        { value: "3", label: "3 passengers" },
+        { value: "4", label: "4 passengers" },
+        { value: "5", label: "5 passengers" },
+        { value: "6+", label: "6+ passengers" }
+      ],
+      subtabs: []
+    },
+
+    "cruises": {
+      title: "Cruises",
+      copy: "Explore cruise options by region when you want itinerary-based travel rather than point-to-point transport.",
+      h1: "Best for itinerary-first travel planning",
+      h2: "Useful for region-based cruise discovery",
+      h3: "Good when the journey is part of the experience",
+      destinationLabel: "Region or destination",
+      destinationPlaceholder: "Mediterranean, Caribbean, Alaska, Dubai",
+      travelersLabel: "Travelers",
+      travelersVisible: true,
+      dateVisible: true,
+      travelerOptions: [
+        { value: "1", label: "1 traveler" },
+        { value: "2", label: "2 travelers" },
+        { value: "3", label: "3 travelers" },
+        { value: "4", label: "4 travelers" },
+        { value: "5", label: "5 travelers" },
+        { value: "6+", label: "6+ travelers" }
       ],
       subtabs: []
     },
@@ -318,6 +390,7 @@
       subtabs: safeArray(DOC.querySelectorAll(".transport-subtab")),
       activeTabInput: DOC.getElementById("transport-active-tab"),
       activeLinkInput: DOC.getElementById("transport-active-link"),
+      activeSubidInput: DOC.getElementById("transport-active-subid"),
       panel: DOC.getElementById("transport-panel"),
       panelTitle: DOC.getElementById("transport-panel-title"),
       panelCopy: DOC.getElementById("transport-panel-copy"),
@@ -331,14 +404,20 @@
       heroImage: DOC.querySelector(".hero-bg img"),
       destinationField: DOC.querySelector('label[for="transport-destination"]'),
       departureField: DOC.querySelector('label[for="transport-start-date"]'),
-      travelersField: DOC.querySelector('label[for="transport-travelers"]')
+      travelersField: DOC.querySelector('label[for="transport-travelers"]'),
+      moreWrap: DOC.getElementById("transport-more"),
+      moreToggle: DOC.getElementById("transport-more-toggle"),
+      moreMenu: DOC.getElementById("transport-more-menu"),
+      overflowActiveTab: DOC.getElementById("transport-tab-overflow-active"),
+      moreItems: safeArray(DOC.querySelectorAll(".transport-more__item"))
     };
   }
 
   function createState() {
     return {
       activeTab: DEFAULTS.initialTab,
-      activeSubtab: DEFAULTS.initialTrainMarket
+      activeSubtab: DEFAULTS.initialTrainMarket,
+      moreOpen: false
     };
   }
 
@@ -374,9 +453,7 @@
 
   function setHeroImage(els, tabKey) {
     var src = HERO_IMAGES[tabKey];
-
     if (!els.heroImage || !src) return;
-
     if (els.heroImage.getAttribute("src") !== src) {
       els.heroImage.setAttribute("src", src);
     }
@@ -436,9 +513,11 @@
     var finalPlaceholder = subtabConfig && subtabConfig.destinationPlaceholder
       ? subtabConfig.destinationPlaceholder
       : config.destinationPlaceholder;
+    var labelNode;
 
     if (els.destinationField) {
-      text(els.destinationField.querySelector(".transport-field__label"), config.destinationLabel || "Destination");
+      labelNode = els.destinationField.querySelector(".transport-field__label");
+      if (labelNode) text(labelNode, config.destinationLabel || "Destination");
     }
 
     if (els.destination) {
@@ -446,7 +525,8 @@
     }
 
     if (els.travelersField) {
-      text(els.travelersField.querySelector(".transport-field__label"), config.travelersLabel || "Travelers");
+      labelNode = els.travelersField.querySelector(".transport-field__label");
+      if (labelNode) text(labelNode, config.travelersLabel || "Travelers");
     }
   }
 
@@ -474,26 +554,97 @@
       { value: "3", label: "3 travelers" },
       { value: "4", label: "4 travelers" },
       { value: "5", label: "5 travelers" },
-      { value: "6", label: "6+ travelers" }
+      { value: "6+", label: "6+ travelers" }
     ], "2");
   }
 
-  function syncTabClasses(els, activeTabEl) {
+  function isOverflowTab(tabKey) {
+    return tabKey === "ferries" || tabKey === "cruises" || tabKey === "metro-passes";
+  }
+
+  function setOverflowButton(els, tabKey, link, subid) {
+    var item;
+    var icon;
+    var label;
+    var textNode;
+    var iconNode;
+    var i;
+
+    if (!els.overflowActiveTab) return;
+
+    if (!isOverflowTab(tabKey)) {
+      hide(els.overflowActiveTab);
+      removeClass(els.overflowActiveTab, "is-active");
+      els.overflowActiveTab.setAttribute("aria-selected", "false");
+      els.overflowActiveTab.setAttribute("data-transport-tab", "");
+      els.overflowActiveTab.setAttribute("data-transport-link", "");
+      els.overflowActiveTab.setAttribute("data-transport-subid", "");
+      return;
+    }
+
+    item = null;
+    for (i = 0; i < els.moreItems.length; i++) {
+      if (getAttr(els.moreItems[i], "data-transport-tab") === tabKey) {
+        item = els.moreItems[i];
+        break;
+      }
+    }
+
+    label = item ? getAttr(item, "data-transport-label") : (TAB_CONFIG[tabKey] ? TAB_CONFIG[tabKey].title : "");
+    icon = item ? getAttr(item, "data-transport-icon") : "";
+
+    els.overflowActiveTab.setAttribute("data-transport-tab", tabKey);
+    els.overflowActiveTab.setAttribute("data-transport-link", link || "");
+    els.overflowActiveTab.setAttribute("data-transport-subid", subid || "");
+    els.overflowActiveTab.setAttribute("aria-selected", "true");
+    show(els.overflowActiveTab);
+    addClass(els.overflowActiveTab, "is-active");
+
+    iconNode = els.overflowActiveTab.querySelector(".transport-tab__icon");
+    textNode = els.overflowActiveTab.querySelector(".transport-tab__text");
+
+    if (iconNode) text(iconNode, icon || "•");
+    if (textNode) text(textNode, label || "");
+  }
+
+  function syncMoreMenuCurrent(els, activeTab) {
+    var i;
+    for (i = 0; i < els.moreItems.length; i++) {
+      toggleClass(els.moreItems[i], "is-current", getAttr(els.moreItems[i], "data-transport-tab") === activeTab);
+    }
+  }
+
+  function syncTabClasses(els, activeTabEl, activeTabKey) {
     var i;
     var isActive;
+    var key;
 
     for (i = 0; i < els.tabs.length; i++) {
-      isActive = els.tabs[i] === activeTabEl;
+      key = getAttr(els.tabs[i], "data-transport-tab");
+      isActive = els.tabs[i] === activeTabEl && key && key === activeTabKey;
+      if (els.tabs[i] === els.overflowActiveTab && !isOverflowTab(activeTabKey)) {
+        isActive = false;
+      }
       toggleClass(els.tabs[i], "is-active", isActive);
       els.tabs[i].setAttribute("aria-selected", isActive ? "true" : "false");
       els.tabs[i].setAttribute("tabindex", isActive ? "0" : "-1");
     }
   }
 
-  function setActiveTab(els, state, tabKey, tabEl) {
+  function setMenuOpen(els, state, isOpen) {
+    if (!els.moreMenu || !els.moreToggle) return;
+    state.moreOpen = !!isOpen;
+    els.moreToggle.setAttribute("aria-expanded", state.moreOpen ? "true" : "false");
+    if (state.moreOpen) show(els.moreMenu);
+    else hide(els.moreMenu);
+  }
+
+  function setActiveTab(els, state, tabKey, tabEl, forcedLink, forcedSubid) {
     var config = TAB_CONFIG[tabKey];
-    var link = tabEl ? getAttr(tabEl, "data-transport-link") : "";
+    var link = forcedLink || (tabEl ? getAttr(tabEl, "data-transport-link") : "");
+    var subid = forcedSubid || (tabEl ? getAttr(tabEl, "data-transport-subid") : "");
     var subtabConfig;
+    var activeVisualTabEl = tabEl;
 
     if (!config) return;
 
@@ -509,11 +660,24 @@
 
     if (els.activeTabInput) els.activeTabInput.value = tabKey;
     if (els.activeLinkInput) els.activeLinkInput.value = link || "";
-    if (els.panel && tabEl && tabEl.id) els.panel.setAttribute("aria-labelledby", tabEl.id);
+    if (els.activeSubidInput) els.activeSubidInput.value = subid || "";
 
     DOC.body.setAttribute("data-transport-active", tabKey);
+    DOC.body.setAttribute("data-transport-active-subtab", state.activeSubtab || "");
 
-    syncTabClasses(els, tabEl);
+    if (isOverflowTab(tabKey)) {
+      setOverflowButton(els, tabKey, link, subid);
+      activeVisualTabEl = els.overflowActiveTab;
+    } else {
+      setOverflowButton(els, "", "", "");
+    }
+
+    if (els.panel && activeVisualTabEl && activeVisualTabEl.id) {
+      els.panel.setAttribute("aria-labelledby", activeVisualTabEl.id);
+    }
+
+    syncTabClasses(els, activeVisualTabEl, tabKey);
+    syncMoreMenuCurrent(els, tabKey);
     renderSubtabs(els, state, tabKey);
 
     subtabConfig = getSubtabConfig(tabKey, state.activeSubtab);
@@ -534,6 +698,7 @@
     if (!config || !subtabConfig) return;
 
     state.activeSubtab = subtabKey;
+    DOC.body.setAttribute("data-transport-active-subtab", subtabKey || "");
 
     for (i = 0; i < els.subtabs.length; i++) {
       toggleClass(els.subtabs[i], "is-active", els.subtabs[i] === subtabEl);
@@ -554,11 +719,12 @@
       subtab: DOC.body.getAttribute("data-transport-active-subtab") || "",
       destination: els.destination ? normalizeInputValue(els.destination.value) : "",
       departure_date: els.departure ? els.departure.value : "",
-      travelers: els.travelers ? els.travelers.value : ""
+      travelers: els.travelers ? els.travelers.value : "",
+      subid: els.activeSubidInput ? els.activeSubidInput.value : ""
     };
   }
 
-  function validateTransportData(els, data) {
+  function validateTransportData(data) {
     var tabConfig = TAB_CONFIG[data.tab];
 
     if (!trimStr(data.destination)) {
@@ -589,10 +755,12 @@
     WIN.gtagEvent("transport_search", {
       page_type: WIN.getPageType(),
       transport_category: data.tab,
+      transport_subcategory: data.subtab || "",
       destination: data.destination,
       departure_date: data.departure_date,
       travelers: data.travelers,
-      affiliate_program: String(getAttr(els.form, "data-aff") || "klook")
+      affiliate_program: String(getAttr(els.form, "data-aff") || "klook"),
+      affiliate_subid: data.subid || ""
     });
   }
 
@@ -612,7 +780,7 @@
     clearError(els);
 
     data = collectFormData(els);
-    error = validateTransportData(els, data);
+    error = validateTransportData(data);
 
     if (error) {
       showError(els, error);
@@ -634,7 +802,9 @@
       (function (tab) {
         on(tab, "click", function () {
           var tabKey = getAttr(tab, "data-transport-tab");
+          if (!tabKey) return;
           setActiveTab(els, state, tabKey, tab);
+          setMenuOpen(els, state, false);
         });
       })(els.tabs[i]);
     }
@@ -654,7 +824,6 @@
       if (!btn || btn === els.subtabsWrap) return;
 
       setActiveSubtab(els, state, getAttr(btn, "data-transport-subtab"), btn);
-      DOC.body.setAttribute("data-transport-active-subtab", getAttr(btn, "data-transport-subtab") || "");
     });
   }
 
@@ -666,16 +835,72 @@
     });
   }
 
+  function bindMoreMenuEvents(els, state) {
+    var i;
+
+    if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
+
+    on(els.moreToggle, "click", function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      setMenuOpen(els, state, !state.moreOpen);
+    });
+
+    on(els.moreWrap, "mouseenter", function () {
+      setMenuOpen(els, state, true);
+    });
+
+    on(els.moreWrap, "mouseleave", function () {
+      setMenuOpen(els, state, false);
+    });
+
+    on(els.moreWrap, "focusin", function () {
+      setMenuOpen(els, state, true);
+    });
+
+    on(els.moreWrap, "focusout", function () {
+      WIN.setTimeout(function () {
+        var active = DOC.activeElement;
+        if (!active || !els.moreWrap.contains || !els.moreWrap.contains(active)) {
+          setMenuOpen(els, state, false);
+        }
+      }, 0);
+    });
+
+    on(DOC, "click", function (e) {
+      var target = e.target || e.srcElement;
+      if (!els.moreWrap.contains || !els.moreWrap.contains(target)) {
+        setMenuOpen(els, state, false);
+      }
+    });
+
+    for (i = 0; i < els.moreItems.length; i++) {
+      (function (item) {
+        on(item, "click", function () {
+          var tabKey = getAttr(item, "data-transport-tab");
+          var link = getAttr(item, "data-transport-link");
+          var subid = getAttr(item, "data-transport-subid");
+
+          if (!tabKey) return;
+
+          setActiveTab(els, state, tabKey, null, link, subid);
+          setMenuOpen(els, state, false);
+        });
+      })(els.moreItems[i]);
+    }
+  }
+
   function applyInitialDefaults(els, state) {
-    var firstTab;
+    var initialTabEl;
 
     if (els.departure && !els.departure.value) {
       els.departure.value = addDaysISO(DEFAULTS.defaultDepartureOffsetDays);
     }
 
-    firstTab = DOC.getElementById("transport-tab-" + DEFAULTS.initialTab) || (els.tabs.length ? els.tabs[0] : null);
-    if (firstTab) {
-      setActiveTab(els, state, DEFAULTS.initialTab, firstTab);
+    initialTabEl = DOC.getElementById("transport-tab-" + DEFAULTS.initialTab);
+    if (!initialTabEl && els.tabs.length) initialTabEl = els.tabs[0];
+
+    if (initialTabEl) {
+      setActiveTab(els, state, DEFAULTS.initialTab, initialTabEl);
     }
   }
 
@@ -693,9 +918,16 @@
     applyInitialDefaults(els, state);
     bindTabEvents(els, state);
     bindSubtabEvents(els, state);
+    bindMoreMenuEvents(els, state);
     bindSubmitEvents(els);
   }
 
   WIN.initTransportSearch = initTransportSearch;
+
+  if (DOC.readyState === "loading") {
+    on(DOC, "DOMContentLoaded", initTransportSearch);
+  } else {
+    initTransportSearch();
+  }
 
 })(window, document);
