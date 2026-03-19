@@ -6,8 +6,10 @@
    - Stronger active tab treatment
    - Better shell / panel / input rhythm
    - Keeps TripGuidely turquoise branding
-   - Updated for inline SVG icons instead of emojis
    - Drop this AFTER your current transport.css
+   --------------------------------------------------------------------------
+   Note:
+   For a true near-1:1 finish, replace emoji tab icons with SVG icons.
    ========================================================================== */
 
 body[data-page="transport-hub"]{
@@ -126,7 +128,9 @@ body[data-page="transport-hub"] .transport-tabs{
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: none;
-  background: linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
+
+  background:
+    linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
   border: 1px solid var(--transport-tab-rail);
   border-bottom: 0;
   border-radius: 22px 22px 0 0;
@@ -208,18 +212,8 @@ body[data-page="transport-hub"] .transport-tab__icon{
   min-width: 18px;
   height: 18px;
   line-height: 1;
+  font-size: 1rem;
   transform: translateY(-.5px);
-  color: currentColor;
-}
-
-body[data-page="transport-hub"] .transport-tab__icon svg{
-  display: block;
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.9;
-  vector-effect: non-scaling-stroke;
 }
 
 body[data-page="transport-hub"] .transport-tab__text{
@@ -289,24 +283,9 @@ body[data-page="transport-hub"] .transport-more__item.is-current{
 
 body[data-page="transport-hub"] .transport-more__icon{
   width: 18px;
-  height: 18px;
   flex: 0 0 18px;
   line-height: 1;
   text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: currentColor;
-}
-
-body[data-page="transport-hub"] .transport-more__icon svg{
-  display: block;
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.9;
-  vector-effect: non-scaling-stroke;
 }
 
 /* --------------------------------------------------------------------------
@@ -372,7 +351,8 @@ body[data-page="transport-hub"] .transport-subtab.is-active{
 
 body[data-page="transport-hub"] .transport-subtab.is-active::before{
   border-color: var(--transport-brand-2);
-  background: radial-gradient(circle at 50% 50%, var(--transport-brand-2) 0 48%, transparent 52%);
+  background:
+    radial-gradient(circle at 50% 50%, var(--transport-brand-2) 0 48%, transparent 52%);
 }
 
 body[data-page="transport-hub"] .transport-subtab__dot{
@@ -632,23 +612,12 @@ body[data-page="transport-hub"] .transport-benefit__icon{
   width: 42px;
   height: 42px;
   border-radius: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  font-size: 1.12rem;
   background: linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.16));
   border: 1px solid rgba(18,207,208,.18);
   flex: 0 0 auto;
-  color: #0f172a;
-}
-
-body[data-page="transport-hub"] .transport-benefit__icon svg{
-  display: block;
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.9;
-  vector-effect: non-scaling-stroke;
 }
 
 body[data-page="transport-hub"] .transport-benefit__body b{
@@ -663,27 +632,6 @@ body[data-page="transport-hub"] .transport-benefit__body span{
   color: #64748b;
   line-height: 1.5;
   font-size: .94rem;
-}
-
-/* --------------------------------------------------------------------------
-   INLINE SVG HELPERS FOR CONTENT ICONS
-   -------------------------------------------------------------------------- */
-
-body[data-page="transport-hub"] .mini-icon{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #0f172a;
-}
-
-body[data-page="transport-hub"] .mini-icon svg{
-  display: block;
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.9;
-  vector-effect: non-scaling-stroke;
 }
 
 /* --------------------------------------------------------------------------
@@ -809,18 +757,5 @@ body[data-page="transport-hub"] .mini-icon svg{
 
   body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
     grid-template-columns: 1fr;
-  }
-
-  body[data-page="transport-hub"] .transport-tab__icon,
-  body[data-page="transport-hub"] .transport-more__icon{
-    width: 17px;
-    min-width: 17px;
-    height: 17px;
-  }
-
-  body[data-page="transport-hub"] .transport-tab__icon svg,
-  body[data-page="transport-hub"] .transport-more__icon svg{
-    width: 17px;
-    height: 17px;
   }
 }
