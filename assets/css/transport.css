@@ -1,87 +1,71 @@
 /* ==========================================================================
-   TripGuidely — transport.css
-   Scope: /transport/ hub page
-   Purpose:
-   - Klook-inspired premium transport hero
-   - Compact booking-style widget
-   - Stronger visual hierarchy and cleaner conversion UX
-   - Uses TripGuidely brand colors instead of Klook orange
-   - Supports overflow menu tabs (ferries / cruises / metro)
-   - Supports region-grid layouts for ferries and cruises
+   TripGuidely — transport widget REFINEMENT PATCH
+   Goal:
+   - Much closer to Klook premium widget structure
+   - Cleaner connected tab bar
+   - Stronger active tab treatment
+   - Better shell / panel / input rhythm
+   - Keeps TripGuidely turquoise branding
+   - Drop this AFTER your current transport.css
+   --------------------------------------------------------------------------
+   Note:
+   For a true near-1:1 finish, replace emoji tab icons with SVG icons.
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   PAGE TOKENS
-   -------------------------------------------------------------------------- */
-
 body[data-page="transport-hub"]{
-  --hero-pos-x: 50%;
-  --hero-pos-y: 42%;
-  --hero-min: 700px;
-  --hero-min-m: 880px;
+  --transport-shell-radius: 28px;
+  --transport-panel-radius: 22px;
+  --transport-tab-radius: 16px;
 
-  --transport-overlay-dark: rgba(2,6,23,.50);
-  --transport-overlay-mid: rgba(2,6,23,.28);
+  --transport-shell-bg: rgba(255,255,255,.94);
+  --transport-tab-rail: #e6ebf2;
+  --transport-tab-bg-idle: #f2f4f7;
+  --transport-tab-bg-idle-2: #eceff3;
+  --transport-tab-bg-active: #ffffff;
 
-  --transport-shell-radius: 24px;
-  --transport-panel-radius: 18px;
-  --transport-tab-radius: 14px;
-
-  --transport-soft: #f5f7fb;
-  --transport-soft-2: #edf2f7;
-  --transport-soft-3: #e8edf4;
-
-  --transport-line: rgba(15,23,42,.08);
-  --transport-line-2: rgba(15,23,42,.12);
-
-  --transport-tab-bg: rgba(255,255,255,.90);
   --transport-tab-text: #263247;
+  --transport-tab-text-muted: #3b4658;
+  --transport-tab-text-active: #0fb9ba;
 
-  --transport-brand: #12cfd0;
-  --transport-brand-2: #0fb9ba;
-  --transport-accent: #f4a261;
-  --transport-accent-2: #ef8f42;
+  --transport-field-bg: #f5f6f8;
+  --transport-field-line: #e4e8ef;
+  --transport-field-line-focus: rgba(18,207,208,.35);
 
   --transport-shell-shadow:
-    0 28px 72px rgba(2,6,23,.20),
-    0 0 0 1px rgba(255,255,255,.08);
+    0 26px 72px rgba(2,6,23,.20),
+    0 1px 0 rgba(255,255,255,.55) inset;
 
-  --transport-card-shadow: 0 12px 24px rgba(2,6,23,.05);
-  --transport-btn-shadow: 0 16px 36px rgba(18,207,208,.25);
+  --transport-panel-shadow:
+    0 14px 34px rgba(2,6,23,.09);
+
+  --transport-tab-shadow:
+    0 4px 14px rgba(2,6,23,.04);
+
+  --transport-tab-active-shadow:
+    0 10px 24px rgba(2,6,23,.08);
+
+  --transport-btn-shadow:
+    0 16px 36px rgba(18,207,208,.24);
 }
 
 /* --------------------------------------------------------------------------
-   HERO
+   HERO / SHELL
    -------------------------------------------------------------------------- */
 
-body[data-page="transport-hub"] .hero.hero-full{
-  min-height: var(--hero-min);
-}
-
-body[data-page="transport-hub"] .hero.hero-full .hero-overlay{
-  background:
-    linear-gradient(
-      90deg,
-      var(--transport-overlay-dark) 0%,
-      var(--transport-overlay-mid) 44%,
-      rgba(2,6,23,.16) 76%,
-      rgba(2,6,23,.08) 100%
-    );
-  opacity:.98;
-}
-
-body[data-page="transport-hub"] .hero-tool-wrap{
-  max-width:1400px;
-}
-
 body[data-page="transport-hub"] .hero-tool-shell{
-  border-radius:var(--transport-shell-radius);
-  background:rgba(255,255,255,.96);
-  box-shadow:var(--transport-shell-shadow);
+  border-radius: var(--transport-shell-radius);
+  background: var(--transport-shell-bg);
+  box-shadow: var(--transport-shell-shadow);
+  overflow: visible;
 }
 
 body[data-page="transport-hub"] .hero-tool-pad{
-  padding:0;
+  padding: 0;
+}
+
+body[data-page="transport-hub"] .transport-search{
+  position: relative;
+  padding: 14px;
 }
 
 /* --------------------------------------------------------------------------
@@ -89,185 +73,219 @@ body[data-page="transport-hub"] .hero-tool-pad{
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-topbar{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin:0 0 14px;
-  padding-left:4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding-left: 2px;
 }
 
 body[data-page="transport-hub"] .transport-topbar__title{
-  margin:0;
-  color:rgba(255,255,255,.98);
-  font-size:clamp(2.25rem, 1.8rem + 1.6vw, 3.25rem);
-  font-weight:950;
-  line-height:1;
-  letter-spacing:-.04em;
-  text-shadow:0 14px 34px rgba(0,0,0,.24);
+  margin: 0;
+  color: rgba(255,255,255,.98);
+  font-size: clamp(2.2rem, 1.78rem + 1.72vw, 3.45rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -.045em;
+  text-shadow: 0 16px 34px rgba(0,0,0,.22);
 }
 
 body[data-page="transport-hub"] .transport-topbar__scope{
-  appearance:none;
-  border:0;
-  background:#ffffff;
-  color:#1f2937;
-  font-weight:900;
-  font-size:1rem;
-  line-height:1;
-  border-radius:999px;
-  padding:14px 18px;
-  box-shadow:0 12px 28px rgba(2,6,23,.12);
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  cursor:pointer;
+  appearance: none;
+  border: 0;
+  background: #ffffff;
+  color: #1f2937;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 999px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 28px rgba(2,6,23,.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+
+body[data-page="transport-hub"] .transport-topbar__scope:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(2,6,23,.15);
 }
 
 /* --------------------------------------------------------------------------
-   WIDGET LAYOUT
+   TAB BAR — closer to Klook
    -------------------------------------------------------------------------- */
 
-body[data-page="transport-hub"] .transport-search{
-  position:relative;
-  padding:14px;
+body[data-page="transport-hub"] .transport-tabs{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  position: relative;
+  z-index: 4;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none;
+
+  background:
+    linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
+  border: 1px solid var(--transport-tab-rail);
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  padding: 0;
 }
 
-body[data-page="transport-hub"] .transport-tabs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:0;
-  align-items:flex-end;
-  margin:0;
-  position:relative;
-  z-index:2;
-  overflow:visible;
+body[data-page="transport-hub"] .transport-tabs::-webkit-scrollbar{
+  display: none;
 }
 
 body[data-page="transport-hub"] .transport-tab{
-  appearance:none;
-  border:1px solid var(--transport-line);
-  border-bottom:0;
-  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(244,247,251,.92));
-  color:var(--transport-tab-text);
-  border-top-left-radius:16px;
-  border-top-right-radius:16px;
-  border-bottom-left-radius:0;
-  border-bottom-right-radius:0;
-  padding:14px 18px;
-  font-weight:900;
-  letter-spacing:-.02em;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-right:-1px;
-  box-shadow:inset 0 -1px 0 rgba(15,23,42,.04);
+  appearance: none;
+  border: 0;
+  border-right: 1px solid rgba(15,23,42,.07);
+  background: transparent;
+  color: var(--transport-tab-text);
+  padding: 0 20px;
+  min-height: 62px;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  box-shadow: none;
+  white-space: nowrap;
   transition:
-    background .14s ease,
-    color .14s ease,
-    transform .14s ease,
-    box-shadow .14s ease;
+    color .16s ease,
+    background .16s ease,
+    transform .16s ease,
+    box-shadow .16s ease;
+}
+
+body[data-page="transport-hub"] .transport-tab:last-of-type{
+  border-right: 0;
 }
 
 body[data-page="transport-hub"] .transport-tab:hover{
-  background:#ffffff;
-  transform:translateY(-1px);
+  background: rgba(255,255,255,.34);
+  color: #111827;
+  transform: none;
 }
 
-body[data-page="transport-hub"] .transport-tab.is-active{
-  background:#ffffff;
-  color:var(--transport-brand-2);
-  position:relative;
-  z-index:3;
-  box-shadow:
-    0 -6px 20px rgba(2,6,23,.04),
-    inset 0 3px 0 rgba(18,207,208,.95);
+body[data-page="transport-hub"] .transport-tab.is-active,
+body[data-page="transport-hub"] .transport-tab[aria-selected="true"],
+body[data-page="transport-hub"] .transport-tab--overflow{
+  background: var(--transport-tab-bg-active);
+  color: var(--transport-tab-text-active);
+  z-index: 3;
+  box-shadow: var(--transport-tab-active-shadow);
+  border-right-color: transparent;
+  transform: translateY(-1px);
+}
+
+body[data-page="transport-hub"] .transport-tab.is-active::after,
+body[data-page="transport-hub"] .transport-tab[aria-selected="true"]::after,
+body[data-page="transport-hub"] .transport-tab--overflow::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 0 0 14px 14px;
 }
 
 body[data-page="transport-hub"] .transport-tab__icon{
-  font-size:1.05rem;
-  line-height:1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 1;
+  font-size: 1rem;
+  transform: translateY(-.5px);
+}
+
+body[data-page="transport-hub"] .transport-tab__text{
+  display: inline-block;
 }
 
 body[data-page="transport-hub"] .transport-tab--more{
-  pointer-events:auto;
-  opacity:1;
-  padding-inline:14px;
-  min-width:54px;
-  justify-content:center;
+  min-width: 58px;
+  justify-content: center;
+  padding-inline: 16px;
+  font-size: 1.1rem;
 }
 
-body[data-page="transport-hub"] .transport-tab--overflow[hidden]{
-  display:none !important;
-}
-
-body[data-page="transport-hub"] .transport-tab--overflow{
-  background:#ffffff;
-  color:var(--transport-brand-2);
-  position:relative;
-  z-index:3;
-  box-shadow:
-    0 -6px 20px rgba(2,6,23,.04),
-    inset 0 3px 0 rgba(18,207,208,.95);
-}
-
-/* overflow / more menu */
+/* --------------------------------------------------------------------------
+   MORE MENU
+   -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-more{
-  position:relative;
-  display:flex;
-  align-items:flex-end;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex: 0 0 auto;
 }
 
 body[data-page="transport-hub"] .transport-more__menu{
-  position:absolute;
-  top:100%;
-  right:0;
-  margin-top:10px;
-  min-width:270px;
-  border:1px solid var(--transport-line);
-  background:rgba(255,255,255,.98);
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(2,6,23,.14);
-  padding:10px;
-  z-index:20;
-  -webkit-backdrop-filter:blur(10px);
-  backdrop-filter:blur(10px);
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 280px;
+  border: 1px solid rgba(15,23,42,.09);
+  background: rgba(255,255,255,.985);
+  border-radius: 18px;
+  box-shadow: 0 22px 48px rgba(2,6,23,.16);
+  padding: 10px;
+  z-index: 30;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 body[data-page="transport-hub"] .transport-more__item{
-  width:100%;
-  appearance:none;
-  border:0;
-  background:none;
-  text-align:left;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px 14px;
-  border-radius:14px;
-  color:#475569;
-  font-weight:800;
-  cursor:pointer;
-  transition:background .14s ease, color .14s ease;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: 14px;
+  color: #475569;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background .14s ease, color .14s ease, transform .14s ease;
 }
 
 body[data-page="transport-hub"] .transport-more__item:hover{
-  background:rgba(15,23,42,.05);
-  color:#111827;
+  background: rgba(15,23,42,.045);
+  color: #111827;
+  transform: translateY(-1px);
 }
 
 body[data-page="transport-hub"] .transport-more__item.is-current{
-  background:rgba(18,207,208,.10);
-  color:var(--transport-brand-2);
+  background: rgba(18,207,208,.10);
+  color: var(--transport-brand-2);
 }
 
 body[data-page="transport-hub"] .transport-more__icon{
-  font-size:1rem;
-  line-height:1;
-  width:18px;
-  text-align:center;
-  flex:0 0 18px;
+  width: 18px;
+  flex: 0 0 18px;
+  line-height: 1;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------
@@ -275,499 +293,469 @@ body[data-page="transport-hub"] .transport-more__icon{
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-panel{
-  position:relative;
-  margin-top:-1px;
-  border:1px solid var(--transport-line);
-  background:#ffffff;
-  border-radius:0 var(--transport-panel-radius) var(--transport-panel-radius) var(--transport-panel-radius);
-  padding:16px;
-  box-shadow:0 18px 40px rgba(2,6,23,.08);
+  position: relative;
+  margin-top: -1px;
+  border: 1px solid var(--transport-tab-rail);
+  border-top: 0;
+  background: #ffffff;
+  border-radius: 0 0 var(--transport-panel-radius) var(--transport-panel-radius);
+  padding: 22px;
+  box-shadow: var(--transport-panel-shadow);
+  z-index: 2;
+}
+
+body[data-page="transport-hub"] .transport-panel__body{
+  position: relative;
 }
 
 /* --------------------------------------------------------------------------
-   SUB TABS
+   SUB TABS (radio style row)
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-subtabs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px 22px;
-  margin:0 0 16px;
-  align-items:center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 30px;
+  margin: 0 0 18px;
+  align-items: center;
 }
 
 body[data-page="transport-hub"] .transport-subtab{
-  appearance:none;
-  border:0;
-  background:none;
-  padding:0;
-  color:#2b3445;
-  font-weight:700;
-  font-size:1rem;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  cursor:pointer;
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #2b3445;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 body[data-page="transport-hub"] .transport-subtab::before{
-  content:"";
-  width:18px;
-  height:18px;
-  border-radius:999px;
-  border:1.8px solid rgba(15,23,42,.46);
-  display:inline-block;
-  box-sizing:border-box;
-  background:#ffffff;
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1.6px solid rgba(15,23,42,.42);
+  display: inline-block;
+  box-sizing: border-box;
+  background: #ffffff;
 }
 
 body[data-page="transport-hub"] .transport-subtab.is-active{
-  color:#1f2937;
+  color: #1f2937;
 }
 
 body[data-page="transport-hub"] .transport-subtab.is-active::before{
-  border-color:var(--transport-brand-2);
+  border-color: var(--transport-brand-2);
   background:
     radial-gradient(circle at 50% 50%, var(--transport-brand-2) 0 48%, transparent 52%);
 }
 
 body[data-page="transport-hub"] .transport-subtab__dot{
-  display:none;
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
-   SEARCH ROW
+   SEARCH GRID
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook{
-  display:grid;
-  grid-template-columns:minmax(0, 2.4fr) minmax(0, 1fr) minmax(0, .86fr) 170px;
-  gap:12px;
-  align-items:stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.05fr) minmax(0, .88fr) 168px;
+  gap: 14px;
+  align-items: stretch;
 }
 
 body[data-page="transport-hub"] .transport-field{
-  display:block;
-  min-width:0;
+  display: block;
+  min-width: 0;
+}
+
+body[data-page="transport-hub"] .transport-field--wide{
+  min-width: 0;
 }
 
 body[data-page="transport-hub"] .transport-field--card{
-  border:1px solid var(--transport-line);
-  background:var(--transport-soft);
-  border-radius:16px;
-  padding:12px 14px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+  border: 1px solid var(--transport-field-line);
+  background: var(--transport-field-bg);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.70),
+    0 1px 0 rgba(15,23,42,.015);
+  transition:
+    border-color .16s ease,
+    box-shadow .16s ease,
+    background .16s ease,
+    transform .16s ease;
+}
+
+body[data-page="transport-hub"] .transport-field--card:focus-within{
+  border-color: var(--transport-field-line-focus);
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px rgba(18,207,208,.08),
+    inset 0 1px 0 rgba(255,255,255,.78);
 }
 
 body[data-page="transport-hub"] .transport-field__label{
-  display:block;
-  margin:0 0 6px;
-  color:#6b7280;
-  font-size:.84rem;
-  line-height:1.2;
-  font-weight:800;
+  display: block;
+  margin: 0 0 7px;
+  color: #6b7280;
+  font-size: .82rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: .01em;
 }
 
 body[data-page="transport-hub"] .transport-field input,
 body[data-page="transport-hub"] .transport-field select{
-  width:100%;
-  min-width:0;
-  height:auto;
-  border:0;
-  background:transparent;
-  border-radius:0;
-  padding:0;
-  color:#111827;
-  font-size:1rem;
-  font-weight:800;
-  box-shadow:none;
-  outline:none;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  color: #111827;
+  font-size: 1.04rem;
+  font-weight: 800;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
 }
 
 body[data-page="transport-hub"] .transport-field input::placeholder{
-  color:#9ca3af;
-  font-weight:700;
+  color: #9ca3af;
+  font-weight: 700;
 }
 
 body[data-page="transport-hub"] .transport-submit{
-  border-radius:16px;
-  justify-content:center;
-  padding:0 16px;
-  min-height:100%;
-  font-size:1rem;
-  font-weight:950;
-  border:1px solid rgba(18,207,208,.50) !important;
-  background:linear-gradient(135deg, var(--transport-brand), var(--transport-brand-2)) !important;
-  color:#ffffff !important;
-  box-shadow:var(--transport-btn-shadow) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 0 16px;
+  min-height: 100%;
+  font-size: 1.02rem;
+  font-weight: 950;
+  letter-spacing: -.01em;
+  border: 1px solid rgba(18,207,208,.42) !important;
+  background: linear-gradient(135deg, var(--transport-brand), var(--transport-brand-2)) !important;
+  color: #ffffff !important;
+  box-shadow: var(--transport-btn-shadow) !important;
+  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
 }
 
 body[data-page="transport-hub"] .transport-submit:hover{
-  transform:translateY(-1px);
-  box-shadow:0 18px 40px rgba(18,207,208,.32) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(18,207,208,.32) !important;
+  filter: brightness(1.02);
+}
+
+body[data-page="transport-hub"] .transport-submit:active{
+  transform: translateY(0);
 }
 
 body[data-page="transport-hub"] .transport-submit .pill{
-  display:none;
+  display: none;
 }
 
-/* region grids for ferries / cruises */
+/* region mode */
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
-  grid-template-columns:repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
 }
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4{
-  grid-template-columns:repeat(4, minmax(0,1fr));
+  grid-template-columns: repeat(4, minmax(0,1fr));
 }
 
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4 .transport-submit,
 body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3 .transport-submit{
-  display:none;
+  display: none;
 }
 
 body[data-page="transport-hub"] .transport-region-btn{
-  appearance:none;
-  border:1px solid var(--transport-line);
-  background:var(--transport-soft);
-  border-radius:16px;
-  padding:18px 16px;
-  text-align:center;
-  font-weight:800;
-  color:#111827;
-  cursor:pointer;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
-  transition:background .14s ease, transform .14s ease, border-color .14s ease;
+  appearance: none;
+  border: 1px solid var(--transport-field-line);
+  background: var(--transport-field-bg);
+  border-radius: 18px;
+  padding: 18px 16px;
+  text-align: center;
+  font-weight: 850;
+  color: #111827;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+  transition: background .14s ease, transform .14s ease, border-color .14s ease, box-shadow .14s ease;
 }
 
 body[data-page="transport-hub"] .transport-region-btn:hover{
-  background:#ffffff;
-  border-color:rgba(18,207,208,.24);
-  transform:translateY(-1px);
+  background: #ffffff;
+  border-color: rgba(18,207,208,.24);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(2,6,23,.05);
 }
 
 /* --------------------------------------------------------------------------
-   LOWER INFO
+   LOWER META — cleaner Klook-like support cards
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
-  margin-top:14px;
-  display:grid;
-  grid-template-columns:minmax(0, 1.15fr) minmax(0, 1fr);
-  gap:12px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: 14px;
 }
 
 body[data-page="transport-hub"] .transport-meta__copy,
 body[data-page="transport-hub"] .transport-highlights{
-  border:1px solid var(--transport-line);
-  background:#ffffff;
-  border-radius:16px;
-  padding:14px 16px;
-  box-shadow:var(--transport-card-shadow);
+  border: 1px solid rgba(15,23,42,.07);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 20px rgba(2,6,23,.04);
 }
 
 body[data-page="transport-hub"] .transport-meta__eyebrow{
-  margin:0 0 4px;
-  font-size:.76rem;
-  line-height:1.2;
-  font-weight:950;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:#64748b;
+  margin: 0 0 6px;
+  font-size: .76rem;
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #64748b;
 }
 
 body[data-page="transport-hub"] .transport-meta__title{
-  margin:0 0 4px;
-  color:#0f172a;
-  font-size:1.08rem;
-  line-height:1.2;
-  font-weight:950;
+  margin: 0 0 5px;
+  color: #0f172a;
+  font-size: 1.16rem;
+  line-height: 1.2;
+  font-weight: 950;
 }
 
 body[data-page="transport-hub"] .transport-meta__text{
-  margin:0;
-  color:#64748b;
-  font-size:.95rem;
-  line-height:1.55;
+  margin: 0;
+  color: #64748b;
+  font-size: .96rem;
+  line-height: 1.58;
 }
 
 body[data-page="transport-hub"] .transport-highlights{
-  list-style:none;
-  margin:0;
-  display:grid;
-  gap:9px;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  gap: 10px;
 }
 
 body[data-page="transport-hub"] .transport-highlights li{
-  margin:0;
-  padding-left:24px;
-  position:relative;
-  color:#475569;
-  font-size:.95rem;
-  line-height:1.45;
+  margin: 0;
+  padding-left: 24px;
+  position: relative;
+  color: #475569;
+  font-size: .95rem;
+  line-height: 1.5;
 }
 
 body[data-page="transport-hub"] .transport-highlights li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:8px;
-  width:12px;
-  height:12px;
-  border-radius:999px;
-  background:linear-gradient(135deg, rgba(18,207,208,.34), rgba(244,162,97,.22));
-  border:1px solid rgba(18,207,208,.22);
-}
-
-body[data-page="transport-hub"] .transport-search-error{
-  margin:10px 2px 0;
-  color:#b91c1c;
-  font-size:.92rem;
-  font-weight:700;
-  min-height:1.35em;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(18,207,208,.18);
+  border: 1px solid rgba(18,207,208,.32);
 }
 
 /* --------------------------------------------------------------------------
-   BENEFITS ROW
+   ERROR
+   -------------------------------------------------------------------------- */
+
+body[data-page="transport-hub"] .transport-search-error{
+  margin: 12px 2px 0;
+  color: #b91c1c;
+  font-size: .92rem;
+  font-weight: 700;
+  min-height: 1.35em;
+}
+
+/* --------------------------------------------------------------------------
+   BENEFITS
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-benefits{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:14px;
-  margin-top:16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 18px;
 }
 
 body[data-page="transport-hub"] .transport-benefit{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  border:1px solid rgba(15,23,42,.08);
-  background:rgba(255,255,255,.96);
-  border-radius:18px;
-  padding:14px 16px;
-  box-shadow:0 10px 22px rgba(2,6,23,.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid rgba(15,23,42,.08);
+  background: rgba(255,255,255,.96);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 22px rgba(2,6,23,.05);
 }
 
 body[data-page="transport-hub"] .transport-benefit__icon{
-  width:42px;
-  height:42px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  font-size:1.15rem;
-  background:linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.16));
-  border:1px solid rgba(18,207,208,.18);
-  flex:0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.12rem;
+  background: linear-gradient(135deg, rgba(18,207,208,.16), rgba(244,162,97,.16));
+  border: 1px solid rgba(18,207,208,.18);
+  flex: 0 0 auto;
 }
 
 body[data-page="transport-hub"] .transport-benefit__body b{
-  display:block;
-  margin-bottom:3px;
-  color:#111827;
-  font-size:1rem;
+  display: block;
+  margin-bottom: 3px;
+  color: #111827;
+  font-size: 1rem;
 }
 
 body[data-page="transport-hub"] .transport-benefit__body span{
-  display:block;
-  color:#64748b;
-  line-height:1.5;
-  font-size:.94rem;
+  display: block;
+  color: #64748b;
+  line-height: 1.5;
+  font-size: .94rem;
 }
 
 /* --------------------------------------------------------------------------
-   MAIN CONTENT KEEPERS
-   -------------------------------------------------------------------------- */
-
-body[data-page="transport-hub"] .transport-city-grid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:12px;
-}
-
-body[data-page="transport-hub"] .transport-city-card{
-  position:relative;
-  display:block;
-  text-decoration:none;
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:18px;
-  padding:16px;
-  background:
-    radial-gradient(420px 180px at 10% 0%, rgba(18,207,208,.10), transparent 60%),
-    radial-gradient(460px 220px at 92% 20%, rgba(244,162,97,.10), transparent 62%),
-    #ffffff;
-  box-shadow:0 10px 22px rgba(2,6,23,.06);
-  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-
-body[data-page="transport-hub"] .transport-city-card:hover{
-  transform:translateY(-1px);
-  box-shadow:0 18px 42px rgba(2,6,23,.10);
-  border-color:rgba(18,207,208,.26);
-}
-
-body[data-page="transport-hub"] .transport-city-card strong{
-  display:block;
-  margin:0 0 6px;
-  color:#0f172a;
-  font-size:1rem;
-}
-
-body[data-page="transport-hub"] .transport-city-card span{
-  display:block;
-  color:#64748b;
-  font-size:.95rem;
-  line-height:1.55;
-}
-
-body[data-page="transport-hub"] .transport-aff-grid{
-  display:grid;
-  grid-template-columns:repeat(5, minmax(0,1fr));
-  gap:10px;
-  margin-top:14px;
-}
-
-body[data-page="transport-hub"] .transport-aff-item{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:64px;
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:16px;
-  background:#ffffff;
-  color:#0f172a;
-  font-weight:950;
-  box-shadow:0 8px 18px rgba(2,6,23,.05);
-  text-align:center;
-  padding:10px;
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE
+   MOBILE / TABLET
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1180px){
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   body[data-page="transport-hub"] .transport-submit{
-    min-height:58px;
-    grid-column:1 / -1;
+    min-height: 60px;
+    grid-column: 1 / -1;
   }
 
   body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4{
-    grid-template-columns:repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0,1fr));
   }
 
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 980px){
-  body[data-page="transport-hub"] .transport-city-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  body[data-page="transport-hub"] .transport-aff-grid{
-    grid-template-columns:repeat(3, minmax(0,1fr));
-  }
-
   body[data-page="transport-hub"] .transport-benefits{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 760px){
-  body[data-page="transport-hub"]{
-    --hero-min-m: 880px;
-    --hero-pos-y: 42%;
-  }
-
   body[data-page="transport-hub"] .transport-topbar{
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:12px;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
   }
 
   body[data-page="transport-hub"] .transport-topbar__title{
-    font-size:2.25rem;
+    font-size: 2.25rem;
   }
 
   body[data-page="transport-hub"] .transport-topbar__scope{
-    padding:12px 16px;
-    font-size:.95rem;
+    padding: 12px 16px;
+    font-size: .95rem;
   }
 
   body[data-page="transport-hub"] .transport-search{
-    padding:12px;
+    padding: 12px;
   }
 
   body[data-page="transport-hub"] .transport-tabs{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
   }
 
   body[data-page="transport-hub"] .transport-tab{
-    border-radius:16px;
-    border:1px solid var(--transport-line);
-    margin-right:0;
-    padding:12px 14px;
-    justify-content:center;
+    min-height: 56px;
+    border: 1px solid var(--transport-tab-rail);
+    border-radius: 16px;
+    background: rgba(255,255,255,.92);
+    justify-content: center;
+    padding: 0 14px;
+    box-shadow: var(--transport-tab-shadow);
   }
 
   body[data-page="transport-hub"] .transport-tab.is-active,
+  body[data-page="transport-hub"] .transport-tab[aria-selected="true"],
   body[data-page="transport-hub"] .transport-tab--overflow{
-    box-shadow:0 12px 24px rgba(2,6,23,.08);
+    box-shadow: 0 12px 24px rgba(2,6,23,.08);
+  }
+
+  body[data-page="transport-hub"] .transport-tab.is-active::after,
+  body[data-page="transport-hub"] .transport-tab[aria-selected="true"]::after,
+  body[data-page="transport-hub"] .transport-tab--overflow::after{
+    display: none;
   }
 
   body[data-page="transport-hub"] .transport-more{
-    grid-column:1 / -1;
+    grid-column: 1 / -1;
   }
 
   body[data-page="transport-hub"] .transport-more__menu{
-    right:auto;
-    left:0;
-    width:min(100%, 320px);
+    right: auto;
+    left: 0;
+    width: min(100%, 320px);
   }
 
   body[data-page="transport-hub"] .transport-panel{
-    border-radius:18px;
-    margin-top:10px;
-    padding:12px;
+    border-radius: 20px;
+    border-top: 1px solid var(--transport-tab-rail);
+    margin-top: 10px;
+    padding: 14px;
   }
 
   body[data-page="transport-hub"] .transport-subtabs{
-    gap:12px;
-    margin-bottom:12px;
+    gap: 12px 18px;
+    margin-bottom: 14px;
   }
 
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook{
-    grid-template-columns:1fr;
-    gap:10px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4,
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   body[data-page="transport-hub"] .transport-field--card{
-    padding:11px 13px;
+    padding: 12px 14px;
   }
 
   body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
-    grid-template-columns:1fr;
-  }
-
-  body[data-page="transport-hub"] .transport-city-grid,
-  body[data-page="transport-hub"] .transport-aff-grid{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 }
