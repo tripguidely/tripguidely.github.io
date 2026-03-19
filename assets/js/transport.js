@@ -1,14 +1,13 @@
 /* ==========================================================================
    /assets/js/transport.js
    TripGuidely — transport.js
-   Fixes:
-   - Restores "..." more-menu open on hover / focus / click
-   - Makes Airport trains & buses tab switch correctly
-   - Adds missing config for airport-trains-buses / ferries / cruises / metro passes
-   - Keeps Ferries and Cruises as normal visible tabs
-   - Uses overflow only for Metro passes
-   - Syncs active affiliate link + subid correctly
-   - Auto-inits on DOM ready
+   - Keeps Trains / Rail passes / Car rentals / Airport transfers as form tabs
+   - Uses Klook-style region buttons for Airport trains & buses / Ferries /
+     Cruises / Metro passes & cards
+   - Opens "..." on hover / focus / click
+   - Keeps overflow tab visually active for overflow categories
+   - Redirects every form submit and region click to the correct affiliate link
+   - Switches hero image by active tab
    - Safe for older browsers
    ========================================================================== */
 
@@ -22,7 +21,8 @@
     initialTrainMarket: "japan",
     storageKey: "tg_transport_search_context",
     boundAttr: "data-transport-bound",
-    defaultDepartureOffsetDays: 30
+    defaultDepartureOffsetDays: 30,
+    moreCloseDelay: 120
   };
 
   var HERO_IMAGES = {
@@ -39,6 +39,9 @@
   var TAB_CONFIG = {
     "trains": {
       title: "Trains",
+      link: "https://klook.tpk.ro/LQXw15L2",
+      subid: "tg_transport_trains",
+      useRegionGrid: false,
       copy: "Find train tickets and rail routes for city-to-city travel and longer overland journeys.",
       h1: "Good fit for point-to-point transport searches",
       h2: "Useful for intercity travel planning",
@@ -94,6 +97,9 @@
 
     "rail-passes": {
       title: "Rail passes",
+      link: "https://klook.tpk.ro/X7Ksor1o",
+      subid: "tg_transport_rail_passes",
+      useRegionGrid: false,
       copy: "Compare rail pass options for multi-city trips, broader rail access, and more flexible itineraries.",
       h1: "Better for multiple train journeys",
       h2: "Useful for longer regional or country-level trips",
@@ -139,6 +145,9 @@
 
     "car-rentals": {
       title: "Car rentals",
+      link: "https://klook.tpk.ro/5t8ofxGh",
+      subid: "tg_transport_car_rentals",
+      useRegionGrid: false,
       copy: "Search car rental options when you need more flexibility beyond central city transport.",
       h1: "Good for road trips and flexible routing",
       h2: "Useful for airport pick-up and wider-area travel",
@@ -159,6 +168,9 @@
 
     "airport-transfers": {
       title: "Airport transfers",
+      link: "https://klook.tpk.ro/iB78IJzo",
+      subid: "tg_transport_airport_transfers",
+      useRegionGrid: false,
       copy: "Book airport transfer options for smoother arrivals, hotel drop-offs, and departure planning.",
       h1: "Strong fit for arrival and departure logistics",
       h2: "Useful after long-haul or late-night flights",
@@ -181,123 +193,102 @@
 
     "airport-trains-buses": {
       title: "Airport trains & buses",
+      link: "https://klook.tpk.ro/VByndotO",
+      subid: "tg_transport_airport_trains_buses",
+      useRegionGrid: true,
+      gridCols: 4,
       copy: "Compare airport-to-city trains and bus links for lower-cost arrivals and practical public transport planning.",
       h1: "Better for airport-to-city public transport",
       h2: "Useful when you want a lower-cost arrival option",
       h3: "Good fit for train and bus airport connections",
-      destinationLabel: "Airport or city",
-      destinationPlaceholder: "Narita Airport, Haneda, Heathrow, Shinjuku",
-      travelersLabel: "Passengers",
-      travelersVisible: true,
-      dateVisible: true,
-      travelerOptions: [
-        { value: "1", label: "1 passenger" },
-        { value: "2", label: "2 passengers" },
-        { value: "3", label: "3 passengers" },
-        { value: "4", label: "4 passengers" },
-        { value: "5", label: "5 passengers" },
-        { value: "6+", label: "6+ passengers" }
+      regions: [
+        "Japan",
+        "Europe",
+        "Hong Kong & Macau",
+        "South Korea",
+        "Singapore",
+        "Taiwan",
+        "Thailand",
+        "Malaysia",
+        "Indonesia",
+        "United States",
+        "Mainland China",
+        "UAE",
+        "Australia & New Zealand",
+        "Philippines",
+        "Vietnam",
+        "Others"
       ],
       subtabs: []
     },
 
     "ferries": {
       title: "Ferries",
+      link: "https://klook.tpk.ro/h975PijE",
+      subid: "tg_transport_ferries",
+      useRegionGrid: true,
+      gridCols: 4,
       copy: "Compare ferry routes for island crossings, port-to-port journeys, and coastal transport planning.",
       h1: "Useful for island and port-to-port routes",
       h2: "Good for coastal crossings and practical sea transport",
       h3: "Best when your route depends on a ferry connection",
-      destinationLabel: "Port, island, or route",
-      destinationPlaceholder: "Santorini, Mykonos, Capri, Hong Kong",
-      travelersLabel: "Passengers",
-      travelersVisible: true,
-      dateVisible: true,
-      travelerOptions: [
-        { value: "1", label: "1 passenger" },
-        { value: "2", label: "2 passengers" },
-        { value: "3", label: "3 passengers" },
-        { value: "4", label: "4 passengers" },
-        { value: "5", label: "5 passengers" },
-        { value: "6+", label: "6+ passengers" }
+      regions: [
+        "Hong Kong & Macau",
+        "South Korea",
+        "Singapore",
+        "Taiwan",
+        "Thailand",
+        "Malaysia",
+        "Indonesia",
+        "United States",
+        "Mainland China",
+        "Australia & New Zealand",
+        "Philippines",
+        "Vietnam"
       ],
       subtabs: []
     },
 
     "cruises": {
       title: "Cruises",
+      link: "https://klook.tpk.ro/z6Hs7Grs",
+      subid: "tg_transport_cruises",
+      useRegionGrid: true,
+      gridCols: 3,
       copy: "Explore cruise options by region when you want itinerary-based travel rather than point-to-point transport.",
       h1: "Best for itinerary-first travel planning",
       h2: "Useful for region-based cruise discovery",
       h3: "Good when the journey is part of the experience",
-      destinationLabel: "Region or destination",
-      destinationPlaceholder: "Mediterranean, Caribbean, Alaska, Dubai",
-      travelersLabel: "Travelers",
-      travelersVisible: true,
-      dateVisible: true,
-      travelerOptions: [
-        { value: "1", label: "1 traveler" },
-        { value: "2", label: "2 travelers" },
-        { value: "3", label: "3 travelers" },
-        { value: "4", label: "4 travelers" },
-        { value: "5", label: "5 travelers" },
-        { value: "6+", label: "6+ travelers" }
+      regions: [
+        "Asia",
+        "Australia & New Zealand",
+        "Nordic"
       ],
       subtabs: []
     },
 
     "metro-passes": {
       title: "Metro passes & cards",
+      link: "https://klook.tpk.ro/OoM3hbHE",
+      subid: "tg_transport_metro_passes",
+      useRegionGrid: true,
+      gridCols: 4,
       copy: "Check metro cards and transit passes for getting around the city once you arrive.",
       h1: "Good for local city movement",
       h2: "Useful after airport arrival or hotel check-in",
       h3: "Better fit for public transit planning inside the city",
-      destinationLabel: "City",
-      destinationPlaceholder: "Tokyo, Seoul, Hong Kong, Singapore",
-      travelersLabel: "Travelers",
-      travelersVisible: false,
-      dateVisible: false,
-      subtabs: [
-        {
-          key: "japan",
-          label: "Japan",
-          title: "Metro passes & cards",
-          copy: "Explore metro cards and local transit options for major cities across Japan.",
-          h1: "Useful for urban transit planning",
-          h2: "Good after airport arrival or hotel check-in",
-          h3: "Better fit for city movement planning",
-          destinationPlaceholder: "Tokyo, Osaka, Kyoto"
-        },
-        {
-          key: "europe",
-          label: "Europe",
-          title: "Metro passes & cards",
-          copy: "Compare city transit cards and urban transport options for major European cities.",
-          h1: "Good for local city movement",
-          h2: "Useful after arrival in major European capitals",
-          h3: "Better fit for public transit planning inside the city",
-          destinationPlaceholder: "Paris, London, Rome, Barcelona"
-        },
-        {
-          key: "asia",
-          label: "Asia",
-          title: "Metro passes & cards",
-          copy: "Compare transit cards and local metro access across major Asian cities.",
-          h1: "Useful for big-city transport systems",
-          h2: "Better when metro is your main urban transport",
-          h3: "Good for city movement after arrival",
-          destinationPlaceholder: "Seoul, Hong Kong, Singapore, Taipei"
-        },
-        {
-          key: "others",
-          label: "Others",
-          title: "Metro passes & cards",
-          copy: "Explore metro passes and city transit cards outside the main presets.",
-          h1: "Useful for local city movement",
-          h2: "Good for public transport planning",
-          h3: "Best when you need a city-first transit pass",
-          destinationPlaceholder: "Enter city name"
-        }
-      ]
+      regions: [
+        "Japan",
+        "Europe",
+        "South Korea",
+        "Taiwan",
+        "Hong Kong & Macau",
+        "Thailand",
+        "Singapore",
+        "Malaysia",
+        "Mainland China"
+      ],
+      subtabs: []
     }
   };
 
@@ -312,11 +303,8 @@
 
   function on(el, eventName, handler) {
     if (!el || !eventName || !handler) return;
-    if (el.addEventListener) {
-      el.addEventListener(eventName, handler, false);
-    } else if (el.attachEvent) {
-      el.attachEvent("on" + eventName, handler);
-    }
+    if (el.addEventListener) el.addEventListener(eventName, handler, false);
+    else if (el.attachEvent) el.attachEvent("on" + eventName, handler);
   }
 
   function safeArray(nodeList) {
@@ -382,6 +370,14 @@
     return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
   }
 
+  function slugify(str) {
+    return trimStr(str || "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
   function getTransportElements() {
     return {
       form: DOC.getElementById("transport-search-form"),
@@ -389,9 +385,14 @@
       tabs: safeArray(DOC.querySelectorAll(".transport-tab[data-transport-tab]")),
       subtabsWrap: DOC.querySelector(".transport-subtabs"),
       subtabs: safeArray(DOC.querySelectorAll(".transport-subtab")),
+      searchGrid: DOC.getElementById("transport-search-grid"),
+      regionGrid: DOC.getElementById("transport-region-grid"),
+      regionButtons: [],
       activeTabInput: DOC.getElementById("transport-active-tab"),
       activeLinkInput: DOC.getElementById("transport-active-link"),
       activeSubidInput: DOC.getElementById("transport-active-subid"),
+      activeRegionInput: DOC.getElementById("transport-active-region"),
+      activeRegionLabelInput: DOC.getElementById("transport-active-region-label"),
       panel: DOC.getElementById("transport-panel"),
       panelTitle: DOC.getElementById("transport-panel-title"),
       panelCopy: DOC.getElementById("transport-panel-copy"),
@@ -406,6 +407,7 @@
       destinationField: DOC.querySelector('label[for="transport-destination"]'),
       departureField: DOC.querySelector('label[for="transport-start-date"]'),
       travelersField: DOC.querySelector('label[for="transport-travelers"]'),
+      submitBtn: DOC.querySelector("#transport-search-form .transport-submit"),
       moreWrap: DOC.getElementById("transport-more"),
       moreToggle: DOC.getElementById("transport-more-toggle"),
       moreMenu: DOC.getElementById("transport-more-menu"),
@@ -418,7 +420,10 @@
     return {
       activeTab: DEFAULTS.initialTab,
       activeSubtab: DEFAULTS.initialTrainMarket,
-      moreOpen: false
+      activeRegion: "",
+      activeRegionLabel: "",
+      moreOpen: false,
+      moreCloseTimer: null
     };
   }
 
@@ -445,11 +450,11 @@
 
   function setPanelContent(els, map) {
     if (!map) return;
-    text(els.panelTitle, map.title);
-    text(els.panelCopy, map.copy);
-    text(els.highlight1, map.h1);
-    text(els.highlight2, map.h2);
-    text(els.highlight3, map.h3);
+    text(els.panelTitle, map.title || "");
+    text(els.panelCopy, map.copy || "");
+    text(els.highlight1, map.h1 || "");
+    text(els.highlight2, map.h2 || "");
+    text(els.highlight3, map.h3 || "");
   }
 
   function setHeroImage(els, tabKey) {
@@ -484,9 +489,10 @@
 
     if (!els.subtabsWrap) return;
 
-    if (!config || !config.subtabs || !config.subtabs.length) {
+    if (!config || config.useRegionGrid || !config.subtabs || !config.subtabs.length) {
       els.subtabsWrap.innerHTML = "";
       hide(els.subtabsWrap);
+      els.subtabs = [];
       return;
     }
 
@@ -507,7 +513,42 @@
 
     els.subtabsWrap.innerHTML = html;
     show(els.subtabsWrap);
-    els.subtabs = safeArray(DOC.querySelectorAll(".transport-subtab"));
+    els.subtabs = safeArray(els.subtabsWrap.querySelectorAll(".transport-subtab"));
+  }
+
+  function renderRegionGrid(els, state, tabKey) {
+    var config = TAB_CONFIG[tabKey];
+    var html = "";
+    var i;
+    var regions;
+    var colsClass = "transport-grid--regions-4";
+
+    if (!els.regionGrid) return;
+
+    if (!config || !config.useRegionGrid || !config.regions || !config.regions.length) {
+      els.regionGrid.innerHTML = "";
+      hide(els.regionGrid);
+      els.regionButtons = [];
+      return;
+    }
+
+    if (Number(config.gridCols) === 3) colsClass = "transport-grid--regions-3";
+
+    els.regionGrid.className = "transport-grid transport-grid--klook transport-grid--regions " + colsClass;
+
+    regions = config.regions;
+    for (i = 0; i < regions.length; i++) {
+      html += '<button type="button" class="transport-region-btn" data-transport-region="' + slugify(regions[i]) + '" data-transport-region-label="' + regions[i] + '">' + regions[i] + "</button>";
+    }
+
+    els.regionGrid.innerHTML = html;
+    show(els.regionGrid);
+    els.regionButtons = safeArray(els.regionGrid.querySelectorAll(".transport-region-btn"));
+
+    state.activeRegion = "";
+    state.activeRegionLabel = "";
+    if (els.activeRegionInput) els.activeRegionInput.value = "";
+    if (els.activeRegionLabelInput) els.activeRegionLabelInput.value = "";
   }
 
   function updateFieldLabels(els, config, subtabConfig) {
@@ -532,17 +573,50 @@
   }
 
   function updateFieldVisibility(els, config) {
-    if (!els.departureField || !els.travelersField) return;
+    var useRegionGrid = !!(config && config.useRegionGrid);
 
-    if (config.dateVisible === false) hide(els.departureField);
-    else show(els.departureField);
+    if (els.searchGrid) {
+      if (useRegionGrid) hide(els.searchGrid);
+      else show(els.searchGrid);
+    }
 
-    if (config.travelersVisible === false) hide(els.travelersField);
-    else show(els.travelersField);
+    if (els.destinationField) {
+      if (useRegionGrid) hide(els.destinationField);
+      else show(els.destinationField);
+    }
+
+    if (els.departureField) {
+      if (useRegionGrid || config.dateVisible === false) hide(els.departureField);
+      else show(els.departureField);
+    }
+
+    if (els.travelersField) {
+      if (useRegionGrid || config.travelersVisible === false) hide(els.travelersField);
+      else show(els.travelersField);
+    }
+
+    if (els.submitBtn) {
+      if (useRegionGrid) hide(els.submitBtn);
+      else show(els.submitBtn);
+    }
+
+    if (els.destination) {
+      els.destination.disabled = useRegionGrid;
+      if (useRegionGrid) els.destination.value = "";
+    }
+
+    if (els.departure) {
+      els.departure.disabled = useRegionGrid || config.dateVisible === false;
+      if (useRegionGrid || config.dateVisible === false) els.departure.value = "";
+    }
+
+    if (els.travelers) {
+      els.travelers.disabled = useRegionGrid || config.travelersVisible === false;
+    }
   }
 
   function updateTravelerOptions(els, config) {
-    if (!els.travelers) return;
+    if (!els.travelers || !config || config.useRegionGrid) return;
 
     if (config.travelerOptions && config.travelerOptions.length) {
       setOptions(els.travelers, config.travelerOptions, config.travelerOptions[0].value);
@@ -560,13 +634,13 @@
   }
 
   function isOverflowTab(tabKey) {
-    return tabKey === "metro-passes";
+    return tabKey === "ferries" || tabKey === "cruises" || tabKey === "metro-passes";
   }
 
   function setOverflowButton(els, tabKey, link, subid) {
-    var item;
-    var icon;
-    var label;
+    var item = null;
+    var icon = "";
+    var label = "";
     var textNode;
     var iconNode;
     var i;
@@ -583,7 +657,6 @@
       return;
     }
 
-    item = null;
     for (i = 0; i < els.moreItems.length; i++) {
       if (getAttr(els.moreItems[i], "data-transport-tab") === tabKey) {
         item = els.moreItems[i];
@@ -623,27 +696,43 @@
     for (i = 0; i < els.tabs.length; i++) {
       key = getAttr(els.tabs[i], "data-transport-tab");
       isActive = els.tabs[i] === activeTabEl && key && key === activeTabKey;
+
       if (els.tabs[i] === els.overflowActiveTab && !isOverflowTab(activeTabKey)) {
         isActive = false;
       }
+
       toggleClass(els.tabs[i], "is-active", isActive);
       els.tabs[i].setAttribute("aria-selected", isActive ? "true" : "false");
       els.tabs[i].setAttribute("tabindex", isActive ? "0" : "-1");
     }
   }
 
+  function clearMoreCloseTimer(state) {
+    if (state.moreCloseTimer) {
+      WIN.clearTimeout(state.moreCloseTimer);
+      state.moreCloseTimer = null;
+    }
+  }
+
   function setMenuOpen(els, state, isOpen) {
-    if (!els.moreMenu || !els.moreToggle) return;
+    if (!els.moreMenu || !els.moreToggle || !els.moreWrap) return;
+
     state.moreOpen = !!isOpen;
     els.moreToggle.setAttribute("aria-expanded", state.moreOpen ? "true" : "false");
-    if (state.moreOpen) show(els.moreMenu);
-    else hide(els.moreMenu);
+
+    if (state.moreOpen) {
+      addClass(els.moreWrap, "is-open");
+      show(els.moreMenu);
+    } else {
+      removeClass(els.moreWrap, "is-open");
+      hide(els.moreMenu);
+    }
   }
 
   function setActiveTab(els, state, tabKey, tabEl, forcedLink, forcedSubid) {
     var config = TAB_CONFIG[tabKey];
-    var link = forcedLink || (tabEl ? getAttr(tabEl, "data-transport-link") : "");
-    var subid = forcedSubid || (tabEl ? getAttr(tabEl, "data-transport-subid") : "");
+    var link = forcedLink || (tabEl ? getAttr(tabEl, "data-transport-link") : "") || (config ? config.link : "");
+    var subid = forcedSubid || (tabEl ? getAttr(tabEl, "data-transport-subid") : "") || (config ? config.subid : "");
     var subtabConfig;
     var activeVisualTabEl = tabEl;
 
@@ -651,7 +740,9 @@
 
     state.activeTab = tabKey;
 
-    if (config.subtabs && config.subtabs.length) {
+    if (config.useRegionGrid) {
+      state.activeSubtab = "";
+    } else if (config.subtabs && config.subtabs.length) {
       if (!getSubtabConfig(tabKey, state.activeSubtab)) {
         state.activeSubtab = config.subtabs[0].key;
       }
@@ -659,9 +750,14 @@
       state.activeSubtab = "";
     }
 
+    state.activeRegion = "";
+    state.activeRegionLabel = "";
+
     if (els.activeTabInput) els.activeTabInput.value = tabKey;
     if (els.activeLinkInput) els.activeLinkInput.value = link || "";
     if (els.activeSubidInput) els.activeSubidInput.value = subid || "";
+    if (els.activeRegionInput) els.activeRegionInput.value = "";
+    if (els.activeRegionLabelInput) els.activeRegionLabelInput.value = "";
 
     DOC.body.setAttribute("data-transport-active", tabKey);
     DOC.body.setAttribute("data-transport-active-subtab", state.activeSubtab || "");
@@ -680,6 +776,7 @@
     syncTabClasses(els, activeVisualTabEl, tabKey);
     syncMoreMenuCurrent(els, tabKey);
     renderSubtabs(els, state, tabKey);
+    renderRegionGrid(els, state, tabKey);
 
     subtabConfig = getSubtabConfig(tabKey, state.activeSubtab);
 
@@ -721,18 +818,27 @@
       destination: els.destination ? normalizeInputValue(els.destination.value) : "",
       departure_date: els.departure ? els.departure.value : "",
       travelers: els.travelers ? els.travelers.value : "",
-      subid: els.activeSubidInput ? els.activeSubidInput.value : ""
+      subid: els.activeSubidInput ? els.activeSubidInput.value : "",
+      region: els.activeRegionInput ? els.activeRegionInput.value : "",
+      region_label: els.activeRegionLabelInput ? els.activeRegionLabelInput.value : ""
     };
   }
 
   function validateTransportData(data) {
     var tabConfig = TAB_CONFIG[data.tab];
 
+    if (!tabConfig) return "Please choose a transport category.";
+
+    if (tabConfig.useRegionGrid) {
+      if (!trimStr(data.region_label)) return "Please choose a region.";
+      return "";
+    }
+
     if (!trimStr(data.destination)) {
       return "Please enter a destination.";
     }
 
-    if (tabConfig && tabConfig.dateVisible !== false && !trimStr(data.departure_date)) {
+    if (tabConfig.dateVisible !== false && !trimStr(data.departure_date)) {
       return "Please choose a departure date.";
     }
 
@@ -747,19 +853,21 @@
     } catch (_) {}
   }
 
-  function trackTransportSearch(els, data) {
+  function trackTransportEvent(els, data, eventName) {
     if (typeof WIN.getConsent !== "function") return;
     if (typeof WIN.gtagEvent !== "function") return;
     if (typeof WIN.getPageType !== "function") return;
     if (WIN.getConsent() !== "granted") return;
 
-    WIN.gtagEvent("transport_search", {
+    WIN.gtagEvent(eventName || "transport_search", {
       page_type: WIN.getPageType(),
       transport_category: data.tab,
       transport_subcategory: data.subtab || "",
-      destination: data.destination,
-      departure_date: data.departure_date,
-      travelers: data.travelers,
+      transport_region: data.region || "",
+      transport_region_label: data.region_label || "",
+      destination: data.destination || "",
+      departure_date: data.departure_date || "",
+      travelers: data.travelers || "",
       affiliate_program: String(getAttr(els.form, "data-aff") || "klook"),
       affiliate_subid: data.subid || ""
     });
@@ -792,7 +900,31 @@
     if (!targetUrl) return;
 
     persistSearchContext(data);
-    trackTransportSearch(els, data);
+    trackTransportEvent(els, data, "transport_search");
+    redirectToTarget(targetUrl);
+  }
+
+  function handleRegionClick(els, state, btn) {
+    var region = getAttr(btn, "data-transport-region");
+    var regionLabel = getAttr(btn, "data-transport-region-label");
+    var data;
+    var targetUrl;
+
+    if (!regionLabel) return;
+
+    state.activeRegion = region || "";
+    state.activeRegionLabel = regionLabel || "";
+
+    if (els.activeRegionInput) els.activeRegionInput.value = state.activeRegion;
+    if (els.activeRegionLabelInput) els.activeRegionLabelInput.value = state.activeRegionLabel;
+
+    data = collectFormData(els);
+    targetUrl = els.activeLinkInput ? els.activeLinkInput.value : "";
+
+    if (!targetUrl) return;
+
+    persistSearchContext(data);
+    trackTransportEvent(els, data, "transport_region_click");
     redirectToTarget(targetUrl);
   }
 
@@ -823,8 +955,23 @@
       }
 
       if (!btn || btn === els.subtabsWrap) return;
-
       setActiveSubtab(els, state, getAttr(btn, "data-transport-subtab"), btn);
+    });
+  }
+
+  function bindRegionEvents(els, state) {
+    if (!els.regionGrid) return;
+
+    on(els.regionGrid, "click", function (e) {
+      var target = e.target || e.srcElement;
+      var btn = target;
+
+      while (btn && btn !== els.regionGrid && !hasClass(btn, "transport-region-btn")) {
+        btn = btn.parentNode;
+      }
+
+      if (!btn || btn === els.regionGrid) return;
+      handleRegionClick(els, state, btn);
     });
   }
 
@@ -839,25 +986,37 @@
   function bindMoreMenuEvents(els, state) {
     var i;
 
+    function openMenu() {
+      clearMoreCloseTimer(state);
+      setMenuOpen(els, state, true);
+    }
+
+    function scheduleClose() {
+      clearMoreCloseTimer(state);
+      state.moreCloseTimer = WIN.setTimeout(function () {
+        setMenuOpen(els, state, false);
+      }, DEFAULTS.moreCloseDelay);
+    }
+
     if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
+
+    on(els.moreToggle, "mouseenter", openMenu);
+    on(els.moreToggle, "focus", openMenu);
+    on(els.moreMenu, "mouseenter", openMenu);
+    on(els.moreMenu, "focusin", openMenu);
+
+    on(els.moreToggle, "mouseleave", scheduleClose);
+    on(els.moreMenu, "mouseleave", scheduleClose);
+    on(els.moreWrap, "mouseenter", openMenu);
+    on(els.moreWrap, "mouseleave", scheduleClose);
 
     on(els.moreToggle, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
+      clearMoreCloseTimer(state);
       setMenuOpen(els, state, !state.moreOpen);
     });
 
-    on(els.moreWrap, "mouseenter", function () {
-      setMenuOpen(els, state, true);
-    });
-
-    on(els.moreWrap, "mouseleave", function () {
-      setMenuOpen(els, state, false);
-    });
-
-    on(els.moreWrap, "focusin", function () {
-      setMenuOpen(els, state, true);
-    });
-
+    on(els.moreWrap, "focusin", openMenu);
     on(els.moreWrap, "focusout", function () {
       WIN.setTimeout(function () {
         var active = DOC.activeElement;
@@ -870,6 +1029,7 @@
     on(DOC, "click", function (e) {
       var target = e.target || e.srcElement;
       if (!els.moreWrap.contains || !els.moreWrap.contains(target)) {
+        clearMoreCloseTimer(state);
         setMenuOpen(els, state, false);
       }
     });
@@ -883,6 +1043,7 @@
 
           if (!tabKey) return;
 
+          clearMoreCloseTimer(state);
           setActiveTab(els, state, tabKey, null, link, subid);
           setMenuOpen(els, state, false);
         });
@@ -913,12 +1074,12 @@
     if (els.form.getAttribute(DEFAULTS.boundAttr) === "1") return;
 
     els.form.setAttribute(DEFAULTS.boundAttr, "1");
-
     state = createState();
 
     applyInitialDefaults(els, state);
     bindTabEvents(els, state);
     bindSubtabEvents(els, state);
+    bindRegionEvents(els, state);
     bindMoreMenuEvents(els, state);
     bindSubmitEvents(els);
   }
