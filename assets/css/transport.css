@@ -6,6 +6,8 @@
    - Compact booking-style widget
    - Stronger visual hierarchy and cleaner conversion UX
    - Uses TripGuidely brand colors instead of Klook orange
+   - Supports overflow menu tabs (ferries / cruises / metro)
+   - Supports region-grid layouts for ferries and cruises
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -138,6 +140,7 @@ body[data-page="transport-hub"] .transport-tabs{
   margin:0;
   position:relative;
   z-index:2;
+  overflow:visible;
 }
 
 body[data-page="transport-hub"] .transport-tab{
@@ -187,9 +190,84 @@ body[data-page="transport-hub"] .transport-tab__icon{
 }
 
 body[data-page="transport-hub"] .transport-tab--more{
-  pointer-events:none;
-  opacity:.9;
+  pointer-events:auto;
+  opacity:1;
   padding-inline:14px;
+  min-width:54px;
+  justify-content:center;
+}
+
+body[data-page="transport-hub"] .transport-tab--overflow[hidden]{
+  display:none !important;
+}
+
+body[data-page="transport-hub"] .transport-tab--overflow{
+  background:#ffffff;
+  color:var(--transport-brand-2);
+  position:relative;
+  z-index:3;
+  box-shadow:
+    0 -6px 20px rgba(2,6,23,.04),
+    inset 0 3px 0 rgba(18,207,208,.95);
+}
+
+/* overflow / more menu */
+
+body[data-page="transport-hub"] .transport-more{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+}
+
+body[data-page="transport-hub"] .transport-more__menu{
+  position:absolute;
+  top:100%;
+  right:0;
+  margin-top:10px;
+  min-width:270px;
+  border:1px solid var(--transport-line);
+  background:rgba(255,255,255,.98);
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(2,6,23,.14);
+  padding:10px;
+  z-index:20;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+}
+
+body[data-page="transport-hub"] .transport-more__item{
+  width:100%;
+  appearance:none;
+  border:0;
+  background:none;
+  text-align:left;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 14px;
+  border-radius:14px;
+  color:#475569;
+  font-weight:800;
+  cursor:pointer;
+  transition:background .14s ease, color .14s ease;
+}
+
+body[data-page="transport-hub"] .transport-more__item:hover{
+  background:rgba(15,23,42,.05);
+  color:#111827;
+}
+
+body[data-page="transport-hub"] .transport-more__item.is-current{
+  background:rgba(18,207,208,.10);
+  color:var(--transport-brand-2);
+}
+
+body[data-page="transport-hub"] .transport-more__icon{
+  font-size:1rem;
+  line-height:1;
+  width:18px;
+  text-align:center;
+  flex:0 0 18px;
 }
 
 /* --------------------------------------------------------------------------
@@ -331,6 +409,41 @@ body[data-page="transport-hub"] .transport-submit:hover{
 
 body[data-page="transport-hub"] .transport-submit .pill{
   display:none;
+}
+
+/* region grids for ferries / cruises */
+
+body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4{
+  grid-template-columns:repeat(4, minmax(0,1fr));
+}
+
+body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4 .transport-submit,
+body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3 .transport-submit{
+  display:none;
+}
+
+body[data-page="transport-hub"] .transport-region-btn{
+  appearance:none;
+  border:1px solid var(--transport-line);
+  background:var(--transport-soft);
+  border-radius:16px;
+  padding:18px 16px;
+  text-align:center;
+  font-weight:800;
+  color:#111827;
+  cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+  transition:background .14s ease, transform .14s ease, border-color .14s ease;
+}
+
+body[data-page="transport-hub"] .transport-region-btn:hover{
+  background:#ffffff;
+  border-color:rgba(18,207,208,.24);
+  transform:translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -546,6 +659,14 @@ body[data-page="transport-hub"] .transport-aff-item{
   body[data-page="transport-hub"] .transport-meta.transport-meta--klook{
     grid-template-columns:1fr;
   }
+
+  body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+
+  body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
+    grid-template-columns:1fr;
+  }
 }
 
 @media (max-width: 980px){
@@ -601,8 +722,19 @@ body[data-page="transport-hub"] .transport-aff-item{
     justify-content:center;
   }
 
-  body[data-page="transport-hub"] .transport-tab.is-active{
+  body[data-page="transport-hub"] .transport-tab.is-active,
+  body[data-page="transport-hub"] .transport-tab--overflow{
     box-shadow:0 12px 24px rgba(2,6,23,.08);
+  }
+
+  body[data-page="transport-hub"] .transport-more{
+    grid-column:1 / -1;
+  }
+
+  body[data-page="transport-hub"] .transport-more__menu{
+    right:auto;
+    left:0;
+    width:min(100%, 320px);
   }
 
   body[data-page="transport-hub"] .transport-panel{
@@ -619,6 +751,11 @@ body[data-page="transport-hub"] .transport-aff-item{
   body[data-page="transport-hub"] .transport-grid.transport-grid--klook{
     grid-template-columns:1fr;
     gap:10px;
+  }
+
+  body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-4,
+  body[data-page="transport-hub"] .transport-grid.transport-grid--klook.transport-grid--regions-3{
+    grid-template-columns:1fr;
   }
 
   body[data-page="transport-hub"] .transport-field--card{
