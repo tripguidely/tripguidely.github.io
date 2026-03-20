@@ -22,7 +22,7 @@
     storageKey: "tg_transport_search_context",
     boundAttr: "data-transport-bound",
     defaultDepartureOffsetDays: 30,
-    moreCloseDelay: 120
+    moreCloseDelay: 180
   };
 
   var HERO_IMAGES = {
@@ -376,6 +376,16 @@
       .replace(/&/g, "and")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
+  }
+
+  function containsNode(parent, child) {
+    if (!parent || !child) return false;
+    if (parent.contains) return parent.contains(child);
+    while (child) {
+      if (child === parent) return true;
+      child = child.parentNode;
+    }
+    return false;
   }
 
   function getTransportElements() {
@@ -1000,15 +1010,15 @@
 
     if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
 
-    on(els.moreToggle, "mouseenter", openMenu);
-    on(els.moreToggle, "focus", openMenu);
-    on(els.moreMenu, "mouseenter", openMenu);
-    on(els.moreMenu, "focusin", openMenu);
-
-    on(els.moreToggle, "mouseleave", scheduleClose);
-    on(els.moreMenu, "mouseleave", scheduleClose);
     on(els.moreWrap, "mouseenter", openMenu);
     on(els.moreWrap, "mouseleave", scheduleClose);
+
+    on(els.moreToggle, "mouseenter", openMenu);
+    on(els.moreToggle, "focus", openMenu);
+
+    on(els.moreMenu, "mouseenter", openMenu);
+    on(els.moreMenu, "mouseleave", scheduleClose);
+    on(els.moreMenu, "focusin", openMenu);
 
     on(els.moreToggle, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
@@ -1020,7 +1030,7 @@
     on(els.moreWrap, "focusout", function () {
       WIN.setTimeout(function () {
         var active = DOC.activeElement;
-        if (!active || !els.moreWrap.contains || !els.moreWrap.contains(active)) {
+        if (!active || !containsNode(els.moreWrap, active)) {
           setMenuOpen(els, state, false);
         }
       }, 0);
@@ -1028,7 +1038,7 @@
 
     on(DOC, "click", function (e) {
       var target = e.target || e.srcElement;
-      if (!els.moreWrap.contains || !els.moreWrap.contains(target)) {
+      if (!containsNode(els.moreWrap, target)) {
         clearMoreCloseTimer(state);
         setMenuOpen(els, state, false);
       }
