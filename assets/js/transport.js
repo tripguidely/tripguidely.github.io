@@ -388,6 +388,16 @@
     return false;
   }
 
+  function getRelatedTarget(e) {
+    if (!e) return null;
+    return e.relatedTarget || e.toElement || e.fromElement || null;
+  }
+
+  function isLeavingContainer(container, e) {
+    var related = getRelatedTarget(e);
+    return !containsNode(container, related);
+  }
+
   function getTransportElements() {
     return {
       form: DOC.getElementById("transport-search-form"),
@@ -732,10 +742,12 @@
 
     if (state.moreOpen) {
       addClass(els.moreWrap, "is-open");
-      show(els.moreMenu);
+      els.moreMenu.hidden = false;
+      els.moreMenu.style.display = "block";
     } else {
       removeClass(els.moreWrap, "is-open");
-      hide(els.moreMenu);
+      els.moreMenu.hidden = true;
+      els.moreMenu.style.display = "none";
     }
   }
 
@@ -1001,6 +1013,11 @@
       setMenuOpen(els, state, true);
     }
 
+    function closeMenuNow() {
+      clearMoreCloseTimer(state);
+      setMenuOpen(els, state, false);
+    }
+
     function scheduleClose() {
       clearMoreCloseTimer(state);
       state.moreCloseTimer = WIN.setTimeout(function () {
@@ -1010,28 +1027,40 @@
 
     if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
 
-    on(els.moreWrap, "mouseenter", openMenu);
-    on(els.moreWrap, "mouseleave", scheduleClose);
+    on(els.moreWrap, "mouseover", function () {
+      openMenu();
+    });
 
-    on(els.moreToggle, "mouseenter", openMenu);
-    on(els.moreToggle, "focus", openMenu);
+    on(els.moreWrap, "mouseout", function (e) {
+      if (isLeavingContainer(els.moreWrap, e)) {
+        scheduleClose();
+      }
+    });
 
-    on(els.moreMenu, "mouseenter", openMenu);
-    on(els.moreMenu, "mouseleave", scheduleClose);
-    on(els.moreMenu, "focusin", openMenu);
+    on(els.moreToggle, "focus", function () {
+      openMenu();
+    });
+
+    on(els.moreMenu, "focusin", function () {
+      openMenu();
+    });
 
     on(els.moreToggle, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
+      if (e && e.stopPropagation) e.stopPropagation();
       clearMoreCloseTimer(state);
       setMenuOpen(els, state, !state.moreOpen);
     });
 
-    on(els.moreWrap, "focusin", openMenu);
+    on(els.moreWrap, "focusin", function () {
+      openMenu();
+    });
+
     on(els.moreWrap, "focusout", function () {
       WIN.setTimeout(function () {
         var active = DOC.activeElement;
         if (!active || !containsNode(els.moreWrap, active)) {
-          setMenuOpen(els, state, false);
+          closeMenuNow();
         }
       }, 0);
     });
@@ -1039,23 +1068,25 @@
     on(DOC, "click", function (e) {
       var target = e.target || e.srcElement;
       if (!containsNode(els.moreWrap, target)) {
-        clearMoreCloseTimer(state);
-        setMenuOpen(els, state, false);
+        closeMenuNow();
       }
     });
 
     for (i = 0; i < els.moreItems.length; i++) {
       (function (item) {
-        on(item, "click", function () {
+        on(item, "click", function (e) {
           var tabKey = getAttr(item, "data-transport-tab");
           var link = getAttr(item, "data-transport-link");
           var subid = getAttr(item, "data-transport-subid");
+
+          if (e && e.preventDefault) e.preventDefault();
+          if (e && e.stopPropagation) e.stopPropagation();
 
           if (!tabKey) return;
 
           clearMoreCloseTimer(state);
           setActiveTab(els, state, tabKey, null, link, subid);
-          setMenuOpen(els, state, false);
+          closeMenuNow();
         });
       })(els.moreItems[i]);
     }
@@ -1092,6 +1123,8 @@
     bindRegionEvents(els, state);
     bindMoreMenuEvents(els, state);
     bindSubmitEvents(els);
+
+    setMenuOpen(els, state, false);
   }
 
   WIN.initTransportSearch = initTransportSearch;
