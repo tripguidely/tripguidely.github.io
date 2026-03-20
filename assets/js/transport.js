@@ -4,10 +4,10 @@
    - Keeps Trains / Rail passes / Car rentals / Airport transfers as form tabs
    - Uses Klook-style region buttons for Airport trains & buses / Ferries /
      Cruises / Metro passes & cards
-   - Opens "..." on HOVER + CLICK
+   - Opens "..." on hover + click
    - Keeps overflow tab visually active for overflow categories
    - Redirects every form submit and region click to the correct affiliate link
-   - Switches hero image by active tab
+   - Switches hero image by active tab using uploaded responsive images
    - Safe for older browsers
    ========================================================================== */
 
@@ -26,14 +26,46 @@
   };
 
   var HERO_IMAGES = {
-    "trains": "/assets/images/hero/transport/transport-trains-1600x900.webp",
-    "rail-passes": "/assets/images/hero/transport/transport-rail-passes-1600x900.webp",
-    "car-rentals": "/assets/images/hero/transport/transport-car-rentals-1600x900.webp",
-    "airport-transfers": "/assets/images/hero/transport/transport-airport-transfers-1600x900.webp",
-    "airport-trains-buses": "/assets/images/hero/transport/transport-airport-trains-buses-1600x900.webp",
-    "ferries": "/assets/images/hero/transport/transport-ferries-1600x900.webp",
-    "cruises": "/assets/images/hero/transport/transport-cruises-1600x900.webp",
-    "metro-passes": "/assets/images/hero/transport/transport-metro-passes-1600x900.webp"
+    "trains": {
+      src: "/assets/images/transport/transport-trains-japan-shinkansen-mount-fuji-1600x900.webp",
+      srcset: "/assets/images/transport/transport-trains-japan-shinkansen-mount-fuji-800x450.webp 800w, /assets/images/transport/transport-trains-japan-shinkansen-mount-fuji-1600x900.webp 1600w, /assets/images/transport/transport-trains-japan-shinkansen-mount-fuji-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "rail-passes": {
+      src: "/assets/images/transport/transport-rail-passes-switzerland-panoramic-train-alps-1600x900.webp",
+      srcset: "/assets/images/transport/transport-rail-passes-switzerland-panoramic-train-alps-800x450.webp 800w, /assets/images/transport/transport-rail-passes-switzerland-panoramic-train-alps-1600x900.webp 1600w, /assets/images/transport/transport-rail-passes-switzerland-panoramic-train-alps-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "car-rentals": {
+      src: "/assets/images/transport/transport-car-rentals-bmw-coastal-road-1600x900.webp",
+      srcset: "/assets/images/transport/transport-car-rentals-bmw-coastal-road-800x450.webp 800w, /assets/images/transport/transport-car-rentals-bmw-coastal-road-1600x900.webp 1600w, /assets/images/transport/transport-car-rentals-bmw-coastal-road-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "airport-transfers": {
+      src: "/assets/images/transport/transport-airport-transfers-driver-luggage-terminal-1600x900.webp",
+      srcset: "/assets/images/transport/transport-airport-transfers-driver-luggage-terminal-800x450.webp 800w, /assets/images/transport/transport-airport-transfers-driver-luggage-terminal-1600x900.webp 1600w, /assets/images/transport/transport-airport-transfers-driver-luggage-terminal-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "airport-trains-buses": {
+      src: "/assets/images/transport/transport-airport-train-terminal-passengers-1600x900.webp",
+      srcset: "/assets/images/transport/transport-airport-train-terminal-passengers-800x450.webp 800w, /assets/images/transport/transport-airport-train-terminal-passengers-1600x900.webp 1600w, /assets/images/transport/transport-airport-train-terminal-passengers-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "ferries": {
+      src: "/assets/images/transport/transport-ferries-coastal-passenger-ferry-1600x900.webp",
+      srcset: "/assets/images/transport/transport-ferries-coastal-passenger-ferry-800x450.webp 800w, /assets/images/transport/transport-ferries-coastal-passenger-ferry-1600x900.webp 1600w, /assets/images/transport/transport-ferries-coastal-passenger-ferry-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "cruises": {
+      src: "/assets/images/transport/transport-cruises-ocean-cruise-ship-1600x900.webp",
+      srcset: "/assets/images/transport/transport-cruises-ocean-cruise-ship-800x450.webp 800w, /assets/images/transport/transport-cruises-ocean-cruise-ship-1600x900.webp 1600w, /assets/images/transport/transport-cruises-ocean-cruise-ship-2400x1350.webp 2400w",
+      sizes: "100vw"
+    },
+    "metro-passes": {
+      src: "/assets/images/transport/transport-airport-train-terminal-passengers-1600x900.webp",
+      srcset: "/assets/images/transport/transport-airport-train-terminal-passengers-800x450.webp 800w, /assets/images/transport/transport-airport-train-terminal-passengers-1600x900.webp 1600w, /assets/images/transport/transport-airport-train-terminal-passengers-2400x1350.webp 2400w",
+      sizes: "100vw"
+    }
   };
 
   var TAB_CONFIG = {
@@ -79,7 +111,7 @@
           copy: "Compare European train routes for cross-border trips, city connections, and rail-first itineraries.",
           h1: "Useful for international rail planning",
           h2: "Better for cross-border city routes",
-          h3: "Fast redirect to the relevant train booking category",
+          h3: "Fast redirect to the relevant booking category",
           destinationPlaceholder: "Paris, London, Rome, Amsterdam"
         },
         {
@@ -428,7 +460,7 @@
       destination: DOC.getElementById("transport-destination"),
       departure: DOC.getElementById("transport-start-date"),
       travelers: DOC.getElementById("transport-travelers"),
-      heroImage: DOC.querySelector(".hero-bg img"),
+      heroImage: DOC.getElementById("transport-hero-image") || DOC.querySelector(".hero-bg img"),
       destinationField: DOC.querySelector('label[for="transport-destination"]'),
       departureField: DOC.querySelector('label[for="transport-start-date"]'),
       travelersField: DOC.querySelector('label[for="transport-travelers"]'),
@@ -467,7 +499,7 @@
     if (!selectEl || !options || !options.length) return;
 
     for (i = 0; i < options.length; i++) {
-      html += '<option value="' + options[i].value + '"' + (String(options[i].value) === String(selectedValue) ? ' selected' : '') + '>' + options[i].label + '</option>';
+      html += '<option value="' + options[i].value + '"' + (String(options[i].value) === String(selectedValue) ? ' selected' : '') + '>' + options[i].label + "</option>";
     }
 
     selectEl.innerHTML = html;
@@ -483,10 +515,20 @@
   }
 
   function setHeroImage(els, tabKey) {
-    var src = HERO_IMAGES[tabKey];
-    if (!els.heroImage || !src) return;
-    if (els.heroImage.getAttribute("src") !== src) {
-      els.heroImage.setAttribute("src", src);
+    var hero = HERO_IMAGES[tabKey];
+
+    if (!els.heroImage || !hero) return;
+
+    if (hero.src && els.heroImage.getAttribute("src") !== hero.src) {
+      els.heroImage.setAttribute("src", hero.src);
+    }
+
+    if (hero.srcset) {
+      els.heroImage.setAttribute("srcset", hero.srcset);
+    }
+
+    if (hero.sizes) {
+      els.heroImage.setAttribute("sizes", hero.sizes);
     }
   }
 
