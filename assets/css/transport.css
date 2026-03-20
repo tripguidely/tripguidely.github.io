@@ -1,13 +1,7 @@
 /* ==========================================================================
-   TripGuidely — transport widget REFINEMENT PATCH (FINAL + Klook overlay fix)
-   Goal:
-   - Keep the premium Klook-like shell
-   - Restore strong colored CTA/search buttons
-   - Remove the small turquoise/blue seam lines between tabs
-   - Make the "..." menu open OVER the widget like Klook
-   - Keep overflow / region buttons polished
-   - Better active tab treatment
-   - Drop this AFTER your current transport.css
+   TripGuidely — transport widget REFINEMENT PATCH
+   FINAL — no mouse scroll + proper ... overlay + remove scope pill
+   Drop this AFTER your current transport.css
    ========================================================================== */
 
 body[data-page="transport-hub"]{
@@ -70,6 +64,7 @@ body[data-page="transport-hub"] .transport-search{
   position: relative;
   padding: 14px;
   overflow: visible !important;
+  isolation: isolate;
 }
 
 /* --------------------------------------------------------------------------
@@ -78,8 +73,8 @@ body[data-page="transport-hub"] .transport-search{
 
 body[data-page="transport-hub"] .transport-topbar{
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-end;
+  gap: 0;
   margin: 0 0 18px;
   padding-left: 2px;
 }
@@ -94,27 +89,9 @@ body[data-page="transport-hub"] .transport-topbar__title{
   text-shadow: 0 16px 34px rgba(0,0,0,.22);
 }
 
+/* remove Around the world pill */
 body[data-page="transport-hub"] .transport-topbar__scope{
-  appearance: none;
-  border: 0;
-  background: #ffffff;
-  color: #1f2937;
-  font-weight: 900;
-  font-size: 1rem;
-  line-height: 1;
-  border-radius: 999px;
-  padding: 14px 18px;
-  box-shadow: 0 12px 28px rgba(2,6,23,.12);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-
-body[data-page="transport-hub"] .transport-topbar__scope:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(2,6,23,.15);
+  display: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -128,9 +105,8 @@ body[data-page="transport-hub"] .transport-tabs{
   gap: 0;
   margin: 0;
   position: relative;
-  z-index: 20;
-  overflow-x: auto;
-  overflow-y: visible !important;
+  z-index: 40;
+  overflow: visible !important;   /* was auto */
   scrollbar-width: none;
   background: linear-gradient(180deg, rgba(242,244,247,.98), rgba(236,239,243,.98));
   border: 1px solid var(--transport-tab-rail);
@@ -165,6 +141,7 @@ body[data-page="transport-hub"] .transport-tab{
   margin: 0;
   box-shadow: none;
   white-space: nowrap;
+  flex: 0 0 auto;
   transition:
     color .16s ease,
     background .16s ease,
@@ -243,22 +220,8 @@ body[data-page="transport-hub"] .transport-tab__text{
   display: inline-block;
 }
 
-body[data-page="transport-hub"] .transport-tab--more{
-  min-width: 58px;
-  justify-content: center;
-  padding-inline: 16px;
-  font-size: 1.1rem;
-  position: relative;
-  z-index: 91;
-}
-
-body[data-page="transport-hub"] .transport-more.is-open .transport-tab--more{
-  background: rgba(255,255,255,.96);
-  color: #111827;
-}
-
 /* --------------------------------------------------------------------------
-   MORE MENU
+   MORE BUTTON / MENU
    -------------------------------------------------------------------------- */
 
 body[data-page="transport-hub"] .transport-more{
@@ -266,7 +229,8 @@ body[data-page="transport-hub"] .transport-more{
   display: flex;
   align-items: stretch;
   flex: 0 0 auto;
-  z-index: 90;
+  margin-left: auto;              /* keeps ... on the right */
+  z-index: 120;
   overflow: visible !important;
 }
 
@@ -274,8 +238,23 @@ body[data-page="transport-hub"] .transport-more::after{
   content: none !important;
 }
 
+body[data-page="transport-hub"] .transport-tab--more{
+  min-width: 68px;
+  justify-content: center;
+  padding-inline: 16px;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 121;
+  border-right: 0;
+}
+
+body[data-page="transport-hub"] .transport-more.is-open .transport-tab--more{
+  background: rgba(255,255,255,.98);
+  color: #111827;
+  box-shadow: var(--transport-tab-active-shadow);
+}
+
 body[data-page="transport-hub"] .transport-more__menu{
-  display: none;
   position: absolute;
   top: calc(100% - 8px) !important;
   right: 0;
@@ -288,9 +267,25 @@ body[data-page="transport-hub"] .transport-more__menu{
     0 24px 60px rgba(2,6,23,.16),
     0 8px 20px rgba(2,6,23,.06);
   padding: 14px 12px;
-  z-index: 120 !important;
+  z-index: 999;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity .16s ease,
+    transform .16s ease,
+    visibility .16s ease;
+}
+
+body[data-page="transport-hub"] .transport-more.is-open .transport-more__menu{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 body[data-page="transport-hub"] .transport-more__menu::before{
@@ -758,11 +753,6 @@ body[data-page="transport-hub"] .transport-benefit__body span{
     font-size: 2.25rem;
   }
 
-  body[data-page="transport-hub"] .transport-topbar__scope{
-    padding: 12px 16px;
-    font-size: .95rem;
-  }
-
   body[data-page="transport-hub"] .transport-search{
     padding: 12px;
   }
@@ -807,6 +797,7 @@ body[data-page="transport-hub"] .transport-benefit__body span{
 
   body[data-page="transport-hub"] .transport-more{
     grid-column: 1 / -1;
+    margin-left: 0;
   }
 
   body[data-page="transport-hub"] .transport-more__menu{
