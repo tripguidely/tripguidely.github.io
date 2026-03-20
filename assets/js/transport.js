@@ -4,7 +4,7 @@
    - Keeps Trains / Rail passes / Car rentals / Airport transfers as form tabs
    - Uses Klook-style region buttons for Airport trains & buses / Ferries /
      Cruises / Metro passes & cards
-   - Opens "..." on hover / focus / click
+   - Opens "..." on CLICK only (no hover, no mouse-scroll dependency)
    - Keeps overflow tab visually active for overflow categories
    - Redirects every form submit and region click to the correct affiliate link
    - Switches hero image by active tab
@@ -21,8 +21,7 @@
     initialTrainMarket: "japan",
     storageKey: "tg_transport_search_context",
     boundAttr: "data-transport-bound",
-    defaultDepartureOffsetDays: 30,
-    moreCloseDelay: 180
+    defaultDepartureOffsetDays: 30
   };
 
   var HERO_IMAGES = {
@@ -79,7 +78,7 @@
           copy: "Compare European train routes for cross-border trips, city connections, and rail-first itineraries.",
           h1: "Useful for international rail planning",
           h2: "Better for cross-border city routes",
-          h3: "Fast redirect to the relevant booking category",
+          h3: "Fast redirect to the relevant train booking category",
           destinationPlaceholder: "Paris, London, Rome, Amsterdam"
         },
         {
@@ -388,14 +387,9 @@
     return false;
   }
 
-  function getRelatedTarget(e) {
-    if (!e) return null;
-    return e.relatedTarget || e.toElement || e.fromElement || null;
-  }
-
-  function isLeavingContainer(container, e) {
-    var related = getRelatedTarget(e);
-    return !containsNode(container, related);
+  function getKeyCode(e) {
+    if (!e) return 0;
+    return e.keyCode || e.which || 0;
   }
 
   function getTransportElements() {
@@ -442,8 +436,7 @@
       activeSubtab: DEFAULTS.initialTrainMarket,
       activeRegion: "",
       activeRegionLabel: "",
-      moreOpen: false,
-      moreCloseTimer: null
+      moreOpen: false
     };
   }
 
@@ -727,13 +720,6 @@
     }
   }
 
-  function clearMoreCloseTimer(state) {
-    if (state.moreCloseTimer) {
-      WIN.clearTimeout(state.moreCloseTimer);
-      state.moreCloseTimer = null;
-    }
-  }
-
   function setMenuOpen(els, state, isOpen) {
     if (!els.moreMenu || !els.moreToggle || !els.moreWrap) return;
 
@@ -1009,71 +995,58 @@
     var i;
 
     function openMenu() {
-      clearMoreCloseTimer(state);
       setMenuOpen(els, state, true);
     }
 
-    function closeMenuNow() {
-      clearMoreCloseTimer(state);
+    function closeMenu() {
       setMenuOpen(els, state, false);
     }
 
-    function scheduleClose() {
-      clearMoreCloseTimer(state);
-      state.moreCloseTimer = WIN.setTimeout(function () {
-        setMenuOpen(els, state, false);
-      }, DEFAULTS.moreCloseDelay);
+    function toggleMenu() {
+      setMenuOpen(els, state, !state.moreOpen);
     }
 
     if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
 
-    on(els.moreWrap, "mouseover", function () {
-      openMenu();
-    });
-
-    on(els.moreWrap, "mouseout", function (e) {
-      if (isLeavingContainer(els.moreWrap, e)) {
-        scheduleClose();
-      }
-    });
-
-    on(els.moreToggle, "focus", function () {
-      openMenu();
-    });
-
-    on(els.moreMenu, "focusin", function () {
-      openMenu();
-    });
-
     on(els.moreToggle, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
       if (e && e.stopPropagation) e.stopPropagation();
-      clearMoreCloseTimer(state);
-      setMenuOpen(els, state, !state.moreOpen);
+      else if (e) e.cancelBubble = true;
+      toggleMenu();
     });
 
-    on(els.moreWrap, "focusin", function () {
-      openMenu();
+    on(els.moreToggle, "keydown", function (e) {
+      var code = getKeyCode(e);
+
+      if (code === 13 || code === 32) {
+        if (e && e.preventDefault) e.preventDefault();
+        toggleMenu();
+      } else if (code === 27) {
+        closeMenu();
+      } else if (code === 40) {
+        if (e && e.preventDefault) e.preventDefault();
+        openMenu();
+        if (els.moreItems.length && els.moreItems[0].focus) els.moreItems[0].focus();
+      }
     });
 
-    on(els.moreWrap, "focusout", function () {
-      WIN.setTimeout(function () {
-        var active = DOC.activeElement;
-        if (!active || !containsNode(els.moreWrap, active)) {
-          closeMenuNow();
-        }
-      }, 0);
+    on(els.moreMenu, "keydown", function (e) {
+      var code = getKeyCode(e);
+      if (code === 27) {
+        closeMenu();
+        if (els.moreToggle && els.moreToggle.focus) els.moreToggle.focus();
+      }
     });
 
     on(DOC, "click", function (e) {
       var target = e.target || e.srcElement;
       if (!containsNode(els.moreWrap, target)) {
-        closeMenuNow();
+        closeMenu();
       }
     });
 
     for (i = 0; i < els.moreItems.length; i++) {
-      (function (item) {
+      (function (item, index) {
         on(item, "click", function (e) {
           var tabKey = getAttr(item, "data-transport-tab");
           var link = getAttr(item, "data-transport-link");
@@ -1081,14 +1054,35 @@
 
           if (e && e.preventDefault) e.preventDefault();
           if (e && e.stopPropagation) e.stopPropagation();
+          else if (e) e.cancelBubble = true;
 
           if (!tabKey) return;
 
-          clearMoreCloseTimer(state);
           setActiveTab(els, state, tabKey, null, link, subid);
-          closeMenuNow();
+          closeMenu();
         });
-      })(els.moreItems[i]);
+
+        on(item, "keydown", function (e) {
+          var code = getKeyCode(e);
+          var nextIndex;
+          var prevIndex;
+
+          if (code === 40) {
+            if (e && e.preventDefault) e.preventDefault();
+            nextIndex = index + 1;
+            if (nextIndex >= els.moreItems.length) nextIndex = 0;
+            if (els.moreItems[nextIndex] && els.moreItems[nextIndex].focus) els.moreItems[nextIndex].focus();
+          } else if (code === 38) {
+            if (e && e.preventDefault) e.preventDefault();
+            prevIndex = index - 1;
+            if (prevIndex < 0) prevIndex = els.moreItems.length - 1;
+            if (els.moreItems[prevIndex] && els.moreItems[prevIndex].focus) els.moreItems[prevIndex].focus();
+          } else if (code === 27) {
+            closeMenu();
+            if (els.moreToggle && els.moreToggle.focus) els.moreToggle.focus();
+          }
+        });
+      })(els.moreItems[i], i);
     }
   }
 
