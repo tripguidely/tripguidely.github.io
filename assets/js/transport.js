@@ -4,7 +4,7 @@
    - Keeps Trains / Rail passes / Car rentals / Airport transfers as form tabs
    - Uses Klook-style region buttons for Airport trains & buses / Ferries /
      Cruises / Metro passes & cards
-   - Opens "..." on CLICK only (no hover, no mouse-scroll dependency)
+   - Opens "..." on HOVER + CLICK
    - Keeps overflow tab visually active for overflow categories
    - Redirects every form submit and region click to the correct affiliate link
    - Switches hero image by active tab
@@ -21,7 +21,8 @@
     initialTrainMarket: "japan",
     storageKey: "tg_transport_search_context",
     boundAttr: "data-transport-bound",
-    defaultDepartureOffsetDays: 30
+    defaultDepartureOffsetDays: 30,
+    moreCloseDelay: 180
   };
 
   var HERO_IMAGES = {
@@ -387,6 +388,16 @@
     return false;
   }
 
+  function getRelatedTarget(e) {
+    if (!e) return null;
+    return e.relatedTarget || e.toElement || e.fromElement || null;
+  }
+
+  function isLeavingContainer(container, e) {
+    var related = getRelatedTarget(e);
+    return !containsNode(container, related);
+  }
+
   function getKeyCode(e) {
     if (!e) return 0;
     return e.keyCode || e.which || 0;
@@ -436,7 +447,8 @@
       activeSubtab: DEFAULTS.initialTrainMarket,
       activeRegion: "",
       activeRegionLabel: "",
-      moreOpen: false
+      moreOpen: false,
+      moreCloseTimer: null
     };
   }
 
@@ -720,6 +732,13 @@
     }
   }
 
+  function clearMoreCloseTimer(state) {
+    if (state.moreCloseTimer) {
+      WIN.clearTimeout(state.moreCloseTimer);
+      state.moreCloseTimer = null;
+    }
+  }
+
   function setMenuOpen(els, state, isOpen) {
     if (!els.moreMenu || !els.moreToggle || !els.moreWrap) return;
 
@@ -995,24 +1014,62 @@
     var i;
 
     function openMenu() {
+      clearMoreCloseTimer(state);
       setMenuOpen(els, state, true);
     }
 
-    function closeMenu() {
+    function closeMenuNow() {
+      clearMoreCloseTimer(state);
       setMenuOpen(els, state, false);
     }
 
-    function toggleMenu() {
-      setMenuOpen(els, state, !state.moreOpen);
+    function scheduleClose() {
+      clearMoreCloseTimer(state);
+      state.moreCloseTimer = WIN.setTimeout(function () {
+        setMenuOpen(els, state, false);
+      }, DEFAULTS.moreCloseDelay);
     }
 
     if (!els.moreWrap || !els.moreToggle || !els.moreMenu) return;
+
+    on(els.moreWrap, "mouseover", function () {
+      openMenu();
+    });
+
+    on(els.moreWrap, "mouseout", function (e) {
+      if (isLeavingContainer(els.moreWrap, e)) {
+        scheduleClose();
+      }
+    });
+
+    on(els.moreToggle, "focus", function () {
+      openMenu();
+    });
+
+    on(els.moreWrap, "focusin", function () {
+      openMenu();
+    });
+
+    on(els.moreMenu, "focusin", function () {
+      openMenu();
+    });
+
+    on(els.moreWrap, "focusout", function () {
+      WIN.setTimeout(function () {
+        var active = DOC.activeElement;
+        if (!active || !containsNode(els.moreWrap, active)) {
+          closeMenuNow();
+        }
+      }, 0);
+    });
 
     on(els.moreToggle, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
       if (e && e.stopPropagation) e.stopPropagation();
       else if (e) e.cancelBubble = true;
-      toggleMenu();
+
+      clearMoreCloseTimer(state);
+      setMenuOpen(els, state, !state.moreOpen);
     });
 
     on(els.moreToggle, "keydown", function (e) {
@@ -1020,9 +1077,10 @@
 
       if (code === 13 || code === 32) {
         if (e && e.preventDefault) e.preventDefault();
-        toggleMenu();
+        clearMoreCloseTimer(state);
+        setMenuOpen(els, state, !state.moreOpen);
       } else if (code === 27) {
-        closeMenu();
+        closeMenuNow();
       } else if (code === 40) {
         if (e && e.preventDefault) e.preventDefault();
         openMenu();
@@ -1033,7 +1091,7 @@
     on(els.moreMenu, "keydown", function (e) {
       var code = getKeyCode(e);
       if (code === 27) {
-        closeMenu();
+        closeMenuNow();
         if (els.moreToggle && els.moreToggle.focus) els.moreToggle.focus();
       }
     });
@@ -1041,7 +1099,7 @@
     on(DOC, "click", function (e) {
       var target = e.target || e.srcElement;
       if (!containsNode(els.moreWrap, target)) {
-        closeMenu();
+        closeMenuNow();
       }
     });
 
@@ -1058,8 +1116,9 @@
 
           if (!tabKey) return;
 
+          clearMoreCloseTimer(state);
           setActiveTab(els, state, tabKey, null, link, subid);
-          closeMenu();
+          closeMenuNow();
         });
 
         on(item, "keydown", function (e) {
@@ -1078,7 +1137,7 @@
             if (prevIndex < 0) prevIndex = els.moreItems.length - 1;
             if (els.moreItems[prevIndex] && els.moreItems[prevIndex].focus) els.moreItems[prevIndex].focus();
           } else if (code === 27) {
-            closeMenu();
+            closeMenuNow();
             if (els.moreToggle && els.moreToggle.focus) els.moreToggle.focus();
           }
         });
