@@ -92,6 +92,7 @@
   <!-- JS -->
   <script defer src="/assets/js/site.js"></script>
   <script defer src="/assets/js/home-map.js"></script>
+  <script defer src="/assets/js/home.js"></script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -353,62 +354,268 @@
                   data-affiliate-base="https://kiwi.tpk.ro/3cZhdZwg"
                   data-subid="tg_home_flights_hero"
                   novalidate>
+
+                  <div class="flight-topline">
+                    <label class="flight-choice">
+                      <input
+                        type="radio"
+                        name="flight_trip_type"
+                        id="home-flight-trip-return"
+                        value="return"
+                        checked />
+                      <span class="dot"></span>
+                      <span>Return</span>
+                    </label>
+
+                    <label class="flight-choice">
+                      <input
+                        type="radio"
+                        name="flight_trip_type"
+                        id="home-flight-trip-oneway"
+                        value="one-way" />
+                      <span class="dot"></span>
+                      <span>One-way</span>
+                    </label>
+
+                    <label class="flight-choice">
+                      <input
+                        type="radio"
+                        name="flight_trip_type"
+                        id="home-flight-trip-multicity"
+                        value="multi-city" />
+                      <span class="dot"></span>
+                      <span>Multi-city</span>
+                    </label>
+
+                    <span class="flight-divider" aria-hidden="true"></span>
+
+                    <label class="flight-check">
+                      <input
+                        type="checkbox"
+                        name="flight_direct_only"
+                        id="home-flight-direct-only"
+                        value="1" />
+                      <span class="box"></span>
+                      <span>Direct</span>
+                    </label>
+                  </div>
+
                   <div class="hotel-search-grid">
+                    <button
+                      class="flight-swap"
+                      type="button"
+                      aria-label="Swap departure and destination"
+                      data-flight-swap>
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 7h11m0 0-3-3m3 3-3 3M17 17H6m0 0 3-3m-3 3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+
                     <label class="hotel-field">
-                      <span class="hotel-label">From</span>
-                      <input
-                        id="home-flight-from"
-                        name="from"
-                        type="text"
-                        placeholder="Departure city or airport"
-                        autocomplete="off"
-                        required
-                        class="hotel-control" />
+                      <span class="sr-only">Leaving from</span>
+                      <div class="flight-box">
+                        <div class="flight-copy">
+                          <span class="flight-title">Leaving from</span>
+                          <input
+                            id="home-flight-from"
+                            name="from"
+                            type="text"
+                            autocomplete="off"
+                            required
+                            class="hotel-control"
+                            style="border:none;box-shadow:none;padding:0;min-height:auto;background:transparent;" />
+                        </div>
+                      </div>
                     </label>
 
                     <label class="hotel-field">
-                      <span class="hotel-label">To</span>
-                      <input
-                        id="home-flight-to"
-                        name="to"
-                        type="text"
-                        placeholder="Destination city or airport"
-                        autocomplete="off"
-                        required
-                        class="hotel-control" />
+                      <span class="sr-only">Going to</span>
+                      <div class="flight-box">
+                        <div class="flight-copy">
+                          <span class="flight-title">Going to</span>
+                          <input
+                            id="home-flight-to"
+                            name="to"
+                            type="text"
+                            autocomplete="off"
+                            required
+                            class="hotel-control"
+                            style="border:none;box-shadow:none;padding:0;min-height:auto;background:transparent;" />
+                        </div>
+                      </div>
                     </label>
 
-                    <label class="hotel-field">
-                      <span class="hotel-label">Departure</span>
+                    <div class="hotel-field">
+                      <span class="sr-only">Travel dates</span>
+                      <button
+                        type="button"
+                        class="flight-box flight-date-trigger"
+                        data-flight-date-trigger>
+                        <div class="flight-date-split">
+                          <div class="flight-date-col">
+                            <span class="flight-title">Depart</span>
+                            <span class="flight-value" data-flight-depart-label>Mon, Mar 23</span>
+                          </div>
+                          <span class="flight-date-divider" aria-hidden="true"></span>
+                          <div class="flight-date-col">
+                            <span class="flight-title">Return</span>
+                            <span class="flight-value" data-flight-return-label>Wed, Mar 25</span>
+                          </div>
+                        </div>
+                      </button>
+
                       <input
                         id="home-flight-departure"
                         name="departure"
                         type="date"
                         required
                         lang="en"
-                        class="hotel-control" />
-                    </label>
+                        class="hotel-control"
+                        style="position:absolute;opacity:0;pointer-events:none;" />
 
-                    <label class="hotel-field">
-                      <span class="hotel-label">Return</span>
                       <input
                         id="home-flight-return"
                         name="return"
                         type="date"
                         lang="en"
-                        class="hotel-control" />
-                    </label>
+                        class="hotel-control"
+                        style="position:absolute;opacity:0;pointer-events:none;" />
+
+                      <div class="flight-date-popover" data-flight-date-popover hidden>
+                        <div class="flight-date-head">
+                          <div class="flight-date-title">Select flexible departure dates</div>
+
+                          <div class="flight-date-head-right">
+                            <button type="button" class="flight-date-mode active" data-flight-date-mode="depart">Depart</button>
+                            <button type="button" class="flight-date-mode" data-flight-date-mode="return">Return</button>
+
+                            <div class="flight-date-monthchips" aria-hidden="true">
+                              <button type="button">Mar</button>
+                              <button type="button">Apr</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="flight-date-body">
+                          <div class="flight-cal-wrap" data-flight-cal-wrap></div>
+                        </div>
+
+                        <div class="flight-date-footer">
+                          <div class="flight-date-note">Hover to show holidays</div>
+
+                          <div class="flight-date-summary">
+                            <strong data-flight-date-summary>Mon, Mar 23 — Wed, Mar 25</strong>
+                            <span>All dates are in local time</span>
+                          </div>
+
+                          <button
+                            type="button"
+                            class="flight-date-confirm"
+                            data-flight-date-confirm>
+                            Confirm departure date
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hotel-field">
+                      <span class="sr-only">Passengers and cabin</span>
+                      <button
+                        type="button"
+                        class="flight-box flight-box--travelers flight-travelers-trigger"
+                        data-flight-travelers-trigger>
+                        <span class="flight-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.761 0 5-2.462 5-5.5S14.761 1 12 1 7 3.462 7 6.5 9.239 12 12 12Zm0 2c-4.418 0-8 2.239-8 5v2h16v-2c0-2.761-3.582-5-8-5Z"></path>
+                          </svg>
+                        </span>
+
+                        <div class="flight-copy">
+                          <span class="flight-value" data-flight-travelers-text>1 adult · Economy</span>
+                        </div>
+
+                        <span class="flight-caret" aria-hidden="true"></span>
+                      </button>
+
+                      <div class="flight-travelers-popover" data-flight-travelers-popover hidden>
+                        <div class="flight-travelers-row" data-counter="adults" data-min="1" data-max="9">
+                          <div class="flight-travelers-copy">
+                            <strong>Adults</strong>
+                            <span>12+ years</span>
+                          </div>
+                          <div class="flight-counter">
+                            <button type="button" data-minus>-</button>
+                            <output>1</output>
+                            <input type="hidden" name="flight_adults" value="1" />
+                            <button type="button" data-plus>+</button>
+                          </div>
+                        </div>
+
+                        <div class="flight-travelers-row" data-counter="children" data-min="0" data-max="8">
+                          <div class="flight-travelers-copy">
+                            <strong>Children</strong>
+                            <span>2–11 years</span>
+                          </div>
+                          <div class="flight-counter">
+                            <button type="button" data-minus>-</button>
+                            <output>0</output>
+                            <input type="hidden" name="flight_children" value="0" />
+                            <button type="button" data-plus>+</button>
+                          </div>
+                        </div>
+
+                        <div class="flight-travelers-row" data-counter="infants" data-min="0" data-max="4">
+                          <div class="flight-travelers-copy">
+                            <strong>Infants</strong>
+                            <span>Under 2 years</span>
+                          </div>
+                          <div class="flight-counter">
+                            <button type="button" data-minus>-</button>
+                            <output>0</output>
+                            <input type="hidden" name="flight_infants" value="0" />
+                            <button type="button" data-plus>+</button>
+                          </div>
+                        </div>
+
+                        <div class="flight-cabin">
+                          <label for="home-flight-cabin">Cabin class</label>
+                          <select id="home-flight-cabin" name="flight_cabin" data-flight-cabin>
+                            <option value="Economy" selected>Economy</option>
+                            <option value="Premium Economy">Premium Economy</option>
+                            <option value="Business">Business</option>
+                            <option value="First">First</option>
+                          </select>
+                        </div>
+
+                        <div class="flight-travelers-actions">
+                          <button
+                            type="button"
+                            class="flight-travelers-apply"
+                            data-flight-travelers-apply>
+                            Apply
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flight-actions">
+                    <button
+                      class="flight-plus-hotel"
+                      type="button">
+                      Flight + Hotel
+                    </button>
 
                     <button
                       id="home-flight-search-submit"
                       class="btn primary hotel-submit"
                       type="submit">
-                      Compare Flights
+                      Search
                     </button>
                   </div>
 
                   <p style="margin:0;color:var(--muted2);font-size:.92rem;">
-                    Compare flight options faster, then check routes, prices, and timing with our flight partner.
+                    Compare flight options faster, then continue to our flight partner to check routes, prices, and timing.
                   </p>
                   <p style="margin:0;color:var(--muted2);font-size:.92rem;">
                     Still planning? <a href="/travel-guides/">Explore destination guides</a> or <a href="/transport/">open the transport hub</a>.
