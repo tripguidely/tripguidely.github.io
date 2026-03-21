@@ -147,7 +147,7 @@
             "name":"Which TripGuidely section should I start with?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Start with the planning layer that matches your next decision: attractions for things to do, hotels for area choice, transport for route planning, itineraries for trip structure, and eSIM guides for connectivity abroad."
+              "text":"Start with the section that matches your next decision: attractions for things to do, hotels for where to stay, transport for getting around, itineraries for trip planning, and eSIM guides for staying connected abroad."
             }
           },
           {
@@ -155,7 +155,7 @@
             "name":"Do TripGuidely guides help with choosing the best hotel area?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Yes. Our hotel guides focus on neighborhood fit, transport access, budget, trip style, and booking trade-offs so you can choose a more practical place to stay."
+              "text":"Yes. Our hotel guides focus on neighborhood fit, transport access, budget, trip style, and key booking differences so you can choose a place to stay more confidently."
             }
           },
           {
@@ -163,7 +163,7 @@
             "name":"Are TripGuidely guides focused on bookings or general inspiration?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"TripGuidely is built for practical trip planning. We focus on helping you compare options, reduce research time, and move toward better booking decisions with more confidence."
+              "text":"TripGuidely is built for practical trip planning. We focus on helping you compare options, save research time, and make better booking decisions with more confidence."
             }
           },
           {
@@ -205,87 +205,352 @@
           <p class="hero-tool-title">Plan smarter trips, faster.</p>
           <h1>Plan Smarter City Trips with Practical Travel Guides</h1>
           <p class="hero-tool-sub">
-            Compare hotel areas, attractions, transport, and itinerary trade-offs in one place so you can plan faster and book with more confidence.
+            Compare hotel areas, attractions, transport, and itinerary options in one place so you can plan faster and book with more confidence.
           </p>
 
           <div class="hero-tool-shell">
             <div class="hero-tool-pad">
-              <form
-                id="home-hotel-search-form"
-                class="js-aff"
-                data-aff="klook"
-                data-affiliate-base="https://klook.tpk.ro/ZiRVfSud"
-                data-subid="tg_home_hotels_hero"
-                novalidate>
-                <div class="hotel-search-grid">
-                  <label class="hotel-field">
-                    <span class="hotel-label">Where to?</span>
-                    <input
-                      id="home-hotel-destination"
-                      name="destination"
-                      type="text"
-                      placeholder="City, neighborhood, or hotel"
-                      autocomplete="off"
-                      required
-                      class="hotel-control" />
-                  </label>
 
-                  <label class="hotel-field">
-                    <span class="hotel-label">Check-in</span>
-                    <input
-                      id="home-hotel-checkin"
-                      name="checkin"
-                      type="date"
-                      required
-                      lang="en"
-                      class="hotel-control" />
-                  </label>
+              <div class="hero-tabs" role="tablist" aria-label="Trip planning tools">
+                <button
+                  class="hero-tab active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="hero-panel-hotels"
+                  id="hero-tab-hotels"
+                  data-tab="hotels">
+                  Hotels
+                </button>
+                <button
+                  class="hero-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="hero-panel-flights"
+                  id="hero-tab-flights"
+                  data-tab="flights"
+                  tabindex="-1">
+                  Flights
+                </button>
+                <button
+                  class="hero-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="hero-panel-transport"
+                  id="hero-tab-transport"
+                  data-tab="transport"
+                  tabindex="-1">
+                  Transport
+                </button>
+                <button
+                  class="hero-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="hero-panel-esim"
+                  id="hero-tab-esim"
+                  data-tab="esim"
+                  tabindex="-1">
+                  eSIM
+                </button>
+              </div>
 
-                  <label class="hotel-field">
-                    <span class="hotel-label">Check-out</span>
-                    <input
-                      id="home-hotel-checkout"
-                      name="checkout"
-                      type="date"
-                      required
-                      lang="en"
-                      class="hotel-control" />
-                  </label>
+              <div
+                class="hero-tab-panel active"
+                id="hero-panel-hotels"
+                role="tabpanel"
+                aria-labelledby="hero-tab-hotels"
+                data-panel="hotels">
+                <form
+                  id="home-hotel-search-form"
+                  class="js-aff"
+                  data-aff="klook"
+                  data-affiliate-base="https://klook.tpk.ro/ZiRVfSud"
+                  data-subid="tg_home_hotels_hero"
+                  novalidate>
+                  <div class="hotel-search-grid">
+                    <label class="hotel-field">
+                      <span class="hotel-label">Where to?</span>
+                      <input
+                        id="home-hotel-destination"
+                        name="destination"
+                        type="text"
+                        placeholder="City, neighborhood, or hotel"
+                        autocomplete="off"
+                        required
+                        class="hotel-control" />
+                    </label>
 
-                  <label class="hotel-field">
-                    <span class="hotel-label">Guests</span>
-                    <select
-                      id="home-hotel-guests"
-                      name="guests"
-                      lang="en"
-                      class="hotel-control">
-                      <option value="1">1 guest</option>
-                      <option value="2" selected>2 guests</option>
-                      <option value="3">3 guests</option>
-                      <option value="4">4 guests</option>
-                      <option value="5">5 guests</option>
-                      <option value="6">6+ guests</option>
-                    </select>
-                  </label>
+                    <label class="hotel-field">
+                      <span class="hotel-label">Check-in</span>
+                      <input
+                        id="home-hotel-checkin"
+                        name="checkin"
+                        type="date"
+                        required
+                        lang="en"
+                        class="hotel-control" />
+                    </label>
 
-                  <button
-                    id="home-hotel-search-submit"
-                    class="btn primary hotel-submit"
-                    type="submit">
-                    Search Hotels
-                  </button>
+                    <label class="hotel-field">
+                      <span class="hotel-label">Check-out</span>
+                      <input
+                        id="home-hotel-checkout"
+                        name="checkout"
+                        type="date"
+                        required
+                        lang="en"
+                        class="hotel-control" />
+                    </label>
+
+                    <label class="hotel-field">
+                      <span class="hotel-label">Guests</span>
+                      <select
+                        id="home-hotel-guests"
+                        name="guests"
+                        lang="en"
+                        class="hotel-control">
+                        <option value="1">1 guest</option>
+                        <option value="2" selected>2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6+ guests</option>
+                      </select>
+                    </label>
+
+                    <button
+                      id="home-hotel-search-submit"
+                      class="btn primary hotel-submit"
+                      type="submit">
+                      Search Hotels
+                    </button>
+                  </div>
+
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Start with the right area and dates, then continue to our hotel partner to compare deals.
+                  </p>
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Prefer to browse first? <a href="/travel-guides/">Explore Travel Guides</a> or <a href="/hotels/">open the hotels hub</a>.
+                  </p>
+                  <p id="home-hotel-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
+                </form>
+              </div>
+
+              <div
+                class="hero-tab-panel"
+                id="hero-panel-flights"
+                role="tabpanel"
+                aria-labelledby="hero-tab-flights"
+                hidden
+                data-panel="flights">
+                <form
+                  id="home-flight-search-form"
+                  class="js-aff"
+                  data-aff="kiwi"
+                  data-affiliate-base="https://kiwi.tpk.ro/3cZhdZwg"
+                  data-subid="tg_home_flights_hero"
+                  novalidate>
+                  <div class="hotel-search-grid">
+                    <label class="hotel-field">
+                      <span class="hotel-label">From</span>
+                      <input
+                        id="home-flight-from"
+                        name="from"
+                        type="text"
+                        placeholder="Departure city or airport"
+                        autocomplete="off"
+                        required
+                        class="hotel-control" />
+                    </label>
+
+                    <label class="hotel-field">
+                      <span class="hotel-label">To</span>
+                      <input
+                        id="home-flight-to"
+                        name="to"
+                        type="text"
+                        placeholder="Destination city or airport"
+                        autocomplete="off"
+                        required
+                        class="hotel-control" />
+                    </label>
+
+                    <label class="hotel-field">
+                      <span class="hotel-label">Departure</span>
+                      <input
+                        id="home-flight-departure"
+                        name="departure"
+                        type="date"
+                        required
+                        lang="en"
+                        class="hotel-control" />
+                    </label>
+
+                    <label class="hotel-field">
+                      <span class="hotel-label">Return</span>
+                      <input
+                        id="home-flight-return"
+                        name="return"
+                        type="date"
+                        lang="en"
+                        class="hotel-control" />
+                    </label>
+
+                    <button
+                      id="home-flight-search-submit"
+                      class="btn primary hotel-submit"
+                      type="submit">
+                      Compare Flights
+                    </button>
+                  </div>
+
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Compare flight options faster, then check routes, prices, and timing with our flight partner.
+                  </p>
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Still planning? <a href="/travel-guides/">Explore destination guides</a> or <a href="/transport/">open the transport hub</a>.
+                  </p>
+                  <p id="home-flight-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
+                </form>
+              </div>
+
+              <div
+                class="hero-tab-panel"
+                id="hero-panel-transport"
+                role="tabpanel"
+                aria-labelledby="hero-tab-transport"
+                hidden
+                data-panel="transport">
+                <div class="transport-quick-panel">
+                  <div class="cards" style="margin:0;">
+                    <a class="cat" href="/transport/">
+                      <strong>Compare Transport Options</strong>
+                      <span>Use the transport hub to compare trains, airport transfers, rail passes, ferries, cruises, car rentals, and metro cards.</span>
+                      <span class="tag"><i aria-hidden="true"></i> All transport types</span>
+                    </a>
+
+                    <a class="cat" href="/transport/">
+                      <strong>Airport Transfers</strong>
+                      <span>Start with airport-to-city planning, private pickup options, train links, and easier arrival choices.</span>
+                      <span class="tag"><i aria-hidden="true"></i> Airport to city</span>
+                    </a>
+
+                    <a class="cat" href="/transport/">
+                      <strong>Trains &amp; Rail Passes</strong>
+                      <span>Compare city-to-city routes, passes, and rail options when speed and flexibility matter most.</span>
+                      <span class="tag"><i aria-hidden="true"></i> Rail planning</span>
+                    </a>
+
+                    <a class="cat" href="/transport/">
+                      <strong>Metro &amp; Local Transport</strong>
+                      <span>Find city transport logic, airport trains, metro cards, and practical local travel shortcuts.</span>
+                      <span class="tag"><i aria-hidden="true"></i> Local transit</span>
+                    </a>
+                  </div>
+
+                  <div class="actions" aria-label="Transport shortcuts" style="margin-top:12px;">
+                    <a class="btn primary" href="/transport/">
+                      <span class="pill" aria-hidden="true">🚇</span>
+                      Open Transport Hub
+                    </a>
+                    <a class="btn" href="/transport/tokyo/">
+                      <span class="pill" aria-hidden="true">🇯🇵</span>
+                      Tokyo Transport
+                    </a>
+                    <a class="btn" href="/transport/rome/">
+                      <span class="pill" aria-hidden="true">🇮🇹</span>
+                      Rome Transport
+                    </a>
+                    <a class="btn" href="/transport/dubai/">
+                      <span class="pill" aria-hidden="true">🇦🇪</span>
+                      Dubai Transport
+                    </a>
+                  </div>
                 </div>
+              </div>
 
-                <p style="margin:0;color:var(--muted2);font-size:.92rem;">
-                  Start with the right area, dates, and trip context — then continue to our hotel partner to compare deals.
-                </p>
-                <p style="margin:0;color:var(--muted2);font-size:.92rem;">
-                  Prefer to browse first? <a href="/travel-guides/">Explore Travel Guides</a> or <a href="/hotels/">open the hotels hub</a>.
-                </p>
-                <p id="home-hotel-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
-              </form>
+              <div
+                class="hero-tab-panel"
+                id="hero-panel-esim"
+                role="tabpanel"
+                aria-labelledby="hero-tab-esim"
+                hidden
+                data-panel="esim">
+                <form
+                  id="home-esim-search-form"
+                  class="js-aff"
+                  data-aff="airalo"
+                  data-affiliate-base="https://airalo.tpk.ro/cJCrlmA8"
+                  data-subid="tg_home_esim_hero"
+                  novalidate>
+                  <div class="hotel-search-grid">
+                    <label class="hotel-field">
+                      <span class="hotel-label">Destination</span>
+                      <input
+                        id="home-esim-destination"
+                        name="destination"
+                        type="text"
+                        placeholder="Country or region"
+                        autocomplete="off"
+                        required
+                        class="hotel-control" />
+                    </label>
 
-              <div class="actions" aria-label="Secondary actions" style="margin-top:6px;">
+                    <label class="hotel-field">
+                      <span class="hotel-label">Trip length</span>
+                      <select
+                        id="home-esim-duration"
+                        name="duration"
+                        class="hotel-control">
+                        <option value="1-3">1–3 days</option>
+                        <option value="4-7" selected>4–7 days</option>
+                        <option value="8-14">8–14 days</option>
+                        <option value="15-30">15–30 days</option>
+                        <option value="30+">30+ days</option>
+                      </select>
+                    </label>
+
+                    <label class="hotel-field">
+                      <span class="hotel-label">Data use</span>
+                      <select
+                        id="home-esim-usage"
+                        name="usage"
+                        class="hotel-control">
+                        <option value="light">Light</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="heavy">Heavy</option>
+                      </select>
+                    </label>
+
+                    <div class="hotel-field">
+                      <span class="hotel-label">Best for</span>
+                      <div class="hotel-control" style="display:flex;align-items:center;">
+                        Reliable data abroad
+                      </div>
+                    </div>
+
+                    <button
+                      id="home-esim-search-submit"
+                      class="btn primary hotel-submit"
+                      type="submit">
+                      Compare eSIMs
+                    </button>
+                  </div>
+
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Compare travel eSIM options for your destination, then continue to our eSIM partner to choose the best plan.
+                  </p>
+                  <p style="margin:0;color:var(--muted2);font-size:.92rem;">
+                    Need setup help first? <a href="/esim/">Browse eSIM guides</a>.
+                  </p>
+                  <p id="home-esim-search-error" style="margin:0;min-height:1.4em;color:#b91c1c;font-size:.92rem;" aria-live="polite"></p>
+                </form>
+              </div>
+
+              <div class="actions" aria-label="Secondary actions" style="margin-top:12px;">
                 <a class="btn" href="/things-to-do/">
                   <span class="pill" aria-hidden="true">✨</span>
                   Explore Things to Do
@@ -294,15 +559,16 @@
                   <span class="pill" aria-hidden="true">🗺️</span>
                   Plan an Itinerary
                 </a>
-                <a class="btn" href="/transport/">
-                  <span class="pill" aria-hidden="true">🚇</span>
-                  Compare Transport
+                <a class="btn" href="/travel-guides/">
+                  <span class="pill" aria-hidden="true">📍</span>
+                  Browse Travel Guides
                 </a>
                 <a class="btn" href="/hotels/">
                   <span class="pill" aria-hidden="true">🏨</span>
                   Hotels Hub
                 </a>
               </div>
+
             </div>
           </div>
         </div>
@@ -317,37 +583,37 @@
             <section id="start-here" aria-label="Start here">
               <div class="section-title">
                 <h2>Start here</h2>
-                <p>Choose the planning layer you need, then go deeper into city pages and focused guides.</p>
+                <p>Start with what you need most, then dive into city pages and more detailed guides.</p>
               </div>
 
               <div class="cards">
                 <a class="cat" href="/things-to-do/">
                   <strong>Things to Do</strong>
-                  <span>Attractions, experiences, tickets, and city guides built around timing, priorities, and realistic trip flow.</span>
+                  <span>Attractions, experiences, tickets, and city guides built to help you plan your time more easily.</span>
                   <span class="tag"><i aria-hidden="true"></i> Attractions + tickets</span>
                 </a>
 
                 <a class="cat" href="/hotels/">
                   <strong>Hotels</strong>
-                  <span>City guides by area, budget, and travel style so you can choose faster and stay where the trip works better.</span>
+                  <span>City guides by area, budget, and travel style so you can choose faster and stay in the part of the city that fits your trip best.</span>
                   <span class="tag"><i aria-hidden="true"></i> Neighborhood fit</span>
                 </a>
 
                 <a class="cat" href="/itinerary/">
                   <strong>Itinerary</strong>
-                  <span>Structured trip plans for first-timers, short stays, rainy days, and realistic city-by-city route building.</span>
+                  <span>Practical trip plans for first-timers, short stays, rainy days, and smarter city-by-city planning.</span>
                   <span class="tag"><i aria-hidden="true"></i> Day-by-day flow</span>
                 </a>
 
                 <a class="cat" href="/transport/">
                   <strong>Transport</strong>
-                  <span>Airport transfers, city transport logic, rail comparisons, passes, and lower-friction arrival planning.</span>
+                  <span>Airport transfers, city transport tips, rail comparisons, passes, and easier arrival planning.</span>
                   <span class="tag"><i aria-hidden="true"></i> Airport + city routing</span>
                 </a>
 
                 <a class="cat" href="/esim/">
                   <strong>eSIM</strong>
-                  <span>Country guides, setup help, and quick compatibility support for travelers who want reliable data abroad.</span>
+                  <span>Country guides, setup help, and practical advice for travelers who want reliable data abroad.</span>
                   <span class="tag"><i aria-hidden="true"></i> Connectivity</span>
                 </a>
               </div>
@@ -356,7 +622,7 @@
             <section id="top-destinations" aria-label="Top destinations">
               <div class="section-title" style="margin-top:22px;">
                 <h2>Top destinations</h2>
-                <p>Jump straight into the most-used city attraction hubs, then branch into itinerary and transport pages.</p>
+                <p>Jump straight into our most popular city guides, then explore itinerary and transport pages from there.</p>
               </div>
 
               <ul class="cities-grid" aria-label="City hubs">
@@ -513,7 +779,7 @@
             <section id="popular-guides" aria-label="Popular travel planning guides">
               <div class="section-title" style="margin-top:22px;">
                 <h2>Popular travel planning guides</h2>
-                <p>Start with the most useful destination pages and planning guides across attractions, itineraries, transport, and hotels.</p>
+                <p>Start with some of our most useful destination pages and planning guides across attractions, itineraries, transport, and hotels.</p>
               </div>
 
               <div class="links" role="list" aria-label="Popular guide links">
@@ -629,21 +895,21 @@
 
             <section id="why-trust-tripguidely" aria-label="Why trust TripGuidely">
               <h2>Why trust TripGuidely</h2>
-              <p>TripGuidely focuses on practical trip planning for major cities, with guides organized around hotel area fit, route logic, transport choices, attraction timing, and realistic trade-offs rather than generic inspiration alone.</p>
-              <p>We regularly update key pages, show when important guides were last revised, and clearly disclose when affiliate links may generate a commission at no extra cost to you.</p>
+              <p>TripGuidely focuses on practical trip planning for major cities, with guides built around hotel areas, transport choices, attraction timing, and smarter booking decisions.</p>
+              <p>We regularly update key pages, show when important guides were last updated, and clearly disclose when affiliate links may earn us a commission at no extra cost to you.</p>
               <p><a href="/about/">Learn more about TripGuidely’s editorial approach</a>.</p>
             </section>
 
             <section id="what-tripguidely-covers" aria-label="What TripGuidely covers">
               <h2>Travel planning guides for major cities and trip types</h2>
               <p>TripGuidely covers the planning layers that matter most before a trip: <strong>things to do</strong>, <strong>itineraries</strong>, <strong>transport</strong>, <strong>hotels</strong>, and <strong>eSIM</strong>.</p>
-              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, <strong>New York</strong>, <strong>Dubai</strong>, <strong>London</strong>, <strong>Bangkok</strong>, and <strong>Las Vegas</strong>, helping travelers move from broad research to more specific booking decisions with less friction.</p>
+              <p>The site is built around popular travel destinations such as <strong>Tokyo</strong>, <strong>Rome</strong>, <strong>Paris</strong>, <strong>New York</strong>, <strong>Dubai</strong>, <strong>London</strong>, <strong>Bangkok</strong>, and <strong>Las Vegas</strong>, helping travelers move from early research to more confident booking decisions.</p>
             </section>
 
             <section id="how-to-use" aria-label="How to use TripGuidely">
               <h2>How to use TripGuidely</h2>
-              <p>Use the broad hubs to choose your strategy, then switch to focused city pages when you are ready to compare specific options.</p>
-              <p>Recommended flow: <strong>choose a category</strong> → <strong>pick a city</strong> → <strong>compare your options</strong> → <strong>book with confidence</strong>.</p>
+              <p>Start with the main hubs to find your direction, then switch to city pages when you're ready to compare specific options.</p>
+              <p>A simple way to use the site: <strong>choose a category</strong> → <strong>pick a city</strong> → <strong>compare your options</strong> → <strong>book with confidence</strong>.</p>
 
               <div class="mini-grid" aria-label="Workflow steps">
                 <div class="mini">
@@ -670,17 +936,17 @@
 
               <details>
                 <summary>Which TripGuidely section should I start with?</summary>
-                <p>Start with the planning layer that matches your next decision: attractions for things to do, hotels for area choice, transport for route planning, itineraries for trip structure, and eSIM guides for connectivity abroad.</p>
+                <p>Start with the section that matches your next decision: attractions for things to do, hotels for where to stay, transport for getting around, itineraries for trip planning, and eSIM guides for staying connected abroad.</p>
               </details>
 
               <details>
                 <summary>Do TripGuidely guides help with choosing the best hotel area?</summary>
-                <p>Yes. Our hotel guides focus on neighborhood fit, transport access, budget, trip style, and booking trade-offs so you can choose a more practical place to stay.</p>
+                <p>Yes. Our hotel guides focus on neighborhood fit, transport access, budget, trip style, and key booking differences so you can choose a place to stay more confidently.</p>
               </details>
 
               <details>
                 <summary>Are TripGuidely guides focused on bookings or general inspiration?</summary>
-                <p>TripGuidely is built for practical trip planning. We focus on helping you compare options, reduce research time, and move toward better booking decisions with more confidence.</p>
+                <p>TripGuidely is built for practical trip planning. We focus on helping you compare options, save research time, and make better booking decisions with more confidence.</p>
               </details>
 
               <details>
@@ -869,7 +1135,7 @@
               Open Travel Guides
             </a>
             <p class="map-explorer__note">
-              Keep the text links below the map for clean internal linking and crawlability.
+              Use the links below to jump straight into popular destination guides.
             </p>
           </div>
         </div>
