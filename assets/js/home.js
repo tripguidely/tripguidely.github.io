@@ -147,7 +147,10 @@
   function removeClass(el, cls) {
     if (!el) return;
     if (el.classList) el.classList.remove(cls);
-    else el.className = String(el.className || "").replace(new RegExp("(^|\\s)" + cls + "(\\s|$)", "g"), " ").replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
+    else el.className = String(el.className || "")
+      .replace(new RegExp("(^|\\s)" + cls + "(\\s|$)", "g"), " ")
+      .replace(/\s+/g, " ")
+      .replace(/^\s+|\s+$/g, "");
   }
 
   function tryTrack(eventName, params) {
@@ -163,7 +166,6 @@
     var cleanSubid = trimStr(subid);
 
     if (!cleanBase) return "";
-
     if (!cleanSubid) return cleanBase;
 
     try {
@@ -365,7 +367,6 @@
 
     function updateReturnState() {
       var oneWay = isOneWay();
-      var returnField = ret;
       var returnWrap = ret.closest ? ret.closest(".hotel-field, .flight-box-wrap, .flight-box, .flight-date-col") : null;
 
       if (oneWay) {
@@ -710,7 +711,7 @@
       if (!trimStr(data.from)) return "Please enter a departure city or airport.";
       if (!trimStr(data.to)) return "Please enter a destination city or airport.";
       if (!trimStr(data.departure)) return "Please choose a departure date.";
-      if (data.tripType !== "one-way" && trimStr(data.return_date) && data.return_date <= data.departure) {
+      if (data.tripType !== "one-way" && trimStr(data.returnDate) && data.returnDate <= data.departure) {
         return "Return date must be after departure date.";
       }
       return "";
@@ -795,14 +796,18 @@
       var target = e.target || e.srcElement;
 
       if (datePopover && !datePopover.hasAttribute("hidden")) {
-        if (!(datePopover.contains && datePopover.contains(target)) && target !== dateTrigger && !(dateTrigger && dateTrigger.contains && dateTrigger.contains(target))) {
+        if (!(datePopover.contains && datePopover.contains(target)) &&
+            target !== dateTrigger &&
+            !(dateTrigger && dateTrigger.contains && dateTrigger.contains(target))) {
           datePopover.setAttribute("hidden", "");
           if (dateTrigger) removeClass(dateTrigger, "is-open");
         }
       }
 
       if (travelersPopover && !travelersPopover.hasAttribute("hidden")) {
-        if (!(travelersPopover.contains && travelersPopover.contains(target)) && target !== travelersTrigger && !(travelersTrigger && travelersTrigger.contains && travelersTrigger.contains(target))) {
+        if (!(travelersPopover.contains && travelersPopover.contains(target)) &&
+            target !== travelersTrigger &&
+            !(travelersTrigger && travelersTrigger.contains && travelersTrigger.contains(target))) {
           travelersPopover.setAttribute("hidden", "");
           if (travelersTrigger) removeClass(travelersTrigger, "is-open");
         }
@@ -838,7 +843,7 @@
         from: trimStr(from.value),
         to: trimStr(to.value),
         departure: trimStr(departure.value),
-        return_date: trimStr(ret.value),
+        returnDate: trimStr(ret.value),
         tripType: getTripType(),
         directOnly: !!(directOnly && directOnly.checked)
       };
