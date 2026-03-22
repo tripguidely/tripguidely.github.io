@@ -2320,3 +2320,213 @@ body[data-page="home"] .map-explorer__note{
     gap: 6px;
   }
 }
+
+/* ==========================================================================
+   FLIGHT CALENDAR FIX PATCH
+   exact fix for overflow / width / footer / range rendering
+   ========================================================================== */
+
+body[data-page="home"] #home-flight-search-form .hotel-field{
+  overflow: visible;
+}
+
+body[data-page="home"] #home-flight-search-form .flight-date-trigger{
+  position: relative;
+  overflow: visible;
+}
+
+body[data-page="home"] .flight-date-popover,
+body[data-page="home"] [data-flight-date-popover]{
+  left: 50%;
+  top: calc(100% + 12px);
+  transform: translateX(-50%);
+  width: 980px;
+  max-width: min(980px, calc(100vw - 40px));
+  max-height: min(760px, calc(100vh - 80px));
+  overflow: auto;
+}
+
+body[data-page="home"] .flight-date-head{
+  padding: 18px 24px 16px;
+}
+
+body[data-page="home"] .flight-date-head-right{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+body[data-page="home"] .flight-date-mode{
+  white-space: nowrap;
+}
+
+body[data-page="home"] .flight-date-monthchips{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+body[data-page="home"] .flight-cal-wrap,
+body[data-page="home"] [data-flight-cal-wrap]{
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 28px;
+  padding: 20px 24px 22px;
+}
+
+body[data-page="home"] .flight-cal{
+  min-width: 0;
+  width: 100%;
+}
+
+body[data-page="home"] .flight-cal-head{
+  margin-bottom: 12px;
+}
+
+body[data-page="home"] .flight-weekdays{
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+body[data-page="home"] .flight-weekdays span{
+  font-size: 12px;
+}
+
+body[data-page="home"] .flight-days{
+  gap: 6px;
+}
+
+body[data-page="home"] .flight-day{
+  min-height: 40px;
+  border-radius: 10px;
+}
+
+body[data-page="home"] .flight-day > span{
+  font-size: 13px;
+}
+
+body[data-page="home"] .flight-day.range{
+  background: rgba(18,207,208,.12);
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body[data-page="home"] .flight-day.start{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+body[data-page="home"] .flight-day.end{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+body[data-page="home"] .flight-day.single{
+  border-radius: 10px;
+}
+
+body[data-page="home"] .flight-day.start,
+body[data-page="home"] .flight-day.end,
+body[data-page="home"] .flight-day.single{
+  background: linear-gradient(180deg, var(--tg-water), var(--tg-water-2));
+  color: #fff;
+  box-shadow:
+    0 8px 18px rgba(18,207,208,.18),
+    inset 0 1px 0 rgba(255,255,255,.16);
+}
+
+body[data-page="home"] .flight-date-footer{
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background: #fff;
+  padding: 16px 24px 18px;
+  border-top: 1px solid #edf2f6;
+}
+
+body[data-page="home"] .flight-date-summary{
+  margin-left: auto;
+  padding-right: 2px;
+}
+
+body[data-page="home"] .flight-date-confirm{
+  min-width: 220px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+/* large laptop safety */
+@media (max-width: 1200px){
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
+    width: min(920px, calc(100vw - 32px));
+  }
+}
+
+/* tablet */
+@media (max-width: 980px){
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
+    left: 0;
+    transform: none;
+    width: min(760px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+  }
+
+  body[data-page="home"] .flight-cal-wrap,
+  body[data-page="home"] [data-flight-cal-wrap]{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* mobile */
+@media (max-width: 760px){
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    max-height: min(78vh, 720px);
+    border-radius: 18px;
+  }
+
+  body[data-page="home"] .flight-date-head{
+    padding: 16px 14px 14px;
+    flex-wrap: wrap;
+  }
+
+  body[data-page="home"] .flight-date-head-right{
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  body[data-page="home"] .flight-cal-wrap,
+  body[data-page="home"] [data-flight-cal-wrap]{
+    grid-template-columns: 1fr;
+    padding: 16px 14px 18px;
+  }
+
+  body[data-page="home"] .flight-date-footer{
+    padding: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  body[data-page="home"] .flight-date-summary{
+    margin-left: 0;
+    text-align: left;
+  }
+
+  body[data-page="home"] .flight-date-confirm{
+    width: 100%;
+  }
+}
