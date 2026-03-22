@@ -2530,3 +2530,43 @@ body[data-page="home"] .flight-date-confirm{
     width: 100%;
   }
 }
+
+/* fix small line / overflow near flight swap button */
+body[data-page="home"] #home-flight-search-form{
+  overflow: visible;
+}
+
+body[data-page="home"] #home-flight-search-form .hotel-search-grid{
+  overflow: visible;
+}
+
+body[data-page="home"] #home-flight-search-form .flight-swap{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+}
+
+body[data-page="home"] #home-flight-search-form .flight-swap::before,
+body[data-page="home"] #home-flight-search-form .flight-swap::after{
+  content: none !important;
+}
+
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1),
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2){
+  overflow: visible;
+}
+
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1) .flight-box,
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2) .flight-box{
+  position: relative;
+  z-index: 1;
+}
+
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1){
+  padding-right: 28px;
+}
+
+body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2){
+  padding-left: 28px;
+}
