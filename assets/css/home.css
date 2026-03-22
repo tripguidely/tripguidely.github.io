@@ -2609,3 +2609,152 @@ body[data-page="home"] #home-flight-search-form > p a{
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   TripGuidely — Calendar UX Upgrade (Turquoise + Sand)
+   ========================================================================== */
+
+body[data-page="home"]{
+
+  --tg-water: #12cfd0;
+  --tg-water-soft: rgba(18,207,208,.18);
+  --tg-water-ultra: rgba(18,207,208,.10);
+
+  --tg-sand: #f4a261;
+  --tg-sand-soft: rgba(244,162,97,.20);
+
+}
+
+/* ===============================
+   CALENDAR CONTAINER
+================================= */
+
+.flight-date-popover{
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 24px 60px rgba(0,0,0,.15);
+}
+
+/* ===============================
+   HEADER TABS (Depart / Return)
+================================= */
+
+.flight-date-mode{
+  border-bottom:3px solid transparent;
+  color:#6b7a90;
+  font-weight:800;
+}
+
+.flight-date-mode.active{
+  color:var(--tg-water);
+  border-bottom-color:var(--tg-water);
+}
+
+/* ===============================
+   DAYS BASE
+================================= */
+
+.flight-cal-wrap button{
+  border-radius:6px;
+  border:1px solid transparent;
+  transition:.15s;
+}
+
+/* ===============================
+   HOVER
+================================= */
+
+.flight-cal-wrap button:hover{
+  background:var(--tg-water-ultra);
+  border-color:rgba(18,207,208,.25);
+}
+
+/* ===============================
+   DEPART DATE
+================================= */
+
+.flight-cal-wrap .is-depart{
+  background:var(--tg-water) !important;
+  color:#fff !important;
+  border-color:var(--tg-water);
+  font-weight:900;
+}
+
+/* ===============================
+   RETURN DATE
+================================= */
+
+.flight-cal-wrap .is-return{
+  background:var(--tg-sand) !important;
+  color:#fff !important;
+  border-color:var(--tg-sand);
+  font-weight:900;
+}
+
+/* ===============================
+   RANGE BETWEEN
+================================= */
+
+.flight-cal-wrap .is-in-range{
+  background:var(--tg-water-soft);
+  color:#063339;
+}
+
+/* ===============================
+   DISABLED DAYS
+================================= */
+
+.flight-cal-wrap .is-disabled{
+  opacity:.35;
+  pointer-events:none;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+.flight-date-footer{
+  border-top:1px solid #eef3f6;
+}
+
+/* ===============================
+   CONFIRM BUTTON
+================================= */
+
+.flight-date-confirm{
+  background:linear-gradient(180deg,var(--tg-water),#0fbfc0);
+  border-radius:8px;
+  font-weight:900;
+  box-shadow:0 10px 25px rgba(18,207,208,.25);
+}
+
+.flight-date-confirm:hover{
+  background:linear-gradient(180deg,#19d9da,var(--tg-water));
+}
+
+/* ===============================
+   SUMMARY TEXT
+================================= */
+
+.flight-date-summary strong{
+  color:#0f172a;
+}
+
+/* ===============================
+   MONTH CHIPS (Mar / Apr)
+================================= */
+
+.flight-date-monthchips button{
+  background:#f3f6f8;
+  border-radius:6px;
+}
+
+.flight-date-monthchips button:hover{
+  background:var(--tg-water-ultra);
+}
+
+/* ACTIVE MONTH */
+.flight-date-monthchips .active{
+  background:var(--tg-water-soft);
+  color:#063339;
+}
