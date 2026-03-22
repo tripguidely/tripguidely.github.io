@@ -2758,3 +2758,108 @@ body[data-page="home"]{
   background:var(--tg-water-soft);
   color:#063339;
 }
+
+/* ==========================================================================
+   TripGuidely Calendar — MATCH AVEC TON JS
+   ========================================================================== */
+
+body[data-page="home"]{
+
+  --tg-water:#12cfd0;
+  --tg-water-soft:rgba(18,207,208,.18);
+  --tg-water-ultra:rgba(18,207,208,.10);
+
+  --tg-sand:#f4a261;
+  --tg-sand-soft:rgba(244,162,97,.20);
+}
+
+/* ===== BASE ===== */
+
+.flight-day{
+  border-radius:8px;
+  transition:.15s;
+}
+
+/* ===== HOVER ===== */
+
+.flight-day:not(.disabled):hover{
+  background:var(--tg-water-ultra);
+  border-color:rgba(18,207,208,.3);
+}
+
+/* ===== DEPART (start) ===== */
+
+.flight-day.start{
+  background:var(--tg-water) !important;
+  color:#fff !important;
+  font-weight:900;
+}
+
+/* ===== RETURN (end) ===== */
+
+.flight-day.end{
+  background:var(--tg-sand) !important;
+  color:#fff !important;
+  font-weight:900;
+}
+
+/* ===== SINGLE DAY (one-way) ===== */
+
+.flight-day.single{
+  background:var(--tg-water);
+  color:#fff;
+}
+
+/* ===== RANGE BETWEEN ===== */
+
+.flight-day.range{
+  background:var(--tg-water-soft);
+  color:#063339;
+}
+
+/* ===== DISABLED ===== */
+
+.flight-day.disabled{
+  opacity:.35;
+  pointer-events:none;
+}
+
+/* ===== WEEKEND ===== */
+
+.flight-day.weekend:not(.start):not(.end){
+  color:#0f7f88;
+}
+
+/* ===== TODAY (OPTIONNEL BONUS) ===== */
+
+.flight-day.today{
+  outline:2px solid var(--tg-water);
+}
+
+/* ===== CALENDAR HEADER ===== */
+
+.flight-cal-head{
+  color:#0f172a;
+}
+
+/* ===== NAV BUTTON ===== */
+
+.flight-cal-nav{
+  background:#f3f6f8;
+  border-radius:6px;
+}
+
+.flight-cal-nav:hover{
+  background:var(--tg-water-ultra);
+}
+
+/* ===== CONFIRM BUTTON ===== */
+
+.flight-date-confirm{
+  background:linear-gradient(180deg,var(--tg-water),#0fbfc0);
+  box-shadow:0 12px 30px rgba(18,207,208,.25);
+}
+
+.flight-date-confirm:hover{
+  background:linear-gradient(180deg,#19d9da,var(--tg-water));
+}
