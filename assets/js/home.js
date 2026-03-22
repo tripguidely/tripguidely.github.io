@@ -5,7 +5,7 @@
    - Safe with existing site.js home hotel search
    - Old-browser friendly
    - Accessible tab behavior
-   - Simple validation + redirect for Flights and eSIM
+   - Validation + affiliate redirect for Flights and eSIM
    ========================================================================== */
 
 (function () {
@@ -32,14 +32,6 @@
         if (el.addEventListener) el.addEventListener(evt, fn, false);
       } catch (__) {}
     }
-  }
-
-  function off(el, evt, fn, opts) {
-    if (!el) return;
-    try {
-      if (el.removeEventListener) el.removeEventListener(evt, fn, opts || false);
-      else if (el.detachEvent) el.detachEvent("on" + evt, fn);
-    } catch (_) {}
   }
 
   function trimStr(s) {
@@ -161,23 +153,61 @@
     } catch (_) {}
   }
 
-  function buildAffiliateUrl(base, subid) {
+  function openUrl(url) {
+    if (!url) return;
+    try {
+      WIN.location.href = url;
+    } catch (_) {
+      try {
+        WIN.location.assign(url);
+      } catch (__) {}
+    }
+  }
+
+  function buildAffiliateUrl(base, subid, extraParams) {
     var cleanBase = trimStr(base);
     var cleanSubid = trimStr(subid);
+    var key;
 
     if (!cleanBase) return "";
-    if (!cleanSubid) return cleanBase;
 
     try {
       var url = new URL(cleanBase, WIN.location.href);
-      if (!url.searchParams.get("subid")) {
+
+      if (cleanSubid && !url.searchParams.get("subid")) {
         url.searchParams.set("subid", cleanSubid);
       }
+
+      if (extraParams) {
+        for (key in extraParams) {
+          if (Object.prototype.hasOwnProperty.call(extraParams, key)) {
+            if (trimStr(extraParams[key])) {
+              url.searchParams.set(key, trimStr(extraParams[key]));
+            }
+          }
+        }
+      }
+
       return url.toString();
     } catch (_) {
-      if (cleanBase.indexOf("?") === -1) return cleanBase + "?subid=" + encodeURIComponent(cleanSubid);
-      if (/[?&]subid=/.test(cleanBase)) return cleanBase;
-      return cleanBase + "&subid=" + encodeURIComponent(cleanSubid);
+      var out = cleanBase;
+      var sep = out.indexOf("?") === -1 ? "?" : "&";
+
+      if (cleanSubid && !/[?&]subid=/.test(out)) {
+        out += sep + "subid=" + encodeURIComponent(cleanSubid);
+        sep = "&";
+      }
+
+      if (extraParams) {
+        for (key in extraParams) {
+          if (Object.prototype.hasOwnProperty.call(extraParams, key) && trimStr(extraParams[key])) {
+            out += sep + encodeURIComponent(key) + "=" + encodeURIComponent(trimStr(extraParams[key]));
+            sep = "&";
+          }
+        }
+      }
+
+      return out;
     }
   }
 
@@ -328,6 +358,7 @@
     var directOnly = form.querySelector('input[name="flight_direct_only"], #home-flight-direct-only');
 
     var swapBtn = form.querySelector(".flight-swap, [data-flight-swap]");
+    var plusHotelBtn = form.querySelector(".flight-plus-hotel");
 
     var dateTrigger = form.querySelector(".flight-date-trigger, [data-flight-date-trigger]");
     var datePopover = form.querySelector(".flight-date-popover, [data-flight-date-popover]");
@@ -344,6 +375,7 @@
     var travelersApply = form.querySelector(".flight-travelers-apply, [data-flight-travelers-apply]");
     var travelersText = form.querySelector("[data-flight-travelers-text]");
     var cabinSelect = form.querySelector(".flight-cabin select, [data-flight-cabin]");
+    var passengersField = form.querySelector('input[name="passengers"]');
 
     var minDate = todayISO();
     departure.min = minDate;
@@ -363,6 +395,36 @@
 
     function isOneWay() {
       return getTripType() === "one-way";
+    }
+
+    function getCounterValue(key, fallback) {
+      var row = travelersPopover ? travelersPopover.querySelector('[data-counter="' + key + '"]') : null;
+      if (!row) return fallback;
+
+      var output = row.querySelector("output");
+      var hidden = row.querySelector('input[type="hidden"]');
+      var value = hidden ? Number(hidden.value) : Number(output ? (output.value || output.textContent) : fallback);
+
+      if (isNaN(value)) value = fallback;
+      return value;
+    }
+
+    function getTravelerTotals() {
+      return {
+        adults: getCounterValue("adults", 1),
+        children: getCounterValue("children", 0),
+        infants: getCounterValue("infants", 0)
+      };
+    }
+
+    function getTravelerTotalCount() {
+      var counts = getTravelerTotals();
+      return counts.adults + counts.children + counts.infants;
+    }
+
+    function updatePassengersHidden() {
+      if (!passengersField) return;
+      passengersField.value = String(getTravelerTotalCount());
     }
 
     function updateReturnState() {
@@ -623,18 +685,6 @@
       }
     }
 
-    function getCounterValue(key, fallback) {
-      var row = travelersPopover ? travelersPopover.querySelector('[data-counter="' + key + '"]') : null;
-      if (!row) return fallback;
-
-      var output = row.querySelector("output");
-      var hidden = row.querySelector('input[type="hidden"]');
-      var value = hidden ? Number(hidden.value) : Number(output ? (output.value || output.textContent) : fallback);
-
-      if (isNaN(value)) value = fallback;
-      return value;
-    }
-
     function setCounterValue(row, nextValue) {
       if (!row) return;
 
@@ -661,18 +711,20 @@
     function updateTravelersSummary() {
       if (!travelersText) return;
 
-      var adults = getCounterValue("adults", 1);
-      var children = getCounterValue("children", 0);
-      var infants = getCounterValue("infants", 0);
-      var total = adults + children + infants;
+      var counts = getTravelerTotals();
+      var total = counts.adults + counts.children + counts.infants;
       var cabin = cabinSelect ? trimStr(cabinSelect.value) : "Economy";
 
       if (!cabin) cabin = "Economy";
       setText(travelersText, total + " " + (total > 1 ? "adults" : "adult") + " · " + cabin);
+      updatePassengersHidden();
     }
 
     function initTravelersCounters() {
-      if (!travelersPopover) return;
+      if (!travelersPopover) {
+        updatePassengersHidden();
+        return;
+      }
 
       var counters = $all("[data-counter]", travelersPopover);
       var i;
@@ -698,6 +750,7 @@
       }
 
       on(cabinSelect, "change", updateTravelersSummary);
+
       on(travelersApply, "click", function () {
         updateTravelersSummary();
         travelersPopover.setAttribute("hidden", "");
@@ -711,10 +764,58 @@
       if (!trimStr(data.from)) return "Please enter a departure city or airport.";
       if (!trimStr(data.to)) return "Please enter a destination city or airport.";
       if (!trimStr(data.departure)) return "Please choose a departure date.";
+      if (data.tripType !== "one-way" && !trimStr(data.returnDate)) return "Please choose a return date.";
       if (data.tripType !== "one-way" && trimStr(data.returnDate) && data.returnDate <= data.departure) {
         return "Return date must be after departure date.";
       }
       return "";
+    }
+
+    function buildFlightAffiliateUrl(data) {
+      var counts = getTravelerTotals();
+      var totalPassengers = counts.adults + counts.children + counts.infants;
+      var cabin = cabinSelect ? trimStr(cabinSelect.value) : "Economy";
+
+      var params = {
+        origin: data.from,
+        destination: data.to,
+        departure: data.departure,
+        return: data.tripType === "one-way" ? "" : data.returnDate,
+        trip_type: data.tripType,
+        direct: data.directOnly ? "1" : "",
+        adults: String(counts.adults),
+        children: counts.children ? String(counts.children) : "",
+        infants: counts.infants ? String(counts.infants) : "",
+        passengers: String(totalPassengers),
+        cabin: cabin
+      };
+
+      return buildAffiliateUrl(
+        form.getAttribute("data-affiliate-base"),
+        form.getAttribute("data-subid"),
+        params
+      );
+    }
+
+    function goFlightHotel() {
+      var url = buildAffiliateUrl(
+        form.getAttribute("data-affiliate-base"),
+        "tg_home_flights_hotel",
+        {
+          origin: trimStr(from.value),
+          destination: trimStr(to.value),
+          departure: trimStr(departure.value),
+          return: isOneWay() ? "" : trimStr(ret.value),
+          trip_type: getTripType()
+        }
+      );
+
+      tryTrack("flight_hotel_click", {
+        page_type: "home",
+        affiliate_program: "kiwi"
+      });
+
+      openUrl(url);
     }
 
     on(departure, "change", function () {
@@ -749,6 +850,12 @@
       var b = to.value;
       from.value = b;
       to.value = a;
+    });
+
+    on(plusHotelBtn, "click", function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      else if (e) e.returnValue = false;
+      goFlightHotel();
     });
 
     on(dateTrigger, "click", function (e) {
@@ -826,6 +933,7 @@
     updateMinDates();
     updateReturnState();
     updateDateDisplay();
+    updatePassengersHidden();
 
     if (calendarsWrap) {
       renderCalendars();
@@ -865,11 +973,9 @@
       }
 
       setText(errorBox, "");
+      updatePassengersHidden();
 
-      targetUrl = buildAffiliateUrl(
-        form.getAttribute("data-affiliate-base"),
-        form.getAttribute("data-subid")
-      );
+      targetUrl = buildFlightAffiliateUrl(data);
 
       tryTrack("flight_search", {
         page_type: "home",
@@ -877,10 +983,11 @@
         origin: data.from,
         destination: data.to,
         trip_type: data.tripType,
-        direct_only: data.directOnly ? "true" : "false"
+        direct_only: data.directOnly ? "true" : "false",
+        passengers: String(getTravelerTotalCount())
       });
 
-      if (targetUrl) WIN.location.href = targetUrl;
+      openUrl(targetUrl);
     });
   }
 
@@ -916,7 +1023,12 @@
 
       targetUrl = buildAffiliateUrl(
         form.getAttribute("data-affiliate-base"),
-        form.getAttribute("data-subid")
+        form.getAttribute("data-subid"),
+        {
+          destination: cleanDestination,
+          duration: trimStr(duration.value),
+          usage: trimStr(usage.value)
+        }
       );
 
       tryTrack("esim_search", {
@@ -927,7 +1039,7 @@
         data_usage: trimStr(usage.value)
       });
 
-      if (targetUrl) WIN.location.href = targetUrl;
+      openUrl(targetUrl);
     });
   }
 
