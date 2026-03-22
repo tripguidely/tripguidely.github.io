@@ -1,7 +1,7 @@
 /* ==========================================================================
    TripGuidely home.js
    - Home-only hero tabs (Hotels / Flights / Transport / eSIM)
-   - Flights widget upgraded to behave more like the reference
+   - Trip.com-inspired flights widget behavior
    - Safe with existing site.js home hotel search
    - Old-browser friendly
    - Accessible tab behavior
@@ -95,6 +95,15 @@
       a.getDate() === b.getDate();
   }
 
+  function compareDates(a, b) {
+    if (!a || !b) return 0;
+    var at = new Date(a.getFullYear(), a.getMonth(), a.getDate()).getTime();
+    var bt = new Date(b.getFullYear(), b.getMonth(), b.getDate()).getTime();
+    if (at < bt) return -1;
+    if (at > bt) return 1;
+    return 0;
+  }
+
   function formatShortDate(date) {
     if (!date) return "";
     try {
@@ -114,6 +123,17 @@
       return date.toLocaleDateString("en-US", {
         month: "long",
         year: "numeric"
+      });
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function formatMonthShort(date) {
+    if (!date) return "";
+    try {
+      return date.toLocaleDateString("en-US", {
+        month: "short"
       });
     } catch (_) {
       return "";
@@ -143,6 +163,11 @@
       .replace(new RegExp("(^|\\s)" + cls + "(\\s|$)", "g"), " ")
       .replace(/\s+/g, " ")
       .replace(/^\s+|\s+$/g, "");
+  }
+
+  function toggleClass(el, cls, active) {
+    if (active) addClass(el, cls);
+    else removeClass(el, cls);
   }
 
   function tryTrack(eventName, params) {
@@ -265,9 +290,7 @@
         tab.tabIndex = isActive ? 0 : -1;
 
         if (isActive && moveFocus) {
-          try {
-            tab.focus();
-          } catch (_) {}
+          try { tab.focus(); } catch (_) {}
         }
       }
 
@@ -369,6 +392,10 @@
     var dateModeDepart = form.querySelector("[data-flight-date-mode='depart']");
     var dateModeReturn = form.querySelector("[data-flight-date-mode='return']");
     var calendarsWrap = form.querySelector(".flight-cal-wrap, [data-flight-cal-wrap]");
+    var monthChipsWrap = form.querySelector(".flight-date-monthchips");
+    var monthChipButtons = monthChipsWrap ? $all("button", monthChipsWrap) : [];
+    var dateTitle = form.querySelector(".flight-date-title, .flight-date-head h3");
+    var dateNote = form.querySelector(".flight-date-note");
 
     var travelersTrigger = form.querySelector(".flight-travelers-trigger, .flight-box--travelers, [data-flight-travelers-trigger]");
     var travelersPopover = form.querySelector(".flight-travelers-popover, [data-flight-travelers-popover]");
@@ -427,6 +454,22 @@
       passengersField.value = String(getTravelerTotalCount());
     }
 
+    function ensureVisibleMonthContainsSelected() {
+      var depDate = parseISODate(trimStr(departure.value));
+      var retDate = parseISODate(trimStr(ret.value));
+      var anchor = dateSelectionMode === "return" && retDate ? retDate : depDate;
+
+      if (!anchor) return;
+
+      var month1 = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1);
+      var month2 = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
+      var anchorMonth = new Date(anchor.getFullYear(), anchor.getMonth(), 1);
+
+      if (!sameDate(month1, anchorMonth) && !sameDate(month2, anchorMonth)) {
+        visibleMonth = anchorMonth;
+      }
+    }
+
     function updateReturnState() {
       var oneWay = isOneWay();
       var returnWrap = ret.closest ? ret.closest(".hotel-field, .flight-box-wrap, .flight-box, .flight-date-col") : null;
@@ -443,7 +486,17 @@
         submitBtn.setAttribute("data-trip-type", getTripType());
       }
 
+      if (dateModeReturn) {
+        dateModeReturn.disabled = oneWay;
+        dateModeReturn.setAttribute("aria-disabled", oneWay ? "true" : "false");
+      }
+
+      if (oneWay && dateSelectionMode === "return") {
+        dateSelectionMode = "depart";
+      }
+
       updateDateDisplay();
+      updateDateModeUi();
     }
 
     function updateMinDates() {
@@ -476,16 +529,56 @@
           setText(dateSummary, "");
         }
       }
+
+      if (dateTitle) {
+        if (isOneWay()) setText(dateTitle, "Select departure date");
+        else if (dateSelectionMode === "return") setText(dateTitle, "Select return date");
+        else setText(dateTitle, "Select departure date");
+      }
+
+      if (dateNote) {
+        if (isOneWay()) setText(dateNote, "All dates are in local time");
+        else if (retDate) setText(dateNote, "Return: " + formatShortDate(retDate));
+        else setText(dateNote, "All dates are in local time");
+      }
+    }
+
+    function updateMonthChips() {
+      if (!monthChipButtons || !monthChipButtons.length) return;
+
+      var month1 = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1);
+      var month2 = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
+      var months = [month1, month2];
+      var i, btn, targetMonth;
+
+      for (i = 0; i < monthChipButtons.length; i++) {
+        btn = monthChipButtons[i];
+        targetMonth = months[i] || months[months.length - 1];
+
+        if (!targetMonth) continue;
+
+        setText(btn, formatMonthShort(targetMonth));
+        btn.setAttribute("data-month-index", String(i));
+        btn.setAttribute("data-month-iso", dateToISO(targetMonth));
+        btn.disabled = false;
+        toggleClass(btn, "active", i === 0);
+      }
     }
 
     function closeFloatingPanels(except) {
       if (datePopover && datePopover !== except) {
         datePopover.setAttribute("hidden", "");
-        if (dateTrigger) removeClass(dateTrigger, "is-open");
+        if (dateTrigger) {
+          removeClass(dateTrigger, "is-open");
+          dateTrigger.setAttribute("aria-expanded", "false");
+        }
       }
       if (travelersPopover && travelersPopover !== except) {
         travelersPopover.setAttribute("hidden", "");
-        if (travelersTrigger) removeClass(travelersTrigger, "is-open");
+        if (travelersTrigger) {
+          removeClass(travelersTrigger, "is-open");
+          travelersTrigger.setAttribute("aria-expanded", "false");
+        }
       }
     }
 
@@ -498,23 +591,33 @@
       if (isHidden) {
         panel.removeAttribute("hidden");
         addClass(trigger, "is-open");
+        trigger.setAttribute("aria-expanded", "true");
       } else {
         panel.setAttribute("hidden", "");
         removeClass(trigger, "is-open");
+        trigger.setAttribute("aria-expanded", "false");
       }
+    }
+
+    function focusFirstAvailableDay() {
+      if (!datePopover || datePopover.hasAttribute("hidden")) return;
+      var target = datePopover.querySelector(".flight-day.start, .flight-day.end, .flight-day.single, .flight-day:not(.muted):not(.disabled)");
+      if (!target) return;
+      try { target.focus(); } catch (_) {}
     }
 
     function buildDayButton(dateObj, selectedStart, selectedEnd) {
       var btn = DOC.createElement("button");
       var isPast = dateObj < todayDate();
       var isWeekendDay = dateObj.getDay() === 0 || dateObj.getDay() === 6;
-      var inRange = selectedStart && selectedEnd && dateObj > selectedStart && dateObj < selectedEnd;
+      var inRange = selectedStart && selectedEnd && compareDates(dateObj, selectedStart) > 0 && compareDates(dateObj, selectedEnd) < 0;
       var isStart = sameDate(dateObj, selectedStart);
       var isEnd = sameDate(dateObj, selectedEnd);
 
       btn.type = "button";
       btn.className = "flight-day";
       btn.setAttribute("data-date", dateToISO(dateObj));
+      btn.setAttribute("aria-label", formatShortDate(dateObj));
       btn.innerHTML = "<span>" + dateObj.getDate() + "</span>";
 
       if (isWeekendDay && !isPast) addClass(btn, "weekend");
@@ -550,6 +653,12 @@
           updateMinDates();
           updateDateDisplay();
           renderCalendars();
+
+          if (!isOneWay()) {
+            WIN.setTimeout(function () {
+              focusFirstAvailableDay();
+            }, 0);
+          }
         } else {
           if (!isOneWay()) {
             if (clickedISO <= trimStr(departure.value)) {
@@ -563,6 +672,43 @@
           updateMinDates();
           updateDateDisplay();
           renderCalendars();
+
+          if (!isOneWay() && dateConfirm) {
+            WIN.setTimeout(function () {
+              try { dateConfirm.focus(); } catch (_) {}
+            }, 0);
+          }
+        }
+      });
+
+      on(btn, "keydown", function (e) {
+        e = e || WIN.event;
+        var key = e.key || e.keyCode;
+        var buttons = calendarsWrap ? $all(".flight-day:not(.muted):not(.disabled)", calendarsWrap) : [];
+        var idx = -1;
+        var nextIdx = -1;
+        var i;
+
+        for (i = 0; i < buttons.length; i++) {
+          if (buttons[i] === btn) {
+            idx = i;
+            break;
+          }
+        }
+
+        if (idx === -1) return;
+
+        if (key === "ArrowRight" || key === 39) nextIdx = idx + 1;
+        else if (key === "ArrowLeft" || key === 37) nextIdx = idx - 1;
+        else if (key === "ArrowDown" || key === 40) nextIdx = idx + 7;
+        else if (key === "ArrowUp" || key === 38) nextIdx = idx - 7;
+        else return;
+
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+
+        if (nextIdx >= 0 && nextIdx < buttons.length) {
+          try { buttons[nextIdx].focus(); } catch (_) {}
         }
       });
 
@@ -591,6 +737,7 @@
         on(prev, "click", function () {
           visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
           renderCalendars();
+          focusFirstAvailableDay();
         });
         navWrap.appendChild(prev);
       }
@@ -604,6 +751,7 @@
         on(next, "click", function () {
           visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
           renderCalendars();
+          focusFirstAvailableDay();
         });
         navWrap.appendChild(next);
       }
@@ -634,6 +782,7 @@
         filler.type = "button";
         filler.className = "flight-day muted";
         filler.disabled = true;
+        filler.tabIndex = -1;
         filler.innerHTML = "<span></span>";
         days.appendChild(filler);
       }
@@ -662,6 +811,7 @@
     function renderCalendars() {
       if (!calendarsWrap) return;
 
+      ensureVisibleMonthContainsSelected();
       calendarsWrap.innerHTML = "";
 
       var month1 = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1);
@@ -672,16 +822,20 @@
 
       updateDateDisplay();
       updateDateModeUi();
+      updateMonthChips();
     }
 
     function updateDateModeUi() {
       if (dateModeDepart) {
         if (dateSelectionMode === "depart") addClass(dateModeDepart, "active");
         else removeClass(dateModeDepart, "active");
+        dateModeDepart.setAttribute("aria-pressed", dateSelectionMode === "depart" ? "true" : "false");
       }
+
       if (dateModeReturn) {
-        if (dateSelectionMode === "return") addClass(dateModeReturn, "active");
+        if (dateSelectionMode === "return" && !isOneWay()) addClass(dateModeReturn, "active");
         else removeClass(dateModeReturn, "active");
+        dateModeReturn.setAttribute("aria-pressed", dateSelectionMode === "return" && !isOneWay() ? "true" : "false");
       }
     }
 
@@ -754,7 +908,10 @@
       on(travelersApply, "click", function () {
         updateTravelersSummary();
         travelersPopover.setAttribute("hidden", "");
-        if (travelersTrigger) removeClass(travelersTrigger, "is-open");
+        if (travelersTrigger) {
+          removeClass(travelersTrigger, "is-open");
+          travelersTrigger.setAttribute("aria-expanded", "false");
+        }
       });
 
       updateTravelersSummary();
@@ -861,27 +1018,57 @@
     on(dateTrigger, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
       if (e && e.stopPropagation) e.stopPropagation();
+
       togglePanel(dateTrigger, datePopover);
+
       if (datePopover && !datePopover.hasAttribute("hidden")) {
+        ensureVisibleMonthContainsSelected();
         renderCalendars();
+        WIN.setTimeout(function () {
+          focusFirstAvailableDay();
+        }, 0);
       }
     });
 
     on(dateModeDepart, "click", function () {
       dateSelectionMode = "depart";
+      updateDateDisplay();
       updateDateModeUi();
+      renderCalendars();
+      focusFirstAvailableDay();
     });
 
     on(dateModeReturn, "click", function () {
       if (!isOneWay()) {
         dateSelectionMode = "return";
+        updateDateDisplay();
         updateDateModeUi();
+        renderCalendars();
+        focusFirstAvailableDay();
       }
     });
 
+    if (monthChipButtons && monthChipButtons.length) {
+      var m;
+      for (m = 0; m < monthChipButtons.length; m++) {
+        on(monthChipButtons[m], "click", function () {
+          var monthIso = this.getAttribute("data-month-iso");
+          var monthDate = parseISODate(monthIso);
+          if (!monthDate) return;
+          visibleMonth = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+          renderCalendars();
+          focusFirstAvailableDay();
+        });
+      }
+    }
+
     on(dateConfirm, "click", function () {
       if (datePopover) datePopover.setAttribute("hidden", "");
-      if (dateTrigger) removeClass(dateTrigger, "is-open");
+      if (dateTrigger) {
+        removeClass(dateTrigger, "is-open");
+        dateTrigger.setAttribute("aria-expanded", "false");
+        try { dateTrigger.focus(); } catch (_) {}
+      }
       updateDateDisplay();
     });
 
@@ -907,7 +1094,10 @@
             target !== dateTrigger &&
             !(dateTrigger && dateTrigger.contains && dateTrigger.contains(target))) {
           datePopover.setAttribute("hidden", "");
-          if (dateTrigger) removeClass(dateTrigger, "is-open");
+          if (dateTrigger) {
+            removeClass(dateTrigger, "is-open");
+            dateTrigger.setAttribute("aria-expanded", "false");
+          }
         }
       }
 
@@ -916,7 +1106,10 @@
             target !== travelersTrigger &&
             !(travelersTrigger && travelersTrigger.contains && travelersTrigger.contains(target))) {
           travelersPopover.setAttribute("hidden", "");
-          if (travelersTrigger) removeClass(travelersTrigger, "is-open");
+          if (travelersTrigger) {
+            removeClass(travelersTrigger, "is-open");
+            travelersTrigger.setAttribute("aria-expanded", "false");
+          }
         }
       }
     });
@@ -924,8 +1117,21 @@
     on(DOC, "keydown", function (e) {
       e = e || WIN.event;
       var key = e.key || e.keyCode;
+
       if (key === "Escape" || key === 27) {
         closeFloatingPanels(null);
+        return;
+      }
+
+      if ((key === "Enter" || key === 13) && dateTrigger && DOC.activeElement === dateTrigger) {
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+        togglePanel(dateTrigger, datePopover);
+        if (datePopover && !datePopover.hasAttribute("hidden")) {
+          ensureVisibleMonthContainsSelected();
+          renderCalendars();
+          focusFirstAvailableDay();
+        }
       }
     });
 
@@ -934,6 +1140,9 @@
     updateReturnState();
     updateDateDisplay();
     updatePassengersHidden();
+
+    if (dateTrigger) dateTrigger.setAttribute("aria-expanded", "false");
+    if (travelersTrigger) travelersTrigger.setAttribute("aria-expanded", "false");
 
     if (calendarsWrap) {
       renderCalendars();
@@ -1013,9 +1222,7 @@
 
       if (!cleanDestination) {
         setText(errorBox, "Please enter a destination.");
-        try {
-          destination.focus();
-        } catch (_) {}
+        try { destination.focus(); } catch (_) {}
         return;
       }
 
