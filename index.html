@@ -355,11 +355,6 @@
                   data-subid="tg_home_flights_hero"
                   novalidate>
 
-                  <input type="hidden" name="sub_id" value="tg_home_flights_hero">
-                  <input type="hidden" name="utm_source" value="tripguidely">
-                  <input type="hidden" name="utm_medium" value="affiliate_widget">
-                  <input type="hidden" name="utm_campaign" value="home_flights">
-
                   <div class="flight-topline">
                     <label class="flight-choice">
                       <input
@@ -423,7 +418,7 @@
                           <span class="flight-title">Leaving from</span>
                           <input
                             id="home-flight-from"
-                            name="origin"
+                            name="from"
                             type="text"
                             autocomplete="off"
                             required
@@ -441,7 +436,7 @@
                           <span class="flight-title">Going to</span>
                           <input
                             id="home-flight-to"
-                            name="destination"
+                            name="to"
                             type="text"
                             autocomplete="off"
                             required
@@ -461,29 +456,32 @@
                         <div class="flight-date-split">
                           <div class="flight-date-col">
                             <span class="flight-title">Depart</span>
-                            <span class="flight-value" data-flight-depart-label>Choose date</span>
+                            <span class="flight-value" data-flight-depart-label>Mon, Mar 23</span>
                           </div>
                           <span class="flight-date-divider" aria-hidden="true"></span>
                           <div class="flight-date-col">
                             <span class="flight-title">Return</span>
-                            <span class="flight-value" data-flight-return-label>Choose date</span>
+                            <span class="flight-value" data-flight-return-label>Wed, Mar 25</span>
                           </div>
                         </div>
                       </button>
 
                       <input
                         id="home-flight-departure"
-                        name="depart_date"
+                        name="departure"
                         type="date"
+                        required
+                        lang="en"
                         class="hotel-control"
-                        hidden />
+                        style="position:absolute;opacity:0;pointer-events:none;" />
 
                       <input
                         id="home-flight-return"
-                        name="return_date"
+                        name="return"
                         type="date"
+                        lang="en"
                         class="hotel-control"
-                        hidden />
+                        style="position:absolute;opacity:0;pointer-events:none;" />
 
                       <div class="flight-date-popover" data-flight-date-popover hidden>
                         <div class="flight-date-head">
@@ -508,7 +506,7 @@
                           <div class="flight-date-note">Hover to show holidays</div>
 
                           <div class="flight-date-summary">
-                            <strong data-flight-date-summary>Choose your travel dates</strong>
+                            <strong data-flight-date-summary>Mon, Mar 23 — Wed, Mar 25</strong>
                             <span>All dates are in local time</span>
                           </div>
 
@@ -540,8 +538,6 @@
 
                         <span class="flight-caret" aria-hidden="true"></span>
                       </button>
-
-                      <input type="hidden" name="passengers" value="1">
 
                       <div class="flight-travelers-popover" data-flight-travelers-popover hidden>
                         <div class="flight-travelers-row" data-counter="adults" data-min="1" data-max="9">
@@ -606,13 +602,11 @@
                   </div>
 
                   <div class="flight-actions">
-                    <a
+                    <button
                       class="flight-plus-hotel"
-                      href="https://kiwi.tpk.ro/3cZhdZwg?sub_id=tg_home_flights_hotel"
-                      target="_blank"
-                      rel="nofollow sponsored noopener">
+                      type="button">
                       Flight + Hotel
-                    </a>
+                    </button>
 
                     <button
                       id="home-flight-search-submit"
@@ -623,7 +617,7 @@
                   </div>
 
                   <p style="margin:0;color:var(--muted2);font-size:.92rem;">
-                    Compare flights quickly, then continue to our partner to view real-time prices and routes.
+                    Compare flight options faster, then continue to our flight partner to check routes, prices, and timing.
                   </p>
                   <p style="margin:0;color:var(--muted2);font-size:.92rem;">
                     Still planning? <a href="/travel-guides/">Explore destination guides</a> or <a href="/transport/">open the transport hub</a>.
