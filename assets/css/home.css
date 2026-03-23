@@ -438,6 +438,7 @@ body[data-page="home"] #hero-panel-flights{
 body[data-page="home"] #home-flight-search-form{
   display: grid;
   gap: 14px;
+  overflow: visible;
 }
 
 /* topline */
@@ -542,27 +543,29 @@ body[data-page="home"] #home-flight-search-form .hotel-search-grid{
   gap: 10px;
   align-items: stretch;
   padding-top: 4px;
+  overflow: visible;
 }
 
 body[data-page="home"] #home-flight-search-form .hotel-field{
   position: relative;
   min-width: 0;
+  overflow: visible;
 }
 
 body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1){
-  padding-right: 22px;
+  padding-right: 26px;
 }
 
 body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2){
-  padding-left: 22px;
+  padding-left: 26px;
 }
 
 /* swap */
 
 body[data-page="home"] #home-flight-search-form .flight-swap{
   position: absolute;
-  left: calc(25% - 24px);
-  top: 50%;
+  left: calc(50% - 374px);
+  top: 43px;
   transform: translateY(-50%);
   width: 48px;
   height: 48px;
@@ -571,7 +574,7 @@ body[data-page="home"] #home-flight-search-form .flight-swap{
   background: linear-gradient(180deg, #ffffff, #f7fafb);
   color: var(--tg-water-3);
   box-shadow: 0 4px 14px rgba(2,6,23,.08);
-  z-index: 8;
+  z-index: 12;
   display: grid;
   place-items: center;
   padding: 0;
@@ -590,6 +593,11 @@ body[data-page="home"] #home-flight-search-form .flight-swap:hover{
 
 body[data-page="home"] #home-flight-search-form .flight-swap:active{
   transform: translateY(-50%) rotate(180deg);
+}
+
+body[data-page="home"] #home-flight-search-form .flight-swap::before,
+body[data-page="home"] #home-flight-search-form .flight-swap::after{
+  content: none !important;
 }
 
 body[data-page="home"] #home-flight-search-form .flight-swap svg{
@@ -784,17 +792,19 @@ body[data-page="home"] .flight-date-popover,
 body[data-page="home"] [data-flight-date-popover]{
   position: absolute;
   top: calc(100% + 12px);
-  left: 0;
+  left: 50%;
   z-index: 60;
-  width: 960px;
-  max-width: min(960px, calc(100vw - 32px));
+  width: 980px;
+  max-width: min(980px, calc(100vw - 40px));
+  max-height: min(760px, calc(100vh - 80px));
   background: var(--flight-cal-bg);
   border: 1px solid var(--flight-cal-border);
   border-radius: var(--flight-cal-radius);
   box-shadow: var(--flight-cal-shadow);
   padding: 0;
-  overflow: hidden;
-  transform-origin: top left;
+  overflow: auto;
+  transform: translateX(-50%);
+  transform-origin: top center;
   animation: tgFlightCalendarIn .26s var(--flight-cal-ease);
   isolation: isolate;
 }
@@ -806,11 +816,11 @@ body[data-page="home"] .flight-date-popover[hidden]{
 @keyframes tgFlightCalendarIn{
   from{
     opacity: 0;
-    transform: translateY(8px) scale(.985);
+    transform: translateX(-50%) translateY(8px) scale(.985);
   }
   to{
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }
 
@@ -819,7 +829,7 @@ body[data-page="home"] .flight-date-head{
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px 24px 18px;
+  padding: 18px 24px 16px;
   background: #fff;
   border-bottom: 1px solid var(--flight-cal-border-2);
 }
@@ -836,8 +846,9 @@ body[data-page="home"] .flight-date-title{
 body[data-page="home"] .flight-date-head-right{
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   margin-left: auto;
+  flex-wrap: nowrap;
 }
 
 /* depart / return */
@@ -855,6 +866,7 @@ body[data-page="home"] .flight-date-mode{
   min-height: auto;
   border-bottom: 3px solid transparent;
   cursor: pointer;
+  white-space: nowrap;
   transition:
     color .18s ease,
     border-color .18s ease,
@@ -876,6 +888,7 @@ body[data-page="home"] .flight-date-monthchips{
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: nowrap;
 }
 
 body[data-page="home"] .flight-date-monthchips button{
@@ -908,13 +921,14 @@ body[data-page="home"] .flight-cal-wrap,
 body[data-page="home"] [data-flight-cal-wrap]{
   display: grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  gap: 34px;
-  padding: 22px 24px 24px;
+  gap: 28px;
+  padding: 20px 24px 22px;
   background: #fff;
 }
 
 body[data-page="home"] .flight-cal{
   min-width: 0;
+  width: 100%;
 }
 
 body[data-page="home"] .flight-cal-head{
@@ -922,7 +936,7 @@ body[data-page="home"] .flight-cal-head{
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   min-height: 32px;
 }
 
@@ -973,8 +987,8 @@ body[data-page="home"] .flight-cal-nav:hover{
 body[data-page="home"] .flight-weekdays{
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
-  margin: 0 0 10px;
+  gap: 6px;
+  margin: 0 0 8px;
 }
 
 body[data-page="home"] .flight-weekdays span{
@@ -982,7 +996,7 @@ body[data-page="home"] .flight-weekdays span{
   align-items: center;
   justify-content: center;
   min-height: 22px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
   font-weight: 700;
   color: #98a2b3;
@@ -992,7 +1006,7 @@ body[data-page="home"] .flight-weekdays span{
 body[data-page="home"] .flight-days{
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
 }
 
 /* day cells */
@@ -1002,9 +1016,9 @@ body[data-page="home"] .flight-day{
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: var(--flight-cal-day-size);
+  min-height: 40px;
   border: 1px solid transparent;
-  border-radius: var(--flight-cal-radius-sm);
+  border-radius: 10px;
   background: transparent;
   color: var(--flight-cal-text);
   display: inline-flex;
@@ -1023,7 +1037,7 @@ body[data-page="home"] .flight-day{
 body[data-page="home"] .flight-day > span{
   position: relative;
   z-index: 2;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
   font-weight: 700;
 }
@@ -1051,19 +1065,24 @@ body[data-page="home"] .flight-day.disabled{
 }
 
 body[data-page="home"] .flight-day.range{
-  background: linear-gradient(180deg, rgba(18,207,208,.14), rgba(18,207,208,.10));
-  border-color: rgba(18,207,208,.12);
+  background: rgba(18,207,208,.12);
+  border-color: transparent;
   border-radius: 0;
+  box-shadow: none;
 }
 
-body[data-page="home"] .flight-day.range:first-child{
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+body[data-page="home"] .flight-day.start{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-body[data-page="home"] .flight-day.range:last-child{
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+body[data-page="home"] .flight-day.end{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+body[data-page="home"] .flight-day.single{
+  border-radius: 10px;
 }
 
 body[data-page="home"] .flight-day.start,
@@ -1073,8 +1092,8 @@ body[data-page="home"] .flight-day.single{
   border-color: transparent;
   color: #fff;
   box-shadow:
-    0 10px 20px rgba(18,207,208,.22),
-    inset 0 1px 0 rgba(255,255,255,.18);
+    0 8px 18px rgba(18,207,208,.18),
+    inset 0 1px 0 rgba(255,255,255,.16);
 }
 
 body[data-page="home"] .flight-day.start:hover,
@@ -1086,12 +1105,15 @@ body[data-page="home"] .flight-day.single:hover{
 /* footer */
 
 body[data-page="home"] .flight-date-footer{
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 24px 22px;
-  border-top: 1px solid var(--flight-cal-border-2);
+  padding: 16px 24px 18px;
+  border-top: 1px solid #edf2f6;
   background: #fff;
 }
 
@@ -1106,6 +1128,7 @@ body[data-page="home"] .flight-date-summary{
   display: grid;
   gap: 3px;
   margin-left: auto;
+  padding-right: 2px;
   color: var(--flight-cal-text-soft);
   font-size: 14px;
   line-height: 1.35;
@@ -1121,7 +1144,7 @@ body[data-page="home"] .flight-date-summary strong{
 body[data-page="home"] .flight-date-confirm{
   appearance: none;
   min-width: 220px;
-  height: 52px;
+  height: 50px;
   padding: 0 22px;
   border: 0;
   border-radius: 12px;
@@ -2016,6 +2039,13 @@ body[data-page="home"] .map-explorer__note{
    RESPONSIVE
    ========================================================================== */
 
+@media (max-width: 1200px){
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
+    width: min(920px, calc(100vw - 32px));
+  }
+}
+
 @media (max-width: 1100px){
   body[data-page="home"] .hotel-search-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2055,6 +2085,8 @@ body[data-page="home"] .map-explorer__note{
     left: 50%;
     top: 36px;
     transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
   }
 
   body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1),
@@ -2070,8 +2102,29 @@ body[data-page="home"] .map-explorer__note{
     padding-left: 26px;
   }
 
-  body[data-page="home"] #home-flight-search-form .flight-date-popover{
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
+    left: 0;
+    transform: none;
     width: min(760px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+  }
+
+  @keyframes tgFlightCalendarIn{
+    from{
+      opacity: 0;
+      transform: translateY(8px) scale(.985);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  body[data-page="home"] .flight-cal-wrap,
+  body[data-page="home"] [data-flight-cal-wrap]{
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 }
 
@@ -2235,16 +2288,21 @@ body[data-page="home"] .map-explorer__note{
     justify-content: center;
   }
 
-  body[data-page="home"] .flight-date-popover{
+  body[data-page="home"] .flight-date-popover,
+  body[data-page="home"] [data-flight-date-popover]{
     left: 0;
+    right: 0;
+    transform: none;
     width: 100%;
     max-width: none;
+    max-height: min(78vh, 720px);
+    border-radius: 18px;
   }
 
   body[data-page="home"] .flight-date-head{
     padding: 16px 14px 14px;
-    align-items: flex-start;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   body[data-page="home"] .flight-date-head-right{
@@ -2258,16 +2316,18 @@ body[data-page="home"] .map-explorer__note{
     padding: 0;
   }
 
-  body[data-page="home"] .flight-cal-wrap{
+  body[data-page="home"] .flight-cal-wrap,
+  body[data-page="home"] [data-flight-cal-wrap]{
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 18px 14px 18px;
+    padding: 16px 14px 18px;
   }
 
   body[data-page="home"] .flight-date-footer{
+    padding: 14px;
     flex-direction: column;
     align-items: stretch;
-    padding: 14px;
+    gap: 12px;
   }
 
   body[data-page="home"] .flight-date-summary{
@@ -2319,47 +2379,4 @@ body[data-page="home"] .map-explorer__note{
   body[data-page="home"] .flight-days{
     gap: 6px;
   }
-}
-
-/* ==========================================================================
-   FIX SWAP BUTTON POSITION
-   keep swap between origin and destination only
-   ========================================================================== */
-
-body[data-page="home"] #home-flight-search-form{
-  overflow: visible;
-}
-
-body[data-page="home"] #home-flight-search-form .hotel-search-grid{
-  overflow: visible;
-}
-
-body[data-page="home"] #home-flight-search-form .hotel-field{
-  overflow: visible;
-}
-
-body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1),
-body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2){
-  position: relative;
-}
-
-body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(1){
-  padding-right: 26px;
-}
-
-body[data-page="home"] #home-flight-search-form .hotel-field:nth-of-type(2){
-  padding-left: 26px;
-}
-
-body[data-page="home"] #home-flight-search-form .flight-swap{
-  position: absolute;
-  left: calc(25% - 24px);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 12;
-}
-
-body[data-page="home"] #home-flight-search-form .flight-swap::before,
-body[data-page="home"] #home-flight-search-form .flight-swap::after{
-  content: none !important;
 }
