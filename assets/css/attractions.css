@@ -1278,3 +1278,57 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
     font-size:.92rem;
   }
 }
+
+/* =========================================================
+   FIX — white button on white background
+   Add this near the END of attractions.css
+   ========================================================= */
+
+/* Secondary buttons inside light content cards */
+body[data-page^="attractions-"] .content .btn:not(.primary),
+body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary),
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
+body[data-page^="attractions-"] .map-actions .btn:not(.primary){
+  color:var(--attr-ink);
+  border:1px solid rgba(15,23,42,.12);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+  box-shadow:0 10px 24px rgba(2,6,23,.08);
+}
+
+body[data-page^="attractions-"] .content .btn:not(.primary):hover,
+body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
+body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
+  color:var(--attr-ink);
+  border-color:rgba(4,156,216,.26);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #edf7ff 100%);
+  box-shadow:0 14px 30px rgba(2,6,23,.10);
+}
+
+/* Keep hero secondary buttons white-on-dark */
+body[data-page^="attractions-"] .hero .btn:not(.primary),
+body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary){
+  color:#ffffff;
+  border-color:rgba(255,255,255,.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.08));
+  box-shadow:0 10px 24px rgba(2,6,23,.10);
+}
+
+body[data-page^="attractions-"] .hero .btn:not(.primary):hover,
+body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary):hover{
+  color:#ffffff;
+  border-color:rgba(255,255,255,.24);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.17), rgba(255,255,255,.12));
+  box-shadow:0 18px 36px rgba(0,0,0,.20);
+}
+
+/* Optional: stronger text rendering inside map section buttons */
+body[data-page^="attractions-"] .park-maps-section .btn{
+  font-weight:900;
+}
