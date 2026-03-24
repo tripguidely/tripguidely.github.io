@@ -849,7 +849,172 @@ body[data-page^="attractions-"] .sidebar hr{
 }
 
 /* ==========================================================================
-   20) Related cards / destination links
+   20) Park maps section
+   ========================================================================== */
+body[data-page^="attractions-"] .park-maps-section{
+  position:relative;
+}
+
+body[data-page^="attractions-"] .park-maps-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px;
+  margin-top:16px;
+}
+
+body[data-page^="attractions-"] .park-map-card{
+  position:relative;
+  overflow:hidden;
+  padding:22px;
+  border-radius:22px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-attraction-2);
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+body[data-page^="attractions-"] .park-map-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:5px;
+  background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
+  opacity:.96;
+}
+
+body[data-page^="attractions-"] .park-map-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(2,6,23,.10);
+}
+
+body[data-page^="attractions-"] .park-map-card-wide{
+  grid-column:1 / -1;
+}
+
+body[data-page^="attractions-"] .park-map-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+body[data-page^="attractions-"] .park-map-head h3{
+  margin:0;
+  line-height:1.25;
+}
+
+body[data-page^="attractions-"] .map-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:900;
+  white-space:nowrap;
+  border:1px solid transparent;
+  line-height:1;
+}
+
+body[data-page^="attractions-"] .map-badge.official{
+  color:#0d3e57;
+  background:
+    linear-gradient(180deg, rgba(4,156,216,.14), rgba(4,156,216,.08)),
+    #eef9ff;
+  border-color:rgba(4,156,216,.22);
+}
+
+body[data-page^="attractions-"] .map-badge.caution{
+  color:#5a1800;
+  background:
+    linear-gradient(180deg, rgba(251,208,0,.26), rgba(251,208,0,.18)),
+    #fff9db;
+  border-color:rgba(251,208,0,.34);
+}
+
+body[data-page^="attractions-"] .map-copy{
+  margin:0 0 14px;
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .map-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+body[data-page^="attractions-"] .map-actions .btn{
+  width:auto;
+}
+
+body[data-page^="attractions-"] .map-points{
+  margin:0;
+  padding-left:18px;
+}
+
+body[data-page^="attractions-"] .map-points li{
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .map-points li + li{
+  margin-top:6px;
+}
+
+body[data-page^="attractions-"] .park-map-links{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin:16px 0;
+}
+
+body[data-page^="attractions-"] .map-link-card{
+  position:relative;
+  display:block;
+  padding:15px 16px;
+  border-radius:18px;
+  text-decoration:none;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.95));
+  box-shadow:var(--shadow-attraction-2);
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+body[data-page^="attractions-"] .map-link-card:hover,
+body[data-page^="attractions-"] .map-link-card:focus-visible{
+  transform:translateY(-2px);
+  text-decoration:none;
+  border-color:rgba(4,156,216,.20);
+  box-shadow:0 18px 36px rgba(2,6,23,.10);
+}
+
+body[data-page^="attractions-"] .map-link-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
+  opacity:.96;
+}
+
+body[data-page^="attractions-"] .map-link-card strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .map-link-card span{
+  color:var(--attr-muted);
+  font-size:.95rem;
+}
+
+/* ==========================================================================
+   21) Related cards / destination links
    ========================================================================== */
 body[data-page^="attractions-"] .related-grid{
   display:grid;
@@ -885,7 +1050,7 @@ body[data-page^="attractions-"] .related-card span{
 }
 
 /* ==========================================================================
-   21) FAQ / details
+   22) FAQ / details
    ========================================================================== */
 body[data-page^="attractions-"] details{
   position:relative;
@@ -940,7 +1105,7 @@ body[data-page^="attractions-"] details p{
 }
 
 /* ==========================================================================
-   22) Note / tip boxes
+   23) Note / tip boxes
    ========================================================================== */
 body[data-page^="attractions-"] .note-box,
 body[data-page^="attractions-"] .tip-box{
@@ -965,14 +1130,14 @@ body[data-page^="attractions-"] .tip-box{
 }
 
 /* ==========================================================================
-   23) Anchor jump polish
+   24) Anchor jump polish
    ========================================================================== */
 body[data-page^="attractions-"] [id]{
   scroll-margin-top:calc(var(--header-h) + 18px);
 }
 
 /* ==========================================================================
-   24) Universal hub specific extras
+   25) Universal hub specific extras
    ========================================================================== */
 body[data-page="attractions-universal-studios-tickets"] .hero-tool-wrap{
   max-width:1030px;
@@ -1018,7 +1183,7 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
 }
 
 /* ==========================================================================
-   25) Responsive
+   26) Responsive
    ========================================================================== */
 @media (max-width:1100px){
   body[data-page^="attractions-"] .quick-picks{
@@ -1026,8 +1191,13 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
   }
 
   body[data-page^="attractions-"] .cards,
-  body[data-page^="attractions-"] .related-grid{
+  body[data-page^="attractions-"] .related-grid,
+  body[data-page^="attractions-"] .park-maps-grid{
     grid-template-columns:1fr;
+  }
+
+  body[data-page^="attractions-"] .park-map-card-wide{
+    grid-column:auto;
   }
 }
 
@@ -1049,7 +1219,8 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
 
   body[data-page^="attractions-"] .quick-picks,
   body[data-page^="attractions-"] .mini-grid,
-  body[data-page^="attractions-"] .trust{
+  body[data-page^="attractions-"] .trust,
+  body[data-page^="attractions-"] .park-map-links{
     grid-template-columns:1fr;
   }
 
@@ -1069,6 +1240,16 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
   body[data-page^="attractions-"] .table-wrap{
     border-radius:14px;
   }
+
+  body[data-page^="attractions-"] .park-map-card{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  body[data-page^="attractions-"] .park-map-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
 @media (max-width:560px){
@@ -1082,9 +1263,14 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
     justify-content:center;
   }
 
+  body[data-page^="attractions-"] .map-actions .btn{
+    width:100%;
+  }
+
   body[data-page^="attractions-"] .badge,
   body[data-page^="attractions-"] .tag,
-  body[data-page^="attractions-"] .cat{
+  body[data-page^="attractions-"] .cat,
+  body[data-page^="attractions-"] .map-badge{
     font-size:.8rem;
   }
 
