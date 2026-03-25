@@ -1287,10 +1287,7 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
 
 /* =========================================================
    FIX — white button on white background
-   Add this near the END of attractions.css
    ========================================================= */
-
-/* Secondary buttons inside light content cards */
 body[data-page^="attractions-"] .content .btn:not(.primary),
 body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary),
 body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
@@ -1334,70 +1331,91 @@ body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary):hover{
   box-shadow:0 18px 36px rgba(0,0,0,.20);
 }
 
-/* Optional: stronger text rendering inside map section buttons */
 body[data-page^="attractions-"] .park-maps-section .btn{
   font-weight:900;
 }
 
+/* =========================================================
+   INLINE MAP PREVIEW — replaces old fixed popover system
+   ========================================================= */
 body[data-page^="attractions-"] .map-preview-trigger{
   position:relative;
 }
 
-body[data-page^="attractions-"] .map-preview-popover{
-  position:fixed;
-  z-index:70;
-  width:min(360px, calc(100vw - 32px));
-  pointer-events:none;
+body[data-page^="attractions-"] .map-inline-preview{
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 14px);
+  transform:translateX(-50%) translateY(8px) scale(.985);
+  width:min(340px, calc(100vw - 32px));
   opacity:0;
-  transform:translateY(8px) scale(.985);
-  transition:opacity .16s ease, transform .16s ease;
+  pointer-events:none;
+  z-index:40;
+  transition:opacity .18s ease, transform .18s ease;
 }
 
-body[data-page^="attractions-"] .map-preview-popover.is-visible{
+body[data-page^="attractions-"] .map-inline-preview.is-visible{
   opacity:1;
-  transform:translateY(0) scale(1);
+  transform:translateX(-50%) translateY(0) scale(1);
 }
 
-body[data-page^="attractions-"] .map-preview-inner{
+body[data-page^="attractions-"] .map-inline-preview-inner{
   overflow:hidden;
   border-radius:22px;
-  border:1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.06);
   background:
-    linear-gradient(180deg, rgba(11,18,32,.96), rgba(15,23,42,.98));
+    radial-gradient(120% 140% at 0% 0%, rgba(59,130,246,.08), transparent 60%),
+    linear-gradient(180deg, rgba(30,41,59,.98), rgba(10,15,30,.98));
   box-shadow:
-    0 24px 50px rgba(2,6,23,.28),
-    inset 0 0 0 1px rgba(255,255,255,.04);
+    0 30px 80px rgba(2,6,23,.55),
+    0 10px 30px rgba(2,6,23,.35),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+  padding:12px;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
 }
 
-body[data-page^="attractions-"] .map-preview-inner img{
+body[data-page^="attractions-"] .map-inline-preview-media{
+  overflow:hidden;
+  border-radius:14px;
+  background:#0b1220;
+}
+
+body[data-page^="attractions-"] .map-inline-preview-media img{
   display:block;
   width:100%;
   aspect-ratio:4 / 3;
   object-fit:cover;
+  transition:transform .4s ease;
   background:#0b1220;
 }
 
-body[data-page^="attractions-"] .map-preview-meta{
+body[data-page^="attractions-"] .map-inline-preview.is-visible .map-inline-preview-media img{
+  transform:scale(1.02);
+}
+
+body[data-page^="attractions-"] .map-inline-preview-meta{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
-  padding:14px 16px 16px;
+  gap:10px;
+  padding:12px 4px 0;
 }
 
-body[data-page^="attractions-"] .map-preview-meta strong{
-  color:#fff;
+body[data-page^="attractions-"] .map-inline-preview-meta strong{
+  color:#ffffff;
+  font-size:.95rem;
   line-height:1.2;
 }
 
-body[data-page^="attractions-"] .map-preview-meta span{
+body[data-page^="attractions-"] .map-inline-preview-meta span{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   min-height:28px;
   padding:0 10px;
   border-radius:999px;
-  font-size:.78rem;
+  font-size:.74rem;
   font-weight:800;
   white-space:nowrap;
   color:#dbeafe;
@@ -1405,8 +1423,27 @@ body[data-page^="attractions-"] .map-preview-meta span{
   border:1px solid rgba(96,165,250,.22);
 }
 
+body[data-page^="attractions-"] .map-inline-preview::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:100%;
+  width:14px;
+  height:14px;
+  background:rgba(10,15,30,.98);
+  border-right:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transform:translateX(-50%) rotate(45deg);
+  margin-top:-7px;
+}
+
+body[data-page^="attractions-"] .park-map-card,
+body[data-page^="attractions-"] .map-link-card{
+  overflow:visible;
+}
+
 @media (max-width:980px){
-  body[data-page^="attractions-"] .map-preview-popover{
+  body[data-page^="attractions-"] .map-inline-preview{
     display:none;
   }
 }
