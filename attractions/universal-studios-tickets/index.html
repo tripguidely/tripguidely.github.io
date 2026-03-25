@@ -562,9 +562,9 @@
 
             <section class="park-maps-section" aria-labelledby="official-park-maps">
               <div class="section-title">
-                <h2 id="official-park-maps">Official Universal Park Maps</h2>
+                <h2 id="official-park-maps">Universal Park Maps</h2>
                 <p>
-                  View official park maps before you book so you can compare park layouts, understand how each destination is organized, and make a better ticket choice for your trip.
+                  Compare park layouts before you book. Preview each map to understand park size, land placement and overall flow before choosing your tickets.
                 </p>
               </div>
 
@@ -579,10 +579,13 @@
                   </p>
                   <div class="map-actions">
                     <a
-                      class="btn"
+                      class="btn map-preview-trigger"
                       href="https://www.usj.co.jp/pdf/map_studiomap.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/japan-map-preview.webp"
+                      data-preview-title="Universal Studios Japan"
+                      data-preview-label="Official PDF"
                     >
                       View USJ official map
                     </a>
@@ -604,10 +607,13 @@
                   </p>
                   <div class="map-actions">
                     <a
-                      class="btn"
+                      class="btn map-preview-trigger"
                       href="https://www.rwsentosa.com/-/jssmedia/project/non-gaming/rwsentosa/attractions/universal-studios-singapore/park-map/uss-park-map-en-v1.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/singapore-map-preview.webp"
+                      data-preview-title="Universal Studios Singapore"
+                      data-preview-label="Official PDF"
                     >
                       View USS official map
                     </a>
@@ -630,50 +636,65 @@
 
                   <div class="park-map-links">
                     <a
-                      class="map-link-card"
+                      class="map-link-card map-preview-trigger"
                       href="https://www.universalorlando.com/webdata/k2/en/us/files/Documents/universal-studios-florida-park-map_EN.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/usf-map-preview.webp"
+                      data-preview-title="Universal Studios Florida"
+                      data-preview-label="Official PDF"
                     >
                       <strong>Universal Studios Florida</strong>
                       <span>View official map</span>
                     </a>
 
                     <a
-                      class="map-link-card"
+                      class="map-link-card map-preview-trigger"
                       href="https://www.universalorlando.com/webdata/k2/en/us/files/Documents/islands-of-adventure-park-map-english.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/ioa-map-preview.webp"
+                      data-preview-title="Islands of Adventure"
+                      data-preview-label="Official PDF"
                     >
                       <strong>Islands of Adventure</strong>
                       <span>View official map</span>
                     </a>
 
                     <a
-                      class="map-link-card"
+                      class="map-link-card map-preview-trigger"
                       href="https://www.universalorlando.com/webdata/k2/en/us/files/Documents/universal-epic-universe-park-map-english.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/epic-map-preview.webp"
+                      data-preview-title="Epic Universe"
+                      data-preview-label="Official PDF"
                     >
                       <strong>Epic Universe</strong>
                       <span>View official map</span>
                     </a>
 
                     <a
-                      class="map-link-card"
+                      class="map-link-card map-preview-trigger"
                       href="https://www.universalorlando.com/webdata/k2/en/us/files/Documents/uvb-park-map.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/volcano-map-preview.webp"
+                      data-preview-title="Volcano Bay"
+                      data-preview-label="Official PDF"
                     >
                       <strong>Volcano Bay</strong>
                       <span>View official map</span>
                     </a>
 
                     <a
-                      class="map-link-card"
+                      class="map-link-card map-preview-trigger"
                       href="https://www.universalorlando.com/webdata/k2/en/us/files/Documents/universal-citywalk-orlando-map.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/citywalk-map-preview.webp"
+                      data-preview-title="CityWalk Orlando"
+                      data-preview-label="Official PDF"
                     >
                       <strong>CityWalk</strong>
                       <span>View official map</span>
@@ -690,27 +711,49 @@
                 <article class="park-map-card">
                   <div class="park-map-head">
                     <h3>🇺🇸 Universal Studios Hollywood</h3>
-                    <span class="map-badge caution">Official page</span>
+                    <span class="map-badge caution">Unofficial preview</span>
                   </div>
                   <p class="map-copy">
-                    Universal Studios Hollywood currently highlights its official park map through its official map page rather than a direct PDF.
+                    Preview the park layout visually, then use the official Universal Studios Hollywood map page for the latest version.
                   </p>
                   <div class="map-actions">
                     <a
-                      class="btn"
+                      class="btn primary"
                       href="https://www.universalstudioshollywood.com/park-map"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       View Hollywood official map
                     </a>
+
+                    <a
+                      class="btn map-preview-trigger"
+                      href="https://www.universalstudioshollywood.com/park-map"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-preview-image="/assets/images/maps/ush-map-preview.webp"
+                      data-preview-title="Universal Studios Hollywood"
+                      data-preview-label="Unofficial preview"
+                    >
+                      Preview Hollywood map
+                    </a>
                   </div>
                   <ul class="map-points">
-                    <li>Official Universal Studios Hollywood source</li>
-                    <li>Best option for the current park layout</li>
-                    <li>More reliable than third-party PDFs</li>
+                    <li>Official Universal Studios Hollywood page linked above</li>
+                    <li>Preview image is for quick visual reference</li>
+                    <li>Use the official map page for the latest layout</li>
                   </ul>
                 </article>
+              </div>
+
+              <div class="map-preview-popover" id="mapPreviewPopover" aria-hidden="true">
+                <div class="map-preview-inner">
+                  <img id="mapPreviewImage" src="" alt="" loading="lazy" decoding="async">
+                  <div class="map-preview-meta">
+                    <strong id="mapPreviewTitle"></strong>
+                    <span id="mapPreviewLabel"></span>
+                  </div>
+                </div>
               </div>
             </section>
 
