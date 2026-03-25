@@ -1338,3 +1338,75 @@ body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary):hover{
 body[data-page^="attractions-"] .park-maps-section .btn{
   font-weight:900;
 }
+
+body[data-page^="attractions-"] .map-preview-trigger{
+  position:relative;
+}
+
+body[data-page^="attractions-"] .map-preview-popover{
+  position:fixed;
+  z-index:70;
+  width:min(360px, calc(100vw - 32px));
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(8px) scale(.985);
+  transition:opacity .16s ease, transform .16s ease;
+}
+
+body[data-page^="attractions-"] .map-preview-popover.is-visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+body[data-page^="attractions-"] .map-preview-inner{
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.1);
+  background:
+    linear-gradient(180deg, rgba(11,18,32,.96), rgba(15,23,42,.98));
+  box-shadow:
+    0 24px 50px rgba(2,6,23,.28),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+body[data-page^="attractions-"] .map-preview-inner img{
+  display:block;
+  width:100%;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+  background:#0b1220;
+}
+
+body[data-page^="attractions-"] .map-preview-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px 16px;
+}
+
+body[data-page^="attractions-"] .map-preview-meta strong{
+  color:#fff;
+  line-height:1.2;
+}
+
+body[data-page^="attractions-"] .map-preview-meta span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  white-space:nowrap;
+  color:#dbeafe;
+  background:rgba(59,130,246,.18);
+  border:1px solid rgba(96,165,250,.22);
+}
+
+@media (max-width:980px){
+  body[data-page^="attractions-"] .map-preview-popover{
+    display:none;
+  }
+}
