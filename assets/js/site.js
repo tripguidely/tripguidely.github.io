@@ -16,6 +16,7 @@
    - Car rental hero search redirect (Klook)
    - Home hotel hero search redirect
    - Transport feature delegated to transport.js
+   - Map preview popover for Universal park maps
    - Guards against double init / duplicate event listeners
    ========================================================================== */
 
@@ -1580,6 +1581,138 @@
     }
   }
 
+  /* ---------- Map preview popover ---------- */
+
+  function initMapPreviewPopover() {
+    if (hasDocFlag("data-map-preview-bound")) return;
+    setDocFlag("data-map-preview-bound");
+
+    var popover = DOC.getElementById("mapPreviewPopover");
+    var image = DOC.getElementById("mapPreviewImage");
+    var title = DOC.getElementById("mapPreviewTitle");
+    var label = DOC.getElementById("mapPreviewLabel");
+
+    if (!popover || !image || !title || !label) return;
+
+    var triggers = DOC.querySelectorAll(".map-preview-trigger[data-preview-image]");
+    if (!triggers || !triggers.length) return;
+
+    var activeTrigger = null;
+
+    function isDesktop() {
+      if (!WIN.matchMedia) return true;
+      try {
+        return WIN.matchMedia("(min-width: 981px)").matches;
+      } catch (_) {
+        return true;
+      }
+    }
+
+    function positionPopover(trigger) {
+      if (!trigger || !popover) return;
+
+      var rect = trigger.getBoundingClientRect ? trigger.getBoundingClientRect() : null;
+      if (!rect) return;
+
+      var scrollY = WIN.pageYOffset || DOC.documentElement.scrollTop || DOC.body.scrollTop || 0;
+      var scrollX = WIN.pageXOffset || DOC.documentElement.scrollLeft || DOC.body.scrollLeft || 0;
+      var popoverWidth = popover.offsetWidth || 360;
+      var popoverHeight = popover.offsetHeight || 0;
+
+      var left = rect.right + scrollX + 14;
+      var top = rect.top + scrollY - 10;
+
+      if (left + popoverWidth > scrollX + WIN.innerWidth - 16) {
+        left = rect.left + scrollX - popoverWidth - 14;
+      }
+
+      if (left < scrollX + 16) {
+        left = scrollX + 16;
+      }
+
+      if (popoverHeight && top + popoverHeight > scrollY + WIN.innerHeight - 16) {
+        top = scrollY + WIN.innerHeight - popoverHeight - 16;
+      }
+
+      if (top < scrollY + 16) {
+        top = scrollY + 16;
+      }
+
+      popover.style.left = left + "px";
+      popover.style.top = top + "px";
+    }
+
+    function showPopover(trigger) {
+      if (!isDesktop() || !trigger) return;
+
+      activeTrigger = trigger;
+
+      image.src = getAttr(trigger, "data-preview-image") || "";
+      image.alt = (getAttr(trigger, "data-preview-title") || "Park map preview") + " preview";
+      title.textContent = getAttr(trigger, "data-preview-title") || "";
+      label.textContent = getAttr(trigger, "data-preview-label") || "Preview";
+
+      popover.className = (popover.className || "").replace(/\bis-visible\b/g, "");
+      popover.className = trimStr((popover.className || "") + " is-visible");
+      popover.setAttribute("aria-hidden", "false");
+
+      positionPopover(trigger);
+    }
+
+    function hidePopover() {
+      activeTrigger = null;
+      popover.className = (popover.className || "").replace(/\bis-visible\b/g, "");
+      popover.className = trimStr(popover.className || "");
+      popover.setAttribute("aria-hidden", "true");
+    }
+
+    function bindTrigger(trigger) {
+      on(trigger, "mouseenter", function () {
+        showPopover(trigger);
+      });
+
+      on(trigger, "focus", function () {
+        showPopover(trigger);
+      });
+
+      on(trigger, "mouseleave", function () {
+        hidePopover();
+      });
+
+      on(trigger, "blur", function () {
+        hidePopover();
+      });
+    }
+
+    for (var i = 0; i < triggers.length; i++) {
+      bindTrigger(triggers[i]);
+    }
+
+    on(WIN, "scroll", function () {
+      if (activeTrigger && isDesktop()) {
+        positionPopover(activeTrigger);
+      }
+    });
+
+    on(WIN, "resize", function () {
+      if (!isDesktop()) {
+        hidePopover();
+        return;
+      }
+      if (activeTrigger) {
+        positionPopover(activeTrigger);
+      }
+    });
+
+    on(DOC, "keydown", function (event) {
+      event = event || WIN.event;
+      var key = event.key || event.keyCode;
+      if (key === "Escape" || key === "Esc" || key === 27) {
+        hidePopover();
+      }
+    });
+  }
+
   function measureVitalsHints() {
     if (hasDocFlag("data-vitals-bound")) return;
     setDocFlag("data-vitals-bound");
@@ -1619,6 +1752,7 @@
     initHomeHotelSearch();
     initCarRentalSearch();
     initTransportFeature();
+    initMapPreviewPopover();
 
     trackOutboundClicks();
     trackAffiliateClicks();
