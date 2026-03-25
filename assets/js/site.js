@@ -16,7 +16,7 @@
    - Car rental hero search redirect (Klook)
    - Home hotel hero search redirect
    - Transport feature delegated to transport.js
-   - Map preview popover for Universal park maps
+   - Inline map preview for Universal park maps
    - Guards against double init / duplicate event listeners
    ========================================================================== */
 
@@ -1581,23 +1581,16 @@
     }
   }
 
-  /* ---------- Map preview popover ---------- */
+  /* ---------- Inline map preview ---------- */
 
   function initMapPreviewPopover() {
     if (hasDocFlag("data-map-preview-bound")) return;
     setDocFlag("data-map-preview-bound");
 
-    var popover = DOC.getElementById("mapPreviewPopover");
-    var image = DOC.getElementById("mapPreviewImage");
-    var title = DOC.getElementById("mapPreviewTitle");
-    var label = DOC.getElementById("mapPreviewLabel");
-
-    if (!popover || !image || !title || !label) return;
-
     var triggers = DOC.querySelectorAll(".map-preview-trigger[data-preview-image]");
     if (!triggers || !triggers.length) return;
 
-    var activeTrigger = null;
+    var hoverTimer = null;
 
     function isDesktop() {
       if (!WIN.matchMedia) return true;
@@ -1608,107 +1601,94 @@
       }
     }
 
-    function positionPopover(trigger) {
-      if (!trigger || !popover) return;
-
-      var rect = trigger.getBoundingClientRect ? trigger.getBoundingClientRect() : null;
-      if (!rect) return;
-
-      var scrollY = WIN.pageYOffset || DOC.documentElement.scrollTop || DOC.body.scrollTop || 0;
-      var scrollX = WIN.pageXOffset || DOC.documentElement.scrollLeft || DOC.body.scrollLeft || 0;
-      var popoverWidth = popover.offsetWidth || 360;
-      var popoverHeight = popover.offsetHeight || 0;
-
-      var left = rect.right + scrollX + 14;
-      var top = rect.top + scrollY - 10;
-
-      if (left + popoverWidth > scrollX + WIN.innerWidth - 16) {
-        left = rect.left + scrollX - popoverWidth - 14;
+    function removePreview(trigger) {
+      if (!trigger) return;
+      var preview = trigger.querySelector(".map-inline-preview");
+      if (preview && preview.parentNode) {
+        preview.parentNode.removeChild(preview);
       }
-
-      if (left < scrollX + 16) {
-        left = scrollX + 16;
-      }
-
-      if (popoverHeight && top + popoverHeight > scrollY + WIN.innerHeight - 16) {
-        top = scrollY + WIN.innerHeight - popoverHeight - 16;
-      }
-
-      if (top < scrollY + 16) {
-        top = scrollY + 16;
-      }
-
-      popover.style.left = left + "px";
-      popover.style.top = top + "px";
     }
 
-    function showPopover(trigger) {
+    function hideAllPreviews() {
+      var i;
+      for (i = 0; i < triggers.length; i++) {
+        removePreview(triggers[i]);
+      }
+    }
+
+    function buildPreview(trigger) {
+      var imageSrc = getAttr(trigger, "data-preview-image") || "";
+      var previewTitle = getAttr(trigger, "data-preview-title") || "";
+      var previewLabel = getAttr(trigger, "data-preview-label") || "Preview";
+
+      var preview = DOC.createElement("div");
+      preview.className = "map-inline-preview";
+      preview.setAttribute("aria-hidden", "true");
+
+      preview.innerHTML =
+        '<div class="map-inline-preview-inner">' +
+          '<div class="map-inline-preview-media">' +
+            '<img src="' + imageSrc + '" alt="' + ((previewTitle || "Park map preview") + ' preview') + '" loading="lazy" decoding="async">' +
+          '</div>' +
+          '<div class="map-inline-preview-meta">' +
+            '<strong>' + previewTitle + '</strong>' +
+            '<span>' + previewLabel + '</span>' +
+          '</div>' +
+        '</div>';
+
+      trigger.appendChild(preview);
+
+      WIN.setTimeout(function () {
+        preview.className += " is-visible";
+      }, 10);
+    }
+
+    function showPreview(trigger) {
       if (!isDesktop() || !trigger) return;
 
-      activeTrigger = trigger;
+      clearTimeout(hoverTimer);
 
-      image.src = getAttr(trigger, "data-preview-image") || "";
-      image.alt = (getAttr(trigger, "data-preview-title") || "Park map preview") + " preview";
-      title.textContent = getAttr(trigger, "data-preview-title") || "";
-      label.textContent = getAttr(trigger, "data-preview-label") || "Preview";
-
-      popover.className = (popover.className || "").replace(/\bis-visible\b/g, "");
-      popover.className = trimStr((popover.className || "") + " is-visible");
-      popover.setAttribute("aria-hidden", "false");
-
-      positionPopover(trigger);
-    }
-
-    function hidePopover() {
-      activeTrigger = null;
-      popover.className = (popover.className || "").replace(/\bis-visible\b/g, "");
-      popover.className = trimStr(popover.className || "");
-      popover.setAttribute("aria-hidden", "true");
+      hoverTimer = WIN.setTimeout(function () {
+        hideAllPreviews();
+        buildPreview(trigger);
+      }, 120);
     }
 
     function bindTrigger(trigger) {
       on(trigger, "mouseenter", function () {
-        showPopover(trigger);
+        showPreview(trigger);
       });
 
       on(trigger, "focus", function () {
-        showPopover(trigger);
+        showPreview(trigger);
       });
 
       on(trigger, "mouseleave", function () {
-        hidePopover();
+        clearTimeout(hoverTimer);
+        removePreview(trigger);
       });
 
       on(trigger, "blur", function () {
-        hidePopover();
+        clearTimeout(hoverTimer);
+        removePreview(trigger);
       });
     }
 
-    for (var i = 0; i < triggers.length; i++) {
+    var i;
+    for (i = 0; i < triggers.length; i++) {
       bindTrigger(triggers[i]);
     }
 
-    on(WIN, "scroll", function () {
-      if (activeTrigger && isDesktop()) {
-        positionPopover(activeTrigger);
-      }
-    });
-
     on(WIN, "resize", function () {
-      if (!isDesktop()) {
-        hidePopover();
-        return;
-      }
-      if (activeTrigger) {
-        positionPopover(activeTrigger);
-      }
+      hideAllPreviews();
     });
 
     on(DOC, "keydown", function (event) {
       event = event || WIN.event;
       var key = event.key || event.keyCode;
       if (key === "Escape" || key === "Esc" || key === 27) {
-        hidePopover();
+        clearTimeout(hoverTimer);
+        hideAllPreviews();
       }
     });
   }
