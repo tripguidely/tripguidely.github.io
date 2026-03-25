@@ -419,7 +419,7 @@ body[data-page^="attractions-"] .card.pad{
 }
 
 body[data-page^="attractions-"] .card.content{
-  overflow:clip;
+  overflow:visible;
 }
 
 body[data-page^="attractions-"] .card.content > section + section{
