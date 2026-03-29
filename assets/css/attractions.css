@@ -1646,3 +1646,127 @@ body[data-page^="attractions-"] .link-list a:focus-visible{
     color:#e52521 !important;
   }
 }
+
+/* =========================================================
+   HERO SPACING FIX — premium inner breathing room
+   ========================================================= */
+
+body[data-page^="attractions-"] .hero-inner{
+  padding-top:56px;
+  padding-bottom:56px;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap{
+  padding:36px 34px 28px;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap > *:first-child{
+  margin-top:0;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap > *:last-child{
+  margin-bottom:0;
+}
+
+body[data-page^="attractions-"] .kicker{
+  margin:0 0 14px;
+}
+
+body[data-page^="attractions-"] .hero h1{
+  margin:0 0 18px;
+  max-width:860px;
+}
+
+body[data-page^="attractions-"] .hero .lede{
+  margin:0 0 18px;
+  max-width:860px;
+}
+
+body[data-page^="attractions-"] .last-updated{
+  margin:0 0 18px;
+}
+
+body[data-page^="attractions-"] .callout{
+  margin:0 0 16px;
+}
+
+body[data-page^="attractions-"] .hero .actions{
+  margin:0 0 18px;
+}
+
+body[data-page^="attractions-"] .hero .card{
+  margin-top:0;
+  margin-bottom:16px;
+}
+
+body[data-page^="attractions-"] .trust{
+  margin-top:0;
+  margin-bottom:14px;
+}
+
+body[data-page^="attractions-"] .quick-picks{
+  margin-top:0;
+}
+
+/* Slightly more room on very large screens */
+@media (min-width:1200px){
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:40px 38px 30px;
+  }
+}
+
+/* Tablet */
+@media (max-width:980px){
+  body[data-page^="attractions-"] .hero-inner{
+    padding-top:42px;
+    padding-bottom:42px;
+  }
+
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:30px 26px 24px;
+  }
+
+  body[data-page^="attractions-"] .kicker{
+    margin-bottom:12px;
+  }
+
+  body[data-page^="attractions-"] .hero h1{
+    margin-bottom:16px;
+  }
+
+  body[data-page^="attractions-"] .hero .lede,
+  body[data-page^="attractions-"] .last-updated,
+  body[data-page^="attractions-"] .callout,
+  body[data-page^="attractions-"] .hero .actions{
+    margin-bottom:16px;
+  }
+}
+
+/* Mobile */
+@media (max-width:560px){
+  body[data-page^="attractions-"] .hero-inner{
+    padding-top:28px;
+    padding-bottom:28px;
+  }
+
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:22px 18px 18px;
+  }
+
+  body[data-page^="attractions-"] .kicker{
+    margin-bottom:10px;
+  }
+
+  body[data-page^="attractions-"] .hero h1{
+    margin-bottom:14px;
+  }
+
+  body[data-page^="attractions-"] .hero .lede,
+  body[data-page^="attractions-"] .last-updated,
+  body[data-page^="attractions-"] .callout,
+  body[data-page^="attractions-"] .hero .actions,
+  body[data-page^="attractions-"] .hero .card,
+  body[data-page^="attractions-"] .trust{
+    margin-bottom:14px;
+  }
+}
