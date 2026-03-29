@@ -1851,9 +1851,10 @@ body[data-page^="attractions-"] .hero .quick-pick span{
    ========================================================= */
 
 body[data-page^="attractions-"] .hero .trust{
-  padding:28px 38px;
+  padding:26px 34px;
   border-radius:30px;
-  gap:18px;
+  grid-template-columns:1fr;
+  gap:14px;
 }
 
 body[data-page^="attractions-"] .hero .trust-item{
@@ -1865,8 +1866,5 @@ body[data-page^="attractions-"] .hero .trust-item{
   border:0;
   box-shadow:none;
   line-height:1.6;
-}
-
-body[data-page^="attractions-"] .hero .trust-item + .trust-item{
-  margin-top:2px;
+  gap:14px;
 }
