@@ -765,6 +765,22 @@ body[data-page^="attractions-"] tbody td:first-child{
   color:var(--attr-ink);
 }
 
+body[data-page^="attractions-"] .table-aff-link{
+  color:inherit;
+  font-weight:900;
+  text-decoration:underline;
+  text-decoration-thickness:1.5px;
+  text-underline-offset:2px;
+  transition:color .16s ease, opacity .16s ease, text-decoration-thickness .16s ease;
+}
+
+body[data-page^="attractions-"] .table-aff-link:hover,
+body[data-page^="attractions-"] .table-aff-link:focus-visible{
+  color:var(--attr-blue-2);
+  opacity:1;
+  text-decoration-thickness:2px;
+}
+
 /* ==========================================================================
    18) Video block
    ========================================================================== */
@@ -1336,7 +1352,7 @@ body[data-page^="attractions-"] .park-maps-section .btn{
 }
 
 /* =========================================================
-   INLINE MAP PREVIEW — replaces old fixed popover system
+   INLINE PREVIEW — maps + Klook ticket previews
    ========================================================= */
 body[data-page^="attractions-"] .map-preview-trigger{
   position:relative;
@@ -1347,7 +1363,7 @@ body[data-page^="attractions-"] .map-inline-preview{
   left:50%;
   bottom:calc(100% + 14px);
   transform:translateX(-50%) translateY(8px) scale(.985);
-  width:min(340px, calc(100vw - 32px));
+  width:min(360px, calc(100vw - 32px));
   opacity:0;
   pointer-events:none;
   z-index:40;
@@ -1438,7 +1454,9 @@ body[data-page^="attractions-"] .map-inline-preview::after{
 }
 
 body[data-page^="attractions-"] .park-map-card,
-body[data-page^="attractions-"] .map-link-card{
+body[data-page^="attractions-"] .map-link-card,
+body[data-page^="attractions-"] .park-card,
+body[data-page^="attractions-"] .ticket-card{
   overflow:visible;
 }
 
