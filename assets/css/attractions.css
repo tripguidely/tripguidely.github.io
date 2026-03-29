@@ -1805,3 +1805,43 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
     display:none;
   }
 }
+
+/* =========================================================
+   HERO CONTENT BREATHING ROOM — PREMIUM FIX
+   ========================================================= */
+
+body[data-page^="attractions-"] .hero .trust{
+  padding:24px 30px;
+  border-radius:30px;
+  gap:18px;
+}
+
+body[data-page^="attractions-"] .hero .trust-item{
+  min-height:auto;
+  padding:0;
+  justify-content:flex-start;
+  text-align:left;
+  background:none;
+  border:0;
+  box-shadow:none;
+  line-height:1.6;
+}
+
+body[data-page^="attractions-"] .hero .quick-picks{
+  gap:14px;
+  margin-top:16px;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick{
+  padding:22px 18px 18px;
+  border-radius:20px;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick strong{
+  line-height:1.28;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick span{
+  margin-top:6px;
+  line-height:1.45;
+}
