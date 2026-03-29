@@ -1810,23 +1810,6 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
    HERO CONTENT BREATHING ROOM — PREMIUM FIX
    ========================================================= */
 
-body[data-page^="attractions-"] .hero .trust{
-  padding:24px 30px;
-  border-radius:30px;
-  gap:18px;
-}
-
-body[data-page^="attractions-"] .hero .trust-item{
-  min-height:auto;
-  padding:0;
-  justify-content:flex-start;
-  text-align:left;
-  background:none;
-  border:0;
-  box-shadow:none;
-  line-height:1.6;
-}
-
 body[data-page^="attractions-"] .hero .quick-picks{
   gap:14px;
   margin-top:16px;
@@ -1847,35 +1830,57 @@ body[data-page^="attractions-"] .hero .quick-pick span{
 }
 
 /* =========================================================
-   HERO CHECKLIST TEXT — FIX LEFT EDGE SPACING
+   HERO CHECKLIST BOX — SAFE FIX
    ========================================================= */
 
-body[data-page^="attractions-"] .hero .trust{
-  grid-template-columns:1fr;
-  padding:26px 34px;
-  gap:16px;
+body[data-page^="attractions-"] .hero .card{
+  padding:24px 30px 24px 34px;
+  margin-top:0;
+  margin-bottom:16px;
   border-radius:30px;
 }
 
-body[data-page^="attractions-"] .hero .trust-item{
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-  text-align:left;
-  min-height:auto;
+body[data-page^="attractions-"] .hero .checklist{
+  margin:0;
   padding:0;
-  gap:14px;
-  background:none;
-  border:0;
-  box-shadow:none;
-  line-height:1.6;
 }
 
-body[data-page^="attractions-"] .hero .trust-item > *:first-child{
-  flex:0 0 auto;
-  margin-top:3px;
+body[data-page^="attractions-"] .hero .checklist li{
+  padding-left:38px;
+  margin:0 0 18px;
+  line-height:1.65;
 }
 
-body[data-page^="attractions-"] .hero .trust-item > *:last-child{
-  flex:1 1 auto;
+body[data-page^="attractions-"] .hero .checklist li:last-child{
+  margin-bottom:0;
+}
+
+body[data-page^="attractions-"] .hero .checklist li::before{
+  left:0;
+}
+
+body[data-page^="attractions-"] .hero .checklist li::after{
+  left:5px;
+}
+
+@media (max-width:980px){
+  body[data-page^="attractions-"] .hero .card{
+    padding:22px 24px 22px 28px;
+  }
+
+  body[data-page^="attractions-"] .hero .checklist li{
+    padding-left:36px;
+    margin-bottom:16px;
+  }
+}
+
+@media (max-width:560px){
+  body[data-page^="attractions-"] .hero .card{
+    padding:20px 20px 20px 24px;
+  }
+
+  body[data-page^="attractions-"] .hero .checklist li{
+    padding-left:34px;
+    margin-bottom:14px;
+  }
 }
