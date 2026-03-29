@@ -1514,10 +1514,9 @@ body[data-page^="attractions-"] .map-inline-preview::after{
 
 /* =========================================================
    SUPER MARIO HOVER LINKS
-   Rouge → Jaune → Vert → Bleu
+   Texte seulement — jamais les boutons CTA
    ========================================================= */
 
-/* Variables gradient Mario */
 body[data-page^="attractions-"]{
   --mario-link-gradient:
     linear-gradient(
@@ -1529,15 +1528,12 @@ body[data-page^="attractions-"]{
     );
 }
 
-/* Base transition plus premium */
-body[data-page^="attractions-"] .content a,
-body[data-page^="attractions-"] .sidebar a,
-body[data-page^="attractions-"] .breadcrumbs a,
-body[data-page^="attractions-"] .quick-pick,
+/* Transitions uniquement pour les vrais liens texte */
+body[data-page^="attractions-"] .content a:not(.btn),
+body[data-page^="attractions-"] .sidebar a:not(.btn),
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn),
 body[data-page^="attractions-"] .table-aff-link,
-body[data-page^="attractions-"] .link-list a,
-body[data-page^="attractions-"] .related-card,
-body[data-page^="attractions-"] .map-link-card{
+body[data-page^="attractions-"] .link-list a:not(.btn){
   transition:
     color .18s ease,
     background-position .25s ease,
@@ -1546,17 +1542,17 @@ body[data-page^="attractions-"] .map-link-card{
     opacity .18s ease;
 }
 
-/* Hover gradient text effect */
-body[data-page^="attractions-"] .content a:hover,
-body[data-page^="attractions-"] .content a:focus-visible,
-body[data-page^="attractions-"] .sidebar a:hover,
-body[data-page^="attractions-"] .sidebar a:focus-visible,
-body[data-page^="attractions-"] .breadcrumbs a:hover,
-body[data-page^="attractions-"] .breadcrumbs a:focus-visible,
+/* Effet gradient Mario seulement sur les liens texte */
+body[data-page^="attractions-"] .content a:not(.btn):hover,
+body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
+body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
 body[data-page^="attractions-"] .table-aff-link:hover,
 body[data-page^="attractions-"] .table-aff-link:focus-visible,
-body[data-page^="attractions-"] .link-list a:hover,
-body[data-page^="attractions-"] .link-list a:focus-visible{
+body[data-page^="attractions-"] .link-list a:not(.btn):hover,
+body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
   background-image:var(--mario-link-gradient);
   background-size:100% 100%;
   background-repeat:no-repeat;
@@ -1568,17 +1564,7 @@ body[data-page^="attractions-"] .link-list a:focus-visible{
   text-decoration-thickness:2px;
 }
 
-/* Keep underline nice on table links */
-body[data-page^="attractions-"] .table-aff-link{
-  text-decoration-thickness:1.5px;
-}
-
-body[data-page^="attractions-"] .table-aff-link:hover,
-body[data-page^="attractions-"] .table-aff-link:focus-visible{
-  text-decoration-thickness:2px;
-}
-
-/* Quick-pick titles and spans also get Mario hover */
+/* Quick-picks gardent un effet Mario seulement sur leur texte */
 body[data-page^="attractions-"] .quick-pick:hover strong,
 body[data-page^="attractions-"] .quick-pick:focus-visible strong,
 body[data-page^="attractions-"] .quick-pick:hover span,
@@ -1591,7 +1577,51 @@ body[data-page^="attractions-"] .quick-pick:focus-visible span{
   background-clip:text;
 }
 
-/* Sidebar jump links stronger effect */
+/* Les boutons CTA doivent toujours rester lisibles */
+body[data-page^="attractions-"] .btn,
+body[data-page^="attractions-"] .btn:hover,
+body[data-page^="attractions-"] .btn:focus-visible,
+body[data-page^="attractions-"] .btn.primary,
+body[data-page^="attractions-"] .btn.primary:hover,
+body[data-page^="attractions-"] .btn.primary:focus-visible,
+body[data-page^="attractions-"] .sidebar .btn,
+body[data-page^="attractions-"] .sidebar .btn:hover,
+body[data-page^="attractions-"] .sidebar .btn:focus-visible,
+body[data-page^="attractions-"] .sidebar .btn.primary,
+body[data-page^="attractions-"] .sidebar .btn.primary:hover,
+body[data-page^="attractions-"] .sidebar .btn.primary:focus-visible{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff;
+  background-clip:border-box !important;
+  -webkit-background-clip:border-box !important;
+  text-decoration:none;
+}
+
+/* Boutons blancs du contenu gardent leur couleur normale */
+body[data-page^="attractions-"] .content .btn:not(.primary),
+body[data-page^="attractions-"] .content .btn:not(.primary):hover,
+body[data-page^="attractions-"] .content .btn:not(.primary):focus-visible,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):focus-visible,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):focus-visible{
+  color:var(--attr-ink) !important;
+  -webkit-text-fill-color:var(--attr-ink);
+}
+
+/* Table links */
+body[data-page^="attractions-"] .table-aff-link{
+  text-decoration-thickness:1.5px;
+}
+
+body[data-page^="attractions-"] .table-aff-link:hover,
+body[data-page^="attractions-"] .table-aff-link:focus-visible{
+  text-decoration-thickness:2px;
+}
+
+/* Sidebar text links */
 body[data-page^="attractions-"] .link-list a{
   font-weight:700;
 }
@@ -1601,18 +1631,18 @@ body[data-page^="attractions-"] .link-list a:focus-visible{
   text-decoration-thickness:2px;
 }
 
-/* Fallback for browsers that do not fully support text clipping */
+/* Fallback */
 @supports not ((-webkit-background-clip:text) or (background-clip:text)){
-  body[data-page^="attractions-"] .content a:hover,
-  body[data-page^="attractions-"] .content a:focus-visible,
-  body[data-page^="attractions-"] .sidebar a:hover,
-  body[data-page^="attractions-"] .sidebar a:focus-visible,
-  body[data-page^="attractions-"] .breadcrumbs a:hover,
-  body[data-page^="attractions-"] .breadcrumbs a:focus-visible,
+  body[data-page^="attractions-"] .content a:not(.btn):hover,
+  body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
+  body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
+  body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
+  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
+  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
   body[data-page^="attractions-"] .table-aff-link:hover,
   body[data-page^="attractions-"] .table-aff-link:focus-visible,
-  body[data-page^="attractions-"] .link-list a:hover,
-  body[data-page^="attractions-"] .link-list a:focus-visible{
+  body[data-page^="attractions-"] .link-list a:not(.btn):hover,
+  body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
     color:#e52521 !important;
   }
 }
