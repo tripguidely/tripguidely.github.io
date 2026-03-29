@@ -1845,3 +1845,37 @@ body[data-page^="attractions-"] .hero .quick-pick span{
   margin-top:6px;
   line-height:1.45;
 }
+
+/* =========================================================
+   HERO CHECKLIST TEXT — FIX LEFT EDGE SPACING
+   ========================================================= */
+
+body[data-page^="attractions-"] .hero .trust{
+  grid-template-columns:1fr;
+  padding:26px 34px;
+  gap:16px;
+  border-radius:30px;
+}
+
+body[data-page^="attractions-"] .hero .trust-item{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  text-align:left;
+  min-height:auto;
+  padding:0;
+  gap:14px;
+  background:none;
+  border:0;
+  box-shadow:none;
+  line-height:1.6;
+}
+
+body[data-page^="attractions-"] .hero .trust-item > *:first-child{
+  flex:0 0 auto;
+  margin-top:3px;
+}
+
+body[data-page^="attractions-"] .hero .trust-item > *:last-child{
+  flex:1 1 auto;
+}
