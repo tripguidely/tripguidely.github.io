@@ -17,6 +17,7 @@
    - Home hotel hero search redirect
    - Transport feature delegated to transport.js
    - Inline map preview for Universal park maps
+   - Inline button preview for affiliate CTA buttons
    - Guards against double init / duplicate event listeners
    ========================================================================== */
 
@@ -1237,7 +1238,7 @@
         var html = "";
         var j;
         for (j = 0; j < values.length; j++) {
-          html += '<option value="' + values[j] + '">' + values[j] + '</option>';
+          html += '<option value="' + values[j] + '">' + values[j] + "</option>";
         }
         select.innerHTML = html;
       }
@@ -1392,7 +1393,7 @@
       titleEl.textContent = monthLabel(year, month);
 
       for (i = 0; i < names.length; i++) {
-        weekdays.push('<div class="car-cal__weekday">' + names[i] + '</div>');
+        weekdays.push('<div class="car-cal__weekday">' + names[i] + "</div>");
       }
       weekdays.push("</div>");
 
@@ -1419,9 +1420,9 @@
         if (inRange && iso === draftEndDate) cls += " is-range-right";
 
         grid.push(
-          '<button type="button" class="' + cls + '" data-date="' + iso + '"' + (disabled ? ' disabled' : '') + '>' +
+          '<button type="button" class="' + cls + '" data-date="' + iso + '"' + (disabled ? " disabled" : "") + ">" +
             i +
-          '</button>'
+          "</button>"
         );
       }
 
@@ -1629,12 +1630,124 @@
         '<div class="map-inline-preview-inner">' +
           '<div class="map-inline-preview-media">' +
             '<img src="' + imageSrc + '" alt="' + ((previewTitle || "Park map preview") + ' preview') + '" loading="lazy" decoding="async">' +
-          '</div>' +
+          "</div>" +
           '<div class="map-inline-preview-meta">' +
-            '<strong>' + previewTitle + '</strong>' +
-            '<span>' + previewLabel + '</span>' +
-          '</div>' +
-        '</div>';
+            "<strong>" + previewTitle + "</strong>" +
+            "<span>" + previewLabel + "</span>" +
+          "</div>" +
+        "</div>";
+
+      trigger.appendChild(preview);
+
+      WIN.setTimeout(function () {
+        preview.className += " is-visible";
+      }, 10);
+    }
+
+    function showPreview(trigger) {
+      if (!isDesktop() || !trigger) return;
+
+      clearTimeout(hoverTimer);
+
+      hoverTimer = WIN.setTimeout(function () {
+        hideAllPreviews();
+        buildPreview(trigger);
+      }, 120);
+    }
+
+    function bindTrigger(trigger) {
+      on(trigger, "mouseenter", function () {
+        showPreview(trigger);
+      });
+
+      on(trigger, "focus", function () {
+        showPreview(trigger);
+      });
+
+      on(trigger, "mouseleave", function () {
+        clearTimeout(hoverTimer);
+        removePreview(trigger);
+      });
+
+      on(trigger, "blur", function () {
+        clearTimeout(hoverTimer);
+        removePreview(trigger);
+      });
+    }
+
+    var i;
+    for (i = 0; i < triggers.length; i++) {
+      bindTrigger(triggers[i]);
+    }
+
+    on(WIN, "resize", function () {
+      hideAllPreviews();
+    });
+
+    on(DOC, "keydown", function (event) {
+      event = event || WIN.event;
+      var key = event.key || event.keyCode;
+      if (key === "Escape" || key === "Esc" || key === 27) {
+        clearTimeout(hoverTimer);
+        hideAllPreviews();
+      }
+    });
+  }
+
+  /* ---------- Inline CTA button preview ---------- */
+
+  function initButtonPreviewPopover() {
+    if (hasDocFlag("data-button-preview-bound")) return;
+    setDocFlag("data-button-preview-bound");
+
+    var triggers = DOC.querySelectorAll(".btn-preview-trigger[data-preview-image]");
+    if (!triggers || !triggers.length) return;
+
+    var hoverTimer = null;
+
+    function isDesktop() {
+      if (!WIN.matchMedia) return true;
+      try {
+        return WIN.matchMedia("(min-width: 981px)").matches;
+      } catch (_) {
+        return true;
+      }
+    }
+
+    function removePreview(trigger) {
+      if (!trigger) return;
+      var preview = trigger.querySelector(".map-inline-preview");
+      if (preview && preview.parentNode) {
+        preview.parentNode.removeChild(preview);
+      }
+    }
+
+    function hideAllPreviews() {
+      var i;
+      for (i = 0; i < triggers.length; i++) {
+        removePreview(triggers[i]);
+      }
+    }
+
+    function buildPreview(trigger) {
+      var imageSrc = getAttr(trigger, "data-preview-image") || "";
+      var previewTitle = getAttr(trigger, "data-preview-title") || "";
+      var previewLabel = getAttr(trigger, "data-preview-label") || "Preview";
+
+      var preview = DOC.createElement("div");
+      preview.className = "map-inline-preview";
+      preview.setAttribute("aria-hidden", "true");
+
+      preview.innerHTML =
+        '<div class="map-inline-preview-inner">' +
+          '<div class="map-inline-preview-media">' +
+            '<img src="' + imageSrc + '" alt="' + ((previewTitle || "Ticket preview") + ' preview') + '" loading="lazy" decoding="async">' +
+          "</div>" +
+          '<div class="map-inline-preview-meta">' +
+            "<strong>" + previewTitle + "</strong>" +
+            "<span>" + previewLabel + "</span>" +
+          "</div>" +
+        "</div>";
 
       trigger.appendChild(preview);
 
@@ -1733,6 +1846,7 @@
     initCarRentalSearch();
     initTransportFeature();
     initMapPreviewPopover();
+    initButtonPreviewPopover();
 
     trackOutboundClicks();
     trackAffiliateClicks();
