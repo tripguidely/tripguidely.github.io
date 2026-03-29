@@ -1,6 +1,6 @@
 /* ==========================================================================
    TripGuidely attractions.css — Attractions hub / money pages
-   Super Mario-inspired conversion-first version
+   Premium editorial refinement (updated)
    --------------------------------------------------------------------------
    Usage:
    - Load AFTER /assets/css/styles.css
@@ -35,7 +35,6 @@
    1) Page-scoped tokens
    ========================================================================== */
 body[data-page^="attractions-"]{
-  /* Super Mario-inspired palette */
   --attr-red:#e52521;
   --attr-red-2:#c61c19;
   --attr-blue:#049cd8;
@@ -50,26 +49,25 @@ body[data-page^="attractions-"]{
   --attr-muted:#556275;
   --attr-card:#ffffff;
   --attr-card-2:#f8fbff;
-  --attr-line:rgba(15,23,42,.10);
-  --attr-line-2:rgba(15,23,42,.14);
+  --attr-line:rgba(15,23,42,.09);
+  --attr-line-2:rgba(15,23,42,.13);
 
-  /* Conversion / layout */
   --focus:rgba(4,156,216,.35);
-  --shadow-attraction:0 18px 42px rgba(2,6,23,.08);
-  --shadow-attraction-2:0 12px 28px rgba(2,6,23,.06);
-  --shadow-hero:0 30px 70px rgba(0,0,0,.28);
+  --shadow-attraction:0 18px 42px rgba(2,6,23,.07);
+  --shadow-attraction-2:0 12px 28px rgba(2,6,23,.055);
+  --shadow-attraction-3:0 8px 20px rgba(2,6,23,.045);
+  --shadow-hero:0 30px 70px rgba(0,0,0,.24);
   --hero-min:760px;
   --hero-min-m:680px;
 
-  /* CTA */
   --cta1:var(--attr-red);
   --cta2:#ff6a3d;
   --cta3:var(--attr-yellow);
 
   background:
-    radial-gradient(1000px 620px at 10% 0%, rgba(4,156,216,.10), transparent 56%),
-    radial-gradient(980px 600px at 90% 0%, rgba(251,208,0,.12), transparent 58%),
-    linear-gradient(180deg, #fbfdff 0%, #f6fbff 32%, #ffffff 100%);
+    radial-gradient(1000px 620px at 10% 0%, rgba(4,156,216,.08), transparent 56%),
+    radial-gradient(980px 600px at 90% 0%, rgba(251,208,0,.10), transparent 58%),
+    linear-gradient(180deg, #fbfdff 0%, #f7fbff 32%, #ffffff 100%);
   color:var(--attr-text);
 }
 
@@ -97,6 +95,11 @@ body[data-page^="attractions-"] a:hover{
   text-decoration-thickness:2px;
 }
 
+body[data-page^="attractions-"] *:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 4px var(--focus);
+}
+
 /* ==========================================================================
    3) Hero refinement
    ========================================================================== */
@@ -117,23 +120,24 @@ body[data-page^="attractions-"] .hero-bg img{
 
 body[data-page^="attractions-"] .hero-overlay{
   background:
-    linear-gradient(180deg, rgba(10,14,26,.28) 0%, rgba(10,14,26,.52) 34%, rgba(10,14,26,.82) 100%),
-    radial-gradient(900px 480px at 12% 12%, rgba(4,156,216,.24), transparent 55%),
-    radial-gradient(880px 460px at 88% 14%, rgba(229,37,33,.24), transparent 56%),
-    radial-gradient(820px 420px at 55% 100%, rgba(251,208,0,.18), transparent 56%);
+    linear-gradient(180deg, rgba(10,14,26,.26) 0%, rgba(10,14,26,.50) 34%, rgba(10,14,26,.82) 100%),
+    radial-gradient(900px 480px at 12% 12%, rgba(4,156,216,.20), transparent 55%),
+    radial-gradient(880px 460px at 88% 14%, rgba(229,37,33,.18), transparent 56%),
+    radial-gradient(820px 420px at 55% 100%, rgba(251,208,0,.13), transparent 56%);
 }
 
 body[data-page^="attractions-"] .hero-tool-wrap{
   max-width:1020px;
-  border:1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)),
-    linear-gradient(135deg, rgba(17,24,39,.80), rgba(33,43,69,.78));
-  -webkit-backdrop-filter:blur(10px) saturate(125%);
-  backdrop-filter:blur(10px) saturate(125%);
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
+    linear-gradient(135deg, rgba(17,24,39,.76), rgba(33,43,69,.74));
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+  backdrop-filter:blur(10px) saturate(120%);
   box-shadow:
     var(--shadow-hero),
-    0 0 0 1px rgba(255,255,255,.04) inset;
+    0 0 0 1px rgba(255,255,255,.03) inset;
 }
 
 body[data-page^="attractions-"] .hero-inner .breadcrumbs{
@@ -151,8 +155,8 @@ body[data-page^="attractions-"] .kicker .dot{
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
     linear-gradient(135deg, var(--attr-red), var(--attr-yellow));
   box-shadow:
-    0 0 0 4px rgba(229,37,33,.16),
-    0 10px 24px rgba(229,37,33,.28);
+    0 0 0 4px rgba(229,37,33,.14),
+    0 10px 24px rgba(229,37,33,.22);
 }
 
 body[data-page^="attractions-"] .hero h1,
@@ -162,16 +166,16 @@ body[data-page^="attractions-"] .hero .lede{
 
 body[data-page^="attractions-"] .hero h1{
   color:#ffffff;
-  line-height:1.08;
+  line-height:1.06;
   letter-spacing:-.04em;
   text-wrap:balance;
-  text-shadow:0 4px 18px rgba(0,0,0,.18);
+  text-shadow:0 4px 18px rgba(0,0,0,.16);
 }
 
 body[data-page^="attractions-"] .hero .lede{
   color:rgba(255,255,255,.90);
-  font-size:1.22rem;
-  line-height:1.58;
+  font-size:1.18rem;
+  line-height:1.56;
 }
 
 body[data-page^="attractions-"] .last-updated{
@@ -190,22 +194,22 @@ body[data-page^="attractions-"] .last-updated time{
    ========================================================================== */
 body[data-page^="attractions-"] .callout{
   position:relative;
-  padding:20px 20px 20px 22px;
+  padding:18px 20px 18px 22px;
   border-radius:20px;
   background:
-    linear-gradient(135deg, rgba(255,247,210,.98), rgba(255,232,156,.96));
+    linear-gradient(135deg, rgba(255,247,210,.97), rgba(255,236,176,.95));
   color:#1b1b1b;
-  border:1px solid rgba(251,208,0,.32);
+  border:1px solid rgba(251,208,0,.28);
   box-shadow:
-    0 16px 36px rgba(0,0,0,.14),
-    0 0 0 1px rgba(255,255,255,.20) inset;
+    0 14px 32px rgba(0,0,0,.12),
+    0 0 0 1px rgba(255,255,255,.14) inset;
 }
 
 body[data-page^="attractions-"] .callout::before{
   content:"";
   position:absolute;
   inset:0 0 auto 0;
-  height:5px;
+  height:4px;
   border-radius:20px 20px 0 0;
   background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
 }
@@ -229,45 +233,45 @@ body[data-page^="attractions-"] .actions{
 }
 
 body[data-page^="attractions-"] .btn{
-  min-height:52px;
+  min-height:50px;
   border-radius:999px;
   font-weight:900;
   letter-spacing:-.02em;
-  box-shadow:0 10px 24px rgba(2,6,23,.10);
-  transition:transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
+  transition:transform .16s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease, opacity .16s ease;
 }
 
 body[data-page^="attractions-"] .btn.primary{
   color:#ffffff;
-  border-color:rgba(0,0,0,.05);
+  border-color:rgba(0,0,0,.04);
   background:
-    linear-gradient(135deg, #ff5f52 0%, var(--attr-red) 46%, #ff8a33 100%);
+    linear-gradient(135deg, #ff5a4e 0%, #f03831 45%, #ff8438 100%);
   box-shadow:
-    0 18px 40px rgba(229,37,33,.28),
-    0 0 0 1px rgba(255,255,255,.08) inset;
+    0 16px 34px rgba(229,37,33,.22),
+    0 0 0 1px rgba(255,255,255,.06) inset;
 }
 
 body[data-page^="attractions-"] .btn.primary:hover{
   transform:translateY(-1px);
   background:
-    linear-gradient(135deg, #ff6f63 0%, #ef312d 48%, #ff9a46 100%);
+    linear-gradient(135deg, #ff6a60 0%, #f24740 48%, #ff9451 100%);
   box-shadow:
-    0 22px 48px rgba(229,37,33,.32),
-    0 0 0 1px rgba(255,255,255,.10) inset;
+    0 18px 38px rgba(229,37,33,.24),
+    0 0 0 1px rgba(255,255,255,.08) inset;
 }
 
 body[data-page^="attractions-"] .btn:not(.primary){
   color:#ffffff;
-  border-color:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.16);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.08));
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.07));
 }
 
 body[data-page^="attractions-"] .btn:not(.primary):hover{
   transform:translateY(-1px);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.17), rgba(255,255,255,.12));
-  box-shadow:0 18px 36px rgba(0,0,0,.20);
+    linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.10));
+  box-shadow:0 15px 30px rgba(0,0,0,.16);
 }
 
 body[data-page^="attractions-"] .pill{
@@ -280,7 +284,7 @@ body[data-page^="attractions-"] .pill{
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), rgba(255,255,255,.25) 44%, transparent 45%),
     linear-gradient(135deg, var(--attr-yellow), #ffea77);
   color:#3d2a00;
-  box-shadow:0 8px 18px rgba(251,208,0,.28);
+  box-shadow:0 8px 18px rgba(251,208,0,.24);
 }
 
 /* ==========================================================================
@@ -294,21 +298,21 @@ body[data-page^="attractions-"] .trust{
 }
 
 body[data-page^="attractions-"] .trust-item{
-  min-height:58px;
+  min-height:56px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:14px 16px;
+  padding:13px 15px;
   border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.10);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08)),
-    rgba(255,255,255,.06);
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
   color:#ffffff;
-  font-weight:900;
-  line-height:1.25;
+  font-weight:850;
+  line-height:1.24;
   text-align:center;
-  box-shadow:0 12px 28px rgba(0,0,0,.14);
+  box-shadow:0 10px 22px rgba(0,0,0,.11);
 }
 
 /* ==========================================================================
@@ -318,54 +322,54 @@ body[data-page^="attractions-"] .quick-picks{
   display:grid;
   grid-template-columns:repeat(4, minmax(0, 1fr));
   gap:14px;
-  margin-top:18px;
+  margin-top:16px;
 }
 
 body[data-page^="attractions-"] .quick-pick{
   position:relative;
   min-width:0;
-  padding:16px 16px 15px;
+  padding:14px 15px 13px;
   border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.10);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.07)),
-    rgba(255,255,255,.05);
-  box-shadow:0 14px 30px rgba(0,0,0,.12);
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
+  box-shadow:0 12px 24px rgba(0,0,0,.10);
   transition:transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
 }
 
 body[data-page^="attractions-"] .quick-pick:hover{
   transform:translateY(-2px);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.09)),
-    rgba(255,255,255,.07);
-  border-color:rgba(255,255,255,.16);
-  box-shadow:0 18px 36px rgba(0,0,0,.16);
+    linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.07)),
+    rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.14);
+  box-shadow:0 14px 30px rgba(0,0,0,.13);
 }
 
 body[data-page^="attractions-"] .quick-pick::before{
   content:"";
   position:absolute;
   inset:0 0 auto 0;
-  height:5px;
+  height:4px;
   border-radius:18px 18px 0 0;
   background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
-  opacity:.96;
+  opacity:.94;
 }
 
 body[data-page^="attractions-"] .quick-pick strong{
   display:block;
   color:#ffffff;
-  font-size:1rem;
-  line-height:1.25;
-  margin-bottom:6px;
+  font-size:.98rem;
+  line-height:1.22;
+  margin-bottom:5px;
 }
 
 body[data-page^="attractions-"] .quick-pick span{
   display:block;
-  color:rgba(255,255,255,.88);
-  font-size:.94rem;
-  line-height:1.45;
+  color:rgba(255,255,255,.84);
+  font-size:.93rem;
+  line-height:1.42;
 }
 
 /* ==========================================================================
@@ -409,9 +413,10 @@ body[data-page^="attractions-"] .grid{
    ========================================================================== */
 body[data-page^="attractions-"] .card{
   border:1px solid var(--attr-line);
+  border-radius:24px;
   box-shadow:var(--shadow-attraction);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.98));
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.98));
 }
 
 body[data-page^="attractions-"] .card.pad{
@@ -436,9 +441,9 @@ body[data-page^="attractions-"] .editor-note{
   margin-bottom:28px;
   padding:18px 18px 18px 20px;
   border-radius:18px;
-  border:1px solid rgba(4,156,216,.18);
+  border:1px solid rgba(4,156,216,.16);
   background:
-    linear-gradient(180deg, rgba(4,156,216,.08), rgba(4,156,216,.03)),
+    linear-gradient(180deg, rgba(4,156,216,.07), rgba(4,156,216,.025)),
     #ffffff;
   box-shadow:var(--shadow-attraction-2);
 }
@@ -447,7 +452,7 @@ body[data-page^="attractions-"] .editor-note::before{
   content:"";
   position:absolute;
   inset:0 auto 0 0;
-  width:5px;
+  width:4px;
   border-radius:18px 0 0 18px;
   background:linear-gradient(180deg, var(--attr-blue), var(--attr-yellow));
 }
@@ -504,7 +509,7 @@ body[data-page^="attractions-"] .park-card,
 body[data-page^="attractions-"] .decision-card,
 body[data-page^="attractions-"] .ticket-card{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   border-radius:22px;
   border:1px solid var(--attr-line);
   background:
@@ -520,16 +525,17 @@ body[data-page^="attractions-"] .ticket-card::before{
   content:"";
   position:absolute;
   inset:0 0 auto 0;
-  height:5px;
+  height:4px;
   background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
-  opacity:.96;
+  opacity:.94;
+  border-radius:22px 22px 0 0;
 }
 
 body[data-page^="attractions-"] .park-card:hover,
 body[data-page^="attractions-"] .decision-card:hover,
 body[data-page^="attractions-"] .ticket-card:hover{
   transform:translateY(-2px);
-  box-shadow:0 18px 36px rgba(2,6,23,.10);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
 }
 
 body[data-page^="attractions-"] .park-card,
@@ -549,8 +555,8 @@ body[data-page^="attractions-"] .card.link-card{
 
 body[data-page^="attractions-"] .card.link-card:hover{
   text-decoration:none;
-  box-shadow:0 18px 36px rgba(2,6,23,.10);
-  border-color:rgba(4,156,216,.20);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+  border-color:rgba(4,156,216,.18);
 }
 
 body[data-page^="attractions-"] .card.link-card strong{
@@ -592,26 +598,26 @@ body[data-page^="attractions-"] .cat{
 body[data-page^="attractions-"] .badge{
   color:#5a1800;
   background:
-    linear-gradient(180deg, rgba(251,208,0,.26), rgba(251,208,0,.18)),
+    linear-gradient(180deg, rgba(251,208,0,.24), rgba(251,208,0,.16)),
     #fff9db;
-  border-color:rgba(251,208,0,.34);
-  box-shadow:0 10px 24px rgba(251,208,0,.16);
+  border-color:rgba(251,208,0,.30);
+  box-shadow:0 8px 18px rgba(251,208,0,.12);
 }
 
 body[data-page^="attractions-"] .tag{
   color:#0d3e57;
   background:
-    linear-gradient(180deg, rgba(4,156,216,.14), rgba(4,156,216,.08)),
+    linear-gradient(180deg, rgba(4,156,216,.13), rgba(4,156,216,.07)),
     #eef9ff;
-  border-color:rgba(4,156,216,.22);
+  border-color:rgba(4,156,216,.20);
 }
 
 body[data-page^="attractions-"] .cat{
   color:#5b140f;
   background:
-    linear-gradient(180deg, rgba(229,37,33,.14), rgba(229,37,33,.08)),
+    linear-gradient(180deg, rgba(229,37,33,.13), rgba(229,37,33,.07)),
     #fff3f2;
-  border-color:rgba(229,37,33,.20);
+  border-color:rgba(229,37,33,.18);
 }
 
 body[data-page^="attractions-"] .park-meta{
@@ -635,8 +641,8 @@ body[data-page^="attractions-"] .mini{
   border-radius:18px;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.95));
-  box-shadow:var(--shadow-attraction-2);
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-attraction-3);
 }
 
 body[data-page^="attractions-"] .mini-icon{
@@ -645,15 +651,15 @@ body[data-page^="attractions-"] .mini-icon{
   display:grid;
   place-items:center;
   flex:0 0 36px;
-  border-radius:10px;
-  border:1px solid rgba(15,23,42,.08);
+  border-radius:11px;
+  border:1px solid rgba(15,23,42,.07);
   background:
     linear-gradient(180deg, #fff6df 0%, #eef8ff 100%);
   color:var(--attr-red);
   font-size:1.05rem;
   line-height:1;
   box-shadow:
-    0 8px 18px rgba(2,6,23,.07),
+    0 6px 14px rgba(2,6,23,.05),
     inset 0 1px 0 rgba(255,255,255,.82);
 }
 
@@ -692,8 +698,8 @@ body[data-page^="attractions-"] .checklist li::before{
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
     linear-gradient(135deg, var(--attr-green), #6edb72);
   box-shadow:
-    0 0 0 3px rgba(67,176,71,.10),
-    0 8px 16px rgba(67,176,71,.16);
+    0 0 0 3px rgba(67,176,71,.08),
+    0 8px 16px rgba(67,176,71,.14);
 }
 
 body[data-page^="attractions-"] .checklist li::after{
@@ -718,6 +724,23 @@ body[data-page^="attractions-"] .table-wrap{
   border:1px solid var(--attr-line);
   box-shadow:var(--shadow-attraction-2);
   background:#fff;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(15,23,42,.38) rgba(15,23,42,.08);
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar{
+  height:10px;
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar-track{
+  background:rgba(15,23,42,.08);
+  border-radius:999px;
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg, rgba(15,23,42,.56), rgba(15,23,42,.38));
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.55);
 }
 
 body[data-page^="attractions-"] table{
@@ -745,19 +768,19 @@ body[data-page^="attractions-"] thead th{
   font-weight:900;
   letter-spacing:-.01em;
   background:
-    linear-gradient(180deg, rgba(4,156,216,.10), rgba(4,156,216,.05)),
-    #f7fbff;
+    linear-gradient(180deg, rgba(4,156,216,.08), rgba(4,156,216,.04)),
+    #f8fbff;
 }
 
 body[data-page^="attractions-"] th,
 body[data-page^="attractions-"] td{
-  padding:14px;
+  padding:15px 14px;
   border-bottom:1px solid var(--attr-line);
   vertical-align:top;
 }
 
 body[data-page^="attractions-"] tbody tr:hover td{
-  background:rgba(4,156,216,.025);
+  background:rgba(4,156,216,.022);
 }
 
 body[data-page^="attractions-"] tbody td:first-child{
@@ -790,7 +813,7 @@ body[data-page^="attractions-"] .video-block{
   border-radius:22px;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
   box-shadow:var(--shadow-attraction);
 }
 
@@ -798,7 +821,7 @@ body[data-page^="attractions-"] .video-block::before{
   content:"";
   position:absolute;
   inset:0 0 auto 0;
-  height:5px;
+  height:4px;
   border-radius:22px 22px 0 0;
   background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
 }
@@ -810,11 +833,11 @@ body[data-page^="attractions-"] .video-wrapper{
   overflow:hidden;
   border-radius:18px;
   background:
-    radial-gradient(120% 120% at 50% 0%, rgba(4,156,216,.18), rgba(17,24,39,1)),
+    radial-gradient(120% 120% at 50% 0%, rgba(4,156,216,.16), rgba(17,24,39,1)),
     #0b1220;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.05),
-    0 18px 36px rgba(2,6,23,.20);
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 16px 32px rgba(2,6,23,.18);
 }
 
 body[data-page^="attractions-"] .video-wrapper iframe{
@@ -870,6 +893,34 @@ body[data-page^="attractions-"] .sidebar hr{
   margin:20px 0;
 }
 
+body[data-page^="attractions-"] .sidebar .stack-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions .btn{
+  min-height:46px;
+  justify-content:flex-start;
+  padding-inline:16px;
+  border-radius:18px;
+  font-weight:850;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary{
+  background:
+    linear-gradient(135deg, #ff5b4f 0%, #ef3a32 46%, #ff8239 100%);
+  box-shadow:
+    0 10px 22px rgba(229,37,33,.16),
+    0 0 0 1px rgba(255,255,255,.04) inset;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary:hover{
+  box-shadow:
+    0 12px 26px rgba(229,37,33,.18),
+    0 0 0 1px rgba(255,255,255,.05) inset;
+}
+
 /* ==========================================================================
    20) Park maps section
    ========================================================================== */
@@ -886,12 +937,12 @@ body[data-page^="attractions-"] .park-maps-grid{
 
 body[data-page^="attractions-"] .park-map-card{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   padding:22px;
   border-radius:22px;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
   box-shadow:var(--shadow-attraction-2);
   transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
@@ -900,14 +951,15 @@ body[data-page^="attractions-"] .park-map-card::before{
   content:"";
   position:absolute;
   inset:0 0 auto 0;
-  height:5px;
+  height:4px;
   background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
-  opacity:.96;
+  opacity:.94;
+  border-radius:22px 22px 0 0;
 }
 
 body[data-page^="attractions-"] .park-map-card:hover{
   transform:translateY(-2px);
-  box-shadow:0 18px 36px rgba(2,6,23,.10);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
 }
 
 body[data-page^="attractions-"] .park-map-card-wide{
@@ -944,17 +996,17 @@ body[data-page^="attractions-"] .map-badge{
 body[data-page^="attractions-"] .map-badge.official{
   color:#0d3e57;
   background:
-    linear-gradient(180deg, rgba(4,156,216,.14), rgba(4,156,216,.08)),
+    linear-gradient(180deg, rgba(4,156,216,.13), rgba(4,156,216,.07)),
     #eef9ff;
-  border-color:rgba(4,156,216,.22);
+  border-color:rgba(4,156,216,.20);
 }
 
 body[data-page^="attractions-"] .map-badge.caution{
   color:#5a1800;
   background:
-    linear-gradient(180deg, rgba(251,208,0,.26), rgba(251,208,0,.18)),
+    linear-gradient(180deg, rgba(251,208,0,.24), rgba(251,208,0,.16)),
     #fff9db;
-  border-color:rgba(251,208,0,.34);
+  border-color:rgba(251,208,0,.30);
 }
 
 body[data-page^="attractions-"] .map-copy{
@@ -1001,8 +1053,8 @@ body[data-page^="attractions-"] .map-link-card{
   text-decoration:none;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.95));
-  box-shadow:var(--shadow-attraction-2);
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-attraction-3);
   transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
@@ -1010,8 +1062,8 @@ body[data-page^="attractions-"] .map-link-card:hover,
 body[data-page^="attractions-"] .map-link-card:focus-visible{
   transform:translateY(-2px);
   text-decoration:none;
-  border-color:rgba(4,156,216,.20);
-  box-shadow:0 18px 36px rgba(2,6,23,.10);
+  border-color:rgba(4,156,216,.18);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
 }
 
 body[data-page^="attractions-"] .map-link-card::before{
@@ -1021,7 +1073,7 @@ body[data-page^="attractions-"] .map-link-card::before{
   height:4px;
   border-radius:18px 18px 0 0;
   background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
-  opacity:.96;
+  opacity:.94;
 }
 
 body[data-page^="attractions-"] .map-link-card strong{
@@ -1050,8 +1102,8 @@ body[data-page^="attractions-"] .related-card{
   border-radius:18px;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.95));
-  box-shadow:var(--shadow-attraction-2);
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-attraction-3);
   text-decoration:none;
 }
 
@@ -1080,8 +1132,8 @@ body[data-page^="attractions-"] details{
   border-radius:18px;
   border:1px solid var(--attr-line);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
-  box-shadow:var(--shadow-attraction-2);
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-attraction-3);
 }
 
 body[data-page^="attractions-"] details::before{
@@ -1091,7 +1143,7 @@ body[data-page^="attractions-"] details::before{
   height:4px;
   border-radius:18px 18px 0 0;
   background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
-  opacity:.95;
+  opacity:.92;
 }
 
 body[data-page^="attractions-"] details + details{
@@ -1134,21 +1186,21 @@ body[data-page^="attractions-"] .tip-box{
   padding:18px 18px 18px 20px;
   border-radius:18px;
   border:1px solid var(--attr-line);
-  box-shadow:var(--shadow-attraction-2);
+  box-shadow:var(--shadow-attraction-3);
 }
 
 body[data-page^="attractions-"] .note-box{
   background:
-    linear-gradient(180deg, rgba(4,156,216,.08), rgba(4,156,216,.04)),
+    linear-gradient(180deg, rgba(4,156,216,.07), rgba(4,156,216,.03)),
     #f5fbff;
-  border-color:rgba(4,156,216,.18);
+  border-color:rgba(4,156,216,.16);
 }
 
 body[data-page^="attractions-"] .tip-box{
   background:
-    linear-gradient(180deg, rgba(67,176,71,.08), rgba(67,176,71,.03)),
+    linear-gradient(180deg, rgba(67,176,71,.07), rgba(67,176,71,.03)),
     #f7fff8;
-  border-color:rgba(67,176,71,.18);
+  border-color:rgba(67,176,71,.16);
 }
 
 /* ==========================================================================
@@ -1186,22 +1238,22 @@ body[data-page="attractions-universal-studios-tickets"] .hero .actions .btn.prim
 }
 
 body[data-page="attractions-universal-studios-tickets"] .park-card.top-pick{
-  border-color:rgba(229,37,33,.18);
+  border-color:rgba(229,37,33,.16);
   box-shadow:
-    0 24px 48px rgba(229,37,33,.10),
-    0 0 0 1px rgba(229,37,33,.03) inset;
+    0 20px 40px rgba(229,37,33,.08),
+    0 0 0 1px rgba(229,37,33,.02) inset;
 }
 
 body[data-page="attractions-universal-studios-tickets"] .park-card.family-pick{
-  border-color:rgba(67,176,71,.18);
+  border-color:rgba(67,176,71,.16);
 }
 
 body[data-page="attractions-universal-studios-tickets"] .park-card.movie-pick{
-  border-color:rgba(4,156,216,.18);
+  border-color:rgba(4,156,216,.16);
 }
 
 body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
-  border-color:rgba(251,208,0,.22);
+  border-color:rgba(251,208,0,.20);
 }
 
 /* ==========================================================================
@@ -1247,7 +1299,7 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
   }
 
   body[data-page^="attractions-"] .quick-pick{
-    padding:15px 15px 14px;
+    padding:14px 14px 13px;
   }
 
   body[data-page^="attractions-"] .video-block{
@@ -1310,10 +1362,10 @@ body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
 body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
 body[data-page^="attractions-"] .map-actions .btn:not(.primary){
   color:var(--attr-ink);
-  border:1px solid rgba(15,23,42,.12);
+  border:1px solid rgba(15,23,42,.10);
   background:
-    linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
-  box-shadow:0 10px 24px rgba(2,6,23,.08);
+    linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+  box-shadow:0 8px 18px rgba(2,6,23,.06);
 }
 
 body[data-page^="attractions-"] .content .btn:not(.primary):hover,
@@ -1322,29 +1374,29 @@ body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
 body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
 body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
   color:var(--attr-ink);
-  border-color:rgba(4,156,216,.26);
+  border-color:rgba(4,156,216,.24);
   background:
     linear-gradient(180deg, #ffffff 0%, #edf7ff 100%);
-  box-shadow:0 14px 30px rgba(2,6,23,.10);
+  box-shadow:0 12px 24px rgba(2,6,23,.08);
 }
 
 /* Keep hero secondary buttons white-on-dark */
 body[data-page^="attractions-"] .hero .btn:not(.primary),
 body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary){
   color:#ffffff;
-  border-color:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.16);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.08));
-  box-shadow:0 10px 24px rgba(2,6,23,.10);
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.07));
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
 }
 
 body[data-page^="attractions-"] .hero .btn:not(.primary):hover,
 body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary):hover{
   color:#ffffff;
-  border-color:rgba(255,255,255,.24);
+  border-color:rgba(255,255,255,.22);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.17), rgba(255,255,255,.12));
-  box-shadow:0 18px 36px rgba(0,0,0,.20);
+    linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.10));
+  box-shadow:0 15px 30px rgba(0,0,0,.18);
 }
 
 body[data-page^="attractions-"] .park-maps-section .btn{
@@ -1354,16 +1406,17 @@ body[data-page^="attractions-"] .park-maps-section .btn{
 /* =========================================================
    INLINE PREVIEW — maps + Klook ticket previews
    ========================================================= */
-body[data-page^="attractions-"] .map-preview-trigger{
+body[data-page^="attractions-"] .map-preview-trigger,
+body[data-page^="attractions-"] .btn-preview-trigger{
   position:relative;
 }
 
 body[data-page^="attractions-"] .map-inline-preview{
   position:absolute;
   left:50%;
-  bottom:calc(100% + 14px);
-  transform:translateX(-50%) translateY(8px) scale(.985);
-  width:min(360px, calc(100vw - 32px));
+  bottom:calc(100% + 12px);
+  transform:translateX(-50%) translateY(8px) scale(.988);
+  width:min(340px, calc(100vw - 32px));
   opacity:0;
   pointer-events:none;
   z-index:40;
@@ -1377,16 +1430,16 @@ body[data-page^="attractions-"] .map-inline-preview.is-visible{
 
 body[data-page^="attractions-"] .map-inline-preview-inner{
   overflow:hidden;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.06);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.05);
   background:
-    radial-gradient(120% 140% at 0% 0%, rgba(59,130,246,.08), transparent 60%),
-    linear-gradient(180deg, rgba(30,41,59,.98), rgba(10,15,30,.98));
+    radial-gradient(120% 140% at 0% 0%, rgba(59,130,246,.07), transparent 60%),
+    linear-gradient(180deg, rgba(24,34,54,.985), rgba(10,15,30,.985));
   box-shadow:
-    0 30px 80px rgba(2,6,23,.55),
-    0 10px 30px rgba(2,6,23,.35),
-    inset 0 0 0 1px rgba(255,255,255,.03);
-  padding:12px;
+    0 24px 56px rgba(2,6,23,.42),
+    0 8px 24px rgba(2,6,23,.26),
+    inset 0 0 0 1px rgba(255,255,255,.02);
+  padding:10px;
   -webkit-backdrop-filter:blur(8px);
   backdrop-filter:blur(8px);
 }
@@ -1402,12 +1455,12 @@ body[data-page^="attractions-"] .map-inline-preview-media img{
   width:100%;
   aspect-ratio:4 / 3;
   object-fit:cover;
-  transition:transform .4s ease;
+  transition:transform .35s ease;
   background:#0b1220;
 }
 
 body[data-page^="attractions-"] .map-inline-preview.is-visible .map-inline-preview-media img{
-  transform:scale(1.02);
+  transform:scale(1.015);
 }
 
 body[data-page^="attractions-"] .map-inline-preview-meta{
@@ -1415,12 +1468,12 @@ body[data-page^="attractions-"] .map-inline-preview-meta{
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  padding:12px 4px 0;
+  padding:10px 4px 0;
 }
 
 body[data-page^="attractions-"] .map-inline-preview-meta strong{
   color:#ffffff;
-  font-size:.95rem;
+  font-size:.93rem;
   line-height:1.2;
 }
 
@@ -1435,8 +1488,8 @@ body[data-page^="attractions-"] .map-inline-preview-meta span{
   font-weight:800;
   white-space:nowrap;
   color:#dbeafe;
-  background:rgba(59,130,246,.18);
-  border:1px solid rgba(96,165,250,.22);
+  background:rgba(59,130,246,.15);
+  border:1px solid rgba(96,165,250,.18);
 }
 
 body[data-page^="attractions-"] .map-inline-preview::after{
@@ -1446,18 +1499,11 @@ body[data-page^="attractions-"] .map-inline-preview::after{
   top:100%;
   width:14px;
   height:14px;
-  background:rgba(10,15,30,.98);
-  border-right:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(10,15,30,.985);
+  border-right:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
   transform:translateX(-50%) rotate(45deg);
   margin-top:-7px;
-}
-
-body[data-page^="attractions-"] .park-map-card,
-body[data-page^="attractions-"] .map-link-card,
-body[data-page^="attractions-"] .park-card,
-body[data-page^="attractions-"] .ticket-card{
-  overflow:visible;
 }
 
 @media (max-width:980px){
