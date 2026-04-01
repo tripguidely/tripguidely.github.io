@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Montreal Cruises & Boat Tours | TripGuidely</title>
+  <meta name="description" content="Compare the best Montreal cruises and boat tours, from premium dinner cruises to sightseeing, evening, and brunch options on the St. Lawrence River.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#12cfd0">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://tripguidely.github.io/things-to-do/montreal/cruises/">
+  <link rel="preconnect" href="https://tiqets.tpk.ro" crossorigin>
+  <link rel="dns-prefetch" href="//tiqets.tpk.ro">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TripGuidely">
+  <meta property="og:title" content="Best Montreal Cruises & Boat Tours">
+  <meta property="og:description" content="Compare Montreal dinner cruises, sightseeing cruises, evening river cruises, and brunch cruises before you book.">
+  <meta property="og:url" content="https://tripguidely.github.io/things-to-do/montreal/cruises/">
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/tripguidely-og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Montreal Cruises & Boat Tours">
+  <meta name="twitter:description" content="Compare Montreal dinner cruises, sightseeing cruises, evening river cruises, and brunch cruises before you book.">
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/tripguidely-og-default.jpg">
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <style>
+    .cruise-hero{
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(980px 500px at 10% 0%, rgba(18,207,208,.18), transparent 55%),
+        radial-gradient(980px 520px at 92% 0%, rgba(244,162,97,.18), transparent 60%),
+        linear-gradient(180deg, #0f172a 0%, #132238 40%, #182f47 100%);
+      color:#fff;
+    }
+    .cruise-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), transparent 28%),
+        linear-gradient(0deg, rgba(2,6,23,.18), rgba(2,6,23,.18));
+      pointer-events:none;
+    }
+    .cruise-hero .wrap{
+      position:relative;
+      z-index:2;
+      padding-top:48px;
+      padding-bottom:48px;
+    }
+    .cruise-hero .breadcrumbs,
+    .cruise-hero .breadcrumbs a,
+    .cruise-hero .meta,
+    .cruise-hero .lede{
+      color:rgba(226,232,240,.86);
+    }
+    .cruise-hero .breadcrumbs a:hover{
+      border-bottom-color:rgba(255,255,255,.28);
+    }
+    .hero-panel{
+      margin-top:18px;
+      max-width:780px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08);
+      box-shadow:0 24px 70px rgba(0,0,0,.22);
+      border-radius:26px;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      padding:22px;
+    }
+    .eyebrow-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:16px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .eyebrow-list li{
+      margin:0;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.12);
+      color:rgba(255,255,255,.92);
+      font-weight:800;
+      font-size:.92rem;
+    }
+
+    .top-picks{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .pick-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:22px;
+      box-shadow:var(--shadow2);
+    }
+    .pick-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:900;
+      color:#0f172a;
+      background:linear-gradient(135deg, rgba(18,207,208,.18), rgba(244,162,97,.18));
+      border:1px solid rgba(18,207,208,.2);
+      border-radius:999px;
+      padding:8px 10px;
+      margin-bottom:12px;
+    }
+    .pick-card h3{
+      margin:0 0 8px;
+      font-size:1.18rem;
+      line-height:1.25;
+      letter-spacing:-.02em;
+    }
+    .pick-card p{
+      margin:0 0 14px;
+    }
+    .pick-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 16px;
+      padding:0;
+      list-style:none;
+    }
+    .pick-meta li{
+      margin:0;
+      font-size:.9rem;
+      color:var(--muted2);
+      background:#f8fafc;
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:999px;
+      padding:8px 10px;
+    }
+    .pick-card .actions{
+      margin-top:0;
+    }
+    .pick-card .btn{
+      width:100%;
+    }
+
+    .compare-table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+      overflow:hidden;
+      border-radius:16px;
+      background:#fff;
+      box-shadow:var(--shadow3);
+    }
+    .compare-table th,
+    .compare-table td{
+      text-align:left;
+      vertical-align:top;
+      padding:14px 14px;
+      border-bottom:1px solid rgba(15,23,42,.08);
+    }
+    .compare-table th{
+      font-size:.92rem;
+      color:var(--muted2);
+      background:#f8fafc;
+    }
+    .compare-table td strong{
+      color:var(--text);
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .mini-card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:18px;
+      box-shadow:var(--shadow3);
+      padding:16px;
+    }
+    .mini-card h3{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+    .mini-card p:last-child{
+      margin-bottom:0;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+    .faq-item{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:18px;
+      box-shadow:var(--shadow3);
+      padding:16px 16px 14px;
+    }
+    .faq-item h3{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.35;
+    }
+    .faq-item p:last-child{
+      margin-bottom:0;
+    }
+
+    .cta-banner{
+      position:relative;
+      overflow:hidden;
+      margin-top:18px;
+      border:1px solid rgba(18,207,208,.2);
+      border-radius:24px;
+      background:
+        radial-gradient(680px 240px at 0% 0%, rgba(18,207,208,.14), transparent 60%),
+        radial-gradient(680px 260px at 100% 100%, rgba(244,162,97,.14), transparent 62%),
+        linear-gradient(180deg, #ffffff 0%, #f8fcfc 100%);
+      box-shadow:var(--shadow2);
+    }
+    .cta-banner .pad{
+      padding:22px;
+    }
+    .cta-banner h2{
+      margin-top:0;
+    }
+
+    .disclosure-note{
+      margin-top:14px;
+      font-size:.92rem;
+      color:var(--muted2);
+    }
+
+    @media (max-width: 980px){
+      .top-picks,
+      .mini-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Best Montreal Cruises & Boat Tours",
+    "url":"https://tripguidely.github.io/things-to-do/montreal/cruises/",
+    "description":"Compare the best Montreal cruises and boat tours, including dinner cruises, sightseeing cruises, evening cruises, and brunch cruises."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Home",
+        "item":"https://tripguidely.github.io/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Things to Do",
+        "item":"https://tripguidely.github.io/things-to-do/"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"Montreal",
+        "item":"https://tripguidely.github.io/things-to-do/montreal/"
+      },
+      {
+        "@type":"ListItem",
+        "position":4,
+        "name":"Cruises",
+        "item":"https://tripguidely.github.io/things-to-do/montreal/cruises/"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"Best Montreal Cruises & Boat Tours",
+    "itemListOrder":"https://schema.org/ItemListOrderAscending",
+    "numberOfItems":5,
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "url":"https://tiqets.tpk.ro/BmdoWlQC",
+        "name":"Montreal Signature Dinner Cruise"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "url":"https://tiqets.tpk.ro/DqOKF5Bp",
+        "name":"Montreal 5-Course Dinner Sightseeing Cruise"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "url":"https://tiqets.tpk.ro/LFciuatl",
+        "name":"Montreal Guided Evening River Cruise"
+      },
+      {
+        "@type":"ListItem",
+        "position":4,
+        "url":"https://tiqets.tpk.ro/etWO3gyK",
+        "name":"Montreal Guided Sightseeing River Cruise"
+      },
+      {
+        "@type":"ListItem",
+        "position":5,
+        "url":"https://tiqets.tpk.ro/JEL93GPp",
+        "name":"Montreal 90-Min Brunch Cruise"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is the best Montreal cruise for a special night out?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A premium dinner cruise is usually the strongest pick for a special night out because it combines skyline views, a longer onboard experience, and a more upscale atmosphere."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is a sightseeing cruise in Montreal worth it?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. A sightseeing cruise is one of the easiest ways to see Montreal from the St. Lawrence River, especially if you want a lower-commitment option than a dinner cruise."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Should I book a Montreal cruise in advance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Weekend and evening departures are usually the first to fill, so booking in advance gives you the best shot at your preferred date and cruise type."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is the difference between a dinner cruise and a brunch cruise in Montreal?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A dinner cruise is usually better for couples and a more premium atmosphere, while a brunch cruise is a lighter daytime option that works well for a relaxed outing."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="things-to-do-montreal-cruises">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div data-include="/partials/header.html"></div>
+
+  <main id="main" class="main">
+    <section class="cruise-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/things-to-do/">Things to Do</a>
+          <span>/</span>
+          <a href="/things-to-do/montreal/">Montreal</a>
+          <span>/</span>
+          <span aria-current="page">Cruises</span>
+        </nav>
+
+        <div class="hero-panel">
+          <p class="kicker"><span class="dot"></span>Montreal river experiences</p>
+          <h1>Best Montreal Cruises &amp; Boat Tours</h1>
+          <p class="lede">
+            Compare the best Montreal cruises before you book, from premium dinner cruises to relaxed sightseeing, evening, and brunch options on the St. Lawrence River.
+          </p>
+          <p class="meta">Updated for current booking intent • Local activity guide • Affiliate-supported recommendations</p>
+
+          <ul class="eyebrow-list" aria-label="Highlights">
+            <li>Dinner cruises</li>
+            <li>Sightseeing cruises</li>
+            <li>Evening river cruises</li>
+            <li>Brunch options</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary js-aff" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+              <span class="pill">★</span>
+              Check the top dinner cruise
+            </a>
+            <a class="btn js-aff" href="https://tiqets.tpk.ro/D9yjqdYv" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+              <span class="pill">→</span>
+              View all Montreal cruise options
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="trust" aria-label="Why use this guide">
+        <div class="trust-item">
+          <b>Built for booking intent</b>
+          <span>Quick comparison of the main Montreal cruise types so you can choose faster.</span>
+        </div>
+        <div class="trust-item">
+          <b>Focused on value first</b>
+          <span>We separate premium dining experiences from simple sightseeing and brunch picks.</span>
+        </div>
+        <div class="trust-item">
+          <b>Simple affiliate flow</b>
+          <span>Each top pick links directly to a relevant booking page instead of a broad generic listing.</span>
+        </div>
+      </section>
+
+      <section class="card content" aria-labelledby="montreal-cruise-video" style="margin-top:18px;">
+        <div class="pad">
+          <div class="section-title">
+            <h2 id="montreal-cruise-video">What a Montreal cruise looks like</h2>
+            <p>See the onboard atmosphere before you book</p>
+          </div>
+
+          <p>
+            If you want a better feel for the experience, this video gives you a quick look at a Montreal dinner cruise atmosphere on the St. Lawrence River.
+          </p>
+
+          <div style="position:relative;width:100%;padding-top:56.25%;border-radius:18px;overflow:hidden;box-shadow:var(--shadow2);background:#0f172a;">
+            <iframe
+              src="https://www.youtube.com/embed/MUeh85nknM4?si=fBnl0Cm-N8g231GH"
+              title="Montreal dinner cruise video"
+              style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p class="aff-note" style="margin-top:12px;">
+            Example of a typical Montreal dinner cruise experience. Actual onboard details may vary depending on the cruise and travel date.
+          </p>
+        </div>
+      </section>
+
+      <div class="grid">
+        <article class="card content">
+          <div class="pad">
+            <div class="section-title">
+              <h2>Top Montreal cruise picks</h2>
+              <p>Best overall mix of dining, sightseeing, and river views</p>
+            </div>
+
+            <div class="top-picks">
+              <section class="pick-card">
+                <div class="pad">
+                  <div class="pick-badge">Best overall premium pick</div>
+                  <h3>Montreal Signature Dinner Cruise</h3>
+                  <p>
+                    The strongest choice for a special night out if you want a more elevated onboard experience with dinner, city views, and a more polished atmosphere.
+                  </p>
+                  <ul class="pick-meta" aria-label="Highlights">
+                    <li>Best for couples</li>
+                    <li>Premium atmosphere</li>
+                    <li>Special occasion</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary js-aff" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Check availability</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="pick-card">
+                <div class="pad">
+                  <div class="pick-badge">Best upgrade dinner</div>
+                  <h3>Montreal 5-Course Dinner Sightseeing Cruise</h3>
+                  <p>
+                    A stronger dining-first option if you want a richer meal-led cruise experience and are comfortable paying more for a premium evening on the water.
+                  </p>
+                  <ul class="pick-meta" aria-label="Highlights">
+                    <li>Dining-focused</li>
+                    <li>Higher-end pick</li>
+                    <li>Great for date night</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary js-aff" href="https://tiqets.tpk.ro/DqOKF5Bp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">View cruise details</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="pick-card">
+                <div class="pad">
+                  <div class="pick-badge">Best evening cruise</div>
+                  <h3>Montreal Guided Evening River Cruise</h3>
+                  <p>
+                    A smart middle-ground option if you want river views later in the day without committing to a full premium dinner experience.
+                  </p>
+                  <ul class="pick-meta" aria-label="Highlights">
+                    <li>Lower commitment</li>
+                    <li>Night views</li>
+                    <li>Good value</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary js-aff" href="https://tiqets.tpk.ro/LFciuatl" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">See evening option</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="pick-card">
+                <div class="pad">
+                  <div class="pick-badge">Best budget-friendly cruise</div>
+                  <h3>Montreal Guided Sightseeing River Cruise</h3>
+                  <p>
+                    The best simple entry point if you mainly want scenic river views and a straightforward way to experience Montreal from the water.
+                  </p>
+                  <ul class="pick-meta" aria-label="Highlights">
+                    <li>Easy first choice</li>
+                    <li>Sightseeing focus</li>
+                    <li>Lower price point</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary js-aff" href="https://tiqets.tpk.ro/etWO3gyK" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Compare this cruise</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="pick-card">
+                <div class="pad">
+                  <div class="pick-badge">Best daytime alternative</div>
+                  <h3>Montreal 90-Min Brunch Cruise</h3>
+                  <p>
+                    A lighter daytime option if you prefer a shorter onboard experience with a more casual daytime vibe instead of an evening dinner setting.
+                  </p>
+                  <ul class="pick-meta" aria-label="Highlights">
+                    <li>Daytime outing</li>
+                    <li>Shorter format</li>
+                    <li>Good weekend pick</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn primary js-aff" href="https://tiqets.tpk.ro/JEL93GPp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Check brunch cruise</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <h2>Quick comparison</h2>
+            <p>
+              If you want the fastest possible decision, use this table to match the right type of Montreal cruise to your trip style.
+            </p>
+
+            <div style="overflow-x:auto;">
+              <table class="compare-table" aria-label="Compare Montreal cruises">
+                <thead>
+                  <tr>
+                    <th>Cruise type</th>
+                    <th>Best for</th>
+                    <th>Why choose it</th>
+                    <th>Top option</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Premium dinner cruise</strong></td>
+                    <td>Date night, special occasions</td>
+                    <td>Best overall atmosphere and strongest “night out” value</td>
+                    <td><a class="js-aff" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Signature Dinner Cruise</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dining-first upgrade</strong></td>
+                    <td>Travelers prioritizing the onboard meal</td>
+                    <td>Better fit when you want a more premium dining-led cruise</td>
+                    <td><a class="js-aff" href="https://tiqets.tpk.ro/DqOKF5Bp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">5-Course Dinner Cruise</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Evening cruise</strong></td>
+                    <td>Night views without a full dinner commitment</td>
+                    <td>Good balance between atmosphere and value</td>
+                    <td><a class="js-aff" href="https://tiqets.tpk.ro/LFciuatl" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Evening River Cruise</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sightseeing cruise</strong></td>
+                    <td>First-time visitors, lower budget trips</td>
+                    <td>Simplest way to see Montreal from the river</td>
+                    <td><a class="js-aff" href="https://tiqets.tpk.ro/etWO3gyK" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Sightseeing River Cruise</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Brunch cruise</strong></td>
+                    <td>Daytime outings, casual weekends</td>
+                    <td>Great if you prefer a daytime river experience</td>
+                    <td><a class="js-aff" href="https://tiqets.tpk.ro/JEL93GPp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">90-Min Brunch Cruise</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>How to choose the right Montreal cruise</h2>
+            <p>
+              The best choice usually comes down to <strong>trip purpose</strong>, <strong>time of day</strong>, and <strong>how important the onboard dining experience is to you</strong>.
+            </p>
+
+            <div class="mini-grid">
+              <section class="mini-card">
+                <h3>Choose dinner if the cruise is the event</h3>
+                <p>
+                  Dinner cruises make more sense when the boat experience is a highlight of your day, not just a short sightseeing add-on.
+                </p>
+              </section>
+              <section class="mini-card">
+                <h3>Choose sightseeing if you want the easiest option</h3>
+                <p>
+                  A sightseeing cruise is usually the most straightforward pick for first-time visitors who mainly want river views and a lower-commitment experience.
+                </p>
+              </section>
+              <section class="mini-card">
+                <h3>Choose brunch for a daytime weekend feel</h3>
+                <p>
+                  Brunch works well if you want a more relaxed social outing and prefer being on the water during the day rather than at night.
+                </p>
+              </section>
+            </div>
+
+            <h2>Who each cruise is best for</h2>
+            <ul>
+              <li><strong>Couples:</strong> Start with the <a class="js-aff" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Signature Dinner Cruise</a>.</li>
+              <li><strong>Travelers who want a more premium meal-led option:</strong> Compare the <a class="js-aff" href="https://tiqets.tpk.ro/DqOKF5Bp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">5-Course Dinner Cruise</a>.</li>
+              <li><strong>Budget-conscious visitors:</strong> The <a class="js-aff" href="https://tiqets.tpk.ro/etWO3gyK" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Guided Sightseeing River Cruise</a> is the simplest first pick.</li>
+              <li><strong>Travelers who want a night atmosphere without a full dinner format:</strong> Look at the <a class="js-aff" href="https://tiqets.tpk.ro/LFciuatl" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Evening River Cruise</a>.</li>
+              <li><strong>Daytime weekend outings:</strong> The <a class="js-aff" href="https://tiqets.tpk.ro/JEL93GPp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Brunch Cruise</a> is the best alternative.</li>
+            </ul>
+
+            <h2>FAQ</h2>
+            <div class="faq-list">
+              <section class="faq-item">
+                <h3>What is the best Montreal cruise for a special night out?</h3>
+                <p>
+                  A premium dinner cruise is usually the strongest choice because it gives you the best combination of city views, longer onboard time, and a more upscale feel.
+                </p>
+              </section>
+              <section class="faq-item">
+                <h3>Is a sightseeing cruise in Montreal worth it?</h3>
+                <p>
+                  Yes. It is one of the easiest ways to experience the St. Lawrence River without committing to a longer dinner-focused format.
+                </p>
+              </section>
+              <section class="faq-item">
+                <h3>Should I book a Montreal cruise in advance?</h3>
+                <p>
+                  Yes. Weekend departures, evening slots, and the more premium dinner formats usually deserve priority if you already know your travel dates.
+                </p>
+              </section>
+              <section class="faq-item">
+                <h3>What is the difference between a dinner cruise and a brunch cruise?</h3>
+                <p>
+                  Dinner cruises are usually better for a date night or premium evening, while brunch cruises are more casual daytime experiences with a lighter overall commitment.
+                </p>
+              </section>
+            </div>
+
+            <div class="cta-banner">
+              <div class="pad">
+                <h2>Want to compare all current Montreal cruise options?</h2>
+                <p>
+                  If none of the featured picks match your travel style, browse the full Montreal cruise selection and check the latest dates and availability directly.
+                </p>
+                <div class="actions">
+                  <a class="btn primary js-aff" href="https://tiqets.tpk.ro/D9yjqdYv" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                    <span class="pill">→</span>
+                    View all Montreal cruises
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="disclosure-note">
+              Disclosure: TripGuidely may earn a commission if you book through selected links on this page, at no extra cost to you.
+            </p>
+          </div>
+        </article>
+
+        <aside class="card">
+          <div class="pad">
+            <div class="section-title">
+              <h2>Quick picks</h2>
+              <p>Fast decision guide</p>
+            </div>
+
+            <p><strong>Best overall:</strong><br><a class="js-aff" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Montreal Signature Dinner Cruise</a></p>
+            <hr>
+            <p><strong>Best premium dining upgrade:</strong><br><a class="js-aff" href="https://tiqets.tpk.ro/DqOKF5Bp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">5-Course Dinner Sightseeing Cruise</a></p>
+            <hr>
+            <p><strong>Best simple sightseeing option:</strong><br><a class="js-aff" href="https://tiqets.tpk.ro/etWO3gyK" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Guided Sightseeing River Cruise</a></p>
+            <hr>
+            <p><strong>Best for evening views:</strong><br><a class="js-aff" href="https://tiqets.tpk.ro/LFciuatl" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Guided Evening River Cruise</a></p>
+            <hr>
+            <p><strong>Best daytime alternative:</strong><br><a class="js-aff" href="https://tiqets.tpk.ro/JEL93GPp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">90-Min Brunch Cruise</a></p>
+
+            <div class="actions" style="margin-top:18px;">
+              <a class="btn primary js-aff" href="https://tiqets.tpk.ro/D9yjqdYv" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">Browse all options</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
