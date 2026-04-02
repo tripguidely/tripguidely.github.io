@@ -12,16 +12,20 @@
   <link rel="preconnect" href="https://tiqets.tpk.ro" crossorigin>
   <link rel="dns-prefetch" href="//tiqets.tpk.ro">
 
+  <link rel="preload" as="image" href="/assets/images/hero/montreal-dinner-cruise-1600x900.webp" imagesrcset="/assets/images/hero/montreal-dinner-cruise-800x450.webp 800w, /assets/images/hero/montreal-dinner-cruise-1200x675.webp 1200w, /assets/images/hero/montreal-dinner-cruise-1600x900.webp 1600w, /assets/images/hero/montreal-dinner-cruise-2400x1350.webp 2400w" imagesizes="100vw">
+
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="TripGuidely">
   <meta property="og:title" content="Best Montreal Cruises & Boat Tours">
   <meta property="og:description" content="Compare Montreal dinner cruises, sightseeing cruises, evening river cruises, and brunch cruises before you book.">
   <meta property="og:url" content="https://tripguidely.github.io/things-to-do/montreal/cruises/">
-  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/tripguidely-og-default.jpg">
+  <meta property="og:image" content="https://tripguidely.github.io/assets/images/og/montreal-dinner-cruise-og-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Best Montreal Cruises & Boat Tours">
   <meta name="twitter:description" content="Compare Montreal dinner cruises, sightseeing cruises, evening river cruises, and brunch cruises before you book.">
-  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/tripguidely-og-default.jpg">
+  <meta name="twitter:image" content="https://tripguidely.github.io/assets/images/og/montreal-dinner-cruise-og-1200x630.jpg">
 
   <link rel="stylesheet" href="/assets/css/styles.css">
 
@@ -35,14 +39,34 @@
         radial-gradient(980px 520px at 92% 0%, rgba(244,162,97,.18), transparent 60%),
         linear-gradient(180deg, #0f172a 0%, #132238 40%, #182f47 100%);
       color:#fff;
+      min-height:clamp(520px, 68vw, 760px);
+      display:flex;
+      align-items:center;
+    }
+    .cruise-hero-media{
+      position:absolute;
+      inset:0;
+      z-index:0;
+    }
+    .cruise-hero-media picture,
+    .cruise-hero-media img{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .cruise-hero-media img{
+      object-fit:cover;
+      object-position:center;
     }
     .cruise-hero::before{
       content:"";
       position:absolute;
       inset:0;
+      z-index:1;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.05), transparent 28%),
-        linear-gradient(0deg, rgba(2,6,23,.18), rgba(2,6,23,.18));
+        linear-gradient(90deg, rgba(2,6,23,.78) 0%, rgba(2,6,23,.52) 34%, rgba(2,6,23,.24) 58%, rgba(2,6,23,.36) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent 28%),
+        linear-gradient(0deg, rgba(2,6,23,.28), rgba(2,6,23,.28));
       pointer-events:none;
     }
     .cruise-hero .wrap{
@@ -55,7 +79,7 @@
     .cruise-hero .breadcrumbs a,
     .cruise-hero .meta,
     .cruise-hero .lede{
-      color:rgba(226,232,240,.86);
+      color:rgba(226,232,240,.9);
     }
     .cruise-hero .breadcrumbs a:hover{
       border-bottom-color:rgba(255,255,255,.28);
@@ -64,8 +88,8 @@
       margin-top:18px;
       max-width:780px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.08);
-      box-shadow:0 24px 70px rgba(0,0,0,.22);
+      background:rgba(15,23,42,.42);
+      box-shadow:0 24px 70px rgba(0,0,0,.28);
       border-radius:26px;
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
@@ -103,6 +127,24 @@
       background:#fff;
       border-radius:22px;
       box-shadow:var(--shadow2);
+    }
+    .pick-card-media{
+      display:block;
+      aspect-ratio:4/3;
+      overflow:hidden;
+      background:#e2e8f0;
+      border-bottom:1px solid rgba(15,23,42,.08);
+    }
+    .pick-card-media img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .45s ease;
+    }
+    .pick-card:hover .pick-card-media img{
+      transform:scale(1.035);
     }
     .pick-badge{
       display:inline-flex;
@@ -249,6 +291,16 @@
       .mini-grid{
         grid-template-columns:1fr;
       }
+
+      .cruise-hero{
+        min-height:540px;
+      }
+
+      .cruise-hero::before{
+        background:
+          linear-gradient(180deg, rgba(2,6,23,.42) 0%, rgba(2,6,23,.52) 28%, rgba(2,6,23,.7) 100%),
+          linear-gradient(0deg, rgba(2,6,23,.18), rgba(2,6,23,.18));
+      }
     }
   </style>
 
@@ -385,6 +437,21 @@
 
   <main id="main" class="main">
     <section class="cruise-hero">
+      <div class="cruise-hero-media" aria-hidden="true">
+        <picture>
+          <source srcset="/assets/images/hero/montreal-dinner-cruise-2400x1350.webp" media="(min-width: 1400px)">
+          <source srcset="/assets/images/hero/montreal-dinner-cruise-1600x900.webp" media="(min-width: 1024px)">
+          <source srcset="/assets/images/hero/montreal-dinner-cruise-1200x675.webp" media="(min-width: 640px)">
+          <img
+            src="/assets/images/hero/montreal-dinner-cruise-800x450.webp"
+            alt="Couple enjoying a Montreal dinner cruise at sunset with skyline views"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
+      </div>
+
       <div class="wrap">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
@@ -480,6 +547,15 @@
 
             <div class="top-picks">
               <section class="pick-card">
+                <a class="pick-card-media" href="https://tiqets.tpk.ro/BmdoWlQC" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                  <img
+                    src="/assets/images/hero/montreal-dinner-cruise-1200x675.webp"
+                    alt="Couple enjoying a Montreal dinner cruise at sunset with skyline views"
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async">
+                </a>
                 <div class="pad">
                   <div class="pick-badge">Best overall premium pick</div>
                   <h3>Montreal Signature Dinner Cruise</h3>
@@ -498,6 +574,15 @@
               </section>
 
               <section class="pick-card">
+                <a class="pick-card-media" href="https://tiqets.tpk.ro/DqOKF5Bp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                  <img
+                    src="/assets/images/things-to-do/montreal/cruise/montreal-dinner-cruise-dining-1200x900.webp"
+                    alt="Gourmet dinner plate served on a Montreal dinner cruise"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async">
+                </a>
                 <div class="pad">
                   <div class="pick-badge">Best upgrade dinner</div>
                   <h3>Montreal 5-Course Dinner Sightseeing Cruise</h3>
@@ -516,6 +601,15 @@
               </section>
 
               <section class="pick-card">
+                <a class="pick-card-media" href="https://tiqets.tpk.ro/LFciuatl" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                  <img
+                    src="/assets/images/things-to-do/montreal/cruise/montreal-evening-cruise-1200x900.webp"
+                    alt="Evening cruise boat on the St. Lawrence River in Montreal at night"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async">
+                </a>
                 <div class="pad">
                   <div class="pick-badge">Best evening cruise</div>
                   <h3>Montreal Guided Evening River Cruise</h3>
@@ -534,6 +628,15 @@
               </section>
 
               <section class="pick-card">
+                <a class="pick-card-media" href="https://tiqets.tpk.ro/etWO3gyK" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                  <img
+                    src="/assets/images/things-to-do/montreal/cruise/montreal-sightseeing-cruise-1200x900.webp"
+                    alt="AML sightseeing cruise boat on the St. Lawrence River in Montreal"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async">
+                </a>
                 <div class="pad">
                   <div class="pick-badge">Best budget-friendly cruise</div>
                   <h3>Montreal Guided Sightseeing River Cruise</h3>
@@ -552,6 +655,15 @@
               </section>
 
               <section class="pick-card">
+                <a class="pick-card-media" href="https://tiqets.tpk.ro/JEL93GPp" data-aff="tiqets" target="_blank" rel="sponsored nofollow noopener">
+                  <img
+                    src="/assets/images/things-to-do/montreal/cruise/montreal-brunch-cruise-1200x900.webp"
+                    alt="Friends enjoying a Montreal brunch cruise with skyline views"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async">
+                </a>
                 <div class="pad">
                   <div class="pick-badge">Best daytime alternative</div>
                   <h3>Montreal 90-Min Brunch Cruise</h3>
