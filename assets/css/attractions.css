@@ -1884,3 +1884,8 @@ body[data-page^="attractions-"] .hero .checklist li::after{
     margin-bottom:14px;
   }
 }
+
+body[data-page^="attractions-"] .btn:not(.primary){
+  color:#000 !important;
+  -webkit-text-fill-color:#000 !important;
+}
