@@ -1,5 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://tripguidely.github.io/sitemap.xml
-Host: tripguidely.github.io
