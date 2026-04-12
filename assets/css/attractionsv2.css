@@ -1,27 +1,109 @@
 /* ==========================================================================
-   DISNEY COLOR PATCH ONLY
-   Remplace seulement les couleurs Mario par une palette Disney magique
+   TripGuidely attractions.css — V2
+   Cleaner design system + conversion-focused spacing + premium micro-animations
+   --------------------------------------------------------------------------
+   Usage:
+   - Load AFTER /assets/css/styles.css
+   - Best with body[data-page^="attractions-"]
+   - Main target page:
+     body[data-page="attractions-universal-studios-tickets"]
    ========================================================================== */
 
+/* ==========================================================================
+   0) Accessibility polish
+   ========================================================================== */
+.skip-link{
+  position:absolute;
+  top:-56px;
+  left:16px;
+  z-index:9999;
+  padding:12px 16px;
+  background:#ffffff;
+  color:#0b1220;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 14px 32px rgba(0,0,0,.18);
+  transition:top .2s ease, transform .2s ease;
+}
+
+.skip-link:focus{
+  top:16px;
+  transform:translateY(0);
+}
+
+/* ==========================================================================
+   1) Page-scoped design system
+   ========================================================================== */
 body[data-page^="attractions-"]{
-  /* Palette Disney */
-  --attr-red:#c93a8f;      /* rose magique */
+  /* Palette */
+  --attr-red:#c93a8f;
   --attr-red-2:#a92f75;
-  --attr-blue:#1e5bff;     /* bleu Disney / nuit magique */
+  --attr-blue:#1e5bff;
   --attr-blue-2:#153fb8;
-  --attr-yellow:#ffd45c;   /* or enchanté */
+  --attr-yellow:#ffd45c;
   --attr-yellow-2:#e4b63f;
-  --attr-green:#6fc7c2;    /* aqua féerique */
+  --attr-green:#6fc7c2;
   --attr-green-2:#4da7a1;
 
-  --focus:rgba(30,91,255,.30);
+  --attr-navy:#111827;
+  --attr-ink:#0f172a;
+  --attr-text:#182233;
+  --attr-muted:#556275;
+  --attr-soft:#708096;
 
-  /* CTA plus féerique */
-  --cta1:var(--attr-blue);
+  --attr-card:#ffffff;
+  --attr-card-2:#f8fbff;
+  --attr-card-3:#f2f7ff;
+  --attr-line:rgba(15,23,42,.09);
+  --attr-line-2:rgba(15,23,42,.14);
+
+  /* Radius system */
+  --radius-xs:12px;
+  --radius-sm:16px;
+  --radius-md:20px;
+  --radius-lg:24px;
+  --radius-xl:28px;
+  --radius-pill:999px;
+
+  /* Spacing system */
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:20px;
+  --space-5:24px;
+  --space-6:28px;
+  --space-7:34px;
+  --space-8:42px;
+  --space-9:56px;
+
+  /* Effects */
+  --focus:rgba(30,91,255,.30);
+  --shadow-1:0 8px 20px rgba(2,6,23,.045);
+  --shadow-2:0 14px 30px rgba(2,6,23,.07);
+  --shadow-3:0 20px 44px rgba(2,6,23,.085);
+  --shadow-hero:0 34px 72px rgba(0,0,0,.24);
+  --shadow-float:0 18px 40px rgba(2,6,23,.12);
+
+  /* Motion */
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --ease-soft:cubic-bezier(.22,1,.36,1);
+  --t-fast:.16s;
+  --t-med:.24s;
+  --t-slow:.34s;
+
+  /* Layout */
+  --hero-min:780px;
+  --hero-min-m:690px;
+  --content-max:1160px;
+  --content-gutter:24px;
+
+  /* CTA */
+  --cta1:var(--attr-red);
   --cta2:#c93a8f;
   --cta3:var(--attr-yellow);
 
-  /* Hover links Disney */
+  /* Brand hover */
   --mario-link-gradient:
     linear-gradient(
       90deg,
@@ -36,9 +118,96 @@ body[data-page^="attractions-"]{
     radial-gradient(980px 600px at 90% 0%, rgba(201,58,143,.10), transparent 58%),
     radial-gradient(820px 520px at 50% 100%, rgba(255,212,92,.10), transparent 58%),
     linear-gradient(180deg, #fbfdff 0%, #f7f9ff 32%, #ffffff 100%);
+  color:var(--attr-text);
 }
 
-/* Hero overlay plus magique */
+/* ==========================================================================
+   2) Base page polish
+   ========================================================================== */
+body[data-page^="attractions-"] .main{
+  position:relative;
+}
+
+body[data-page^="attractions-"] .wrap{
+  width:100%;
+  max-width:var(--content-max);
+  padding-left:var(--content-gutter);
+  padding-right:var(--content-gutter);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+body[data-page^="attractions-"] .content,
+body[data-page^="attractions-"] .sidebar{
+  min-width:0;
+}
+
+body[data-page^="attractions-"] a{
+  text-underline-offset:2px;
+}
+
+body[data-page^="attractions-"] *:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 4px var(--focus);
+}
+
+body[data-page^="attractions-"] img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+/* ==========================================================================
+   3) Typography rhythm
+   ========================================================================== */
+body[data-page^="attractions-"] .content h2,
+body[data-page^="attractions-"] .content h3,
+body[data-page^="attractions-"] .content h4{
+  color:var(--attr-ink);
+  letter-spacing:-.03em;
+}
+
+body[data-page^="attractions-"] .content h2{
+  margin:0 0 12px;
+}
+
+body[data-page^="attractions-"] .content h3{
+  margin:0 0 10px;
+}
+
+body[data-page^="attractions-"] .content p,
+body[data-page^="attractions-"] .content li{
+  color:var(--attr-muted);
+  line-height:1.7;
+}
+
+body[data-page^="attractions-"] .content p{
+  margin:0 0 14px;
+}
+
+body[data-page^="attractions-"] .content ul,
+body[data-page^="attractions-"] .content ol{
+  margin:0 0 16px;
+}
+
+/* ==========================================================================
+   4) Hero
+   ========================================================================== */
+body[data-page^="attractions-"] .hero.hero-full{
+  min-height:var(--hero-min);
+}
+
+body[data-page^="attractions-"] .hero-bg{
+  overflow:hidden;
+}
+
+body[data-page^="attractions-"] .hero-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.01);
+}
+
 body[data-page^="attractions-"] .hero-overlay{
   background:
     linear-gradient(180deg, rgba(10,14,26,.24) 0%, rgba(10,14,26,.48) 34%, rgba(10,14,26,.82) 100%),
@@ -47,7 +216,47 @@ body[data-page^="attractions-"] .hero-overlay{
     radial-gradient(820px 420px at 55% 100%, rgba(255,212,92,.14), transparent 56%);
 }
 
-/* Kicker dot */
+body[data-page^="attractions-"] .hero-inner{
+  padding-top:56px;
+  padding-bottom:56px;
+  padding-left:24px;
+  padding-right:24px;
+}
+
+body[data-page^="attractions-"] .hero-inner .breadcrumbs{
+  display:none;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap{
+  max-width:1030px;
+  padding:36px 34px 28px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
+    linear-gradient(135deg, rgba(17,24,39,.76), rgba(33,43,69,.74));
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+  backdrop-filter:blur(10px) saturate(120%);
+  box-shadow:
+    var(--shadow-hero),
+    0 0 0 1px rgba(255,255,255,.03) inset;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap > *:first-child{
+  margin-top:0;
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap > *:last-child{
+  margin-bottom:0;
+}
+
+body[data-page^="attractions-"] .kicker{
+  margin:0 0 14px;
+  color:rgba(255,255,255,.92);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+
 body[data-page^="attractions-"] .kicker .dot{
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
@@ -57,20 +266,111 @@ body[data-page^="attractions-"] .kicker .dot{
     0 10px 24px rgba(30,91,255,.22);
 }
 
-/* Top borders / accents */
-body[data-page^="attractions-"] .callout::before,
-body[data-page^="attractions-"] .quick-pick::before,
-body[data-page^="attractions-"] .card.link-card::before,
-body[data-page^="attractions-"] .park-card::before,
-body[data-page^="attractions-"] .decision-card::before,
-body[data-page^="attractions-"] .ticket-card::before,
-body[data-page^="attractions-"] .video-block::before,
-body[data-page^="attractions-"] .park-map-card::before{
+body[data-page^="attractions-"] .hero h1,
+body[data-page^="attractions-"] .hero .lede{
+  max-width:860px;
+}
+
+body[data-page^="attractions-"] .hero h1{
+  margin:0 0 18px;
+  color:#ffffff;
+  line-height:1.04;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+  text-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+body[data-page^="attractions-"] .hero .lede{
+  margin:0 0 18px;
+  color:rgba(255,255,255,.90);
+  font-size:1.18rem;
+  line-height:1.58;
+}
+
+body[data-page^="attractions-"] .last-updated{
+  margin:0 0 18px;
+  color:rgba(255,255,255,.66);
+  font-size:.96rem;
+  line-height:1.45;
+}
+
+body[data-page^="attractions-"] .last-updated time{
+  color:inherit;
+}
+
+/* ==========================================================================
+   5) Hero conversion blocks
+   ========================================================================== */
+body[data-page^="attractions-"] .callout{
+  position:relative;
+  margin:0 0 16px;
+  padding:18px 20px 18px 22px;
+  border-radius:var(--radius-md);
+  background:
+    linear-gradient(135deg, rgba(255,247,210,.97), rgba(255,236,176,.95));
+  color:#1b1b1b;
+  border:1px solid rgba(251,208,0,.28);
+  box-shadow:
+    0 14px 32px rgba(0,0,0,.12),
+    0 0 0 1px rgba(255,255,255,.14) inset;
+}
+
+body[data-page^="attractions-"] .callout::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:var(--radius-md) var(--radius-md) 0 0;
   background:linear-gradient(90deg, var(--attr-blue), #7a5cff, var(--attr-yellow));
 }
 
-/* Primary CTA */
+body[data-page^="attractions-"] .callout p,
+body[data-page^="attractions-"] .callout li{
+  color:#1f1f1f;
+  margin:0;
+}
+
+body[data-page^="attractions-"] .callout strong{
+  color:#1747a6;
+}
+
+/* ==========================================================================
+   6) Buttons / CTAs
+   ========================================================================== */
+body[data-page^="attractions-"] .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:0 0 18px;
+}
+
+body[data-page^="attractions-"] .btn{
+  min-height:50px;
+  border-radius:var(--radius-pill);
+  font-weight:900;
+  letter-spacing:-.02em;
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    background var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard),
+    opacity var(--t-fast) var(--ease-standard),
+    filter var(--t-fast) var(--ease-standard);
+  will-change:transform;
+}
+
+body[data-page^="attractions-"] .btn:hover{
+  transform:translateY(-1px);
+}
+
+body[data-page^="attractions-"] .btn:active{
+  transform:translateY(0);
+}
+
 body[data-page^="attractions-"] .btn.primary{
+  color:#ffffff;
+  border-color:rgba(0,0,0,.04);
   background:
     linear-gradient(135deg, #1e5bff 0%, #5f6fff 46%, #c93a8f 100%);
   box-shadow:
@@ -86,8 +386,25 @@ body[data-page^="attractions-"] .btn.primary:hover{
     0 0 0 1px rgba(255,255,255,.08) inset;
 }
 
-/* Gold pill */
+body[data-page^="attractions-"] .btn:not(.primary){
+  color:#ffffff;
+  border-color:rgba(255,255,255,.16);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.07));
+}
+
+body[data-page^="attractions-"] .btn:not(.primary):hover{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.10));
+  box-shadow:0 15px 30px rgba(0,0,0,.16);
+}
+
 body[data-page^="attractions-"] .pill{
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), rgba(255,255,255,.25) 44%, transparent 45%),
     linear-gradient(135deg, var(--attr-yellow), #ffe89a);
@@ -95,19 +412,305 @@ body[data-page^="attractions-"] .pill{
   box-shadow:0 8px 18px rgba(255,212,92,.24);
 }
 
-/* Editor note accent */
+/* ==========================================================================
+   7) Trust row
+   ========================================================================== */
+body[data-page^="attractions-"] .trust{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:12px;
+  margin:0 0 14px;
+}
+
+body[data-page^="attractions-"] .trust-item{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 15px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
+  color:#ffffff;
+  font-weight:850;
+  line-height:1.24;
+  text-align:center;
+  box-shadow:0 10px 22px rgba(0,0,0,.11);
+}
+
+/* ==========================================================================
+   8) Quick picks
+   ========================================================================== */
+body[data-page^="attractions-"] .quick-picks{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:14px;
+  margin:0;
+}
+
+body[data-page^="attractions-"] .quick-pick{
+  position:relative;
+  min-width:0;
+  padding:16px 16px 14px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
+  box-shadow:0 12px 24px rgba(0,0,0,.10);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    background var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard);
+  will-change:transform;
+}
+
+body[data-page^="attractions-"] .quick-pick:hover{
+  transform:translateY(-2px);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.07)),
+    rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.14);
+  box-shadow:0 16px 30px rgba(0,0,0,.13);
+}
+
+body[data-page^="attractions-"] .quick-pick::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), #7a5cff, var(--attr-yellow));
+  opacity:.94;
+}
+
+body[data-page^="attractions-"] .quick-pick strong{
+  display:block;
+  color:#ffffff;
+  font-size:.98rem;
+  line-height:1.24;
+  margin-bottom:6px;
+  transition:background-position var(--t-med) var(--ease-soft);
+}
+
+body[data-page^="attractions-"] .quick-pick span{
+  display:block;
+  color:rgba(255,255,255,.84);
+  font-size:.93rem;
+  line-height:1.42;
+  transition:background-position var(--t-med) var(--ease-soft);
+}
+
+/* ==========================================================================
+   9) Breadcrumbs + meta
+   ========================================================================== */
+body[data-page^="attractions-"] .breadcrumbs{
+  margin-top:26px;
+  margin-bottom:12px;
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .breadcrumbs a{
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .meta{
+  color:var(--attr-muted);
+  margin-bottom:18px;
+}
+
+/* ==========================================================================
+   10) Layout
+   ========================================================================== */
+body[data-page^="attractions-"] .grid{
+  align-items:start;
+  gap:24px;
+}
+
+@media (min-width:981px){
+  body[data-page^="attractions-"] .grid{
+    grid-template-columns:minmax(0, 1fr) 320px;
+  }
+}
+
+/* ==========================================================================
+   11) Card shell
+   ========================================================================== */
+body[data-page^="attractions-"] .card{
+  border:1px solid var(--attr-line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-3);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.98));
+}
+
+body[data-page^="attractions-"] .card.pad{
+  padding:28px;
+}
+
+body[data-page^="attractions-"] .card.content{
+  overflow:visible;
+}
+
+body[data-page^="attractions-"] .card.content > section + section{
+  margin-top:36px;
+  padding-top:32px;
+  border-top:1px solid var(--attr-line);
+}
+
+/* ==========================================================================
+   12) Intro/editor note
+   ========================================================================== */
 body[data-page^="attractions-"] .editor-note{
+  position:relative;
+  margin-bottom:28px;
+  padding:18px 18px 18px 20px;
+  border-radius:18px;
   border:1px solid rgba(30,91,255,.16);
   background:
     linear-gradient(180deg, rgba(30,91,255,.07), rgba(201,58,143,.03)),
     #ffffff;
+  box-shadow:var(--shadow-2);
 }
 
 body[data-page^="attractions-"] .editor-note::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  border-radius:18px 0 0 18px;
   background:linear-gradient(180deg, var(--attr-blue), var(--attr-yellow));
 }
 
-/* Tags / badges */
+body[data-page^="attractions-"] .editor-note p{
+  margin:0;
+  color:var(--attr-text);
+}
+
+/* ==========================================================================
+   13) Section title shell
+   ========================================================================== */
+body[data-page^="attractions-"] .section-title{
+  margin-bottom:16px;
+}
+
+body[data-page^="attractions-"] .section-title h2{
+  margin-bottom:8px;
+}
+
+body[data-page^="attractions-"] .section-title p{
+  margin:0;
+  color:var(--attr-muted);
+}
+
+/* ==========================================================================
+   14) Cards / link cards / decision blocks
+   ========================================================================== */
+body[data-page^="attractions-"] .cards{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+
+body[data-page^="attractions-"] .card.link-card,
+body[data-page^="attractions-"] .park-card,
+body[data-page^="attractions-"] .decision-card,
+body[data-page^="attractions-"] .ticket-card{
+  position:relative;
+  overflow:visible;
+  border-radius:22px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow:var(--shadow-2);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard);
+  will-change:transform;
+}
+
+body[data-page^="attractions-"] .card.link-card::before,
+body[data-page^="attractions-"] .park-card::before,
+body[data-page^="attractions-"] .decision-card::before,
+body[data-page^="attractions-"] .ticket-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg, var(--attr-blue), #7a5cff, var(--attr-yellow));
+  opacity:.94;
+  border-radius:22px 22px 0 0;
+}
+
+body[data-page^="attractions-"] .park-card:hover,
+body[data-page^="attractions-"] .decision-card:hover,
+body[data-page^="attractions-"] .ticket-card:hover,
+body[data-page^="attractions-"] .card.link-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+  border-color:rgba(201,58,143,.16);
+}
+
+body[data-page^="attractions-"] .park-card,
+body[data-page^="attractions-"] .decision-card,
+body[data-page^="attractions-"] .ticket-card{
+  padding:22px;
+}
+
+body[data-page^="attractions-"] .card.link-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:18px;
+  text-decoration:none;
+}
+
+body[data-page^="attractions-"] .card.link-card strong{
+  display:block;
+  color:var(--attr-ink);
+  margin-bottom:4px;
+}
+
+body[data-page^="attractions-"] .card.link-card span{
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .card.link-card .arrow{
+  flex:0 0 auto;
+  font-size:1.1rem;
+  line-height:1;
+  color:var(--attr-blue);
+  transition:transform var(--t-fast) var(--ease-standard);
+}
+
+body[data-page^="attractions-"] .card.link-card:hover .arrow{
+  transform:translateX(2px);
+}
+
+/* ==========================================================================
+   15) Badges / pills / tags
+   ========================================================================== */
+body[data-page^="attractions-"] .badge,
+body[data-page^="attractions-"] .tag,
+body[data-page^="attractions-"] .cat{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-size:.84rem;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+}
+
 body[data-page^="attractions-"] .badge{
   color:#6b4c00;
   background:
@@ -117,8 +720,7 @@ body[data-page^="attractions-"] .badge{
   box-shadow:0 8px 18px rgba(255,212,92,.12);
 }
 
-body[data-page^="attractions-"] .tag,
-body[data-page^="attractions-"] .map-badge.official{
+body[data-page^="attractions-"] .tag{
   color:#153b82;
   background:
     linear-gradient(180deg, rgba(30,91,255,.13), rgba(30,91,255,.07)),
@@ -134,23 +736,93 @@ body[data-page^="attractions-"] .cat{
   border-color:rgba(201,58,143,.18);
 }
 
-body[data-page^="attractions-"] .map-badge.caution{
-  color:#6b4c00;
-  background:
-    linear-gradient(180deg, rgba(255,212,92,.24), rgba(255,212,92,.16)),
-    #fff9e1;
-  border-color:rgba(255,212,92,.30);
+body[data-page^="attractions-"] .park-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0 16px;
 }
 
-/* Mini icon */
+/* ==========================================================================
+   16) Mini-grid / best-for blocks
+   ========================================================================== */
+body[data-page^="attractions-"] .mini-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+
+body[data-page^="attractions-"] .mini{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:16px;
+  border-radius:18px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-1);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard);
+}
+
+body[data-page^="attractions-"] .mini:hover{
+  transform:translateY(-1px);
+  border-color:rgba(201,58,143,.16);
+  box-shadow:var(--shadow-2);
+}
+
 body[data-page^="attractions-"] .mini-icon{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  flex:0 0 36px;
+  border-radius:12px;
+  border:1px solid rgba(15,23,42,.07);
   background:
     linear-gradient(180deg, #fff7dc 0%, #eef4ff 55%, #fdf1f8 100%);
   color:var(--attr-blue);
+  font-size:1.05rem;
+  line-height:1;
+  box-shadow:
+    0 6px 14px rgba(2,6,23,.05),
+    inset 0 1px 0 rgba(255,255,255,.82);
 }
 
-/* Checklist */
+body[data-page^="attractions-"] .mini b{
+  color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .mini span{
+  color:var(--attr-muted);
+}
+
+/* ==========================================================================
+   17) Checklists
+   ========================================================================== */
+body[data-page^="attractions-"] .checklist{
+  list-style:none;
+  padding-left:0;
+  margin:14px 0 18px;
+}
+
+body[data-page^="attractions-"] .checklist li{
+  position:relative;
+  padding-left:28px;
+  margin:10px 0;
+}
+
 body[data-page^="attractions-"] .checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.42em;
+  width:16px;
+  height:16px;
+  border-radius:999px;
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
     linear-gradient(135deg, #6fc7c2, #9de7df);
@@ -159,43 +831,761 @@ body[data-page^="attractions-"] .checklist li::before{
     0 8px 16px rgba(111,199,194,.16);
 }
 
-/* Hovered table rows */
+body[data-page^="attractions-"] .checklist li::after{
+  content:"";
+  position:absolute;
+  left:5px;
+  top:.78em;
+  width:6px;
+  height:3px;
+  border-left:2px solid #fff;
+  border-bottom:2px solid #fff;
+  transform:rotate(-45deg);
+}
+
+/* ==========================================================================
+   18) Comparison table
+   ========================================================================== */
+body[data-page^="attractions-"] .table-wrap{
+  overflow-x:auto;
+  margin-top:14px;
+  border-radius:18px;
+  border:1px solid var(--attr-line);
+  box-shadow:var(--shadow-2);
+  background:#fff;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(15,23,42,.38) rgba(15,23,42,.08);
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar{
+  height:10px;
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar-track{
+  background:rgba(15,23,42,.08);
+  border-radius:999px;
+}
+
+body[data-page^="attractions-"] .table-wrap::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg, rgba(15,23,42,.56), rgba(15,23,42,.38));
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.55);
+}
+
+body[data-page^="attractions-"] table{
+  width:100%;
+  min-width:760px;
+  border-collapse:collapse;
+  background:#fff;
+}
+
+body[data-page^="attractions-"] table caption{
+  caption-side:top;
+  padding:14px 16px 0;
+  text-align:left;
+  color:var(--attr-muted);
+  font-size:.95rem;
+}
+
+body[data-page^="attractions-"] thead th{
+  position:sticky;
+  top:0;
+  z-index:1;
+  text-align:left;
+  color:var(--attr-ink);
+  font-size:.92rem;
+  font-weight:900;
+  letter-spacing:-.01em;
+  background:
+    linear-gradient(180deg, rgba(4,156,216,.08), rgba(4,156,216,.04)),
+    #f8fbff;
+}
+
+body[data-page^="attractions-"] th,
+body[data-page^="attractions-"] td{
+  padding:15px 14px;
+  border-bottom:1px solid var(--attr-line);
+  vertical-align:top;
+}
+
+body[data-page^="attractions-"] tbody tr{
+  transition:background var(--t-fast) var(--ease-standard);
+}
+
 body[data-page^="attractions-"] tbody tr:hover td{
-  background:rgba(30,91,255,.022);
+  background:rgba(4,156,216,.022);
 }
 
-/* FAQ plus/minus */
+body[data-page^="attractions-"] tbody td:first-child{
+  font-weight:900;
+  color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .table-aff-link{
+  color:inherit;
+  font-weight:900;
+  text-decoration:underline;
+  text-decoration-thickness:1.5px;
+  text-underline-offset:2px;
+  transition:
+    color var(--t-fast) var(--ease-standard),
+    opacity var(--t-fast) var(--ease-standard),
+    text-decoration-thickness var(--t-fast) var(--ease-standard),
+    background-position var(--t-med) var(--ease-soft);
+}
+
+/* ==========================================================================
+   19) Video block
+   ========================================================================== */
+body[data-page^="attractions-"] .video-block{
+  position:relative;
+  padding:20px;
+  border-radius:22px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-3);
+}
+
+body[data-page^="attractions-"] .video-block::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), #7a5cff, var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .video-wrapper{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  border-radius:18px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(4,156,216,.16), rgba(17,24,39,1)),
+    #0b1220;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 16px 32px rgba(2,6,23,.18);
+}
+
+body[data-page^="attractions-"] .video-wrapper iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ==========================================================================
+   20) Sidebar
+   ========================================================================== */
+body[data-page^="attractions-"] .sidebar{
+  position:sticky;
+  top:calc(var(--header-h) + 18px);
+}
+
+body[data-page^="attractions-"] .sidebar .card{
+  padding:22px;
+}
+
+body[data-page^="attractions-"] .sidebar .card + .card{
+  margin-top:16px;
+}
+
+body[data-page^="attractions-"] .sidebar h2,
+body[data-page^="attractions-"] .sidebar h3{
+  margin-bottom:10px;
+}
+
+body[data-page^="attractions-"] .cta-title{
+  color:var(--attr-ink);
+  letter-spacing:-.02em;
+}
+
+body[data-page^="attractions-"] .cta-copy{
+  color:var(--attr-muted);
+  margin-top:0;
+  margin-bottom:14px;
+}
+
+body[data-page^="attractions-"] .aff-note,
+body[data-page^="attractions-"] .aff-note-lg{
+  color:var(--attr-muted);
+  font-size:.93rem;
+  line-height:1.55;
+}
+
+body[data-page^="attractions-"] .sidebar .link-card{
+  padding:16px;
+}
+
+body[data-page^="attractions-"] .sidebar hr{
+  margin:20px 0;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions .btn{
+  min-height:46px;
+  justify-content:flex-start;
+  padding-inline:16px;
+  border-radius:18px;
+  font-weight:850;
+}
+
+body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary{
+  background:
+    linear-gradient(135deg, #1e5bff 0%, #5f6fff 46%, #c93a8f 100%);
+  box-shadow:
+    0 10px 22px rgba(30,91,255,.16),
+    0 0 0 1px rgba(255,255,255,.04) inset;
+}
+
+/* ==========================================================================
+   21) Park maps
+   ========================================================================== */
+body[data-page^="attractions-"] .park-maps-section{
+  position:relative;
+}
+
+body[data-page^="attractions-"] .park-maps-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px;
+  margin-top:16px;
+}
+
+body[data-page^="attractions-"] .park-map-card{
+  position:relative;
+  overflow:visible;
+  padding:22px;
+  border-radius:22px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-2);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard);
+  will-change:transform;
+}
+
+body[data-page^="attractions-"] .park-map-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg, var(--attr-blue), #7a5cff, var(--attr-yellow));
+  opacity:.94;
+  border-radius:22px 22px 0 0;
+}
+
+body[data-page^="attractions-"] .park-map-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+  border-color:rgba(201,58,143,.16);
+}
+
+body[data-page^="attractions-"] .park-map-card-wide{
+  grid-column:1 / -1;
+}
+
+body[data-page^="attractions-"] .park-map-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+body[data-page^="attractions-"] .park-map-head h3{
+  margin:0;
+  line-height:1.25;
+}
+
+body[data-page^="attractions-"] .map-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:900;
+  white-space:nowrap;
+  border:1px solid transparent;
+  line-height:1;
+}
+
+body[data-page^="attractions-"] .map-badge.official{
+  color:#153b82;
+  background:
+    linear-gradient(180deg, rgba(30,91,255,.13), rgba(30,91,255,.07)),
+    #eef4ff;
+  border-color:rgba(30,91,255,.20);
+}
+
+body[data-page^="attractions-"] .map-badge.caution{
+  color:#6b4c00;
+  background:
+    linear-gradient(180deg, rgba(255,212,92,.24), rgba(255,212,92,.16)),
+    #fff9e1;
+  border-color:rgba(255,212,92,.30);
+}
+
+body[data-page^="attractions-"] .map-copy{
+  margin:0 0 14px;
+  color:var(--attr-muted);
+}
+
+body[data-page^="attractions-"] .map-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+body[data-page^="attractions-"] .map-actions .btn{
+  width:auto;
+}
+
+body[data-page^="attractions-"] .map-points{
+  margin:0;
+  padding-left:18px;
+}
+
+body[data-page^="attractions-"] .map-points li + li{
+  margin-top:6px;
+}
+
+body[data-page^="attractions-"] .park-map-links{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin:16px 0;
+}
+
+body[data-page^="attractions-"] .map-link-card{
+  position:relative;
+  display:block;
+  padding:15px 16px;
+  border-radius:18px;
+  text-decoration:none;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-1);
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard);
+}
+
+body[data-page^="attractions-"] .map-link-card:hover,
+body[data-page^="attractions-"] .map-link-card:focus-visible{
+  transform:translateY(-2px);
+  text-decoration:none;
+  border-color:rgba(4,156,216,.18);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+}
+
+body[data-page^="attractions-"] .map-link-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
+  opacity:.94;
+}
+
+body[data-page^="attractions-"] .map-link-card strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .map-link-card span{
+  color:var(--attr-muted);
+  font-size:.95rem;
+}
+
+/* ==========================================================================
+   22) Related cards
+   ========================================================================== */
+body[data-page^="attractions-"] .related-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+
+body[data-page^="attractions-"] .related-card{
+  display:block;
+  padding:18px;
+  border-radius:18px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-1);
+  text-decoration:none;
+  transition:
+    transform var(--t-fast) var(--ease-standard),
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard);
+}
+
+body[data-page^="attractions-"] .related-card:hover{
+  text-decoration:none;
+  transform:translateY(-1px);
+  border-color:rgba(201,58,143,.16);
+  box-shadow:0 18px 34px rgba(2,6,23,.08);
+}
+
+body[data-page^="attractions-"] .related-card strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .related-card span{
+  color:var(--attr-muted);
+}
+
+/* ==========================================================================
+   23) FAQ
+   ========================================================================== */
+body[data-page^="attractions-"] details{
+  position:relative;
+  padding:14px 16px;
+  border-radius:18px;
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--shadow-1);
+  transition:
+    box-shadow var(--t-fast) var(--ease-standard),
+    border-color var(--t-fast) var(--ease-standard),
+    transform var(--t-fast) var(--ease-standard);
+}
+
+body[data-page^="attractions-"] details::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
+  opacity:.92;
+}
+
+body[data-page^="attractions-"] details + details{
+  margin-top:12px;
+}
+
+body[data-page^="attractions-"] details:hover{
+  border-color:rgba(4,156,216,.14);
+  box-shadow:var(--shadow-2);
+}
+
+body[data-page^="attractions-"] summary{
+  display:block;
+  padding-right:34px;
+  color:var(--attr-ink);
+  font-weight:900;
+  line-height:1.4;
+  cursor:pointer;
+}
+
 body[data-page^="attractions-"] summary::after{
+  content:"+";
+  position:absolute;
+  right:16px;
+  top:13px;
+  font-size:1.25rem;
+  line-height:1;
   color:var(--attr-blue);
+  font-weight:900;
 }
 
-/* Note / tip boxes */
+body[data-page^="attractions-"] details[open] summary::after{
+  content:"–";
+}
+
+body[data-page^="attractions-"] details p{
+  margin-top:10px;
+  color:var(--attr-muted);
+}
+
+/* ==========================================================================
+   24) Note / tip boxes
+   ========================================================================== */
+body[data-page^="attractions-"] .note-box,
+body[data-page^="attractions-"] .tip-box{
+  padding:18px 18px 18px 20px;
+  border-radius:18px;
+  border:1px solid var(--attr-line);
+  box-shadow:var(--shadow-1);
+}
+
 body[data-page^="attractions-"] .note-box{
   background:
-    linear-gradient(180deg, rgba(30,91,255,.07), rgba(30,91,255,.03)),
-    #f5f8ff;
-  border-color:rgba(30,91,255,.16);
+    linear-gradient(180deg, rgba(4,156,216,.07), rgba(4,156,216,.03)),
+    #f5fbff;
+  border-color:rgba(201,58,143,.16);
 }
 
 body[data-page^="attractions-"] .tip-box{
   background:
-    linear-gradient(180deg, rgba(111,199,194,.08), rgba(111,199,194,.03)),
-    #f5fffd;
+    linear-gradient(180deg, rgba(67,176,71,.07), rgba(67,176,71,.03)),
+    #f7fff8;
   border-color:rgba(111,199,194,.18);
 }
 
-/* Light-surface secondary button hover */
+/* ==========================================================================
+   25) Secondary button fix on light surfaces
+   ========================================================================== */
+body[data-page^="attractions-"] .content .btn:not(.primary),
+body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary),
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
+body[data-page^="attractions-"] .map-actions .btn:not(.primary){
+  color:var(--attr-ink);
+  border:1px solid rgba(15,23,42,.10);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+  box-shadow:0 8px 18px rgba(2,6,23,.06);
+}
+
 body[data-page^="attractions-"] .content .btn:not(.primary):hover,
 body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary):hover,
 body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
 body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
 body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
+  color:var(--attr-ink);
   border-color:rgba(30,91,255,.24);
   background:
     linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+  box-shadow:0 12px 24px rgba(2,6,23,.08);
 }
 
-/* Fallback hover color */
+/* Keep hero secondary buttons white-on-dark */
+body[data-page^="attractions-"] .hero .btn:not(.primary),
+body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary){
+  color:#ffffff;
+  border-color:rgba(255,255,255,.16);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.07));
+  box-shadow:0 10px 22px rgba(2,6,23,.08);
+}
+
+body[data-page^="attractions-"] .hero .btn:not(.primary):hover,
+body[data-page^="attractions-"] .hero-tool-wrap .btn:not(.primary):hover{
+  color:#ffffff;
+  border-color:rgba(255,255,255,.22);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.10));
+  box-shadow:0 15px 30px rgba(0,0,0,.18);
+}
+
+body[data-page^="attractions-"] .park-maps-section .btn{
+  font-weight:900;
+}
+
+/* ==========================================================================
+   26) Inline preview
+   ========================================================================== */
+body[data-page^="attractions-"] .map-preview-trigger,
+body[data-page^="attractions-"] .btn-preview-trigger{
+  position:relative;
+}
+
+body[data-page^="attractions-"] .map-inline-preview{
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 12px);
+  transform:translateX(-50%) translateY(8px) scale(.988);
+  width:min(340px, calc(100vw - 32px));
+  opacity:0;
+  pointer-events:none;
+  z-index:40;
+  transition:
+    opacity .18s ease,
+    transform .18s ease;
+}
+
+body[data-page^="attractions-"] .map-inline-preview.is-visible{
+  opacity:1;
+  transform:translateX(-50%) translateY(0) scale(1);
+}
+
+body[data-page^="attractions-"] .map-inline-preview-inner{
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.05);
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(59,130,246,.07), transparent 60%),
+    linear-gradient(180deg, rgba(24,34,54,.985), rgba(10,15,30,.985));
+  box-shadow:
+    0 24px 56px rgba(2,6,23,.42),
+    0 8px 24px rgba(2,6,23,.26),
+    inset 0 0 0 1px rgba(255,255,255,.02);
+  padding:10px;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+}
+
+body[data-page^="attractions-"] .map-inline-preview-media{
+  overflow:hidden;
+  border-radius:14px;
+  background:#0b1220;
+}
+
+body[data-page^="attractions-"] .map-inline-preview-media img{
+  width:100%;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+  transition:transform .35s ease;
+  background:#0b1220;
+}
+
+body[data-page^="attractions-"] .map-inline-preview.is-visible .map-inline-preview-media img{
+  transform:scale(1.015);
+}
+
+body[data-page^="attractions-"] .map-inline-preview-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 4px 0;
+}
+
+body[data-page^="attractions-"] .map-inline-preview-meta strong{
+  color:#ffffff;
+  font-size:.93rem;
+  line-height:1.2;
+}
+
+body[data-page^="attractions-"] .map-inline-preview-meta span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  font-size:.74rem;
+  font-weight:800;
+  white-space:nowrap;
+  color:#efe8ff;
+  background:rgba(122,92,255,.16);
+  border:1px solid rgba(122,92,255,.22);
+}
+
+body[data-page^="attractions-"] .map-inline-preview::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:100%;
+  width:14px;
+  height:14px;
+  background:rgba(10,15,30,.985);
+  border-right:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transform:translateX(-50%) rotate(45deg);
+  margin-top:-7px;
+}
+
+/* ==========================================================================
+   27) Super Mario hover links
+   ========================================================================== */
+body[data-page^="attractions-"] .content a:not(.btn),
+body[data-page^="attractions-"] .sidebar a:not(.btn),
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn),
+body[data-page^="attractions-"] .table-aff-link,
+body[data-page^="attractions-"] .link-list a:not(.btn){
+  transition:
+    color .18s ease,
+    background-position .25s ease,
+    text-decoration-color .18s ease,
+    text-decoration-thickness .18s ease,
+    opacity .18s ease;
+}
+
+body[data-page^="attractions-"] .content a:not(.btn):hover,
+body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
+body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .table-aff-link:hover,
+body[data-page^="attractions-"] .table-aff-link:focus-visible,
+body[data-page^="attractions-"] .link-list a:not(.btn):hover,
+body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
+  background-image:var(--mario-link-gradient);
+  background-size:200% 100%;
+  background-repeat:no-repeat;
+  background-position:100% 50%;
+  color:transparent !important;
+  -webkit-background-clip:text;
+  background-clip:text;
+  text-decoration-color:rgba(30,91,255,.40);
+  text-decoration-thickness:2px;
+}
+
+body[data-page^="attractions-"] .quick-pick:hover strong,
+body[data-page^="attractions-"] .quick-pick:focus-visible strong,
+body[data-page^="attractions-"] .quick-pick:hover span,
+body[data-page^="attractions-"] .quick-pick:focus-visible span{
+  background-image:var(--mario-link-gradient);
+  background-size:200% 100%;
+  background-repeat:no-repeat;
+  background-position:100% 50%;
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+
+body[data-page^="attractions-"] .btn,
+body[data-page^="attractions-"] .btn:hover,
+body[data-page^="attractions-"] .btn:focus-visible,
+body[data-page^="attractions-"] .btn.primary,
+body[data-page^="attractions-"] .btn.primary:hover,
+body[data-page^="attractions-"] .btn.primary:focus-visible,
+body[data-page^="attractions-"] .sidebar .btn,
+body[data-page^="attractions-"] .sidebar .btn:hover,
+body[data-page^="attractions-"] .sidebar .btn:focus-visible,
+body[data-page^="attractions-"] .sidebar .btn.primary,
+body[data-page^="attractions-"] .sidebar .btn.primary:hover,
+body[data-page^="attractions-"] .sidebar .btn.primary:focus-visible{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff;
+  background-clip:border-box !important;
+  -webkit-background-clip:border-box !important;
+  text-decoration:none;
+}
+
+body[data-page^="attractions-"] .content .btn:not(.primary),
+body[data-page^="attractions-"] .content .btn:not(.primary):hover,
+body[data-page^="attractions-"] .content .btn:not(.primary):focus-visible,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):focus-visible,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):focus-visible{
+  color:var(--attr-ink) !important;
+  -webkit-text-fill-color:var(--attr-ink);
+}
+
+body[data-page^="attractions-"] .link-list a{
+  font-weight:700;
+}
+
 @supports not ((-webkit-background-clip:text) or (background-clip:text)){
   body[data-page^="attractions-"] .content a:not(.btn):hover,
   body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
@@ -211,21 +1601,36 @@ body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
   }
 }
 
-/* Universal hub quick picks accents */
+/* ==========================================================================
+   28) Anchor jump polish
+   ========================================================================== */
+body[data-page^="attractions-"] [id]{
+  scroll-margin-top:calc(var(--header-h) + 18px);
+}
+
+/* ==========================================================================
+   29) Universal hub specific accents
+   ========================================================================== */
+body[data-page="attractions-universal-studios-tickets"] .hero .actions .btn.primary{
+  min-width:240px;
+}
+
 body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(1)::before{
   background:linear-gradient(90deg, var(--attr-blue), #6a8bff);
 }
+
 body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(2)::before{
   background:linear-gradient(90deg, var(--attr-green), #a0ebe5);
 }
+
 body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(3)::before{
   background:linear-gradient(90deg, #7a5cff, #b196ff);
 }
+
 body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(4)::before{
   background:linear-gradient(90deg, var(--attr-yellow), #ffe89a);
 }
 
-/* Card accents */
 body[data-page="attractions-universal-studios-tickets"] .park-card.top-pick{
   border-color:rgba(30,91,255,.16);
   box-shadow:
@@ -239,4 +1644,249 @@ body[data-page="attractions-universal-studios-tickets"] .park-card.family-pick{
 
 body[data-page="attractions-universal-studios-tickets"] .park-card.movie-pick{
   border-color:rgba(201,58,143,.16);
+}
+
+body[data-page="attractions-universal-studios-tickets"] .park-card.resort-pick{
+  border-color:rgba(251,208,0,.20);
+}
+
+/* ==========================================================================
+   30) Responsive
+   ========================================================================== */
+@media (min-width:1200px){
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:40px 38px 30px;
+  }
+}
+
+@media (max-width:1100px){
+  body[data-page^="attractions-"] .quick-picks{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page^="attractions-"] .cards,
+  body[data-page^="attractions-"] .related-grid,
+  body[data-page^="attractions-"] .park-maps-grid{
+    grid-template-columns:1fr;
+  }
+
+  body[data-page^="attractions-"] .park-map-card-wide{
+    grid-column:auto;
+  }
+}
+
+@media (max-width:980px){
+  body[data-page^="attractions-"] .sidebar{
+    position:static;
+    top:auto;
+  }
+
+  body[data-page^="attractions-"] .hero-inner{
+    padding-top:42px;
+    padding-bottom:42px;
+  }
+
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:30px 26px 24px;
+  }
+
+  body[data-page^="attractions-"] .kicker{
+    margin-bottom:12px;
+  }
+
+  body[data-page^="attractions-"] .hero h1{
+    margin-bottom:16px;
+  }
+
+  body[data-page^="attractions-"] .hero .lede,
+  body[data-page^="attractions-"] .last-updated,
+  body[data-page^="attractions-"] .callout,
+  body[data-page^="attractions-"] .hero .actions{
+    margin-bottom:16px;
+  }
+}
+
+@media (max-width:760px){
+  body[data-page^="attractions-"]{
+    --hero-min:var(--hero-min-m);
+    --content-gutter:16px;
+  }
+
+  body[data-page^="attractions-"] .card.pad{
+    padding:22px;
+  }
+
+  body[data-page^="attractions-"] .quick-picks,
+  body[data-page^="attractions-"] .mini-grid,
+  body[data-page^="attractions-"] .trust,
+  body[data-page^="attractions-"] .park-map-links{
+    grid-template-columns:1fr;
+  }
+
+  body[data-page^="attractions-"] .quick-pick{
+    padding:15px 15px 14px;
+  }
+
+  body[data-page^="attractions-"] .video-block{
+    padding:14px;
+    border-radius:18px;
+  }
+
+  body[data-page^="attractions-"] .video-wrapper{
+    border-radius:14px;
+  }
+
+  body[data-page^="attractions-"] .table-wrap{
+    border-radius:14px;
+  }
+
+  body[data-page^="attractions-"] .park-map-card{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  body[data-page^="attractions-"] .park-map-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media (max-width:560px){
+  body[data-page^="attractions-"] .hero-inner{
+    padding-top:28px;
+    padding-bottom:28px;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  body[data-page^="attractions-"] .hero-tool-wrap{
+    padding:22px 18px 18px;
+    border-radius:22px;
+  }
+
+  body[data-page^="attractions-"] .kicker{
+    margin-bottom:10px;
+  }
+
+  body[data-page^="attractions-"] .hero h1{
+    margin-bottom:14px;
+  }
+
+  body[data-page^="attractions-"] .hero .lede,
+  body[data-page^="attractions-"] .last-updated,
+  body[data-page^="attractions-"] .callout,
+  body[data-page^="attractions-"] .hero .actions{
+    margin-bottom:14px;
+  }
+
+  body[data-page^="attractions-"] .btn,
+  body[data-page^="attractions-"] .actions .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  body[data-page^="attractions-"] .map-actions .btn{
+    width:100%;
+  }
+
+  body[data-page^="attractions-"] .badge,
+  body[data-page^="attractions-"] .tag,
+  body[data-page^="attractions-"] .cat,
+  body[data-page^="attractions-"] .map-badge{
+    font-size:.8rem;
+  }
+
+  body[data-page^="attractions-"] .breadcrumbs{
+    font-size:.92rem;
+  }
+}
+
+@media (max-width:980px){
+  body[data-page^="attractions-"] .map-inline-preview{
+    display:none;
+  }
+}
+
+/* =========================================================
+   HERO CONTENT BREATHING ROOM — PREMIUM FIX
+   ========================================================= */
+
+body[data-page^="attractions-"] .hero .quick-picks{
+  gap:14px;
+  margin-top:16px;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick{
+  padding:22px 18px 18px;
+  border-radius:20px;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick strong{
+  line-height:1.28;
+}
+
+body[data-page^="attractions-"] .hero .quick-pick span{
+  margin-top:6px;
+  line-height:1.45;
+}
+
+/* =========================================================
+   HERO CHECKLIST BOX — SAFE FIX
+   ========================================================= */
+
+body[data-page^="attractions-"] .hero .card{
+  padding:24px 30px 24px 34px;
+  margin-top:0;
+  margin-bottom:16px;
+  border-radius:30px;
+}
+
+body[data-page^="attractions-"] .hero .checklist{
+  margin:0;
+  padding:0;
+}
+
+body[data-page^="attractions-"] .hero .checklist li{
+  padding-left:38px;
+  margin:0 0 18px;
+  line-height:1.65;
+}
+
+body[data-page^="attractions-"] .hero .checklist li:last-child{
+  margin-bottom:0;
+}
+
+body[data-page^="attractions-"] .hero .checklist li::before{
+  left:0;
+}
+
+body[data-page^="attractions-"] .hero .checklist li::after{
+  left:5px;
+}
+
+@media (max-width:980px){
+  body[data-page^="attractions-"] .hero .card{
+    padding:22px 24px 22px 28px;
+  }
+
+  body[data-page^="attractions-"] .hero .checklist li{
+    padding-left:36px;
+    margin-bottom:16px;
+  }
+}
+
+@media (max-width:560px){
+  body[data-page^="attractions-"] .hero .card{
+    padding:20px 20px 20px 24px;
+  }
+
+  body[data-page^="attractions-"] .hero .checklist li{
+    padding-left:34px;
+    margin-bottom:14px;
+  }
+}
+
+body[data-page^="attractions-"] .btn:not(.primary){
+  color:#000 !important;
+  -webkit-text-fill-color:#000 !important;
 }
