@@ -1,390 +1,505 @@
-/* ==========================================================================
-   TripGuidely attractionsv2.css — Disney color transformation
-   Load AFTER /assets/css/attractions.css
-   Purpose:
-   - Replace Universal / Mario-inspired palette with a Disney-inspired palette
-   - Keep the same structure, spacing, CRO behavior, and component system
-   - Shift visual tone toward premium "Disney travel booking" look
-   ========================================================================== */
+/* Palette Disneyland appliquée sur la même base CSS que ton fichier source :contentReference[oaicite:0]{index=0} */
 
 /* ==========================================================================
-   1) Disney page-scoped palette
+   1) Page-scoped design system
    ========================================================================== */
 body[data-page^="attractions-"]{
-  /* Core Disney-inspired palette */
-  --attr-red:#c93a3a;
-  --attr-red-2:#a92d2d;
+  /* Palette Disneyland */
+  --attr-red:#c8102e;
+  --attr-red-2:#a30d25;
+  --attr-blue:#1e5aa8;
+  --attr-blue-2:#153f77;
+  --attr-yellow:#ffd24a;
+  --attr-yellow-2:#e3b62f;
+  --attr-green:#2f8f6b;
+  --attr-green-2:#21664c;
 
-  --attr-blue:#1e4fae;
-  --attr-blue-2:#163f90;
-
-  --attr-yellow:#f2c75c;
-  --attr-yellow-2:#ddb048;
-
-  --attr-green:#4f8f7a;
-  --attr-green-2:#3d7463;
-
-  --attr-purple:#6f5bd3;
-  --attr-purple-2:#5948b3;
-
-  --attr-navy:#0c1f4d;
-  --attr-ink:#10213f;
-  --attr-text:#1b2c4f;
-  --attr-muted:#5b6b86;
-  --attr-soft:#7f8ca2;
+  --attr-navy:#10233f;
+  --attr-ink:#0f1f36;
+  --attr-text:#1c2a3a;
+  --attr-muted:#5d6b7c;
+  --attr-soft:#7a8898;
 
   --attr-card:#ffffff;
-  --attr-card-2:#f8fbff;
-  --attr-card-3:#f2f6ff;
-  --attr-line:rgba(16,33,63,.09);
-  --attr-line-2:rgba(16,33,63,.15);
+  --attr-card-2:#fbfcff;
+  --attr-card-3:#f4f8ff;
+  --attr-line:rgba(15,31,54,.09);
+  --attr-line-2:rgba(15,31,54,.14);
 
-  --focus:rgba(30,79,174,.26);
+  --radius-xs:12px;
+  --radius-sm:16px;
+  --radius-md:20px;
+  --radius-lg:24px;
+  --radius-xl:28px;
+  --radius-pill:999px;
 
-  /* Disney CTA system */
-  --cta1:#1e4fae;
-  --cta2:#3a6fe0;
-  --cta3:#f2c75c;
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:20px;
+  --space-5:24px;
+  --space-6:28px;
+  --space-7:34px;
+  --space-8:42px;
+  --space-9:56px;
 
-  /* Disney hover gradient */
+  --focus:rgba(30,90,168,.28);
+  --shadow-1:0 8px 20px rgba(2,6,23,.045);
+  --shadow-2:0 14px 30px rgba(2,6,23,.07);
+  --shadow-3:0 20px 44px rgba(2,6,23,.085);
+  --shadow-hero:0 34px 72px rgba(0,0,0,.24);
+  --shadow-float:0 18px 40px rgba(2,6,23,.12);
+
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --ease-soft:cubic-bezier(.22,1,.36,1);
+  --t-fast:.16s;
+  --t-med:.24s;
+  --t-slow:.34s;
+
+  --hero-min:780px;
+  --hero-min-m:690px;
+  --content-max:1160px;
+  --content-gutter:24px;
+
+  --cta1:var(--attr-red);
+  --cta2:#e04b5a;
+  --cta3:var(--attr-yellow);
+
   --mario-link-gradient:
     linear-gradient(
       90deg,
-      #1e4fae 0%,
-      #6f5bd3 45%,
-      #f2c75c 100%
+      #c8102e 0%,
+      #ffd24a 30%,
+      #2f8f6b 60%,
+      #1e5aa8 100%
     );
 
   background:
-    radial-gradient(1000px 620px at 10% 0%, rgba(30,79,174,.08), transparent 56%),
-    radial-gradient(980px 600px at 90% 0%, rgba(242,199,92,.12), transparent 58%),
-    radial-gradient(860px 540px at 50% 12%, rgba(111,91,211,.06), transparent 56%),
-    linear-gradient(180deg, #fbfcff 0%, #f5f8ff 34%, #ffffff 100%);
+    radial-gradient(1000px 620px at 10% 0%, rgba(30,90,168,.08), transparent 56%),
+    radial-gradient(980px 600px at 90% 0%, rgba(255,210,74,.12), transparent 58%),
+    linear-gradient(180deg, #fcfdff 0%, #f7faff 32%, #ffffff 100%);
   color:var(--attr-text);
 }
 
 /* ==========================================================================
-   2) Hero visual treatment
+   4) Hero
    ========================================================================== */
 body[data-page^="attractions-"] .hero-overlay{
   background:
-    linear-gradient(180deg, rgba(7,15,36,.20) 0%, rgba(7,15,36,.45) 34%, rgba(7,15,36,.84) 100%),
-    radial-gradient(920px 500px at 12% 12%, rgba(30,79,174,.24), transparent 55%),
-    radial-gradient(860px 460px at 88% 14%, rgba(111,91,211,.18), transparent 56%),
-    radial-gradient(820px 420px at 55% 100%, rgba(242,199,92,.14), transparent 56%);
-}
-
-body[data-page^="attractions-"] .hero-tool-wrap{
-  border:1px solid rgba(255,255,255,.11);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025)),
-    linear-gradient(135deg, rgba(10,25,67,.82), rgba(28,46,97,.78));
-  box-shadow:
-    var(--shadow-hero),
-    0 0 0 1px rgba(255,255,255,.03) inset;
+    linear-gradient(180deg, rgba(9,14,28,.24) 0%, rgba(9,14,28,.48) 34%, rgba(9,14,28,.82) 100%),
+    radial-gradient(900px 480px at 12% 12%, rgba(30,90,168,.22), transparent 55%),
+    radial-gradient(880px 460px at 88% 14%, rgba(200,16,46,.18), transparent 56%),
+    radial-gradient(820px 420px at 55% 100%, rgba(255,210,74,.12), transparent 56%);
 }
 
 body[data-page^="attractions-"] .kicker .dot{
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
-    linear-gradient(135deg, var(--attr-blue), var(--attr-yellow));
+    linear-gradient(135deg, var(--attr-red), var(--attr-yellow));
   box-shadow:
-    0 0 0 4px rgba(30,79,174,.16),
-    0 10px 24px rgba(30,79,174,.24);
-}
-
-body[data-page^="attractions-"] .hero h1{
-  text-shadow:0 4px 18px rgba(0,0,0,.22);
-}
-
-body[data-page^="attractions-"] .hero .lede{
-  color:rgba(255,255,255,.92);
-}
-
-body[data-page^="attractions-"] .last-updated{
-  color:rgba(255,255,255,.72);
+    0 0 0 4px rgba(200,16,46,.14),
+    0 10px 24px rgba(200,16,46,.22);
 }
 
 /* ==========================================================================
-   3) Callouts / trust / quick picks
+   5) Hero conversion blocks
    ========================================================================== */
 body[data-page^="attractions-"] .callout{
+  position:relative;
+  margin:0 0 16px;
+  padding:18px 20px 18px 22px;
+  border-radius:var(--radius-md);
   background:
-    linear-gradient(135deg, rgba(255,248,225,.98), rgba(250,240,206,.96));
-  border:1px solid rgba(242,199,92,.28);
+    linear-gradient(135deg, rgba(255,247,216,.98), rgba(255,239,190,.95));
+  color:#1b1b1b;
+  border:1px solid rgba(255,210,74,.30);
   box-shadow:
-    0 14px 32px rgba(10,20,50,.12),
+    0 14px 32px rgba(0,0,0,.12),
     0 0 0 1px rgba(255,255,255,.14) inset;
 }
 
 body[data-page^="attractions-"] .callout::before{
-  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:var(--radius-md) var(--radius-md) 0 0;
+  background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
 }
 
 body[data-page^="attractions-"] .callout strong{
-  color:var(--attr-blue);
-}
-
-body[data-page^="attractions-"] .trust-item{
-  border:1px solid rgba(255,255,255,.12);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.05)),
-    rgba(255,255,255,.04);
-  box-shadow:0 10px 22px rgba(0,0,0,.12);
-}
-
-body[data-page^="attractions-"] .quick-pick::before{
-  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
-}
-
-body[data-page^="attractions-"] .quick-pick{
-  border:1px solid rgba(255,255,255,.11);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05)),
-    rgba(255,255,255,.04);
-}
-
-body[data-page^="attractions-"] .quick-pick:hover{
-  border-color:rgba(255,255,255,.16);
-  box-shadow:0 16px 30px rgba(7,15,36,.18);
+  color:#154c8a;
 }
 
 /* ==========================================================================
-   4) Buttons / CTA system
+   6) Buttons / CTAs
    ========================================================================== */
 body[data-page^="attractions-"] .btn.primary{
   color:#ffffff;
   border-color:rgba(0,0,0,.04);
   background:
-    linear-gradient(135deg, #1e4fae 0%, #2f63cc 46%, #5f85e8 100%);
+    linear-gradient(135deg, #d61f3d 0%, #b80f2a 44%, #e58b3e 100%);
   box-shadow:
-    0 16px 34px rgba(30,79,174,.24),
+    0 16px 34px rgba(200,16,46,.22),
     0 0 0 1px rgba(255,255,255,.06) inset;
 }
 
 body[data-page^="attractions-"] .btn.primary:hover{
   background:
-    linear-gradient(135deg, #2458bf 0%, #3970da 48%, #6e92ee 100%);
+    linear-gradient(135deg, #e12f4d 0%, #c31531 46%, #efa451 100%);
   box-shadow:
-    0 18px 38px rgba(30,79,174,.28),
+    0 18px 38px rgba(200,16,46,.24),
     0 0 0 1px rgba(255,255,255,.08) inset;
 }
 
 body[data-page^="attractions-"] .pill{
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
   background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,.94), rgba(255,255,255,.22) 44%, transparent 45%),
-    linear-gradient(135deg, var(--attr-yellow), #ffe8a6);
-  color:#5c4300;
-  box-shadow:0 8px 18px rgba(242,199,92,.22);
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), rgba(255,255,255,.25) 44%, transparent 45%),
+    linear-gradient(135deg, var(--attr-yellow), #ffe38a);
+  color:#4a3400;
+  box-shadow:0 8px 18px rgba(255,210,74,.24);
 }
 
 /* ==========================================================================
-   5) Cards / section shells / premium surfaces
+   12) Intro/editor note
    ========================================================================== */
-body[data-page^="attractions-"] .card{
-  border:1px solid var(--attr-line);
+body[data-page^="attractions-"] .editor-note{
+  position:relative;
+  margin-bottom:28px;
+  padding:18px 18px 18px 20px;
+  border-radius:18px;
+  border:1px solid rgba(30,90,168,.16);
   background:
-    linear-gradient(180deg, rgba(255,255,255,.99), rgba(246,249,255,.98));
+    linear-gradient(180deg, rgba(30,90,168,.07), rgba(30,90,168,.025)),
+    #ffffff;
+  box-shadow:var(--shadow-2);
 }
 
+body[data-page^="attractions-"] .editor-note::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  border-radius:18px 0 0 18px;
+  background:linear-gradient(180deg, var(--attr-blue), var(--attr-yellow));
+}
+
+/* ==========================================================================
+   14) Cards / link cards / decision blocks
+   ========================================================================== */
 body[data-page^="attractions-"] .card.link-card::before,
 body[data-page^="attractions-"] .park-card::before,
 body[data-page^="attractions-"] .decision-card::before,
-body[data-page^="attractions-"] .ticket-card::before,
-body[data-page^="attractions-"] .video-block::before,
-body[data-page^="attractions-"] .park-map-card::before{
-  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+body[data-page^="attractions-"] .ticket-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
+  opacity:.94;
+  border-radius:22px 22px 0 0;
 }
 
 body[data-page^="attractions-"] .park-card:hover,
 body[data-page^="attractions-"] .decision-card:hover,
 body[data-page^="attractions-"] .ticket-card:hover,
-body[data-page^="attractions-"] .card.link-card:hover,
-body[data-page^="attractions-"] .park-map-card:hover{
-  border-color:rgba(30,79,174,.18);
-  box-shadow:0 18px 36px rgba(16,33,63,.10);
+body[data-page^="attractions-"] .card.link-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+  border-color:rgba(30,90,168,.16);
 }
 
 body[data-page^="attractions-"] .card.link-card .arrow{
-  color:var(--attr-blue);
+  flex:0 0 auto;
+  font-size:1.1rem;
+  line-height:1;
+  color:var(--attr-red);
+  transition:transform var(--t-fast) var(--ease-standard);
 }
 
 /* ==========================================================================
-   6) Notes / editor block / mini cards
-   ========================================================================== */
-body[data-page^="attractions-"] .editor-note{
-  border:1px solid rgba(30,79,174,.14);
-  background:
-    linear-gradient(180deg, rgba(30,79,174,.06), rgba(30,79,174,.025)),
-    #ffffff;
-}
-
-body[data-page^="attractions-"] .editor-note::before{
-  background:linear-gradient(180deg, var(--attr-blue), var(--attr-yellow));
-}
-
-body[data-page^="attractions-"] .mini:hover{
-  border-color:rgba(30,79,174,.16);
-}
-
-body[data-page^="attractions-"] .mini-icon{
-  border:1px solid rgba(16,33,63,.07);
-  background:
-    linear-gradient(180deg, #fff8e5 0%, #eef4ff 100%);
-  color:var(--attr-blue);
-}
-
-/* ==========================================================================
-   7) Badges / pills / labels
+   15) Badges / pills / tags
    ========================================================================== */
 body[data-page^="attractions-"] .badge{
-  color:#624600;
+  color:#6a3200;
   background:
-    linear-gradient(180deg, rgba(242,199,92,.22), rgba(242,199,92,.14)),
-    #fff9e4;
-  border-color:rgba(242,199,92,.28);
-  box-shadow:0 8px 18px rgba(242,199,92,.12);
+    linear-gradient(180deg, rgba(255,210,74,.24), rgba(255,210,74,.16)),
+    #fff9e0;
+  border-color:rgba(255,210,74,.30);
+  box-shadow:0 8px 18px rgba(255,210,74,.12);
 }
 
 body[data-page^="attractions-"] .tag{
-  color:#123f7f;
+  color:#153f77;
   background:
-    linear-gradient(180deg, rgba(30,79,174,.13), rgba(30,79,174,.07)),
-    #eef4ff;
-  border-color:rgba(30,79,174,.18);
+    linear-gradient(180deg, rgba(30,90,168,.13), rgba(30,90,168,.07)),
+    #eef5ff;
+  border-color:rgba(30,90,168,.20);
 }
 
 body[data-page^="attractions-"] .cat{
-  color:#4737a0;
+  color:#6a1220;
   background:
-    linear-gradient(180deg, rgba(111,91,211,.14), rgba(111,91,211,.07)),
-    #f2efff;
-  border-color:rgba(111,91,211,.18);
+    linear-gradient(180deg, rgba(200,16,46,.13), rgba(200,16,46,.07)),
+    #fff1f4;
+  border-color:rgba(200,16,46,.18);
 }
 
 /* ==========================================================================
-   8) Checklist / decision cues
+   16) Mini-grid / best-for blocks
+   ========================================================================== */
+body[data-page^="attractions-"] .mini:hover{
+  transform:translateY(-1px);
+  border-color:rgba(30,90,168,.16);
+  box-shadow:var(--shadow-2);
+}
+
+body[data-page^="attractions-"] .mini-icon{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  flex:0 0 36px;
+  border-radius:12px;
+  border:1px solid rgba(15,23,42,.07);
+  background:
+    linear-gradient(180deg, #fff7df 0%, #eef4ff 100%);
+  color:var(--attr-red);
+  font-size:1.05rem;
+  line-height:1;
+  box-shadow:
+    0 6px 14px rgba(2,6,23,.05),
+    inset 0 1px 0 rgba(255,255,255,.82);
+}
+
+/* ==========================================================================
+   17) Checklists
    ========================================================================== */
 body[data-page^="attractions-"] .checklist li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.42em;
+  width:16px;
+  height:16px;
+  border-radius:999px;
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
-    linear-gradient(135deg, var(--attr-blue), #7ea5ff);
+    linear-gradient(135deg, var(--attr-green), #58b68b);
   box-shadow:
-    0 0 0 3px rgba(30,79,174,.08),
-    0 8px 16px rgba(30,79,174,.16);
+    0 0 0 3px rgba(47,143,107,.08),
+    0 8px 16px rgba(47,143,107,.14);
 }
 
 /* ==========================================================================
-   9) Tables
+   18) Comparison table
    ========================================================================== */
 body[data-page^="attractions-"] thead th{
+  position:sticky;
+  top:0;
+  z-index:1;
+  text-align:left;
   color:var(--attr-ink);
+  font-size:.92rem;
+  font-weight:900;
+  letter-spacing:-.01em;
   background:
-    linear-gradient(180deg, rgba(30,79,174,.08), rgba(30,79,174,.04)),
+    linear-gradient(180deg, rgba(30,90,168,.08), rgba(30,90,168,.04)),
     #f8fbff;
 }
 
 body[data-page^="attractions-"] tbody tr:hover td{
-  background:rgba(30,79,174,.022);
+  background:rgba(30,90,168,.022);
 }
 
 /* ==========================================================================
-   10) Map / preview / FAQ accents
+   19) Video block
    ========================================================================== */
-body[data-page^="attractions-"] .map-badge.official{
-  color:#123f7f;
+body[data-page^="attractions-"] .video-block::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
+}
+
+/* ==========================================================================
+   20) Sidebar
+   ========================================================================== */
+body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary{
   background:
-    linear-gradient(180deg, rgba(30,79,174,.13), rgba(30,79,174,.07)),
-    #eef4ff;
-  border-color:rgba(30,79,174,.18);
+    linear-gradient(135deg, #d61f3d 0%, #b80f2a 46%, #dd8740 100%);
+  box-shadow:
+    0 10px 22px rgba(200,16,46,.16),
+    0 0 0 1px rgba(255,255,255,.04) inset;
+}
+
+/* ==========================================================================
+   21) Park maps
+   ========================================================================== */
+body[data-page^="attractions-"] .park-map-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg, var(--attr-red), var(--attr-yellow), var(--attr-blue));
+  opacity:.94;
+  border-radius:22px 22px 0 0;
+}
+
+body[data-page^="attractions-"] .park-map-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+  border-color:rgba(30,90,168,.16);
+}
+
+body[data-page^="attractions-"] .map-badge.official{
+  color:#153f77;
+  background:
+    linear-gradient(180deg, rgba(30,90,168,.13), rgba(30,90,168,.07)),
+    #eef5ff;
+  border-color:rgba(30,90,168,.20);
 }
 
 body[data-page^="attractions-"] .map-badge.caution{
-  color:#624600;
+  color:#6a3200;
   background:
-    linear-gradient(180deg, rgba(242,199,92,.22), rgba(242,199,92,.14)),
-    #fff9e4;
-  border-color:rgba(242,199,92,.28);
-}
-
-body[data-page^="attractions-"] .map-link-card::before,
-body[data-page^="attractions-"] details::before{
-  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+    linear-gradient(180deg, rgba(255,210,74,.24), rgba(255,210,74,.16)),
+    #fff9e0;
+  border-color:rgba(255,210,74,.30);
 }
 
 body[data-page^="attractions-"] .map-link-card:hover,
-body[data-page^="attractions-"] .map-link-card:focus-visible,
-body[data-page^="attractions-"] details:hover,
+body[data-page^="attractions-"] .map-link-card:focus-visible{
+  transform:translateY(-2px);
+  text-decoration:none;
+  border-color:rgba(30,90,168,.18);
+  box-shadow:0 18px 36px rgba(2,6,23,.09);
+}
+
+body[data-page^="attractions-"] .map-link-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
+  opacity:.94;
+}
+
+/* ==========================================================================
+   22) Related cards
+   ========================================================================== */
 body[data-page^="attractions-"] .related-card:hover{
-  border-color:rgba(30,79,174,.18);
+  text-decoration:none;
+  transform:translateY(-1px);
+  border-color:rgba(30,90,168,.16);
+  box-shadow:0 18px 34px rgba(2,6,23,.08);
+}
+
+/* ==========================================================================
+   23) FAQ
+   ========================================================================== */
+body[data-page^="attractions-"] details::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-yellow));
+  opacity:.92;
+}
+
+body[data-page^="attractions-"] details:hover{
+  border-color:rgba(30,90,168,.14);
+  box-shadow:var(--shadow-2);
 }
 
 body[data-page^="attractions-"] summary::after{
-  color:var(--attr-blue);
+  content:"+";
+  position:absolute;
+  right:16px;
+  top:13px;
+  font-size:1.25rem;
+  line-height:1;
+  color:var(--attr-red);
+  font-weight:900;
 }
 
+/* ==========================================================================
+   24) Note / tip boxes
+   ========================================================================== */
 body[data-page^="attractions-"] .note-box{
   background:
-    linear-gradient(180deg, rgba(30,79,174,.06), rgba(30,79,174,.025)),
-    #f5f8ff;
-  border-color:rgba(30,79,174,.14);
+    linear-gradient(180deg, rgba(30,90,168,.07), rgba(30,90,168,.03)),
+    #f5f9ff;
+  border-color:rgba(30,90,168,.16);
 }
 
 body[data-page^="attractions-"] .tip-box{
   background:
-    linear-gradient(180deg, rgba(242,199,92,.10), rgba(242,199,92,.04)),
-    #fffdf5;
-  border-color:rgba(242,199,92,.18);
+    linear-gradient(180deg, rgba(47,143,107,.07), rgba(47,143,107,.03)),
+    #f6fffb;
+  border-color:rgba(47,143,107,.16);
 }
 
 /* ==========================================================================
-   11) Secondary buttons on light backgrounds
+   25) Secondary button fix on light surfaces
    ========================================================================== */
-body[data-page^="attractions-"] .content .btn:not(.primary),
-body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary),
-body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
-body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
-body[data-page^="attractions-"] .map-actions .btn:not(.primary){
-  color:var(--attr-ink);
-  border:1px solid rgba(16,33,63,.10);
-  background:
-    linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
-  box-shadow:0 8px 18px rgba(16,33,63,.06);
-}
-
 body[data-page^="attractions-"] .content .btn:not(.primary):hover,
 body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary):hover,
 body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
 body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
 body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
   color:var(--attr-ink);
-  border-color:rgba(30,79,174,.22);
+  border-color:rgba(30,90,168,.24);
   background:
-    linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
-  box-shadow:0 12px 24px rgba(16,33,63,.08);
+    linear-gradient(180deg, #ffffff 0%, #edf4ff 100%);
+  box-shadow:0 12px 24px rgba(2,6,23,.08);
 }
 
 /* ==========================================================================
-   12) Inline preview shell
+   26) Inline preview
    ========================================================================== */
 body[data-page^="attractions-"] .map-inline-preview-inner{
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.05);
   background:
-    radial-gradient(120% 140% at 0% 0%, rgba(111,91,211,.10), transparent 60%),
-    linear-gradient(180deg, rgba(14,28,68,.985), rgba(8,16,39,.985));
+    radial-gradient(120% 140% at 0% 0%, rgba(30,90,168,.10), transparent 60%),
+    linear-gradient(180deg, rgba(19,31,58,.985), rgba(10,15,30,.985));
   box-shadow:
     0 24px 56px rgba(2,6,23,.42),
     0 8px 24px rgba(2,6,23,.26),
     inset 0 0 0 1px rgba(255,255,255,.02);
+  padding:10px;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
 }
 
 body[data-page^="attractions-"] .map-inline-preview-meta span{
-  color:#eef4ff;
-  background:rgba(30,79,174,.18);
-  border:1px solid rgba(111,91,211,.20);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  font-size:.74rem;
+  font-weight:800;
+  white-space:nowrap;
+  color:#dfeaff;
+  background:rgba(30,90,168,.16);
+  border:1px solid rgba(30,90,168,.20);
 }
 
 /* ==========================================================================
-   13) Disney-style text hover treatment
+   27) Disneyland hover links
    ========================================================================== */
 body[data-page^="attractions-"] .content a:not(.btn):hover,
 body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
@@ -403,94 +518,40 @@ body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
   color:transparent !important;
   -webkit-background-clip:text;
   background-clip:text;
-  text-decoration-color:rgba(30,79,174,.34);
+  text-decoration-color:rgba(200,16,46,.45);
   text-decoration-thickness:2px;
 }
 
-body[data-page^="attractions-"] .quick-pick:hover strong,
-body[data-page^="attractions-"] .quick-pick:focus-visible strong,
-body[data-page^="attractions-"] .quick-pick:hover span,
-body[data-page^="attractions-"] .quick-pick:focus-visible span{
-  background-image:var(--mario-link-gradient);
-  background-size:200% 100%;
-  background-repeat:no-repeat;
-  background-position:100% 50%;
-  color:transparent;
-  -webkit-background-clip:text;
-  background-clip:text;
-}
-
-@supports not ((-webkit-background-clip:text) or (background-clip:text)){
-  body[data-page^="attractions-"] .content a:not(.btn):hover,
-  body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
-  body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
-  body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
-  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
-  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
-  body[data-page^="attractions-"] .table-aff-link:hover,
-  body[data-page^="attractions-"] .table-aff-link:focus-visible,
-  body[data-page^="attractions-"] .link-list a:not(.btn):hover,
-  body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
-    color:var(--attr-blue) !important;
-  }
-}
-
 /* ==========================================================================
-   14) Page-specific Disney quick-pick accents
+   29) Universal hub specific accents
    ========================================================================== */
-body[data-page^="attractions-"] .quick-pick:nth-child(1)::before{
-  background:linear-gradient(90deg, #1e4fae, #5f85e8);
+body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(1)::before{
+  background:linear-gradient(90deg, var(--attr-red), #e34a61);
 }
 
-body[data-page^="attractions-"] .quick-pick:nth-child(2)::before{
-  background:linear-gradient(90deg, #6f5bd3, #9a86f5);
+body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(2)::before{
+  background:linear-gradient(90deg, var(--attr-green), #66c39a);
 }
 
-body[data-page^="attractions-"] .quick-pick:nth-child(3)::before{
-  background:linear-gradient(90deg, #f2c75c, #ffe39a);
+body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(3)::before{
+  background:linear-gradient(90deg, var(--attr-blue), #4f82c9);
 }
 
-body[data-page^="attractions-"] .quick-pick:nth-child(4)::before{
-  background:linear-gradient(90deg, #4f8f7a, #7ab7a1);
+body[data-page="attractions-universal-studios-tickets"] .quick-pick:nth-child(4)::before{
+  background:linear-gradient(90deg, var(--attr-yellow), #ffe38a);
 }
 
-body[data-page^="attractions-"] .park-card.top-pick{
-  border-color:rgba(30,79,174,.18);
+body[data-page="attractions-universal-studios-tickets"] .park-card.top-pick{
+  border-color:rgba(200,16,46,.16);
   box-shadow:
-    0 20px 40px rgba(30,79,174,.09),
-    0 0 0 1px rgba(30,79,174,.02) inset;
+    0 20px 40px rgba(200,16,46,.08),
+    0 0 0 1px rgba(200,16,46,.02) inset;
 }
 
-body[data-page^="attractions-"] .park-card.family-pick{
-  border-color:rgba(242,199,92,.24);
+body[data-page="attractions-universal-studios-tickets"] .park-card.family-pick{
+  border-color:rgba(47,143,107,.16);
 }
 
-body[data-page^="attractions-"] .park-card.movie-pick{
-  border-color:rgba(111,91,211,.20);
-}
-
-/* ==========================================================================
-   15) Sidebar CTA treatment
-   ========================================================================== */
-body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary{
-  background:
-    linear-gradient(135deg, #1e4fae 0%, #2f63cc 46%, #5f85e8 100%);
-  box-shadow:
-    0 10px 22px rgba(30,79,174,.18),
-    0 0 0 1px rgba(255,255,255,.04) inset;
-}
-
-/* ==========================================================================
-   16) Optional helper classes for Disney pages
-   ========================================================================== */
-body[data-page^="attractions-"] .is-disney-gold{
-  color:var(--attr-yellow);
-}
-
-body[data-page^="attractions-"] .is-disney-blue{
-  color:var(--attr-blue);
-}
-
-body[data-page^="attractions-"] .is-disney-purple{
-  color:var(--attr-purple);
+body[data-page="attractions-universal-studios-tickets"] .park-card.movie-pick{
+  border-color:rgba(30,90,168,.16);
 }
