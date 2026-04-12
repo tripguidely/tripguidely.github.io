@@ -1,0 +1,496 @@
+/* ==========================================================================
+   TripGuidely attractionsv2.css — Disney color transformation
+   Load AFTER /assets/css/attractions.css
+   Purpose:
+   - Replace Universal / Mario-inspired palette with a Disney-inspired palette
+   - Keep the same structure, spacing, CRO behavior, and component system
+   - Shift visual tone toward premium "Disney travel booking" look
+   ========================================================================== */
+
+/* ==========================================================================
+   1) Disney page-scoped palette
+   ========================================================================== */
+body[data-page^="attractions-"]{
+  /* Core Disney-inspired palette */
+  --attr-red:#c93a3a;
+  --attr-red-2:#a92d2d;
+
+  --attr-blue:#1e4fae;
+  --attr-blue-2:#163f90;
+
+  --attr-yellow:#f2c75c;
+  --attr-yellow-2:#ddb048;
+
+  --attr-green:#4f8f7a;
+  --attr-green-2:#3d7463;
+
+  --attr-purple:#6f5bd3;
+  --attr-purple-2:#5948b3;
+
+  --attr-navy:#0c1f4d;
+  --attr-ink:#10213f;
+  --attr-text:#1b2c4f;
+  --attr-muted:#5b6b86;
+  --attr-soft:#7f8ca2;
+
+  --attr-card:#ffffff;
+  --attr-card-2:#f8fbff;
+  --attr-card-3:#f2f6ff;
+  --attr-line:rgba(16,33,63,.09);
+  --attr-line-2:rgba(16,33,63,.15);
+
+  --focus:rgba(30,79,174,.26);
+
+  /* Disney CTA system */
+  --cta1:#1e4fae;
+  --cta2:#3a6fe0;
+  --cta3:#f2c75c;
+
+  /* Disney hover gradient */
+  --mario-link-gradient:
+    linear-gradient(
+      90deg,
+      #1e4fae 0%,
+      #6f5bd3 45%,
+      #f2c75c 100%
+    );
+
+  background:
+    radial-gradient(1000px 620px at 10% 0%, rgba(30,79,174,.08), transparent 56%),
+    radial-gradient(980px 600px at 90% 0%, rgba(242,199,92,.12), transparent 58%),
+    radial-gradient(860px 540px at 50% 12%, rgba(111,91,211,.06), transparent 56%),
+    linear-gradient(180deg, #fbfcff 0%, #f5f8ff 34%, #ffffff 100%);
+  color:var(--attr-text);
+}
+
+/* ==========================================================================
+   2) Hero visual treatment
+   ========================================================================== */
+body[data-page^="attractions-"] .hero-overlay{
+  background:
+    linear-gradient(180deg, rgba(7,15,36,.20) 0%, rgba(7,15,36,.45) 34%, rgba(7,15,36,.84) 100%),
+    radial-gradient(920px 500px at 12% 12%, rgba(30,79,174,.24), transparent 55%),
+    radial-gradient(860px 460px at 88% 14%, rgba(111,91,211,.18), transparent 56%),
+    radial-gradient(820px 420px at 55% 100%, rgba(242,199,92,.14), transparent 56%);
+}
+
+body[data-page^="attractions-"] .hero-tool-wrap{
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025)),
+    linear-gradient(135deg, rgba(10,25,67,.82), rgba(28,46,97,.78));
+  box-shadow:
+    var(--shadow-hero),
+    0 0 0 1px rgba(255,255,255,.03) inset;
+}
+
+body[data-page^="attractions-"] .kicker .dot{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
+    linear-gradient(135deg, var(--attr-blue), var(--attr-yellow));
+  box-shadow:
+    0 0 0 4px rgba(30,79,174,.16),
+    0 10px 24px rgba(30,79,174,.24);
+}
+
+body[data-page^="attractions-"] .hero h1{
+  text-shadow:0 4px 18px rgba(0,0,0,.22);
+}
+
+body[data-page^="attractions-"] .hero .lede{
+  color:rgba(255,255,255,.92);
+}
+
+body[data-page^="attractions-"] .last-updated{
+  color:rgba(255,255,255,.72);
+}
+
+/* ==========================================================================
+   3) Callouts / trust / quick picks
+   ========================================================================== */
+body[data-page^="attractions-"] .callout{
+  background:
+    linear-gradient(135deg, rgba(255,248,225,.98), rgba(250,240,206,.96));
+  border:1px solid rgba(242,199,92,.28);
+  box-shadow:
+    0 14px 32px rgba(10,20,50,.12),
+    0 0 0 1px rgba(255,255,255,.14) inset;
+}
+
+body[data-page^="attractions-"] .callout::before{
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .callout strong{
+  color:var(--attr-blue);
+}
+
+body[data-page^="attractions-"] .trust-item{
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
+  box-shadow:0 10px 22px rgba(0,0,0,.12);
+}
+
+body[data-page^="attractions-"] .quick-pick::before{
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .quick-pick{
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05)),
+    rgba(255,255,255,.04);
+}
+
+body[data-page^="attractions-"] .quick-pick:hover{
+  border-color:rgba(255,255,255,.16);
+  box-shadow:0 16px 30px rgba(7,15,36,.18);
+}
+
+/* ==========================================================================
+   4) Buttons / CTA system
+   ========================================================================== */
+body[data-page^="attractions-"] .btn.primary{
+  color:#ffffff;
+  border-color:rgba(0,0,0,.04);
+  background:
+    linear-gradient(135deg, #1e4fae 0%, #2f63cc 46%, #5f85e8 100%);
+  box-shadow:
+    0 16px 34px rgba(30,79,174,.24),
+    0 0 0 1px rgba(255,255,255,.06) inset;
+}
+
+body[data-page^="attractions-"] .btn.primary:hover{
+  background:
+    linear-gradient(135deg, #2458bf 0%, #3970da 48%, #6e92ee 100%);
+  box-shadow:
+    0 18px 38px rgba(30,79,174,.28),
+    0 0 0 1px rgba(255,255,255,.08) inset;
+}
+
+body[data-page^="attractions-"] .pill{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.94), rgba(255,255,255,.22) 44%, transparent 45%),
+    linear-gradient(135deg, var(--attr-yellow), #ffe8a6);
+  color:#5c4300;
+  box-shadow:0 8px 18px rgba(242,199,92,.22);
+}
+
+/* ==========================================================================
+   5) Cards / section shells / premium surfaces
+   ========================================================================== */
+body[data-page^="attractions-"] .card{
+  border:1px solid var(--attr-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(246,249,255,.98));
+}
+
+body[data-page^="attractions-"] .card.link-card::before,
+body[data-page^="attractions-"] .park-card::before,
+body[data-page^="attractions-"] .decision-card::before,
+body[data-page^="attractions-"] .ticket-card::before,
+body[data-page^="attractions-"] .video-block::before,
+body[data-page^="attractions-"] .park-map-card::before{
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .park-card:hover,
+body[data-page^="attractions-"] .decision-card:hover,
+body[data-page^="attractions-"] .ticket-card:hover,
+body[data-page^="attractions-"] .card.link-card:hover,
+body[data-page^="attractions-"] .park-map-card:hover{
+  border-color:rgba(30,79,174,.18);
+  box-shadow:0 18px 36px rgba(16,33,63,.10);
+}
+
+body[data-page^="attractions-"] .card.link-card .arrow{
+  color:var(--attr-blue);
+}
+
+/* ==========================================================================
+   6) Notes / editor block / mini cards
+   ========================================================================== */
+body[data-page^="attractions-"] .editor-note{
+  border:1px solid rgba(30,79,174,.14);
+  background:
+    linear-gradient(180deg, rgba(30,79,174,.06), rgba(30,79,174,.025)),
+    #ffffff;
+}
+
+body[data-page^="attractions-"] .editor-note::before{
+  background:linear-gradient(180deg, var(--attr-blue), var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .mini:hover{
+  border-color:rgba(30,79,174,.16);
+}
+
+body[data-page^="attractions-"] .mini-icon{
+  border:1px solid rgba(16,33,63,.07);
+  background:
+    linear-gradient(180deg, #fff8e5 0%, #eef4ff 100%);
+  color:var(--attr-blue);
+}
+
+/* ==========================================================================
+   7) Badges / pills / labels
+   ========================================================================== */
+body[data-page^="attractions-"] .badge{
+  color:#624600;
+  background:
+    linear-gradient(180deg, rgba(242,199,92,.22), rgba(242,199,92,.14)),
+    #fff9e4;
+  border-color:rgba(242,199,92,.28);
+  box-shadow:0 8px 18px rgba(242,199,92,.12);
+}
+
+body[data-page^="attractions-"] .tag{
+  color:#123f7f;
+  background:
+    linear-gradient(180deg, rgba(30,79,174,.13), rgba(30,79,174,.07)),
+    #eef4ff;
+  border-color:rgba(30,79,174,.18);
+}
+
+body[data-page^="attractions-"] .cat{
+  color:#4737a0;
+  background:
+    linear-gradient(180deg, rgba(111,91,211,.14), rgba(111,91,211,.07)),
+    #f2efff;
+  border-color:rgba(111,91,211,.18);
+}
+
+/* ==========================================================================
+   8) Checklist / decision cues
+   ========================================================================== */
+body[data-page^="attractions-"] .checklist li::before{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,0) 42%),
+    linear-gradient(135deg, var(--attr-blue), #7ea5ff);
+  box-shadow:
+    0 0 0 3px rgba(30,79,174,.08),
+    0 8px 16px rgba(30,79,174,.16);
+}
+
+/* ==========================================================================
+   9) Tables
+   ========================================================================== */
+body[data-page^="attractions-"] thead th{
+  color:var(--attr-ink);
+  background:
+    linear-gradient(180deg, rgba(30,79,174,.08), rgba(30,79,174,.04)),
+    #f8fbff;
+}
+
+body[data-page^="attractions-"] tbody tr:hover td{
+  background:rgba(30,79,174,.022);
+}
+
+/* ==========================================================================
+   10) Map / preview / FAQ accents
+   ========================================================================== */
+body[data-page^="attractions-"] .map-badge.official{
+  color:#123f7f;
+  background:
+    linear-gradient(180deg, rgba(30,79,174,.13), rgba(30,79,174,.07)),
+    #eef4ff;
+  border-color:rgba(30,79,174,.18);
+}
+
+body[data-page^="attractions-"] .map-badge.caution{
+  color:#624600;
+  background:
+    linear-gradient(180deg, rgba(242,199,92,.22), rgba(242,199,92,.14)),
+    #fff9e4;
+  border-color:rgba(242,199,92,.28);
+}
+
+body[data-page^="attractions-"] .map-link-card::before,
+body[data-page^="attractions-"] details::before{
+  background:linear-gradient(90deg, var(--attr-blue), var(--attr-purple), var(--attr-yellow));
+}
+
+body[data-page^="attractions-"] .map-link-card:hover,
+body[data-page^="attractions-"] .map-link-card:focus-visible,
+body[data-page^="attractions-"] details:hover,
+body[data-page^="attractions-"] .related-card:hover{
+  border-color:rgba(30,79,174,.18);
+}
+
+body[data-page^="attractions-"] summary::after{
+  color:var(--attr-blue);
+}
+
+body[data-page^="attractions-"] .note-box{
+  background:
+    linear-gradient(180deg, rgba(30,79,174,.06), rgba(30,79,174,.025)),
+    #f5f8ff;
+  border-color:rgba(30,79,174,.14);
+}
+
+body[data-page^="attractions-"] .tip-box{
+  background:
+    linear-gradient(180deg, rgba(242,199,92,.10), rgba(242,199,92,.04)),
+    #fffdf5;
+  border-color:rgba(242,199,92,.18);
+}
+
+/* ==========================================================================
+   11) Secondary buttons on light backgrounds
+   ========================================================================== */
+body[data-page^="attractions-"] .content .btn:not(.primary),
+body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary),
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary),
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary),
+body[data-page^="attractions-"] .map-actions .btn:not(.primary){
+  color:var(--attr-ink);
+  border:1px solid rgba(16,33,63,.10);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+  box-shadow:0 8px 18px rgba(16,33,63,.06);
+}
+
+body[data-page^="attractions-"] .content .btn:not(.primary):hover,
+body[data-page^="attractions-"] .card:not(.sidebar .card) .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-map-card .btn:not(.primary):hover,
+body[data-page^="attractions-"] .park-maps-section .btn:not(.primary):hover,
+body[data-page^="attractions-"] .map-actions .btn:not(.primary):hover{
+  color:var(--attr-ink);
+  border-color:rgba(30,79,174,.22);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
+  box-shadow:0 12px 24px rgba(16,33,63,.08);
+}
+
+/* ==========================================================================
+   12) Inline preview shell
+   ========================================================================== */
+body[data-page^="attractions-"] .map-inline-preview-inner{
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(111,91,211,.10), transparent 60%),
+    linear-gradient(180deg, rgba(14,28,68,.985), rgba(8,16,39,.985));
+  box-shadow:
+    0 24px 56px rgba(2,6,23,.42),
+    0 8px 24px rgba(2,6,23,.26),
+    inset 0 0 0 1px rgba(255,255,255,.02);
+}
+
+body[data-page^="attractions-"] .map-inline-preview-meta span{
+  color:#eef4ff;
+  background:rgba(30,79,174,.18);
+  border:1px solid rgba(111,91,211,.20);
+}
+
+/* ==========================================================================
+   13) Disney-style text hover treatment
+   ========================================================================== */
+body[data-page^="attractions-"] .content a:not(.btn):hover,
+body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
+body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
+body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
+body[data-page^="attractions-"] .table-aff-link:hover,
+body[data-page^="attractions-"] .table-aff-link:focus-visible,
+body[data-page^="attractions-"] .link-list a:not(.btn):hover,
+body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
+  background-image:var(--mario-link-gradient);
+  background-size:200% 100%;
+  background-repeat:no-repeat;
+  background-position:100% 50%;
+  color:transparent !important;
+  -webkit-background-clip:text;
+  background-clip:text;
+  text-decoration-color:rgba(30,79,174,.34);
+  text-decoration-thickness:2px;
+}
+
+body[data-page^="attractions-"] .quick-pick:hover strong,
+body[data-page^="attractions-"] .quick-pick:focus-visible strong,
+body[data-page^="attractions-"] .quick-pick:hover span,
+body[data-page^="attractions-"] .quick-pick:focus-visible span{
+  background-image:var(--mario-link-gradient);
+  background-size:200% 100%;
+  background-repeat:no-repeat;
+  background-position:100% 50%;
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  body[data-page^="attractions-"] .content a:not(.btn):hover,
+  body[data-page^="attractions-"] .content a:not(.btn):focus-visible,
+  body[data-page^="attractions-"] .sidebar a:not(.btn):hover,
+  body[data-page^="attractions-"] .sidebar a:not(.btn):focus-visible,
+  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):hover,
+  body[data-page^="attractions-"] .breadcrumbs a:not(.btn):focus-visible,
+  body[data-page^="attractions-"] .table-aff-link:hover,
+  body[data-page^="attractions-"] .table-aff-link:focus-visible,
+  body[data-page^="attractions-"] .link-list a:not(.btn):hover,
+  body[data-page^="attractions-"] .link-list a:not(.btn):focus-visible{
+    color:var(--attr-blue) !important;
+  }
+}
+
+/* ==========================================================================
+   14) Page-specific Disney quick-pick accents
+   ========================================================================== */
+body[data-page^="attractions-"] .quick-pick:nth-child(1)::before{
+  background:linear-gradient(90deg, #1e4fae, #5f85e8);
+}
+
+body[data-page^="attractions-"] .quick-pick:nth-child(2)::before{
+  background:linear-gradient(90deg, #6f5bd3, #9a86f5);
+}
+
+body[data-page^="attractions-"] .quick-pick:nth-child(3)::before{
+  background:linear-gradient(90deg, #f2c75c, #ffe39a);
+}
+
+body[data-page^="attractions-"] .quick-pick:nth-child(4)::before{
+  background:linear-gradient(90deg, #4f8f7a, #7ab7a1);
+}
+
+body[data-page^="attractions-"] .park-card.top-pick{
+  border-color:rgba(30,79,174,.18);
+  box-shadow:
+    0 20px 40px rgba(30,79,174,.09),
+    0 0 0 1px rgba(30,79,174,.02) inset;
+}
+
+body[data-page^="attractions-"] .park-card.family-pick{
+  border-color:rgba(242,199,92,.24);
+}
+
+body[data-page^="attractions-"] .park-card.movie-pick{
+  border-color:rgba(111,91,211,.20);
+}
+
+/* ==========================================================================
+   15) Sidebar CTA treatment
+   ========================================================================== */
+body[data-page^="attractions-"] .sidebar .stack-actions .btn.primary{
+  background:
+    linear-gradient(135deg, #1e4fae 0%, #2f63cc 46%, #5f85e8 100%);
+  box-shadow:
+    0 10px 22px rgba(30,79,174,.18),
+    0 0 0 1px rgba(255,255,255,.04) inset;
+}
+
+/* ==========================================================================
+   16) Optional helper classes for Disney pages
+   ========================================================================== */
+body[data-page^="attractions-"] .is-disney-gold{
+  color:var(--attr-yellow);
+}
+
+body[data-page^="attractions-"] .is-disney-blue{
+  color:var(--attr-blue);
+}
+
+body[data-page^="attractions-"] .is-disney-purple{
+  color:var(--attr-purple);
+}
