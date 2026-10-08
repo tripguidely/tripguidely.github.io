@@ -1,0 +1,48 @@
+name: Site regression audit
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      AUDIT_BASE_REF: ${{ github.event.pull_request.base.sha || 'origin/main' }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      # PR events check GitHub's proposed merge tree; manual runs use the selected ref.
+      - name: Check out proposed code and base history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Prove regression checks
+        run: python -B scripts/audit-site.py --base-ref "$AUDIT_BASE_REF" --self-test
+      - name: Audit proposed site
+        shell: bash
+        run: |
+          set +e
+          python -B scripts/audit-site.py --base-ref "$AUDIT_BASE_REF" 2>&1 | tee "$RUNNER_TEMP/site-audit.txt"
+          audit_status=${PIPESTATUS[0]}
+          exit "$audit_status"
+      - name: Publish readable audit summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/site-audit.txt" ]; then
+            printf '### Site regression audit\n\n```text\n' >> "$GITHUB_STEP_SUMMARY"
+            cat "$RUNNER_TEMP/site-audit.txt" >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'Site audit did not run; inspect checkout, Python setup and self-test logs.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
