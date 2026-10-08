@@ -20,7 +20,6 @@ import posixpath
 import re
 import subprocess
 import sys
-import tarfile
 import time
 from urllib.parse import unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
@@ -59,8 +58,15 @@ def invalid_json_constant(value):
 
 
 def blob_hash(path, content):
-    # Git blobs use LF; checkout CRLF must not create a Windows-only regression.
-    if PurePosixPath(path).suffix.lower() in TEXT_EXT:
+    """Hash explicit text types by LF content; hash every other byte verbatim.
+
+    Committed snapshots come from raw Git blobs, never a filtered archive.
+    The existing TEXT_EXT policy also applies to the named .gitkeep text
+    placeholder, which Git auto-converts on Windows despite its empty suffix.
+    Only CRLF -> LF is equivalent: no stripping, decoding, lone-CR conversion,
+    or binary normalization. Content edits and deletions remain protected.
+    """
+    if PurePosixPath(path).suffix.lower() in TEXT_EXT or PurePosixPath(path).name == ".gitkeep":
         content = content.replace(b"\r\n", b"\n")
     return digest(content)
 
@@ -69,8 +75,8 @@ def public(path):
     return not any(part in EXCLUDED for part in PurePosixPath(path).parts)
 
 
-def git(root, *args):
-    result = subprocess.run(["git", "-C", str(root), *args], capture_output=True, check=False)
+def git(root, *args, input=None):
+    result = subprocess.run(["git", "-C", str(root), *args], input=input, capture_output=True, check=False)
     if result.returncode:
         raise ValueError(result.stderr.decode("utf-8", "replace").strip())
     return result.stdout
@@ -96,18 +102,43 @@ class Tree:
         return cls(files)
 
     @classmethod
-    def revision_tree(cls, root, ref):
-        sha = git(root, "rev-parse", "--verify", ref + "^{commit}").decode().strip()
+    def revision_tree(cls, root, ref, *, read_git=git):
+        """Read immutable object bytes, independent of checkout/export filters.
+
+        git archive applies working-tree conversions (including core.autocrlf),
+        export-ignore and export-subst. ls-tree plus cat-file --batch reads the
+        recorded commit's complete public inventory and raw blobs instead.
+        read_git allows read-only configuration variants in regression tests.
+        """
+        sha = read_git(root, "rev-parse", "--verify", ref + "^{commit}").decode().strip()
         files = {}
-        archive = git(root, "archive", "--format=tar", sha)
-        with tarfile.open(fileobj=io.BytesIO(archive)) as handle:
-            for member in handle:
-                if not public(member.name):
-                    continue
-                if member.issym() or member.islnk():
-                    raise ValueError(f"Site symlink needs review: {member.name}")
-                if member.isfile():
-                    files[member.name] = handle.extractfile(member).read()
+        entries = []
+        listing = read_git(root, "ls-tree", "-r", "-z", "--full-tree", sha)
+        for entry in listing.split(b"\0"):
+            if not entry:
+                continue
+            metadata, name = entry.split(b"\t", 1)
+            mode, kind, oid = metadata.split()
+            path = name.decode("utf-8")
+            if not public(path):
+                continue
+            if kind != b"blob" or mode not in {b"100644", b"100755"}:
+                raise ValueError(f"Site symlink/submodule needs review: {path}")
+            entries.append((path, oid))
+        if entries:
+            request = b"\n".join(oid for _, oid in entries) + b"\n"
+            blobs = io.BytesIO(read_git(root, "cat-file", "--batch", input=request))
+            for path, oid in entries:
+                header = blobs.readline().rstrip(b"\n").split()
+                if len(header) != 3 or header[:2] != [oid, b"blob"]:
+                    raise ValueError(f"Unexpected Git blob response: {path}")
+                size = int(header[2])
+                content = blobs.read(size)
+                if len(content) != size or blobs.read(1) != b"\n":
+                    raise ValueError(f"Truncated Git blob response: {path}")
+                files[path] = content
+            if blobs.read(1):
+                raise ValueError("Unexpected trailing Git blob response.")
         return cls(files, sha)
 
     def copy(self):
@@ -823,7 +854,7 @@ def readable(result, verbose=False):
     return "\n".join(lines) + "\n"
 
 
-def self_test(_base, _fixture):
+def self_test(_base, _fixture, root=None):
     """Mutation tests run on dictionaries of immutable bytes, never on site files."""
     # A tiny independent site keeps tests valid as production defects are repaired.
     def content(path, body=""):
@@ -845,6 +876,8 @@ def self_test(_base, _fixture):
     files.update({"assets/css/styles.css": b"body { color: black; }\n",
                   "assets/js/site.js": b"/* tracking fixture */\n",
                   "assets/images/tg-logo.png": b"fixture image",
+                  "assets/images/cruises/.gitkeep": b"\n",
+                  "assets/images/cruises/probe.webp": b"\x89fixture\r\nbinary",
                   "assets/images/hero/disneyland-tickets-castle-800x450.webp": b"fixture image"})
     files["sitemap-core.xml"] = (f'<urlset xmlns="{NS}">' + ''.join(
         f'<url><loc>{ORIGIN + route(p)}</loc></url>' for p in paths) + '</urlset>\n').encode()
@@ -946,6 +979,97 @@ def self_test(_base, _fixture):
     repeated = compare(Audit(base.tree.copy()), base, fixture)
     outcomes.append({"test": "deterministic result", "passed": encoded(repeated) == encoded(compare(Audit(base.tree.copy()), base, fixture))})
     outcomes.append({"test": "data URL srcset token", "passed": srcset_urls('data:image/png;base64,AAAA 1x, /assets/images/tg-logo.png 2x') == ['data:image/png;base64,AAAA', '/assets/images/tg-logo.png']})
+
+    # Keep all original 41 cases above; exercise the narrow newline policy and
+    # immutable Git-object reader without writing fixture or production files.
+    placeholder = "assets/images/cruises/.gitkeep"
+    run("CRLF placeholder checkout preserves protection", lambda t: t.files.__setitem__(placeholder, b"\r\n"))
+    run("placeholder content change still fails", lambda t: t.files.__setitem__(placeholder, b"changed\r\n"), "protected_file_changed")
+    run("placeholder deletion still fails", lambda t: t.files.pop(placeholder), "protected_file_changed")
+    run("binary cruise newline change still fails", lambda t: t.files.__setitem__("assets/images/cruises/probe.webp", b"\x89fixture\nbinary"), "protected_file_changed")
+    run("unrelated JavaScript asset change still fails", lambda t: t.files.__setitem__("assets/js/site.js", b"/* changed asset */\r\n"), "protected_file_changed")
+    run("unrelated stylesheet deletion still fails", lambda t: t.files.pop("assets/css/styles.css"), "missing_asset")
+
+    def repeat_known_target_on_new_page(tree):
+        page(tree)
+        insert(tree, f'<img src="{missing_image}" alt="Probe">', "regression-valid/index.html")
+
+    run("historical missing asset cannot cover another source", repeat_known_target_on_new_page, "missing_asset")
+
+    def check(name, operation):
+        try:
+            okay = bool(operation())
+            outcomes.append({"test": name, "passed": okay})
+        except (ValueError, OSError, AssertionError) as error:
+            outcomes.append({"test": name, "passed": False, "detail": str(error)})
+
+    check("named placeholder LF and CRLF hashes agree", lambda: blob_hash(placeholder, b"\n") == blob_hash(placeholder, b"\r\n"))
+    check("placeholder other bytes and lone CR are significant", lambda: blob_hash(placeholder, b"\n") != blob_hash(placeholder, b"\r")
+          and blob_hash(placeholder, b"\n") != blob_hash(placeholder, b"keep\n"))
+    check("unrelated extensionless bytes are never normalized", lambda: blob_hash("assets/opaque", b"\n") != blob_hash("assets/opaque", b"\r\n"))
+
+    def rejected_fixture(change):
+        candidate = json.loads(encoded(fixture))
+        change(candidate)
+        try:
+            validate_fixture(candidate, base)
+        except ValueError:
+            return True
+        return False
+
+    check("historical exception target changes rejected", lambda: rejected_fixture(
+        lambda f: f["exceptions"][0].__setitem__("target", "/unreviewed-target/")))
+    check("new exception identity cannot be admitted", lambda: rejected_fixture(
+        lambda f: f["exceptions"].append(dict(f["exceptions"][0], id="unreviewed-new-exception"))))
+    check("retired historical exception no longer suppresses defect", lambda: not compare(base, base, dict(fixture, exceptions=[]))["passed"])
+
+    actual_root = root or Path(__file__).resolve().parents[1]
+    recorded_sha = _fixture["source_revision"]
+
+    def configured_reader(value):
+        def read(root, *args, input=None):
+            return git(root, "-c", "core.autocrlf=" + value, *args, input=input)
+        return read
+
+    def identical_committed_snapshots():
+        # These are Git configuration variants on the running OS, not claims
+        # that Windows tests ran Linux. CI supplies the actual Linux proof.
+        windows_conversion = Audit(Tree.revision_tree(actual_root, recorded_sha,
+                                    read_git=configured_reader("true")))
+        unix_conversion = Audit(Tree.revision_tree(actual_root, recorded_sha,
+                                 read_git=configured_reader("false")))
+        return (windows_conversion.tree.files == unix_conversion.tree.files and
+                fixture_for(windows_conversion, _fixture["recorded_on"]) ==
+                fixture_for(unix_conversion, _fixture["recorded_on"]))
+
+    check("same Git blobs yield same baseline under both autocrlf settings", identical_committed_snapshots)
+
+    def raw_placeholder_snapshot():
+        path = "assets/images/things-to-do/montreal/cruise/.gitkeep"
+        snapshot = Tree.revision_tree(actual_root, recorded_sha)
+        committed = git(actual_root, "show", recorded_sha + ":" + path)
+        return snapshot.files[path] == committed and digest(committed) == _fixture["inventory"]["protected_cruise_files"][path]
+
+    check("recorded placeholder uses raw committed blob bytes", raw_placeholder_snapshot)
+
+    def export_attribute_independence():
+        payloads = [(".gitattributes", b"a" * 40, b"assets/version.txt export-ignore export-subst\n"),
+                    ("assets/version.txt", b"b" * 40, b"$Format:%H$\r\n")]
+
+        def read(root, *args, input=None):
+            if args[0] == "rev-parse":
+                return b"c" * 40 + b"\n"
+            if args[0] == "ls-tree":
+                return b"".join(b"100644 blob " + oid + b"\t" + path.encode() + b"\0" for path, oid, _ in payloads)
+            if args[0] == "cat-file":
+                assert input == b"".join(oid + b"\n" for _, oid, _ in payloads)
+                return b"".join(oid + b" blob " + str(len(data)).encode() + b"\n" + data + b"\n" for _, oid, data in payloads)
+            raise AssertionError("Snapshot reader must not invoke Git export/checkout filters.")
+
+        snapshot = Tree.revision_tree(actual_root, recorded_sha, read_git=read)
+        return snapshot.files == {p: data for p, _, data in payloads}
+
+    check("export attributes cannot omit or substitute committed inventory", export_attribute_independence)
     print(json.dumps({"self_tests": outcomes, "passed": all(t["passed"] for t in outcomes)}, indent=2))
     return all(t["passed"] for t in outcomes)
 
@@ -992,7 +1116,7 @@ def main():
             if any(e["id"] not in old_ids for e in fixture["exceptions"]):
                 raise ValueError("PR fixture adds exceptions. New defects must fail; use a separately reviewed policy PR.")
         if args.self_test:
-            return 0 if self_test(base, fixture) else 1
+            return 0 if self_test(base, fixture, root) else 1
         current = Audit(Tree.working(root))
         result = compare(current, base, fixture)
         if args.json:
