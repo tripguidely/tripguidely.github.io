@@ -27,11 +27,6 @@
   </url>
 
   <url>
-    <loc>https://tripguidely.github.io/cruises/</loc>
-    <lastmod>2026-04-04</lastmod>
-  </url>
-
-  <url>
     <loc>https://tripguidely.github.io/hotels/</loc>
     <lastmod>2026-04-04</lastmod>
   </url>
@@ -43,11 +38,6 @@
 
   <url>
     <loc>https://tripguidely.github.io/car-rental/</loc>
-    <lastmod>2026-04-04</lastmod>
-  </url>
-
-  <url>
-    <loc>https://tripguidely.github.io/esim/</loc>
     <lastmod>2026-04-04</lastmod>
   </url>
 
@@ -103,6 +93,54 @@
   <url>
     <loc>https://tripguidely.github.io/hotels/las-vegas/</loc>
     <lastmod>2026-10-07</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/attractions/disneyland-tickets/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/fr/travel-guides/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/2-days/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/3-days/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/4-days/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/first-time/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/itinerary/las-vegas/rainy-day/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/las-vegas/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/montreal/cruises/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/things-to-do/switzerland/swiss-travel-pass/</loc>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/transport/las-vegas/</loc>
   </url>
 
 </urlset>
