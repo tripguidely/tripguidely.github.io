@@ -12,11 +12,6 @@
   </url>
 
   <url>
-    <loc>https://tripguidely.github.io/transport/new-york/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-
-  <url>
     <loc>https://tripguidely.github.io/itinerary/new-york/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
@@ -44,6 +39,10 @@
   <url>
     <loc>https://tripguidely.github.io/itinerary/new-york/rainy-day/</loc>
     <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://tripguidely.github.io/hotels/new-york/</loc>
   </url>
 
 </urlset>
