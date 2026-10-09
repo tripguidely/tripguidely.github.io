@@ -1,0 +1,279 @@
+/* Load after styles.css and tokens.css. No cascade layers: legacy is unlayered.
+   Content opts in through tg-* classes; shared navigation/consent stay legacy. */
+body.tg-ui {
+  background: var(--tg-color-page);
+}
+
+.tg-ui .tg-main {
+  padding-block: var(--tg-space-5) var(--tg-space-7);
+  font-family: var(--tg-font-body);
+  font-size: var(--tg-text-body);
+  line-height: var(--tg-leading-body);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-container {
+  width: 100%;
+  max-width: var(--tg-container-wide);
+  min-width: 0;
+  margin-inline: auto;
+  padding-inline: var(--tg-gutter);
+}
+
+.tg-ui .tg-container--reading {
+  max-width: var(--tg-container-reading);
+}
+
+.tg-ui .tg-prose {
+  overflow-wrap: anywhere;
+}
+
+.tg-ui .tg-prose :where(p, ul) {
+  max-width: var(--tg-measure);
+  margin-block: 0 var(--tg-space-5);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-prose :where(h1, h2) {
+  margin-block: 0 var(--tg-space-4);
+  color: var(--tg-color-text);
+  line-height: var(--tg-leading-heading);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.tg-ui .tg-prose h1 {
+  font-family: var(--tg-font-display);
+  font-weight: 400;
+  font-size: var(--tg-text-title);
+}
+
+.tg-ui .tg-prose h2 {
+  font-size: var(--tg-text-section);
+  font-weight: 700;
+}
+
+.tg-ui .tg-prose :where(ul) {
+  padding-inline-start: var(--tg-space-5);
+}
+
+.tg-ui .tg-prose li {
+  margin-block: var(--tg-space-3);
+}
+
+.tg-ui .tg-prose :where(a):not(.tg-button),
+.tg-ui .tg-breadcrumbs a {
+  color: var(--tg-color-action);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  border: 0;
+}
+
+.tg-ui .tg-prose :where(a):not(.tg-button):hover,
+.tg-ui .tg-breadcrumbs a:hover {
+  color: var(--tg-color-action-hover);
+  text-decoration-thickness: 2px;
+}
+
+.tg-ui .tg-main :where(a, summary):focus,
+.tg-ui .tg-main :where(a, summary):focus-visible,
+.tg-ui > .skip:focus,
+.tg-ui > .skip:focus-visible {
+  outline: var(--tg-focus-width) solid var(--tg-color-focus);
+  outline-offset: var(--tg-focus-offset);
+  border-radius: var(--tg-radius-control);
+}
+
+.tg-ui .tg-breadcrumbs {
+  margin-block: 0 var(--tg-space-7);
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-intro {
+  padding-block-end: var(--tg-section-space);
+}
+
+.tg-ui .tg-prose .tg-meta {
+  margin-block-end: var(--tg-space-6);
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-prose .tg-lead {
+  font-size: var(--tg-text-lead);
+}
+
+.tg-ui .tg-callout {
+  padding: var(--tg-space-5);
+  border: 1px solid var(--tg-color-border);
+  border-inline-start: 4px solid var(--tg-color-action);
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface-soft);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-section {
+  padding-block: var(--tg-section-space);
+  border-block-start: 1px solid var(--tg-color-border);
+}
+
+.tg-ui .tg-section > :last-child {
+  margin-block-end: 0;
+}
+
+.tg-ui .tg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tg-grid-min)), 1fr));
+  gap: var(--tg-space-4);
+}
+
+.tg-ui .tg-prose .tg-steps {
+  padding: 0;
+  margin: var(--tg-space-6) 0 0;
+  list-style: none;
+}
+
+.tg-ui .tg-card {
+  min-width: 0;
+  padding: clamp(var(--tg-space-4), 4vw, var(--tg-space-5));
+  border: 1px solid var(--tg-color-border);
+  border-radius: var(--tg-radius-card);
+  background: var(--tg-color-surface);
+  color: var(--tg-color-text);
+  box-shadow: var(--tg-shadow-card);
+}
+
+.tg-ui .tg-prose .tg-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--tg-space-4);
+  margin: 0;
+}
+
+.tg-ui .tg-step-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2rem;
+  min-height: 2rem;
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface-soft);
+  color: var(--tg-color-text);
+  font-weight: 700;
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-step-copy {
+  flex: 1 1 11rem;
+  min-width: 0;
+}
+
+.tg-ui .tg-step-copy :where(b, span) {
+  display: block;
+}
+
+.tg-ui .tg-step-copy span {
+  margin-block-start: var(--tg-space-2);
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-small);
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tg-touch-target);
+  max-width: 100%;
+  padding: var(--tg-space-2) var(--tg-space-4);
+  border: 1px solid var(--tg-color-action);
+  border-radius: var(--tg-radius-control);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: var(--tg-leading-ui);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background-color var(--tg-duration-fast) var(--tg-ease),
+    color var(--tg-duration-fast) var(--tg-ease);
+}
+
+.tg-ui .tg-button--primary {
+  background: var(--tg-color-action);
+  color: var(--tg-color-on-action);
+}
+
+.tg-ui .tg-button--secondary {
+  background: var(--tg-color-surface);
+  color: var(--tg-color-action);
+}
+
+.tg-ui .tg-button:hover {
+  background: var(--tg-color-action-hover);
+  border-color: var(--tg-color-action-hover);
+  color: var(--tg-color-on-action);
+}
+
+.tg-ui .tg-button:active {
+  background: var(--tg-color-action-active);
+  border-color: var(--tg-color-action-active);
+  color: var(--tg-color-on-action);
+}
+
+.tg-ui .tg-disclosure {
+  padding: 0;
+  margin-block: var(--tg-space-6) 0;
+  border: 1px solid var(--tg-color-border-strong);
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface);
+}
+
+.tg-ui .tg-disclosure summary {
+  min-height: var(--tg-touch-target);
+  padding: var(--tg-space-3) var(--tg-space-4);
+  list-style: disclosure-closed inside;
+  color: var(--tg-color-text);
+  font-weight: 650;
+}
+
+.tg-ui .tg-disclosure[open] summary {
+  list-style-type: disclosure-open;
+}
+
+.tg-ui .tg-disclosure summary::-webkit-details-marker {
+  display: revert;
+}
+
+.tg-ui .tg-disclosure p {
+  padding: var(--tg-space-2) var(--tg-space-4) var(--tg-space-4);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-ui .tg-button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .tg-ui .tg-card,
+  .tg-ui .tg-callout,
+  .tg-ui .tg-section {
+    border-color: var(--tg-color-border-strong);
+  }
+}
+
+@media (forced-colors: active) {
+  .tg-ui .tg-button {
+    border: 2px solid ButtonText;
+  }
+
+  .tg-ui .tg-main :where(a, summary):focus,
+  .tg-ui .tg-main :where(a, summary):focus-visible,
+  .tg-ui > .skip:focus,
+  .tg-ui > .skip:focus-visible {
+    outline-color: Highlight;
+  }
+}

@@ -41,6 +41,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/foundation.css" />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -108,42 +110,46 @@
   </script>
 </head>
 
-<body data-page="about">
+<body class="tg-ui" data-page="about">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Header (partial) -->
   <div id="site-header"></div>
 
-  <main id="main" class="main" role="main">
-    <div class="wrap">
-      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+  <main id="main" class="main tg-main" role="main">
+    <div class="tg-container tg-container--reading">
+      <nav class="breadcrumbs tg-breadcrumbs" aria-label="Breadcrumbs">
         <a href="/">Home</a>
         <span aria-hidden="true">›</span>
         <span aria-current="page">About</span>
       </nav>
 
-      <article class="card content">
-        <div class="pad">
+      <article class="tg-prose">
+        <header class="tg-intro">
           <h1>About TripGuidely</h1>
-          <p><strong>Last updated:</strong> <span id="lastUpdated">2026-03-06</span></p>
+          <p class="tg-meta"><strong>Last updated:</strong> <span id="lastUpdated">2026-03-06</span></p>
 
-          <p class="lede about-intro">
+          <p class="tg-lead">
             TripGuidely is a travel planning hub built for one goal: <strong>help you choose faster</strong>.
             We turn scattered travel research into clear, practical guides for cruises, hotels, things to do,
             car rentals, and trip-planning decisions.
           </p>
 
-          <div class="callout">
+          <div class="tg-callout">
             <b>Our promise:</b> clear trade-offs, practical steps, and “what actually matters” guidance without unnecessary fluff.
           </div>
+        </header>
 
-          <h2>What TripGuidely is for</h2>
+        <section class="tg-section" aria-labelledby="about-purpose">
+          <h2 id="about-purpose">What TripGuidely is for</h2>
           <p>
             TripGuidely is designed for travelers who want faster answers, better shortlists, and more practical decision support.
             Instead of making you compare dozens of tabs on your own, we aim to organize the information that actually affects your next step.
           </p>
+        </section>
 
-          <h2>What we cover</h2>
+        <section class="tg-section" aria-labelledby="about-coverage">
+          <h2 id="about-coverage">What we cover</h2>
           <ul>
             <li><strong>Cruises:</strong> routes, seasons, cabin choices, budgeting, and booking strategy.</li>
             <li><strong>Hotels:</strong> where to stay by neighborhood, budget, and travel style.</li>
@@ -151,34 +157,38 @@
             <li><strong>Car rentals:</strong> pricing, insurance basics, pickup logistics, and common trade-offs.</li>
             <li><strong>Travel planning:</strong> practical comparisons, decision workflows, and destination-specific guidance.</li>
           </ul>
+        </section>
 
-          <h2>How our guides are built</h2>
+        <section class="tg-section" aria-labelledby="about-method">
+          <h2 id="about-method">How our guides are built</h2>
           <p>
             We organize each guide around decisions travelers actually make. That usually means evaluating
             <strong>season</strong>, <strong>location</strong>, <strong>budget</strong>, <strong>timing</strong>,
             and <strong>trade-offs</strong>.
           </p>
 
-          <div class="mini-grid" aria-label="How we write">
-            <div class="mini">
-              <div class="mini-icon" aria-hidden="true">1</div>
-              <div><b>Start with the decision</b><span>What the reader is actually trying to choose</span></div>
-            </div>
-            <div class="mini">
-              <div class="mini-icon" aria-hidden="true">2</div>
-              <div><b>Explain trade-offs</b><span>Pros and cons that meaningfully change outcomes</span></div>
-            </div>
-            <div class="mini">
-              <div class="mini-icon" aria-hidden="true">3</div>
-              <div><b>Give a practical workflow</b><span>Shortlist → compare → book</span></div>
-            </div>
-            <div class="mini">
-              <div class="mini-icon" aria-hidden="true">4</div>
-              <div><b>Update for travel reality</b><span>Timing, seasonality, crowd patterns, and price swings</span></div>
-            </div>
-          </div>
+          <ol class="tg-grid tg-steps" role="list" aria-label="How we write">
+            <li class="tg-card tg-step">
+              <div class="tg-step-number" aria-hidden="true">1</div>
+              <div class="tg-step-copy"><b>Start with the decision</b><span>What the reader is actually trying to choose</span></div>
+            </li>
+            <li class="tg-card tg-step">
+              <div class="tg-step-number" aria-hidden="true">2</div>
+              <div class="tg-step-copy"><b>Explain trade-offs</b><span>Pros and cons that meaningfully change outcomes</span></div>
+            </li>
+            <li class="tg-card tg-step">
+              <div class="tg-step-number" aria-hidden="true">3</div>
+              <div class="tg-step-copy"><b>Give a practical workflow</b><span>Shortlist → compare → book</span></div>
+            </li>
+            <li class="tg-card tg-step">
+              <div class="tg-step-number" aria-hidden="true">4</div>
+              <div class="tg-step-copy"><b>Update for travel reality</b><span>Timing, seasonality, crowd patterns, and price swings</span></div>
+            </li>
+          </ol>
+        </section>
 
-          <h2>What you can expect from our recommendations</h2>
+        <section class="tg-section" aria-labelledby="about-recommendations">
+          <h2 id="about-recommendations">What you can expect from our recommendations</h2>
           <p>
             We aim to make recommendations that are practical, easy to compare, and relevant to traveler intent.
             That means focusing on usability, fit, booking logic, and real planning value rather than vague hype.
@@ -188,8 +198,10 @@
             We also try to highlight the trade-offs that matter most, including cost, convenience, flexibility,
             timing, and destination fit.
           </p>
+        </section>
 
-          <h2>Recommendations and affiliate links</h2>
+        <section class="tg-section" aria-labelledby="about-affiliates">
+          <h2 id="about-affiliates">Recommendations and affiliate links</h2>
           <p>
             Some links on TripGuidely may be affiliate links. If you book or buy through them, we may earn a commission
             at no extra cost to you. These commissions help support the site and ongoing content updates.
@@ -198,24 +210,26 @@
             For more details, read our <a href="/disclosure/">Affiliate Disclosure</a> and
             <a href="/privacy-policy/">Privacy Policy</a>.
           </p>
+        </section>
 
-          <h2>Contact</h2>
+        <section class="tg-section" aria-labelledby="about-contact">
+          <h2 id="about-contact">Contact</h2>
           <p>
             Want to suggest a destination, request a guide, report an update, or send general feedback?
-            Visit our <a href="/contact/">Contact page</a> or email us directly:
+            Visit our <a class="tg-button tg-button--primary" href="/contact/">Contact page</a> or email us directly:
           </p>
           <ul>
-            <li><strong>Email:</strong> <a href="mailto:tripguidely@hotmail.com">tripguidely@hotmail.com</a></li>
+            <li><strong>Email:</strong> <a class="tg-button tg-button--secondary" href="mailto:tripguidely@hotmail.com">tripguidely@hotmail.com</a></li>
           </ul>
 
-          <details>
+          <details class="tg-disclosure">
             <summary>Quick disclaimer</summary>
             <p>
               Travel information can change, including pricing, schedules, provider rules, availability, and booking policies.
               Always verify final details directly with the provider before making a reservation or purchase.
             </p>
           </details>
-        </div>
+        </section>
       </article>
     </div>
   </main>
