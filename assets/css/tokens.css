@@ -1,0 +1,58 @@
+/* TripGuidely foundation v1. Opt in; never redefine legacy global tokens. */
+.tg-ui {
+  /* Brand primitives; use semantic aliases in components. */
+  --tg-brand-ink: #12243a;
+  --tg-brand-ocean: #0b7478;
+  --tg-brand-sand: #f3eee4;
+  --tg-brand-white: #ffffff;
+  --tg-brand-gold: #bd9353;
+
+  --tg-color-text: var(--tg-brand-ink);
+  --tg-color-muted: #475569;
+  --tg-color-surface: var(--tg-brand-white);
+  --tg-color-page: #faf8f3;
+  --tg-color-surface-soft: var(--tg-brand-sand);
+  --tg-color-border: #d9dedc;
+  --tg-color-border-strong: #798a89;
+  --tg-color-action: var(--tg-brand-ocean);
+  --tg-color-action-hover: #085c60;
+  --tg-color-action-active: #06484c;
+  --tg-color-on-action: var(--tg-brand-white);
+  --tg-color-focus: var(--tg-brand-ocean);
+
+  --tg-space-1: 0.25rem;
+  --tg-space-2: 0.5rem;
+  --tg-space-3: 0.75rem;
+  --tg-space-4: 1rem;
+  --tg-space-5: 1.5rem;
+  --tg-space-6: 2rem;
+  --tg-space-7: 3rem;
+  --tg-space-8: 4rem;
+
+  --tg-font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --tg-font-display: Georgia, "Times New Roman", serif;
+  --tg-text-small: 0.9375rem;
+  --tg-text-body: 1.0625rem;
+  --tg-text-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --tg-text-section: clamp(1.375rem, 1.2rem + 0.5vw, 1.625rem);
+  --tg-text-title: clamp(2.25rem, 1.7rem + 2vw, 3.5rem);
+  --tg-leading-heading: 1.15;
+  --tg-leading-body: 1.75;
+  --tg-leading-ui: 1.5;
+
+  --tg-container-wide: 70rem;
+  --tg-container-reading: 52rem;
+  --tg-measure: 68ch;
+  --tg-grid-min: 18rem;
+  --tg-gutter: clamp(1rem, 3vw, 2rem);
+  --tg-section-space: clamp(2rem, 1.5rem + 2vw, 3rem);
+
+  --tg-radius-control: 0.5rem;
+  --tg-radius-card: 0.75rem;
+  --tg-shadow-card: 0 2px 8px rgb(18 36 58 / 4%);
+  --tg-duration-fast: 140ms;
+  --tg-ease: ease-out;
+  --tg-touch-target: 2.75rem;
+  --tg-focus-width: 3px;
+  --tg-focus-offset: 3px;
+}
