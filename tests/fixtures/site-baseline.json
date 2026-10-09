@@ -1,5 +1,16 @@
 {
-  "authorizations": [],
+  "authorizations": [
+    {
+      "kind": "affiliate_anchor",
+      "source": "things-to-do/london/harry-potter/index.html",
+      "before": "8d36ca51df14d9c4b52956555b2012ec8f5c4aeea9a416f15a9c3c19ccbd4d91",
+      "after": "e152053ab8f9228df9cbb0d417a2a6001143bfffab0530d9eb91c81329cd38de",
+      "base_revision": "efc6eb32e1c46319a1154251938e6f9f3265eb1a",
+      "reason": "reviewed removal of the newly introduced duplicate Harry Potter walking-tour affiliate placement after PR #20",
+      "reviewed_by": "CarlLeger",
+      "recorded_on": "2026-10-09"
+    }
+  ],
   "contracts": {
     "about/index.html": {
       "disclosure": {
