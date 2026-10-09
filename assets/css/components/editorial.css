@@ -1,0 +1,269 @@
+/* Editorial components v1. Load after the opt-in foundation.
+   Style booking anchors through their group; their opening tags are contracts. */
+.tg-ui .tg-guide-heading {
+  display: block;
+  margin-block: 0 var(--tg-space-5);
+}
+
+.tg-ui .tg-guide-heading h2 {
+  max-width: 32ch;
+  margin: 0 0 var(--tg-space-3);
+  font-family: var(--tg-font-display);
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+  font-weight: 400;
+  line-height: var(--tg-leading-heading);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-heading p {
+  margin: 0;
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-guide-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--tg-space-3);
+  margin-block: var(--tg-space-4) 0;
+}
+
+.tg-ui .tg-guide-links > a {
+  min-width: 0;
+  min-height: var(--tg-touch-target);
+  padding: var(--tg-space-3) var(--tg-space-4);
+  border: 1px solid var(--tg-color-border-strong);
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface);
+  color: var(--tg-color-action);
+  box-shadow: none;
+  font-weight: 650;
+  line-height: var(--tg-leading-ui);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transform: none;
+  transition: background-color var(--tg-duration-fast) var(--tg-ease);
+}
+
+.tg-ui .tg-guide-links > a:hover {
+  background: var(--tg-color-surface-soft);
+  color: var(--tg-color-action-hover);
+  border-color: var(--tg-color-action);
+  text-decoration-thickness: 2px;
+  box-shadow: none;
+  transform: none;
+}
+
+.tg-ui .tg-guide-checklist {
+  gap: var(--tg-space-4);
+  padding: 0;
+  margin-block: var(--tg-space-5);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-checklist li {
+  padding-inline-start: var(--tg-space-5);
+  line-height: var(--tg-leading-body);
+}
+
+.tg-ui .tg-guide-checklist li::before {
+  inset-inline-start: 0;
+  top: 0.65em;
+  width: var(--tg-space-2);
+  height: var(--tg-space-2);
+  border: 0;
+  background: var(--tg-color-action);
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide-checklist a {
+  color: var(--tg-color-action);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tg-ui .tg-guide-checklist a:hover {
+  color: var(--tg-color-action-hover);
+}
+
+.tg-ui .tg-guide-tip {
+  margin-block: var(--tg-space-5) 0;
+  line-height: var(--tg-leading-body);
+}
+
+.tg-ui .tg-guide-tip b {
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-day {
+  min-width: 0;
+  margin-block-start: var(--tg-space-6);
+  padding: clamp(var(--tg-space-4), 4vw, var(--tg-space-6));
+  border-block-start: 3px solid var(--tg-color-action);
+}
+
+.tg-ui .tg-guide-day h3 {
+  max-width: 34ch;
+  margin-block: 0 var(--tg-space-5);
+  font-family: var(--tg-font-display);
+  font-size: var(--tg-text-section);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-stops {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin-block: 0 var(--tg-space-5);
+  list-style: none;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-stop {
+  min-width: 0;
+  margin: 0;
+  padding: var(--tg-space-4) 0 var(--tg-space-4) var(--tg-space-5);
+  border-inline-start: 1px solid var(--tg-color-border-strong);
+  line-height: var(--tg-leading-body);
+}
+
+.tg-ui .tg-guide-stop::before {
+  inset-inline-start: -0.3rem;
+  top: calc(var(--tg-space-4) + 0.65em);
+  width: var(--tg-space-2);
+  height: var(--tg-space-2);
+  border: 0;
+  background: var(--tg-color-action);
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide-stop strong {
+  display: block;
+  color: var(--tg-color-action);
+  font-size: var(--tg-text-small);
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-guide-offer {
+  background: var(--tg-color-surface-soft);
+  border: 1px solid var(--tg-color-border);
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide-offer h3 {
+  margin-block: 0 var(--tg-space-2);
+  font-size: var(--tg-text-section);
+  line-height: 1.35;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-faq details {
+  padding: 0;
+  margin-block: var(--tg-space-3);
+  border: 1px solid var(--tg-color-border-strong);
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface);
+  box-shadow: none;
+  transition: none;
+}
+
+.tg-ui .tg-guide-faq summary {
+  display: list-item;
+  min-height: var(--tg-touch-target);
+  padding: var(--tg-space-4);
+  list-style: disclosure-closed inside;
+  font-weight: 650;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-faq details[open] summary {
+  list-style-type: disclosure-open;
+  border-block-end: 1px solid var(--tg-color-border);
+}
+
+.tg-ui .tg-guide-faq summary::-webkit-details-marker {
+  display: revert;
+}
+
+.tg-ui .tg-guide-faq summary::after {
+  content: none;
+}
+
+.tg-ui .tg-guide-faq details p {
+  padding: var(--tg-space-4);
+  margin: 0;
+}
+
+.tg-ui .tg-guide-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tg-grid-min)), 1fr));
+  gap: var(--tg-space-4);
+}
+
+.tg-ui .tg-guide-related-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tg-space-2);
+  min-width: 0;
+  padding: var(--tg-space-5);
+  border: 1px solid var(--tg-color-border-strong);
+  border-radius: var(--tg-radius-card);
+  background: var(--tg-color-surface);
+  color: var(--tg-color-text);
+  text-decoration: none;
+}
+
+.tg-ui .tg-guide-related-link strong {
+  color: var(--tg-color-action);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tg-ui .tg-guide-related-link > span {
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-small);
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-guide-related-link .tag {
+  display: flex;
+  margin-block-start: auto;
+  padding-block-start: var(--tg-space-3);
+}
+
+.tg-ui .tg-guide-related-link .tag i {
+  background: var(--tg-color-action);
+}
+
+.tg-ui .tg-guide-related-link:hover {
+  background: var(--tg-color-surface-soft);
+  border-color: var(--tg-color-action);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-ui .tg-guide-links > a {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .tg-ui .tg-guide-day,
+  .tg-ui .tg-guide-offer {
+    border-color: var(--tg-color-border-strong);
+  }
+}
+
+@media (forced-colors: active) {
+  .tg-ui .tg-guide-links > a,
+  .tg-ui .tg-guide-related-link,
+  .tg-ui .tg-guide-faq details {
+    border-color: ButtonText;
+  }
+}
