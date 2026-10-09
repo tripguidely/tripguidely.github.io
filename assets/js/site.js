@@ -130,10 +130,17 @@
     y = y - getHeaderOffset();
 
     try {
-      WIN.scrollTo({ top: y, behavior: "smooth" });
+      WIN.scrollTo({ top: y, behavior: preferredScrollBehavior() });
     } catch (_) {
       WIN.scrollTo(0, y);
     }
+  }
+
+  function preferredScrollBehavior() {
+    try {
+      if (WIN.matchMedia && WIN.matchMedia("(prefers-reduced-motion: reduce)").matches) return "auto";
+    } catch (_) {}
+    return "smooth";
   }
 
   function getPageType() {
@@ -743,6 +750,18 @@
 
     var scrim = $(".nav-scrim");
     var drawer = $(".nav-drawer");
+    var header = $(".header");
+
+    function isMobile() {
+      return WIN.getComputedStyle ? WIN.getComputedStyle(burger).display !== "none" : WIN.innerWidth <= 760;
+    }
+
+    function updateGeometry() {
+      var height = header ? header.offsetHeight : getHeaderOffset() - 12;
+      if (drawer) drawer.style.setProperty("--nav-header-h", height + "px");
+      if (scrim) scrim.style.setProperty("--nav-header-h", height + "px");
+      if (!isMobile() && isOpen()) setOpen(false, true);
+    }
 
     function hasClassList() {
       return !!(DOC.body && DOC.body.classList);
@@ -755,8 +774,12 @@
       return DOC.body.classList.contains("nav-open");
     }
 
-    function setOpen(open) {
+    function setOpen(open, restoreFocus) {
       if (!DOC.body) return;
+      open = !!open && isMobile();
+      var focusedInDrawer = drawer && drawer.contains(DOC.activeElement);
+
+      if (open) updateGeometry();
 
       if (hasClassList()) {
         if (open) DOC.body.classList.add("nav-open");
@@ -770,6 +793,19 @@
 
       try {
         burger.setAttribute("aria-expanded", open ? "true" : "false");
+        burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (drawer) {
+          if (open) drawer.removeAttribute("hidden");
+          else drawer.setAttribute("hidden", "");
+        }
+        if (scrim) {
+          if (open) scrim.removeAttribute("hidden");
+          else scrim.setAttribute("hidden", "");
+        }
+        if (!open && restoreFocus && (focusedInDrawer || DOC.activeElement === burger || DOC.activeElement === DOC.body)) {
+          var focusTarget = isMobile() ? burger : $(".nav a[aria-current='page']") || $(".nav a") || $(".brand");
+          if (focusTarget) focusTarget.focus();
+        }
       } catch (_) {}
     }
 
@@ -781,12 +817,12 @@
 
     on(burger, "click", function (e) {
       if (e && e.preventDefault) e.preventDefault();
-      setOpen(!isOpen());
+      setOpen(!isOpen(), true);
     });
 
     if (scrim) {
       on(scrim, "click", function () {
-        setOpen(false);
+        setOpen(false, true);
       });
     }
 
@@ -794,7 +830,7 @@
       e = e || WIN.event;
       var key = e.key || e.keyCode;
       if (!isOpen()) return;
-      if (key === "Escape" || key === "Esc" || key === 27) setOpen(false);
+      if (key === "Escape" || key === "Esc" || key === 27) setOpen(false, true);
     });
 
     if (drawer) {
@@ -808,12 +844,22 @@
     on(DOC, "click", function (e) {
       if (!isOpen()) return;
       var target = e.target || e.srcElement;
-      var a = getClosestLink(target);
-      if (!a) return;
-
-      var href = a.getAttribute("href") || "";
-      if (href && href.charAt(0) === "#") setOpen(false);
+      if (burger.contains(target) || (drawer && drawer.contains(target))) return;
+      // Preserve focus on a clicked control or a link being navigated.
+      setOpen(false, !getClosestLink(target));
     });
+
+    on(DOC, "focusin", function (e) {
+      var target = e.target || e.srcElement;
+      if (isOpen() && !burger.contains(target) && !(drawer && drawer.contains(target))) setOpen(false);
+    });
+    on(WIN, "resize", updateGeometry);
+    if (WIN.ResizeObserver && header) {
+      var headerObserver = new WIN.ResizeObserver(updateGeometry);
+      headerObserver.observe(header);
+    }
+    setOpen(false);
+    updateGeometry();
   }
 
   function initContactForm() {
@@ -927,7 +973,7 @@
           clearInvalid();
           showStatus("success", "Thanks. Your message has been sent successfully.");
           try {
-            status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            status.scrollIntoView({ behavior: preferredScrollBehavior(), block: "nearest" });
           } catch (_) {}
 
           if (getConsent() === "granted") {

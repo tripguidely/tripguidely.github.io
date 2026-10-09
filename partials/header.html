@@ -27,16 +27,17 @@
       </div>
 
       <!-- Mobile burger (shown on mobile via CSS) -->
-      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span aria-hidden="true"></span>
       </button>
     </div>
   </div>
+</header>
 
-  <!-- Mobile scrim + drawer -->
-  <div class="nav-scrim" aria-hidden="true"></div>
+  <!-- Outside the filtered header so fixed mobile layers use the viewport. -->
+  <div class="nav-scrim" aria-hidden="true" hidden></div>
 
-  <nav class="nav-drawer" aria-label="Mobile menu">
+  <nav class="nav-drawer" id="mobile-menu" aria-label="Mobile menu" hidden>
     <ul>
       <li><a href="/hotels/">Hotels</a></li>
       <li><a href="/things-to-do/">Things to Do</a></li>
@@ -48,4 +49,3 @@
       <li><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
-</header>

@@ -398,10 +398,19 @@ li{ margin: 6px 0; }
 .nav-drawer,
 .nav-scrim{ display:none; }
 
+.nav-drawer[hidden],
+.nav-scrim[hidden]{ display:none; }
+
 /* Mobile nav drawer */
 @media (max-width: 760px){
   .bar{ padding:10px 0; }
   .brand{ min-width:auto; }
+  /* Keep the logo and full-size menu control when enlarged text needs a row. */
+  .header .bar{ flex-wrap:wrap; }
+  .header .brand{ min-width:0; max-width:100%; }
+  .header .brand-name{ min-width:0; overflow-wrap:anywhere; }
+  .header .burger{ flex:0 0 44px; margin-inline-start:auto; }
+  .header .nav{ display:none; }
   .header-cta{ display:none; }
   .nav ul{ display:none; }
   .burger{ display:inline-flex; }
@@ -413,7 +422,11 @@ li{ margin: 6px 0; }
     position: fixed;
     left: 0;
     right: 0;
-    top: var(--header-h);
+    top: var(--nav-header-h, var(--header-h));
+    max-height: calc(100vh - var(--nav-header-h, var(--header-h)));
+    max-height: calc(100dvh - var(--nav-header-h, var(--header-h)));
+    overflow-y: auto;
+    overscroll-behavior: contain;
     z-index: 60;
     background: #ffffff;
     border-top: 1px solid rgba(255,255,255,.10);
@@ -437,6 +450,9 @@ li{ margin: 6px 0; }
     list-style:none;
     margin: 0;
     padding: 16px 18px 18px;
+    padding-bottom: calc(18px + env(safe-area-inset-bottom));
+    padding-left: max(18px, env(safe-area-inset-left));
+    padding-right: max(18px, env(safe-area-inset-right));
     display:grid;
     gap:10px;
   }
@@ -453,6 +469,8 @@ li{ margin: 6px 0; }
     box-shadow: 0 10px 22px rgba(2,6,23,.08);
     font-weight: 900;
     color: var(--text);
+    min-width: 0;
+    overflow-wrap: anywhere;
     transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
 
@@ -471,7 +489,7 @@ li{ margin: 6px 0; }
   .nav-scrim{
     position: fixed;
     inset: 0;
-    top: var(--header-h);
+    top: var(--nav-header-h, var(--header-h));
     z-index: 55;
     background: rgba(2,6,23,.42);
     opacity: 0;
@@ -485,7 +503,6 @@ li{ margin: 6px 0; }
 
   body.nav-open{
     overflow:hidden;
-    touch-action:none;
   }
 }
 
