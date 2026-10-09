@@ -1,0 +1,225 @@
+/* Guide template v1: Paris two-day pilot. Existing data-page hooks stay intact. */
+.tg-ui .tg-guide {
+  padding-block: 0 var(--tg-space-8);
+  overflow-wrap: anywhere;
+}
+
+.tg-ui .tg-guide :where(p, ul) {
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide :where(p) {
+  max-width: var(--tg-measure);
+  margin-block: 0 var(--tg-space-4);
+}
+
+.tg-ui .tg-guide :where(.muted) {
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-guide :where(a, summary):focus,
+.tg-ui .tg-guide :where(a, summary):focus-visible {
+  outline: var(--tg-focus-width) solid var(--tg-color-focus);
+  outline-offset: var(--tg-focus-offset);
+  border-radius: var(--tg-radius-control);
+}
+
+.tg-ui .tg-guide-hero {
+  display: grid;
+  align-items: center;
+  gap: var(--tg-space-6);
+  padding-block: var(--tg-space-6);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-guide-hero .hero-bg {
+  position: static;
+  min-width: 0;
+}
+
+.tg-ui .tg-guide-hero .hero-bg img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--tg-radius-card);
+  object-fit: contain;
+}
+
+.tg-ui .tg-guide-hero .hero-overlay {
+  display: none;
+}
+
+.tg-ui .tg-guide-hero .hero-inner {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.tg-ui .tg-guide-hero .kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--tg-space-2);
+  margin-block: 0 var(--tg-space-4);
+  color: var(--tg-color-action);
+  font-size: var(--tg-text-small);
+  font-weight: 650;
+  text-shadow: none;
+}
+
+.tg-ui .tg-guide-hero .dot {
+  background: var(--tg-color-action);
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide-hero h1 {
+  max-width: 19ch;
+  margin-block: 0 var(--tg-space-5);
+  font-family: var(--tg-font-display);
+  font-size: var(--tg-text-title);
+  font-weight: 400;
+  line-height: var(--tg-leading-heading);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  color: var(--tg-color-text);
+  text-shadow: none;
+}
+
+.tg-ui .tg-guide-hero .lede {
+  max-width: 48ch;
+  margin-block: 0 var(--tg-space-5);
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-lead);
+  line-height: var(--tg-leading-body);
+  text-shadow: none;
+}
+
+.tg-ui .tg-guide-hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tg-space-3);
+  margin-block: 0 var(--tg-space-5);
+}
+
+.tg-ui .tg-guide-hero .tg-button {
+  gap: var(--tg-space-2);
+}
+
+.tg-ui .tg-guide-hero .meta {
+  margin: 0;
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-small);
+  text-shadow: none;
+}
+
+.tg-ui .tg-guide-layout {
+  max-width: var(--tg-container-reading);
+}
+
+.tg-ui .tg-guide-layout > .tg-breadcrumbs {
+  padding-block: var(--tg-space-4);
+  margin-block: 0 var(--tg-space-5);
+  border-block: 1px solid var(--tg-color-border);
+}
+
+/* The legacy sticky rule targets #toc. Keep its public ID, cancel only here. */
+.tg-ui .tg-guide #toc {
+  position: static;
+  top: auto;
+  z-index: auto;
+  padding-block-end: var(--tg-space-6);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.tg-ui .tg-guide-toc .tg-guide-heading h2 {
+  font-family: var(--tg-font-body);
+  font-size: var(--tg-text-small);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.tg-ui .tg-guide-toc .tg-guide-links {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--tg-space-2);
+}
+
+.tg-ui .tg-guide-toc .tg-guide-links > a {
+  padding-inline: var(--tg-space-3);
+  border-color: var(--tg-color-border);
+  background: none;
+  font-size: var(--tg-text-small);
+}
+
+.tg-ui .tg-guide-section {
+  padding-block: var(--tg-section-space);
+  border-block-start: 1px solid var(--tg-color-border);
+}
+
+.tg-ui .tg-guide-summary {
+  padding: clamp(var(--tg-space-4), 4vw, var(--tg-space-6));
+  background: var(--tg-color-surface-soft);
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide-summary .tg-guide-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--tg-space-5);
+}
+
+.tg-ui .tg-guide-summary .tg-guide-checklist strong {
+  display: block;
+  margin-block-end: var(--tg-space-2);
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-guide-summary .tg-guide-tip {
+  background: var(--tg-color-surface);
+}
+
+.tg-ui .tg-guide-layout > [aria-label="Affiliate disclosure"] {
+  padding: var(--tg-space-5) 0 0;
+  margin-block-start: var(--tg-space-6);
+  border: 0;
+  border-block-start: 1px solid var(--tg-color-border);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.tg-ui .tg-guide .aff-note {
+  margin: 0;
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+/* The full collage stays visible. No cropped landmarks or text over imagery.
+   64rem is where both the original 16:9 image and editorial column fit. */
+@media (min-width: 64rem) {
+  .tg-ui .tg-guide-hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--tg-space-7);
+    padding-block: var(--tg-space-7);
+  }
+
+  .tg-ui .tg-guide-hero .hero-bg {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tg-ui .tg-guide-hero .hero-inner {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (forced-colors: active) {
+  .tg-ui .tg-guide :where(a, summary):focus,
+  .tg-ui .tg-guide :where(a, summary):focus-visible {
+    outline-color: Highlight;
+  }
+}

@@ -54,6 +54,10 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/itinerary.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/foundation.css" />
+  <link rel="stylesheet" href="/assets/css/components/editorial.css" />
+  <link rel="stylesheet" href="/assets/css/templates/guide.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -159,7 +163,7 @@
   </script>
 </head>
 
-<body data-page="itinerary">
+<body class="tg-ui" data-page="itinerary">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Reserve header height to avoid CLS when site.js injects header -->
@@ -168,10 +172,10 @@
   </style>
   <div id="site-header"></div>
 
-  <main id="main" class="main" role="main">
+  <main id="main" class="main tg-main tg-guide" role="main">
 
     <!-- HERO -->
-    <section class="hero hero-full" aria-label="Paris 2-day itinerary hero">
+    <section class="tg-guide-hero tg-container" aria-label="Paris 2-day itinerary hero">
       <div class="hero-bg" aria-hidden="true">
         <picture>
           <source
@@ -195,7 +199,7 @@
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-inner">
-        <div class="wrap">
+        <div class="tg-guide-intro">
           <p class="kicker">
             <span class="dot" aria-hidden="true"></span>Paris Itinerary
           </p>
@@ -208,9 +212,9 @@
           </p>
 
           <div class="actions" aria-label="Primary actions">
-            <a href="#summary" class="btn primary"><span class="pill" aria-hidden="true">⚡</span> Get the 60-second plan</a>
-            <a href="#plan" class="btn"><span class="pill" aria-hidden="true">🗺️</span> See the 2-day plan</a>
-            <a href="#tickets" class="btn"><span class="pill" aria-hidden="true">🎫</span> Timed tickets</a>
+            <a href="#summary" class="tg-button tg-button--primary"><span class="pill" aria-hidden="true">⚡</span> Get the 60-second plan</a>
+            <a href="#plan" class="tg-button tg-button--secondary"><span class="pill" aria-hidden="true">🗺️</span> See the 2-day plan</a>
+            <a href="#tickets" class="tg-button tg-button--secondary"><span class="pill" aria-hidden="true">🎫</span> Timed tickets</a>
           </div>
 
           <p class="meta">
@@ -220,9 +224,9 @@
       </div>
     </section>
 
-    <div class="wrap">
+    <div class="tg-container tg-guide-layout">
 
-      <nav class="breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs">
+      <nav class="breadcrumbs tg-breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs">
         <a href="/">Home</a>
         <span aria-hidden="true">›</span>
         <a href="/itinerary/">Itinerary</a>
@@ -233,12 +237,12 @@
       </nav>
 
       <!-- TOC -->
-      <section class="card pad" aria-label="On this page" id="toc">
-        <div class="section-title">
+      <section class="tg-guide-toc" aria-label="On this page" id="toc">
+        <div class="section-title tg-guide-heading">
           <h2>On this page</h2>
           <p>Jump to exactly what you need.</p>
         </div>
-        <div class="mini-grid" aria-label="Quick jumps">
+        <div class="mini-grid tg-guide-links" aria-label="Quick jumps">
           <a class="pill-link" href="#summary">⚡ 60-second plan</a>
           <a class="pill-link" href="#quick-book">🎟️ Book highlights</a>
           <a class="pill-link" href="#plan">🗺️ 2-day itinerary</a>
@@ -250,22 +254,22 @@
       </section>
 
       <!-- SUMMARY -->
-      <section id="summary" class="card pad content" aria-label="60-second Paris 2-day plan">
-        <div class="section-title">
+      <section id="summary" class="tg-card tg-guide-summary" aria-label="60-second Paris 2-day plan">
+        <div class="section-title tg-guide-heading">
           <h2>The 60-second Paris plan (2 days)</h2>
           <p>The whole logic in one glance: anchors + loops.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Day 1 (icons loop):</strong> Louvre (timed) → Tuileries/Seine walk → Eiffel (timed) → Seine cruise (optional).</li>
           <li><strong>Day 2 (art + neighborhoods):</strong> Orsay (timed) → Saint-Germain break → Montmartre → Arc at sunset.</li>
           <li><strong>Booking order:</strong> book anchors first (Louvre/Eiffel/Orsay). Add cruise/tours after.</li>
           <li><strong>Anti-chaos rule:</strong> 1 anchor per day + one neighborhood loop. No map-fighting.</li>
         </ul>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Best first move:</b> lock Louvre + Eiffel slots for Day 1, then Orsay for Day 2.
-          <div class="mini-grid" style="margin-top:.75rem">
+          <div class="mini-grid tg-guide-links" style="margin-top:.75rem">
             <a class="pill-link" href="#tickets">🎫 Timed tickets checklist</a>
             <a class="pill-link" href="/transport/paris/">🚇 Transport reality check</a>
             <a class="pill-link" href="/hotels/paris/">🏨 Choose the right base</a>
@@ -274,91 +278,95 @@
       </section>
 
       <!-- QUICK BOOK -->
-      <section id="quick-book" class="card pad quick-book" aria-label="Quick booking links">
-        <div class="section-title">
+      <section id="quick-book" class="tg-guide-section" aria-label="Quick booking links">
+        <div class="section-title tg-guide-heading">
           <h2>Book your anchors (2 minutes)</h2>
           <p>These time slots stabilize your whole 2-day trip.</p>
         </div>
 
-        <div class="mini-grid">
+        <div class="mini-grid tg-guide-links">
           <a class="pill-link" href="https://klook.tpk.ro/wfE7X4Hz" target="_blank" rel="sponsored noopener">🎫 Louvre timed ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/IdqXypl6" target="_blank" rel="sponsored noopener">🗼 Eiffel Tower ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/LccOCPi8" target="_blank" rel="sponsored noopener">🎨 Musée d’Orsay ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/asEPlwc3" target="_blank" rel="sponsored noopener">🛳️ Seine cruise (optional)</a>
         </div>
 
-        <div class="callout" style="margin-top:1rem">
+        <div class="tg-callout tg-guide-tip" style="margin-top:1rem">
           <b>Fast rule:</b> If you only book two things, book Louvre + Eiffel first.
         </div>
       </section>
 
       <!-- PLAN -->
-      <section id="plan" class="card pad content" aria-label="2-day Paris itinerary">
-        <div class="section-title">
+      <section id="plan" class="tg-guide-section" aria-label="2-day Paris itinerary">
+        <div class="section-title tg-guide-heading">
           <h2>The 2-day Paris itinerary (the flow)</h2>
           <p>One anchor per day, then nearby wins. Keep it calm, keep it real.</p>
         </div>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Affiliate note:</b> Some ticket buttons below are affiliate links (Klook). If you book through them, TripGuidely may earn a commission at no extra cost to you.
         </div>
 
         <!-- DAY 1 -->
+        <section class="tg-card tg-guide-day" aria-labelledby="day1">
         <h3 id="day1">Day 1: Louvre → Eiffel Tower → Seine</h3>
-        <ul class="checklist">
-          <li><strong>Morning (Anchor):</strong> Louvre timed-entry (arrive 20–30 min early).</li>
-          <li><strong>Loop (nearby wins):</strong> Tuileries → short Seine walk → quick lunch (don’t over-pack).</li>
-          <li><strong>Afternoon (Anchor):</strong> Eiffel Tower timed-entry (choose a slot you can actually make).</li>
-          <li><strong>Evening (optional):</strong> Seine sightseeing cruise if you want a low-effort “Paris finale”.</li>
+        <ul class="checklist tg-guide-stops" role="list">
+          <li class="tg-guide-stop"><strong>Morning (Anchor):</strong> Louvre timed-entry (arrive 20–30 min early).</li>
+          <li class="tg-guide-stop"><strong>Loop (nearby wins):</strong> Tuileries → short Seine walk → quick lunch (don’t over-pack).</li>
+          <li class="tg-guide-stop"><strong>Afternoon (Anchor):</strong> Eiffel Tower timed-entry (choose a slot you can actually make).</li>
+          <li class="tg-guide-stop"><strong>Evening (optional):</strong> Seine sightseeing cruise if you want a low-effort “Paris finale”.</li>
         </ul>
 
-        <div class="mini-grid" aria-label="Day 1 booking links">
+        <div class="mini-grid tg-guide-links" aria-label="Day 1 booking links">
           <a class="pill-link" href="https://klook.tpk.ro/wfE7X4Hz" target="_blank" rel="sponsored noopener">🎫 Louvre timed ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/IdqXypl6" target="_blank" rel="sponsored noopener">🎫 Eiffel Tower timed ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/asEPlwc3" target="_blank" rel="sponsored noopener">🛳️ Seine sightseeing cruise</a>
         </div>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Slot strategy:</b> Morning Louvre + afternoon Eiffel is the cleanest combo for Day 1.
         </div>
+        </section>
 
         <!-- DAY 2 -->
+        <section class="tg-card tg-guide-day" aria-labelledby="day2">
         <h3 id="day2">Day 2: Orsay → Saint-Germain → Montmartre → Arc</h3>
-        <ul class="checklist">
-          <li><strong>Morning (Anchor):</strong> Musée d’Orsay timed-entry.</li>
-          <li><strong>Loop (Left Bank):</strong> Saint-Germain café break + short stroll (reset your energy).</li>
-          <li><strong>Midday:</strong> Montmartre (best as a guided walk if you hate wandering).</li>
-          <li><strong>Sunset:</strong> Arc de Triomphe (golden-to-blue hour if possible).</li>
+        <ul class="checklist tg-guide-stops" role="list">
+          <li class="tg-guide-stop"><strong>Morning (Anchor):</strong> Musée d’Orsay timed-entry.</li>
+          <li class="tg-guide-stop"><strong>Loop (Left Bank):</strong> Saint-Germain café break + short stroll (reset your energy).</li>
+          <li class="tg-guide-stop"><strong>Midday:</strong> Montmartre (best as a guided walk if you hate wandering).</li>
+          <li class="tg-guide-stop"><strong>Sunset:</strong> Arc de Triomphe (golden-to-blue hour if possible).</li>
         </ul>
 
-        <div class="mini-grid" aria-label="Day 2 booking links">
+        <div class="mini-grid tg-guide-links" aria-label="Day 2 booking links">
           <a class="pill-link" href="https://klook.tpk.ro/LccOCPi8" target="_blank" rel="sponsored noopener">🎫 Musée d’Orsay timed ticket</a>
           <a class="pill-link" href="https://klook.tpk.ro/P1TtFcP9" target="_blank" rel="sponsored noopener">👣 Montmartre walking tour</a>
           <a class="pill-link" href="https://klook.tpk.ro/LlrdHG46" target="_blank" rel="sponsored noopener">🎫 Arc de Triomphe ticket</a>
         </div>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Reality check:</b> Don’t add Versailles to a 2-day trip unless you’re willing to drop major Paris icons.
         </div>
+        </section>
 
         <!-- OPTIONAL UPGRADE -->
-        <section class="card pad" aria-label="Optional upgrade" style="margin-top:1.25rem">
+        <section class="tg-card tg-guide-offer" aria-label="Optional upgrade" style="margin-top:1.25rem">
           <h3>Optional upgrade (if you want a premium moment)</h3>
           <p class="muted">Only if your anchors are locked and you still have energy.</p>
-          <div class="mini-grid" aria-label="Upgrade booking links">
+          <div class="mini-grid tg-guide-links" aria-label="Upgrade booking links">
             <a class="pill-link" href="https://klook.tpk.ro/PDwV4IQd" target="_blank" rel="sponsored noopener">🍽️ Dinner cruise upgrade</a>
           </div>
         </section>
       </section>
 
       <!-- TIMED TICKETS -->
-      <section id="tickets" class="card pad content" aria-label="Timed tickets checklist">
-        <div class="section-title">
+      <section id="tickets" class="tg-guide-section" aria-label="Timed tickets checklist">
+        <div class="section-title tg-guide-heading">
           <h2>Timed tickets checklist (2-day essentials)</h2>
           <p>Book these first. Everything else is flexible filler.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Louvre:</strong> timed entry (Day 1 anchor).</li>
           <li><strong>Eiffel Tower:</strong> timed entry (Day 1 anchor).</li>
           <li><strong>Musée d’Orsay:</strong> timed entry (Day 2 anchor).</li>
@@ -366,9 +374,9 @@
           <li><strong>Seine cruise:</strong> optional, but great effort-to-value.</li>
         </ul>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Order of operations:</b> anchors → transport reality check → fill the loops.
-          <div class="mini-grid" style="margin-top:.75rem">
+          <div class="mini-grid tg-guide-links" style="margin-top:.75rem">
             <a class="pill-link" href="/transport/paris/">🚇 Paris transport guide</a>
             <a class="pill-link" href="/hotels/paris/">🏨 Where to stay in Paris</a>
           </div>
@@ -376,40 +384,40 @@
       </section>
 
       <!-- SOLD OUT -->
-      <section id="soldout" class="card pad content" aria-label="If tickets are sold out">
-        <div class="section-title">
+      <section id="soldout" class="tg-guide-section" aria-label="If tickets are sold out">
+        <div class="section-title tg-guide-heading">
           <h2>If tickets are sold out (backup playbook)</h2>
           <p>Keep the logic. Swap anchors. Don’t stack more stops.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Swap anchors:</strong> move Orsay earlier and shift the rest of Day 2 accordingly.</li>
           <li><strong>Replace with nearby wins:</strong> Sainte-Chapelle, Orangerie, Musée Rodin, or a Seine loop walk.</li>
           <li><strong>Anchor by area:</strong> pick one neighborhood cluster and stop fighting the map.</li>
         </ul>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Stress killer:</b> swap, don’t stack.
         </div>
       </section>
 
       <!-- RULES -->
-      <section id="rules" class="card pad content" aria-label="Rules that save time">
-        <div class="section-title">
+      <section id="rules" class="tg-guide-section" aria-label="Rules that save time">
+        <div class="section-title tg-guide-heading">
           <h2>Rules that save time (2-day version)</h2>
           <p>Short trip = strict rules = calmer Paris.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>One anchor per day:</strong> don’t double-book must-dos.</li>
           <li><strong>Keep loops tight:</strong> build around the anchor neighborhood.</li>
           <li><strong>Arrive early:</strong> 20–30 minutes early makes the day predictable.</li>
           <li><strong>Protect one evening:</strong> leave space for strolling and cafés.</li>
         </ul>
 
-        <div class="callout">
+        <div class="tg-callout tg-guide-tip">
           <b>Next step:</b> Pair this with transport + hotels to remove guesswork:
-          <div class="mini-grid" style="margin-top:.75rem">
+          <div class="mini-grid tg-guide-links" style="margin-top:.75rem">
             <a class="pill-link" href="/transport/paris/">🚇 Transport</a>
             <a class="pill-link" href="/hotels/paris/">🏨 Hotels</a>
             <a class="pill-link" href="/itinerary/paris/3-days/">🗺️ Need more time? Use 3 days</a>
@@ -418,13 +426,13 @@
       </section>
 
       <!-- OFFICIAL SOURCES -->
-      <section class="card pad content" aria-label="Official sources" id="sources">
-        <div class="section-title">
+      <section class="tg-guide-section" aria-label="Official sources" id="sources">
+        <div class="section-title tg-guide-heading">
           <h2>Official sources (double-check before you book)</h2>
           <p>Use these to verify hours, closures, and ticket rules.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><a href="https://www.louvre.fr/en" target="_blank" rel="noopener">Louvre official site</a></li>
           <li><a href="https://www.toureiffel.paris/en" target="_blank" rel="noopener">Eiffel Tower official site</a></li>
           <li><a href="https://www.musee-orsay.fr/en" target="_blank" rel="noopener">Musée d’Orsay official site</a></li>
@@ -435,8 +443,8 @@
       </section>
 
       <!-- FAQ -->
-      <section id="faq" class="card pad content" aria-label="FAQ">
-        <div class="section-title">
+      <section id="faq" class="tg-guide-section tg-guide-faq" aria-label="FAQ">
+        <div class="section-title tg-guide-heading">
           <h2>FAQ</h2>
           <p>Quick answers for a fast trip.</p>
         </div>
@@ -458,38 +466,38 @@
       </section>
 
       <!-- INTERNAL LINKS -->
-      <section class="card pad" aria-label="Keep planning">
-        <div class="section-title">
+      <section class="tg-guide-section tg-guide-related" aria-label="Keep planning">
+        <div class="section-title tg-guide-heading">
           <h2>Keep planning</h2>
           <p>Build the full Paris stack.</p>
         </div>
 
-        <div class="cards" aria-label="Related guides">
-          <a class="cat" href="/itinerary/paris/">
+        <div class="tg-guide-related-grid" aria-label="Related guides">
+          <a class="tg-guide-related-link" href="/itinerary/paris/">
             <strong>Paris itineraries hub</strong>
             <span>Pick 2–5 day plans by trip length.</span>
             <span class="tag"><i aria-hidden="true"></i> Hub</span>
           </a>
 
-          <a class="cat" href="/itinerary/paris/3-days/">
+          <a class="tg-guide-related-link" href="/itinerary/paris/3-days/">
             <strong>Paris 3-day itinerary</strong>
             <span>The best overall plan for most trips.</span>
             <span class="tag"><i aria-hidden="true"></i> Best overall</span>
           </a>
 
-          <a class="cat" href="/transport/paris/">
+          <a class="tg-guide-related-link" href="/transport/paris/">
             <strong>Paris transport guide</strong>
             <span>Airport transfers, metro passes, train tickets.</span>
             <span class="tag"><i aria-hidden="true"></i> Move smart</span>
           </a>
 
-          <a class="cat" href="/hotels/paris/">
+          <a class="tg-guide-related-link" href="/hotels/paris/">
             <strong>Where to stay in Paris</strong>
             <span>Neighborhood strategy and hotel planning.</span>
             <span class="tag"><i aria-hidden="true"></i> Sleep better</span>
           </a>
 
-          <a class="cat" href="/esim/france/">
+          <a class="tg-guide-related-link" href="/esim/france/">
             <strong>France eSIM guide</strong>
             <span>Avoid roaming fees and set up fast.</span>
             <span class="tag"><i aria-hidden="true"></i> Stay connected</span>
