@@ -192,7 +192,8 @@
   display: revert;
 }
 
-.tg-ui .tg-guide-faq summary::after {
+.tg-ui .tg-guide-faq summary::after,
+.tg-ui .tg-guide-faq details[open] summary::after {
   content: none;
 }
 

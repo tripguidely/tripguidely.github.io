@@ -9,6 +9,17 @@
       "reason": "reviewed removal of the newly introduced duplicate Harry Potter walking-tour affiliate placement after PR #20",
       "reviewed_by": "CarlLeger",
       "recorded_on": "2026-10-09"
+    },
+    {
+      "kind": "integration_script",
+      "source": "assets/js/site.js",
+      "before": "c2d95ddd3524d39065068ee20aa254c02250acc476ded1b8fab343d5afd828ec",
+      "after": "488694878a660cf36d261d2516d9456c4fa6fcf3f1992a22a675cbd83a3ad23c",
+      "base_revision": "1542d2b9f3c7e35c6234c305fd33bf99c781cc71",
+      "reason": "Owner-reviewed shared navigation accessibility and reduced-motion repairs; affiliate, consent and booking tracking code preserved.",
+      "review_reference": "TripGuidely PR #23 owner approval in ChatGPT conversation, 2026-10-09",
+      "reviewed_by": "CarlLeger",
+      "recorded_on": "2026-10-09"
     }
   ],
   "contracts": {
