@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Read-only image audit and disposable optimization previews. Python 3.12 + Pillow.
 
-No network calls, generation, repository edits, or publishing. See docs/image-seo-agent-v1.md.
+CLI is offline: audit, plan and synthetic previews only; no repository edits or publishing.
+The optional paid adapter is separately gated. See docs/image-seo-agent-v2.md.
 """
 from __future__ import annotations
 
@@ -515,7 +516,7 @@ def brief(page, purpose, subject, width, height):
             'status': 'brief only; human sourcing/generation and publication approval required'}
 
 
-def optimize(root, source, output, widths, formats=('WEBP', 'AVIF'), quality=80):
+def optimize(root, source, output, widths, formats=('WEBP', 'AVIF'), quality=80, *, max_output_bytes=None):
     root = root.resolve()
     source = (root / source).resolve()
     if not source.is_relative_to(root) or not source.is_file():
@@ -543,6 +544,7 @@ def optimize(root, source, output, widths, formats=('WEBP', 'AVIF'), quality=80)
                    for w in sorted(set(widths)) for fmt in dict.fromkeys(formats)]
         destination = ExclusiveOutput(root, output)
         results = []
+        encoded_bytes = 0
         for width, fmt, path in targets:
             height = max(1, round(image.height * width / image.width))
             resized = image.convert('RGBA' if alpha else 'RGB').resize((width, height), Image.Resampling.LANCZOS)
@@ -557,6 +559,9 @@ def optimize(root, source, output, widths, formats=('WEBP', 'AVIF'), quality=80)
             from io import BytesIO
             encoded = BytesIO()
             resized.save(encoded, fmt, **options)
+            encoded_bytes += len(encoded.getvalue())
+            if max_output_bytes is not None and encoded_bytes > max_output_bytes:
+                raise ValueError('Optimization output byte limit exceeded')
             with Image.open(BytesIO(encoded.getvalue())) as decoded:
                 decoded.load()
                 if decoded.size != resized.size or decoded.format != fmt:
@@ -586,6 +591,202 @@ def optimize(root, source, output, widths, formats=('WEBP', 'AVIF'), quality=80)
     return results
 
 
+def generation_tools():
+    # Lazy local import also supports V1's importlib-based consumers.
+    directory = str(Path(__file__).resolve().parent)
+    if directory not in sys.path:
+        sys.path.insert(0, directory)
+    import image_seo_providers
+    return image_seo_providers
+
+
+def generation_request(root, brief_file, brief_id, base_revision):
+    tools = generation_tools()
+    document = tools.strict_json(tools.read_bounded(brief_file))
+    if document.get('base_revision') != base_revision:
+        raise ValueError('Brief base revision differs from recorded base')
+    matches = [brief for brief in document['briefs'] if brief['id'] == brief_id]
+    if len(matches) != 1 or matches[0]['operation'] != 'optional_illustration':
+        raise ValueError('One illustration brief required; delivery-only heroes must not be generated')
+    brief = matches[0]
+    page_bytes = tools.read_bounded(tools.local_page(root, brief['page']))
+    context = tools.sha256(tools.canonical(brief) + b'\0' + page_bytes)
+    width, height = brief['master_dimensions']
+    request = tools.GenerationRequest(brief_id, brief['page'], brief['placement'], brief['prompt'],
+                                      width, height, base_revision, context)
+    request.validate()
+    return request
+
+
+def layout_evidence(request, layout_file):
+    """Canonical evidence snapshot; explicit ABSENT is also part of the review contract."""
+    tools = generation_tools()
+    if layout_file is None:
+        return [request.width], 'MASTER_ONLY_LAYOUT_UNVERIFIED', {'state': 'ABSENT', 'sha256': None, 'document': None}
+    layout = tools.strict_json(tools.read_bounded(layout_file))
+    widths = validated_layout(request, layout)
+    return widths, 'OWNER_SUPPLIED_LAYOUT_EVIDENCE', {
+        'state': 'SUPPLIED', 'sha256': tools.sha256(tools.canonical(layout)), 'document': layout}
+
+
+def validated_layout(request, layout):
+    if not isinstance(layout, dict) or set(layout) != {'page','placement','context_sha256','evidence_reference','samples'}:
+        raise ValueError('Exact unambiguous layout evidence fields required')
+    reference = layout['evidence_reference']
+    if layout['page'] != request.page or layout['placement'] != request.placement or not isinstance(reference, str) or not reference.strip() or len(reference.encode('utf-8')) > 2000:
+        raise ValueError('Layout evidence must identify the exact page and placement')
+    if layout.get('context_sha256') != request.context_sha256:
+        raise ValueError('Layout evidence is stale for this brief/page context')
+    samples = layout.get('samples')
+    if not isinstance(samples, list) or not 1 <= len(samples) <= 20:
+        raise ValueError('Layout evidence needs 1..20 measured samples')
+    widths = set()
+    for sample in samples:
+        if not isinstance(sample, dict) or set(sample) != {'width','dpr'}:
+            raise ValueError('Exact measured width/DPR fields required')
+        width, dpr = sample.get('width'), sample.get('dpr')
+        if type(width) not in (int, float) or type(dpr) not in (int, float) or not math.isfinite(width) or not math.isfinite(dpr) or not 0 < width <= MAX_LAYOUT_WIDTH or not 1 <= dpr <= 3:
+            raise ValueError('Invalid measured width/DPR')
+        widths.add(min(request.width, math.ceil(width * dpr)))
+    if len(widths) > 3:
+        raise ValueError('At most three measured variant widths per run; review a bounded plan')
+    return sorted(widths)
+
+
+def measured_widths(root, request, layout_file):
+    """Retain the V2 planning helper's two-value interface."""
+    widths, status, _ = layout_evidence(request, layout_file)
+    return widths, status
+
+
+MAX_LAYOUT_WIDTH = 2560
+
+
+def generate_preview(root, request, output, *, mock=False, layout_file=None, formats=('WEBP', 'PNG'), quality=90):
+    """Offline by construction. No provider selection or live CLI execution path."""
+    tools = generation_tools()
+    request.validate()
+    output = safe_output(root, output)
+    if os.path.lexists(output):
+        raise ValueError('Use a fresh output directory; existing outputs are never replaced')
+    widths, layout_status, evidence = layout_evidence(request, layout_file)
+    if not formats or len(formats) > 4 or any(f not in ('WEBP', 'AVIF', 'JPEG', 'PNG') for f in formats) or type(quality) is not int or not 1 <= quality <= 100:
+        raise ValueError('Invalid optimization formats/quality')
+    provider = tools.MockProvider()
+    plan = {'mode': 'OFFLINE_MOCK' if mock else 'OFFLINE_DRY_RUN', 'request_sha256': request.fingerprint(),
+            'brief_id': request.brief_id, 'paid_calls': 0, 'widths': widths, 'layout_status': layout_status,
+            'layout_evidence_state': evidence['state'], 'layout_evidence_sha256': evidence['sha256'],
+            'estimate': provider.estimate(request), 'approval_status': 'PENDING'}
+    if not mock:
+        return plan  # Does not reserve directories, read credentials or generate an image.
+    return prepare_generation_candidate(root, request, provider.generate(request), output,
+                                        layout_file=layout_file, formats=formats, quality=quality, plan=plan)
+
+
+def prepare_generation_candidate(root, request, result, output, *, layout_file=None, formats=('WEBP', 'PNG'),
+                                 quality=90, seen_images=(), plan=None):
+    """Validate an in-memory provider result and prepare external review files; no network."""
+    tools = generation_tools()
+    request.validate()
+    widths, layout_status, evidence = layout_evidence(request, layout_file)
+    if not isinstance(result, tools.GenerationResult) or len(seen_images) >= tools.FRAMEWORK_MAX_IMAGES:
+        raise ValueError('One bounded provider result required')
+    if not formats or len(formats) > 4 or any(f not in ('WEBP', 'AVIF', 'JPEG', 'PNG') for f in formats) or type(quality) is not int or not 1 <= quality <= 100:
+        raise ValueError('Invalid optimization formats/quality')
+    if not isinstance(result.image, bytes) or len(result.image) > tools.MAX_IMAGE_BYTES:
+        raise ValueError('Provider image bytes exceed limit')
+    if any(not isinstance(value, str) or not value.strip() or len(value) > 200 for value in (result.provider, result.generation_status)) or (result.model is not None and (not isinstance(result.model, str) or len(result.model) > 100)):
+        raise ValueError('Provider provenance fields missing or oversized')
+    bound_plan = {'request_sha256': request.fingerprint(), 'approval_status': 'PENDING',
+                  'layout_status': layout_status, 'widths': widths,
+                  'layout_evidence_state': evidence['state'], 'layout_evidence_sha256': evidence['sha256']}
+    if plan is not None and any(plan.get(key) != value for key, value in bound_plan.items()):
+        raise ValueError('Layout evidence or candidate plan changed before preparation')
+    plan = plan or {'mode': 'PROVIDER_RESULT_REVIEW_NO_NETWORK', **bound_plan}
+    destination = ExclusiveOutput(root, output)
+    destination.write('plan.json', tools.canonical(plan))
+    fmt = {'png': 'PNG', 'jpeg': 'JPEG', 'webp': 'WEBP'}[request.output_format]
+    metadata = tools.bounded_worker('validate', (result.image, request.width, request.height, fmt))
+    tools.reject_duplicates([*seen_images, metadata])
+    source = ExclusiveOutput(root, destination.path / 'source')
+    source_name = 'candidate.' + request.output_format
+    source.write(source_name, result.image)
+    results = tools.bounded_worker('optimize', (str(source.path), source_name, str(destination.path / 'variants'),
+                                               widths, formats, quality, (request.width, request.height), fmt))
+    passing = [item for item in results if item['quality_gate_passed']]
+    if any(not any(item['width'] == width for item in passing) for width in widths):
+        raise ValueError('Candidate optimization failed quality gate; no completed review manifest')
+    # Compare actual bytes only within each same-size, quality-passing set. Human review remains required.
+    selected = [min((item for item in passing if item['width'] == width), key=lambda item: item['bytes'])['file'] for width in widths]
+    artifacts = {'source/' + source_name: metadata['sha256'], 'plan.json': digest(destination.path / 'plan.json')}
+    for path in sorted((destination.path / 'variants').iterdir()):
+        artifacts['variants/' + path.name] = digest(path)
+    manifest = {'schema_version': 3, 'target_page': request.page, 'placement': request.placement,
+                'brief_id': request.brief_id, 'base_revision': request.base_revision, 'request_sha256': request.fingerprint(),
+                'request': tools.asdict(request),
+                'context_sha256': request.context_sha256, 'provider': result.provider, 'model': result.model,
+                'requested_dimensions': [request.width, request.height], 'actual_image': metadata,
+                'generation_status': result.generation_status, 'rights_status': 'UNVERIFIED_REQUIRES_OWNER_REVIEW',
+                'authenticity_status': 'SYNTHETIC_TEST_SHAPES_NOT_PROPERTY_OR_LANDMARK_PHOTOGRAPHY' if result.provider == 'offline-mock' else 'UNVERIFIED_NEVER_TREAT_AS_DOCUMENTARY_PHOTOGRAPHY',
+                'approval_status': 'PENDING', 'layout_status': layout_status, 'layout_evidence': evidence,
+                'optimization_outputs': results,
+                'smallest_quality_passing_files': selected, 'artifacts': artifacts,
+                'publication': 'NOT_IMPLEMENTED_SEPARATE_REVIEWED_PR_REQUIRED'}
+    destination.write('review-manifest.json', json.dumps(manifest, indent=2) + '\n')
+    return manifest
+
+
+def verify_generation_review(root, output, brief_file, receipt, *, layout_file=None):
+    """Validate a separately supplied human receipt; never mutates/approves/publishes files."""
+    tools = generation_tools()
+    output = safe_output(root, output)
+    safe_output(root, output / 'review-manifest.json')
+    if (output / 'review-manifest.json').stat().st_nlink != 1:
+        raise ValueError('Review manifest alias forbidden')
+    manifest_bytes = tools.read_bounded(output / 'review-manifest.json')
+    manifest = tools.strict_json(manifest_bytes)
+    if not isinstance(manifest, dict) or type(manifest.get('schema_version')) is not int or manifest['schema_version'] != 3:
+        raise ValueError('Stale review schema: version 3 evidence contract required')
+    if not isinstance(receipt, dict) or type(receipt.get('schema_version')) is not int or receipt['schema_version'] != 3:
+        raise ValueError('Stale receipt: version 3 evidence contract required')
+    current = generation_request(root, brief_file, manifest['brief_id'], manifest['base_revision'])
+    request = tools.GenerationRequest(**manifest['request'])
+    request.validate()
+    source_fields = ('brief_id', 'page', 'placement', 'prompt', 'width', 'height', 'base_revision', 'context_sha256')
+    if any(getattr(current, field) != getattr(request, field) for field in source_fields) or manifest['request_sha256'] != request.fingerprint() or receipt.get('manifest_sha256') != tools.sha256(manifest_bytes):
+        raise ValueError('Stale approval: source content or review manifest changed')
+    widths, layout_status, evidence = layout_evidence(request, layout_file)
+    recorded_evidence = manifest.get('layout_evidence')
+    if not isinstance(recorded_evidence, dict) or set(recorded_evidence) != {'state','sha256','document'}:
+        raise ValueError('Stale approval: exact layout evidence fields required')
+    if recorded_evidence['state'] == 'SUPPLIED':
+        validated_layout(request, recorded_evidence['document'])
+        if recorded_evidence['sha256'] != tools.sha256(tools.canonical(recorded_evidence['document'])):
+            raise ValueError('Stale approval: recorded layout fingerprint is inconsistent')
+    elif recorded_evidence != {'state':'ABSENT','sha256':None,'document':None}:
+        raise ValueError('Stale approval: invalid layout evidence state')
+    if recorded_evidence != evidence or manifest.get('layout_status') != layout_status:
+        raise ValueError('Stale approval: current layout evidence missing or changed')
+    expected_layout = {'layout_evidence_state': evidence['state'], 'layout_evidence_sha256': evidence['sha256']}
+    if any(key not in receipt or receipt[key] != value or type(receipt[key]) is not type(value) for key, value in expected_layout.items()):
+        raise ValueError('Stale receipt: exact layout evidence fingerprint required')
+    expected = {'status': 'APPROVED', 'request_sha256': request.fingerprint(), 'rights_reviewed': True,
+                'visual_reviewed': True, 'layout_reviewed': True}
+    if any(receipt.get(k) != v or type(receipt.get(k)) is not type(v) for k, v in expected.items()) or not isinstance(receipt.get('review_reference'), str) or not receipt['review_reference'].strip():
+        raise ValueError('Explicit human review receipt required')
+    if not isinstance(manifest['artifacts'], dict) or not 1 <= len(manifest['artifacts']) <= 16 or receipt.get('artifacts') != manifest['artifacts']:
+        raise ValueError('Reviewed artifact hashes required')
+    for name, expected_hash in manifest['artifacts'].items():
+        parts = Path(name)
+        if parts.is_absolute() or '..' in parts.parts or '\\' in name or ':' in name or len(parts.parts) > 2:
+            raise ValueError('Manifest artifact traversal forbidden')
+        path = output / parts
+        safe_output(root, path)
+        if path.stat().st_nlink != 1 or tools.sha256(tools.read_bounded(path, tools.MAX_OUTPUT_BYTES)) != expected_hash:
+            raise ValueError('Stale approval: artifact changed or aliased')
+    return {'status': 'REVIEW_RECEIPT_VALID', 'publication': 'NOT_AUTHORIZED', 'review_reference': receipt['review_reference']}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
@@ -607,6 +808,15 @@ def main():
     opt.add_argument('--widths', type=int, nargs='+', required=True)
     opt.add_argument('--formats', nargs='+', choices=('WEBP', 'AVIF', 'JPEG', 'PNG'), default=['WEBP', 'AVIF'])
     opt.add_argument('--quality', type=int, default=80)
+    gen = commands.add_parser('generate-preview', help='Offline dry-run or explicit synthetic mock; no paid CLI calls')
+    gen.add_argument('--brief', type=Path, required=True)
+    gen.add_argument('--brief-id', required=True)
+    gen.add_argument('--base-revision', required=True)
+    gen.add_argument('--output', type=Path, required=True)
+    gen.add_argument('--mock', action='store_true', help='Write synthetic test shapes outside all worktrees')
+    gen.add_argument('--layout-manifest', type=Path)
+    gen.add_argument('--formats', nargs='+', choices=('WEBP', 'AVIF', 'JPEG', 'PNG'), default=['WEBP', 'PNG'])
+    gen.add_argument('--quality', type=int, default=90)
     args = parser.parse_args()
     try:
         if args.command == 'audit':
@@ -620,6 +830,10 @@ def main():
                 print(json.dumps(report, indent=2, ensure_ascii=False))
         elif args.command == 'brief':
             print(json.dumps(brief(args.page, args.purpose, args.subject, args.width, args.height), indent=2))
+        elif args.command == 'generate-preview':
+            request = generation_request(args.root, args.brief, args.brief_id, args.base_revision)
+            print(json.dumps(generate_preview(args.root, request, args.output, mock=args.mock,
+                                              layout_file=args.layout_manifest, formats=args.formats, quality=args.quality), indent=2))
         else:
             results = optimize(args.root, args.source, args.output, args.widths, args.formats, args.quality)
             print(json.dumps(results, indent=2))
