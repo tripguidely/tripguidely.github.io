@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "base_revision": "aa38d2eb649555ed7b32515d88bb84a362e1fe1c",
+  "recorded_on": "2026-10-10",
+  "generation_enabled": false,
+  "paid_use_approved": false,
+  "publication_approved": false,
+  "evidence": "Prior read-only Chrome research at seven widths; container measurements are not measurements of the proposed new illustration slot.",
+  "briefs": [
+    {
+      "id": "paris-itinerary-hero",
+      "operation": "delivery_optimization_only",
+      "generation_enabled": false,
+      "page": "itinerary/paris/2-days/index.html",
+      "placement": ".tg-guide-hero .hero-bg picture",
+      "existing_source": "assets/images/hero/paris-2-day-itinerary-hero-2400x1350.webp",
+      "master_dimensions": [2400, 1350],
+      "restrictions": ["Preserve the complete existing composition and collage boundaries", "No generated or reconstructed landmarks", "Photographic authenticity and derivative rights remain unverified; owner must establish them before publication"],
+      "measured_slots": [
+        {"viewport": 390, "dpr": 2, "width": 358, "height": 201.375},
+        {"viewport": 768, "dpr": 1, "width": 721.9375, "height": 406.078125},
+        {"viewport": 1024, "dpr": 1, "width": 503.015625, "height": 282.9375},
+        {"viewport": 1440, "dpr": 1, "width": 554.40625, "height": 311.84375}
+      ],
+      "delivery_plan": "Reuse existing 800/1200/1600/2400 WebP variants first. A separate approved page change may correct sizes; verify the 1023/1024 transition and DPR2 before removing large variants. Optional AVIF needs visual-quality and byte comparison.",
+      "approval_status": "PENDING"
+    },
+    {
+      "id": "paris-hotels-shared-hero",
+      "operation": "delivery_optimization_only",
+      "generation_enabled": false,
+      "page": "hotels/paris/index.html",
+      "shared_pages": ["hotels/paris/cheap-hotels/index.html", "hotels/paris/family-hotels/index.html", "hotels/paris/luxury-hotels/index.html"],
+      "placement": ".tg-hotels-hero .hero-bg picture and matching preload",
+      "existing_source": "assets/images/hero/where-to-stay-in-paris-2400x1350.webp",
+      "master_dimensions": [2400, 1350],
+      "restrictions": ["Retain one shared hero and its complete composition", "Do not fabricate property rooms, facilities or promised views", "The existing photographic-looking image has unverified provenance; do not label it authentic or AI-generated without evidence", "Preserve current alt/disclosures and social image references in any separately approved delivery pilot"],
+      "measured_slots": [
+        {"viewport": 390, "dpr": 2, "width": 358, "height": 201.375},
+        {"viewport": 768, "dpr": 1, "width": 721.9375, "height": 406.078125},
+        {"viewport": 1024, "dpr": 1, "width": 457.28125, "height": 257.21875},
+        {"viewport": 1440, "dpr": 1, "width": 504, "height": 283.5}
+      ],
+      "delivery_plan": "Reuse existing variants. A separate approved implementation must coordinate sizes and preload imagesizes. Benchmark compression only after derivative rights review.",
+      "approval_status": "PENDING"
+    },
+    {
+      "id": "paris-family-logistics-illustration",
+      "operation": "optional_illustration",
+      "generation_enabled": false,
+      "page": "hotels/paris/family-hotels/index.html",
+      "placement": "#family-logistics optional figure at paragraph measure",
+      "master_dimensions": [1536, 864],
+      "potential_variants": [[640, 360], [800, 450], [1280, 720]],
+      "layout_status": "PROPOSED_SLOT_NOT_IMPLEMENTED_OR_MEASURED",
+      "container_evidence": {"390_dpr2_paragraph_width": 358, "768_dpr1_paragraph_width": 623.15625, "1440_dpr1_paragraph_width": 623.15625, "1440_section_width": 1056},
+      "prompt": "Create a clearly drawn editorial illustration of a folded stroller, carry-on luggage, a blank travel planning sheet and a small clock. Calm navy, teal and warm neutral palette; separated objects recognizable on a narrow screen. No people, text, branding, hotel rooms, real properties, maps, misleading landmarks or accessibility claims. This is a conceptual planning illustration, never documentary photography.",
+      "proposed_alt": "Illustration of a folded stroller, carry-on bag, planning sheet and clock",
+      "proposed_caption": "AI-generated editorial illustration; not a photograph of a hotel or transport route. Use only if actual AI generation later occurs; mock shapes must retain their mock label.",
+      "rights_status": "NOT_GENERATED_NO_LICENSE_OR_AUTHENTICITY_ESTABLISHED",
+      "approval_requirements": ["Owner confirms editorial value and placement", "Measure actual proposed slot before responsive variants", "Separate exact prompt/provider/model and paid-use approval", "Visual and accessibility review", "Separate publication PR"],
+      "approval_status": "PENDING"
+    }
+  ]
+}

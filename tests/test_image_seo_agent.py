@@ -313,6 +313,35 @@ class ImageAgentTests(unittest.TestCase):
         self.assertIsNone(report['images'][0]['rendered'][0]['selected_pixel_width'])
         self.assertEqual(report['dimension_plans'], [])
 
+    def test_optimizer_optional_byte_budget_fails_before_image_write(self):
+        output = Path(self.temp.name) / 'bounded'
+        with self.assertRaisesRegex(ValueError, 'byte limit'):
+            agent.optimize(self.root, 'assets/photo.jpg', output, [320], ['PNG'], max_output_bytes=1)
+        self.assertFalse(list(output.glob('*.png')))
+        self.assertFalse((output/'optimization.json').exists())
+
+    def test_v2_cli_defaults_to_no_files_or_provider_calls(self):
+        brief = Path(self.temp.name)/'brief.json'
+        brief.write_text(json.dumps({'base_revision': 'a'*40, 'briefs': [
+            {'id': 'fixture', 'page': 'guide/index.html', 'placement': '#test', 'operation': 'optional_illustration',
+             'master_dimensions': [64,32], 'prompt': 'Offline fixture', 'generation_enabled': False}]}))
+        output = Path(self.temp.name)/'mock'
+        script = Path(__file__).resolve().parents[1]/'scripts/image-seo-agent.py'
+        run = subprocess.run([sys.executable, '-B', str(script), '--root', str(self.root), 'generate-preview',
+                              '--brief', str(brief), '--brief-id', 'fixture', '--base-revision', 'a'*40,
+                              '--output', str(output)], capture_output=True, text=True, timeout=20)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertEqual(json.loads(run.stdout)['paid_calls'], 0)
+        self.assertFalse(output.exists())
+
+    def test_v2_cli_has_no_live_option(self):
+        script = Path(__file__).resolve().parents[1]/'scripts/image-seo-agent.py'
+        run = subprocess.run([sys.executable, '-B', str(script), 'generate-preview', '--help'],
+                             capture_output=True, text=True, timeout=20)
+        self.assertEqual(run.returncode, 0)
+        self.assertNotIn('--live', run.stdout)
+        self.assertNotIn('--api-key', run.stdout)
+
     def sampler(self, output, module, opt_in=True):
         node = shutil.which('node')
         if not node:
