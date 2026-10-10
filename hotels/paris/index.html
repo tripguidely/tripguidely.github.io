@@ -71,6 +71,10 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/hotels.css" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/foundation.css" />
+  <link rel="stylesheet" href="/assets/css/components/editorial.css" />
+  <link rel="stylesheet" href="/assets/css/templates/hotels.css" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -225,15 +229,15 @@
   </script>
 </head>
 
-<body data-page="guide" data-section="hotels">
+<body class="tg-ui" data-page="guide" data-section="hotels">
   <a class="skip" href="#main">Skip to content</a>
 
   <div id="site-header"></div>
 
-  <main id="main" class="main" role="main">
+  <main id="main" class="main tg-main tg-hotels" role="main">
 
     <!-- HERO -->
-    <section class="hero hero-full" aria-label="Where to stay in Paris hero">
+    <section class="tg-hotels-hero tg-container" aria-label="Where to stay in Paris hero">
       <div class="hero-bg" aria-hidden="true">
         <picture>
           <source
@@ -255,8 +259,8 @@
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="hero-inner">
-        <div class="wrap">
+      <div class="tg-hotels-intro">
+        <div class="tg-hotels-copy">
           <p class="kicker">
             <span class="dot" aria-hidden="true"></span>Paris Hotels
           </p>
@@ -268,8 +272,8 @@
           </p>
 
           <div class="actions" aria-label="Primary actions">
-            <a href="#quick-answer" class="btn primary"><span class="pill" aria-hidden="true">🧭</span> Choose my area</a>
-            <a href="#book" class="btn"><span class="pill" aria-hidden="true">🏨</span> See hotel deals</a>
+            <a href="#quick-answer" class="tg-button tg-button--primary"><span class="pill" aria-hidden="true">🧭</span> Choose my area</a>
+            <a href="#book" class="tg-button tg-button--secondary"><span class="pill" aria-hidden="true">🏨</span> See hotel deals</a>
           </div>
 
           <div class="mini-grid" aria-label="Quick summary" style="margin-top:16px;">
@@ -298,7 +302,7 @@
       </div>
     </section>
 
-    <div class="wrap">
+    <div class="tg-container tg-hotels-layout">
 
       <nav class="breadcrumbs" aria-label="Breadcrumbs" id="breadcrumbs">
         <a href="/">Home</a>
@@ -309,14 +313,15 @@
       </nav>
 
       <!-- QUICK NAV -->
-      <section class="card pad" aria-label="Quick navigation">
-        <div class="mini-grid" aria-label="Quick jumps">
+      <section class="tg-section tg-hotels-nav" aria-label="Quick navigation">
+        <div class="mini-grid tg-guide-links" aria-label="Quick jumps">
           <a class="pill-link" href="#quick-answer">Best areas at a glance</a>
           <a class="pill-link" href="#decision">Pick your best area</a>
           <a class="pill-link" href="#banks">Left Bank vs Right Bank</a>
           <a class="pill-link" href="#areas">Best neighborhoods in Paris</a>
           <a class="pill-link" href="#landmarks">Best area by landmark</a>
           <a class="pill-link" href="#table">Comparison table</a>
+          <a class="pill-link" href="#hotel-picks">Hotel shortlist by area</a>
           <a class="pill-link" href="#book">Book Paris hotels</a>
           <a class="pill-link" href="#rules">Booking tips</a>
           <a class="pill-link" href="#faq">FAQ</a>
@@ -324,13 +329,13 @@
       </section>
 
       <!-- TRUST / E-E-A-T -->
-      <section class="card pad content" aria-label="Why trust TripGuidely">
-        <div class="section-title">
+      <section class="tg-section tg-hotels-section content" aria-label="Why trust TripGuidely">
+        <div class="section-title tg-guide-heading">
           <h2>How we pick where to stay in Paris</h2>
           <p>Neighborhood first, hotel second.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Transit friction:</strong> the right base saves time every morning and evening.</li>
           <li><strong>Trip intent matching:</strong> first-time sightseeing, romantic streets, family comfort, nightlife energy, or budget efficiency.</li>
           <li><strong>Walkability first:</strong> the best Paris stay is often the one that reduces transfers and keeps your day simple.</li>
@@ -338,24 +343,24 @@
           <li><strong>Affiliate disclosure:</strong> some links below are affiliate links; TripGuidely may earn a commission at no extra cost to you.</li>
         </ul>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Best shortcut:</b> if you’re unsure, pick a central area with strong walkability and easy metro access, then filter hotels by guest rating, cancellation policy, and noise reviews.
         </div>
       </section>
 
       <!-- QUICK ANSWER -->
-      <section id="quick-answer" class="card pad content" aria-label="Quick answer">
-        <div class="section-title">
+      <section id="quick-answer" class="tg-section tg-hotels-section content" aria-label="Quick answer">
+        <div class="section-title tg-guide-heading">
           <h2>Best areas to stay in Paris at a glance</h2>
           <p>Fastest decision summary for most travelers.</p>
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>If you want the safest picks:</b> choose Saint-Germain-des-Prés for the best overall balance, Le Marais for a livelier central stay, the 7th arrondissement for quieter family-friendly trips, or the Latin Quarter for better value without losing too much convenience.
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Best Paris neighborhoods by travel style" tabindex="0">
-          <table class="table ttd-table" aria-label="Best Paris neighborhoods by travel style">
+        <div class="table-wrap tg-hotel-table-region" role="region" aria-label="Best Paris neighborhoods by travel style" tabindex="0">
+          <table class="table ttd-table tg-hotel-table" aria-label="Best Paris neighborhoods by travel style">
             <caption class="table-cap">
               Best Paris neighborhoods by travel style, convenience, and budget level.
             </caption>
@@ -408,14 +413,14 @@
           </table>
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Simple rule:</b> for short trips, pay for location. In Paris, a better area often improves the trip more than a slightly nicer room farther out.
         </div>
       </section>
 
       <!-- DECISION HELPER -->
-      <section id="decision" class="card pad content" aria-label="Decision helper">
-        <div class="section-title">
+      <section id="decision" class="tg-section tg-hotels-section content" aria-label="Decision helper">
+        <div class="section-title tg-guide-heading">
           <h2>Pick your best Paris area in 45 seconds</h2>
           <p>Start with your trip style, then jump to the neighborhoods that usually fit best.</p>
         </div>
@@ -433,14 +438,14 @@
           A good Paris hotel decision usually starts with <strong>trip style</strong>, not star rating. A first-time city break, a romantic weekend, a family stay, and a nightlife-focused trip rarely work best in the same neighborhood.
         </p>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>One rule:</b> don’t optimize for the cheapest nightly rate if it adds long daily commutes. In Paris, location is part of the trip.
         </div>
       </section>
 
       <!-- LEFT BANK VS RIGHT BANK -->
-      <section id="banks" class="card pad content" aria-label="Left Bank vs Right Bank">
-        <div class="section-title">
+      <section id="banks" class="tg-section tg-hotels-section content" aria-label="Left Bank vs Right Bank">
+        <div class="section-title tg-guide-heading">
           <h2>Left Bank vs Right Bank: which side of Paris should you stay on?</h2>
           <p>One of the easiest ways to narrow the city fast.</p>
         </div>
@@ -465,27 +470,27 @@
           </div>
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Best quick filter:</b> choose the Left Bank if you want a more classic, relaxed Paris feel. Choose the Right Bank if you want more nightlife, shopping, and a wider range of hotel options.
         </div>
       </section>
 
       <!-- BEST AREAS -->
-      <section id="areas" class="card pad content" aria-label="Best neighborhoods to stay in Paris">
-        <div class="section-title">
+      <section id="areas" class="tg-section tg-hotels-section content" aria-label="Best neighborhoods to stay in Paris">
+        <div class="section-title tg-guide-heading">
           <h2>Best neighborhoods to stay in Paris</h2>
           <p>Use these Paris areas to match your travel style, daily pace, and budget expectations.</p>
         </div>
 
         <h3 id="areas-first">Le Marais</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> first-timers, couples, and travelers who want a lively, central, walkable base.</li>
           <li><strong>Why stay here:</strong> strong atmosphere, cafés, shops, dining, and easy sightseeing flow.</li>
           <li><strong>Trade-offs:</strong> popular area, so prices can run higher and quieter hotel choices matter.</li>
         </ul>
 
         <h3>Saint-Germain-des-Prés</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> first-time visitors, couples, and travelers who want classic Paris atmosphere.</li>
           <li><strong>Why stay here:</strong> beautiful streets, restaurants, literary-café feel, strong walkability, and balanced sightseeing access.</li>
           <li><strong>Trade-offs:</strong> usually not the cheapest option, especially for well-located boutique hotels.</li>
@@ -495,7 +500,7 @@
         </p>
 
         <h3>Latin Quarter</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> first-timers, budget-aware travelers, families, and shorter stays.</li>
           <li><strong>Why stay here:</strong> useful location, good metro access, student energy, and easier price flexibility than some premium zones.</li>
           <li><strong>Trade-offs:</strong> some streets are busier and hotel quality can vary more block by block.</li>
@@ -505,14 +510,14 @@
         </p>
 
         <h3>1st Arrondissement</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> very short trips, maximum sightseeing efficiency, and travelers willing to pay for centrality.</li>
           <li><strong>Why stay here:</strong> extremely practical for moving around Paris fast, especially if you want a “see the highlights” trip.</li>
           <li><strong>Trade-offs:</strong> premium location often means premium pricing and fewer value options.</li>
         </ul>
 
         <h3 id="areas-family">7th Arrondissement</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> families, quieter stays, Eiffel Tower access, and travelers who want a polished atmosphere.</li>
           <li><strong>Why stay here:</strong> calmer feel in parts, elegant streets, easier evenings, and good comfort-focused positioning.</li>
           <li><strong>Trade-offs:</strong> can feel less lively at night and often trends expensive.</li>
@@ -522,57 +527,57 @@
         </p>
 
         <h3 id="areas-romance">Montmartre</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> couples, charm seekers, and travelers who care more about mood than pure efficiency.</li>
           <li><strong>Why stay here:</strong> distinctive character, views, memorable streets, and a strong “Paris feeling.”</li>
           <li><strong>Trade-offs:</strong> hillier, less efficient for some itineraries, and not always the smoothest base for heavy sightseeing days.</li>
         </ul>
 
         <h3 id="areas-nightlife">Bastille / Oberkampf</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> nightlife, bars, music, and travelers who want local energy after dark.</li>
           <li><strong>Why stay here:</strong> lively atmosphere, strong evening scene, and easier access to late-night activity.</li>
           <li><strong>Trade-offs:</strong> noise matters more here, so review soundproofing carefully before booking.</li>
         </ul>
 
         <h3>South Pigalle</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> trendier nightlife, return visitors, and travelers who want a more modern energy.</li>
           <li><strong>Why stay here:</strong> bars, dining, and a livelier local atmosphere with strong evening appeal.</li>
           <li><strong>Trade-offs:</strong> less classic for first-time sightseeing and more important to screen for noise.</li>
         </ul>
 
         <h3>Canal Saint-Martin</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> return visitors, couples, and travelers who prefer a more local-feeling neighborhood vibe.</li>
           <li><strong>Why stay here:</strong> relaxed café energy, less tourist-heavy feel, and good atmosphere for slower urban trips.</li>
           <li><strong>Trade-offs:</strong> not as central for classic first-time sightseeing as Le Marais or the 1st.</li>
         </ul>
 
         <h3 id="areas-budget">Opéra / 9th Arrondissement</h3>
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Best for:</strong> balanced trips, shopping access, strong transit, and travelers who want practical hotel inventory.</li>
           <li><strong>Why stay here:</strong> efficient transport, solid hotel density, and useful positioning for many itineraries.</li>
           <li><strong>Trade-offs:</strong> less romantic than the Left Bank and less intimate than smaller neighborhood stays.</li>
         </ul>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Planning tip:</b> once your base is chosen, use our <a href="/things-to-do/paris/">Things to do in Paris</a> guide to build day clusters around nearby neighborhoods and reduce backtracking.
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>If you want the safest picks:</b> choose Saint-Germain-des-Prés for balance, Le Marais for energy, or the 7th arrondissement for quieter family-friendly stays.
         </div>
       </section>
 
       <!-- LANDMARK STRATEGY -->
-      <section id="landmarks" class="card pad content" aria-label="Best area by landmark">
-        <div class="section-title">
+      <section id="landmarks" class="tg-section tg-hotels-section content" aria-label="Best area by landmark">
+        <div class="section-title tg-guide-heading">
           <h2>Best Paris area by landmark or sightseeing priority</h2>
           <p>Useful when your itinerary is built around the places you care about most.</p>
         </div>
 
-        <ul class="checklist">
+        <ul class="checklist tg-guide-checklist" role="list">
           <li><strong>Near the Eiffel Tower:</strong> 7th arrondissement</li>
           <li><strong>Near the Louvre:</strong> 1st arrondissement</li>
           <li><strong>Near Notre-Dame:</strong> Latin Quarter / central Left Bank</li>
@@ -582,7 +587,7 @@
           <li><strong>Best for nightlife access:</strong> Le Marais / Bastille / South Pigalle</li>
         </ul>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Landmark rule:</b> choosing your hotel based on the places you will visit most can save time every day and reduce unnecessary metro transfers.
         </div>
 
@@ -594,14 +599,14 @@
       </section>
 
       <!-- QUICK TABLE -->
-      <section id="table" class="card pad content" aria-label="Paris areas quick table">
-        <div class="section-title">
+      <section id="table" class="tg-section tg-hotels-section content" aria-label="Paris areas quick table">
+        <div class="section-title tg-guide-heading">
           <h2>Paris neighborhood comparison table</h2>
           <p>Use this for fast decision-making before you book.</p>
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Paris hotel neighborhoods table" tabindex="0">
-          <table class="table ttd-table" aria-label="Paris neighborhoods comparison">
+        <div class="table-wrap tg-hotel-table-region" role="region" aria-label="Paris hotel neighborhoods table" tabindex="0">
+          <table class="table ttd-table tg-hotel-table" aria-label="Paris neighborhoods comparison">
             <caption class="table-cap">
               Paris hotel areas overview by trip style, atmosphere, practical trade-offs, and budget level.
             </caption>
@@ -690,8 +695,8 @@
       </section>
 
       <!-- SAFEST PICKS -->
-      <section class="card pad content" aria-label="Safest Paris area picks">
-        <div class="section-title">
+      <section class="tg-section tg-hotels-section content" aria-label="Safest Paris area picks">
+        <div class="section-title tg-guide-heading">
           <h2>Safest Paris area picks if you’re still unsure</h2>
           <p>Three strong starting points for most travelers.</p>
         </div>
@@ -717,16 +722,216 @@
         </div>
       </section>
 
+      <!-- HOTEL SHORTLIST: neighborhood decisions remain above the commercial picks. -->
+      <section id="hotel-picks" class="tg-section tg-hotels-section" aria-labelledby="hotel-picks-title">
+        <div class="tg-guide-heading">
+          <h2 id="hotel-picks-title">Paris hotel shortlist by area and trip</h2>
+          <p>Seven starting points once you have chosen your neighborhood.</p>
+        </div>
+        <p class="tg-hotel-disclosure"><strong>Affiliate disclosure:</strong> the booking buttons below are affiliate links. TripGuidely may earn a commission at no extra cost to you.</p>
+        <div class="tg-callout tg-hotel-method">
+          <p><strong>How this shortlist was selected:</strong> official property information, address and transport access, distinct traveler needs, and practical trade-offs. These are researched options, not personally tested stays or a ranked list.</p>
+          <p>The list does not cover every neighborhood recommended above. Keep your preferred area first; use the general hotel searches below if none of these locations fits.</p>
+          <p>Room types, cancellation terms and availability depend on your dates. Check the listing and final total before booking.</p>
+        </div>
+        <div class="tg-grid tg-hotel-grid">
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-citadines-halles">
+            <p class="tg-hotel-area">Les Halles · 1st arrondissement</p>
+            <h3 id="hotel-citadines-halles">Citadines Les Halles Paris</h3>
+            <p class="tg-hotel-use">Central sightseeing and apartment-style stays</p>
+            <p>An aparthotel base for a central sightseeing trip, with kitchens in its studios and apartments. Families can compare apartment categories rather than assuming a standard studio fits their group.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>4 rue des Innocents, 75001 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Châtelet–Les Halles</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> Match the booked apartment to your party size; studio and apartment capacities differ.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_citadines_halles" href="https://klook.tpk.ro/7c3IV7YH" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Citadines Les Halles Paris (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-pullman-eiffel">
+            <p class="tg-hotel-area">Eiffel Tower area · 15th arrondissement</p>
+            <h3 id="hotel-pullman-eiffel">Pullman Paris Tour Eiffel</h3>
+            <p class="tg-hotel-use">An Eiffel-area premium stay</p>
+            <p>Consider this hotel when the Eiffel Tower is a priority and you prefer a large premium-hotel setting. Its address is in the 15th arrondissement, across from the 7th rather than within it.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>18 avenue de Suffren; entrance at 22 rue Jean Rey, 75015 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Bir-Hakeim (metro 6) / Champ de Mars–Tour Eiffel (RER C)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> A western Paris base is less convenient if most of your plans center on Le Marais or the Latin Quarter.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_pullman_eiffel" href="https://klook.tpk.ro/QlEUdy0e" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Pullman Paris Tour Eiffel (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-ibis-cambronne">
+            <p class="tg-hotel-area">Cambronne · 15th arrondissement</p>
+            <h3 id="hotel-ibis-cambronne">ibis Paris Tour Eiffel Cambronne 15ème</h3>
+            <p class="tg-hotel-use">A practical chain hotel in the 15th</p>
+            <p>A practical chain-hotel option for travelers who want a Cambronne base and metro access in the Eiffel Tower side of Paris. Compare the room and total booking cost with the other 15th-arrondissement choices.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>2 rue Cambronne, 75015 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Cambronne (metro 6)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> This is not a historic-core location; check room size and breakfast inclusions before choosing a rate.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_ibis_cambronne" href="https://klook.tpk.ro/jor8wPCP" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for ibis Paris Tour Eiffel Cambronne 15ème (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-regence-etoile">
+            <p class="tg-hotel-area">Étoile / Ternes · 17th arrondissement</p>
+            <h3 id="hotel-regence-etoile">Hôtel Régence Étoile</h3>
+            <p class="tg-hotel-use">Arc de Triomphe and western Paris</p>
+            <p>A useful western Paris option for an Arc de Triomphe and Champs-Élysées-focused trip, with several lines at Charles de Gaulle–Étoile. This is Hôtel Régence Étoile on avenue Carnot, not Hyatt Regency Paris Étoile.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>24 avenue Carnot, 75017 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Charles de Gaulle–Étoile (metro 1, 2, 6 / RER A)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> Choose it for a western itinerary; a mainly Left Bank trip will involve more cross-city travel.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_regence_etoile" href="https://klook.tpk.ro/LsvOTPx3" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Hôtel Régence Étoile (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-madrigal">
+            <p class="tg-hotel-area">Pasteur / Montparnasse edge · 15th arrondissement</p>
+            <h3 id="hotel-madrigal">Hôtel Madrigal</h3>
+            <p class="tg-hotel-use">A design-oriented Pasteur base</p>
+            <p>A design-oriented alternative on boulevard Pasteur for travelers who want the Montparnasse side of Paris with metro access. Use the exact address to judge how it fits your train arrival and daily route.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>32 boulevard Pasteur, 75015 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Pasteur (metro 6, 12)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> It is on the Pasteur side of Montparnasse, not in the central sightseeing core.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_madrigal" href="https://klook.tpk.ro/L8RoCWCT" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Hôtel Madrigal (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-france-gare-lyon">
+            <p class="tg-hotel-area">Gare de Lyon / Bastille edge · 12th arrondissement</p>
+            <h3 id="hotel-france-gare-lyon">Hôtel de France Gare de Lyon Bastille</h3>
+            <p class="tg-hotel-use">Rail arrivals and eastern Paris</p>
+            <p>A station-area option for travelers arriving at Gare de Lyon or planning time in eastern Paris. Its rue de Lyon address gives it a different role from the quieter Left Bank neighborhood picks above.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>12 rue de Lyon, 75012 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Gare de Lyon (metro 1, 14 / RER A, D)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> Expect a station-area base rather than a secluded neighborhood stay; review recent room and noise feedback.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_france_gare_lyon" href="https://klook.tpk.ro/T0Ke9K8B" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Hôtel de France Gare de Lyon Bastille (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+
+          <article class="tg-card tg-hotel-card" aria-labelledby="hotel-campanile-bercy">
+            <p class="tg-hotel-area">Bercy Village · 12th arrondissement</p>
+            <h3 id="hotel-campanile-bercy">Campanile Paris 12 – Bercy Village</h3>
+            <p class="tg-hotel-use">Bercy and metro line 14</p>
+            <p>A practical eastern-Paris choice when Bercy Village or access to metro line 14 matters to your stay. Compare the actual dates and room terms rather than assuming a chain hotel is always the cheapest option.</p>
+            <dl class="tg-hotel-facts">
+              <div><dt>Address</dt><dd>17 rue Baron Le Roy, 75012 Paris</dd></div>
+              <div><dt>Transport</dt><dd>Cour Saint-Émilion (metro 14)</dd></div>
+            </dl>
+            <p class="tg-hotel-tradeoff"><strong>Trade-off:</strong> Bercy is farther east than the historic center, so account for metro journeys in a short sightseeing itinerary.</p>
+            <div class="tg-hotel-action">
+              <a class="tg-button tg-button--primary js-aff" data-aff="klook" data-subid="paris_hotel_campanile_bercy" href="https://klook.tpk.ro/vU2HH3fF" rel="nofollow sponsored noopener" target="_blank" aria-label="Check availability on Klook for Campanile Paris 12 – Bercy Village (opens in a new tab)">Check availability on Klook</a>
+              <span>Opens in a new tab</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="hotel-comparison" class="tg-section tg-hotels-section" aria-labelledby="hotel-comparison-title">
+        <div class="tg-guide-heading">
+          <h2 id="hotel-comparison-title">Compare the Paris hotel shortlist</h2>
+          <p>Location and trip fit first, then the room and booking terms.</p>
+        </div>
+        <p id="hotel-table-help" class="tg-hotel-table-help">On a narrow screen, scroll the table sideways. With a keyboard, focus the table region and use the left and right arrow keys.</p>
+        <div class="tg-hotel-table-region" role="region" aria-labelledby="hotel-comparison-title" aria-describedby="hotel-table-help" tabindex="0">
+          <table class="tg-hotel-table tg-hotel-comparison">
+            <caption>Seven Paris hotel options by area, traveler fit, transport and trade-off. Details links stay on this page.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Hotel / area</th>
+                <th scope="col">Suitable traveler</th>
+                <th scope="col">Transport</th>
+                <th scope="col">Main trade-off</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Citadines Les Halles Paris<span class="tg-hotel-table-area">Les Halles · 1st arrondissement</span></th>
+                <td>Central sightseeing and apartment-style stays</td>
+                <td>Châtelet–Les Halles</td>
+                <td>Match the booked apartment to your party size; studio and apartment capacities differ.</td>
+                <td><a href="#hotel-citadines-halles" aria-label="View hotel details for Citadines Les Halles Paris">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Pullman Paris Tour Eiffel<span class="tg-hotel-table-area">Eiffel Tower area · 15th arrondissement</span></th>
+                <td>An Eiffel-area premium stay</td>
+                <td>Bir-Hakeim (metro 6) / Champ de Mars–Tour Eiffel (RER C)</td>
+                <td>A western Paris base is less convenient if most of your plans center on Le Marais or the Latin Quarter.</td>
+                <td><a href="#hotel-pullman-eiffel" aria-label="View hotel details for Pullman Paris Tour Eiffel">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">ibis Paris Tour Eiffel Cambronne 15ème<span class="tg-hotel-table-area">Cambronne · 15th arrondissement</span></th>
+                <td>A practical chain hotel in the 15th</td>
+                <td>Cambronne (metro 6)</td>
+                <td>This is not a historic-core location; check room size and breakfast inclusions before choosing a rate.</td>
+                <td><a href="#hotel-ibis-cambronne" aria-label="View hotel details for ibis Paris Tour Eiffel Cambronne 15ème">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Hôtel Régence Étoile<span class="tg-hotel-table-area">Étoile / Ternes · 17th arrondissement</span></th>
+                <td>Arc de Triomphe and western Paris</td>
+                <td>Charles de Gaulle–Étoile (metro 1, 2, 6 / RER A)</td>
+                <td>Choose it for a western itinerary; a mainly Left Bank trip will involve more cross-city travel.</td>
+                <td><a href="#hotel-regence-etoile" aria-label="View hotel details for Hôtel Régence Étoile">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Hôtel Madrigal<span class="tg-hotel-table-area">Pasteur / Montparnasse edge · 15th arrondissement</span></th>
+                <td>A design-oriented Pasteur base</td>
+                <td>Pasteur (metro 6, 12)</td>
+                <td>It is on the Pasteur side of Montparnasse, not in the central sightseeing core.</td>
+                <td><a href="#hotel-madrigal" aria-label="View hotel details for Hôtel Madrigal">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Hôtel de France Gare de Lyon Bastille<span class="tg-hotel-table-area">Gare de Lyon / Bastille edge · 12th arrondissement</span></th>
+                <td>Rail arrivals and eastern Paris</td>
+                <td>Gare de Lyon (metro 1, 14 / RER A, D)</td>
+                <td>Expect a station-area base rather than a secluded neighborhood stay; review recent room and noise feedback.</td>
+                <td><a href="#hotel-france-gare-lyon" aria-label="View hotel details for Hôtel de France Gare de Lyon Bastille">View hotel details</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Campanile Paris 12 – Bercy Village<span class="tg-hotel-table-area">Bercy Village · 12th arrondissement</span></th>
+                <td>Bercy and metro line 14</td>
+                <td>Cour Saint-Émilion (metro 14)</td>
+                <td>Bercy is farther east than the historic center, so account for metro journeys in a short sightseeing itinerary.</td>
+                <td><a href="#hotel-campanile-bercy" aria-label="View hotel details for Campanile Paris 12 – Bercy Village">View hotel details</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- BOOKING (AFF LINKS) -->
-      <section id="book" class="card pad content" aria-label="Book Paris hotels">
-        <div class="section-title">
+      <section id="book" class="tg-section tg-hotels-section content" aria-label="Book Paris hotels">
+        <div class="section-title tg-guide-heading">
           <h2>Book hotels in Paris</h2>
           <p>Use these shortcuts to compare availability and hotel pricing faster.</p>
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Quick hotel booking shortcuts (affiliate):</b>
-          <div class="mini-grid">
+          <div class="mini-grid tg-guide-links">
             <a class="pill-link js-aff" data-aff="klook" href="https://klook.tpk.ro/cNYZdcZk" rel="sponsored noopener" target="_blank">Compare hotels by Paris area</a>
             <a class="pill-link js-aff" data-aff="klook" href="https://klook.tpk.ro/kdtCrBKA" rel="sponsored noopener" target="_blank">Check Paris hotel availability</a>
           </div>
@@ -735,14 +940,14 @@
           </p>
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Best workflow:</b> choose your neighborhood first, open the hotel search, set your dates, then filter by guest rating, cancellation flexibility, and location before comparing final price.
         </div>
       </section>
 
       <!-- BOOKING RULES -->
-      <section id="rules" class="card pad content" aria-label="Hotel booking rules">
-        <div class="section-title">
+      <section id="rules" class="tg-section tg-hotels-section content" aria-label="Hotel booking rules">
+        <div class="section-title tg-guide-heading">
           <h2>Paris hotel booking rules</h2>
           <p>These rules protect your time, sleep, and budget.</p>
         </div>
@@ -757,18 +962,18 @@
           <li><strong>Don’t chase tiny savings:</strong> saving a little each night is not worth losing an hour of transit every day.</li>
         </ol>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Safest booking approach:</b> pick the right neighborhood first, shortlist 3 hotels, then compare noise, cancellation terms, and total price instead of opening too many tabs.
         </div>
 
-        <div class="callout">
+        <div class="callout tg-callout tg-guide-tip">
           <b>Decision shortcut:</b> once you have 3 solid options in the right area, stop browsing and book the best location-value combination within budget.
         </div>
       </section>
 
       <!-- FAQ -->
-      <section id="faq" class="card pad content" aria-label="FAQ">
-        <div class="section-title">
+      <section id="faq" class="tg-section tg-hotels-section content tg-guide-faq" aria-label="FAQ">
+        <div class="section-title tg-guide-heading">
           <h2>FAQ</h2>
           <p>Quick answers before you book.</p>
         </div>
@@ -821,7 +1026,7 @@
 
       <!-- INTERNAL LINKS -->
       <section class="card pad" aria-label="Keep planning">
-        <div class="section-title">
+        <div class="section-title tg-guide-heading">
           <h2>Keep planning</h2>
           <p>Build a smoother Paris trip: sleep + move + do.</p>
         </div>

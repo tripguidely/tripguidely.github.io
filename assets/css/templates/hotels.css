@@ -1,0 +1,373 @@
+/* Hotel template v1. Opt-in content only; legacy CSS and shared UI stay intact.
+   Load after tokens, foundation and editorial components. No cascade layers. */
+.tg-ui .tg-hotels {
+  padding-block: 0 var(--tg-space-8);
+  overflow-wrap: anywhere;
+}
+
+.tg-ui .tg-hotels :where(p, ul, ol, dl) {
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels :where(p) {
+  max-width: var(--tg-measure);
+  margin-block: 0 var(--tg-space-4);
+}
+
+.tg-ui .tg-hotels :where(a, summary, [tabindex="0"]):focus,
+.tg-ui .tg-hotels :where(a, summary, [tabindex="0"]):focus-visible {
+  outline: var(--tg-focus-width) solid var(--tg-color-focus);
+  outline-offset: var(--tg-focus-offset);
+  border-radius: var(--tg-radius-control);
+}
+
+.tg-ui .tg-hotels :where(a):not(.tg-button) {
+  color: var(--tg-color-action);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tg-ui .tg-hotels :where(a):not(.tg-button):hover {
+  color: var(--tg-color-action-hover);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero {
+  display: grid;
+  align-items: center;
+  gap: var(--tg-space-6);
+  padding-block: var(--tg-space-6);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .hero-bg {
+  position: static;
+  min-width: 0;
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .hero-bg img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: var(--tg-radius-card);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .hero-overlay {
+  display: none;
+}
+
+.tg-ui .tg-hotels .tg-hotels-intro {
+  min-width: 0;
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .kicker {
+  margin-block-end: var(--tg-space-4);
+  color: var(--tg-color-action);
+  font-size: var(--tg-text-small);
+  text-shadow: none;
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero h1 {
+  max-width: 20ch;
+  margin-block: 0 var(--tg-space-5);
+  font-family: var(--tg-font-display);
+  font-size: var(--tg-text-title);
+  font-weight: 400;
+  line-height: var(--tg-leading-heading);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .lede {
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-lead);
+  line-height: var(--tg-leading-body);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tg-space-3);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .mini-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--tg-space-3);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .mini {
+  min-width: 0;
+  padding: var(--tg-space-3);
+  background: var(--tg-color-surface-soft);
+  border: 1px solid var(--tg-color-border);
+  border-radius: var(--tg-radius-control);
+  box-shadow: none;
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .mini :where(b, span) {
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels .tg-hotels-hero .meta {
+  margin-block: var(--tg-space-5) 0;
+  color: var(--tg-color-muted);
+  font-size: var(--tg-text-small);
+}
+
+.tg-ui .tg-hotels .tg-hotels-layout > .breadcrumbs {
+  margin-block: 0 var(--tg-space-5);
+  padding-block: var(--tg-space-4);
+  border-block: 1px solid var(--tg-color-border);
+}
+
+.tg-ui .tg-hotels .tg-hotels-section,
+.tg-ui .tg-hotels .tg-hotels-nav {
+  min-width: 0;
+  padding-block: var(--tg-section-space);
+}
+
+.tg-ui .tg-hotels .section-title {
+  display: block;
+  margin-block-end: var(--tg-space-5);
+}
+
+.tg-ui .tg-hotels .tg-hotels-section.content h3 {
+  margin-block: var(--tg-space-6) var(--tg-space-3);
+  color: var(--tg-color-text);
+  font-size: var(--tg-text-section);
+}
+
+.tg-ui .tg-hotels .callout.tg-callout {
+  margin-block: var(--tg-space-5);
+  border-color: var(--tg-color-border);
+  background: var(--tg-color-surface-soft);
+  box-shadow: none;
+}
+
+.tg-ui .tg-hotels .tg-guide-links > a {
+  white-space: normal;
+  overflow: visible;
+}
+
+.tg-ui .tg-hotels .cards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tg-grid-min)), 1fr));
+  gap: var(--tg-space-4);
+}
+
+.tg-ui .tg-hotels .cat {
+  min-width: 0;
+  padding: var(--tg-space-5);
+  border-color: var(--tg-color-border);
+  border-radius: var(--tg-radius-card);
+  background: var(--tg-color-surface);
+  box-shadow: var(--tg-shadow-card);
+  transform: none;
+  transition: none;
+}
+
+.tg-ui .tg-hotels .cat :where(strong, span),
+.tg-ui .tg-hotels .steps li {
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels .steps li {
+  background: var(--tg-color-surface);
+  border-color: var(--tg-color-border);
+  box-shadow: none;
+}
+
+.tg-ui .tg-hotels .tg-hotel-disclosure,
+.tg-ui .tg-hotels .tg-hotel-table-help {
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-hotels .tg-hotel-method {
+  margin-block: var(--tg-space-5) var(--tg-space-6);
+}
+
+.tg-ui .tg-hotels .tg-hotel-method > :last-child {
+  margin-block-end: 0;
+}
+
+.tg-ui .tg-hotels .tg-hotel-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tg-space-4);
+}
+
+.tg-ui .tg-hotels .tg-hotel-card > :where(p, h3, dl) {
+  margin: 0;
+}
+
+.tg-ui .tg-hotels .tg-hotel-card h3 {
+  color: var(--tg-color-text);
+  font-family: var(--tg-font-display);
+  font-size: var(--tg-text-section);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.tg-ui .tg-hotels .tg-hotel-area {
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-action);
+  font-weight: 650;
+}
+
+.tg-ui .tg-hotels .tg-hotel-use {
+  font-weight: 650;
+}
+
+.tg-ui .tg-hotels .tg-hotel-facts {
+  display: grid;
+  gap: var(--tg-space-3);
+  font-size: var(--tg-text-small);
+}
+
+.tg-ui .tg-hotels .tg-hotel-facts dt {
+  color: var(--tg-color-muted);
+  font-weight: 650;
+}
+
+.tg-ui .tg-hotels .tg-hotel-facts dd {
+  margin: 0;
+}
+
+.tg-ui .tg-hotels .tg-hotel-tradeoff {
+  padding-block-start: var(--tg-space-4);
+  border-block-start: 1px solid var(--tg-color-border);
+  font-size: var(--tg-text-small);
+}
+
+.tg-ui .tg-hotels .tg-hotel-action {
+  display: grid;
+  gap: var(--tg-space-2);
+  margin-block-start: auto;
+  padding-block-start: var(--tg-space-2);
+}
+
+.tg-ui .tg-hotels .tg-hotel-action > span {
+  font-size: var(--tg-text-small);
+  color: var(--tg-color-muted);
+}
+
+/* Restore native table layout locally: the legacy mobile rules hide the header
+   and force flex cells, while a later rule forces 980px inside a clipped region. */
+.tg-ui .tg-hotels .tg-hotel-table-region {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  border: 1px solid var(--tg-color-border-strong);
+  border-radius: var(--tg-radius-control);
+  background: var(--tg-color-surface);
+  box-shadow: none;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table-region .tg-hotel-table {
+  display: table;
+  width: 100%;
+  min-width: 48rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--tg-text-small);
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table caption {
+  padding: var(--tg-space-4);
+  text-align: left;
+  color: var(--tg-color-muted);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table thead {
+  display: table-header-group;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table tbody {
+  display: table-row-group;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table tr {
+  display: table-row;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table :where(th, td) {
+  display: table-cell;
+  padding: var(--tg-space-4);
+  border-block-end: 1px solid var(--tg-color-border);
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table tbody td::before {
+  content: none;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table thead th {
+  position: static;
+  background: var(--tg-color-surface-soft);
+  color: var(--tg-color-text);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table tbody :where(td, th) {
+  min-width: 9rem;
+}
+
+.tg-ui .tg-hotels .tg-hotel-table .t-badge {
+  white-space: normal;
+  line-height: var(--tg-leading-ui);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tg-touch-target);
+}
+
+.tg-ui .tg-hotels .tg-hotel-table-area {
+  display: block;
+  margin-block-start: var(--tg-space-2);
+  color: var(--tg-color-muted);
+  font-weight: 400;
+}
+
+@media (min-width: 64rem) {
+  .tg-ui .tg-hotels .tg-hotels-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--tg-space-7);
+    padding-block: var(--tg-space-7);
+  }
+
+  .tg-ui .tg-hotels .tg-hotels-hero .hero-bg {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tg-ui .tg-hotels .tg-hotels-intro {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-ui .tg-hotels :where(.pill-link, .btn, .cat) {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .tg-ui .tg-hotels :where(a, summary, [tabindex="0"]):focus,
+  .tg-ui .tg-hotels :where(a, summary, [tabindex="0"]):focus-visible {
+    outline-color: Highlight;
+  }
+
+  .tg-ui .tg-hotels .tg-hotel-table-region {
+    border-color: CanvasText;
+  }
+}
