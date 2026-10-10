@@ -1,0 +1,2 @@
+# Isolated local tooling only; no production runtime dependency.
+Pillow==12.3.0
