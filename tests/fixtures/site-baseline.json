@@ -1,6 +1,26 @@
 {
   "authorizations": [
     {
+      "kind": "integration_script",
+      "source": "assets/js/site.js",
+      "before": "488694878a660cf36d261d2516d9456c4fa6fcf3f1992a22a675cbd83a3ad23c",
+      "after": "0a6606ea0bb3f317106ba4baaf09786e1d855178ebabfa9d858cbb488047629f",
+      "base_revision": "f997bd3de726319648cae10b6b195446e21dae26",
+      "reason": "Explicit owner request: prepare Paris family hotel affiliate_click metadata (hotel_id, placement, experiment_variant, page_path), preserving consent, URLs, SubIDs and other page behavior.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "affiliate_anchor",
+      "source": "hotels/paris/family-hotels/index.html",
+      "before": "7559535cc63130085efbc187235da7810add698385322d86fad0ca385b563284",
+      "after": "316f533ff72bbe20220cb88f7b75b2a12a2d5200f8788ee18191010c816fdb4b",
+      "base_revision": "f997bd3de726319648cae10b6b195446e21dae26",
+      "reason": "Explicit owner request: prepare Paris family hotel affiliate_click metadata (hotel_id, placement, experiment_variant, page_path), preserving consent, URLs, SubIDs and other page behavior.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
       "kind": "affiliate_anchor",
       "source": "things-to-do/london/harry-potter/index.html",
       "before": "8d36ca51df14d9c4b52956555b2012ec8f5c4aeea9a416f15a9c3c19ccbd4d91",
