@@ -1,6 +1,36 @@
 {
   "authorizations": [
     {
+      "kind": "new_integration_markup",
+      "source": "hotels/paris/family-hotels/index.html",
+      "before": null,
+      "after": "2dff8aa791c439ebfb4c21e79c85d269ca9e8922556c13e473c65b7ec283f333",
+      "base_revision": "0357558b6fc6a2268a5eaf4c2e95c4ea0d0a6850",
+      "reason": "Explicit owner request: local lazy-loaded Leaflet map on Paris Family Hotels only; existing list anchors, shared consent/tracking and SEO metadata preserved.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/vendor/leaflet-1.9.4/leaflet.js",
+      "before": null,
+      "after": "85d455b4522415f6badc42a0e7d17c919d100347d6b8958bd0dc738fdecd6d50",
+      "base_revision": "0357558b6fc6a2268a5eaf4c2e95c4ea0d0a6850",
+      "reason": "Explicit owner request: local lazy-loaded Leaflet map on Paris Family Hotels only; existing list anchors, shared consent/tracking and SEO metadata preserved.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/paris-family-hotel-map.js",
+      "before": null,
+      "after": "344f39684afd67a6b6bcc5acb511113b3c23d4927f175bb75c037938468dae76",
+      "base_revision": "0357558b6fc6a2268a5eaf4c2e95c4ea0d0a6850",
+      "reason": "Explicit owner request: local lazy-loaded Leaflet map on Paris Family Hotels only; existing list anchors, shared consent/tracking and SEO metadata preserved.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
       "kind": "integration_script",
       "source": "assets/js/site.js",
       "before": "488694878a660cf36d261d2516d9456c4fa6fcf3f1992a22a675cbd83a3ad23c",
