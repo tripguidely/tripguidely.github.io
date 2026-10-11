@@ -655,12 +655,24 @@
         } catch (_) {}
       }
 
-      gtagEvent("affiliate_click", {
+      var params = {
         affiliate_program: program,
         page_type: pageType,
         destination: url,
         transport_type: "beacon"
-      });
+      };
+
+      // Opt-in hotel metadata: retain the existing payload on other links.
+      var hotelId = getAttr(a, "data-hotel-id");
+      var placement = getAttr(a, "data-placement");
+      if (hotelId && (placement === "list" || placement === "map")) {
+        params.hotel_id = hotelId;
+        params.placement = placement;
+        params.experiment_variant = getAttr(a, "data-experiment-variant") || "baseline";
+        params.page_path = WIN.location.pathname || "";
+      }
+
+      gtagEvent("affiliate_click", params);
     });
   }
 
