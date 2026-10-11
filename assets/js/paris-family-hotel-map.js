@@ -1,11 +1,10 @@
-/* Paris family hotel map. Leaflet and OSM tiles load only on explicit activation.
+/* Paris family hotel map. Open by default; Leaflet/OSM load near the viewport.
    Coordinates and upstream evidence: docs/paris-family-hotel-map.md. */
 (function () {
   "use strict";
   var section = document.getElementById("hotel-map");
   if (!section || section.getAttribute("data-map-bound")) return;
   section.setAttribute("data-map-bound", "1");
-  var trigger = document.getElementById("hotel-map-toggle");
   var view = document.getElementById("hotel-map-view");
   var canvas = document.getElementById("hotel-map-canvas");
   var status = document.getElementById("hotel-map-status");
@@ -29,7 +28,7 @@
   });
   // The existing HTML list is always the booking fallback.
   if (hotels.length !== 4) return;
-  trigger.hidden = false;
+  view.hidden = false;
 
   function select(index, focus) {
     selected = index;
@@ -59,7 +58,7 @@
     card.appendChild(booking);
     var note = document.createElement("p");
     note.className = "tg-hotel-map__note";
-    note.textContent = "Affiliate link · Opens in a new tab";
+    note.textContent = "Affiliate link";
     card.appendChild(note);
     choices.forEach(function (choice, i) { choice.setAttribute("aria-pressed", i === index ? "true" : "false"); });
     markers.forEach(function (marker, i) {
@@ -132,34 +131,22 @@
     canvas.setAttribute("data-map-ready", "1");
     status.textContent = "Loading the street map. Hotel details and booking links are ready below.";
     tileTimer = window.setTimeout(function () { if (!tileLoaded) tileFallback(); }, 10000);
-    trigger.textContent = "Hide hotel map";
   }
 
-  trigger.addEventListener("click", function () {
-    if (loading) return;
-    if (map) {
-      view.hidden = !view.hidden;
-      trigger.setAttribute("aria-expanded", view.hidden ? "false" : "true");
-      trigger.textContent = view.hidden ? "Show hotel map" : "Hide hotel map";
-      if (!view.hidden) map.invalidateSize({animate: false});
-      return;
-    }
-    view.hidden = false;
-    trigger.setAttribute("aria-expanded", "true");
-    if (!choices.length) {
-      hotels.forEach(function (hotel, index) {
-        var choice = document.createElement("button");
-        choice.type = "button";
-        choice.textContent = (index + 1) + ". " + hotel.name;
-        choice.setAttribute("aria-controls", "hotel-map-card");
-        choice.addEventListener("click", function () { select(index, true); });
-        choices.push(choice); chooser.appendChild(choice);
-      });
-    }
-    select(0, false);
+  hotels.forEach(function (hotel, index) {
+    var choice = document.createElement("button");
+    choice.type = "button";
+    choice.textContent = (index + 1) + ". " + hotel.name;
+    choice.setAttribute("aria-controls", "hotel-map-card");
+    choice.addEventListener("click", function () { select(index, true); });
+    choices.push(choice); chooser.appendChild(choice);
+  });
+  select(0, false);
+  status.textContent = "The street map loads as you scroll closer. Hotel details and booking links are available below.";
+
+  function loadMap() {
+    if (loading || map) return;
     loading = true;
-    trigger.disabled = true;
-    trigger.textContent = "Loading hotel map…";
     status.textContent = "Loading the map. You can already choose a hotel and check availability.";
     Promise.all([
       loadAsset("link", "/assets/vendor/leaflet-1.9.4/leaflet.css"),
@@ -168,16 +155,30 @@
       if (window.console) window.console.warn("Hotel map unavailable:", error.message);
       if (map) { map.remove(); map = null; markers = []; }
       status.textContent = "The map could not load. Choose a hotel below to see its details and check availability, or use the full hotel list.";
-      trigger.textContent = "Retry hotel map";
       section.setAttribute("data-tile-state", "unavailable");
-    }).then(function () { loading = false; trigger.disabled = false; });
-  });
-  section.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && !view.hidden && !loading) {
-      view.hidden = true;
-      trigger.setAttribute("aria-expanded", "false");
-      trigger.textContent = "Show hotel map";
-      trigger.focus();
+    }).then(function () { loading = false; });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        observer.disconnect();
+        loadMap();
+      }
+    }, {rootMargin: "250px 0px"});
+    observer.observe(section);
+  } else {
+    // Older browsers still defer network activity until the section is nearby.
+    function loadWhenNear() {
+      var bounds = section.getBoundingClientRect();
+      if (bounds.top < window.innerHeight + 250 && bounds.bottom > -250) {
+        window.removeEventListener("scroll", loadWhenNear);
+        window.removeEventListener("resize", loadWhenNear);
+        loadMap();
+      }
     }
-  });
+    window.addEventListener("scroll", loadWhenNear, {passive: true});
+    window.addEventListener("resize", loadWhenNear);
+    loadWhenNear();
+  }
 })();

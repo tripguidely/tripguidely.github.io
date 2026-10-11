@@ -46,6 +46,7 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
         window.gtag = function () { window.trackingCalls.push(Array.from(arguments)); };
         document.addEventListener('click',event => { if (event.target.closest('a.js-aff')) event.preventDefault(); },true);
       }, options.consent === undefined ? 'granted' : options.consent);
+      if(options.noObserver) await context.addInitScript(() => { delete window.IntersectionObserver; });
       const page = await context.newPage(); page.on('pageerror',error => errors.push(error.message));
       page.on('console', message => { if(message.type()==='warning') console.error(message.text()); });
       await page.goto(origin+(options.path || routePath));
@@ -54,7 +55,7 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
     }
     async function events(page) { return page.evaluate(() => trackingCalls.filter(c => c[0]==='event' && c[1]==='affiliate_click').map(c=>c[2])); }
     async function activate(page) {
-      await page.getByRole('button',{name:'Show hotel map',exact:true}).click();
+      await page.locator('#hotel-map').scrollIntoViewIfNeeded();
       try { await page.locator('#hotel-map-canvas[data-map-ready="1"]').waitFor({timeout:15000}); }
       catch (error) {
         console.error(await page.locator('#hotel-map').evaluate(el=>({status:el.querySelector('[role="status"]').textContent, html:el.outerHTML.slice(-1800), L:typeof window.L})));
@@ -65,6 +66,12 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
       const {context,page,requests,errors} = await open({consent});
       try {
         const originals = await page.locator('#hotel-options a.js-aff').evaluateAll(links=>links.map(a=>a.outerHTML));
+        assert.equal(await page.locator('#hotel-options > .tg-hotel-grid > article').count(),4); checks++;
+        assert.equal(await page.locator('#hotel-map-view').isVisible(),true); checks++;
+        assert.equal(await page.locator('#hotel-map-choices button').count(),4); checks++;
+        assert.equal(await page.locator('#hotel-map-toggle').count(),0); checks++;
+        assert.equal(await page.locator('#hotel-options').evaluate(el=>el.innerText.includes('Opens in a new tab')),false); checks++;
+        assert.equal(await page.locator('#hotel-options a[href^="https://www."]').count(),0); checks++;
         assert.equal(requests.filter(url=>url.includes('/leaflet-1.9.4/') || url.includes('tile.openstreetmap.org')).length,0); checks++;
         await activate(page);
         assert.equal(await page.locator('.tg-hotel-map__pin').count(),4); checks++;
@@ -82,6 +89,8 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
           assert.equal(await page.locator('#hotel-map-card-title').textContent(),expected.name); checks++;
           assert.equal(await pin.getAttribute('aria-pressed'),'true'); checks++;
           const booking=page.locator('#hotel-map-card a.js-aff');
+          assert.match(await booking.getAttribute('aria-label'), /opens in a new tab/i); checks++;
+          assert.equal(await page.locator('#hotel-map-card').evaluate(el=>el.innerText.includes('Opens in a new tab')),false); checks++;
           assert.deepEqual(await booking.evaluate(a=>({id:a.dataset.hotelId,subid:a.dataset.subid,href:a.getAttribute('href'),placement:a.dataset.placement,variant:a.dataset.experimentVariant,rel:a.getAttribute('rel'),target:a.getAttribute('target')})),
             {id:expected.id,subid:expected.subid,href:expected.href,placement:'map',variant:'with_map',rel:'nofollow sponsored noopener',target:'_blank'}); checks++;
           await booking.click();
@@ -101,8 +110,8 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
         }
         await page.locator('#hotel-map-choices button').last().focus();
         await page.keyboard.press('Escape');
-        assert.equal(await page.locator('#hotel-map-view').isVisible(),false); checks++;
-        assert.equal(await page.locator('#hotel-map-toggle').evaluate(b=>b===document.activeElement),true); checks++;
+        assert.equal(await page.locator('#hotel-map-view').isVisible(),true); checks++;
+        assert.equal(await page.locator('#hotel-map-toggle').count(),0); checks++;
         await activate(page);
         assert.equal(requests.filter(url=>url.endsWith('/leaflet.js')).length,1); checks++;
         assert.equal(await page.locator('.tg-hotel-map__pin').count(),4); checks++;
@@ -115,7 +124,7 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
       try {
         await activate(page);
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true); checks++;
-        const targets=await page.locator('.tg-hotel-map__pin, #hotel-map-toggle, #hotel-map-choices button').evaluateAll(nodes=>nodes.map(n=>({w:n.getBoundingClientRect().width,h:n.getBoundingClientRect().height})));
+        const targets=await page.locator('.tg-hotel-map__pin, #hotel-map-choices button').evaluateAll(nodes=>nodes.map(n=>({w:n.getBoundingClientRect().width,h:n.getBoundingClientRect().height})));
         assert(targets.every(r=>r.w>=44 && r.h>=44)); checks++;
         await page.locator('#hotel-map-choices button').nth(2).click();
         assert.equal(await page.locator('#hotel-map-card a.js-aff').isVisible(),true); checks++;
@@ -128,7 +137,7 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
     for(const failure of ['tiles','library']) {
       const {context,page,errors}=await open({width:390,mobile:true,tiles:failure==='tiles'?'fail':'fake',libraryFail:failure==='library'});
       try {
-        await page.getByRole('button',{name:'Show hotel map',exact:true}).click();
+        await page.locator('#hotel-map').scrollIntoViewIfNeeded();
         await page.waitForFunction(()=>document.getElementById('hotel-map').dataset.tileState==='unavailable');
         await page.locator('#hotel-map-choices button').nth(3).click();
         await page.locator('#hotel-map-card a.js-aff').click();
@@ -140,9 +149,27 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
         report.scenarios.push('failure '+failure);
       }finally{await context.close();}
     }
+
+    for(const noObserver of [false,true]) {
+    const deferred=await open({noObserver});
+    try {
+      assert.equal(deferred.requests.filter(url=>url.includes('/leaflet-1.9.4/') || url.includes('tile.openstreetmap.org')).length,0);checks++;
+      // The section is still below the screen, but within the 250px loading margin.
+      await deferred.page.evaluate(()=>{
+        const top=document.getElementById('hotel-map').getBoundingClientRect().top+scrollY;
+        window.scrollTo({top:top-innerHeight-200,behavior:'instant'});
+      });
+      await deferred.page.locator('#hotel-map-canvas[data-map-ready="1"]').waitFor();
+      const near=await deferred.page.locator('#hotel-map').evaluate(el=>({top:el.getBoundingClientRect().top,h:innerHeight}));
+      assert(near.top>near.h && near.top<near.h+250);checks++;
+      assert.equal(deferred.requests.filter(url=>url.endsWith('/leaflet.js')).length,1);checks++;
+      assert.deepEqual(await events(deferred.page),[]);checks++;
+      report.scenarios.push(noObserver ? 'viewport loading without IntersectionObserver' : 'automatic loading before viewport entry');
+    }finally{await deferred.context.close();}
+    }
     const nojs=await open({js:false,width:390});
     try{
-      assert.equal(await nojs.page.locator('#hotel-map-toggle').isVisible(),false);checks++;
+      assert.equal(await nojs.page.locator('#hotel-map-toggle').count(),0);checks++;
       assert.equal(await nojs.page.locator('#hotel-options a.js-aff').count(),4);checks++;
       assert.equal(nojs.requests.filter(url=>url.includes('/leaflet-1.9.4/') || url.includes('tile.openstreetmap.org')).length,0);checks++;
     }finally{await nojs.context.close();}

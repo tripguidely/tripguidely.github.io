@@ -1,6 +1,16 @@
 {
   "authorizations": [
     {
+      "kind": "integration_script",
+      "source": "assets/js/paris-family-hotel-map.js",
+      "before": "344f39684afd67a6b6bcc5acb511113b3c23d4927f175bb75c037938468dae76",
+      "after": "23cb8223de0b286178d49d8c4f89210c340095533d9f8cb42663ae84d526ed6c",
+      "base_revision": "a9d402eac2169f3354431ccccf28dc8024a4c52c",
+      "reason": "Explicit owner request: remove visible new-tab note and open the Paris family map by default with viewport-deferred loading. Hotel coordinates, original affiliate anchors and shared consent/tracking remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
       "kind": "new_integration_markup",
       "source": "hotels/paris/family-hotels/index.html",
       "before": null,
