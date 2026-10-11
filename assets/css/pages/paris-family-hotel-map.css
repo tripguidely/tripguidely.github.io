@@ -1,0 +1,66 @@
+/* Page-only map styles. Leaflet itself is loaded only after activation. */
+.tg-ui .tg-hotels .tg-hotel-map [hidden] { display: none !important; }
+.tg-ui .tg-hotels .tg-hotel-map {
+  border: 1px solid var(--tg-color-border, #dbe6e6);
+  border-radius: var(--tg-radius-card, 16px);
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--tg-color-surface, #fff);
+}
+.tg-ui .tg-hotels .tg-hotel-map__intro { color: var(--tg-color-muted, #48616a); }
+.tg-ui .tg-hotels .tg-hotel-map__toggle,
+.tg-ui .tg-hotels .tg-hotel-map__choices button {
+  min-height: 44px;
+  cursor: pointer;
+  font: inherit;
+  border: 1px solid #b8ccce;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #123b45;
+  background: #f1f8f7;
+}
+.tg-ui .tg-hotels .tg-hotel-map__toggle { background: #123f46; color: #fff; border-color: #123f46; }
+.tg-ui .tg-hotels .tg-hotel-map__toggle:disabled { cursor: wait; opacity: .75; }
+.tg-ui .tg-hotels .tg-hotel-map__status { margin-block: 16px; font-size: .9375rem; }
+.tg-ui .tg-hotels .tg-hotel-map__layout { display: grid; gap: 20px; min-width: 0; }
+.tg-ui .tg-hotels .tg-hotel-map__canvas {
+  height: 380px;
+  min-width: 0;
+  border-radius: 12px;
+  background: #e9efed;
+  border: 1px solid #c5d4d1;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+.tg-ui .tg-hotels .tg-hotel-map__canvas .leaflet-tile { max-width: none; max-height: none; border-radius: 0; }
+.tg-ui .tg-hotels .tg-hotel-map__pin {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #124b55;
+  color: #fff;
+  box-shadow: 0 2px 6px #173d4555;
+  font: 700 17px/1 system-ui, sans-serif;
+}
+.tg-ui .tg-hotels .tg-hotel-map__pin.is-selected { background: #813800; }
+.tg-ui .tg-hotels .tg-hotel-map__card { min-width: 0; padding: 20px; border: 1px solid #d5e2df; border-radius: 12px; background: #f8fbfa; }
+.tg-ui .tg-hotels .tg-hotel-map__card h3 { margin-top: 0; font-size: 1.5rem; }
+.tg-ui .tg-hotels .tg-hotel-map__eyebrow { font: 700 .75rem/1.5 system-ui, sans-serif; letter-spacing: .1em; color: #496b70; }
+.tg-ui .tg-hotels .tg-hotel-map__details { display: block; margin-block: 16px; }
+.tg-ui .tg-hotels .tg-hotel-map__card .tg-button { width: 100%; text-align: center; }
+.tg-ui .tg-hotels .tg-hotel-map__note { margin-block: 10px 0; font-size: .8125rem; color: #52676a; }
+.tg-ui .tg-hotels .tg-hotel-map__choices { display: grid; gap: 8px; margin-block: 20px 0; }
+.tg-ui .tg-hotels .tg-hotel-map__choices button { text-align: left; }
+.tg-ui .tg-hotels .tg-hotel-map__choices [aria-pressed="true"] { border-color: #124b55; background: #dcefed; font-weight: 700; }
+.tg-ui .tg-hotels .tg-hotel-map :where(button, [tabindex]):focus-visible { outline: 3px solid #087785; outline-offset: 3px; }
+.tg-ui .tg-hotels .tg-hotel-map__canvas .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; }
+.tg-ui .tg-hotels .tg-hotel-map__canvas .leaflet-control-attribution { max-width: calc(100% - 12px); font-size: 11px; white-space: normal; }
+@media (min-width: 1000px) {
+  .tg-ui .tg-hotels .tg-hotel-map__layout { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+  .tg-ui .tg-hotels .tg-hotel-map__canvas { height: 470px; }
+  .tg-ui .tg-hotels .tg-hotel-map__choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .tg-ui .tg-hotels .tg-hotel-map__canvas { height: 320px; }
+  .tg-ui .tg-hotels .tg-hotel-map__card { padding: 16px; }
+}

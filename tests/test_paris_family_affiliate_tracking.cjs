@@ -19,7 +19,12 @@ const mime = {'.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css'
 const source = fs.readFileSync(path.join(root, 'assets/js/site.js'), 'utf8');
 const html = fs.readFileSync(path.join(root, pagePath), 'utf8');
 const original = execFileSync('git', ['show', (process.argv[4] || 'origin/main') + ':' + pagePath], {cwd: root, encoding: 'utf8'});
-const withoutTracking = value => value.replace(/ data-hotel-id="[^"]+" data-placement="list" data-experiment-variant="baseline"/g, '').replace(/\r\n/g, '\n');
+const withoutTracking = value => value.replace(/ data-hotel-id="[^"]+" data-placement="list" data-experiment-variant="baseline"/g, '')
+  // The separately tested map is additive; original article and SEO stay exact.
+  .replace(/<section id="hotel-map"[\s\S]*?<\/section>\r?\n/, '')
+  .replace(/  <link rel="stylesheet" href="\/assets\/css\/pages\/paris-family-hotel-map.css" \/>\r?\n/, '')
+  .replace(/<script src="\/assets\/js\/paris-family-hotel-map.js" defer><\/script>\r?\n/, '')
+  .replace(/\r\n/g, '\n');
 assert.equal(withoutTracking(html), withoutTracking(original),
   'Only the four tracking attribute groups may change in the HTML, including its SEO metadata');
 
