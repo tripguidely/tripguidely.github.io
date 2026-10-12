@@ -1,8 +1,9 @@
 # Paris family hotel map — local review
 
-Base: `0357558b6fc6a2268a5eaf4c2e95c4ea0d0a6850` (origin/main, PR #30 merged).
-Review date: 2026-10-11, America/Toronto. Owner-approved for commit, push and a
-pull request against main after final review. Merging remains outside authorization.
+Correction base: `a9d402eac2169f3354431ccccf28dc8024a4c52c` (origin/main, PR #31 merged).
+Review date: 2026-10-11, America/Toronto. The owner approved the three prepared
+corrections for commit, push and a PR against main after final review.
+Merging and deployment remain outside authorization.
 
 ## Coordinate evidence
 
@@ -20,6 +21,7 @@ from IGN GeoJSON is reordered to Leaflet's latitude/longitude.
 Sources:
 - https://www.discoverasr.com/en/citadines/france/citadines-les-halles-paris
 - https://www.pullmanparismontparnasse.com/faq/
+- https://www.pullmanparismontparnasse.com/fr/chambres-suites/chambres-deluxe-famille-amis/
 - https://www.hotelregenceetoile.com/en/
 - https://www.hotel-bb.com/en/hotel/paris-17-batignolles
 - https://data.geopf.fr/geocodage/search?q=24+avenue+Carnot+75017+Paris&limit=1
@@ -28,14 +30,16 @@ Sources:
 
 ## Loading, accessibility and booking
 
-Only this page loads the small bootstrap and scoped stylesheet. Leaflet JS/CSS
-and OSM tiles load only after the native Show hotel map button is activated.
+Only this page loads the small bootstrap and scoped stylesheet. The map region,
+hotel selector and first card are open automatically. Leaflet JS/CSS and OSM
+tiles load when the section approaches within 250px of the viewport, using
+IntersectionObserver with a scroll/resize fallback for older browsers.
 Four fixed positions: no runtime geocoder, location permission, routing API,
-API key, provider account or billing. Hide/reopen reuses the same map.
+API key, provider account or billing. There is no activation button.
 
 Numbered 44px keyboard-focusable pins select a semantic HTML hotel card outside
 Leaflet's event container. A four-button selector provides the same operation
-without tiles. Enter/Space select; Escape hides the map and restores focus.
+without tiles. Enter/Space select; the region remains open.
 The map does not capture wheel scrolling; touch users retain one-finger page
 scrolling. Reduced-motion preferences disable map animations.
 
@@ -49,7 +53,7 @@ map CTA; this implementation does not assign a randomized A/B cohort.
 
 Tiles failing or timing out display a status message while markers, selectors,
 hotel facts and native affiliate links remain functional. Library loading
-failure retains the selector/cards and offers a retry. Without JavaScript,
+failure retains the selector/cards. Without JavaScript,
 the original hotel list and its booking links remain available.
 
 ## Leaflet and OpenStreetMap
@@ -70,27 +74,39 @@ No prefetch/offline download, caching proxy or tile archive is implemented.
 Normal viewport requests only, no retina multiplication, no offscreen tile
 buffer, bounded zoom. OSM has no guaranteed quota or SLA and can restrict use;
 disable the component or change provider configuration if traffic warrants it.
-The UI informs users of the third-party tile connection before activation.
+The UI informs users of the third-party tile connection before the deferred load.
+
+## Three requested corrections
+
+The four original hotel cards, facts, native Klook anchors, URLs, SubIDs, target,
+rel and accessible names are preserved. The four public official-source anchors
+become plain source text; the exact URLs and category evidence remain in this
+internal document and the original hotel research documents. Visible new-tab
+notes are removed from the list and map, while each booking link's aria-label
+continues to announce the new tab. No metadata, JSON-LD, heading, itinerary,
+shared tracking, consent, coordinates, Leaflet license or attribution is changed.
 
 ## Validation
 
 Run the inherited 57 auditor self-tests and full audit against the pinned base.
-New integration authorizations must be exact-hash, limited to the page bootstrap
-script tag and the two new JS files. No existing exceptions, contracts, shared
-scripts, original affiliate opening tags or other pages are to be changed.
+The correction needs one exact-hash authorization for the existing map script.
+No existing exceptions, contracts, shared scripts, original affiliate opening
+tags, prior authorizations or other pages are to be changed.
 
 The existing affiliate test still checks all original page content/SEO after
-removing only the additive map section and its two resource tags. New map
+normalizing only the map section/resource tags, the four approved source-anchor
+removals and the four removed visible new-tab notes. Map
 integration tests cover lazy loading, numbered pins, desktop/mobile, native
 booking markup, consent and event counts, tile/library failure, keyboard use,
-hide/reopen, no-JS fallback and scoped loading. All partner and GA requests are
+automatic viewport loading (including without IntersectionObserver), no-JS
+fallback and scoped loading. All partner and GA requests are
 blocked during QA; live partner attribution and live GA4 delivery are not proven.
 
 Browser artifacts are outside the worktree in the temporary map QA directory.
 Real OSM tiles are viewed only for the requested desktop/mobile screenshots;
 repeat regression tests use intercepted tile responses rather than OSM traffic.
 
-### Results
+### Initial map implementation results (before these corrections)
 
 - Map browser QA: 131 assertions passed, including keyboard Enter/Space,
   Escape/focus return, 320/390/768/1440px and doubled root text, all four map
@@ -117,5 +133,28 @@ QA reports and screenshots:
 Local verdict: GO. Final source review reconfirmed the four positions, all eight
 vendored distribution files against the official archive, the unchanged BSD
 license, all four original affiliate anchors and visible linked OSM attribution.
-The owner subsequently authorized commit, push and a PR. No merge or deployment
-is authorized; stop for human validation after GitHub Actions.
+The initial implementation was subsequently merged as PR #31. These current
+corrections were initially prepared locally for human validation; the owner
+subsequently approved a commit, push and PR, with no merge or deployment.
+
+### Current correction results
+
+- 179 map assertions passed, including automatic open, zero library/tile
+  requests before approach, loading within the 250px margin, legacy-browser
+  fallback without IntersectionObserver, four pins/cards, mobile/keyboard,
+  new-tab accessible names, no visible new-tab notes, and network/no-JS fallbacks.
+- 43 affiliate assertions passed; URLs, SubIDs, target, rel, event payloads,
+  consent gating and single-event counts remain unchanged.
+- Auditor self-tests: 57/57 passed. Full SEO/site audit: PASS, zero regressions;
+  all 965 historical findings unchanged. One exact-hash map-script authorization
+  was added; previous records and every exception remain unchanged.
+- Exact HTML comparison allows only the four official anchor-to-text changes,
+  removal of the four visible list notes and removal of the activation button.
+  Original metadata, all other article copy and affiliate opening tags match base.
+- Shared site.js, the four positions, vendor assets, license, attribution,
+  CSS and Disney files/HEAD are unchanged. Nothing was staged or committed at
+  completion of the initial correction review.
+
+QA records: `C:/Users/1995/AppData/Local/Temp/tripguidely-paris-family-default-qa`.
+Final instruction: create the approved PR, wait for GitHub Actions, then stop for
+human validation. Do not merge or deploy.

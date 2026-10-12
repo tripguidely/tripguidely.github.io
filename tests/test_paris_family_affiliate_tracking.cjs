@@ -24,6 +24,11 @@ const withoutTracking = value => value.replace(/ data-hotel-id="[^"]+" data-plac
   .replace(/<section id="hotel-map"[\s\S]*?<\/section>\r?\n/, '')
   .replace(/  <link rel="stylesheet" href="\/assets\/css\/pages\/paris-family-hotel-map.css" \/>\r?\n/, '')
   .replace(/<script src="\/assets\/js\/paris-family-hotel-map.js" defer><\/script>\r?\n/, '')
+  .replaceAll("<a href=\"https://www.discoverasr.com/en/citadines/france/citadines-les-halles-paris\">official property information</a>", "official property information")
+  .replaceAll("<a href=\"https://www.pullmanparismontparnasse.com/fr/chambres-suites/chambres-deluxe-famille-amis/\">official property information</a>", "official property information")
+  .replaceAll("<a href=\"https://www.hotelregenceetoile.com/en/\">official property information</a>", "official property information")
+  .replaceAll("<a href=\"https://www.hotel-bb.com/en/hotel/paris-17-batignolles\">official property information</a>", "official property information")
+  .replaceAll("<span>Opens in a new tab</span>", "")
   .replace(/\r\n/g, '\n');
 assert.equal(withoutTracking(html), withoutTracking(original),
   'Only the four tracking attribute groups may change in the HTML, including its SEO metadata');
@@ -66,7 +71,7 @@ assert.equal(withoutTracking(html), withoutTracking(original),
     for (const consent of [null, 'denied', 'granted']) {
       const {context, page, errors} = await open(consent);
       try {
-        const links = page.locator('a.js-aff');
+        const links = page.locator('#hotel-options a.js-aff');
         assert.equal(await links.count(), 4); checks++;
         for (let i = 0; i < hotels.length; i++) {
           const [id, subid, url] = hotels[i];
