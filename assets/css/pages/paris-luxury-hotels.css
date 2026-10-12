@@ -1,0 +1,162 @@
+/* Paris luxury page only. Leaflet remains deferred until near the viewport. */
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map [hidden] { display: none !important; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map {
+  border: 1px solid var(--tg-color-border, #dbe6e6);
+  border-radius: var(--tg-radius-card, 16px);
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--tg-color-surface, #fff);
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__intro { color: var(--tg-color-muted, #48616a); }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__toggle,
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices button {
+  min-height: 44px;
+  cursor: pointer;
+  font: inherit;
+  border: 1px solid #b8ccce;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #462934;
+  background: #faf6f0;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__toggle { background: #593541; color: #fff; border-color: #593541; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__toggle:disabled { cursor: wait; opacity: .75; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__status { margin-block: 16px; font-size: .9375rem; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__layout { display: grid; gap: 20px; min-width: 0; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas {
+  height: 380px;
+  min-width: 0;
+  border-radius: 12px;
+  background: #efebe5;
+  border: 1px solid #c5d4d1;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas .leaflet-tile { max-width: none; max-height: none; border-radius: 0; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__pin {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #593541;
+  color: #fff;
+  box-shadow: 0 2px 6px #173d4555;
+  font: 700 17px/1 system-ui, sans-serif;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__pin.is-selected { background: #754535; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card { min-width: 0; padding: 20px; border: 1px solid #d5e2df; border-radius: 12px; background: #fcfaf6; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card h3 { margin-top: 0; font-size: 1.5rem; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__eyebrow { font: 700 .75rem/1.5 system-ui, sans-serif; letter-spacing: .1em; color: #496b70; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details { display: block; margin-block: 16px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details summary {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #b8ccce;
+  border-radius: 8px;
+  color: #462934;
+  background: #f5eee4;
+  cursor: pointer;
+  font-weight: 650;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details > p { margin-block: 16px 0; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__action {
+  padding-block: 12px 4px;
+  background: #fcfaf6;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card .tg-button { width: 100%; text-align: center; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__note { margin-block: 10px 0; font-size: .8125rem; color: #52676a; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices { display: grid; gap: 8px; margin-block: 20px 0; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices button { text-align: left; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices [aria-pressed="true"] { border-color: #593541; background: #eee1d3; font-weight: 700; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map :where(button, [tabindex]):focus-visible { outline: 3px solid #754535; outline-offset: 3px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas .leaflet-control-attribution { max-width: calc(100% - 12px); font-size: 11px; white-space: normal; }
+@media (min-width: 1000px) {
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__layout { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas { height: 470px; }
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__canvas { height: 320px; }
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card { padding: 16px; }
+}
+
+/* Facts precede the longer description in the original cards' DOM order. */
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-area {
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f5eee4;
+  color: #593541;
+  font-weight: 700;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-facts {
+  gap: 8px;
+  font-size: 1rem;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-facts > div {
+  padding: 12px;
+  background: #faf6ef;
+  border: 1px solid #e0e9e6;
+  border-radius: 8px;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-facts dt {
+  margin-bottom: 4px;
+  color: #593541;
+  font-weight: 700;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-facts > div:nth-child(2) dd { font-weight: 650; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-tradeoff,
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details .tg-hotel-tradeoff {
+  padding: 12px 14px;
+  border: 0;
+  border-left: 3px solid #a76224;
+  border-radius: 4px;
+  background: #fff7ed;
+  font-size: 1rem;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card .tg-hotel-tradeoff strong,
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details .tg-hotel-tradeoff strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #744115;
+}
+
+/* Scoped editorial accents; no property photography or logos. */
+.tg-ui.tg-paris-luxury .tg-hotels .tg-luxury-number {
+  color: #593541; font-size: .8125rem; font-weight: 700; letter-spacing: .08em;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card {
+  border-top: 3px solid #9e8150; padding: clamp(18px, 2.4vw, 28px); min-width: 0;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-card h3 {
+  margin: 0; font-size: clamp(1.4rem, 2.1vw, 1.8rem);
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-benefit {
+  padding: 12px 14px; background: #f5f4eb; border-left: 3px solid #65754a; border-radius: 4px;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-benefit strong {
+  display: block; margin-bottom: 4px; color: #3e4f2b;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-luxury-details summary {
+  min-height: 44px; padding: 10px 12px; border: 1px solid #d6c8b6;
+  border-radius: 8px; cursor: pointer; color: #593541; background: #fcfaf6; font-weight: 650;
+}
+.tg-ui.tg-paris-luxury .tg-hotels .tg-luxury-details > p,
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__details > dl { margin-block: 16px 0; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card > h3 { margin: 0 0 12px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__card > p { margin-bottom: 12px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__action { margin-block: 4px 12px; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-action .tg-button { width: 100%; text-align: center; }
+.tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices button { scroll-margin-block: 120px; }
+@media (forced-colors: active) {
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__pin.is-selected,
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map__choices [aria-pressed="true"] {
+    border-color: Highlight; outline: 3px solid Highlight;
+  }
+  .tg-ui.tg-paris-luxury .tg-hotels .tg-hotel-map :where(button, [tabindex]):focus-visible {
+    outline-color: Highlight;
+  }
+}
