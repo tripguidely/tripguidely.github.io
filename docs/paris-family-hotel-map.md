@@ -1,9 +1,12 @@
 # Paris family hotel map — local review
 
-Correction base: `a9d402eac2169f3354431ccccf28dc8024a4c52c` (origin/main, PR #31 merged).
-Review date: 2026-10-11, America/Toronto. The owner approved the three prepared
-corrections for commit, push and a PR against main after final review.
-Merging and deployment remain outside authorization.
+UX/CRO base: `c711082c9b0fbb9f145f50f60a6d6a061454a184` (origin/main, PR #32 merged).
+Review date: 2026-10-11, America/Toronto.
+Branch: `polish/paris-family-hotels-ux-cro` in an isolated temporary worktree.
+The owner approved these seven prepared files for commit, push and a PR against
+main after final verification. Wait for GitHub Actions and stop for human
+validation. No merge or publication is authorized. Earlier results below are
+historical.
 
 ## Coordinate evidence
 
@@ -51,6 +54,15 @@ consent-gated affiliate_click handles the card through normal event bubbling;
 no second click listener or tracking event is added. `with_map` identifies the
 map CTA; this implementation does not assign a randomized A/B cohort.
 
+Native `details`/`summary` now exposes the full description and trade-off inside
+the map's hotel card, without a jump to the original list. The hotel name,
+neighborhood, trip fit and complete facts are already shown above. Enter/Space
+toggles the details; the hotel-specific accessible name identifies the control.
+The Klook action precedes the details so expanding long text does not move it
+below that text. Leaflet loading preserves the open panel and focused control.
+The repeated "Affiliate link" note is removed; the visible disclosure preceding
+the map is unchanged. Original list booking buttons remain unchanged.
+
 Tiles failing or timing out display a status message while markers, selectors,
 hotel facts and native affiliate links remain functional. Library loading
 failure retains the selector/cards. Without JavaScript,
@@ -76,7 +88,7 @@ buffer, bounded zoom. OSM has no guaranteed quota or SLA and can restrict use;
 disable the component or change provider configuration if traffic warrants it.
 The UI informs users of the third-party tile connection before the deferred load.
 
-## Three requested corrections
+## Previous three corrections (merged as PR #32)
 
 The four original hotel cards, facts, native Klook anchors, URLs, SubIDs, target,
 rel and accessible names are preserved. The four public official-source anchors
@@ -137,7 +149,7 @@ The initial implementation was subsequently merged as PR #31. These current
 corrections were initially prepared locally for human validation; the owner
 subsequently approved a commit, push and PR, with no merge or deployment.
 
-### Current correction results
+### Previous default-open correction results
 
 - 179 map assertions passed, including automatic open, zero library/tile
   requests before approach, loading within the 250px margin, legacy-browser
@@ -156,5 +168,67 @@ subsequently approved a commit, push and PR, with no merge or deployment.
   completion of the initial correction review.
 
 QA records: `C:/Users/1995/AppData/Local/Temp/tripguidely-paris-family-default-qa`.
-Final instruction: create the approved PR, wait for GitHub Actions, then stop for
-human validation. Do not merge or deploy.
+That phase was subsequently merged as PR #32. Its former publishing approval
+does not apply to the current local UX/CRO work.
+
+## Current UX/CRO changes and retained evidence
+
+The four identical source/condition paragraphs are replaced by one shared
+category-condition reminder immediately before the original four cards. The
+facts and qualifications remain verbatim; their order now places the definition
+list before the longer description. Capacity/category labels, neighborhood
+badges and distinct trade-off blocks make the existing information easier to
+scan on mobile. All four original articles, headings, IDs and booking anchors
+remain. No new official-site link is added to the public page.
+
+Category provenance is retained in `docs/paris-hotel-subguides.md` (evidence
+reviewed 2026-10-09) and the exact official URLs in this document:
+
+| Property | Retained category evidence and qualification | Source |
+| --- | --- | --- |
+| Citadines Les Halles Paris | Studios for two, triple apartment, apartments for four; kitchens and bedding depend on category. Verify the exact category and occupancy through the booking channel. | Official Ascott property page above. |
+| Pullman Paris Montparnasse | Deluxe Family maximum four with two double beds; connecting arrangements require confirmation. | Official Deluxe Family page above. |
+| Hôtel Régence Étoile | Prestige Family maximum three with child-under-12 extra-bed condition; separate connecting category for two adults/two children. Confirm the booked arrangement. | Official hotel page above. |
+| B&B HOTEL Paris 17 Batignolles | Family/adjoining descriptions and cot requests; exact occupancy is left for confirmation, not a universal four-person claim. | Official B&B property page above. |
+
+Address and coordinate evidence remains in the first table. Editorial trip fit
+and trade-offs are retained in full, not presented as a completed-stay review.
+Published formats do not establish current partner availability.
+
+The one new auditor authorization is restricted to the before/after SHA-256 of
+the existing page-only map script against this phase's exact base. The initial
+audit had no other error. No auditor code, SEO exception, contract, old
+authorization, shared script or other public page is changed.
+
+### Current validation
+
+- Map browser QA: 281 assertions passed at 320/390/768/1440px and doubled root
+  text, including native details Enter/Space, full text parity, CTA visibility,
+  four pins/selectors, automatic viewport loading, consent, and tile/library/
+  no-JS fallbacks. Desktop and mobile screenshots were visually reviewed.
+- Affiliate browser QA: 43 assertions passed; four exact URL/SubID pairs,
+  original target/rel/accessible names, consent gating, single-event counts and
+  original SEO/content after only the specified local transformations.
+- Auditor self-tests: 57/57 passed. Full site/SEO audit: PASS, zero errors,
+  965 historical findings unchanged. Exactly one hash-bound script approval;
+  existing exceptions, contracts and earlier approvals are byte-for-byte intact.
+- Exact whole-page comparison permits only the four source-paragraph removals,
+  shared condition reminder, four fact-list moves and three category labels.
+  Head/Schema, map section/disclosure and original affiliate opening tags match
+  the base. Coordinates, shared site.js, vendor files, license and attribution
+  are unchanged. Disney HEAD, status and all four recorded file hashes match.
+- JS syntax and git diff --check passed. Seven scoped implementation/document/
+  test files are modified; HEAD remains at the base and the index is empty.
+- Partner and GA requests were intercepted: these checks verify local event
+  dispatch, not live GA4 receipt, partner availability or commission attribution.
+- Physical devices and assistive technology are not directly tested; mobile
+  checks use Chrome viewport/touch emulation and native keyboard controls.
+
+Current artifacts: `C:/Users/1995/AppData/Local/Temp/tripguidely-paris-family-ux-cro-qa`.
+Screenshots: `desktop-hotel-map.png`, `desktop-hotel-cards.png`,
+`mobile-hotel-map.png`, `mobile-hotel-cards.png`.
+Reports: `map-browser-report.json`, `preservation-report.json`, `self-tests.json`,
+`site-audit-initial.json`, `site-audit.json`.
+Initial local verdict: GO; no commit, push, PR, merge or publication at that
+review. The owner subsequently approved commit, push and a PR, with CI review
+and no merge or publication.

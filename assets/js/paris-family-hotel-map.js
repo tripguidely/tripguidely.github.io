@@ -31,6 +31,8 @@
   view.hidden = false;
 
   function select(index, focus) {
+    var previousDetails = card.querySelector("details");
+    var keepOpen = selected === index && previousDetails && previousDetails.open;
     selected = index;
     var hotel = hotels[index];
     while (card.firstChild) card.removeChild(card.firstChild);
@@ -47,19 +49,31 @@
       var original = hotel.article.querySelector(selector);
       if (original) card.appendChild(original.cloneNode(true));
     });
-    var details = document.createElement("a");
-    details.href = "#" + hotel.position[1];
-    details.textContent = "Read the full hotel details";
+    var details = document.createElement("details");
     details.className = "tg-hotel-map__details";
-    card.appendChild(details);
+    details.open = !!keepOpen;
+    var summary = document.createElement("summary");
+    summary.textContent = "Full hotel details";
+    summary.setAttribute("aria-label", "Full hotel details for " + hotel.name);
+    details.appendChild(summary);
+    Array.prototype.forEach.call(hotel.article.children, function (child) {
+      if (child.tagName === "P" && !child.matches(".tg-hotel-area, .tg-hotel-use")) {
+        details.appendChild(child.cloneNode(true));
+      }
+    });
     var booking = hotel.link.cloneNode(true);
     booking.setAttribute("data-placement", "map");
     booking.setAttribute("data-experiment-variant", "with_map");
-    card.appendChild(booking);
-    var note = document.createElement("p");
-    note.className = "tg-hotel-map__note";
-    note.textContent = "Affiliate link";
-    card.appendChild(note);
+    var action = document.createElement("div");
+    action.className = "tg-hotel-map__action";
+    action.appendChild(booking);
+    card.appendChild(action);
+    card.appendChild(details);
+    syncSelection(index);
+    if (focus) title.focus();
+  }
+
+  function syncSelection(index) {
     choices.forEach(function (choice, i) { choice.setAttribute("aria-pressed", i === index ? "true" : "false"); });
     markers.forEach(function (marker, i) {
       var icon = marker.getElement();
@@ -68,7 +82,6 @@
         icon.setAttribute("aria-pressed", i === index ? "true" : "false");
       }
     });
-    if (focus) title.focus();
   }
 
   function loadAsset(tag, url) {
@@ -127,7 +140,8 @@
     if (window.matchMedia("(pointer: coarse)").matches) {
       map.dragging.disable();
     }
-    select(selected, false);
+    // Do not replace an open details panel or its focused control on tile load.
+    syncSelection(selected);
     canvas.setAttribute("data-map-ready", "1");
     status.textContent = "Loading the street map. Hotel details and booking links are ready below.";
     tileTimer = window.setTimeout(function () { if (!tileLoaded) tileFallback(); }, 10000);

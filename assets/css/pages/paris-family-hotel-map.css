@@ -1,4 +1,4 @@
-/* Page-only map styles. Leaflet itself is loaded only after activation. */
+/* Paris family page only. Leaflet remains deferred until near the viewport. */
 .tg-ui .tg-hotels .tg-hotel-map [hidden] { display: none !important; }
 .tg-ui .tg-hotels .tg-hotel-map {
   border: 1px solid var(--tg-color-border, #dbe6e6);
@@ -47,6 +47,21 @@
 .tg-ui .tg-hotels .tg-hotel-map__card h3 { margin-top: 0; font-size: 1.5rem; }
 .tg-ui .tg-hotels .tg-hotel-map__eyebrow { font: 700 .75rem/1.5 system-ui, sans-serif; letter-spacing: .1em; color: #496b70; }
 .tg-ui .tg-hotels .tg-hotel-map__details { display: block; margin-block: 16px; }
+.tg-ui .tg-hotels .tg-hotel-map__details summary {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #b8ccce;
+  border-radius: 8px;
+  color: #123b45;
+  background: #edf5f3;
+  cursor: pointer;
+  font-weight: 650;
+}
+.tg-ui .tg-hotels .tg-hotel-map__details > p { margin-block: 16px 0; }
+.tg-ui .tg-hotels .tg-hotel-map__action {
+  padding-block: 12px 4px;
+  background: #f8fbfa;
+}
 .tg-ui .tg-hotels .tg-hotel-map__card .tg-button { width: 100%; text-align: center; }
 .tg-ui .tg-hotels .tg-hotel-map__note { margin-block: 10px 0; font-size: .8125rem; color: #52676a; }
 .tg-ui .tg-hotels .tg-hotel-map__choices { display: grid; gap: 8px; margin-block: 20px 0; }
@@ -63,4 +78,45 @@
 @media (max-width: 420px) {
   .tg-ui .tg-hotels .tg-hotel-map__canvas { height: 320px; }
   .tg-ui .tg-hotels .tg-hotel-map__card { padding: 16px; }
+}
+
+/* Facts precede the longer description in the original cards' DOM order. */
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-area {
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #edf5f3;
+  color: #16454e;
+  font-weight: 700;
+}
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-facts {
+  gap: 8px;
+  font-size: 1rem;
+}
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-facts > div {
+  padding: 12px;
+  background: #f3f7f6;
+  border: 1px solid #e0e9e6;
+  border-radius: 8px;
+}
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-facts dt {
+  margin-bottom: 4px;
+  color: #31575c;
+  font-weight: 700;
+}
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-facts > div:nth-child(2) dd { font-weight: 650; }
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-tradeoff,
+.tg-ui .tg-hotels .tg-hotel-map__details .tg-hotel-tradeoff {
+  padding: 12px 14px;
+  border: 0;
+  border-left: 3px solid #a76224;
+  border-radius: 4px;
+  background: #fff7ed;
+  font-size: 1rem;
+}
+.tg-ui .tg-hotels #hotel-options .tg-hotel-card .tg-hotel-tradeoff strong,
+.tg-ui .tg-hotels .tg-hotel-map__details .tg-hotel-tradeoff strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #744115;
 }
