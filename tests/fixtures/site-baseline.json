@@ -120,6 +120,26 @@
       "review_reference": "TripGuidely PR #23 owner approval in ChatGPT conversation, 2026-10-09",
       "reviewed_by": "CarlLeger",
       "recorded_on": "2026-10-09"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/paris/luxury-hotels/index.html",
+      "before": null,
+      "after": "16b96e300ac2c13561e64532db7dabb937236a72921f9d94a196efde5e1ec6f5",
+      "base_revision": "9d3301f0ffff927ba796d7f33e06e3031fb319a2",
+      "reason": "Explicit owner request: add a default-open deferred Leaflet map to Paris Luxury Hotels, with numbered address pins, selectable hotel details and exact clones of existing Klook anchors. Shared GA4, consent, affiliate attributes and all other pages remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-12"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/paris-luxury-hotel-map.js",
+      "before": null,
+      "after": "81754f21efe194381b043c169f20665c90cb71043766bf80b1172e90a311e656",
+      "base_revision": "9d3301f0ffff927ba796d7f33e06e3031fb319a2",
+      "reason": "Explicit owner request: add a default-open deferred Leaflet map to Paris Luxury Hotels, with numbered address pins, selectable hotel details and exact clones of existing Klook anchors. Shared GA4, consent, affiliate attributes and all other pages remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-12"
     }
   ],
   "contracts": {
