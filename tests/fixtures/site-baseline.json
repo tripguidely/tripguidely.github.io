@@ -1,6 +1,36 @@
 {
   "authorizations": [
     {
+      "kind": "affiliate_anchor",
+      "source": "hotels/paris/cheap-hotels/index.html",
+      "before": "ff02947b96fb7cbdd921327cdea5f9d1f1c533b558f7f092da4536a34831ee1d",
+      "after": "4b1939ca722db7ede8042598fb421c822138660a84e956a080b2ba0cbe26eed9",
+      "base_revision": "421e6652744e6793347103a09e9ccbb879abfd01",
+      "reason": "Owner-requested local Cheap Hotels Paris UX/CRO: page-only deferred Leaflet map, cloned original booking anchors and opt-in metadata through unchanged consent-gated GA4. Exact URLs/SubIDs, SEO metadata, Family and Disney remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/paris/cheap-hotels/index.html",
+      "before": null,
+      "after": "a9e908e49d61f7eade71b93150e1664153cdc0b958252cd6ecb2764505a8bc8c",
+      "base_revision": "421e6652744e6793347103a09e9ccbb879abfd01",
+      "reason": "Owner-requested local Cheap Hotels Paris UX/CRO: page-only deferred Leaflet map, cloned original booking anchors and opt-in metadata through unchanged consent-gated GA4. Exact URLs/SubIDs, SEO metadata, Family and Disney remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/paris-cheap-hotel-map.js",
+      "before": null,
+      "after": "d1c01704331ce612c8f183a7b3f7fe584893c9eb50751120753ab3880c50f798",
+      "base_revision": "421e6652744e6793347103a09e9ccbb879abfd01",
+      "reason": "Owner-requested local Cheap Hotels Paris UX/CRO: page-only deferred Leaflet map, cloned original booking anchors and opt-in metadata through unchanged consent-gated GA4. Exact URLs/SubIDs, SEO metadata, Family and Disney remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
       "kind": "integration_script",
       "source": "assets/js/paris-family-hotel-map.js",
       "before": "23cb8223de0b286178d49d8c4f89210c340095533d9f8cb42663ae84d526ed6c",
