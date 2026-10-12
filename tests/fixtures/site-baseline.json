@@ -140,6 +140,26 @@
       "reason": "Explicit owner request: add a default-open deferred Leaflet map to Paris Luxury Hotels, with numbered address pins, selectable hotel details and exact clones of existing Klook anchors. Shared GA4, consent, affiliate attributes and all other pages remain unchanged.",
       "reviewed_by": "owner instruction in Codex conversation",
       "recorded_on": "2026-10-12"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/paris/index.html",
+      "before": null,
+      "after": "2fcb1651cad4b02e4f097a3b3fe4bedfca8ff2fd84c14624eab9036a63c3cb80",
+      "base_revision": "06922e955141eecf391f99356f38ea4baa4b40bc",
+      "reason": "Explicit owner request: add a default-open deferred neighborhood map to Where to Stay in Paris with verified reference pins, travel-profile selection, source-derived area details and existing internal routes. No new affiliate anchors, hotel website links or changes to shared GA4, consent, SEO or other pages.",
+      "reviewed_by": "explicit owner instruction in Codex conversation; human review required before commit",
+      "recorded_on": "2026-10-12"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/paris-neighborhood-map.js",
+      "before": null,
+      "after": "92b777255a8217dd96764f71aaeee6f40aac375ece6b2e29417f6c0e15ee99ea",
+      "base_revision": "06922e955141eecf391f99356f38ea4baa4b40bc",
+      "reason": "Explicit owner request: add a default-open deferred neighborhood map to Where to Stay in Paris with verified reference pins, travel-profile selection, source-derived area details and existing internal routes. No new affiliate anchors, hotel website links or changes to shared GA4, consent, SEO or other pages.",
+      "reviewed_by": "explicit owner instruction in Codex conversation; human review required before commit",
+      "recorded_on": "2026-10-12"
     }
   ],
   "contracts": {
