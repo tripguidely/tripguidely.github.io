@@ -93,6 +93,18 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
           assert.equal(await page.locator('#hotel-map-card').evaluate(el=>el.innerText.includes('Opens in a new tab')),false); checks++;
           assert.deepEqual(await booking.evaluate(a=>({id:a.dataset.hotelId,subid:a.dataset.subid,href:a.getAttribute('href'),placement:a.dataset.placement,variant:a.dataset.experimentVariant,rel:a.getAttribute('rel'),target:a.getAttribute('target')})),
             {id:expected.id,subid:expected.subid,href:expected.href,placement:'map',variant:'with_map',rel:'nofollow sponsored noopener',target:'_blank'}); checks++;
+          const summary=page.locator('#hotel-map-card details summary');
+          assert.equal(await page.locator('#hotel-map-card > a.tg-hotel-map__details').count(),0);checks++;
+          assert.equal(await page.locator('#hotel-map-card .tg-hotel-map__note').count(),0);checks++;
+          const beforeUrl=page.url(), beforeEvents=(await events(page)).length;
+          await summary.focus();
+          await page.keyboard.press(i%2 ? 'Space' : 'Enter');
+          assert.equal(await page.locator('#hotel-map-card details').evaluate(d=>d.open),true);checks++;
+          assert.equal(page.url(),beforeUrl);checks++;
+          assert.equal((await events(page)).length,beforeEvents);checks++;
+          const originalDetails=await page.locator('#hotel-options article').nth(i).evaluate(a=>[...a.children].filter(n=>n.tagName==='P' && !n.matches('.tg-hotel-area, .tg-hotel-use')).map(n=>n.textContent.trim()));
+          assert.deepEqual(await page.locator('#hotel-map-card details > p').allTextContents(),originalDetails);checks++;
+          assert.equal(await page.locator('#hotel-map > .tg-hotel-map__note').isVisible(),true);checks++;
           await booking.click();
           const observed = await events(page);
           assert.equal(observed.length,consent==='granted'?i+1:0); checks++;
@@ -128,6 +140,18 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
         assert(targets.every(r=>r.w>=44 && r.h>=44)); checks++;
         await page.locator('#hotel-map-choices button').nth(2).click();
         assert.equal(await page.locator('#hotel-map-card a.js-aff').isVisible(),true); checks++;
+        const summary=page.locator('#hotel-map-card details summary');
+        await summary.click();
+        assert.equal(await page.locator('#hotel-map-card details').evaluate(d=>d.open),true);checks++;
+        assert.equal(await page.locator('#hotel-map-card .tg-hotel-tradeoff').isVisible(),true);checks++;
+        const cta=await page.locator('#hotel-map-card a.js-aff').evaluate(a=>({top:a.getBoundingClientRect().top,bottom:a.getBoundingClientRect().bottom,height:innerHeight}));
+        if(!(cta.top>=0 && cta.bottom<=cta.height)) {
+          console.error({width,cta,ancestors:await page.locator('#hotel-map-card a.js-aff').evaluate(a=>{const rows=[];for(let n=a.parentElement;n;n=n.parentElement){const s=getComputedStyle(n);rows.push({node:n.id||n.className,overflow:s.overflow,position:s.position,top:n.getBoundingClientRect().top,bottom:n.getBoundingClientRect().bottom});}return rows;})});
+          await page.locator('#hotel-map').screenshot({path:path.join(out,'cta-debug-'+width+'.png')});
+        }
+        assert(cta.top>=0 && cta.bottom<=cta.height,'Klook CTA must remain in the viewport with full details open');checks++;
+        const cards=await page.locator('#hotel-options article').evaluateAll(nodes=>nodes.map(a=>({factsBeforeDescription:[...a.children].findIndex(n=>n.matches('.tg-hotel-facts'))<[...a.children].findIndex(n=>n.tagName==='P' && !n.className),tradeoff:!!a.querySelector('.tg-hotel-tradeoff'),facts:a.querySelectorAll('.tg-hotel-facts > div').length})));
+        assert(cards.every(c=>c.factsBeforeDescription && c.tradeoff && c.facts===3));checks++;
         await page.evaluate(()=>document.documentElement.style.fontSize='200%');
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true); checks++;
         assert.deepEqual(errors,[]); checks++;
@@ -183,7 +207,11 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
           await page.waitForFunction(()=>document.getElementById('hotel-map').dataset.tileState==='ready',{},{timeout:20000});
           await page.waitForFunction(()=>[...document.querySelectorAll('.leaflet-tile')].every(img=>img.complete),{},{timeout:20000});
           assert.deepEqual(errors,[]); checks++;
+          await page.locator('#hotel-map-card details summary').click();
           const name=label+'-hotel-map.png'; await page.locator('#hotel-map').screenshot({path:path.join(out,name)});
+          const cardsName=label+'-hotel-cards.png';
+          await (width<500 ? page.locator('#hotel-options article').first() : page.locator('#hotel-options')).screenshot({path:path.join(out,cardsName)});
+          report.screenshots.push(cardsName);
           report.screenshots.push(name);
         }finally{await context.close();}
       }

@@ -3,6 +3,16 @@
     {
       "kind": "integration_script",
       "source": "assets/js/paris-family-hotel-map.js",
+      "before": "23cb8223de0b286178d49d8c4f89210c340095533d9f8cb42663ae84d526ed6c",
+      "after": "a14d9a107dd3642c1faaacc4e06e072bf9333ccdff9556b47b1de8cb86704a59",
+      "base_revision": "c711082c9b0fbb9f145f50f60a6d6a061454a184",
+      "reason": "Explicit owner request: Paris family hotel UX/CRO polish, native in-map full details and accessible Klook action, without the repeated affiliate note. Four positions, original affiliate URLs/SubIDs, viewport loading and shared consent/tracking remain unchanged.",
+      "reviewed_by": "owner instruction in Codex conversation",
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "kind": "integration_script",
+      "source": "assets/js/paris-family-hotel-map.js",
       "before": "344f39684afd67a6b6bcc5acb511113b3c23d4927f175bb75c037938468dae76",
       "after": "23cb8223de0b286178d49d8c4f89210c340095533d9f8cb42663ae84d526ed6c",
       "base_revision": "a9d402eac2169f3354431ccccf28dc8024a4c52c",

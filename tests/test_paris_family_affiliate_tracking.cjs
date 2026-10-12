@@ -29,6 +29,11 @@ const withoutTracking = value => value.replace(/ data-hotel-id="[^"]+" data-plac
   .replaceAll("<a href=\"https://www.hotelregenceetoile.com/en/\">official property information</a>", "official property information")
   .replaceAll("<a href=\"https://www.hotel-bb.com/en/hotel/paris-17-batignolles\">official property information</a>", "official property information")
   .replaceAll("<span>Opens in a new tab</span>", "")
+  .replaceAll("<p>Source: official property information. Check current conditions for the exact category you intend to book.</p>", "")
+  .replaceAll("<p>Published information supports these formats. It does not prove that the same categories are available through every booking channel. Check current conditions for the exact category you intend to book.</p>", "<p>Published information supports these formats. It does not prove that the same categories are available through every booking channel.</p>")
+  .replace(/(<p class="tg-hotel-use">[\s\S]*?<\/p>)(<p>[\s\S]*?<\/p>)(<dl class="tg-hotel-facts">[\s\S]*?<\/dl>)/g, "$1$3$2")
+  .replaceAll("<dt>Published category</dt>", "<dt>Capacity / room category</dt>")
+  .replaceAll("<dt>Published categories</dt>", "<dt>Capacity / room category</dt>")
   .replace(/\r\n/g, '\n');
 assert.equal(withoutTracking(html), withoutTracking(original),
   'Only the four tracking attribute groups may change in the HTML, including its SEO metadata');
