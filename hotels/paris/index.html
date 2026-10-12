@@ -255,6 +255,7 @@
       .tg-ui .tg-paris-guide .tg-area-card > .tg-button { width: 100%; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/pages/paris-neighborhood-map.css" />
 </head>
 
 <body class="tg-ui" data-page="guide" data-section="hotels">
@@ -347,6 +348,7 @@
           <a class="pill-link" href="#decision">Pick your best area</a>
           <a class="pill-link" href="#banks">Left Bank vs Right Bank</a>
           <a class="pill-link" href="#areas">Best neighborhoods in Paris</a>
+          <a class="pill-link" href="/hotels/paris/#area-map">Neighborhood map</a>
           <a class="pill-link" href="#landmarks">Best area by landmark</a>
           <a class="pill-link" href="#table">Comparison table</a>
           <a class="pill-link" href="#hotel-picks">Hotel shortlist by area</a>
@@ -536,6 +538,39 @@
         <div class="callout tg-callout tg-guide-tip">
           <b>Best quick filter:</b> choose the Left Bank if you want a more classic, relaxed Paris feel. Choose the Right Bank if you want more nightlife, shopping, and a wider range of hotel options.
         </div>
+      </section>
+
+      <!-- Neighborhood orientation only: the original area cards remain the complete fallback. -->
+      <section id="area-map" tabindex="-1" class="tg-section tg-hotels-section tg-zone-map" aria-labelledby="area-map-title" data-tile-url="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+        <div class="tg-guide-heading">
+          <h2 id="area-map-title">Explore where to stay on the Paris neighborhood map</h2>
+          <p>Locate the guide’s ten areas, then compare their fit for your trip.</p>
+        </div>
+        <p class="tg-zone-map__note">Pins show reference places within broad areas, not neighborhood boundaries or hotel locations. Bastille / Oberkampf is represented near Bastille; Opéra / 9th near Opéra. Zoom in to separate nearby pins.</p>
+        <p class="tg-hotel-disclosure"><strong>Booking disclosure:</strong> the existing Klook buttons in the hotel shortlist are affiliate links; TripGuidely may earn a commission at no extra cost to you.</p>
+        <div id="area-map-profiles" class="tg-zone-map__profiles" role="group" aria-label="Suggested areas by travel profile" hidden></div>
+        <p id="area-map-status" class="tg-zone-map__note" role="status" aria-live="polite">Choose an area below to read its full guide. The interactive map loads when you scroll closer.</p>
+        <div id="area-map-view" hidden>
+          <div id="area-map-canvas" class="tg-zone-map__canvas" role="region" aria-label="Paris neighborhood orientation map"></div>
+        </div>
+        <div class="tg-zone-map__below">
+          <div id="area-map-card" class="tg-zone-map__card" aria-labelledby="area-map-card-title" hidden></div>
+          <nav aria-label="Select a Paris area">
+            <ol id="area-map-choices" class="tg-zone-map__choices">
+              <li data-zone="areas-first"><a href="/hotels/paris/#areas-first">1. Le Marais</a></li>
+              <li data-zone="area-saint-germain"><a href="/hotels/paris/#area-saint-germain">2. Saint-Germain-des-Prés</a></li>
+              <li data-zone="area-latin"><a href="/hotels/paris/#area-latin">3. Latin Quarter</a></li>
+              <li data-zone="area-first"><a href="/hotels/paris/#area-first">4. 1st Arrondissement</a></li>
+              <li data-zone="areas-family"><a href="/hotels/paris/#areas-family">5. 7th Arrondissement</a></li>
+              <li data-zone="areas-romance"><a href="/hotels/paris/#areas-romance">6. Montmartre</a></li>
+              <li data-zone="areas-nightlife"><a href="/hotels/paris/#areas-nightlife">7. Bastille / Oberkampf</a></li>
+              <li data-zone="area-south-pigalle"><a href="/hotels/paris/#area-south-pigalle">8. South Pigalle</a></li>
+              <li data-zone="area-canal"><a href="/hotels/paris/#area-canal">9. Canal Saint-Martin</a></li>
+              <li data-zone="areas-budget"><a href="/hotels/paris/#areas-budget">10. Opéra / 9th Arrondissement</a></li>
+            </ol>
+          </nav>
+        </div>
+        <noscript><p>The map needs JavaScript. The area links above and the complete neighborhood cards below remain available.</p></noscript>
       </section>
 
       <!-- BEST AREAS -->
@@ -1171,5 +1206,6 @@
 
   <div id="site-footer"></div>
   <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/paris-neighborhood-map.js" defer></script>
 </body>
 </html>
