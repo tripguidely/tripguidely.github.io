@@ -119,7 +119,8 @@ const same=(a,b,m)=>{assert.deepEqual(a,b,m);report.checks++;},ok=(a,m)=>{assert
      await p.locator('#area-map-choices button').last().focus();await p.keyboard.press('Enter');
      same(await p.locator('#area-map-card-title').textContent(),data[9].name);
      for(const a of await p.locator('#area-map-card a').all()){
-      await a.scrollIntoViewIfNeeded();ok(await a.evaluate(n=>{const r=n.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Internal CTA reachable');
+      // Chrome rounds scroll offsets to pixels; allow at most half a CSS pixel.
+      await a.scrollIntoViewIfNeeded();ok(await a.evaluate(n=>{const r=n.getBoundingClientRect();return r.top>=-0.5&&r.bottom<=innerHeight+0.5;}),'Internal CTA reachable');
      }
     }
     await p.emulateMedia({forcedColors:'active'});
