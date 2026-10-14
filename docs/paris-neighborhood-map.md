@@ -1,9 +1,16 @@
-# Paris neighborhood map — internal audit and human review
+# Paris neighborhood map — PR #41 mobile UX
 
-Branch: feat/paris-where-to-stay-map.
-Worktree: C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map.
-Base: 06922e955141eecf391f99356f38ea4baa4b40bc (main after PR #36 and PR #37; local base advanced with --keep, without creating a commit or merge).
-Research: 2026-10-12. The owner authorized commit, push and a PR toward main on 2026-10-12 after final checks. Wait for GitHub Actions, then stop for human validation. No merge or worktree deletion authorized.
+Branch: feat/paris-neighborhood-mobile-ux.
+Worktree: C:/Users/1995/AppData/Local/Temp/tripguidely-paris-neighborhood-mobile-ux.
+Base: 5f3c1d0db4ee88689352607e6adf4bc6b83407a5, origin/main after PR #40, fetched on 2026-10-13.
+Owner GO on 2026-10-13 authorizes commit, push and a PR toward main after rerunning all checks. Wait for GitHub Actions, then stop for human review. No merge or worktree deletion.
+
+## Structure before / after
+
+Before, small screens placed the street map, then the selected card, then the ten-button numbered list. Users reached the chooser only after crossing the canvas and the current decision card.
+After, profiles precede a labeled native select, selection status, the complete selected card, then the same canvas. The select contains all ten numbered choices in All areas; each profile shows only its original-number matches. No second map or extra affiliate CTA.
+At 64rem and above, the ten numbered buttons form two rows above the existing map on the left and selected card on the right. The DOM keeps the decision card before the map; CSS gives desktop its two-column arrangement. At increased text size the layout returns to the single-column chooser when the rem breakpoint requires it. Tablet uses the compact chooser and single column.
+Without JavaScript (or malformed source data), all ten original native area links remain visible and the original editorial cards and seven hotel cards remain available.
 
 ## Existing guide and choice of geometry
 The parent guide contains ten area cards, four decision journeys, seven hotel cards and ten original Klook anchors. Existing area facts and useful internal routes remain the source of the map panels.
@@ -30,21 +37,26 @@ The Marais pin uses 2 Rue Eugène Spuller, the town hall alongside Square du Tem
 No hotel official-site URL is added to public HTML or JavaScript. These internal sources concern geography, not booking.
 
 ## Travel profiles
-Filters are suggestions taken from the guide, not exclusive suitability claims or price guarantees:
-- Budget: Latin Quarter, Opéra / 9th.
-- Family: Latin Quarter, 7th.
-- Couple: Le Marais, Saint-Germain, Montmartre, Canal Saint-Martin.
-- Attractions: Le Marais, Saint-Germain, Latin Quarter, 1st, 7th.
-All areas also includes Bastille / Oberkampf and South Pigalle, retaining their nightlife purpose.
-Labels, advantages and compromises are read from the original cards. The ten short summaries paraphrase that existing editorial content; no partner copy or new room/price claims.
-The panel reuses original internal routes, including relevant child guides and the existing Paris-wide shortlist. It does not claim that the seven hotels cover all areas and does not invent an area-specific Klook destination.
 
-## Runtime, accessibility and failures
-One page-owned controller initializes selections; Leaflet 1.9.4 and its CSS load only when the canvas approaches within 250 px of the viewport. Fallback scroll/resize detection also defers loading when IntersectionObserver is unavailable.
-Five profile buttons and ten numbered area choices use native buttons with aria-pressed and aria-controls. Selecting a pin or area moves focus to the panel heading. Re-adding a filtered marker restores its accessible name. Selected pins are raised above nearby pins; zoom controls and the always-available area list resolve close reference points at wide zoom.
-Scroll-wheel zoom is disabled. Coarse-pointer users retain one-finger page scrolling, pinch zoom and buttons. Reduced-motion and forced-color modes are supported.
-No JavaScript: native area links and all original content work. Leaflet/CSS failure: chooser and panels remain, canvas hides. Tile failure/timeout: pins, chooser, profiles and internal links remain functional.
-No geolocation, runtime geocoder, search API, new analytics handler or affiliate clone. All ten original Klook anchors stay byte-identical.
+Profiles are suggestions from the existing editorial guide, not exclusive suitability claims, availability or price guarantees:
+- All areas: original numbers 1–10.
+- Budget: 3. Latin Quarter; 10. Opéra / 9th.
+- Family: 3. Latin Quarter; 5. 7th.
+- Couple: 1. Le Marais; 2. Saint-Germain; 6. Montmartre; 9. Canal.
+- Attractions: 1. Le Marais; 2. Saint-Germain; 3. Latin Quarter; 4. 1st; 5. 7th.
+- Nightlife: **only 1. Le Marais, 7. Bastille / Oberkampf, 8. South Pigalle**.
+
+All previous profile memberships and all reference coordinates are unchanged. Source cards still require exactly three editorial li elements. The selected card reads those facts and clones only existing internal routes.
+PR #40's eleven source links are unchanged: Citadines in the 1st; Pullman and ibis explicitly in the 15th outside the 7th; Hôtel de France on the Gare de Lyon side in the 12th, not Oberkampf; seven explicit shortlist gaps with general-search fallback. Régence, Madrigal and Campanile remain in the general shortlist.
+
+## Accessibility and failure contracts
+
+Six native profile buttons retain aria-pressed; aria-controls references the list, native select, card and canvas. The select has an explicit label and aria-describedby pointing to a polite atomic selection status. Announcements include profile, result count and original selected number. The selection status stays visible; redundant map loading/ready instructions use a visually hidden live status, restored visibly on map or tile failure. The All areas button restores the full ten choices.
+Select changes preserve select focus, allowing native arrow-key navigation. Original desktop buttons and pins retain focus transfer to the selected heading. All visible controls and internal card links have at least 44px targets; focus outlines support forced colors.
+The enhanced numbered list is hidden below 64rem because the native chooser supplies the same choices. It remains in the DOM and is the fallback without JS. Desktop hides only the native chooser.
+Leaflet 1.9.4 and local CSS still load within 250px of the canvas, with the existing scroll/resize fallback. Map height: 320px small phone, 440px tablet, 520px desktop. Scroll-wheel zoom, reference geometry, reduced-motion behavior, coarse-pointer scrolling and tile policy remain unchanged.
+Leaflet JS/CSS failure hides the canvas and restores a one-column desktop decision panel; profiles, chooser and internal links remain functional. OSM tile failure retains pins and the chooser, with a visible status message.
+No geolocation, geocoder, extra external API, image, library, analytics handler or affiliate clone.
 
 ## Free libraries, attribution and tile policy
 Local Leaflet 1.9.4 and its existing BSD-2-Clause LICENSE are reused without modification. No new dependency, key, account, billing or paid service.
@@ -54,30 +66,32 @@ OSM has no guaranteed traffic quota or SLA and can withdraw access; the native f
 [Leaflet 1.9.4 documentation](https://leafletjs.com/reference-1.9.4.html).
 
 ## Scope and audit integrity
-Only the parent HTML plus its dedicated CSS/JS, this internal document, map tests and two exact-hash authorization records in tests/fixtures/site-baseline.json are in scope. Shared scripts, CSS, other Paris pages, Disney, vendor libraries, images, titles, metadata, canonical and Schema stay unchanged.
-The existing auditor code, historical findings, exception inventory and previous authorizations are untouched. The two records authorize only the explicitly requested new script tag and script bytes, against this base:
-- new_integration_markup: 2fcb1651cad4b02e4f097a3b3fe4bedfca8ff2fd84c14624eab9036a63c3cb80
-- new_integration_script: 92b777255a8217dd96764f71aaeee6f40aac375ece6b2e29417f6c0e15ee99ea
-These records authorize only the two explicitly requested integration hashes. The owner’s subsequent GO for the PR supplies commit/push/PR authorization; no SEO or affiliation defect is suppressed.
 
-## Final local validation
+Seven paths only: parent HTML, dedicated controller and CSS, this document, browser tests, preservation tests and site-baseline fixture. All other tracked files are compared against the reviewed base, including shared GA4/consent, three child guides, Disney, images and local Leaflet.
+All ten complete affiliate anchors must be identical, including label, URL, SubID, rel, target and tracking. All HTML outside the map section, source cards, SEO metadata and Schema must be identical.
+The auditor and old fixture facts, exceptions and authorizations stay unchanged. One new integration_script authorization records the owner-requested controller change from the main hash to the exact new hash; it authorizes no other script or defect.
 
-- 413 Chrome browser checks passed: ten pins/panels, five profile views, exact panel facts and reused internal links, keyboard/focus, 320/390/768/1440 px, text at 200%, forced colors, no JavaScript, no IntersectionObserver, tile/Leaflet JS/Leaflet CSS failure.
-- Consent absent/denied/revoked: no affiliate_click. Granted: one event per original CTA, exact inherited payload, no duplicate binding. Area exploration creates no affiliate event.
-- 57/57 auditor self-tests passed.
-- 15 preservation checks passed; 582 other tracked files match the final base, with only checkout line endings normalized for text.
-- Full site audit against 06922e955141eecf391f99356f38ea4baa4b40bc: PASS, zero new errors, 965 known historical findings unchanged. Exactly two new integration declarations; no new exception or audit-code change.
-- Initial implementation validation: git diff --check passed, index empty and HEAD at the reviewed main base. Existing worktrees untouched. The final PR phase reruns all checks before the authorized commit/push; no merge is authorized.
-- Mobile and desktop screenshots inspected after replacing the overlapping Marais/Bastille references. Both use real viewport tiles and visible OSM attribution. Repeated automated scenarios use simulated tiles.
-- Gzip measurements: HTML +751 bytes; page controller 4127 bytes; dedicated CSS 1107 bytes. Existing hero markup and load priorities unchanged. Leaflet requests are absent before viewport approach.
-- Field Core Web Vitals, live device/screen-reader review and conversion uplift remain to test; browser QA is not a guarantee of production metrics.
+## Validation
 
-Captures and machine reports (outside the site worktree):
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/browser/desktop-neighborhood-map.png
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/browser/mobile-neighborhood-map.png
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/browser/browser-report.json
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/preservation.json
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/self-tests.json
-- C:/Users/1995/AppData/Local/Temp/tripguidely-paris-where-to-stay-map-qa/site-audit.json
+Run from this worktree with external QA output:
+- node tests/test_paris_neighborhood_map.cjs PLAYWRIGHT_MODULE CHROME OUTPUT_DIR
+- python -B tests/test_paris_neighborhood_map_preservation.py
+- python -B scripts/audit-site.py --base-ref 5f3c1d0db4ee88689352607e6adf4bc6b83407a5 --self-test
+- python -B scripts/audit-site.py --base-ref 5f3c1d0db4ee88689352607e6adf4bc6b83407a5
+- git diff --check
 
-Verdict after implementation review: **GO for the authorized PR**. Wait for GitHub Actions and STOP for human validation. Do not merge.
+Browser matrix: 320, 390, 430, 768 and 1440px; 100%/200% text; keyboard and accessible names/status; reduced motion; forced colors; JS disabled; Leaflet JS/CSS and tile failures; every profile and every area; eleven internal routes; ten affiliates under absent, denied, granted and revoked consent.
+Measured reports, captures and before/after layout evidence are retained outside the site at C:/Users/1995/AppData/Local/Temp/tripguidely-paris-neighborhood-mobile-ux-qa. Final validation results are recorded there and summarized for human review.
+Local results (2026-10-13):
+- 1055 browser assertions passed, including all five widths at 200% text, native chooser, ARIA accessibility tree, focus, touch targets, all filters, consent and map failures.
+- Independent geographic/navigation QA: 1055 assertions passed; all ten areas and eleven PR #40 routes, with and without JavaScript at each of the five widths.
+- 19 preservation assertions passed; 582 other tracked files match the reviewed main base.
+- Auditor: 57/57 self-tests passed; full audit PASS with zero regressions (965 known historical findings remain).
+- At 390px, selecting the 1st arrondissement: filters-to-card-title 576px before / 248px after; filters-to-Citadines-link 1167px before / 838px after. This is layout evidence, not a conversion result.
+- Local gzip (LF-normalized): HTML +96 bytes; controller +353; CSS +307, total +756 bytes. No additional library or image. Initial Leaflet/tile requests remain absent.
+- Mobile and desktop captures with ordinary OSM viewport tiles inspected; no horizontal overflow.
+- Initial local review completed without commit/push/PR/merge; the authorized PR phase reruns all checks. git diff --check and worktree comparison are recorded in the external QA report.
+
+Actual screen-reader/device review, production Core Web Vitals and conversion impact remain to test. Automated ARIA and keyboard checks do not claim an NVDA/VoiceOver session or conversion uplift.
+
+Historical implementation: PR #38 established the original map and local Leaflet integration; PR #39 corrected generic Klook labels; PR #40 added verified internal area-to-hotel routes and Chrome's existing 0.5px visibility tolerance. Those commercial and test contracts are preserved.

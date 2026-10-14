@@ -549,12 +549,13 @@
         <p class="tg-zone-map__note">Pins show reference places within broad areas, not neighborhood boundaries or hotel locations. Bastille / Oberkampf is represented near Bastille; Opéra / 9th near Opéra. Zoom in to separate nearby pins.</p>
         <p class="tg-hotel-disclosure"><strong>Booking disclosure:</strong> the existing Klook buttons in the hotel shortlist are affiliate links; TripGuidely may earn a commission at no extra cost to you.</p>
         <div id="area-map-profiles" class="tg-zone-map__profiles" role="group" aria-label="Suggested areas by travel profile" hidden></div>
-        <p id="area-map-status" class="tg-zone-map__note" role="status" aria-live="polite">Choose an area below to read its full guide. The interactive map loads when you scroll closer.</p>
-        <div id="area-map-view" hidden>
-          <div id="area-map-canvas" class="tg-zone-map__canvas" role="region" aria-label="Paris neighborhood orientation map"></div>
+        <div id="area-map-picker" class="tg-zone-map__picker" hidden>
+          <label for="area-map-select">Choose a numbered Paris area</label>
+          <select id="area-map-select" aria-controls="area-map-card" aria-describedby="area-map-selection-status"></select>
         </div>
-        <div class="tg-zone-map__below">
-          <div id="area-map-card" class="tg-zone-map__card" aria-labelledby="area-map-card-title" hidden></div>
+        <p id="area-map-selection-status" class="tg-zone-map__note" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        <p id="area-map-status" class="tg-zone-map__note tg-zone-map__load-status" role="status" aria-live="polite">Choose a numbered area to read its guide. The street map loads when you scroll closer.</p>
+        <div class="tg-zone-map__layout">
           <nav aria-label="Select a Paris area">
             <ol id="area-map-choices" class="tg-zone-map__choices">
               <li data-zone="areas-first"><a href="/hotels/paris/#areas-first">1. Le Marais</a></li>
@@ -569,6 +570,10 @@
               <li data-zone="areas-budget"><a href="/hotels/paris/#areas-budget">10. Opéra / 9th Arrondissement</a></li>
             </ol>
           </nav>
+          <div id="area-map-card" class="tg-zone-map__card" aria-labelledby="area-map-card-title" hidden></div>
+          <div id="area-map-view" class="tg-zone-map__view" hidden>
+            <div id="area-map-canvas" class="tg-zone-map__canvas" role="region" aria-label="Paris neighborhood orientation map"></div>
+          </div>
         </div>
         <noscript><p>The map needs JavaScript. The area links above and the complete neighborhood cards below remain available.</p></noscript>
       </section>

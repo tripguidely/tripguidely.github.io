@@ -160,6 +160,16 @@
       "reason": "Explicit owner request: add a default-open deferred neighborhood map to Where to Stay in Paris with verified reference pins, travel-profile selection, source-derived area details and existing internal routes. No new affiliate anchors, hotel website links or changes to shared GA4, consent, SEO or other pages.",
       "reviewed_by": "explicit owner instruction in Codex conversation; human review required before commit",
       "recorded_on": "2026-10-12"
+    },
+    {
+      "kind": "integration_script",
+      "source": "assets/js/paris-neighborhood-map.js",
+      "before": "92b777255a8217dd96764f71aaeee6f40aac375ece6b2e29417f6c0e15ee99ea",
+      "after": "dfab370294ce5f3b804dfa632e33a142a18dd2b987f3a02a718365ba24326f25",
+      "reason": "Owner-requested PR #41: Nightlife (areas 1, 7, 8), compact native chooser and selection announcements; preserved geography, affiliate anchors, source cards and deferred local Leaflet.",
+      "reviewed_by": "Owner instruction in this session: PR #41 Paris neighborhood map mobile UX",
+      "recorded_on": "2026-10-13",
+      "base_revision": "5f3c1d0db4ee88689352607e6adf4bc6b83407a5"
     }
   ],
   "contracts": {
