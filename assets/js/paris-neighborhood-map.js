@@ -10,6 +10,9 @@
   var chooser = document.getElementById("area-map-choices");
   var profiles = document.getElementById("area-map-profiles");
   var card = document.getElementById("area-map-card");
+  var picker = document.getElementById("area-map-select");
+  var pickerWrap = document.getElementById("area-map-picker");
+  var selectionStatus = document.getElementById("area-map-selection-status");
   var data = [
   {
     "id": "areas-first",
@@ -20,7 +23,8 @@
     "summary": "A lively, central base for cafés, shops and evenings.",
     "profiles": [
       "couple",
-      "attractions"
+      "attractions",
+      "nightlife"
     ]
   },
   {
@@ -89,7 +93,9 @@
     "lon": 2.370213,
     "reference": "Place de la Bastille",
     "summary": "An eastern base for nightlife and late evenings.",
-    "profiles": []
+    "profiles": [
+      "nightlife"
+    ]
   },
   {
     "id": "area-south-pigalle",
@@ -98,7 +104,9 @@
     "lon": 2.337431,
     "reference": "Place Gustave Toudouze",
     "summary": "Bars and dining south of Pigalle.",
-    "profiles": []
+    "profiles": [
+      "nightlife"
+    ]
   },
   {
     "id": "area-canal",
@@ -135,11 +143,33 @@
     }
   });
   // A malformed source keeps the original native area links and cards usable.
-  if (zones.length !== 10) return;
+  if (zones.length !== 10 || !picker || !pickerWrap || !selectionStatus) return;
   section.setAttribute("data-map-bound", "1");
   view.hidden = false; profiles.hidden = false; card.hidden = false;
+  pickerWrap.hidden = false; selectionStatus.hidden = false;
 
   function matches(zone) { return profile === "all" || zone.profiles.indexOf(profile) !== -1; }
+  function announceSelection() {
+    var label = profileButtons.find(function (button) { return button.dataset.profile === profile; });
+    var text = (label ? label.textContent : "All areas") + ": " + zones.filter(matches).length +
+      " suggested areas. Selected area " + (selected + 1) + " of 10: " + zones[selected].name +
+      ".";
+    if (selectionStatus.textContent !== text) selectionStatus.textContent = text;
+  }
+  function refreshPicker() {
+    while (picker.firstChild) picker.removeChild(picker.firstChild);
+    zones.forEach(function (zone, index) {
+      if (!matches(zone)) return;
+      var option = document.createElement("option");
+      option.value = zone.id; option.textContent = (index + 1) + ". " + zone.name;
+      picker.appendChild(option);
+    });
+  }
+  picker.addEventListener("change", function () {
+    var index = zones.findIndex(function (zone) { return zone.id === picker.value && matches(zone); });
+    // Native select arrow keys keep their focus instead of jumping out of the chooser.
+    if (index !== -1) select(index, false);
+  });
   function select(index, focus) {
     selected = index;
     var zone = zones[index];
@@ -168,10 +198,11 @@
       links.appendChild(original.cloneNode(true));
     });
     card.appendChild(links);
-    syncSelection();
+    syncSelection(); announceSelection();
     if (focus) heading.focus();
   }
   function syncSelection() {
+    picker.value = zones[selected].id;
     choices.forEach(function (choice, i) { choice.setAttribute("aria-pressed", i === selected ? "true" : "false"); });
     markers.forEach(function (marker, i) {
       var icon = marker.getElement();
@@ -187,14 +218,14 @@
     profileButtons.forEach(function (button) { button.setAttribute("aria-pressed", button.dataset.profile === profile ? "true" : "false"); });
     zones.forEach(function (zone, i) {
       zone.item.hidden = !matches(zone);
-
     });
+    refreshPicker();
     if (map) {
       markers.forEach(function (marker) { marker.remove(); });
       zones.forEach(function (zone, i) { if (matches(zone)) markers[i].addTo(map); });
     }
     if (!matches(zones[selected])) select(zones.findIndex(matches), false);
-    syncSelection();
+    syncSelection(); announceSelection();
     if (map) fit();
   }
   function fit() {
@@ -208,15 +239,15 @@
     while (zone.item.firstChild) zone.item.removeChild(zone.item.firstChild);
     zone.item.appendChild(button); choices.push(button);
   });
-  [["all","All areas"],["budget","Budget"],["family","Family"],["couple","Couple"],["attractions","Attractions"]].forEach(function (entry) {
+  [["all","All areas"],["budget","Budget"],["family","Family"],["couple","Couple"],["attractions","Attractions"],["nightlife","Nightlife"]].forEach(function (entry) {
     var button = document.createElement("button");
     button.type = "button"; button.dataset.profile = entry[0]; button.textContent = entry[1];
-    button.setAttribute("aria-controls", "area-map-choices area-map-canvas");
+    button.setAttribute("aria-controls", "area-map-choices area-map-select area-map-card area-map-canvas");
     button.addEventListener("click", function () { applyProfile(entry[0]); });
     profiles.appendChild(button); profileButtons.push(button);
   });
   applyProfile("all"); select(0, false);
-  status.textContent = "Choose a numbered area or a travel profile. Suggested matches follow this guide; other areas remain under All areas. The street map loads as you scroll closer.";
+  status.textContent = "Choose a travel profile and a numbered area. Area details and internal links are ready; the street map loads as you scroll closer.";
 
   function loadAsset(tag, url) {
     return new Promise(function (resolve, reject) {
@@ -231,7 +262,7 @@
   }
   function tileFallback() {
     section.setAttribute("data-tile-state", "unavailable");
-    status.textContent = "Street tiles are unavailable. Use the numbered area list and travel profiles; the area details and internal links still work.";
+    status.textContent = "The street map is unavailable. Use the area chooser and travel profiles; the area details and internal links still work.";
   }
   function buildMap() {
     var L = window.L;
@@ -248,7 +279,7 @@
       tileLoaded = true; window.clearTimeout(tileTimer);
       if (section.getAttribute("data-tile-state") !== "unavailable") {
         section.setAttribute("data-tile-state", "ready");
-        status.textContent = "Select a pin or numbered area below. Travel profiles show suggested matches; use All areas to restore the full guide. Use + to separate close pins.";
+        status.textContent = "Select a pin or use the area chooser. Travel profiles show suggested matches; use All areas to restore the full guide. Use + to separate close pins.";
       }
     });
     tiles.on("tileerror", tileFallback); tiles.addTo(map);
@@ -283,7 +314,7 @@
       loadAsset("script","/assets/vendor/leaflet-1.9.4/leaflet.js")
     ]).then(buildMap).catch(function () {
       if (map) { map.remove(); map = null; markers = []; }
-      view.hidden = true;
+      view.hidden = true; section.setAttribute("data-map-state", "unavailable");
       tileFallback();
     }).then(function () { loading = false; });
   }
