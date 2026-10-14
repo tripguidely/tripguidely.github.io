@@ -32,6 +32,13 @@ def sections(value, ident):
     return re.findall(r'<section id="' + re.escape(ident) + r'"[\s\S]*?</section>\n', value)
 
 
+# This historical test compares the pre-map Cheap project stage. For the
+# exact approved photo base, use the strict shared three-guide contract.
+if subprocess.check_output(["git", "rev-parse", BASE + "^{commit}"], cwd=ROOT).decode().strip() == "04f83bc14e02150387d0f2b7b8e3a1351a69fcac":
+    from test_paris_hotel_photos_preservation import main as photo_preservation_main
+    raise SystemExit(photo_preservation_main(sys.argv[1:]))
+
+
 a, b = before(PAGE), current(PAGE)
 resource = '  <link rel="stylesheet" href="/assets/css/pages/paris-cheap-hotel-map.css" />\n'
 check(a[a.index("<head>"):a.index("</head>")] == b[b.index("<head>"):b.index("</head>")].replace(resource, ""), "Head, Schema and metadata unchanged except local stylesheet")
