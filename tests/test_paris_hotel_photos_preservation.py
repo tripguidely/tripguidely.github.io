@@ -19,7 +19,7 @@ REVIEW = json.loads(r'''{
       "path": "hotels/paris/family-hotels/index.html",
       "figures": [
         {
-          "sha256": "a51523cb90851da40388076ff3beb131560fa2fb5eefe4aa9061c4b4834f0cd8",
+          "sha256": "fdc2d96eba7e146e646166cff55dc77fae160984385da798f9c34a8541f5e8a6",
           "article": "hotel-citadines-halles"
         },
         {
@@ -77,9 +77,9 @@ REVIEW = json.loads(r'''{
   },
   "assets": [
     {
-      "path": "assets/images/hotels/paris/citadines-les-halles-paris-chambre-coin-repas.avif",
-      "sha256": "afcd769ccdd2f693b7b65ffa1ba2be9297075e454c2c017a2d6287ce4073f349",
-      "bytes": 57663
+      "path": "assets/images/hotels/paris/citadines-les-halles-paris-square-fontaine-1200x800.avif",
+      "sha256": "2d9ca91765d359753677a1420f3120d75c86121fea9fda9e6b7e37a814dce784",
+      "bytes": 175981
     },
     {
       "path": "assets/images/hotels/paris/pullman-paris-montparnasse-facade.avif",
