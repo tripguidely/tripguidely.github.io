@@ -1,0 +1,217 @@
+{
+  "base": "2549de3c4aae381e4117e3e659639962bc6429a4",
+  "images": [
+    {
+      "file": "assets/images/hotels/paris/citadines-les-halles-paris-square-fontaine-1200x800.avif",
+      "format": "AVIF",
+      "dimensions": [
+        1200,
+        800
+      ],
+      "bytes": 175981,
+      "sha256": "2d9ca91765d359753677a1420f3120d75c86121fea9fda9e6b7e37a814dce784",
+      "existing": true,
+      "hotel_id": "hotel-citadines-halles",
+      "alt": "Tree-lined Paris square with a stone fountain and surrounding buildings under a cloudy sky.",
+      "display_dimensions": [
+        1200,
+        800
+      ]
+    },
+    {
+      "file": "assets/images/hotels/paris/pullman-paris-tour-eiffel-facade.avif",
+      "format": "AVIF",
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 94735,
+      "sha256": "45a3b295d146416eb6a612275253acc94700e04bb17e00f66e1bc81e7fdd41d3",
+      "existing": true,
+      "hotel_id": "hotel-pullman-eiffel",
+      "alt": "Pullman Paris Tour Eiffel facade with the Eiffel Tower beside the hotel.",
+      "display_dimensions": [
+        960,
+        640
+      ]
+    },
+    {
+      "file": "assets/images/hotels/paris/ibis-paris-tour-eiffel-cambronne-15eme-entree.webp",
+      "format": "WEBP",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 155676,
+      "sha256": "df207a158a9e57aa82408e2c1658e4e3374ee5a9ad1923222cd57db2d2452c7b",
+      "existing": true,
+      "hotel_id": "hotel-ibis-cambronne",
+      "alt": "Entrance to ibis Paris Tour Eiffel Cambronne with red hotel signs and palm plants.",
+      "display_dimensions": [
+        960,
+        720
+      ]
+    },
+    {
+      "file": "assets/images/hotels/paris/hotel-regence-etoile-paris-entree-facade.avif",
+      "format": "AVIF",
+      "dimensions": [
+        1120,
+        746
+      ],
+      "bytes": 103624,
+      "sha256": "adbce70e9ab03d63a07b3b120bcc1f17f9cad07617983f0c1cd8257125620944",
+      "existing": true,
+      "hotel_id": "hotel-regence-etoile",
+      "alt": "Entrance and facade of Hotel Regence Etoile with wrought-iron balconies.",
+      "display_dimensions": [
+        1120,
+        746
+      ]
+    },
+    {
+      "name": "hotel-de-france-gare-de-lyon-bastille",
+      "source": "https://i.travelapi.com/lodging/4000000/3080000/3077500/3077453/5046223b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "resolved_url": "https://i.travelapi.com/lodging/4000000/3080000/3077500/3077453/5046223b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "http_status": 200,
+      "mime": "image/jpeg",
+      "original": ".qa-paris-hub/hotel-de-france-gare-de-lyon-bastille.jpg",
+      "dimensions": [
+        1920,
+        1281
+      ],
+      "bytes": 495023,
+      "sha256": "b0b58e9cfbd592503af6d2618ae64e7be1b1b5a7a2a7990e3ea31035c0e542eb",
+      "orientation": null,
+      "existing": false,
+      "optimized_dimensions": [
+        1200,
+        801
+      ],
+      "variants": {
+        "AVIF": {
+          "file": ".qa-paris-hub/hotel-de-france-gare-de-lyon-bastille.avif",
+          "bytes": 59639,
+          "sha256": "d102ba24a841868b8e4fae0e97c40fd4a4251c6fd8be2442fbb4521b849ad3c2",
+          "settings": {
+            "quality": 55,
+            "speed": 6
+          }
+        },
+        "WEBP": {
+          "file": ".qa-paris-hub/hotel-de-france-gare-de-lyon-bastille.webp",
+          "bytes": 97814,
+          "sha256": "1fe8d3bd6ba0154e10afffab97c31612b084032e45500785caa307c1dcd389e2",
+          "settings": {
+            "quality": 82,
+            "method": 6
+          }
+        }
+      },
+      "hotel_id": "hotel-france-gare-lyon",
+      "alt": "Entrance to Hotel de France Gare de Lyon Bastille beneath its dark hotel sign.",
+      "file": "assets/images/hotels/paris/hotel-de-france-gare-de-lyon-bastille.avif",
+      "selected": "AVIF",
+      "display_dimensions": [
+        1200,
+        801
+      ]
+    },
+    {
+      "name": "campanile-paris-12-bercy-village",
+      "source": "https://i.travelapi.com/lodging/1000000/660000/660000/659925/8aafed09_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "resolved_url": "https://i.travelapi.com/lodging/1000000/660000/660000/659925/8aafed09_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "http_status": 200,
+      "mime": "image/jpeg",
+      "original": ".qa-paris-hub/campanile-paris-12-bercy-village.jpg",
+      "dimensions": [
+        1920,
+        1280
+      ],
+      "bytes": 1018008,
+      "sha256": "b4a89e407c03f9507a360cf7177a3fb970a97726594e0f2a071743a31d98f10f",
+      "orientation": null,
+      "existing": false,
+      "optimized_dimensions": [
+        1200,
+        800
+      ],
+      "variants": {
+        "AVIF": {
+          "file": ".qa-paris-hub/campanile-paris-12-bercy-village.avif",
+          "bytes": 122424,
+          "sha256": "e2bd9e10f7dade8bc5842a4d9a0a25bfb13b8bee8cebfbbca50c67620fee1c56",
+          "settings": {
+            "quality": 55,
+            "speed": 6
+          }
+        },
+        "WEBP": {
+          "file": ".qa-paris-hub/campanile-paris-12-bercy-village.webp",
+          "bytes": 242640,
+          "sha256": "4149dc29b8476678e2707d86173329575524be0c75f28596adae7fbb19b13881",
+          "settings": {
+            "quality": 82,
+            "method": 6
+          }
+        }
+      },
+      "hotel_id": "hotel-campanile-bercy",
+      "alt": "Campanile hotel entrance with a glass canopy and planters along the pavement.",
+      "file": "assets/images/hotels/paris/campanile-paris-12-bercy-village.avif",
+      "selected": "AVIF",
+      "display_dimensions": [
+        1200,
+        800
+      ]
+    },
+    {
+      "name": "hotel-madrigal-paris",
+      "source": "https://i.travelapi.com/lodging/2000000/1390000/1382100/1382100/2aa91068_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "resolved_url": "https://i.travelapi.com/lodging/2000000/1390000/1382100/1382100/2aa91068_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+      "http_status": 200,
+      "mime": "image/jpeg",
+      "original": ".qa-paris-hub/hotel-madrigal-paris.jpg",
+      "dimensions": [
+        1920,
+        1278
+      ],
+      "bytes": 416491,
+      "sha256": "b8c01dd4f54984cdfcbc59517124ad11f044b1821e17e6a36e752d5b87b165c8",
+      "orientation": null,
+      "existing": false,
+      "optimized_dimensions": [
+        1200,
+        799
+      ],
+      "variants": {
+        "AVIF": {
+          "file": ".qa-paris-hub/hotel-madrigal-paris.avif",
+          "bytes": 47519,
+          "sha256": "027839ae84809ecff806323a025628a3d184f1955b816ae253eb8d8fcc0142dc",
+          "settings": {
+            "quality": 55,
+            "speed": 6
+          }
+        },
+        "WEBP": {
+          "file": ".qa-paris-hub/hotel-madrigal-paris.webp",
+          "bytes": 86582,
+          "sha256": "669e92766dcae2167fabbcda0a75a3af144d6b09c9945710b522cb89376e593c",
+          "settings": {
+            "quality": 82,
+            "method": 6
+          }
+        }
+      },
+      "hotel_id": "hotel-madrigal",
+      "alt": "Guest room at Madrigal Hotel with a yellow wall, mirrors and a double bed.",
+      "file": "assets/images/hotels/paris/hotel-madrigal-paris.avif",
+      "selected": "AVIF",
+      "display_dimensions": [
+        1200,
+        799
+      ]
+    }
+  ]
+}
