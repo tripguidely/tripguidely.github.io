@@ -637,8 +637,14 @@
       var cls = a.className || "";
       if ((" " + cls + " ").indexOf(" js-aff ") === -1) return;
 
-      var url = a.getAttribute("href") || a.href || "";
-      if (!url) return;
+      // Read the live attribute: an empty href resolves to this page via a.href.
+      var url = getAttr(a, "href");
+      if (!trimStr(url)) return;
+      if (typeof e.button === "number" && e.button !== 0) return;
+
+      var destination = parseURL(url);
+      if (!/^https?:\/\//i.test(destination.href || "") ||
+          !destination.hostname || isSameHost(destination)) return;
 
       var pageType = getPageType();
       var program = getAttr(a, "data-aff");
@@ -670,6 +676,17 @@
         params.placement = placement;
         params.experiment_variant = getAttr(a, "data-experiment-variant") || "baseline";
         params.page_path = WIN.location.pathname || "";
+      }
+
+      // Opt-in CTA metadata shares the consent gate and single delegated listener.
+      var offerId = getAttr(a, "data-offer-id");
+      var ctaId = getAttr(a, "data-cta-id");
+      var ctaLocation = getAttr(a, "data-cta-location");
+      if (offerId && ctaId && ctaLocation) {
+        params.page_path = WIN.location.pathname || "";
+        params.offer_id = offerId;
+        params.cta_id = ctaId;
+        params.cta_location = ctaLocation;
       }
 
       gtagEvent("affiliate_click", params);
