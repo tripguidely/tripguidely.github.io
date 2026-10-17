@@ -1,6 +1,26 @@
 {
   "authorizations": [
     {
+      "kind": "integration_script",
+      "source": "assets/js/site.js",
+      "before": "0a6606ea0bb3f317106ba4baaf09786e1d855178ebabfa9d858cbb488047629f",
+      "after": "c42b5cd0fb1fbea4c1131ef59276c44c46a384ff0a2ce281d91355bea48bfd1f",
+      "base_revision": "b193a14f190ea63118e371b316a3e7ef50827ef1",
+      "reason": "Owner-requested Universal Tracking V1 final audit validation: reviewed consent-gated CTA metadata and live outbound href validation in the existing affiliate_click handler; preserve hotel fields, GA4 setup and commercial URLs.",
+      "reviewed_by": "owner instruction: UNIVERSAL TRACKING V1 - FINAL AUDIT VALIDATION (Codex conversation)",
+      "recorded_on": "2026-10-16"
+    },
+    {
+      "kind": "affiliate_anchor",
+      "source": "attractions/universal-studios-tickets/index.html",
+      "before": "2e08736688283191670e07e3c8f3fbcc0501bb6ea63c03e34975912018a35260",
+      "after": "743130aa8e7e7d306b8ae89b19fd8fa0d33e6bae5464a021791e802b258b157d",
+      "base_revision": "b193a14f190ea63118e371b316a3e7ef50827ef1",
+      "reason": "Owner-requested Universal Tracking V1 final audit validation: reviewed only offer_id, cta_id and cta_location attributes on the 23 existing Universal CTAs; preserve all Klook URLs, SubIDs, target/rel, content, accessibility and SEO.",
+      "reviewed_by": "owner instruction: UNIVERSAL TRACKING V1 - FINAL AUDIT VALIDATION (Codex conversation)",
+      "recorded_on": "2026-10-16"
+    },
+    {
       "kind": "affiliate_anchor",
       "source": "hotels/paris/cheap-hotels/index.html",
       "before": "ff02947b96fb7cbdd921327cdea5f9d1f1c533b558f7f092da4536a34831ee1d",
