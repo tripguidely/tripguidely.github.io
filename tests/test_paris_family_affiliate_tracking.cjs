@@ -35,13 +35,18 @@ const withoutTracking = value => value.replace(/ data-hotel-id="[^"]+" data-plac
   .replaceAll("<dt>Published category</dt>", "<dt>Capacity / room category</dt>")
   .replaceAll("<dt>Published categories</dt>", "<dt>Capacity / room category</dt>")
   .replace(/\r\n/g, '\n');
-assert.equal(withoutTracking(html), withoutTracking(original),
-  'Only the four tracking attribute groups may change in the HTML, including its SEO metadata');
+// The separately approved Drive removal is one exact source tag, not a script-wide bypass.
+const driveSource = 'https://tp-em.com/NDkyNzI0.js?t=492724';
+const driveMarkup = original.match(/^[\t ]*<script\b(?=[^>]*\bsrc="https:\/\/tp-em\.com\/NDkyNzI0\.js\?t=492724")[^>]*>\s*<\/script>/gm) || [];
+assert.equal(driveMarkup.length, 1, 'The reviewed base contains exactly one Drive bootstrap');
+assert.equal(html.includes(driveSource), false, 'Drive is absent; affiliate/consent tracking stays local');
+assert.equal(withoutTracking(html), withoutTracking(original.replace(driveMarkup[0], '')),
+  'Only the reviewed Drive tag and historical tracking/map changes may differ; SEO remains exact');
 
 (async () => {
   const browser = await chromium.launch({headless: true,
     ...(process.argv[3] ? {executablePath: process.argv[3]} : {})});
-  let checks = 1;
+  let checks = 3;
   try {
     async function open(consent, route = '/hotels/paris/family-hotels/') {
       const context = await browser.newContext({serviceWorkers: 'block'});

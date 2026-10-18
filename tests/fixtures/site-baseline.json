@@ -190,6 +190,1166 @@
       "reviewed_by": "Owner instruction in this session: PR #41 Paris neighborhood map mobile UX",
       "recorded_on": "2026-10-13",
       "base_revision": "5f3c1d0db4ee88689352607e6adf4bc6b83407a5"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "attractions/disneyland-paris-tickets/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "attractions/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "attractions/tokyo-disney-resort-tickets/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/bangkok/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/dubai/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/london/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/new-york/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/paris/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/quebec-city/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/rome/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "car-rental/tokyo/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "cruise_file",
+      "source": "cruises/best-cruises-2026/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "820c050c2ca4e3ea6735783337d9b192f5584909493f11718b495a88079cf44b",
+      "after": "33a5cbb81efd128efb51b2564348eb77b20947b3b5eb1ee9f209eb70b4502f5a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "cruises/best-cruises-2026/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "cruise_file",
+      "source": "cruises/caribbean/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "a7dcab1499652256707d608b87295464cfa980463bf85ee63c319260068f6cd5",
+      "after": "0fa6548a497e0a14981219f4bc0c82ae6ea2ad0753633f487d32fe791b569c48",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "cruises/caribbean/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "cruise_file",
+      "source": "cruises/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "36ebf204ed5d3252663b61452897ce39855d6ccdb9ffafa33c04cd3c915d46cf",
+      "after": "91c4e68f413d71ed24b941e7fd1a2d5ee86fefa3c2b9a3a3080a9c4eadd4f25e",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "cruises/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "cruise_file",
+      "source": "cruises/mediterranean/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "64ffc3b6df399307db6dd9453d68c390388982152821455dd9e255f99cc17377",
+      "after": "c08a3f4f7914a8c4d3ee3e3524109ff54af6b504b859134cbfe6d7453f0b8be7",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "cruises/mediterranean/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/best-esim-europe/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/canada/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "381881b80fed815b14b3554ae08b1666d4a5cc6049a39ef54fb614035621d865",
+      "after": "de425c991d9af4339483af094a3e1c817adf2169827423468cc532a146d39f6a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/esim-compatibility-check/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "381881b80fed815b14b3554ae08b1666d4a5cc6049a39ef54fb614035621d865",
+      "after": "de425c991d9af4339483af094a3e1c817adf2169827423468cc532a146d39f6a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/esim-setup-guide/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "381881b80fed815b14b3554ae08b1666d4a5cc6049a39ef54fb614035621d865",
+      "after": "de425c991d9af4339483af094a3e1c817adf2169827423468cc532a146d39f6a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/france/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "43a82fddf0321c377c055d1a1166067ed296d918ba1befa7295380d82c1cc8a4",
+      "after": "28f92555fd3e3e35b9ac311a75f85dae62df4b9e74bb4a8f4968df34a923b861",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/italy/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/japan/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/thailand/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/uae/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/uk/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "381881b80fed815b14b3554ae08b1666d4a5cc6049a39ef54fb614035621d865",
+      "after": "de425c991d9af4339483af094a3e1c817adf2169827423468cc532a146d39f6a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "esim/usa/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "fr/travel-guides/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "56a986b248ba3125fb5972336ad55c73b8450e9d0f2520432f39e75f70325697",
+      "after": "56232d1300667067d91bd3c07e101957ba79a3de9054c4300bfe4d875549652d",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/bangkok/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/dubai/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "73095f2b0c0fd7db3386d43c7e8f673c10682bc5f4074d79440f24ae49a68733",
+      "after": "1092617d2db1e19dcf9481d2d8cb5aa050bf8b1d2acd3609976ea62c78b59fa0",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/las-vegas/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/london/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/new-york/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/paris/cheap-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "85c7a3a8b035a1514ab12032db8f7887c3553a7a7cd96d1ba04981718e8fd564",
+      "after": "d99bd832ea89fddf3d25b8bf6b645b6824eb568c5bd2a0fd92f40ca7100ff1f8",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/paris/family-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "19ee81355909ea4f80d73b2b7d83f50a9e899c9e965ccbfff32d34f43f007a38",
+      "after": "3eb8ba9e44520dfefd260d05b3bf3b16f14f8dcfb4a3580023e3a7a8f3c88dc1",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/paris/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "7c8dc833e4162e9ca3d5309a0e6ebfcdf928595d3c36dd44b6d5fdd2cc6452fa",
+      "after": "26a146f4c4c0501dd0564f616f0db989910b898e9e4a76a065559ea57ef38219",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/paris/luxury-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "a5b6c133e7e1d40bf2fed5a73b06335a5586473af35f284c6feefca6a1bf5ac0",
+      "after": "e9a99374adf5049fd5b35930b947a93b0f7176a83e73f3cbb5069d86c310d45a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/rome/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "hotels/tokyo/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "dff1ab85e49cd106b89eb9433b4ca469e7bc0bb67fb13a95ff2000b4898bf094",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "0126f5b6c5cacb7533601c9c8084df9498821568bfb3888c8a1ac4e88a52c443",
+      "after": "78892aee5896ad877acbb0018f2ab47e6219fea765cdc400b0bcb45320e81c63",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/2-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/3-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/4-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/bangkok/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/days-2/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/days-3/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/days-4/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/dubai/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/2-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/3-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/4-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/las-vegas/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/days-2/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/days-3/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/days-4/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/london/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/2-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/3-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/4-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/new-york/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/2-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/3-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9ed3ee5f46bac80bf3df6b2df02d822f9007ce7a6a51d9142fd0afc7ca3f63fd",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/4-days/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/paris/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/days-2/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/days-3/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/days-4/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/rome/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/days-2/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/days-3/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/days-4/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/first-time/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "itinerary/tokyo/rainy-day/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/bangkok/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/dubai/aquaventure-waterpark/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/dubai/burj-khalifa/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/dubai/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "20d4c5f1b32af352ab948d6b7e68e4715f25dc6722b7ae7d7dae824a8708fa8c",
+      "after": "13ab5bb71fda2fdefd993c37cc90faf06912b71c9eb2fee424a036da66b9a564",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "2e635a71764b854981ea4d6e09eb8d80fff983cf485770dfcfe31c4834e7cb4b",
+      "after": "90d60e7e821236efeef58d67d71cdb4029f80bbe1681f5668207768fcbb74365",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/las-vegas/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "3594b2658759a0883018b01c7ee52583a7deacf3ee31e434a20e8ec07088f6d6",
+      "after": "72eb39e73904ed89ca26df70ca664d7ba43afe5d1d10840bff7000cbc79113a3",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/london/harry-potter/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/london/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "71ea4f59e8326f550a17fc49b0ff2030569799c8f5ca7085ec9e07f7ce503723",
+      "after": "e81a8f89360ad63069476319727e61de4fd23106b801e51c3fab8a71f49b297d",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/new-york/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "030dab169bc49fc4f25d38da86525d680b21b841fd3762b5689ae2adb0fa3a2e",
+      "after": "3ef4a2e9fb13f7b9d400d37c840fe81bca7b78ff42a634c4e09fe9907ad666f7",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/paris/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "bbcd35ca5bac4e6b1ecddb54add11ed947e0a86a8c28dd90150fb6397ca61c74",
+      "after": "28a897bb76e583178cbc8c86f40d4f8dca8ba80a66b6d8d561257e036922ecb1",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/quebec-city/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/rome/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "3d0e70fad04a40207d5be07ec90c78c4932ec9fb86345b8f3ecd9ae5791d6c90",
+      "after": "f326ea3c3752ba213e04abdcb6184d9a1a0484d081f41348e6b728ba542c28e4",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/switzerland/swiss-travel-pass/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "things-to-do/tokyo/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "6a6e1fe5eedc10b0af9c544d98bdbe9066b29c3545a080236ac8032256b5b8d3",
+      "after": "a660c84762ad9b81aa4afc0d5fddf41cd4773d3db25cb730b7f161bf2d87a6a1",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/bangkok/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/dubai/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/las-vegas/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "9f9cb508f287d994a9de1ee8bac4b7c962db14f78b73139af96509ae6aafb32a",
+      "after": "f3c298f019b110313cbef70bf087ef2dd70a12e0d286873947998f1231210e9a",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/london/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/paris/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "d177f081d9e45ce84ada5e11a85b7b47af0c21715946f7a6a03b94a2437d61df",
+      "after": "604941840ac4c6754a34aeb7c90c03c9b9b81eb3c20ba061856e3765af67e7d6",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/rome/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "transport/tokyo/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "4780dbc134529de4502feca1120e66510c7d732c260dd4c108565778f9d05b0d",
+      "after": "4ebb88f298b9db96e94cf6037bf183d1406fe5c809fc6547797f97b4cece4fdb",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
+    },
+    {
+      "kind": "integration_markup",
+      "source": "travel-guides/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": "56a986b248ba3125fb5972336ad55c73b8450e9d0f2520432f39e75f70325697",
+      "after": "56232d1300667067d91bd3c07e101957ba79a3de9054c4300bfe4d875549652d",
+      "reason": "Owner approved local Drive removal on 2026-10-18. Remove only the exact tp-em.com/NDkyNzI0.js?t=492724 bootstrap; preserve affiliate URLs/SubIDs, manual widgets, verification meta, all other scripts, consent, GA4, CSP and SEO. Exact completed diff approved by the requesting project owner in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1.",
+      "reviewed_by": "Requesting project owner; explicit approval in this conversation on 2026-10-18; approved draft SHA-256 8fd59853dace013f8af0be28a5bf263c2144829024c09f46ae37404275e00bb1",
+      "recorded_on": "2026-10-18"
     }
   ],
   "contracts": {
