@@ -1,0 +1,1131 @@
+{
+  "schema_version": 1,
+  "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+  "drive_url": "https://tp-em.com/NDkyNzI0.js?t=492724",
+  "hash_policy": "SHA-256 with CRLF normalized to LF for audit hashes; checkout hashes are raw bytes.",
+  "page_count": 112,
+  "manual_widget_script_count": 24,
+  "pages": [
+    {
+      "source": "attractions/disneyland-paris-tickets/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7554781ebae5212617ab9f419f0a9efbc537711f49660893e576d1e1a2d964d3",
+      "after_file_sha256": "38d3d1613b81a8fea6f82b869150220672d55a741605d944183356d9f90d53b1",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "7f1ee7683a31b7037efb2117dc634e04678a72d1126a8ead6c667dae35b78b86",
+      "checkout_after_sha256": "7947691af59d6decdb5de1b8ad57a8d9af3dc04c738de8f50dc54fd600f9d466"
+    },
+    {
+      "source": "attractions/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "b70ae7bdfc58c5110a14562a2726a68cb69dc8d1f2f881d0fdb59d6c1055b9d3",
+      "after_file_sha256": "5667846c302a8a6d67045650fa5fe82a3414a84a9c278da93e4f2ffb98b27bf0",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "cc133eff217752d17ee9298ebf32a468c99f13fa9e42e0d4ce824f74cf5d0d80",
+      "checkout_after_sha256": "8d2a866330e790a1e8a4fc23701210523343cbc95ed0e655a097cb856c1a3116"
+    },
+    {
+      "source": "attractions/tokyo-disney-resort-tickets/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "99a5158f6f8abf863aa4e35834f17cb1d4ab79cfa570e4f75e3ad261de32fb21",
+      "after_file_sha256": "f6a4a22f86c50fd43873630988ad9d4f7a8ced29d6f5f8145092bd33ee304142",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "1afb8c45f1b283f2307a4bb0e6de14e58a2540beb9604841fe213e525e22f408",
+      "checkout_after_sha256": "8be72db2775919e8ff17f5fa8e0e834f436c70740c787aac58ad180b386e558e"
+    },
+    {
+      "source": "car-rental/bangkok/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f4625ce81e35ba93f1670659a947ce12ecf556ff1ba590d2e6ea0f17a5609f46",
+      "after_file_sha256": "b9535c995253b0bfc52de11529616acd7f993e03e171af2ff45a66cf180deef2",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "07561fdb33a203136091b36aa0c65f8119b38417953a5b84a65a15f4cc7f2f87",
+      "checkout_after_sha256": "fc76988639b620f6f8af1fee267543f2b9c1158ac2f7a229d5b82df190268efb"
+    },
+    {
+      "source": "car-rental/dubai/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "742202f8a6dc7b33fc5b2110d2836723a2c17db4db6283e70f47fbd4f6d6465b",
+      "after_file_sha256": "5417132fdfd5e997890869505eee6ff8e497b68dee035098124c3b4ae85514e7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "b6abca22b0c6e3c011229ee4075256447ad52e4fc1e420c5ad269d2596173a79",
+      "checkout_after_sha256": "fb16aff72155573d213ee78553860d0805805dfec3c3dc03cd3b264eb3190011"
+    },
+    {
+      "source": "car-rental/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "072b53b8fb84743b779b184e449ac7ce712ef1f9ca79b3e964a7121b96591e38",
+      "after_file_sha256": "952c9ab8cb2d3e77e98dad0c5c0e2fc577a472913c044a486cf2f9b2d904880f",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "dc615c44e01145b4ea6526cd44611bc899aae43be082567b45214e4f1587f61f",
+      "checkout_after_sha256": "2887229a5d9d2c8bbdf7514a186d6860c8224412d3c14e5be3ce4fa814c2bc05"
+    },
+    {
+      "source": "car-rental/london/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "fe32191f457371bd2d2153a029725736628663f7e5fe8230795e06dc74f4d831",
+      "after_file_sha256": "d003a5ab8f0d5af1df2a3d25427d9194f95d8fd77e1653c8964b3aef90cba34f",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "607d09dc681ef78885c421d66d6e411cb293284c0580a6004968ea7246dedb86",
+      "checkout_after_sha256": "778de9f6c0fbce869d68c25d1ea0e4167780c4253e7392e05f9bbd22279b2bee"
+    },
+    {
+      "source": "car-rental/new-york/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ae5d56341ef0dc446433dcf6667a2f1afba44c4970a66f5ae69c93fb19c67277",
+      "after_file_sha256": "241ab5e452443c77b9353bbe10ea8b0de1850c134c68fb23ac86a86ed809c50f",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "b0b86c211bb9e06a9d4f71b30d036f58ec06a9c9f51ab00a215dea018c2d592c",
+      "checkout_after_sha256": "7edbdb32ea9ae4571dc57723801e6404300a8b2349e1fae340926364788e221b"
+    },
+    {
+      "source": "car-rental/paris/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d79b9fce1ccb818954e35ca8104e0d48ae30a35794d305c0f46f54fc7d387a93",
+      "after_file_sha256": "1738d3e8d1788f8675fbfa09fab5fd2770ce5ebcce6719eed6ce59d41d23cfdb",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d0d0f888a12054a021215d58de80fc5ffa651b93574fe7a86eddd5e17310e4c5",
+      "checkout_after_sha256": "ccd158f64688026bc74b62b58d551e1c7847370eadb2e2a286835adf997392be"
+    },
+    {
+      "source": "car-rental/quebec-city/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "32675b552905ce52a440387369ac389f1732b51c7c630a67f86536a4bd1b1791",
+      "after_file_sha256": "33b5e7b9e5c7a8ca6db536132bff658bdda1e26d79f5bbf6fe3571efc8625431",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "0e24938f09b3b9782967ce2a41a271c92c291edea6885013181a3698037e292e",
+      "checkout_after_sha256": "c49f9ab25997d454fb5a79c5210bd70713a811e86f4e31775bb8fbf8b76d6284"
+    },
+    {
+      "source": "car-rental/rome/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "5294474a664c66704806b88bc0c8060dde5b9dab6abb42258997f6f7fb06f73f",
+      "after_file_sha256": "3736e964771f7e89cc64884d2fdf0d8bab84094562f019404b6d10797e0f67ed",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "ef13ca4ec1d992952686df2b208b50671c4ec7c0b8d28968e93196354d9542cf",
+      "checkout_after_sha256": "4b285e891ec9e79c2f11131e383d46467991f23c8f7c48afbbc0131f812d367a"
+    },
+    {
+      "source": "car-rental/tokyo/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "0ea57965f8bea30905183724dd9149b7aa292696f65acc6a5980405051446213",
+      "after_file_sha256": "b369e79399f946c5f9a79570aeafa368d4a836a13f4741e743a8f00853fff88e",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d18fb4db300dcaf9ff969bb8acedc82b962e8f2d112b1c545767f954604580c0",
+      "checkout_after_sha256": "64f356b35513b5c302dd2a2ab4fac9d42c9376a40dff8ba3dc5fdff8f6f6d15d"
+    },
+    {
+      "source": "cruises/best-cruises-2026/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "820c050c2ca4e3ea6735783337d9b192f5584909493f11718b495a88079cf44b",
+      "after_file_sha256": "33a5cbb81efd128efb51b2564348eb77b20947b3b5eb1ee9f209eb70b4502f5a",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "ffb6490e05f183042a6231a47efc73210e0594d3b211abb84267971730191519",
+      "checkout_after_sha256": "df08d9714809f650ccbfa177e31e453c93e3060660936ebac23f1854ba2eb15a"
+    },
+    {
+      "source": "cruises/caribbean/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a7dcab1499652256707d608b87295464cfa980463bf85ee63c319260068f6cd5",
+      "after_file_sha256": "0fa6548a497e0a14981219f4bc0c82ae6ea2ad0753633f487d32fe791b569c48",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "9f35f6b28cca86d74fb12d14dc874c65189fdebb0e9a6d28cf155bbc569be610",
+      "checkout_after_sha256": "6e100411e6bdf1dabe44bdbca3ec9ee610523411b909af4ac8712267dec3a3ae"
+    },
+    {
+      "source": "cruises/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "36ebf204ed5d3252663b61452897ce39855d6ccdb9ffafa33c04cd3c915d46cf",
+      "after_file_sha256": "91c4e68f413d71ed24b941e7fd1a2d5ee86fefa3c2b9a3a3080a9c4eadd4f25e",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5d8d2d633eb74c73d209010a1550510647defeb54ccdce70db0201d78616a8a0",
+      "checkout_after_sha256": "7105b67f1b53f49c4906b0ea2ad39ae3b9f01987d81072a71b6ab187ba329fbe"
+    },
+    {
+      "source": "cruises/mediterranean/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "64ffc3b6df399307db6dd9453d68c390388982152821455dd9e255f99cc17377",
+      "after_file_sha256": "c08a3f4f7914a8c4d3ee3e3524109ff54af6b504b859134cbfe6d7453f0b8be7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "03bfc93729a93b97423391410f34eb5f1df2bf4a3392d5d5aa3d5be374dc1d02",
+      "checkout_after_sha256": "dd8586a8b68375c6e6a151921a85fd777ec72e769e262406041bcc13829ff990"
+    },
+    {
+      "source": "esim/best-esim-europe/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d453db025fbbcae02ef1d8b07a2cbb25085de48ddee161d336f61990443452a2",
+      "after_file_sha256": "c6170c49b998d066f8c90fa0f6c2dca826efe5ef758ca26418a104165ef4586d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "cbee84e3b8fedac367ecb66aa8da9ab939e34a4c0e6e728f04a570f7a58148f5",
+      "checkout_after_sha256": "d44c4468c577492dbbbdb64ee8e8a8a9881f490ae210911aa109fdf5717f2249"
+    },
+    {
+      "source": "esim/canada/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f764a592b856382a1813f4135e23fb38b7a00ed25febdfb187abf131fa8d42f7",
+      "after_file_sha256": "43b31ddf01fb88917d77eb16993480f4f2fa7554913055ac8f78e4593ef30c94",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "a7adf235e4df71e3556926370885d8df49f4fa4c969d4b6bb3d648d7e2917921",
+      "checkout_after_sha256": "6bca528ebf11dbb36b93918b65519ddd73bbee67f0072e2e81f27a774d530677"
+    },
+    {
+      "source": "esim/esim-compatibility-check/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d7c862e1db0912df4bb64ba0bb600461d62c36fcd9e170fbd63074b712036e4d",
+      "after_file_sha256": "8c61072425c69ca933e54fc6086366ba0e4592695db4b1c78251efff50764aa1",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "04fd2398375f260a92d177974705498eba90069015aa24e92cc535b0c41432b9",
+      "checkout_after_sha256": "5dffed342ad8ef46ccf5d1820f6ce73058d017b6b09094570bb4e94edec86bb1"
+    },
+    {
+      "source": "esim/esim-setup-guide/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ba259ff90d2e7120e63981e4459d65432c9a8819a4076a42980bb7f6a28aede8",
+      "after_file_sha256": "8d2ee6c47c04edf9250d3fd92b7cfe2b5840dd8f1c649c291a696a063b5987b7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "e43944af5760dcea84cee03037cd61858d34ffe00932a20603c02d2ea9a792f4",
+      "checkout_after_sha256": "68aa548cdfa20d11c3ccf9d44e84837835f7342089a36ada79323db39031004e"
+    },
+    {
+      "source": "esim/france/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6e574dab4e4cd11dc68da5ec2dc35d322f964dde339eb788e09d0de18b5aeb0b",
+      "after_file_sha256": "df239deff5b3ad039799d842f19c69199370f8ee1919f94be5f81dd36d263ed4",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "14eb91a838d683dd9e29b9df9fef683a62fe8fc7f32dafc49476a29d262691c2",
+      "checkout_after_sha256": "58ff4f48fc243aee3f8672653dd02941c17d33b84a3be166796057e581311bd1"
+    },
+    {
+      "source": "esim/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "2a33d5826e23b4b62d97226a25282c1857e4c9b78584a03258148200668be742",
+      "after_file_sha256": "a372dc74a78cfa669abaa3f6fc881cc2f09f51c87ed34b10ed7aadcd1d7e6e99",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d0118784bb4cec928f62b3fd2063fea68e2b5698d7bd525cf77674d939061cd5",
+      "checkout_after_sha256": "9ec93f9a6eae61a6af60cf81a90e55b4e8829a7f98eeb95fc5317cd6d446708a"
+    },
+    {
+      "source": "esim/italy/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "22ca721df5f1c2dff4249dcfad629a93137507c6cb8fc8e68a02abb668010fdd",
+      "after_file_sha256": "ba64465d1a58b0cd581d7a9fb6e77d570a944cb58f36f2eeb6005f55c113b439",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f72b2b543c3e64dd66091e8faee0c3ae9fa7976ee34de752f2decdb6a4b12e22",
+      "checkout_after_sha256": "2dc63a81af90482c3cded9c3e518a59811b21b8663a1ad4575a443463d1848d4"
+    },
+    {
+      "source": "esim/japan/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "845d315aeeaad838f4e052f0f8e6374bf000a4dcb69ab90359c0cf486d1bcc1c",
+      "after_file_sha256": "f0c956e1f3f495da6133bdd1e1cff3c7ba6b72e3d520b1ef4abb19a6f83552ec",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f25363e593bbc696cdc7d02b6de3f24e3e8828ffd7a6c0a4b05f330b6f6aaed6",
+      "checkout_after_sha256": "f55f7e89d608c5d57e75f15fac74cbafd557dd85c6fa8630502d5d271209acb4"
+    },
+    {
+      "source": "esim/thailand/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a0a9752adfd07bf1dfb8ddadc828c45862fdebc90df0491b8c3ba8bf822f4e1b",
+      "after_file_sha256": "048ab27cb320848a86642cf9007a1fa927d183f5cdcc46af98e126798cbde3d6",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "df141ff18d19def47fa434e39ba3328064adb3d6ace9eb4991053c3bb07d8756",
+      "checkout_after_sha256": "97c7e5087d894b79fcd155826e7a752bbd102940541463f91e985c2babbc055f"
+    },
+    {
+      "source": "esim/uae/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "781dac8091768a6652f43c62782529343720bf14ebaf41d756cd0a2792973024",
+      "after_file_sha256": "f60d39b78ffca098d06e4d02821fe383bf23ae74f5edc9d05ad3e3811fe792a1",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "55cb78916ca3ddf40527cd3661f7e2cb9248e98dde84e64f292457296dc94462",
+      "checkout_after_sha256": "4d3176a66a0753ae72146a190afa0d3d095d4153d3f712c707ac43f2a2a98c19"
+    },
+    {
+      "source": "esim/uk/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6484a9495a6c2a541a1296a640046e5cdc59d71df6fb941e9b79c4eaed22f116",
+      "after_file_sha256": "bbf9c04abdfadc5af34a6c4e802461d48307d0fd33045cea525a9429d370aeea",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5b8489a71fc27408fbed0c69a3c502cde178e1e8ef2629d68a3a50c387f44471",
+      "checkout_after_sha256": "3027cf2120df121f6f41d19db4b596c021c758fdabe7466222ac483bfbdb0546"
+    },
+    {
+      "source": "esim/usa/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "2dee3770ed398cb0bee0c14414344933e86aceb5f5a3635bddf3752cbe353aa3",
+      "after_file_sha256": "4b70c404fefc11c91c133728ea8b43fcec8553e29ea1e33e18d7cc89de8ea94c",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "bd05bde4e9ca0a2972df99eadfaac249a92680fd33c07a260e752f0339a733ed",
+      "checkout_after_sha256": "b48f3d1636395bb7ceec5ea1843e2329f3f6c1ea6772cbe24d7256e012a7c852"
+    },
+    {
+      "source": "fr/travel-guides/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "0d9f0162c4de02381b9e364c76e5a65712b42ba75223a0479fdf3055b007579a",
+      "after_file_sha256": "eb70842b1c470e5b92184c1efb38ae2bfde949d231cff904ac7e1c040615f0a0",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "b2e66c3cd2fd958ca6f764168387d1d18fa24c6d1e771db0cc3c0cc11fbded93",
+      "checkout_after_sha256": "e2708e980390d9bc7237b5e3bad63e56a3537c4c0ca56f20e235be3b68f216de"
+    },
+    {
+      "source": "hotels/bangkok/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ee580c36bd644946fa68fed2b270bfc8b5331b1bb2ea2a569776b53109769915",
+      "after_file_sha256": "95b53c8435d70b10604ac6a0a498255dc7768c0e25be29cd0b41f216e6c737a5",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "6aaf7bd02bc60876044364d685439df8f84fb4ae4dbcee036b0ecbb0ff92469a",
+      "checkout_after_sha256": "115fbe5152ab92e4507adaaa8dd688e8dab9f2b87335ce013faf9a294fe70abe"
+    },
+    {
+      "source": "hotels/dubai/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "16e84426d03827c1864a11715235f638ba2e28a5a1c3f4337d2be31d77088cbd",
+      "after_file_sha256": "6ac16e940832a796b6777dad02cab4fedcc2650f67feba468694cc10bb30b880",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "8703ccda0574b8f3f4469f23ff1f8d383005203dceb8409e88c2301dc5ee8542",
+      "checkout_after_sha256": "5b7bc7cce7644e201387d82053ad383cd275560c3bdb065158ad089c4b7528c2"
+    },
+    {
+      "source": "hotels/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "99c5e10705288adedff474db81181d58b077a582d5b36281a6904677d83f0599",
+      "after_file_sha256": "6f8ccd000fdd197288ca0f4ffc5cac177cede08ef0ce0dec8a4dc32517b1b587",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "4f38bd7c4aa5c14dc1ef09678ef32162b88b792c09e517b46fcdb888dacbc346",
+      "checkout_after_sha256": "82e00de9264c9843045d279e9ad6784c4874b676c626ae53af9903a8bddd5fe1"
+    },
+    {
+      "source": "hotels/las-vegas/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "73836f8b3e165231df8f1b56937949b488ec5f1f98d43d8b8f84f43d7d343197",
+      "after_file_sha256": "9ea8b9cb083f619aa13f252a45e4957e662e3d146f7fee68158be0ce5420f99e",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "8aee571baaa6967a2c94430342172b9f1f1392b55423d4a4f2f3d7e1345fb18f",
+      "checkout_after_sha256": "5868af721665e3a4cbcce931a9e7d5744c85aa70519e13043c3bc5aa068f0134"
+    },
+    {
+      "source": "hotels/london/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "c8232f77dafe73690f8791f02306e2ed08709771f8e3ae9afd087a1dcaef8583",
+      "after_file_sha256": "a9fbaf233ef0a3e404e3a6cf80064d95a9dfdd5be7edb695a980f35a7d7e4b66",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "25f54b2e77e964a5148100e755c9123d9a274268dba09188c487199147596403",
+      "checkout_after_sha256": "4a7b8ce1e8533999569fc9e7b362326fc164ba95f3fec4458551202778b22f39"
+    },
+    {
+      "source": "hotels/new-york/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "4a19e0a6df035708da60bac9db82e42be0ca67a8bfa168ab956234c5dc891046",
+      "after_file_sha256": "892c5423989fb44297ed0145c3d3f3e0bdafdc9a3a898b423e07eef44ef64405",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "ced00b5e361930f6763f2488c8ba1db384809d137a1bc9b4a03fe7abddef3697",
+      "checkout_after_sha256": "59f5151172fa6b73f37a9bfe505121b987c60f7eadc97b6af0f6be257b85e790"
+    },
+    {
+      "source": "hotels/paris/cheap-hotels/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "9d2220dc447a8d62d9961454a69380a744db738e48d02ce8fb80f81cde266d80",
+      "after_file_sha256": "fbf1610aefb74d33be8c2f2c8c57a79f6bf8c507f66c6730ad3e5b055280595d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "0184b2a885d1a74064e564c9a8edfddc0cc690dc4e247c6f44c84c00d1122bb3",
+      "checkout_after_sha256": "2593f8b0391f1b534680ccb15fcdaf101f3222eace2aa58e7f60115629b676fb"
+    },
+    {
+      "source": "hotels/paris/family-hotels/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "1c2852f9f0b29641b010c35a4002138fd905404e6bb9a8c5d615e1ae56533c9f",
+      "after_file_sha256": "404c2e85eacc11745195ae21862f1cbebb04f13e840c29f0add892dcbf791a1b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "df0051230351da5314c6bca028c3dc47d2bacdd70da035a86ced1ac4e32b4b33",
+      "checkout_after_sha256": "b444721c720ba6f87f28d191db8acd749489d8c471230c1be8a8e17e3709aa86"
+    },
+    {
+      "source": "hotels/paris/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "5802464d13d5fb4d8e85beb21f107e93bae1b6260da2467bb50047d7a34ab317",
+      "after_file_sha256": "05f7c237dfc8ef5ef8bf4a97cfc989a4218c05ae57c6bf50fd0fdbe9377bcfa7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "0929a742eb6f668fbcf50c29038121993d621aca98112331d2a0c840651193b1",
+      "checkout_after_sha256": "2bc0a5c03efc21878ed67a71589eb1ad923d713552f9359c4822160744aeba7b"
+    },
+    {
+      "source": "hotels/paris/luxury-hotels/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f3fcd017eb8467cd817997ead4c16047448c29772485248adab3033a06c6662e",
+      "after_file_sha256": "152d95b1cd24b5056180fea08ce1b7062c978db66a9f0677ff4174d386e4b152",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "1f8ca83e5e85906ca7c072db321e77c9ab609e747c9012a2a7814d767002a140",
+      "checkout_after_sha256": "8633998c85732861d89ae7baddc7721a58ca7e6123acdfec2fd4f002c65b5881"
+    },
+    {
+      "source": "hotels/rome/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "2c3d00ae1f1bd98c9c9e18d0093f8b0ddb1f2c66c5a58151529529967d49a975",
+      "after_file_sha256": "313d111cad2fdd99b792e7f81aef723a8116ec70f716728ba20515011284fd12",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "7320b57edc4e06037b5c86c51d0f31f210a86824a4b004f00c7faabb3ab18eba",
+      "checkout_after_sha256": "4ba518fb08fe18e418d7ffa11e408ba9985b61b96c5e5a58dc4f1c8389946033"
+    },
+    {
+      "source": "hotels/tokyo/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7434190eb786ae6ab4b55c5814f131d79e4b42474b2aaeb78eb8ac0669f80c5e",
+      "after_file_sha256": "11144ac7a97fbe79a9882ba70e97bcb310dacb83fe75c537e0624024213be03f",
+      "removed_script_markup": "<script src=\"https://tp-em.com/NDkyNzI0.js?t=492724\" async data-noptimize=\"1\" data-cfasync=\"false\" data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "1ab7c318a7a8b0fcbcbcb96c215919b31a4310c17da26b69786c4045427855d0",
+      "checkout_before_sha256": "c095df6dfbd976028b7555bee93d34a89aacac01e1e5bf43831b769bc4467802",
+      "checkout_after_sha256": "69d6d092c402714c482bd8a249741baabf24c975eb4b3e5b443cc99c44a0433a"
+    },
+    {
+      "source": "index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a963299d3d6a20429dc1f521976d4beda688e2d80aecbce242ee6535d26f70a4",
+      "after_file_sha256": "31e08528ab262b87d03dd546e11d3a18d4af1c742315fe4eb0bbd89749eb82fe",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "418ce08b712727c9dcd2becd7550eea6c34c620b3f4ab16a41a40c2a9cc2b2e1",
+      "checkout_after_sha256": "7e7b5b9dfd9371bc3e72736e7d8a8cff185cfa8f94b7ae1e5c3b8d0c2a40a7d0"
+    },
+    {
+      "source": "itinerary/bangkok/2-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f75c1ce748793fe536bec7ae975ad3dea6426fc01a345f200857ee739cb339b3",
+      "after_file_sha256": "18b2d1c1fbecd356581d412f2bfd17f99e68585e3c1d7c962ea6fa803801674b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "50c73f6d45396f7974a4f44d6b0a7d53ae09deeb0d69070a0e16468d7c3d05c8",
+      "checkout_after_sha256": "de6d9d7e68fdfcf7662947b3ec84bc6ef32b54ffb7f22a0b8ed66448f3b40772"
+    },
+    {
+      "source": "itinerary/bangkok/3-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ee797ba54754a1978fb8797e71bef4df44baa08e1c35674aea594608fdae0a10",
+      "after_file_sha256": "e953dd47625b6c65da57923fb685c193a83b5dc44e8602b237632da3d05e6fce",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "19ae31bfc7f997cc92dd1d274420f0915b6c4a38daa24373e565b98ba381ef3a",
+      "checkout_after_sha256": "9e5e5faf36c2c3a63564690bf6935e270f87358398b81dbd9916e285a0de2bc1"
+    },
+    {
+      "source": "itinerary/bangkok/4-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a437e9ecc76201913f5f09523892a87d848890747ec9acb46df1c2e9362fd55c",
+      "after_file_sha256": "9c47962f683e2f825b8db7d6e6be3fabb2141881c91647ebf11110a04a845cd9",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5c20fe031faa7603d4602aba7534363e651036fed846abe998581d9a8fa04039",
+      "checkout_after_sha256": "7ba5bfc14231db2c88deaf5a3d8032c3d3ab95aba83471c22722d2affeeaaa07"
+    },
+    {
+      "source": "itinerary/bangkok/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ed4f42fe32195fa3a6283fbe4444cdd04db2e50ede3ea6f8e0d656684864e9ee",
+      "after_file_sha256": "bb5499391c8a2ad9e5b7968540b00b792a1a5d552f1e971405b78cc0a7ddb7ba",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c8ee62118f70788b0b80368e98132fdc430dfd92c60d17909b859ec2692b1fae",
+      "checkout_after_sha256": "ab677d4cb7fb448cc8e74af4ec11221d6a91bddf49ee24dd0861159a7d31e68d"
+    },
+    {
+      "source": "itinerary/bangkok/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6712355f80b537d06249e88f9fddc9e7c70ba0ab668d02deeda346ca5c888693",
+      "after_file_sha256": "062027ea1a7073072821c0ca457bd7f873b8c6c61d6fe008b0a8d79d3a457b93",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "510eb71bdfcd0f4bc3d845391bdaf7a56d185c426e63b4409cffcc978642b0fc",
+      "checkout_after_sha256": "df7c274405d85a61d8c5fcccc55b6d7f5393f431cac4a574e8db727ea71d72b2"
+    },
+    {
+      "source": "itinerary/bangkok/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "caad8ed9fb2403aba420efd6d30f34f8b8b80c5e485d4678053369b40456c951",
+      "after_file_sha256": "93cfd9536d4162b3e498818a1e28d376eb570d17fffb03fdeaa029d76f2365bd",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "bd914cb617828cb0f2db20aa779440f695c98ed67b9b8af10ff2d3cc73dad02b",
+      "checkout_after_sha256": "a05857dd3594647ceb987079e577a0e32b70765dc6a184a257ba21faaac0b1f0"
+    },
+    {
+      "source": "itinerary/dubai/days-2/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "3080d7459302fabf130e3aa6b97446bd04351965272e210476dde5480c8944c8",
+      "after_file_sha256": "9d3a9904db97b1cb4d928b654d44f266a556a73be7c95c372ecc9d380bc5a46b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f0e743fbbf194ff488be03aa31c7b0354549b47d43447a5cb8aa0e1a64e6d7f1",
+      "checkout_after_sha256": "87ddcf0fbd507186f49b92825ebdc8c0a854d4387bcac74b6a9d5fd37941ea43"
+    },
+    {
+      "source": "itinerary/dubai/days-3/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a78ba32309416234c807fc9c4605dd06fe886c358c70a32e588bd36f145dd4a4",
+      "after_file_sha256": "22ba145e0a1ffbd9500d8561b43f649a731e4070bd9f9c802ec75edf67a2e1a6",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "9a9e9552d1545654f469480b8c292a899f16e6bb9ad181623ec5bd45e885bbb5",
+      "checkout_after_sha256": "d936932feb754de3699749e1d0ee328248873b0571006f5e70ff3872c7f8e8eb"
+    },
+    {
+      "source": "itinerary/dubai/days-4/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6a2443e84b8905e1c449520b4cd8279006e0e23a7fe8d8462ca2041252a2aa4c",
+      "after_file_sha256": "ab729f546c5789096690696205d4480512f26777b6a2f5d8e6b497e85af58eff",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "9ab944937f69b3710f6efe60af4eef67acfaa2d399bc0f0ff99e986ab4f552c6",
+      "checkout_after_sha256": "10c97c291b63126b26d4eb2b8c1f85512215e3da799b7b9ed98f9e1d7b5abd62"
+    },
+    {
+      "source": "itinerary/dubai/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "4c76098e1147a916dfddce79da68d6c5317db8a2dc2d8cf0ea2bb4c77fdc6bcd",
+      "after_file_sha256": "ff7a6dba7a43a67d23b314c451b80b876fb26df08482b9ae3d7454dfdfdd8dbc",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "eb1d560126e84f8635a5a55691850c22bca742781cd4fcef0bb50fd297667e4d",
+      "checkout_after_sha256": "103d5b72fd3b6ece99173de22b34f2aaf5779e36dca18ff5b90837d42060a27b"
+    },
+    {
+      "source": "itinerary/dubai/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d69790026a9f45a8ec058a2ed2d5f2f0df568d23c3281777dca2071a96c6d584",
+      "after_file_sha256": "09b6332ff12322eb69a289fb5bb7a2da23568b3d595af05196dc0ccf2b252efa",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "be56f82044b761cf10df17941a5bb62c1738798566173fe27ab1be9b697e562b",
+      "checkout_after_sha256": "a18139833f5f8a86fd0326f66ff91f2b871899f1d72263acfa394529b8a43e4f"
+    },
+    {
+      "source": "itinerary/dubai/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "b2b32ffbc0e4d86b0a54d2aa674cfff7e1cef16b1cd7f49161d0dd24c43108a0",
+      "after_file_sha256": "48eed1687af2c2a776ae0ff28a7ab07bb6cb0bf8c71f8afe0a9ed72855f2182b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d3d2086f4eb3250789ee224a87bdbd31b57ee4a9d9830fc48b4a94f0c5ac9a2d",
+      "checkout_after_sha256": "6d380153cb47d2946c789f6587274458a785145a582f80da6e17938b63306ca4"
+    },
+    {
+      "source": "itinerary/las-vegas/2-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "560dc2eeec79f1f52052ecd5d8fe7fd180ba4c4402b078efbeaab8781f45334f",
+      "after_file_sha256": "434f23ffdc5404b19cbb3824a135cbe68539716854337504ef6001551e5c2b6d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "01d3ddaf63d693476937ee9a352d710afe7332e0cc09945a18ec7b78ac415d3d",
+      "checkout_after_sha256": "4f5196d5f033add9db9bc1ad4f0ea0b56f8c9a741a61747193d10c36bfd172ea"
+    },
+    {
+      "source": "itinerary/las-vegas/3-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "cbc19cb291d4c644ee134f0feddeb80c29860c1459e4937831083166f5c3fd96",
+      "after_file_sha256": "4cc8d5bd80335aacb837921641db7ba2b8e45897b49609d124fe3f81c2dc3804",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "457d6799ee02d3008439aabc2c482229aa341d99dabdce86727f69c0b0904a8d",
+      "checkout_after_sha256": "b6ce07089fe0ddd5cdca158aa3f89b0d852246741029f192cf315b721cf4da22"
+    },
+    {
+      "source": "itinerary/las-vegas/4-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "23de13e042e29b12e1eed3302817b08dfa1e661a57d04a56da3ada853c1896e7",
+      "after_file_sha256": "6e5ea3f5179ff7e239f44e538655e88f02ce6f46d356c9c8abc1ce3389035e14",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5fd5495e2485dbac50f85cf7a0fa2a22193141d12e940ab36038bd7f9aa93eea",
+      "checkout_after_sha256": "0580d633d0e0e291e76da9a8d61867059f27739132d3133d4867cf3ebf0a0734"
+    },
+    {
+      "source": "itinerary/las-vegas/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "2392ed5dcc8cb0cd02cfd7ad182cbc113946f512ba34db77c7bc7316409d6f0a",
+      "after_file_sha256": "ab08b324226af59f1ef656a625c703f71a8044e977b3a3474689e01e832726e7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "ef3c81acccc4a03b771ee2dddebbaddbb306129b1c140d6a174f31a4ca9560b9",
+      "checkout_after_sha256": "bfd5fc4948be5155e71767a3b8a1d1bf495e416113d56482f0de9961d5a63bdd"
+    },
+    {
+      "source": "itinerary/las-vegas/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "0acadc11c3553254ff38e090d98942b044768e5b844ed1d3ec350fcce5014839",
+      "after_file_sha256": "10e87314f8f0fe5df351827996c2e9549d445771222fadce99fbf1f57a00faf3",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "7b64b6654820b6cf8d24bb7426ffac7d62268a85cb35c18c4623c903c986882a",
+      "checkout_after_sha256": "1210aa93841962b5c647d9e160c3ead5f9b71c11d6fac51dc629ae994755bc47"
+    },
+    {
+      "source": "itinerary/las-vegas/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "00e1608eadc6349198e6ca95e1e1eefc01d4dd4d0472b6fc5bd276d939f456f6",
+      "after_file_sha256": "fa72cae814a662a7e5a291519a0b20aa3a57ba078d79afd5955651cdba7c4ee4",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f1a4f5a2f437580ca68b7fe49d8960c11c3f4c3bf849f0b1e0215757b23da50f",
+      "checkout_after_sha256": "beff183bca8175b7984f887a910509a2d69118a73d4a67be372480857d00ceac"
+    },
+    {
+      "source": "itinerary/london/days-2/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "90ee2f110ca1648c8419e4e8ffd605396b4e2f4cd987269ee9a74c39d8b9f344",
+      "after_file_sha256": "f94846ffbd6c53c5853731fff4e46d89dcb52bb2affef81f8682b533312c5325",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5d4bbb95e06f9a4dfde0f0c20e8154d62b7fc5f223e385e4e602d03e407df892",
+      "checkout_after_sha256": "df5e0408e3fed55a7d438b4088ee8796598d098d9574cf7908d484256f0e8a10"
+    },
+    {
+      "source": "itinerary/london/days-3/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "af494bffc70eae218d208ff9b32a931085b831bc25b3d2ba8eb5d795f9129727",
+      "after_file_sha256": "bdc20b1c0b2f9b7a477d0dc7fe16209556ec200384d10280282aaceedce591a1",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c2e8e5bd55e60506ae658f6e605ea050b506e72b4f3ed8d84b934c55879641a2",
+      "checkout_after_sha256": "eb4268d091e64c950bd5ee59d165d7f84324cccc2349b7621738a1ce9b5a6996"
+    },
+    {
+      "source": "itinerary/london/days-4/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7eb4013975f7fbc5b4aa75e3b708c0923e43411ac52e374e20dae4ddf54a088e",
+      "after_file_sha256": "938bdfe339a86c82969e1318695ac18d4216299be3736b76a3496af36ca0056e",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "a9af6b38e01faad88ff595bb0c86f3bbbc3342daccad8d236dd369c4e8db2f1f",
+      "checkout_after_sha256": "324123b9047648bbf8c60833e3dcbabaf165ce9363c162666035506f15c539b8"
+    },
+    {
+      "source": "itinerary/london/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d1fbc44dc9992d4f0ff9bc284c2e5c883b9166101213ab8781a8971facfe5a6e",
+      "after_file_sha256": "758470ab2e8d323b8134f420c6f3aa3c135c94ed6ffbbc501cf14b8dfd7ea4dc",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d765cd9a5d8377c93cedb7b260bd17b668b2419f6e0c59b759297c1d2d49c883",
+      "checkout_after_sha256": "a3e7c4bb05c1e98a6baa498fb5732fd83502f023b939303cf657aced7cb2fc2a"
+    },
+    {
+      "source": "itinerary/london/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f72caf4e48663ad6fb66cfb6ad0f56eb1286f41ee0dba467e2e9e89ca863e073",
+      "after_file_sha256": "cb7fed7bc9baba5c36d8e7b1c43b57a341bc3eca2fd488c14419a25b6d62ce00",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "e466f41c938337b838402f033ad57abf60f895ef7e32a5623de3a8fdde9c72b5",
+      "checkout_after_sha256": "bee246b1c8d01d78d18168b27c10f4b98885c49a1a3eefd2ca0e015a7b4ab549"
+    },
+    {
+      "source": "itinerary/london/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7d9c5fde627e6f4444dcd93d68495bfc9523e36d1384a24f1bfefd4aa393ea71",
+      "after_file_sha256": "4ce88fc34402927a677e25e7c946bf3fdee546aeadc0883899e2fdfb74d424de",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "91bee08a94062c13d12a888476125376ff2e6d571f8447bc2901c0ff4c9f2501",
+      "checkout_after_sha256": "d853e7551f9ee81a8d4447412658e529adc2c78e79800873d6ef7ca7ee40a184"
+    },
+    {
+      "source": "itinerary/new-york/2-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "01907e332201259e04621aec580b317de43de2edbe1ee1f782d16dcb15e72929",
+      "after_file_sha256": "56b3fa2322a62260f6f503332f45c6a062170b87a6da7ffe83293d04c20081be",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f5400282eae1c9277eab5f32410e339d5a0011d48a41661f440ccd0366765566",
+      "checkout_after_sha256": "02fa6295a2b9244dc31121af72f42dbb85ec39e4a1038c30c7e2b81c4805f449"
+    },
+    {
+      "source": "itinerary/new-york/3-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f1b0d2556c4c3ddd48e0bd4cfd7fdb493b57de0000075f75cfa5ce0e9bd0329d",
+      "after_file_sha256": "44a9ce77c83671d0b1b951b24eba6b90b72858f9428facc8a2fa55a5f9f3d765",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c10aed5d99579fb3ae244442ddcf8aae81cc14e0759a5255d539053bfd7d8b3c",
+      "checkout_after_sha256": "a28ab6f09487fcf363477055ba4ba37475ea896ac9f57239416939ab41ebf04d"
+    },
+    {
+      "source": "itinerary/new-york/4-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "cbba1ddcafc580f52ac9a9ba43eea2f2716250f6849b988f6fcf84d14a32f401",
+      "after_file_sha256": "7b5c4be53e95669393742215fd1af70a812e12e81a8fe7a0fb3ea8e70ea8f31d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "86d19b997a0d9d3e4700fce1c3c669b8b70c585e912c81b7357016e670731707",
+      "checkout_after_sha256": "e803e6ef1db14041a3b36ac8d87f5a916adf5b01b0e344d9d6db23917fb02268"
+    },
+    {
+      "source": "itinerary/new-york/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "0f19c97a43e2d139452ae89cda19c3d6606ce17e13fa586879cd6519b0129eaa",
+      "after_file_sha256": "36d62aaba7f4ac7d7606a7cd3151e24872a34ebefa9f4e9547a109608cb222e4",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "b36fb6221eeb7fbe7eaf6021e0187fe9fb7580338dfd62089aec276022740b8f",
+      "checkout_after_sha256": "34062a3eff387d285a107d900d3e42c421ca035503e2999a2f799f10137ee1f9"
+    },
+    {
+      "source": "itinerary/new-york/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "a92289ebd33e0e2d7679b1c1c24032788a0e1e83caeee73c4d959924a5332bec",
+      "after_file_sha256": "7042aec89a09f66b36d93601e2d91b05435ddd2c721c40e6083624b962172d41",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "64b2df6f052701c4ae13f0610d565bd7a0af2c276bdaa48cd6f132b5f645c40f",
+      "checkout_after_sha256": "b00e58f1c01041ab675fba5f75b3c5b83c85308b33876dcf07227b1204ef72ec"
+    },
+    {
+      "source": "itinerary/new-york/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "817b318f943f7cbc5e7d773b9f948c3321d61ab3dfc6b59664f4c130eb5f5f9d",
+      "after_file_sha256": "c3928d19df119271d5b1cf196bedb06fe2a080ed70e705fc4c34b536ab4aa508",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "6dbeef41dbf589ec7e5bff1f792f2fe88da82f915ee5ac3a43dfa149769902e7",
+      "checkout_after_sha256": "a5cc6de4f8fbc62d441d52fedcad50b8732435d11791184bd91b607da923e349"
+    },
+    {
+      "source": "itinerary/paris/2-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "61bc13ccfd25946636003762fca0d7386d1e835606cceaf8823d51f4a71af71a",
+      "after_file_sha256": "22534a1ed08c56371e0c0a73d7638d02b95833ad9f70f44079e4143402baba6f",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "1fd78542756014bd4b1c15ec62f7832c50242d10bb816cefe4860ab01e9efd4f",
+      "checkout_after_sha256": "7692c11a8f03ce9bddd5e0a4669ef1a8a6b8c431aadd7e4bc599924f4cde35e6"
+    },
+    {
+      "source": "itinerary/paris/3-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6cec715aa89fd44f6d673ec7ed000817688fccbc38f219cab57f6e46f1ef29af",
+      "after_file_sha256": "ce33b580b035bf95c4f2bbb0b1669314844934fa2e1882e3cd1c8df983ba3288",
+      "removed_script_markup": "<script\nsrc=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\nasync\ndata-noptimize=\"1\"\ndata-cfasync=\"false\"\ndata-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "42f89b3caba9c7d84da985e68f5eed23bce6f9a98e9f7ab570a35d69d69d0b51",
+      "checkout_before_sha256": "92f552ab70b98f724bef76c91a0641b91c429fc29a8e0e868d143a87a693472f",
+      "checkout_after_sha256": "23fa34a499dd37dcef99efdbd9ae561f89ff788ab3877fa1be4310d81e0b67cb"
+    },
+    {
+      "source": "itinerary/paris/4-days/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "b5c6fb26dcc1909326f800fd6753665aabca62892b5aab748e257659d3a7af11",
+      "after_file_sha256": "e3c58312676509ecfdbbd40815a0cd4b99154e3de9dc61437beb85a317f97af3",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "9b7d2fbec7d46455d577d48d19179cda0b42d649864b265a8fd435f999f2bc69",
+      "checkout_after_sha256": "20c3183014135479b274c3df144a3475a13bf51d874b76902e90a54bebb79de1"
+    },
+    {
+      "source": "itinerary/paris/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "bba99199564d3635f008f832378bfe711a8989a192bbc6d60574b915dd500fca",
+      "after_file_sha256": "d6bbc253a21a9b5b1fcc621eccb487ccb1f1da3cd83ebe59ae74b2ea669e5337",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "121fc3f9f85e8243ca3cf4d86bc065e4f9358f0315d17b1c90d7c9b4388f3e7d",
+      "checkout_after_sha256": "99345d510c366669284a0d8497e5b8896fc2a28ea0e71155eebbdba289ff8809"
+    },
+    {
+      "source": "itinerary/paris/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "54bdadfce381a6cc05e54212d8f53e457ae1abd4476d45a6d66202e1c28048f5",
+      "after_file_sha256": "8f36d159ce1ee9c5b07d81c826c5daa0bdf13fb7530db149d342004aa331343b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "1f223597ff58087b2deb78cb1111814589af2238c3eec6a85c5eb597bd6d504a",
+      "checkout_after_sha256": "726bf982c0900bdd9f7861f5cb59edc96f891b941cfbb87e423b54b1f6c4b396"
+    },
+    {
+      "source": "itinerary/paris/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "67af5c17a93a12860e812d20e02fcaa12d4fa019111dfacd58c0d806a0274a10",
+      "after_file_sha256": "fdb4ef62fdac50eaa094a802b675b11c1f49a21c094a07abc7d7d1c01d99f390",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "8ef158af0632cd85c71c44dfea4bcb0ee1afcd71728466be67e85d77f7f9e50f",
+      "checkout_after_sha256": "214d93a355e775f9cb4498f5790bcc4ec947392d134c49bf207b08bebce8edda"
+    },
+    {
+      "source": "itinerary/rome/days-2/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "b00d23879335cc7bc1f23104a8f53fe291e588066e1e0729099c1c2173dc42b4",
+      "after_file_sha256": "b17f8f6e2224bab1c7d575eb2e07b321519543cdbf1f5546d389dce9ad12f234",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "0eb9d28b4cd325992b4b7ebde747567ffd222779b6c402bbb4dcbac7a5957732",
+      "checkout_after_sha256": "da1ba064c38841ea3b4e1c45dc0087dc010f2865b16195a464c702ece70bcdbd"
+    },
+    {
+      "source": "itinerary/rome/days-3/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "736e8fa6baca4fd1ddbbb4b1f47bcb340e0612e17d60f2d46fbec0c4cb1e99b9",
+      "after_file_sha256": "b3a4f392ad5118c87854d2e89f4d13f4c39b412247190f8d0e27c28ac59ea29a",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "edfd3b57fb4471c519e4fc3fa5c325c2e56c5752d30c26edecdaf33a2ac5959a",
+      "checkout_after_sha256": "d7e81ba23ab612b77a35821953f4eda982eecc8691f0ec5355f4b5b5ffc58bff"
+    },
+    {
+      "source": "itinerary/rome/days-4/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "6ae8652f171e3f186594f79cfac8f9a15ecdfbc85ea37032252528aab09a2257",
+      "after_file_sha256": "96e79381485677cb017cc07aafd158bd56413b2ed48700037778ade38b33f633",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c71e4177de3e32559a31a812a54c9ab8ef52f65ab378c96982ab4a4c8e6d223b",
+      "checkout_after_sha256": "b0fc34bb4e6773d77a6f9c15aa51f470dda06f934025e26d7a29d80d5098e14e"
+    },
+    {
+      "source": "itinerary/rome/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "d4fab9066efea4e3148fe6da67220c6b49b7be8c7e55838a55c36341dc45a737",
+      "after_file_sha256": "3fc4c3a1b3371f8bf0ee39f990ac1d34012b401e8c0d5de19477e2634437d914",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "118fa0f940d9bc1cf3850b6eba4db8438d4cf3754cf17a63562bb56a0b16fd36",
+      "checkout_after_sha256": "7199614d5972695c2fa21bd33c607261dcb7f74bf861685ee3ffcb8bdd205f0f"
+    },
+    {
+      "source": "itinerary/rome/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f0f8eb5a5c32a7d5f771b90cdcb9c0d02f4ee85c3fbac1e79858ce12df47b80a",
+      "after_file_sha256": "ceb2d9d87c49c67b303d884c202f592c4974f7b4b671661b8ab7d8569bcac2a1",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "e95ce5dc2dc16902c13f03f3656f43fba0fe5e75631c2c019bde2f88b37a5f05",
+      "checkout_after_sha256": "b7a1d97e245de73ec1e011b26c1cd8fbab70096638f443d0b0e1344d25705eb1"
+    },
+    {
+      "source": "itinerary/rome/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "3bd1834dabbe534d39c6cf1f5bab0f8a29c49d6c3f08cba96345a323da7987a0",
+      "after_file_sha256": "f477f1613a5236dba1cb70c0fc47781d6fe43df53663cc44613587eca0635f60",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "78a0659ba57a569fb4210eceb029cc66248fb2b2f0ba4ca9c365d5f8fbd2ecf4",
+      "checkout_after_sha256": "0297d72e61e4a4b69d4d775fd247c74efa068bfed9ac92b42f6bbf4d17a07f47"
+    },
+    {
+      "source": "itinerary/tokyo/days-2/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "c45aed3ad96299c1d2cb875ba21d265a3e7a2d5bfaca25fc2ae2a41aa68263a6",
+      "after_file_sha256": "9d645972a94d482bdb8cb781f307e42f79cadc9dd7b6536a3faf671adf7f93f7",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c6583caf6f2e51ed3641956b155e8d7a88dba6eb00d53b8148c773ea4c0c82a4",
+      "checkout_after_sha256": "12fd0dca66c9f28cf7dbef94680651a72574732427bd4fcd6faeba9ae7d21d4a"
+    },
+    {
+      "source": "itinerary/tokyo/days-3/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ff7534b26a85322e538a9d70c715dcce54536611d9408645de2f7aa5d3a954fe",
+      "after_file_sha256": "62f19877bb2a1cc01a175f0b45c928870f009b1cc505194dbe1235df6cc9521d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "18fe85605bd6f7dbe9ca2f255b5d69d0b720aa67deb887dac536ed1af94e6fc4",
+      "checkout_after_sha256": "553fe39125d2d38667b896e66cba759926524176e8c99e59d537066337ac6d61"
+    },
+    {
+      "source": "itinerary/tokyo/days-4/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "23e597b49fc8d0158ffe6483228f9a6c29beea20a7c2ce7eabedd506b51da82d",
+      "after_file_sha256": "5a17bdbe8188c4e5157549e828761db5988c976894f96172e998b111f1befbc6",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c65f0f3120bb48b0cb78af66ec34b17ba536f25086f8a120250ed539555a08f9",
+      "checkout_after_sha256": "7d46be827acf2635206378d5b7f0be0b58d4ec3f02c02674f3fbeaa15eb54ac3"
+    },
+    {
+      "source": "itinerary/tokyo/first-time/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "3b370a63c3630748bbf2dabd7eee490f153c7c15102815815d9e64aa183d62b4",
+      "after_file_sha256": "fd7f03bd4cba15867950e5413e4b916dbbdc3e8cfb25d8149e91272abcb4a191",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f8be734fed9ffbb1033d6b504d58f939ee60d357468ce3092c24a4fec52de583",
+      "checkout_after_sha256": "5223e65526ac988ec951685179e53140f7e8a321e9814b1886cde13d591eb5af"
+    },
+    {
+      "source": "itinerary/tokyo/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ff1fa5e0a0a49555ff0b27f7e99996b34996643e3df3496c2cda99ad53d42206",
+      "after_file_sha256": "ac0281dd5e93b23c701679a413dc9ad607532ca921e78357a100250e0d6cca0c",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "63a331c12abc154c4169de19e95803b6a4f75153cfd1e094d21df6dc737404ed",
+      "checkout_after_sha256": "8ae3b69f0924cdf0ab578a08c841db46e1c5c3d5e45d66ce6ae12941056a3786"
+    },
+    {
+      "source": "itinerary/tokyo/rainy-day/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7d60ff22d47777b002e47e8dcd5f6c1a5d3ff7efb7e3b14e47d550efad15257c",
+      "after_file_sha256": "86888ccc508c9179bc8fda913f3c47745ca009c6f0ecbcc87ad02a343fe7cd33",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "a1c35e99d9e94b3050a6ae54d7030937fdfd11a7b9fd282d6eaa43b013bdd99e",
+      "checkout_after_sha256": "f9b696f35855921701ccf78c969e7ca86f099667701f8d15a33e6ec0fa9df211"
+    },
+    {
+      "source": "things-to-do/bangkok/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ce233dbe919af1666905fb788e37dc18d0bd7d9ea0063bc69c0cbee54b1c7292",
+      "after_file_sha256": "d1b69120ca9e5b1a260bbbaede734e4c7a7cbd3d378884f5b94802c38c606c93",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "605e28ca979f951535cb595f0b4579261aa7e682ba686a74ca2d0e8fe3b053c5",
+      "checkout_after_sha256": "894ed248ee80cc4344f93ed58ce77488ea0a747520a6780468ded364dac7a954"
+    },
+    {
+      "source": "things-to-do/dubai/aquaventure-waterpark/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "36e26be9d3cbdf36c334c93f9e4833504f195aee23abcccf13aa73b875c29f90",
+      "after_file_sha256": "90b3f51a039c6a68ef72768f6a3487d95c9157170eb57863a1b13626952b9683",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "be966efadf9aeb67f1170e69ef66ebd6fb13ac4a5e94077032a1e2778742d4b2",
+      "checkout_after_sha256": "75cd29c689b28db2aca6f86c301dc585eef6ffaa09e0fb1f2d7eadc920f00606"
+    },
+    {
+      "source": "things-to-do/dubai/burj-khalifa/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f5b2e0bcdc29cbeb447ecc9708408cd016d49bb399244ae64e9dd7b97349f855",
+      "after_file_sha256": "a1f1466cb1e87f5e099923d9d8ea9102fbc482554a0bffb9c83ac2d9e0065dd5",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "638e84c8ad59d073d2fe8e014634d602238a34c414abfaa27a91fb621816f262",
+      "checkout_after_sha256": "26f9868135b4ac40f9d2e5cf45d412704b2db849a6c70e10e8d0b908efa2866d"
+    },
+    {
+      "source": "things-to-do/dubai/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "cdb6b8dcffd58a009c2ef4b50b7359b0e1464cd062f3fe98177d652df1ccd252",
+      "after_file_sha256": "a0fbd88413e33c34c2a7cb441eb3405f05e109d1b082602afaf5d611e5e1cb82",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "091e91d7988e255d387e1db85f7d76c1d88fab7d0c623df9027fd2c866522a0c",
+      "checkout_after_sha256": "9f67774ff031a583e4cb4fc6806dcf7c0bd475a3e982bf0bb61db066a2351883"
+    },
+    {
+      "source": "things-to-do/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "07bdae53562d48bc26ae3db2fd5bf14e0393e350826c2c79cd1b85c9f5345eff",
+      "after_file_sha256": "b62b4df28f261597aa17eeaff366f33da38e559333522dd41b19bad8fdc6a167",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "f4dc5f395f17c99178b25b3a79c2465186b7695370dff7af24e117f6f2e9305c",
+      "checkout_after_sha256": "6ad87a98c55e2de1b170b4cd6a71d040e4da61efa642e21328d20369cae0d138"
+    },
+    {
+      "source": "things-to-do/las-vegas/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "7d0ad574630a947ef8a3bb96e1b4060b41b95426d935fdf3574a00a4d09d6dc3",
+      "after_file_sha256": "84ac46a612aa40a09b9df44566cbe94b689a7ce597227ac100594679b500282a",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "0dc60792c72f89d3d53146f6e917d544f164732bad46162420ea5d2c7810ae0b",
+      "checkout_after_sha256": "12d832bc128aebdccb584438179f5dcabfe60ff335000181f26214d2af0d1954"
+    },
+    {
+      "source": "things-to-do/london/harry-potter/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "427978fa330730b50f88d3cc05c2af83dd88d77bc0043866d7fad77fa40413fd",
+      "after_file_sha256": "1f28e7a9c64163ecac381cd6c09b797476ec517a3da99072f91011bce85f7344",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "390d2b1498a36bae82328ef4cd066ca2478fe9900d9e2ce7e2122dd24c0e6bca",
+      "checkout_after_sha256": "eaf58021e6c90788fd4e0b655a8624ac2738688a06510d651941e7e7b8070209"
+    },
+    {
+      "source": "things-to-do/london/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "9133a3a6ecb1d7a44be9991387fd194ff8481b3656c6938a5fb97c52eebe067e",
+      "after_file_sha256": "57af6d12f7cf17b1613ea6a42b4af88327afee0cadb613d21b9abb1a91098546",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "c46dd79d1aef9691f053148262f3ddbbbbd8f3a973122b635bc772c0054af3e1",
+      "checkout_after_sha256": "ea181d31675cf94a18c7e0ca4c04e5f86f15c5a583565954890b7161c36587b7"
+    },
+    {
+      "source": "things-to-do/new-york/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "4c9fedd5b171d6ff102d58b3f7f85f66d2abf77c85f4c14548f2a9f81675ba06",
+      "after_file_sha256": "a4059b4197026523347b2bfb2bdd4c012e5cd874ba20f80ab3235eea1a1a2155",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d2f1be144eb78e8fdaedcbd5ed3fb3cbad2b5ca5c96c09fafa3240cbf284f26a",
+      "checkout_after_sha256": "47736b2ae7c7418893d4c1e19da7513156f8965bcbe0587510dfd2be144b0352"
+    },
+    {
+      "source": "things-to-do/paris/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "1069ec0e089afbeb85c2df7e9eee58fc3565e851bab801a30cbd8a372da64300",
+      "after_file_sha256": "a8833f5bef8b4e1987dae18801a9b9bf63d3c31fb4f4313eab3f0b3edfa5290d",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "749ceca341b5416891d4a1c70f05d01329dbb5053803b4f7ef5bf57b64426c70",
+      "checkout_after_sha256": "4aa77dfccdc7081bffd80e03a71dacfa8d436e387fdd2bca211e0fe779cafa43"
+    },
+    {
+      "source": "things-to-do/quebec-city/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "1238ce7e1733951831c52e55eff773afb7d93227fa45f9920538aaac7bb1a005",
+      "after_file_sha256": "b7e9bd48e42677b8dac1c2c5d9de2981a4a4d73bb1ef31e90e2dda4a3b361944",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "66475d1c720852425b041ea2eddc047c5c81779eb13cf8a2f40ca853a693cbde",
+      "checkout_after_sha256": "be1d1c5ce9a48e5a70ba49e89472b30c00fb14867f5b724df0aa8a69f9c5b975"
+    },
+    {
+      "source": "things-to-do/rome/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "9caba44029ad78a97ae2de3c51535152e36e2244c2d19d28f10a64bf77f1f9d8",
+      "after_file_sha256": "0730f9fb7481bbc4ecff0711aaff18e590c1ded2d1b463dd651c71c4936494b1",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "4f8530bdd2d871cf7b7d0fd2a811bfbd7e57f5545848e9edb7c53046c4e22df2",
+      "checkout_after_sha256": "45006eb9e8159025e338b04259f714bb7c889cd8bad3f869aad29891b3540951"
+    },
+    {
+      "source": "things-to-do/switzerland/swiss-travel-pass/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "f30c541a343e59b6c487bd6290940069d4704d23fbe9822f01822de552997be2",
+      "after_file_sha256": "62a2057976a5ea879bed5264d94b3296c38da185d5d94a87dff89ee96e7ebde9",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "5d4a6b048e2d4fd425c60e5937fcdacd54988d00f9d72e4baa4b6ff7bbee5028",
+      "checkout_after_sha256": "1c7da3904036691a164cc3481292ee0c5073e32028d0f21d99c51ad1ac7c2161"
+    },
+    {
+      "source": "things-to-do/tokyo/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "c268970d24675815809bf2c4dc63763650035b529e7e55ebb09f85c673aa74f9",
+      "after_file_sha256": "6e9b5d2ebada8de7016505f450c80fa67235d3cf5bc9507b9414eff393a6c53b",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "303d03f4b62a89ee959ad8472f216005ce3a32b8a88aefcffaec64a614c6cba3",
+      "checkout_after_sha256": "b1fb6b5842a9557ae01c2bd31b745e7f670b42d74785d52f28a3ca4d5af65a6a"
+    },
+    {
+      "source": "transport/bangkok/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "824bf66c88abb6d7d327d43418280fcd0dec95ae1cd044e398f450cd9e052458",
+      "after_file_sha256": "7ff52d2dc3a6b9b55be463875c069e8bdcdb650dee691143086b9b318ad83d00",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "379cff49f4ff579c3c71722e6b3125175f9e1738e8344fe7f73e12068e7351de",
+      "checkout_after_sha256": "a218bd8471b00524a70ea548909e4d548c89c2b98b847fa5e7193dceec6a8fed"
+    },
+    {
+      "source": "transport/dubai/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "5e943b6469ed93d50722a5f0feeeb17388376e718fceae75fa59ef5e0fca0a8e",
+      "after_file_sha256": "7c63a8153da777dff8c9e58556b71e9d7b9570f067911281cb1da1bc61d96330",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "ada6969e3c0703a8baf0208de7d175320a11d2b1dec2d643f4a3f9aa052fd0b8",
+      "checkout_after_sha256": "4c5a04ae2e8724296eca44981dc0fe3ee3ce6858a7a72b1c2a33c415e63e5e30"
+    },
+    {
+      "source": "transport/las-vegas/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "41283b885b669371058564456bee40af8fbbaaaff340233ef9718e9a202c2bcc",
+      "after_file_sha256": "3b4b7ad51d1bf621278d729877dfdba6d37f5071b0cb46c40dc9fda6c1584ff5",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "eafd63e9a3f4348750f69f4d16c893e5b0ddc8f462f27ff470d39980f2a3bcd1",
+      "checkout_after_sha256": "c724f3456628795471a703ceb35e014aec018a898f2ab5f1144150a8a157b22a"
+    },
+    {
+      "source": "transport/london/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "c62d35c8c9e55b607d163f47458c11cc91cdd7aa0c617d93b7c007423722c11a",
+      "after_file_sha256": "a727f269b8e569115b829e87b4c164a3e800f31e9e6a26c87c5e468ac160f4ef",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "d7999109145fe042a31cd6508da9e0567dc0fc7469dc7006066d84b7035b561e",
+      "checkout_after_sha256": "04b6bd6264f172fd857615bfa601d154ff48301a77675ac04483de39c9a84c34"
+    },
+    {
+      "source": "transport/paris/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "e85f74e45e00c88d59a3bfc431b61ace220753f24a8967d0300624fa734536ba",
+      "after_file_sha256": "e366b8ece05d949ae7a26f241801f359bd01e0905fdb8103c83e0272eb527856",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "6427df365221b65b2e883c8f299b5865a64680aba9b451b8b6811d590bfb3f84",
+      "checkout_after_sha256": "b427d0f135064d0fa883a6ca537307e7e8d66fb33413fd4a8551780cfcc40bdf"
+    },
+    {
+      "source": "transport/rome/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "0fc2fc79729a43f41f1c3e6b806238a0c21652e403690a886ec7288d68c3fecb",
+      "after_file_sha256": "c69aabf931488c820009c585f1845707e55e93b8fb7eb16659c328ddb979868a",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "b71825e660deccab9499b87807bb9292c1cfec06e1aeefdbd6e1ab3b1bb9041a",
+      "checkout_after_sha256": "8e74b303543386b7c3c6b3d7f6f059c1ebe691040339e25884057c2680426bac"
+    },
+    {
+      "source": "transport/tokyo/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "af8e1e5a735b3ff3850b8369c008356df4768eea71e2f47b0688a8c439e9bd97",
+      "after_file_sha256": "11c947926dc9b912b8ba0215736b4eb17679bb203d1db1b373cce8e337777579",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "850dff876cfadbfba4bebe7f0a83fccfe964f6379fde8862755e71dc3b98882e",
+      "checkout_after_sha256": "d2ecb4b24ad3c34ee98951079e905fe4cbb1d68db24e6abb92e22222f8ed0748"
+    },
+    {
+      "source": "travel-guides/index.html",
+      "removed_count": 1,
+      "before_file_sha256": "ed301f72a2a62ecffe008335515602ac00fd81e94a3e2c6486c4ace877242167",
+      "after_file_sha256": "758f51ca1706b209fce7d85fa6f31f88eff83134e1d4d315583931c1d3014a1e",
+      "removed_script_markup": "<script\n    src=\"https://tp-em.com/NDkyNzI0.js?t=492724\"\n    async\n    data-noptimize=\"1\"\n    data-cfasync=\"false\"\n    data-wpfc-render=\"false\"></script>",
+      "removed_script_sha256": "c29b432460e15a3e009dbf2c277388d311aafe314d1458767ee257f164193a2d",
+      "checkout_before_sha256": "be7d5aea287ea129f7677cf986d409a6c33dd00ff27a8d8c7cf05d44518296ae",
+      "checkout_after_sha256": "3242baff7bbed19847df154b8ac778bf97c1d058108f88dc57f0f8ed9ee4280a"
+    }
+  ],
+  "whitespace_policy": "Remove the exact script tag and its own leading indentation; preserve the resulting empty line, every other byte and existing line endings. No general formatting."
+}
