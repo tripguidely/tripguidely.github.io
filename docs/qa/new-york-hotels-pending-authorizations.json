@@ -1,0 +1,45 @@
+{
+  "status": "APPLIED LOCALLY AFTER EXPLICIT OWNER APPROVAL — exactly four approved entries verified against current hashes and base ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7. Official audit passes with zero new errors and four recognized authorizations. No commit, push, PR creation, merge or deployment authorized.",
+  "authorizations": [
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/cheap-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/family-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/luxury-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/new-york-hotel-map.js",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "aa671c34035b10f4ea027dddd6089c5a3db4504be99112cd0fad02132aebc33a",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    }
+  ]
+}
