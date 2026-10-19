@@ -1,0 +1,2820 @@
+{
+  "base_commit": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+  "prepared_on": "2026-10-16",
+  "images_policy": "Nine original owner-selected Klook references integrated locally using 32 previously prepared AVIF/WebP variants, copied byte-for-byte. Original sources intact outside Git. No crop, deformation, retouch or new conversion. Existing provenance/ticket evidence retained; owner explicitly directed integration after stating rights were handled. No new permission is invented; nothing published.",
+  "geo_policy": "OSM property nodes / geometry centers cross-checked with official postal addresses; no claim of verified accessible entrance.",
+  "hotels": [
+    {
+      "key": "plaza",
+      "category": "luxury",
+      "name": "The Plaza — A Fairmont Hotel",
+      "short": "The Plaza",
+      "area": "Central Park South / Fifth Avenue",
+      "address": "768 Fifth Avenue, New York, NY 10019",
+      "lat": 40.7644602,
+      "lon": -73.9744924,
+      "osm": "relation/9771573",
+      "official": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/location-contact.html",
+      "factsSource": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/rooms.html",
+      "fit": "A classic Central Park South address",
+      "format": "Guest rooms and suites",
+      "published": "Fairmont lists guest rooms and suites at its Fifth Avenue property. Select the precise accommodation category before comparing offers.",
+      "benefit": "Choose the park-side location and a traditional hotel setting when those are central to your trip.",
+      "tradeoff": "A Central Park view, breakfast or a particular suite feature must be specified in the booked offer. The hotel name alone does not promise them.",
+      "check": "Room or suite category; exact view; dining inclusions; deposit and cancellation terms.",
+      "comparison": "Heritage setting by Central Park",
+      "summary": "A Fifth Avenue base for a traditional luxury stay, with the room category doing the important work.",
+      "offer_id": "nyc_luxury_plaza",
+      "subid": "nyc_luxury_plaza",
+      "affiliate_url": "https://klook.tpk.ro/Db6zKcox",
+      "image_reference": {
+        "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/28100/28044/288a78f6_z.webp",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "29b40d2ef5ad50cd42923e45974e9717a8f40e5f9badba028dccb511551d3e13",
+        "source_dimensions": {
+          "width": 1680,
+          "height": 1121
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7644602,
+        "longitude": -73.9744924,
+        "source": "https://www.openstreetmap.org/relation/9771573",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/location-contact.html",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/rooms.html",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "Db6zKcox",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_luxury_plaza",
+        "destination": "https://www.klook.com/hotels/detail/108492-the-plaza-a-fairmont-hotel/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "Choose the bed and view category",
+        "text": "Fairmont lists Plaza 1 King, Deluxe 1 King, Deluxe 2 Queens and Terrace Room 1 King categories. The standard Plaza king category describes a courtyard or city view; a private terrace is a separately named category. Choose the exact bed and view rather than assuming every room faces Central Park.",
+        "source": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/rooms.html",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1680,
+          "height": 1121
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.fairmont.com/en/hotels/new-york-city/the-plaza/location-contact.html",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/28100/28044/288a78f6_z.webp",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/108492-the-plaza-a-fairmont-hotel/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": {
+          "asset_id": "b5dd309d",
+          "status": "historical_private_alternative_excluded_not_an_owner_reference_replacement",
+          "width": 750,
+          "height": 500,
+          "sha256": "28e0c7543a8193e990b9c31034f0480327ce796acdc742d3b0f162eb68b9a19b",
+          "description": "Bedroom and adjacent sitting area displayed in the official Klook Plaza main gallery; category not established.",
+          "credits": "not_confirmed",
+          "public_redistribution": "not_confirmed"
+        },
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "288a78f6",
+          "filename": "288a78f6-original-reference.webp",
+          "bytes": 244480,
+          "sha256": "29b40d2ef5ad50cd42923e45974e9717a8f40e5f9badba028dccb511551d3e13",
+          "width": 1680,
+          "height": 1121,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Exterior of The Plaza beside the park; the complete delivered frame is preserved.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "29b40d2ef5ad50cd42923e45974e9717a8f40e5f9badba028dccb511551d3e13",
+          "source_width": 1680,
+          "source_height": 1121,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/plaza-288a78f6-1680x1121.webp",
+              "format": "WEBP",
+              "width": 1680,
+              "height": 1121,
+              "bytes": 237090,
+              "sha256": "2930787879792ff95c6029976d807729876dd9d7e03e48e275d199e9743a208a",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 46.290673691426825,
+              "ssim_luma_11": 0.9969572183619281
+            },
+            {
+              "file": "variants/avif/plaza-288a78f6-1680x1121.avif",
+              "format": "AVIF",
+              "width": 1680,
+              "height": 1121,
+              "bytes": 183054,
+              "sha256": "1318496fc3e46418c7289d2dd3fe6fe551ccc669acb8941bf2e9fc6f2c040e0f",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 40.94186176529221,
+              "ssim_luma_11": 0.9899822795159251
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "288a78f6",
+        "source_sha256": "29b40d2ef5ad50cd42923e45974e9717a8f40e5f9badba028dccb511551d3e13",
+        "source_width": 1680,
+        "source_height": 1121,
+        "alt": "The Plaza hotel exterior beside trees at Central Park South, New York.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/the-plaza-new-york-exterior-288a78f6-1680x1121.webp",
+            "format": "WEBP",
+            "width": 1680,
+            "height": 1121,
+            "bytes": 237090,
+            "sha256": "2930787879792ff95c6029976d807729876dd9d7e03e48e275d199e9743a208a"
+          },
+          {
+            "file": "assets/images/hotels/new-york/the-plaza-new-york-exterior-288a78f6-1680x1121.avif",
+            "format": "AVIF",
+            "width": 1680,
+            "height": 1121,
+            "bytes": 183054,
+            "sha256": "1318496fc3e46418c7289d2dd3fe6fe551ccc669acb8941bf2e9fc6f2c040e0f"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "langham",
+      "category": "luxury",
+      "name": "The Langham, New York, Fifth Avenue",
+      "short": "The Langham",
+      "area": "Fifth Avenue / Midtown South",
+      "address": "400 Fifth Avenue, New York, NY 10018",
+      "lat": 40.7501109,
+      "lon": -73.9838132,
+      "osm": "way/86337142",
+      "official": "https://www.langhamhotels.com/en/the-langham/new-york/discover/our-location/",
+      "factsSource": "https://www.langhamhotels.com/en/the-langham/new-york/stay/",
+      "fit": "Contemporary rooms on Fifth Avenue",
+      "format": "Rooms, suites and selected kitchen categories",
+      "published": "The official accommodation list distinguishes rooms, suites, terrace options and selected categories with kitchens. These features are not interchangeable.",
+      "benefit": "A useful option when you want to choose a specific room feature and a Fifth Avenue location together.",
+      "tradeoff": "Kitchen, terrace, club access and named skyline views depend on the category and offer. Compare equivalent rooms, not just the property name.",
+      "check": "Named category; kitchen or terrace if required; view wording; inclusions.",
+      "comparison": "Category-specific space and features",
+      "summary": "A contemporary Fifth Avenue alternative for travelers choosing the room as carefully as the address.",
+      "offer_id": "nyc_luxury_langham",
+      "subid": "nyc_luxury_langham",
+      "affiliate_url": "https://klook.tpk.ro/5FZWWQAg",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/4000000/3630000/3630000/3629903/c21195be_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "6eb95869afdf63aac56a10c63609d85cf5671843dcc450734c8caed155696f77",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1281
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7501109,
+        "longitude": -73.9838132,
+        "source": "https://www.openstreetmap.org/way/86337142",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.langhamhotels.com/en/the-langham/new-york/discover/our-location/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.langhamhotels.com/en/the-langham/new-york/stay/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "5FZWWQAg",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_luxury_langham",
+        "destination": "https://www.klook.com/hotels/detail/420931-the-langham-new-york-fifth-avenue/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "A kitchen belongs to a named room",
+        "text": "The official Superior Room has a king bed and accepts two guests. Deluxe City View with Kitchen also lists two guests and a king bed, with a full kitchen. A terrace is offered in a separately named category; kitchen, terrace and club benefits should be matched to the actual offer.",
+        "source": "https://www.langhamhotels.com/en/the-langham/new-york/stay/",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1281
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.langhamhotels.com/en/the-langham/new-york/discover/our-location/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/4000000/3630000/3630000/3629903/c21195be_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/420931-the-langham-new-york-fifth-avenue/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "c21195be",
+          "filename": "c21195be-original-reference.jpg",
+          "bytes": 491400,
+          "sha256": "6eb95869afdf63aac56a10c63609d85cf5671843dcc450734c8caed155696f77",
+          "width": 1920,
+          "height": 1281,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Entrance and The Langham signage; the hotel name is visible.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "6eb95869afdf63aac56a10c63609d85cf5671843dcc450734c8caed155696f77",
+          "source_width": 1920,
+          "source_height": 1281,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/langham-c21195be-640x427.webp",
+              "format": "WEBP",
+              "width": 640,
+              "height": 427,
+              "bytes": 64718,
+              "sha256": "25a4eac62da50ed280ce580b01ba00f1160b57d6c6475376b78f84f61c07f5a0",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.66933936353371,
+              "ssim_luma_11": 0.9922575986011799
+            },
+            {
+              "file": "variants/avif/langham-c21195be-640x427.avif",
+              "format": "AVIF",
+              "width": 640,
+              "height": 427,
+              "bytes": 47735,
+              "sha256": "fe0a649ede32a4dfbeaaf7b6522408e346296345fdd2ef9d33254efffd8924b6",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 35.896793321941686,
+              "ssim_luma_11": 0.9885231722165944
+            },
+            {
+              "file": "variants/webp/langham-c21195be-1280x854.webp",
+              "format": "WEBP",
+              "width": 1280,
+              "height": 854,
+              "bytes": 190112,
+              "sha256": "c47ac39389021a78994e065443fcf8a629a1b068dc0757937cc14b45576d8b59",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 39.21578289156927,
+              "ssim_luma_11": 0.9897572380365345
+            },
+            {
+              "file": "variants/avif/langham-c21195be-1280x854.avif",
+              "format": "AVIF",
+              "width": 1280,
+              "height": 854,
+              "bytes": 142263,
+              "sha256": "e9be8706028e312abecf1e76cffeb226488dc28dc03e7e5efe322eb9ab96fafc",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 38.268532663451616,
+              "ssim_luma_11": 0.9878255499684347
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "c21195be",
+        "source_sha256": "6eb95869afdf63aac56a10c63609d85cf5671843dcc450734c8caed155696f77",
+        "source_width": 1920,
+        "source_height": 1281,
+        "alt": "The Langham New York entrance with its illuminated canopy and hotel signs.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-640x427.webp",
+            "format": "WEBP",
+            "width": 640,
+            "height": 427,
+            "bytes": 64718,
+            "sha256": "25a4eac62da50ed280ce580b01ba00f1160b57d6c6475376b78f84f61c07f5a0"
+          },
+          {
+            "file": "assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-640x427.avif",
+            "format": "AVIF",
+            "width": 640,
+            "height": 427,
+            "bytes": 47735,
+            "sha256": "fe0a649ede32a4dfbeaaf7b6522408e346296345fdd2ef9d33254efffd8924b6"
+          },
+          {
+            "file": "assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-1280x854.webp",
+            "format": "WEBP",
+            "width": 1280,
+            "height": 854,
+            "bytes": 190112,
+            "sha256": "c47ac39389021a78994e065443fcf8a629a1b068dc0757937cc14b45576d8b59"
+          },
+          {
+            "file": "assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-1280x854.avif",
+            "format": "AVIF",
+            "width": 1280,
+            "height": 854,
+            "bytes": 142263,
+            "sha256": "e9be8706028e312abecf1e76cffeb226488dc28dc03e7e5efe322eb9ab96fafc"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "conrad",
+      "category": "luxury",
+      "name": "Conrad New York Downtown",
+      "short": "Conrad Downtown",
+      "area": "Battery Park City / Lower Manhattan",
+      "address": "102 North End Avenue, New York, NY 10282",
+      "lat": 40.7149558,
+      "lon": -74.015694,
+      "osm": "node/889117109",
+      "official": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+      "factsSource": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+      "fit": "An all-suite Downtown base",
+      "format": "All-suite hotel",
+      "published": "Hilton identifies this North End Avenue property as an all-suite hotel in Downtown Manhattan.",
+      "benefit": "Prioritize it when Lower Manhattan is the focus of your plans and a suite format matters to the stay.",
+      "tradeoff": "This is Downtown, rather than Midtown. Balance the location against your itinerary and verify the suite layout and view in the actual offer.",
+      "check": "Suite layout; view category; breakfast terms; plans in Midtown versus Downtown.",
+      "comparison": "Suite format in Lower Manhattan",
+      "summary": "A distinct Downtown choice when you prefer an all-suite property and a Lower Manhattan itinerary.",
+      "offer_id": "nyc_luxury_conrad",
+      "subid": "nyc_luxury_conrad",
+      "affiliate_url": "https://klook.tpk.ro/xDOjrZN1",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/1000000/430000/423500/423480/a018670a_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "d56e0abee699ef072e52a567d6aeb61d0466f3a4709c6f1bd14b8e8fca0260df",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7149558,
+        "longitude": -74.015694,
+        "source": "https://www.openstreetmap.org/node/889117109",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "xDOjrZN1",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_luxury_conrad",
+        "destination": "https://www.klook.com/hotels/detail/446750-conrad-new-york-downtown/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "Separate spaces in a Downtown suite",
+        "text": "Hilton describes separate sleeping and living areas at this all-suite property. ATRIO and the Leonessa rooftop bar are listed dining venues. Verify the chosen suite layout, any Hudson River view and dining inclusions separately; the room rate does not automatically include a restaurant experience.",
+        "source": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.hilton.com/en/hotels/nyccici-conrad-new-york-downtown/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/1000000/430000/423500/423480/a018670a_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/446750-conrad-new-york-downtown/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "a018670a",
+          "filename": "a018670a-original-reference.jpg",
+          "bytes": 695624,
+          "sha256": "d56e0abee699ef072e52a567d6aeb61d0466f3a4709c6f1bd14b8e8fca0260df",
+          "width": 1920,
+          "height": 1280,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Street-corner exterior at dusk; gallery-to-property association relies on the original owner reference.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "d56e0abee699ef072e52a567d6aeb61d0466f3a4709c6f1bd14b8e8fca0260df",
+          "source_width": 1920,
+          "source_height": 1280,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/conrad-a018670a-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 49536,
+              "sha256": "b53ba6f4220f0a04cbfff45279b7e5c1d6d63cdfae5cb664de208b685cd16f83",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 33.78559519009637,
+              "ssim_luma_11": 0.9922161617556738
+            },
+            {
+              "file": "variants/avif/conrad-a018670a-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 36602,
+              "sha256": "b5b2778ec8d3be833beb4142c9bd1f2f8ee9d5f7f4c392fea04b1c893f1817f4",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 33.639665176718474,
+              "ssim_luma_11": 0.9870300436935802
+            },
+            {
+              "file": "variants/webp/conrad-a018670a-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 164996,
+              "sha256": "8d5d62e597ee3ec22f15c8566d390b0e30035ff871fed342867bd1f31ec9213d",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.35428305174563,
+              "ssim_luma_11": 0.9903489300348215
+            },
+            {
+              "file": "variants/avif/conrad-a018670a-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 123260,
+              "sha256": "de9a6f7f1af79c27882f9bb9d5ec522cf101072995c39fc256deac9560204fac",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 35.51531150235896,
+              "ssim_luma_11": 0.9855847509620076
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "a018670a",
+        "source_sha256": "d56e0abee699ef072e52a567d6aeb61d0466f3a4709c6f1bd14b8e8fca0260df",
+        "source_width": 1920,
+        "source_height": 1280,
+        "alt": "Conrad New York Downtown exterior at a street corner at dusk.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-480x320.webp",
+            "format": "WEBP",
+            "width": 480,
+            "height": 320,
+            "bytes": 49536,
+            "sha256": "b53ba6f4220f0a04cbfff45279b7e5c1d6d63cdfae5cb664de208b685cd16f83"
+          },
+          {
+            "file": "assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-480x320.avif",
+            "format": "AVIF",
+            "width": 480,
+            "height": 320,
+            "bytes": 36602,
+            "sha256": "b5b2778ec8d3be833beb4142c9bd1f2f8ee9d5f7f4c392fea04b1c893f1817f4"
+          },
+          {
+            "file": "assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-960x640.webp",
+            "format": "WEBP",
+            "width": 960,
+            "height": 640,
+            "bytes": 164996,
+            "sha256": "8d5d62e597ee3ec22f15c8566d390b0e30035ff871fed342867bd1f31ec9213d"
+          },
+          {
+            "file": "assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-960x640.avif",
+            "format": "AVIF",
+            "width": 960,
+            "height": 640,
+            "bytes": 123260,
+            "sha256": "de9a6f7f1af79c27882f9bb9d5ec522cf101072995c39fc256deac9560204fac"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "homewood",
+      "category": "family",
+      "name": "Homewood Suites New York/Midtown Manhattan Times Square",
+      "officialName": "Homewood Suites by Hilton New York/Midtown Manhattan Times Square-South, NY",
+      "short": "Homewood Suites",
+      "area": "Midtown West / West 37th Street",
+      "address": "312 West 37th Street, New York, NY 10018",
+      "lat": 40.7542669,
+      "lon": -73.9930832,
+      "osm": "way/266108507",
+      "official": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+      "factsSource": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+      "fit": "Kitchen-led family routines in Midtown West",
+      "format": "Suites with in-room kitchens",
+      "published": "Hilton publishes in-suite kitchens, hot breakfast, guest laundry, connecting rooms and cribs. A specific category, bed layout and occupancy limit have not been independently confirmed here; obtain them in writing for your group.",
+      "benefit": "Worth comparing when preparing simple meals and keeping a familiar daily routine are priorities.",
+      "tradeoff": "A kitchen does not establish how many people a suite accepts or how beds are arranged. Enter every guest and child’s age before selecting a room.",
+      "check": "Exact category and accepted guests; actual beds; connecting-room or crib confirmation; kitchen and breakfast conditions.",
+      "comparison": "In-room kitchens; connecting rooms and cribs listed as request checks",
+      "summary": "A practical West 37th Street candidate for families who put a kitchen near the top of their checklist.",
+      "offer_id": "nyc_family_homewood",
+      "subid": "nyc_family_homewood",
+      "affiliate_url": "https://klook.tpk.ro/agdSdmLP",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/7000000/6840000/6830200/6830159/479978d2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "d8ed387d8760571a090fb07bda8cb3be289a989568ea6554368a304793047de6",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1282
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7542669,
+        "longitude": -73.9930832,
+        "source": "https://www.openstreetmap.org/way/266108507",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "room_evidence": {
+        "source": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+        "status": "category_capacity_unconfirmed",
+        "title": "Kitchen facilities and family requests",
+        "summary": "Hilton lists in-room kitchens, guest laundry, connecting rooms and cribs. Confirm the specific room, connecting arrangement and crib request with the provider; the published amenities do not establish a room capacity.",
+        "check": "Exact category and accepted guests; actual beds; connecting-room or crib confirmation; kitchen and breakfast conditions.",
+        "comparison": "In-room kitchens; connecting rooms and cribs listed as request checks",
+        "published": "Hilton publishes in-suite kitchens, hot breakfast, guest laundry, connecting rooms and cribs. A specific category, bed layout and occupancy limit have not been independently confirmed here; obtain them in writing for your group.",
+        "checked_on": "2026-10-16",
+        "method": "Official Hilton property text and amenity list; no category-level capacity asserted"
+      },
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "agdSdmLP",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_family_homewood",
+        "destination": "https://www.klook.com/hotels/detail/9357-homewood-suites-new-yorkmidtown-manhattan-times-square/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1282
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.hilton.com/en/hotels/nycmmhw-homewood-suites-new-york-midtown-manhattan-times-square-south-ny/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/7000000/6840000/6830200/6830159/479978d2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/9357-homewood-suites-new-yorkmidtown-manhattan-times-square/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "479978d2",
+          "filename": "479978d2-original-reference.jpg",
+          "bytes": 618012,
+          "sha256": "d8ed387d8760571a090fb07bda8cb3be289a989568ea6554368a304793047de6",
+          "width": 1920,
+          "height": 1282,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Homewood Suites facade and entrance; brand signage is visible.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "d8ed387d8760571a090fb07bda8cb3be289a989568ea6554368a304793047de6",
+          "source_width": 1920,
+          "source_height": 1282,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/homewood-479978d2-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 111278,
+              "sha256": "1f6a58043efb29094d47671e11f797bb0e49742044bb9d4cf29c39c9b34717cd",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 38.604987676080164,
+              "ssim_luma_11": 0.9861941573731625
+            },
+            {
+              "file": "variants/avif/homewood-479978d2-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 83562,
+              "sha256": "b6572c9028990367147e13da07bb87bfdeb40173dfe8a28c294d604f5d9e9109",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 38.239344720261876,
+              "ssim_luma_11": 0.9832150827073908
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "479978d2",
+        "source_sha256": "d8ed387d8760571a090fb07bda8cb3be289a989568ea6554368a304793047de6",
+        "source_width": 1920,
+        "source_height": 1282,
+        "alt": "Homewood Suites New York Midtown Manhattan Times Square facade and entrance.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 280px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/homewood-suites-new-york-times-square-exterior-479978d2-960x641.webp",
+            "format": "WEBP",
+            "width": 960,
+            "height": 641,
+            "bytes": 111278,
+            "sha256": "1f6a58043efb29094d47671e11f797bb0e49742044bb9d4cf29c39c9b34717cd"
+          },
+          {
+            "file": "assets/images/hotels/new-york/homewood-suites-new-york-times-square-exterior-479978d2-960x641.avif",
+            "format": "AVIF",
+            "width": 960,
+            "height": 641,
+            "bytes": 83562,
+            "sha256": "b6572c9028990367147e13da07bb87bfdeb40173dfe8a28c294d604f5d9e9109"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "residence_central",
+      "category": "family",
+      "name": "Residence Inn New York Manhattan/Central Park",
+      "short": "Residence Inn Central Park",
+      "area": "Broadway / West 54th Street",
+      "address": "1717 Broadway, New York, NY 10019",
+      "lat": 40.7643419,
+      "lon": -73.9826989,
+      "osm": "node/4320917144",
+      "official": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/overview/",
+      "factsSource": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/overview/",
+      "fit": "A Broadway base with kitchenette facilities",
+      "format": "Suites with kitchenette facilities",
+      "published": "Marriott identifies Doubles Partial Park View as a studio with two double beds and maximum occupancy four. The category lists a refrigerator, microwave and dishwasher. The published king-studio categories have maximum occupancy two; do not substitute one for a four-person booking.",
+      "benefit": "A candidate for families planning time around Broadway and the southern end of Central Park.",
+      "tradeoff": "The Central Park name does not guarantee a park-facing room. Verify bedding, accepted occupancy and kitchenette equipment for the exact category.",
+      "check": "Doubles Partial Park View category if comparing four guests; two double beds; partial-view wording; room-specific kitchenette.",
+      "comparison": "Doubles Partial Park View: two double beds, maximum four guests",
+      "summary": "Compare this Broadway location when your family’s plans lean toward the north of Midtown.",
+      "offer_id": "nyc_family_residence_central",
+      "subid": "nyc_family_residence_central",
+      "affiliate_url": "https://klook.tpk.ro/RyWmUW9H",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/7000000/6440000/6434900/6434849/9372fbf5_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "5e122fdd751f9f0a7a789b3f1634cb68f07977e48b6e0f5453e90762f48af83d",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7643419,
+        "longitude": -73.9826989,
+        "source": "https://www.openstreetmap.org/node/4320917144",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/overview/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/overview/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/rooms/",
+          "purpose": "Official room category, bedding, maximum occupancy and kitchen appliances",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "room_evidence": {
+        "source": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/rooms/",
+        "status": "verified_official_category",
+        "title": "Doubles Partial Park View",
+        "room_code": "STDD",
+        "beds": "Two double beds",
+        "max_occupancy": 4,
+        "kitchen": [
+          "refrigerator",
+          "microwave",
+          "dishwasher"
+        ],
+        "summary": "The official category is a studio with two double beds and a published maximum occupancy of four guests. Marriott lists a refrigerator, microwave and dishwasher for it. The published king-studio categories accept a maximum of two guests.",
+        "check": "Doubles Partial Park View category if comparing four guests; two double beds; partial-view wording; room-specific kitchenette.",
+        "comparison": "Doubles Partial Park View: two double beds, maximum four guests",
+        "published": "Marriott identifies Doubles Partial Park View as a studio with two double beds and maximum occupancy four. The category lists a refrigerator, microwave and dishwasher. The published king-studio categories have maximum occupancy two; do not substitute one for a four-person booking.",
+        "checked_on": "2026-10-16",
+        "method": "Live official Marriott room card plus HotelRoom JSON-LD bed, occupancy and amenity records; generic reservation-form maxima excluded"
+      },
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "RyWmUW9H",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_family_residence_central",
+        "destination": "https://www.klook.com/hotels/detail/309735-residence-inn-new-york-manhattancentral-park/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.marriott.com/en-us/hotels/nycpr-residence-inn-new-york-manhattan-central-park/overview/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/7000000/6440000/6434900/6434849/9372fbf5_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/309735-residence-inn-new-york-manhattancentral-park/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "9372fbf5",
+          "filename": "9372fbf5-original-reference.jpg",
+          "bytes": 378171,
+          "sha256": "5e122fdd751f9f0a7a789b3f1634cb68f07977e48b6e0f5453e90762f48af83d",
+          "width": 1920,
+          "height": 1280,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Shared Residence Inn / Courtyard entrance with street number 1717; exact property association also relies on the original reference.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "5e122fdd751f9f0a7a789b3f1634cb68f07977e48b6e0f5453e90762f48af83d",
+          "source_width": 1920,
+          "source_height": 1280,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/residence_central-9372fbf5-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 47500,
+              "sha256": "d391e6301cc1cecc972320f531de849a9b5135b2e1f3ca77ac21deddf802283d",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 33.283720793227964,
+              "ssim_luma_11": 0.9930272771647866
+            },
+            {
+              "file": "variants/avif/residence_central-9372fbf5-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 33095,
+              "sha256": "f5ab713244dedbd08d8f67226e4684b86d6a7b38cb09a4a6a12c27348bcdedd6",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 34.27652341648438,
+              "ssim_luma_11": 0.9871254345115903
+            },
+            {
+              "file": "variants/webp/residence_central-9372fbf5-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 135818,
+              "sha256": "b83a06549a4beffd684c9a08be63c0fd1bb3d33fa228777a86e1498fc0da4162",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.8558490824817,
+              "ssim_luma_11": 0.9908047344658838
+            },
+            {
+              "file": "variants/avif/residence_central-9372fbf5-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 99628,
+              "sha256": "eeab333e60351bea4ccc12cbcb0a294c73cb90c7374bb1354fa1e21dfb891ff3",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.71069987098267,
+              "ssim_luma_11": 0.9869239761107975
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "9372fbf5",
+        "source_sha256": "5e122fdd751f9f0a7a789b3f1634cb68f07977e48b6e0f5453e90762f48af83d",
+        "source_width": 1920,
+        "source_height": 1280,
+        "alt": "Residence Inn New York Central Park entrance at 1717 Broadway, shared with Courtyard.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-480x320.webp",
+            "format": "WEBP",
+            "width": 480,
+            "height": 320,
+            "bytes": 47500,
+            "sha256": "d391e6301cc1cecc972320f531de849a9b5135b2e1f3ca77ac21deddf802283d"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-480x320.avif",
+            "format": "AVIF",
+            "width": 480,
+            "height": 320,
+            "bytes": 33095,
+            "sha256": "f5ab713244dedbd08d8f67226e4684b86d6a7b38cb09a4a6a12c27348bcdedd6"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-960x640.webp",
+            "format": "WEBP",
+            "width": 960,
+            "height": 640,
+            "bytes": 135818,
+            "sha256": "b83a06549a4beffd684c9a08be63c0fd1bb3d33fa228777a86e1498fc0da4162"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-960x640.avif",
+            "format": "AVIF",
+            "width": 960,
+            "height": 640,
+            "bytes": 99628,
+            "sha256": "eeab333e60351bea4ccc12cbcb0a294c73cb90c7374bb1354fa1e21dfb891ff3"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "residence_times",
+      "category": "family",
+      "name": "Residence Inn by Marriott New York Manhattan/Times Square",
+      "short": "Residence Inn Times Square",
+      "area": "Sixth Avenue / Bryant Park",
+      "address": "1033 Avenue of the Americas, New York, NY 10018",
+      "lat": 40.7528306,
+      "lon": -73.9858447,
+      "osm": "node/5228777783",
+      "official": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/overview/",
+      "factsSource": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/overview/",
+      "fit": "Kitchen-equipped suites near Bryant Park",
+      "format": "Suites with kitchens and dining areas",
+      "published": "The official Double Studio Suite is a studio with two double beds and maximum occupancy four. Its listed appliances include a refrigerator, microwave and dishwasher. The King Studio Suite includes a sofa bed but has a maximum occupancy of three; a sofa bed is not evidence of a four-person capacity.",
+      "benefit": "Consider it when a kitchen and a Midtown South location suit your group’s routine.",
+      "tradeoff": "Do not confuse this property with Residence Inn Central Park. A suite label does not confirm separate bedrooms or capacity for your family.",
+      "check": "Double Studio Suite category if comparing four guests; two double beds; accepted ages; exact kitchen and breakfast terms.",
+      "comparison": "Double Studio Suite: two double beds, maximum four guests",
+      "summary": "A separate Residence Inn option on Sixth Avenue, with a different location from the Central Park property.",
+      "offer_id": "nyc_family_residence_times",
+      "subid": "nyc_family_residence_times",
+      "affiliate_url": "https://klook.tpk.ro/IBNZ3wsi",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/2000000/1310000/1301500/1301443/f04c448b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "bf94acfe3a4390406494cd1cea382ac3a1bc0fd820f4de499b1950a64cee019b",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7528306,
+        "longitude": -73.9858447,
+        "source": "https://www.openstreetmap.org/node/5228777783",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/overview/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/overview/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/rooms/",
+          "purpose": "Official room category, bedding, maximum occupancy and kitchen appliances",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "room_evidence": {
+        "source": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/rooms/",
+        "status": "verified_official_category",
+        "title": "Double Studio Suite",
+        "room_code": "DDST",
+        "beds": "Two double beds",
+        "max_occupancy": 4,
+        "kitchen": [
+          "refrigerator",
+          "microwave",
+          "dishwasher"
+        ],
+        "summary": "Marriott lists this studio with two double beds and a maximum occupancy of four guests, plus a refrigerator, microwave and dishwasher. Its King Studio Suite has one king bed and a sofa bed but a published maximum of three guests.",
+        "check": "Double Studio Suite category if comparing four guests; two double beds; accepted ages; exact kitchen and breakfast terms.",
+        "comparison": "Double Studio Suite: two double beds, maximum four guests",
+        "published": "The official Double Studio Suite is a studio with two double beds and maximum occupancy four. Its listed appliances include a refrigerator, microwave and dishwasher. The King Studio Suite includes a sofa bed but has a maximum occupancy of three; a sofa bed is not evidence of a four-person capacity.",
+        "checked_on": "2026-10-16",
+        "method": "Live official Marriott room card plus HotelRoom JSON-LD bed, occupancy and amenity records; generic reservation-form maxima excluded"
+      },
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "IBNZ3wsi",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_family_residence_times",
+        "destination": "https://www.klook.com/hotels/detail/261020-residence-inn-by-marriott-new-york-manhattantimes-square/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.marriott.com/en-us/hotels/nycri-residence-inn-new-york-manhattan-times-square/overview/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/2000000/1310000/1301500/1301443/f04c448b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/261020-residence-inn-by-marriott-new-york-manhattantimes-square/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "f04c448b",
+          "filename": "f04c448b-original-reference.jpg",
+          "bytes": 948708,
+          "sha256": "bf94acfe3a4390406494cd1cea382ac3a1bc0fd820f4de499b1950a64cee019b",
+          "width": 1920,
+          "height": 1280,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Residence Inn facade and entrance; brand signage is visible.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "bf94acfe3a4390406494cd1cea382ac3a1bc0fd820f4de499b1950a64cee019b",
+          "source_width": 1920,
+          "source_height": 1280,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/residence_times-f04c448b-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 52806,
+              "sha256": "38dccebcccc8dd3ed59512405fa8b2db5f3f842d44e51aa0cdfb016792892307",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 31.91861692138271,
+              "ssim_luma_11": 0.9927447669136739
+            },
+            {
+              "file": "variants/avif/residence_times-f04c448b-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 36590,
+              "sha256": "72a288fdc040499557e801421a885112397f779757d3c31fc7c0abe3693572d6",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 33.378208118083585,
+              "ssim_luma_11": 0.9851744581620676
+            },
+            {
+              "file": "variants/webp/residence_times-f04c448b-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 180178,
+              "sha256": "09867a2b257f99b19deca7bb8066d83768f2f1f7f6cb8b8c4b68609a69cd970c",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 35.44640837704463,
+              "ssim_luma_11": 0.9883120930897311
+            },
+            {
+              "file": "variants/avif/residence_times-f04c448b-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 121069,
+              "sha256": "41491ac59b4cac8eb4bdc125a6f3077abc4dd138a73d32089e0869ce9ecfd47e",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 35.306273568863176,
+              "ssim_luma_11": 0.981450105468734
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "f04c448b",
+        "source_sha256": "bf94acfe3a4390406494cd1cea382ac3a1bc0fd820f4de499b1950a64cee019b",
+        "source_width": 1920,
+        "source_height": 1280,
+        "alt": "Residence Inn New York Times Square facade and entrance on Sixth Avenue.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-480x320.webp",
+            "format": "WEBP",
+            "width": 480,
+            "height": 320,
+            "bytes": 52806,
+            "sha256": "38dccebcccc8dd3ed59512405fa8b2db5f3f842d44e51aa0cdfb016792892307"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-480x320.avif",
+            "format": "AVIF",
+            "width": 480,
+            "height": 320,
+            "bytes": 36590,
+            "sha256": "72a288fdc040499557e801421a885112397f779757d3c31fc7c0abe3693572d6"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-960x640.webp",
+            "format": "WEBP",
+            "width": 960,
+            "height": 640,
+            "bytes": 180178,
+            "sha256": "09867a2b257f99b19deca7bb8066d83768f2f1f7f6cb8b8c4b68609a69cd970c"
+          },
+          {
+            "file": "assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-960x640.avif",
+            "format": "AVIF",
+            "width": 960,
+            "height": 640,
+            "bytes": 121069,
+            "sha256": "41491ac59b4cac8eb4bdc125a6f3077abc4dd138a73d32089e0869ce9ecfd47e"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "pod39",
+      "category": "cheap",
+      "name": "Pod 39",
+      "short": "Pod 39",
+      "area": "Murray Hill / Midtown East",
+      "address": "145 East 39th Street, New York, NY 10016",
+      "lat": 40.7494052,
+      "lon": -73.976574,
+      "osm": "way/265864905",
+      "official": "https://www.thepodhotel.com/pod-39/location",
+      "factsSource": "https://www.thepodhotel.com/pod-39/rooms",
+      "fit": "Compact rooms with a Midtown East base",
+      "format": "Single, Full, Queen and Bunk Pod categories",
+      "published": "The official room list includes compact Single, Full, Queen and Bunk Pod options with private bathrooms.",
+      "benefit": "Compare it when a small room is an acceptable trade-off for the Murray Hill location.",
+      "tradeoff": "A bunk configuration is different from two standard beds. Check the category, luggage space and final total rather than assuming the smallest room is the best value.",
+      "check": "Bed configuration; room size; private-bathroom wording; total including mandatory charges.",
+      "comparison": "Compact formats in Murray Hill",
+      "summary": "A compact-room option east of Fifth Avenue, with several bed formats to compare.",
+      "offer_id": "nyc_cheap_pod39",
+      "subid": "nyc_cheap_pod39",
+      "affiliate_url": "https://klook.tpk.ro/ppL59r2m",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/6000000/5330000/5321600/5321579/4bcea295_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "new-user-approved-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "7955e2ab4219c4a5e87d134b87e765ce849202cef6d4438599c1b7ee3ca08002",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1595
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7494052,
+        "longitude": -73.976574,
+        "source": "https://www.openstreetmap.org/way/265864905",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.thepodhotel.com/pod-39/location",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.thepodhotel.com/pod-39/rooms",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "ppL59r2m",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_cheap_pod39",
+        "destination": "https://www.klook.com/hotels/detail/448503-pod-39/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "One bed or two bunks?",
+        "text": "The official Single Pod sleeps one guest in a twin bed. Bunk, Queen and Full Pods list two guests; a Full Pod is recommended by the hotel for solo travel. These categories list private bathrooms. A bunk room provides twin beds arranged vertically, rather than two side-by-side beds.",
+        "source": "https://www.thepodhotel.com/pod-39/rooms",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1595
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.thepodhotel.com/pod-39/location",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/6000000/5330000/5321600/5321579/4bcea295_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/448503-pod-39/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "4bcea295",
+          "filename": "4bcea295-original-reference.jpg",
+          "bytes": 264164,
+          "sha256": "7955e2ab4219c4a5e87d134b87e765ce849202cef6d4438599c1b7ee3ca08002",
+          "width": 1920,
+          "height": 1595,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Bedroom with red bed cover and bathroom partition; exact hotel and room category cannot be proved visually.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "7955e2ab4219c4a5e87d134b87e765ce849202cef6d4438599c1b7ee3ca08002",
+          "source_width": 1920,
+          "source_height": 1595,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/pod39-4bcea295-384x319.webp",
+              "format": "WEBP",
+              "width": 384,
+              "height": 319,
+              "bytes": 15830,
+              "sha256": "c1f8ca028f73474a7018326f7a5f5c493a31b6199b70d9f0945b57963968d356",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 38.51775033294339,
+              "ssim_luma_11": 0.9872115623789918
+            },
+            {
+              "file": "variants/avif/pod39-4bcea295-384x319.avif",
+              "format": "AVIF",
+              "width": 384,
+              "height": 319,
+              "bytes": 12066,
+              "sha256": "c6e899574cc1ea18cf3091a2e205bcb5bf778dc183a94858ed4a0239a1aadc7b",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 39.944991840980634,
+              "ssim_luma_11": 0.9874097610850989
+            },
+            {
+              "file": "variants/webp/pod39-4bcea295-768x638.webp",
+              "format": "WEBP",
+              "width": 768,
+              "height": 638,
+              "bytes": 44920,
+              "sha256": "8a7e5674827d4fee5f7f4abd6deeb35d93ec879f491a8751dbc8bd4fd4e12fce",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 40.83597294027766,
+              "ssim_luma_11": 0.9859546821952626
+            },
+            {
+              "file": "variants/avif/pod39-4bcea295-768x638.avif",
+              "format": "AVIF",
+              "width": 768,
+              "height": 638,
+              "bytes": 34902,
+              "sha256": "f29dc6149376d24e1b03e3eb703de4c0805c1e29291f2b2d5477ff6c37485637",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 41.36825168596302,
+              "ssim_luma_11": 0.9861906933180284
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 230px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "4bcea295",
+        "source_sha256": "7955e2ab4219c4a5e87d134b87e765ce849202cef6d4438599c1b7ee3ca08002",
+        "source_width": 1920,
+        "source_height": 1595,
+        "alt": "Pod 39 New York room with a red bed cover and a partition beside the bathroom.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 230px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-384x319.webp",
+            "format": "WEBP",
+            "width": 384,
+            "height": 319,
+            "bytes": 15830,
+            "sha256": "c1f8ca028f73474a7018326f7a5f5c493a31b6199b70d9f0945b57963968d356"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-384x319.avif",
+            "format": "AVIF",
+            "width": 384,
+            "height": 319,
+            "bytes": 12066,
+            "sha256": "c6e899574cc1ea18cf3091a2e205bcb5bf778dc183a94858ed4a0239a1aadc7b"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-768x638.webp",
+            "format": "WEBP",
+            "width": 768,
+            "height": 638,
+            "bytes": 44920,
+            "sha256": "8a7e5674827d4fee5f7f4abd6deeb35d93ec879f491a8751dbc8bd4fd4e12fce"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-768x638.avif",
+            "format": "AVIF",
+            "width": 768,
+            "height": 638,
+            "bytes": 34902,
+            "sha256": "f29dc6149376d24e1b03e3eb703de4c0805c1e29291f2b2d5477ff6c37485637"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "pod_times",
+      "category": "cheap",
+      "name": "Pod Times Square",
+      "short": "Pod Times Square",
+      "area": "Midtown West / West 42nd Street",
+      "address": "400 West 42nd Street, New York, NY 10036",
+      "lat": 40.7584977,
+      "lon": -73.9932281,
+      "osm": "node/6564006743",
+      "official": "https://www.thepodhotel.com/pod-times-square/location",
+      "factsSource": "https://www.thepodhotel.com/pod-times-square",
+      "fit": "An efficient Midtown West room",
+      "format": "Bunk, Full and Queen Pod categories",
+      "published": "The hotel presents Bunk, Full and Queen Pod room formats at its West 42nd Street location.",
+      "benefit": "A useful comparison when Midtown West works for your itinerary and you plan to spend little time in the room.",
+      "tradeoff": "The Times Square name does not mean a room on the central pedestrian plazas. Check the actual address, room format and all charges.",
+      "check": "West 42nd Street location; selected bed type; luggage space; cancellation and full cost.",
+      "comparison": "Small-room options in Midtown West",
+      "summary": "A different Pod location on West 42nd Street, suited to comparing room efficiency and total cost.",
+      "offer_id": "nyc_cheap_pod_times",
+      "subid": "nyc_cheap_pod_times",
+      "affiliate_url": "https://klook.tpk.ro/8rtgpfkY",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/20000000/19690000/19681400/19681371/d9e98b9f_z.jpg?impolicy=resizecrop&rw=750&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "new-user-approved-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "8aaeefe1f334e2546168630650dcd43206748b0e15fa98e1ee2ecc23fbc88f44",
+        "source_dimensions": {
+          "width": 750,
+          "height": 808
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7584977,
+        "longitude": -73.9932281,
+        "source": "https://www.openstreetmap.org/node/6564006743",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.thepodhotel.com/pod-times-square/location",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.thepodhotel.com/pod-times-square",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "8rtgpfkY",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_cheap_pod_times",
+        "destination": "https://www.klook.com/hotels/detail/240912-pod-times-square/",
+        "method": "Observed Travelpayouts response X-Url-Short and X-Url-Full",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "Standard Pods and Pod Pads differ",
+        "text": "Full, Bunk and Queen Pods list two guests and private bathrooms; Full Pods are recommended for solo travelers. The hotel also lists separate Pod Pad apartment categories with kitchens and living areas. Those apartment facilities should not be assumed to come with a standard Pod booking.",
+        "source": "https://www.thepodhotel.com/pod-times-square/rooms",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 750,
+          "height": 808
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.thepodhotel.com/pod-times-square/location",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/20000000/19690000/19681400/19681371/d9e98b9f_z.jpg?impolicy=resizecrop&rw=750&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/240912-pod-times-square/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "d9e98b9f",
+          "filename": "d9e98b9f-original-reference.jpg",
+          "bytes": 116842,
+          "sha256": "8aaeefe1f334e2546168630650dcd43206748b0e15fa98e1ee2ecc23fbc88f44",
+          "width": 750,
+          "height": 808,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "Portrait bedroom view; exact hotel and room category cannot be proved visually.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "8aaeefe1f334e2546168630650dcd43206748b0e15fa98e1ee2ecc23fbc88f44",
+          "source_width": 750,
+          "source_height": 808,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/pod_times-d9e98b9f-375x404.webp",
+              "format": "WEBP",
+              "width": 375,
+              "height": 404,
+              "bytes": 18716,
+              "sha256": "7ee31d2ff46557083584b06ff55b4e54e471ac3f94cac47131b73915c313b81a",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 40.649948962555634,
+              "ssim_luma_11": 0.9873317232232435
+            },
+            {
+              "file": "variants/avif/pod_times-d9e98b9f-375x404.avif",
+              "format": "AVIF",
+              "width": 375,
+              "height": 404,
+              "bytes": 14219,
+              "sha256": "12d5289ab7717c834086b9d86caaab282f567ae5e2b7cb057b7ab0b282475a31",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 40.47411314405874,
+              "ssim_luma_11": 0.9870833812720522
+            },
+            {
+              "file": "variants/webp/pod_times-d9e98b9f-750x808.webp",
+              "format": "WEBP",
+              "width": 750,
+              "height": 808,
+              "bytes": 56800,
+              "sha256": "60753bfbb6da191bc1f6749d241e9285b8269c056cf7b63a0b9107f58f92aae1",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 42.25966465172888,
+              "ssim_luma_11": 0.9870165374078879
+            },
+            {
+              "file": "variants/avif/pod_times-d9e98b9f-750x808.avif",
+              "format": "AVIF",
+              "width": 750,
+              "height": 808,
+              "bytes": 45550,
+              "sha256": "7d27e575dd97f649900ee8b25554a60c8fef74276a15c4a02327a2d3ad198e30",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 42.09011097495679,
+              "ssim_luma_11": 0.988613798040675
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 200px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "d9e98b9f",
+        "source_sha256": "8aaeefe1f334e2546168630650dcd43206748b0e15fa98e1ee2ecc23fbc88f44",
+        "source_width": 750,
+        "source_height": 808,
+        "alt": "Pod Times Square New York room with a red bed runner and a window behind the bed.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 200px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-375x404.webp",
+            "format": "WEBP",
+            "width": 375,
+            "height": 404,
+            "bytes": 18716,
+            "sha256": "7ee31d2ff46557083584b06ff55b4e54e471ac3f94cac47131b73915c313b81a"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-375x404.avif",
+            "format": "AVIF",
+            "width": 375,
+            "height": 404,
+            "bytes": 14219,
+            "sha256": "12d5289ab7717c834086b9d86caaab282f567ae5e2b7cb057b7ab0b282475a31"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-750x808.webp",
+            "format": "WEBP",
+            "width": 750,
+            "height": 808,
+            "bytes": 56800,
+            "sha256": "60753bfbb6da191bc1f6749d241e9285b8269c056cf7b63a0b9107f58f92aae1"
+          },
+          {
+            "file": "assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-750x808.avif",
+            "format": "AVIF",
+            "width": 750,
+            "height": 808,
+            "bytes": 45550,
+            "sha256": "7d27e575dd97f649900ee8b25554a60c8fef74276a15c4a02327a2d3ad198e30"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    },
+    {
+      "key": "citizenm",
+      "category": "cheap",
+      "name": "citizenM New York Times Square",
+      "short": "citizenM Times Square",
+      "area": "Theater District / West 50th Street",
+      "address": "218 West 50th Street, New York, NY 10019",
+      "lat": 40.7615806,
+      "lon": -73.9849656,
+      "osm": "way/266151938",
+      "official": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+      "factsSource": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+      "fit": "A king-bed room for one or two adults",
+      "format": "Rooms designed for two adults with an XL king bed",
+      "published": "The current Marriott property description identifies rooms for two adults with an XL king bed and tablet-operated room controls.",
+      "benefit": "Worth comparing when the West 50th Street location and a single king-bed setup match your needs.",
+      "tradeoff": "This is a value comparison, not a promise of a low rate. A single king-bed room will not suit travelers who need separate beds.",
+      "check": "Accepted guests; single-bed setup; breakfast conditions; final price for your dates.",
+      "comparison": "Single king-bed setup in the Theater District",
+      "summary": "A date-dependent value alternative; compare the total rather than assuming citizenM is always inexpensive.",
+      "offer_id": "nyc_cheap_citizenm",
+      "subid": "nyc_cheap_citizenm",
+      "affiliate_url": "https://klook.tpk.ro/o6d6V2Wi",
+      "image_reference": {
+        "url": "https://i.travelapi.com/lodging/9000000/8360000/8357000/8356903/a2079c0b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "rights_status": "existing_evidence_retained_owner_directed_integration",
+        "downloaded": true,
+        "integrated": true,
+        "visual_identity_verified": false,
+        "reference_version": "user-provided-reference",
+        "download_scope": "private_local_copy_outside_git_only",
+        "source_sha256": "14a41408ab4113b8e73126d5605910a2270615e5e00719a3444f0744116f10f6",
+        "source_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "format_conversion_performed": false,
+        "crop_or_retouche_performed": false,
+        "public_redistribution": "not_explicitly_confirmed",
+        "prior_rights_status": "unconfirmed",
+        "integration_basis": "Owner expressly instructed local integration of these exact existing variants after stating rights had already been handled; no additional permission or independent legal conclusion is asserted."
+      },
+      "geo": {
+        "latitude": 40.7615806,
+        "longitude": -73.9849656,
+        "source": "https://www.openstreetmap.org/way/266151938",
+        "verification": "OSM named property/address matched to official hotel address; property point or building center, not an accessible-entrance survey",
+        "checked_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+          "purpose": "Official address / property identity",
+          "checked_on": "2026-10-16"
+        },
+        {
+          "url": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+          "purpose": "Published accommodation characteristics",
+          "checked_on": "2026-10-16"
+        }
+      ],
+      "affiliate_evidence": {
+        "status": "confirmed_in_prior_browser_audit",
+        "alias": "o6d6V2Wi",
+        "partner_id": 699178,
+        "project_id": 492724,
+        "campaign_id": 137,
+        "product_id": 4110,
+        "program": "Klook",
+        "subid": "nyc_cheap_citizenm",
+        "destination": "https://www.klook.com/hotels/detail/436431-citizenm-new-york-times-square/",
+        "method": "Authenticated Travelpayouts Recent Links / Full link",
+        "audit_date": "2026-10-18",
+        "evidence_reference": "commercial_evidence; prior conversation audit, reused without new clicks"
+      },
+      "published_detail": {
+        "title": "A single king bed and shared social spaces",
+        "text": "Marriott describes rooms for two adults with an XL king bed, rain shower, blackout blinds and tablet controls. The property also lists a gym, communal living room and canteenM food and drink service. Check breakfast inclusions and the room offer separately; a king bed is not a twin-bed arrangement.",
+        "source": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+        "checked_on": "2026-10-19",
+        "status": "verified_official_property_text",
+        "not_a_live_offer": true
+      },
+      "photo_publication_plan": {
+        "local_authentic_property_photo_found": false,
+        "rights_evidence_found": false,
+        "decision": "integrated_locally_on_explicit_owner_instruction",
+        "provenance": "Original owner-selected reference recovered without URL substitution; Plaza is served by res.klook.com, eight references by i.travelapi.com. A successful image response and recognizable branding do not independently establish that the exact image appears in the corresponding current Klook gallery.",
+        "source_pixel_dimensions": {
+          "width": 1920,
+          "height": 1280
+        },
+        "acquisition_route": "Keep this exact recovered source. Obtain written clarification under ticket #251829 for public GitHub repository/Pages hosting (including source-file visibility and history), any format conversion, third-party restrictions and required credits; match this exact image to its Klook product gallery when accessible. Do not substitute another photograph.",
+        "official_contact_entry": "https://www.marriott.com/en-us/hotels/nyczt-citizenm-new-york-times-square/overview/",
+        "required_evidence": [
+          "Exact original image matched to its corresponding Klook product gallery; owner provenance is recorded but independent current-gallery match remains unconfirmed",
+          "Permission for public GitHub source repository and GitHub Pages hosting, including original-file access and repository history",
+          "Any third-party exclusions and required photographer/property credits",
+          "Explicit WebP/AVIF conversion permission only if a conversion is proposed; unchanged source format requires no conversion by us"
+        ],
+        "processing_after_permission": {
+          "variants": "Prefer the exact recovered source format; proportional downsize only if justified and within the confirmed grant. No upscaling, cropping, retouching or format conversion without the required permission.",
+          "layout": "Preserve existing New York design; reserve the existing frame, use object-fit: contain, intrinsic width/height, lazy loading and async decoding; keep all of the delivered composition.",
+          "delivery_parameters": "Owner-supplied c_fill / impolicy=resizecrop parameters were retained exactly. No parameter manipulation; upstream transformation history was not independently verified."
+        },
+        "local_original_reference_file_found": true,
+        "rights_evidence_scope": "Ticket #251829 establishes promotional download and proportional resizing of corresponding Klook product images, but complete per-image publication/redistribution clearance is pending.",
+        "prior_decision": "retain_placeholder"
+      },
+      "klook_photo_status": {
+        "owner_reference": "https://i.travelapi.com/lodging/9000000/8360000/8357000/8356903/a2079c0b_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "owner_reference_downloaded": true,
+        "klook_page": "https://www.klook.com/hotels/detail/436431-citizenm-new-york-times-square/",
+        "original_reference_gallery_match": "not_confirmed",
+        "local_selected_alternative": null,
+        "placeholder": "replaced_with_exact_owner_selected_photo",
+        "publication_blocking": false,
+        "reason": "Integrated locally under the owner’s current explicit instruction. Existing provenance and ticket evidence retained; no new sourcing, download or legal assessment.",
+        "owner_reference_file": {
+          "asset_id": "a2079c0b",
+          "filename": "a2079c0b-original-reference.jpg",
+          "bytes": 281114,
+          "sha256": "14a41408ab4113b8e73126d5605910a2270615e5e00719a3444f0744116f10f6",
+          "width": 1920,
+          "height": 1280,
+          "decoded": true,
+          "storage": "private local QA folder outside Git",
+          "transformations_by_tripguidely": [],
+          "public_repository_copy": false
+        },
+        "visual_review": "citizenM facade and hotel logo; exact property association also relies on the original reference.",
+        "local_variant_evaluation": {
+          "prepared_on": "2026-10-19",
+          "scope": "Owner-authorized private technical evaluation only; no publication or public Git redistribution permission is inferred",
+          "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+          "formats": [
+            "WEBP",
+            "AVIF"
+          ],
+          "original_source_unchanged": true,
+          "format_conversion_performed_on_evaluation_derivatives": true,
+          "crop_or_retouch": false,
+          "public_repository_copy": false,
+          "integrated": false,
+          "source_sha256": "14a41408ab4113b8e73126d5605910a2270615e5e00719a3444f0744116f10f6",
+          "source_width": 1920,
+          "source_height": 1280,
+          "max_measured_drawn_css_width": 338.203125,
+          "encoder_profiles": {
+            "WEBP": {
+              "quality": 88,
+              "method": 6,
+              "lossless": false
+            },
+            "AVIF": {
+              "quality": 70,
+              "speed": 6,
+              "subsampling": "4:4:4",
+              "range": "full",
+              "max_threads": 4,
+              "codec": "aom"
+            }
+          },
+          "variants": [
+            {
+              "file": "variants/webp/citizenm-a2079c0b-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 31406,
+              "sha256": "2b808cee3754d45070e1598bc57fe18e49d0627a0f846954316e7ad528803d73",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.314943569745445,
+              "ssim_luma_11": 0.9916837100568641
+            },
+            {
+              "file": "variants/avif/citizenm-a2079c0b-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 23176,
+              "sha256": "1f64e761cf036e42cb4d561f3e9cd5154fb68641542218aacef2b63cd902b6cf",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 36.65364997600102,
+              "ssim_luma_11": 0.9889107985222167
+            },
+            {
+              "file": "variants/webp/citizenm-a2079c0b-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 101832,
+              "sha256": "46bf04beae550310e6e388bc3c61dd88b37600576c71d605fd60aaec3174bc57",
+              "quality": 88,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 39.587594571468486,
+              "ssim_luma_11": 0.9924726657924622
+            },
+            {
+              "file": "variants/avif/citizenm-a2079c0b-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 69300,
+              "sha256": "8f6c7ae80e1998e7ff08b5fd45582eb53001cd2c3d71dbe51bc669b4aa292a18",
+              "quality": 70,
+              "exact_aspect_ratio": true,
+              "upscaled": false,
+              "psnr_rgb_db": 38.122382243599255,
+              "ssim_luma_11": 0.9899767210644871
+            }
+          ],
+          "display": {
+            "fit": "contain",
+            "position": "center top",
+            "loading": "lazy",
+            "decoding": "async",
+            "intrinsic_dimensions": true,
+            "srcset": true,
+            "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px"
+          },
+          "visual_review": "Full-frame source/AVIF/WebP comparisons inspected at component scale; authentic scene content preserved. No claim that room interiors independently prove property or category.",
+          "publication_status": "NOT AUTHORIZED: public repository hosting, conversion grant and image-specific restrictions/credits remain to be clarified"
+        },
+        "prior_review_reason": "Exact original source recovered and inspected privately. Retain placeholder until exact-gallery provenance, public redistribution and any image-specific restrictions/credits are resolved."
+      },
+      "site_photo": {
+        "asset_id": "a2079c0b",
+        "source_sha256": "14a41408ab4113b8e73126d5605910a2270615e5e00719a3444f0744116f10f6",
+        "source_width": 1920,
+        "source_height": 1280,
+        "alt": "citizenM New York Times Square facade with its hotel logo and colourful mural.",
+        "sizes": "(max-width: 640px) min(calc(100vw - 42px), 290px), (max-width: 900px) calc((100vw - 66px) / 3), (max-width: 1200px) calc((100vw - 66px) * 0.2982456), 339px",
+        "variants": [
+          {
+            "file": "assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-480x320.webp",
+            "format": "WEBP",
+            "width": 480,
+            "height": 320,
+            "bytes": 31406,
+            "sha256": "2b808cee3754d45070e1598bc57fe18e49d0627a0f846954316e7ad528803d73"
+          },
+          {
+            "file": "assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-480x320.avif",
+            "format": "AVIF",
+            "width": 480,
+            "height": 320,
+            "bytes": 23176,
+            "sha256": "1f64e761cf036e42cb4d561f3e9cd5154fb68641542218aacef2b63cd902b6cf"
+          },
+          {
+            "file": "assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-960x640.webp",
+            "format": "WEBP",
+            "width": 960,
+            "height": 640,
+            "bytes": 101832,
+            "sha256": "46bf04beae550310e6e388bc3c61dd88b37600576c71d605fd60aaec3174bc57"
+          },
+          {
+            "file": "assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-960x640.avif",
+            "format": "AVIF",
+            "width": 960,
+            "height": 640,
+            "bytes": 69300,
+            "sha256": "8f6c7ae80e1998e7ff08b5fd45582eb53001cd2c3d71dbe51bc669b4aa292a18"
+          }
+        ],
+        "integrated_locally": true,
+        "published": false,
+        "original_source_unchanged": true,
+        "copied_existing_variants_without_reencoding": true
+      }
+    }
+  ],
+  "commercial_evidence": {
+    "status": "confirmed_in_prior_browser_audit",
+    "audit_date": "2026-10-18",
+    "reused_on": "2026-10-19",
+    "partner_id": 699178,
+    "project_id": 492724,
+    "program": "Klook",
+    "campaign_id": 137,
+    "product_id": 4110,
+    "evidence_source": "Prior Travelpayouts Chrome audit in this conversation; owner subsequently confirmed all nine Klook/SubID associations. No private account reinspection or affiliate test clicks performed during this resumption.",
+    "method": "Eight aliases: X-Url-Short and X-Url-Full on observed Travelpayouts 302 responses, including marker, trs, campaign_id, p, sub_id and destination. citizenM: authenticated account Recent Links / Full link. All nine SubIDs also observed in Klook reports.",
+    "limitations": [
+      "Prior evidence reused; raw browser headers are not included in this registry.",
+      "HTML data-subid alone does not establish server-side attribution.",
+      "A redirect or a reported click does not guarantee a booking, commission or payment.",
+      "Live GA4 receipt remains unverified."
+    ]
+  },
+  "photo_review": {
+    "reviewed_on": "2026-10-19",
+    "scope": "Existing isolated New York worktree: assets/images, project image registries, Paris photo CSS and Paris provenance records. No other worktree files inspected or changed.",
+    "result": "Nine original reference URLs and private downloaded source files now recovered. Earlier worktree-only search found no property photo in the repository; that earlier result is superseded by original_reference_recovery. No public-ready photo or new redistribution permission is claimed.",
+    "paris_procedure": "Retain source/derivative hashes and encoder settings; preserve aspect ratio without upscale/crop; intrinsic dimensions, lazy decoding and visual review. Paris records expressly do not establish a complete rights audit. Existing repository bytes or owner-provided URL alone do not authorize new reuse.",
+    "request_draft": "Please provide a current exterior or clearly identified room photograph of [hotel], and confirm that you control its rights and authorize TripGuidely to publish it on its commercial affiliate hotel guide, host it locally and create resized WebP/AVIF versions. Please specify the photographer/credit, restrictions, duration and whether the depicted room category is identifiable. No request has been sent.",
+    "original_reference_recovery": {
+      "reviewed_on": "2026-10-19",
+      "project_directories_examined": 10,
+      "project_files_inventoried": 1179,
+      "matching_preexisting_original_binaries_in_project_inventory": 0,
+      "downloads_pictures_filename_search": "No image matching the nine IDs or hotel names was located. Unrelated or unidentified personal files were not visually inspected; this is not a claim of an exhaustive disk search.",
+      "source_selection": "Nine original URLs preserved, including replacement Pod references; five previously downloaded different Plaza images excluded.",
+      "downloaded": 9,
+      "decoded": 9,
+      "integrated": 0,
+      "bytes": 4038515,
+      "source_transformations_by_tripguidely": [],
+      "external_evidence_directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-original-photo-recovery-20261019",
+      "rights_blockers": [
+        "Current exact Klook gallery association not independently observed for each original image",
+        "Public GitHub/Pages redistribution not explicitly confirmed",
+        "Image-specific exclusions and credits not resolved"
+      ],
+      "upstream_transformations": "Exact owner-provided delivery URLs copied unchanged; prior CDN cropping/resizing history is not established."
+    },
+    "optimization_evaluation": {
+      "prepared_on": "2026-10-19",
+      "directory": "C:/Users/1995/AppData/Local/Temp/tripguidely-new-york-photo-optimization-20261019",
+      "source_downloads": 0,
+      "new_images_researched": 0,
+      "originals_unchanged": true,
+      "derivative_count": 32,
+      "source_aspect_ratios": "Exact integer ratio for every derivative; full source dimensions retained when no smaller useful exact-ratio size exists",
+      "profiles": {
+        "WEBP": {
+          "quality": 88,
+          "method": 6,
+          "lossless": false
+        },
+        "AVIF": {
+          "quality": 70,
+          "speed": 6,
+          "subsampling": "4:4:4",
+          "range": "full",
+          "max_threads": 4,
+          "codec": "aom"
+        }
+      },
+      "private_browser_assertions": 501,
+      "scenarios": [
+        {
+          "category": "luxury",
+          "width": 320,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.04232186875,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "family",
+          "width": 320,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.045572351171875,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "cheap",
+          "width": 320,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.04235520703125,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "luxury",
+          "width": 390,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.02809207435897436,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "family",
+          "width": 390,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.029359039743589742,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "cheap",
+          "width": 390,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.02757843974358974,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "luxury",
+          "width": 641,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.2897057006874025,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "family",
+          "width": 641,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.3029151987860765,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "cheap",
+          "width": 641,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.2897057006874025,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "luxury",
+          "width": 1440,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.0000846254249855324,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "family",
+          "width": 1440,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.00008245554229359567,
+          "photo_loading_cls": 0,
+          "photos": 3
+        },
+        {
+          "category": "cheap",
+          "width": 1440,
+          "dpr": 2,
+          "initialPhotoRequests": 0,
+          "existing_map_mount_cls": 0.0000846254249855324,
+          "photo_loading_cls": 0,
+          "photos": 3
+        }
+      ],
+      "production_sources_changed": [],
+      "private_preview_only": true,
+      "existing_map_mount_reserve": {
+        "finding": "Local map initialization layout shifts reproduced on unchanged pages with no photo variants; separate from photo loading, no map modification",
+        "max_cls_641": 0.3029151987860765,
+        "production_core_web_vitals_verified": false
+      }
+    }
+  },
+  "design_priority": {
+    "owner_instruction_date": "2026-10-19",
+    "status": "Preserve the current New York design in full. Paris is a reference only for photo processing and optimization, not aesthetic convergence.",
+    "frozen_scope": [
+      "layout",
+      "interactive maps",
+      "comparison tables",
+      "colors",
+      "typography",
+      "animations",
+      "buttons"
+    ],
+    "publication_approvals": "Four exact integrations remain pending final owner approval before baseline application. No commit, push, PR, merge or deployment authorized."
+  },
+  "photo_candidate_research": {
+    "checked_on": "2026-10-19",
+    "status": "Candidate source-page license declarations only, not completed rights/identity or visual approval; no download/integration. Original owner references remain unchanged, including both replacement Pod references.",
+    "license_primary_sources": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://creativecommons.org/licenses/by-sa/4.0/"
+    ],
+    "conditions": "For any selected CC image, retain creator/source/license/changes credits and applicable ShareAlike obligations; check the exact source revision and any other depicted rights. A listed license does not prove every intended use is cleared.",
+    "remaining": [
+      "Homewood exact Midtown/37th Street property: no reusable licensed candidate confirmed; reject Syracuse/Liverpool and other namesakes.",
+      "Pod Times Square: no reusable licensed candidate confirmed; retain replacement owner reference and placeholder pending rights evidence.",
+      "Pod 39: Commons category identifies files, but attempted individual file-description fetches failed, so no per-image license is claimed. Original replacement reference remains unchanged."
+    ],
+    "pod39_category": "https://commons.wikimedia.org/wiki/Category:Pod_39",
+    "candidates": [
+      {
+        "hotel_key": "plaza",
+        "page": "https://commons.wikimedia.org/wiki/File:Plaza_Hotel_April_2008.JPG",
+        "author": "OptimumPx",
+        "license": "PD-self (public-domain dedication stated by uploader)",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "subject": "Exterior from Central Park, 2008",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      },
+      {
+        "hotel_key": "langham",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Langham,_New_York,_Fifth_Avenue_HDR_2022_jeh.jpg",
+        "author": "Jim.henderson",
+        "license": "CC BY-SA 4.0",
+        "dimensions": [
+          3000,
+          4000
+        ],
+        "subject": "The Langham New York Fifth Avenue, 2022; exclude the different Langham apartment building on Central Park West",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      },
+      {
+        "hotel_key": "conrad",
+        "page": "https://commons.wikimedia.org/wiki/File:Conrad_New_York_Downtown.jpg",
+        "author": "Kidfly182",
+        "license": "CC BY 4.0",
+        "dimensions": [
+          4608,
+          2072
+        ],
+        "subject": "Exterior, Battery Park City, 2025",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      },
+      {
+        "hotel_key": "residence_central",
+        "page": "https://commons.wikimedia.org/wiki/File:Residence_Inn_by_Marriott_New_York_Manhattan-Central_Park_2023_jeh.jpg",
+        "author": "Jim.henderson",
+        "license": "CC BY-SA 3.0",
+        "dimensions": [
+          3000,
+          4000
+        ],
+        "subject": "Residence Inn Central Park property, 2023",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      },
+      {
+        "hotel_key": "residence_times",
+        "page": "https://commons.wikimedia.org/wiki/File:Residence_Inn_by_Marriott_New_York_Manhattan-Times_Square_HDR_2022_jeh.jpg",
+        "author": "Jim.henderson",
+        "license": "CC BY-SA 4.0",
+        "dimensions": [
+          3000,
+          4000
+        ],
+        "subject": "Residence Inn Manhattan Times Square property, 2022",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      },
+      {
+        "hotel_key": "citizenm",
+        "page": "https://commons.wikimedia.org/wiki/File:CitizenM_New_York_Times_Square_PA01.jpg",
+        "author": "Paora",
+        "license": "CC0 1.0",
+        "dimensions": [
+          3024,
+          4032
+        ],
+        "subject": "Lobby, July 2025; inspect artwork/people and consider an exterior alternative before use",
+        "source_license_declaration_observed": true,
+        "property_identity_visual_check_complete": false,
+        "other_depicted_rights_review_complete": false,
+        "downloaded": false,
+        "integrated": false,
+        "publication_approved": false
+      }
+    ]
+  },
+  "klook_photo_permission_review": {
+    "reviewed_on": "2026-10-19",
+    "evidence": "Travelpayouts ticket #251829, brand response relayed by Valerie on 2026-10-12; full email read during the prior review. No private email or header is reproduced in the repository.",
+    "scope": "Corresponding Klook product promotion regardless of category",
+    "download": "confirmed_for_images_on_corresponding_klook_product_page",
+    "proportional_resize": "confirmed_without_distortion",
+    "crop_or_alteration": "prohibited",
+    "conversion_webp_avif": "not_explicitly_confirmed",
+    "public_github_redistribution": "not_explicitly_confirmed",
+    "third_party_exclusions_and_credits": "image_specific_review_needed",
+    "public_repository_images_added": 0
+  },
+  "photo_publication_handoff": {
+    "updated_on": "2026-10-19",
+    "owner_fallback": "Proceed toward publication with existing placeholders when gallery access or redistribution rights remain unresolved; preserve current New York design.",
+    "status": "Photo work is a follow-up, not an additional code/audit waiver. Four exact integration hashes still require final owner approval before baseline application.",
+    "source_downloads": "Nine exact owner references recovered outside Git, 4,038,515 bytes total; five historical alternative Plaza photos remain excluded. No transformation by TripGuidely; no source photograph in this worktree.",
+    "reference_recovery": "All nine initial selections recovered, including Plaza 288a78f6, Langham c21195be and both approved replacement Pod references. File dimensions, SHA-256, exact URL and visual review recorded; no alternative substituted.",
+    "access_limitations": "Normal public Chrome and direct HTTP reads received 403. Public web reader confirms product identities but only Plaza exposes usable individual gallery photo URLs. No protection bypass or new affiliate test click.",
+    "public_image_count": 0
+  },
+  "owner_photo_integration_instruction": {
+    "date": "2026-10-19",
+    "reviewer_reference": "Project owner — explicit current conversation instruction to integrate the nine existing selected photos after stating rights had been handled",
+    "scope": "Local New York photo integration only; no publication or baseline authorization application",
+    "additional_permission_inferred": false,
+    "assets": 32,
+    "photos": 9
+  }
+}

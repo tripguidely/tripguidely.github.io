@@ -45,4 +45,16 @@
     <loc>https://tripguidely.github.io/hotels/new-york/</loc>
   </url>
 
+  <url>
+    <loc>https://tripguidely.github.io/hotels/new-york/luxury-hotels/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/hotels/new-york/family-hotels/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tripguidely.github.io/hotels/new-york/cheap-hotels/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
 </urlset>

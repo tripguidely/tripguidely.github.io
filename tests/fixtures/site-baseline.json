@@ -190,6 +190,46 @@
       "reviewed_by": "Owner instruction in this session: PR #41 Paris neighborhood map mobile UX",
       "recorded_on": "2026-10-13",
       "base_revision": "5f3c1d0db4ee88689352607e6adf4bc6b83407a5"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/cheap-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/family-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/new-york/luxury-hotels/index.html",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "181b9012d558bee407343891db0550a23853a4403e7a10dc671c0e0129898bea",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/new-york-hotel-map.js",
+      "base_revision": "ee86ecbd38f68bad7e5647d1451c2ca497a9d3b7",
+      "before": null,
+      "after": "aa671c34035b10f4ea027dddd6089c5a3db4504be99112cd0fad02132aebc33a",
+      "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
+      "recorded_on": "2026-10-19"
     }
   ],
   "contracts": {
@@ -12995,18 +13035,6 @@
     },
     {
       "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/family-hotels",
-      "id": "missing_internal_page:1d82c02859abcefaf9c6",
-      "line": 581,
-      "locator": "a[href]",
-      "occurrence": 2,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/family-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
       "detail": "Resolved local target: fr/things-to-do/new-york",
       "id": "missing_internal_page:1e11a93a8a9cfa4ca2fd",
       "line": 553,
@@ -13199,18 +13227,6 @@
     },
     {
       "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/cheap-hotels",
-      "id": "missing_internal_page:39673b445ccd95d0b344",
-      "line": 467,
-      "locator": "a[href]",
-      "occurrence": 1,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/cheap-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
       "detail": "Resolved local target: itinerary/quebec/first-time",
       "id": "missing_internal_page:403d19a68f43f1718b38",
       "line": 1061,
@@ -13376,18 +13392,6 @@
       "recorded_on": "2026-10-08",
       "source": "hotels/paris/index.html",
       "target": "/hotels/paris/luxury-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/cheap-hotels",
-      "id": "missing_internal_page:5e44f3202a1b421bf8f5",
-      "line": 921,
-      "locator": "a[href]",
-      "occurrence": 3,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/cheap-hotels/"
     },
     {
       "category": "missing_internal_page",
@@ -13619,18 +13623,6 @@
     },
     {
       "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/family-hotels",
-      "id": "missing_internal_page:8e66ec20cb415321778b",
-      "line": 461,
-      "locator": "a[href]",
-      "occurrence": 1,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/family-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
       "detail": "Resolved local target: hotels/couples",
       "id": "missing_internal_page:92027cc31625cce558f0",
       "line": 436,
@@ -13688,18 +13680,6 @@
       "recorded_on": "2026-10-08",
       "source": "things-to-do/quebec-city/index.html",
       "target": "/hotels/quebec/"
-    },
-    {
-      "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/luxury-hotels",
-      "id": "missing_internal_page:a8ed9d61fc303f1ac867",
-      "line": 933,
-      "locator": "a[href]",
-      "occurrence": 3,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/luxury-hotels/"
     },
     {
       "category": "missing_internal_page",
@@ -13871,18 +13851,6 @@
     },
     {
       "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/luxury-hotels",
-      "id": "missing_internal_page:c33bddb1dc35baf20237",
-      "line": 571,
-      "locator": "a[href]",
-      "occurrence": 2,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/luxury-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
       "detail": "Resolved local target: fr/things-to-do/new-york",
       "id": "missing_internal_page:c3a6333b4b21fb263ba8",
       "line": 309,
@@ -13943,18 +13911,6 @@
     },
     {
       "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/cheap-hotels",
-      "id": "missing_internal_page:cd553861b5bf80530db6",
-      "line": 611,
-      "locator": "a[href]",
-      "occurrence": 2,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/cheap-hotels/"
-    },
-    {
-      "category": "missing_internal_page",
       "detail": "Resolved local target: fr/things-to-do/dubai",
       "id": "missing_internal_page:d4514afadcdb44f672e3",
       "line": 381,
@@ -14000,18 +13956,6 @@
       "recorded_on": "2026-10-08",
       "source": "car-rental/quebec-city/index.html",
       "target": "/transport/quebec-city/"
-    },
-    {
-      "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/family-hotels",
-      "id": "missing_internal_page:e289d79dacc5d8730edb",
-      "line": 927,
-      "locator": "a[href]",
-      "occurrence": 3,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/family-hotels/"
     },
     {
       "category": "missing_internal_page",
@@ -14156,18 +14100,6 @@
       "recorded_on": "2026-10-08",
       "source": "fr/travel-guides/index.html",
       "target": "/fr/things-to-do/bangkok/"
-    },
-    {
-      "category": "missing_internal_page",
-      "detail": "Resolved local target: hotels/new-york/luxury-hotels",
-      "id": "missing_internal_page:f94244548594aa77de72",
-      "line": 455,
-      "locator": "a[href]",
-      "occurrence": 1,
-      "reason": "Historical defect verified on the recorded main revision; repair separately without expanding its scope.",
-      "recorded_on": "2026-10-08",
-      "source": "hotels/new-york/index.html",
-      "target": "/hotels/new-york/luxury-hotels/"
     },
     {
       "category": "missing_internal_page",
