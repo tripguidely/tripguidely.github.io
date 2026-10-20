@@ -1,0 +1,15 @@
+{
+  "status": "APPLIED LOCALLY AFTER EXPLICIT OWNER APPROVAL — exact SEO metadata hashes and base verified. One entry appended to the existing baseline; all 31 historic authorizations and all other baseline records preserved. Official audit passes with zero errors and one recognized authorization. Owner authorized commit, push and Draft PR only; no merge or deployment.",
+  "authorizations": [
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/rome/index.html",
+      "base_revision": "5c02894cb346e5d5efc8c8531ea062b1fbf77364",
+      "before": "dbcd1fffad79c3390a15986b68a962d214a48d87eb4ee103e29f8cf6c5860457",
+      "after": "2f3e6aed1c3ba57b08e575d2d2ef670d23cd4c9451e04686bf022aaa99d35c1e",
+      "reason": "Owner explicitly approved the exact Rome hub SEO metadata transition in TRIPGUIDELY — ROME : APPROBATION SEO ET CRÉATION PR. Only the title, description and matching social title/description change; preserve canonical, hreflang, original JSON-LD, affiliate anchors and integrations.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — ROME : APPROBATION SEO ET CRÉATION PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    }
+  ]
+}

@@ -1,0 +1,808 @@
+{
+  "base_commit": "5c02894cb346e5d5efc8c8531ea062b1fbf77364",
+  "checked_on": "2026-10-20",
+  "selection": "Nine exact owner-selected hotel links/SubIDs and ten photo URLs from the supplied request.",
+  "photo_policy": "Local integration/optimization explicitly requested by the owner. Original files remain intact outside Git. No additional permission or verified partner attribution is inferred. No publication performed.",
+  "hotels": [
+    {
+      "key": "de_russie",
+      "name": "Hotel de Russie",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/EhpVKmPP",
+      "subid": "rome_luxury_de_russie",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/1000000/530000/523800/523751/w3000h1998x0y0-5127b8bf_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "offer_id": "rome_luxury_de_russie",
+      "area": "Piazza del Popolo / Via del Babuino",
+      "address": "Via del Babuino 9, 00187 Rome",
+      "format": "Rooms and suites; category-specific views and terraces",
+      "fit": "A garden setting between Piazza del Popolo and the Spanish Steps",
+      "facts": "Rocco Forte locates the hotel on Via del Babuino and describes its terraced Secret Garden, rooms and suites. Choose the named room category rather than assuming every room overlooks the garden.",
+      "tradeoff": "A garden view, terrace, dining or spa inclusion belongs to a specific room or offer. The location is north of the ancient-Rome sights.",
+      "check": "Exact category and view; terrace if needed; dining/spa charges; cancellation and deposit.",
+      "source": "https://www.roccofortehotels.com/hotels-and-resorts/hotel-de-russie",
+      "choice": "Garden setting and the northern historic center",
+      "photos": [
+        {
+          "key": "de_russie",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/1000000/530000/523800/523751/w3000h1998x0y0-5127b8bf_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/530000/523800/523751/w3000h1998x0y0-5127b8bf_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\de_russie.jpg",
+          "bytes": 918439,
+          "sha256": "77a4efe69ad977a38487328ce2037bd8cb0146976ae3ed7a5c22d8188c19cde2",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1279
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Hotel de Russie courtyard with tables, parasols and the terraced garden.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/hotel-de-russie-rome-garden-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 61232,
+              "sha256": "952e3ffd97fca79eaac1d01f1b8392d98359352b6f430fa892dbc377e2108497"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-de-russie-rome-garden-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 36047,
+              "sha256": "cc9daf9008433c43d601485f974e24d79d466333542f8d7017fa5bd10b4d9fd1"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-de-russie-rome-garden-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 224574,
+              "sha256": "8950d596493b7bcbe0592c1438c7fb7bdd504f8aba9b2ed165030060a8d4760d"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-de-russie-rome-garden-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 131423,
+              "sha256": "b897d1103838683b386460f9c6f2a44f3a2338d79dbaf4c0ac090d9db7aa277b"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.roccofortehotels.com/hotels-and-resorts/hotel-de-russie",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "eden",
+      "name": "Hotel Eden",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/SDLGFYxA",
+      "subid": "rome_luxury_eden",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/20000/16400/16311/7ad8fb76_z.webp"
+      ],
+      "offer_id": "rome_luxury_eden",
+      "area": "Ludovisi / Villa Borghese side",
+      "address": "Via Ludovisi 49, 00187 Rome",
+      "format": "Rooms and suites",
+      "fit": "A Ludovisi base for Villa Borghese and Spanish Steps plans",
+      "facts": "Dorchester describes rooms and suites, dining, the Eden Spa and a fitness room. Its Ludovisi address suits plans around Villa Borghese and the Spanish Steps; select the precise room and stated outlook.",
+      "tradeoff": "A property-level panoramic image does not promise a view from your room. Check the walking route, category and separately charged services.",
+      "check": "Room or suite name; view wording; walking and arrival arrangements; breakfast and spa terms.",
+      "source": "https://www.dorchestercollection.com/rome/hotel-eden/overview",
+      "choice": "Ludovisi rooms and suites",
+      "photos": [
+        {
+          "key": "eden",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/20000/16400/16311/7ad8fb76_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/20000/16400/16311/7ad8fb76_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\eden.webp",
+          "bytes": 183672,
+          "sha256": "187599344650c7096c057c282fd05643ecf254da47647693bea6307ed3a31711",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1194
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Hotel Eden in Rome, showing its yellow facade and street entrance.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/hotel-eden-rome-exterior-480x341.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 341,
+              "bytes": 32514,
+              "sha256": "df7b7148809873fb1b68dcd4e64e4bcaf7b95a22e9330e54106dda62d546ccf0"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-eden-rome-exterior-480x341.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 341,
+              "bytes": 20745,
+              "sha256": "9f82f0181b3546edda67e19dc29df93d02a2339e972899c8f742c5d368524301"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-eden-rome-exterior-960x682.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 682,
+              "bytes": 83068,
+              "sha256": "5633dfc5c1a6023bd543b148cba856e2e9ff8fd2d516c2dc939752e8c32f28dd"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-eden-rome-exterior-960x682.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 682,
+              "bytes": 53910,
+              "sha256": "90322ec633f7a703da99ffce84063d6e03ec228c4f1ca39d493e95ed24f10f68"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dorchestercollection.com/rome/hotel-eden/overview",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "manfredi",
+      "name": "Hotel Manfredi Suite in Rome",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/zPDNGWTg",
+      "subid": "rome_luxury_manfredi",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/3000000/2880000/2876100/2876091/36751bdf_z.webp"
+      ],
+      "offer_id": "rome_luxury_manfredi",
+      "area": "Via Margutta / Spanish Steps",
+      "address": "Via Margutta 61, 00187 Rome",
+      "format": "Boutique rooms, Junior Suites and named suites",
+      "fit": "A boutique alternative near Piazza di Spagna",
+      "facts": "The official property is Hotel Manfredi Suite in Rome on Via Margutta, not Palazzo Manfredi by the Colosseum. Its accommodation list includes rooms, Junior Suites and named suites, with different layouts and features.",
+      "tradeoff": "The hotel name does not mean every booking is a suite. A particular bath, view or additional bed must appear in the selected category.",
+      "check": "Via Margutta identity; exact room/suite; beds and accepted guests; category-specific bathroom features.",
+      "source": "https://www.hotelmanfredi.com/en/suite-hotel-downtown-rome",
+      "choice": "Boutique room choice by the Spanish Steps",
+      "identity_source": "https://www.klook.com/hotels/detail/423125-hotel-manfredi-suite-in-rome/",
+      "photos": [
+        {
+          "key": "manfredi",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/3000000/2880000/2876100/2876091/36751bdf_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/3000000/2880000/2876100/2876091/36751bdf_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\manfredi.webp",
+          "bytes": 233546,
+          "sha256": "0755470c7a14fb3d1ae0844707f46f460b997aa7e0b1dc04c9df1308db709334",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            954
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Ornate bedroom with a yellow four-poster canopy in the supplied Hotel Manfredi photo.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/hotel-manfredi-suite-rome-room-480x273.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 273,
+              "bytes": 36922,
+              "sha256": "7adf9ee1169db9ff5a683f7b21b378b3582d73e47f4a18ee669b9fc74228de0c"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-manfredi-suite-rome-room-480x273.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 273,
+              "bytes": 24369,
+              "sha256": "034359c842f9b497853c0688752c566551737cfceab027c76539456fff932ab7"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-manfredi-suite-rome-room-960x545.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 545,
+              "bytes": 102680,
+              "sha256": "388b3be7163292534e27af4496599d8e2aea59ead4a6ca603f5fdc68d272f8f8"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-manfredi-suite-rome-room-960x545.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 545,
+              "bytes": 72024,
+              "sha256": "8188ff4dd67c7e3337008b51ccd234d589e495a8a9e00a1d8b663ac4319894cf"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.hotelmanfredi.com/en/suite-hotel-downtown-rome",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.klook.com/hotels/detail/423125-hotel-manfredi-suite-in-rome/",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "quirinale",
+      "name": "Hotel Quirinale",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/vcSdop54",
+      "subid": "rome_family_quirinale",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/1000000/10000/1100/1058/1c2ed679_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "offer_id": "rome_family_quirinale",
+      "area": "Via Nazionale / Repubblica",
+      "address": "Via Nazionale 7, 00184 Rome",
+      "format": "Rooms, some connecting formats and Junior Suites",
+      "fit": "Hotel-room categories for a Via Nazionale family base",
+      "facts": "The official category table lists Standard and Superior rooms for up to three guests and Junior Suites for up to four. The Junior Suite description distinguishes sleeping and living areas; confirm the actual additional sleeping places for your group.",
+      "tradeoff": "A sitting area or a photograph of a sofa is not proof of an extra bed. Connecting rooms are not established by booking an ordinary room.",
+      "check": "Named category; all adults and child ages; written bed layout; connecting-room confirmation if required.",
+      "source": "https://www.hotelquirinale.it/en/rooms-in-historical-house-rome/standard",
+      "source2": "https://www.hotelquirinale.it/en/rooms-in-historical-house-rome/junior-suite",
+      "choice": "Via Nazionale and category-specific occupancy",
+      "photos": [
+        {
+          "key": "quirinale",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/1000000/10000/1100/1058/1c2ed679_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/10000/1100/1058/1c2ed679_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\quirinale.jpg",
+          "bytes": 1194449,
+          "sha256": "cd29366d8def550e830c731ed40f71034fd675faabb65c3338b00e1f3004bd60",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1440
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Garden courtyard at Hotel Quirinale, with a fountain, lawns and outdoor tables.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/hotel-quirinale-rome-garden-480x360.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 360,
+              "bytes": 69884,
+              "sha256": "6f1930e9c0284a9917a964efca92a2ac133a024ccc84281a05272a91e37ab41f"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-quirinale-rome-garden-480x360.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 360,
+              "bytes": 41765,
+              "sha256": "253a0f340bf1f1665c6282123125055f4154f935be0e36f4229c63569327c319"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-quirinale-rome-garden-960x720.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 720,
+              "bytes": 257726,
+              "sha256": "fd29eca28335c4406a6e0e98847ecbf6003cfafe3923b877ad1f4b8d1fd737fe"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-quirinale-rome-garden-960x720.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 720,
+              "bytes": 155496,
+              "sha256": "082fae293e10b371c5a65258460d76b50872e3838441e2f515b8903b882a1276"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.hotelquirinale.it/en/rooms-in-historical-house-rome/standard",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.hotelquirinale.it/en/rooms-in-historical-house-rome/junior-suite",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "michelangelo",
+      "name": "Starhotels Michelangelo",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/bFtOh2pO",
+      "subid": "rome_family_michelangelo",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/180000/176600/176543/5b8c6376_z.webp"
+      ],
+      "offer_id": "rome_family_michelangelo",
+      "area": "San Pietro station / Vatican side",
+      "address": "Via della Stazione di San Pietro 14, 00165 Rome",
+      "format": "Hotel rooms and suites; group arrangement to confirm",
+      "fit": "A Vatican-side hotel when the exact room arrangement fits",
+      "facts": "The official Rome room list includes a single category and several categories shown for two guests, including its suite listing. The group-wide Starhotels family program does not establish a four-person room at this specific hotel.",
+      "tradeoff": "Do not infer capacity from the family program or from a room photograph. A family requiring more than two places needs explicit confirmation of the property-specific category or room combination.",
+      "check": "Exact room or combination for every guest; beds; child ages; written family arrangement; any view wording.",
+      "source": "https://www.starhotels.com/en/our-hotels/michelangelo-rome/hotel-rooms/",
+      "source2": "https://www.starhotels.com/en/family-program/",
+      "choice": "Vatican-side location; confirm the family arrangement",
+      "photos": [
+        {
+          "key": "michelangelo",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/180000/176600/176543/5b8c6376_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/180000/176600/176543/5b8c6376_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\michelangelo.webp",
+          "bytes": 124000,
+          "sha256": "3f03304507abac9ce449f3ffe69245978b2b4b9b4f459a5a56bc22d938347a25",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Starhotels Michelangelo room interior with a bed, partition and window.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/starhotels-michelangelo-rome-room-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 19988,
+              "sha256": "94d5d18e54d5bc4d97264c5ee9dc99e52dd86b27e3a36525594c2e6f42c127b8"
+            },
+            {
+              "file": "assets/images/hotels/rome/starhotels-michelangelo-rome-room-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 14149,
+              "sha256": "1f880ff41a4f306edcbee0eb2de508035c888e74f770223ad860ce94d109dc8e"
+            },
+            {
+              "file": "assets/images/hotels/rome/starhotels-michelangelo-rome-room-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 53052,
+              "sha256": "ea7e4ab6d685dd33d54cecb614a2d024939704012bd5a0c8d6aaa0b652534459"
+            },
+            {
+              "file": "assets/images/hotels/rome/starhotels-michelangelo-rome-room-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 38901,
+              "sha256": "ff978debfe0677839b34b607561eee01fef13f8a45af3c43950612b0326d5654"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.starhotels.com/en/our-hotels/michelangelo-rome/hotel-rooms/",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.starhotels.com/en/family-program/",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "adagio_vatican",
+      "name": "Aparthotel Adagio Rome Vatican",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/a5kPTk1Q",
+      "subid": "rome_family_adagio_vatican",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/2000000/1750000/1748700/1748604/09fb5e00_z.webp",
+        "https://i.travelapi.com/lodging/2000000/1750000/1748700/1748604/4a4720b8_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "offer_id": "rome_family_adagio_vatican",
+      "area": "Balduina / north-west Rome",
+      "address": "Via Damiano Chiesa 8, 00136 Rome",
+      "format": "Studios and apartments with kitchens; hotel-room category also listed",
+      "fit": "An apartment-and-kitchen option with transport to plan",
+      "facts": "Adagio lists equipped kitchens for its apartments and a named one-bedroom apartment for four people, alongside smaller categories. It places the property in Balduina, with laundry and a seasonal outdoor pool. Select the apartment category that accepts your whole party.",
+      "tradeoff": "Despite the Vatican name, this is a Balduina base rather than an address beside St Peter’s Square. Check the actual journey, kitchen equipment, beds and seasonal pool rules.",
+      "check": "Apartment versus hotel room; all guests and actual beds; kitchen equipment; transport; seasonal pool conditions.",
+      "source": "https://www.adagio-city.com/gb/hotel-9346-aparthotel-adagio-rome-vatican/index.shtml",
+      "choice": "Kitchen-led stays in Balduina",
+      "photos": [
+        {
+          "key": "adagio_vatican",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/2000000/1750000/1748700/1748604/09fb5e00_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/2000000/1750000/1748700/1748604/09fb5e00_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\adagio_vatican.webp",
+          "bytes": 176188,
+          "sha256": "aa85be2d3f6cf1d400a22908820a8dbef659b57c06284a5b0b2bd869aaad0606",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Aparthotel Adagio Rome Vatican exterior with balconies and a street-level terrace.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-exterior-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 26826,
+              "sha256": "6ed321aba8e6e446eb6877ff6a727dde5ca4a42fe0f599d4c4a15c17e3203f58"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-exterior-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 17098,
+              "sha256": "140ab71b1d27fee5f0cbe74c394107c9d8665f9216f3c5c538d67d26579a4461"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-exterior-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 77274,
+              "sha256": "fe960056ef682db5e929c574eae75719cb2b503ab379d069a912a549ba48daa1"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-exterior-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 49710,
+              "sha256": "0fc7fddbf01f653f6472c2f859f5833b0810905f4af81b6ff1c902f3a460227b"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        },
+        {
+          "key": "adagio_vatican",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/2000000/1750000/1748700/1748604/4a4720b8_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/2000000/1750000/1748700/1748604/4a4720b8_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\adagio_vatican-secondary.jpg",
+          "bytes": 993803,
+          "sha256": "3f7673416a0d00e7e37aac7c5914b8ff7df9b5994fc102fa413b3f9146355b74",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1440
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Outdoor pool beside balconies in the supplied Adagio Rome Vatican photo; seasonal access must be checked.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-pool-480x360.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 360,
+              "bytes": 52070,
+              "sha256": "ba78a2a7ca166c6c9dfbfac8d09800a4e59c427a4d3d3c3bb780b9a4be707b29"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-pool-480x360.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 360,
+              "bytes": 30968,
+              "sha256": "4e0b655cf5b80d366a466c9064252c1dd1d17420ef955112aad443e9016c9aba"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-pool-960x720.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 720,
+              "bytes": 176140,
+              "sha256": "aaa6bdfebf4bf2c88ca74dbb27b04cb116ad70facdf9768a156963fbc9bdc348"
+            },
+            {
+              "file": "assets/images/hotels/rome/adagio-rome-vatican-pool-960x720.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 720,
+              "bytes": 102670,
+              "sha256": "6accc018433c373764facd2ba8549cd3b632ed00abec9a46696ec4c141269813"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.adagio-city.com/gb/hotel-9346-aparthotel-adagio-rome-vatican/index.shtml",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "beehive",
+      "name": "The Beehive",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/aRiWjt7I",
+      "subid": "rome_cheap_beehive",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/22000000/21160000/21158800/21158785/9a752f5c_z.webp"
+      ],
+      "offer_id": "rome_cheap_beehive",
+      "area": "Via Marghera / Termini",
+      "address": "Via Marghera 8, 00185 Rome",
+      "format": "Private rooms and shared hostel accommodation",
+      "fit": "A small hostel for solo travelers or pairs near Termini",
+      "facts": "The Beehive describes private rooms with different bathroom and air-conditioning arrangements, shared rooms and a communal kitchen. Its current arrival information lists reception from 09:00 to 21:00 and says groups larger than three are not accepted.",
+      "tradeoff": "Late arrival needs a specific check. A communal kitchen is not an in-room kitchen, and a hostel bed is not a private room.",
+      "check": "Private room versus dorm bed; bathroom and AC; arrival hours; party size; cancellation and charges.",
+      "source": "https://www.the-beehive.com/",
+      "choice": "Small-hostel atmosphere and Termini arrivals",
+      "photos": [
+        {
+          "key": "beehive",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/22000000/21160000/21158800/21158785/9a752f5c_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/22000000/21160000/21158800/21158785/9a752f5c_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\beehive.webp",
+          "bytes": 93274,
+          "sha256": "a5767755d3b786729e83f437aee2e69a3df74c778bb75601ed3755f97305682e",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Private room in the supplied Beehive photo, with a double bed, artwork and a window.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/the-beehive-rome-private-room-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 16446,
+              "sha256": "c15c36d458d10d6d859af9c9118fc84d267d9a87245fe997256387b9be8c50e2"
+            },
+            {
+              "file": "assets/images/hotels/rome/the-beehive-rome-private-room-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 11826,
+              "sha256": "12ccfe6f407d2479b5fe9f0e05849d0339f55d61de4399356ec79c5b3b748a8a"
+            },
+            {
+              "file": "assets/images/hotels/rome/the-beehive-rome-private-room-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 39574,
+              "sha256": "6f126537b815fab1452551e03d1ade9ca5162cc2cca460f956e4e796bd21ce98"
+            },
+            {
+              "file": "assets/images/hotels/rome/the-beehive-rome-private-room-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 30244,
+              "sha256": "ebc17efcfc5805716c66a8a0e243a4ad256abcdb56ea6a070c606921e44e4502"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.the-beehive.com/",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "sonya",
+      "name": "Hotel Sonya",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/cKrHWayp",
+      "subid": "rome_cheap_sonya",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/800000/793900/793890/28e27381_z.webp"
+      ],
+      "offer_id": "rome_cheap_sonya",
+      "area": "Teatro dell’Opera / Viminale",
+      "address": "Via del Viminale 58, 00184 Rome",
+      "format": "Single, double, triple and quadruple room categories",
+      "fit": "A hotel-format alternative in the Opera House area",
+      "facts": "Hotel Sonya lists single, double, triple and quadruple categories and a separate Depandance Opera section. Its main address is on Via del Viminale, opposite the Opera House. Match the exact building, room and beds in the offer.",
+      "tradeoff": "The selected photograph shows the Opera House surroundings, not a promised hotel facade or room view. A listed category does not establish the same inventory through Klook.",
+      "check": "Main property versus annex; exact room and beds; breakfast; final total and cancellation.",
+      "source": "https://www.hotelsonya.com/",
+      "choice": "Private hotel-room formats near the Opera House",
+      "photos": [
+        {
+          "key": "sonya",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/800000/793900/793890/28e27381_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/800000/793900/793890/28e27381_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\sonya.webp",
+          "bytes": 198418,
+          "sha256": "9cf726ae367489b4784e010472b8b1d95d64b03269468ae15f2fb21e917c8e3c",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Teatro dell’Opera area at night in the photo supplied for Hotel Sonya; not a hotel facade.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/hotel-sonya-rome-opera-surroundings-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 33756,
+              "sha256": "7f9daa3ffb6db442ba08428d62a3d48d41acb3de06adc0f06badaca3f36e0192"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-sonya-rome-opera-surroundings-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 21468,
+              "sha256": "ab84aeff07c8ae30470cdb7aa9f007cb6c952175350f04fbe1a2785068205e5d"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-sonya-rome-opera-surroundings-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 89990,
+              "sha256": "3c57358ecb32d75eb5d1c05efd4c73d1a6a2b7f47b138c5f9e858934614b3d4c"
+            },
+            {
+              "file": "assets/images/hotels/rome/hotel-sonya-rome-opera-surroundings-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 58934,
+              "sha256": "5965109be84fc8e68b617419a2ad9df8215409fe1099bac2ea53877bd932a510"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.hotelsonya.com/",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "generator",
+      "name": "Generator Rome",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/dUIajjoc",
+      "subid": "rome_cheap_generator",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/16000000/15830000/15822200/15822200/5a3d2b4e_z.webp"
+      ],
+      "offer_id": "rome_cheap_generator",
+      "area": "Esquilino / Via Principe Amedeo",
+      "address": "Via Principe Amedeo 251, 00185 Rome",
+      "format": "Private rooms and shared dorm beds",
+      "fit": "A hostel alternative when the booked unit is clear",
+      "facts": "Generator lists private king, queen and twin formats as well as shared dorms at its Via Principe Amedeo address. Compare the number of people covered by the offer, bathroom arrangements and bedding before deciding on value.",
+      "tradeoff": "A dorm-bed price does not cover the whole room. Check age and access rules, towel or storage charges and whether extras apply to your booking channel.",
+      "check": "One bed versus whole room; accepted guests; bathroom; age rules; towels/storage and complete price.",
+      "source": "https://staygenerator.com/hostels/rome?lang=en-GB",
+      "choice": "Shared dorms versus private rooms in Esquilino",
+      "photos": [
+        {
+          "key": "generator",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/16000000/15830000/15822200/15822200/5a3d2b4e_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/16000000/15830000/15822200/15822200/5a3d2b4e_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-rome-hotel-guides-v1-qa\\originals\\generator.webp",
+          "bytes": 269778,
+          "sha256": "c8ce679a3563a9d474664e74a5fbc9a7ba0b0b3aef32af352cf47c1037cc01d1",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "status": "downloaded_and_decoded",
+          "alt": "Generator Rome facade, with yellow upper floors and the entrance on a street corner.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/rome/generator-rome-exterior-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 46222,
+              "sha256": "ea58759faa08fba4fc9d73637138e11bbd0cd6c0e7b04ae7365cd6b2a4adb0da"
+            },
+            {
+              "file": "assets/images/hotels/rome/generator-rome-exterior-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 28024,
+              "sha256": "a7ac3808ed81e4d89fa0851f43058b48acd09b3732399f2636fd93a43955d3f0"
+            },
+            {
+              "file": "assets/images/hotels/rome/generator-rome-exterior-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 124860,
+              "sha256": "e620213f73853f46f8fd42c4113302870335881eb499e620d63184fe55f91bf4"
+            },
+            {
+              "file": "assets/images/hotels/rome/generator-rome-exterior-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 73573,
+              "sha256": "64671894ef05b5406ae45db16f946c8ca9728d53dee91ac4c8136d08460e1223"
+            }
+          ],
+          "processing": "Full frame proportional resize; integer dimensions rounded to nearest pixel. No crop, retouch, upscale or content alteration.",
+          "identity_status": "Owner-supplied hotel/reference association; visual inspection completed. Interior/area photo alone does not independently prove hotel or room category."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://staygenerator.com/hostels/rome?lang=en-GB",
+          "purpose": "Official property identity / room information",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
