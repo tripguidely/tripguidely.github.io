@@ -270,6 +270,46 @@
       "reason": "Owner explicitly approved these exact four NYC SEO/CRO V2 metadata hashes after validating the four pages and removal of 27 direct hotel links. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, JSON-LD, affiliate anchors, consent and scripts remain unchanged.",
       "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE SEO/CRO NEW YORK V2 (Codex conversation, 2026-10-20)",
       "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/paris/index.html",
+      "base_revision": "0fb498cbecc08c43b5fc60059fa004f4ed22c1fb",
+      "before": "8563615e68e1fd7a5364c7b7a5d50356e85ac4f3a144b03441295082e663710f",
+      "after": "29b1746c04768ca821ed340aa2a1474a3062c3c7d4c10350b3a7fe9a7d496231",
+      "reason": "Owner explicitly approved these exact four Paris SEO/CRO V2 metadata hashes after reviewing the four Paris pages, mobile comparisons and preserved Klook CTAs. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, structured data, affiliate anchors and integrations remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE PARIS SEO/CRO V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/paris/luxury-hotels/index.html",
+      "base_revision": "0fb498cbecc08c43b5fc60059fa004f4ed22c1fb",
+      "before": "91198cf490d0afd1c0645bd91e04c55db4df03e67299a8fb42de238ad3da8940",
+      "after": "a4e392d294d23eada7ec191567f69eb4b90f63e3ca199333d9f53672b2bed3e8",
+      "reason": "Owner explicitly approved these exact four Paris SEO/CRO V2 metadata hashes after reviewing the four Paris pages, mobile comparisons and preserved Klook CTAs. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, structured data, affiliate anchors and integrations remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE PARIS SEO/CRO V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/paris/family-hotels/index.html",
+      "base_revision": "0fb498cbecc08c43b5fc60059fa004f4ed22c1fb",
+      "before": "8fbcd75a5b7af92b9efd6559ff6b6af737754a5980e771eb2fd52dea57c3dc3a",
+      "after": "b3ab9b0363cc69e29e5c0bcbc7a423b4f196bbd5ff6e9d112d70fc7062eae683",
+      "reason": "Owner explicitly approved these exact four Paris SEO/CRO V2 metadata hashes after reviewing the four Paris pages, mobile comparisons and preserved Klook CTAs. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, structured data, affiliate anchors and integrations remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE PARIS SEO/CRO V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/paris/cheap-hotels/index.html",
+      "base_revision": "0fb498cbecc08c43b5fc60059fa004f4ed22c1fb",
+      "before": "fb42fa3e5d4a60d8ce5e5051145de86e7e42ce555984d6aaf7d0b92d6853aeba",
+      "after": "f2aecd5af6ab6a8dda6af84c3603c3b6c3cf3ab7c7832042d016f24edb2eb8fc",
+      "reason": "Owner explicitly approved these exact four Paris SEO/CRO V2 metadata hashes after reviewing the four Paris pages, mobile comparisons and preserved Klook CTAs. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, structured data, affiliate anchors and integrations remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE PARIS SEO/CRO V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
     }
   ],
   "contracts": {

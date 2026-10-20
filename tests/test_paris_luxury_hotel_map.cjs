@@ -136,7 +136,8 @@ function ok(a,msg) { assert(a,msg); checks++; }
         equal(await page.locator('.tg-hotel-comparison tbody tr').count(),4);
         const region=page.locator('.tg-hotel-table-region');
         await region.focus(); await page.keyboard.press('ArrowRight');
-        if(width<768) ok(await region.evaluate(n=>n.scrollLeft>0),'Keyboard table scrolling');
+        if(width<=760) ok(await region.evaluate(n=>n.scrollWidth<=n.clientWidth+1),'Mobile comparison readable without horizontal scrolling');
+        else if(width<768) ok(await region.evaluate(n=>n.scrollLeft>0),'Keyboard table scrolling');
         await page.emulateMedia({forcedColors:'active'});
         await page.locator('#hotel-map-choices button').first().focus();
         ok(await page.locator('#hotel-map-choices button').first().evaluate(n=>getComputedStyle(n).outlineStyle!=='none'));

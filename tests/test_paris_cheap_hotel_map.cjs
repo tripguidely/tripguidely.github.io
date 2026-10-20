@@ -168,7 +168,11 @@ const report = {passed:false, checks:0, scenarios:[], screenshots:[]};
         assert(cards.every(c=>c.factsBeforeDescription && c.tradeoff && c.facts===5));checks++;
         const region=page.locator('#comparison .tg-hotel-table-region');
         await region.focus();
-        if(width<1000) {
+        if(width<=760) {
+          assert(await region.evaluate(el=>el.scrollWidth<=el.clientWidth+1),'Mobile comparison requires no horizontal scroll');checks++;
+          assert.equal(await page.locator('#comparison tbody th[scope="row"]').count(),3);checks++;
+          assert.equal(await page.locator('#comparison tbody td[data-label]').count(),12);checks++;
+        } else if(width<1000) {
           await page.keyboard.press('End');
           await region.evaluate(el=>el.scrollLeft=el.scrollWidth);
           assert(await region.evaluate(el=>el.scrollLeft>0));checks++;
