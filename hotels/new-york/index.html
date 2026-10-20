@@ -70,6 +70,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="stylesheet" href="/assets/css/hotels.css" />
+  <link rel="stylesheet" href="/assets/css/pages/new-york-hotel-hub.css" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -132,7 +133,7 @@
         "inLanguage":"en",
         "primaryImageOfPage":{"@id":"https://tripguidely.github.io/hotels/new-york/#primaryimage"},
         "datePublished":"2026-03-17",
-        "dateModified":"2026-03-17",
+        "dateModified":"2026-10-20",
         "breadcrumb":{"@id":"https://tripguidely.github.io/hotels/new-york/#breadcrumbs"}
       },
       {
@@ -145,7 +146,7 @@
         "publisher":{"@id":"https://tripguidely.github.io/#org"},
         "mainEntityOfPage":{"@id":"https://tripguidely.github.io/hotels/new-york/#webpage"},
         "datePublished":"2026-03-17",
-        "dateModified":"2026-03-17",
+        "dateModified":"2026-10-20",
         "inLanguage":"en",
         "about":{"@id":"https://tripguidely.github.io/hotels/new-york/#place"}
       },
@@ -241,12 +242,12 @@
   </script>
 </head>
 
-<body data-page="guide" data-section="hotels">
-  <a class="skip" href="#main">Skip to content</a>
+<body class="ny-hub" data-page="guide" data-section="hotels">
+  <a class="ny-hub-skip" href="/hotels/new-york/#main">Skip to content</a>
 
   <div id="site-header"></div>
 
-  <main id="main" class="main" role="main">
+  <main id="main" class="main" role="main" tabindex="-1">
 
     <!-- HERO -->
     <section class="hero hero-full" aria-label="Where to stay in New York hero">
@@ -283,6 +284,11 @@
             <p class="lede">
               Choose the right New York neighborhood first, then compare hotels more confidently by convenience, atmosphere, and budget.
             </p>
+            <nav class="ny-hub-hero-paths" aria-label="Choose your New York hotel guide">
+              <a href="/hotels/new-york/luxury-hotels/">Luxury hotels <span aria-hidden="true">↗</span></a>
+              <a href="/hotels/new-york/family-hotels/">Family hotels <span aria-hidden="true">↗</span></a>
+              <a href="/hotels/new-york/cheap-hotels/">Cheap hotels <span aria-hidden="true">↗</span></a>
+            </nav>
           </header>
 
           <div class="actions" aria-label="Primary actions">
@@ -310,7 +316,7 @@
           </div>
 
           <p class="meta">
-            Updated: <time datetime="2026-03-17">March 17, 2026</time> <span aria-hidden="true">·</span> TripGuidely Editorial Team
+            Updated: <time datetime="2026-10-20">October 20, 2026</time> <span aria-hidden="true">·</span> TripGuidely Editorial Team
           </p>
         </div>
       </div>
@@ -326,6 +332,15 @@
         <span aria-current="page">New York</span>
       </nav>
 
+      <section id="hotel-guides" class="card pad content" aria-labelledby="hotel-guides-title">
+        <div class="section-title"><h2 id="hotel-guides-title">Choose your New York hotel guide</h2><p>Choose a neighborhood here, then use a focused guide for room details, maps and booking checks.</p></div>
+        <div class="cards ny-hub-guide-cards">
+          <a class="cat" href="/hotels/new-york/luxury-hotels/"><strong>Luxury hotels in New York</strong><span>The Plaza, The Langham and Conrad Downtown: compare the address and the room category.</span><span class="tag">Explore the luxury guide <span aria-hidden="true">→</span></span></a>
+          <a class="cat" href="/hotels/new-york/family-hotels/"><strong>Family hotels in New York</strong><span>Homewood Suites and two Residence Inns: check the exact beds, occupancy and location.</span><span class="tag">Explore the family guide <span aria-hidden="true">→</span></span></a>
+          <a class="cat" href="/hotels/new-york/cheap-hotels/"><strong>Cheap hotels in New York</strong><span>Pod 39, Pod Times Square and citizenM: weigh compact rooms against location and total cost.</span><span class="tag">Explore the cheap hotels guide <span aria-hidden="true">→</span></span></a>
+        </div>
+      </section>
+
       <!-- HOTELS HUB CONTEXT -->
       <section class="card pad content" aria-label="Hotels hub context">
         <p class="aff-note" style="margin:0;">
@@ -334,8 +349,9 @@
       </section>
 
       <!-- QUICK NAV -->
-      <section class="card pad" aria-label="Quick navigation">
+      <section class="card pad ny-hub-navigation" aria-label="Quick navigation"><details><summary>On this page: areas, hotels and booking tips</summary>
         <div class="mini-grid" aria-label="Quick jumps">
+          <a class="pill-link" href="#hotel-shortlist">The nine-hotel shortlist</a>
           <a class="pill-link" href="#quick-answer">Best areas</a>
           <a class="pill-link" href="#choose-area">Choose the right area</a>
           <a class="pill-link" href="#boroughs">Manhattan vs Brooklyn</a>
@@ -347,32 +363,7 @@
           <a class="pill-link" href="#tips">Booking tips</a>
           <a class="pill-link" href="#faq">FAQ</a>
         </div>
-      </section>
-
-      <!-- TRUST / E-E-A-T -->
-      <section class="card pad content" aria-label="Why trust TripGuidely">
-        <div class="section-title">
-          <h2>How we pick where to stay in New York</h2>
-          <p>Neighborhood first, hotel second.</p>
-        </div>
-
-        <p class="aff-note">
-          This guide is structured around neighborhood convenience, transit access, travel style fit, and hotel booking practicality rather than star rating alone.
-        </p>
-
-        <ul class="checklist">
-          <li><strong>Getting around matters:</strong> the right neighborhood can save time every morning and make evenings easier too.</li>
-          <li><strong>Different trips need different areas:</strong> the best place for a first visit is not always the best one for couples, families, or nightlife.</li>
-          <li><strong>Walkability and subway access:</strong> a good New York base usually makes daily planning simpler.</li>
-          <li><strong>Hotel choice still matters:</strong> noise, room size, cancellation terms, and subway access often matter more than star rating alone.</li>
-          <li><strong>Built to make the choice easier:</strong> this guide helps you narrow down the right area first, then compare hotels with more confidence.</li>
-          <li><strong>Affiliate disclosure:</strong> some links below are affiliate links; TripGuidely may earn a commission at no extra cost to you.</li>
-        </ul>
-
-        <div class="callout">
-          <b>Good starting point:</b> if you’re unsure, stay in a well-connected Manhattan area first, then filter hotels by guest rating, cancellation policy, nearest subway access, and recent noise reviews.
-        </div>
-      </section>
+      </details></section>
 
       <!-- QUICK ANSWER -->
       <section id="quick-answer" class="card pad content" aria-label="Quick answer">
@@ -385,96 +376,171 @@
           <b>Good default choices:</b> choose Midtown for convenience, Chelsea or Flatiron for the strongest overall balance, the Upper West Side for family-friendly stays, or SoHo and Tribeca for a more stylish base. Then compare hotels inside those areas by subway access, guest rating, and noise level.
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Best New York neighborhoods by travel style" tabindex="0">
-          <table class="table ttd-table" aria-label="Best New York neighborhoods by travel style">
-            <caption class="table-cap">
-              Best New York neighborhoods by travel style, convenience, and budget level.
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Travel style</th>
-                <th scope="col">Best area</th>
-                <th scope="col">Why it works</th>
-                <th scope="col">Budget</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Travel style">First-time visit</td>
-                <td data-label="Best area">Midtown Manhattan</td>
-                <td data-label="Why it works">Easy access to major sights, broad subway reach, huge hotel inventory</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">Mid–High</span></td>
-              </tr>
-              <tr>
-                <td data-label="Travel style">Couples</td>
-                <td data-label="Best area">SoHo / Tribeca / West Village</td>
-                <td data-label="Why it works">Atmosphere, dining, neighborhood feel, more memorable walks</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">High</span></td>
-              </tr>
-              <tr>
-                <td data-label="Travel style">Families</td>
-                <td data-label="Best area">Upper West Side / Midtown West</td>
-                <td data-label="Why it works">Calmer pace, practical transit, easier room logic</td>
-                <td data-label="Budget"><span class="t-badge t-badge-maybe">Mid–High</span></td>
-              </tr>
-              <tr>
-                <td data-label="Travel style">Nightlife</td>
-                <td data-label="Best area">Lower East Side / East Village / Williamsburg</td>
-                <td data-label="Why it works">Bars, dining, late-night energy</td>
-                <td data-label="Budget"><span class="t-badge t-badge-maybe">Mid</span></td>
-              </tr>
-              <tr>
-                <td data-label="Travel style">Better value</td>
-                <td data-label="Best area">Long Island City / Downtown Brooklyn</td>
-                <td data-label="Why it works">Often better rates without losing too much transit convenience</td>
-                <td data-label="Budget"><span class="t-badge t-badge-yes">Low–Mid</span></td>
-              </tr>
-              <tr>
-                <td data-label="Travel style">Short 2–3 day trip</td>
-                <td data-label="Best area">Midtown / Chelsea</td>
-                <td data-label="Why it works">Efficient base for landmarks, museums, and broad subway access</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">Mid–High</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul class="ny-hub-area-picks">
+          <li><a href="#areas-first"><span>First-time visit</span><strong>Midtown Manhattan</strong><p>Easy access to major sights, broad subway reach, huge hotel inventory</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+          <li><a href="#areas-romance"><span>Couples</span><strong>SoHo / Tribeca / West Village</strong><p>Atmosphere, dining, neighborhood feel, more memorable walks</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+          <li><a href="#areas-upper-west"><span>Families</span><strong>Upper West Side / Midtown West</strong><p>Calmer pace, practical transit, easier room logic</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+          <li><a href="#areas-nightlife"><span>Nightlife</span><strong>Lower East Side / East Village / Williamsburg</strong><p>Bars, dining, late-night energy</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+          <li><a href="#areas-budget"><span>Better value</span><strong>Long Island City / Downtown Brooklyn</strong><p>Often better rates without losing too much transit convenience</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+          <li><a href="#areas-first"><span>Short 2–3 day trip</span><strong>Midtown / Chelsea</strong><p>Efficient base for landmarks, museums, and broad subway access</p><small>Read the area guide <span aria-hidden="true">→</span></small></a></li>
+        </ul>
 
         <div class="callout">
           <b>Simple rule:</b> for shorter New York trips, paying more for a better location usually improves the trip more than saving a little on a longer daily commute.
         </div>
       </section>
 
-      <!-- HOTEL-FIRST BLOCK -->
-      <section class="card pad content" aria-label="Best New York hotels by trip type">
-        <div class="section-title">
-          <h2>Best New York hotels by trip type</h2>
-          <p>Start with the kind of stay you want, then choose the right area.</p>
-        </div>
-
-        <div class="cards" aria-label="New York hotel types">
-          <a class="cat" href="/hotels/new-york/luxury-hotels/">
-            <strong>Luxury hotels in New York</strong>
-            <span>Higher-end stays in SoHo, Tribeca, NoMad, and well-located parts of Midtown.</span>
-            <span class="tag"><i aria-hidden="true"></i> Premium stays</span>
-          </a>
-
-          <a class="cat" href="/hotels/new-york/family-hotels/">
-            <strong>Family hotels in New York</strong>
-            <span>More practical stays with better room logic, calmer areas, and easier daily pacing.</span>
-            <span class="tag"><i aria-hidden="true"></i> Family-friendly</span>
-          </a>
-
-          <a class="cat" href="/hotels/new-york/cheap-hotels/">
-            <strong>Cheap hotels in New York</strong>
-            <span>Better value options by area, transit convenience, and trade-offs worth knowing.</span>
-            <span class="tag"><i aria-hidden="true"></i> Budget options</span>
-          </a>
-        </div>
-
-        <div class="callout">
-          <b>Simple approach:</b> choose the right area first if you are still deciding where to stay. If you already know your budget or hotel style, jump straight into the hotel-first guides above.
-        </div>
-      </section>
+<section id="hotel-shortlist" class="card pad content" aria-labelledby="hotel-shortlist-title">
+<div class="section-title">
+<h2 id="hotel-shortlist-title">Nine hotels to explore by travel style</h2>
+<p>A starting shortlist, grouped by guide. Follow a hotel for its room checks, map and booking links; compare live offers in the full guide.</p>
+</div>
+<section class="ny-hub-hotel-group" aria-labelledby="shortlist-luxury">
+<div class="ny-hub-group-heading">
+<h3 id="shortlist-luxury">Luxury hotels</h3>
+<a href="/hotels/new-york/luxury-hotels/">Compare all three luxury hotels <span aria-hidden="true">→</span>
+</a>
+</div>
+<div class="ny-hub-hotel-grid">
+<a class="ny-hub-hotel" href="/hotels/new-york/luxury-hotels/#card-plaza" aria-labelledby="hub-hotel-plaza">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/the-plaza-new-york-exterior-288a78f6-1680x1121.avif 1680w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/the-plaza-new-york-exterior-288a78f6-1680x1121.webp" srcset="/assets/images/hotels/new-york/the-plaza-new-york-exterior-288a78f6-1680x1121.webp 1680w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="1680" height="1121" alt="The Plaza hotel exterior beside trees at Central Park South, New York." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-plaza">The Plaza — A Fairmont Hotel</h4>
+<p>Central Park South / Fifth Avenue</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/luxury-hotels/#card-langham" aria-labelledby="hub-hotel-langham">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-640x427.avif 640w, /assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-1280x854.avif 1280w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-640x427.webp" srcset="/assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-640x427.webp 640w, /assets/images/hotels/new-york/the-langham-new-york-entrance-c21195be-1280x854.webp 1280w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="640" height="427" alt="The Langham New York entrance with its illuminated canopy and hotel signs." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-langham">The Langham, New York, Fifth Avenue</h4>
+<p>Fifth Avenue / Midtown South</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/luxury-hotels/#card-conrad" aria-labelledby="hub-hotel-conrad">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-480x320.avif 480w, /assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-960x640.avif 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-480x320.webp" srcset="/assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-480x320.webp 480w, /assets/images/hotels/new-york/conrad-new-york-downtown-exterior-a018670a-960x640.webp 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="480" height="320" alt="Conrad New York Downtown exterior at a street corner at dusk." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-conrad">Conrad New York Downtown</h4>
+<p>Battery Park City / Lower Manhattan</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+<section class="ny-hub-hotel-group" aria-labelledby="shortlist-family">
+<div class="ny-hub-group-heading">
+<h3 id="shortlist-family">Family hotels</h3>
+<a href="/hotels/new-york/family-hotels/">Compare all three family hotels <span aria-hidden="true">→</span>
+</a>
+</div>
+<div class="ny-hub-hotel-grid">
+<a class="ny-hub-hotel" href="/hotels/new-york/family-hotels/#card-homewood" aria-labelledby="hub-hotel-homewood">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/homewood-suites-new-york-times-square-exterior-479978d2-960x641.avif 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/homewood-suites-new-york-times-square-exterior-479978d2-960x641.webp" srcset="/assets/images/hotels/new-york/homewood-suites-new-york-times-square-exterior-479978d2-960x641.webp 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="960" height="641" alt="Homewood Suites New York Midtown Manhattan Times Square facade and entrance." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-homewood">Homewood Suites New York/Midtown Manhattan Times Square</h4>
+<p>Midtown West / West 37th Street</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/family-hotels/#card-residence_central" aria-labelledby="hub-hotel-residence_central">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-480x320.avif 480w, /assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-960x640.avif 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-480x320.webp" srcset="/assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-480x320.webp 480w, /assets/images/hotels/new-york/residence-inn-new-york-central-park-entrance-9372fbf5-960x640.webp 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="480" height="320" alt="Residence Inn New York Central Park entrance at 1717 Broadway, shared with Courtyard." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-residence_central">Residence Inn New York Manhattan/Central Park</h4>
+<p>Broadway / West 54th Street</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/family-hotels/#card-residence_times" aria-labelledby="hub-hotel-residence_times">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-480x320.avif 480w, /assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-960x640.avif 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-480x320.webp" srcset="/assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-480x320.webp 480w, /assets/images/hotels/new-york/residence-inn-new-york-times-square-exterior-f04c448b-960x640.webp 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="480" height="320" alt="Residence Inn New York Times Square facade and entrance on Sixth Avenue." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-residence_times">Residence Inn by Marriott New York Manhattan/Times Square</h4>
+<p>Sixth Avenue / Bryant Park</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+<section class="ny-hub-hotel-group" aria-labelledby="shortlist-cheap">
+<div class="ny-hub-group-heading">
+<h3 id="shortlist-cheap">Cheap hotels</h3>
+<a href="/hotels/new-york/cheap-hotels/">Compare all three cheap hotels <span aria-hidden="true">→</span>
+</a>
+</div>
+<div class="ny-hub-hotel-grid">
+<a class="ny-hub-hotel" href="/hotels/new-york/cheap-hotels/#card-pod39" aria-labelledby="hub-hotel-pod39">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-384x319.avif 384w, /assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-768x638.avif 768w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-384x319.webp" srcset="/assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-384x319.webp 384w, /assets/images/hotels/new-york/pod-39-new-york-room-4bcea295-768x638.webp 768w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="384" height="319" alt="Pod 39 New York room with a red bed cover and a partition beside the bathroom." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-pod39">Pod 39</h4>
+<p>Murray Hill / Midtown East</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/cheap-hotels/#card-pod_times" aria-labelledby="hub-hotel-pod_times">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-375x404.avif 375w, /assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-750x808.avif 750w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-375x404.webp" srcset="/assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-375x404.webp 375w, /assets/images/hotels/new-york/pod-times-square-new-york-room-d9e98b9f-750x808.webp 750w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="375" height="404" alt="Pod Times Square New York room with a red bed runner and a window behind the bed." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-pod_times">Pod Times Square</h4>
+<p>Midtown West / West 42nd Street</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+<a class="ny-hub-hotel" href="/hotels/new-york/cheap-hotels/#card-citizenm" aria-labelledby="hub-hotel-citizenm">
+<picture>
+<source type="image/avif" srcset="/assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-480x320.avif 480w, /assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-960x640.avif 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px">
+<img src="/assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-480x320.webp" srcset="/assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-480x320.webp 480w, /assets/images/hotels/new-york/citizenm-new-york-times-square-exterior-a2079c0b-960x640.webp 960w" sizes="(max-width: 640px) 100px, (max-width: 900px) calc((100vw - 88px) / 2), 340px" width="480" height="320" alt="citizenM New York Times Square facade with its hotel logo and colourful mural." loading="lazy" decoding="async" fetchpriority="low">
+</picture>
+<div class="ny-hub-hotel-copy">
+<h4 id="hub-hotel-citizenm">citizenM New York Times Square</h4>
+<p>Theater District / West 50th Street</p>
+<span class="ny-hub-hotel-action">Room details &amp; booking checks <span aria-hidden="true">→</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+<div class="ny-hub-itinerary">
+<h3>Fit your hotel to your days</h3>
+<p>Check where each day starts before choosing an address.</p>
+<div class="mini-grid">
+<a class="pill-link" href="/itinerary/new-york/">New York itinerary planner</a>
+<a class="pill-link" href="/itinerary/new-york/2-days/">Two days in New York</a>
+<a class="pill-link" href="/itinerary/new-york/3-days/">Three days in New York</a>
+<a class="pill-link" href="/itinerary/new-york/4-days/">Four days in New York</a>
+</div>
+</div>
+</section>
 
       <!-- CHOOSE AREA -->
       <section id="choose-area" class="card pad content" aria-label="How to choose the right New York area">
@@ -571,7 +637,7 @@
           If you want a more polished stay with stronger dining, shopping, and atmosphere, SoHo and Tribeca are among the most appealing parts of the city. If you already know you want a higher-end stay, see our <a href="/hotels/new-york/luxury-hotels/">luxury hotels in New York</a> guide for hotel-first options by area.
         </p>
 
-        <h3>Upper West Side</h3>
+        <h3 id="areas-upper-west">Upper West Side</h3>
         <ul class="checklist">
           <li><strong>Best for:</strong> families, calmer stays, and travelers who want a more comfortable daily rhythm.</li>
           <li><strong>Why stay here:</strong> easier pace, useful subway coverage, and a more residential feel than busier Midtown zones.</li>
@@ -677,81 +743,15 @@
         </div>
 
         <div class="table-wrap" role="region" aria-label="New York hotel neighborhoods table" tabindex="0">
-          <table class="table ttd-table" aria-label="New York neighborhoods comparison">
+          <table role="table" class="table ttd-table" aria-label="New York neighborhoods comparison">
             <caption class="table-cap">
               New York hotel areas overview by trip style, atmosphere, practical trade-offs, and budget level.
             </caption>
-            <thead>
-              <tr>
-                <th scope="col">Neighborhood</th>
-                <th scope="col">Best for</th>
-                <th scope="col">Main strengths</th>
-                <th scope="col">Trade-offs</th>
-                <th scope="col">Budget</th>
-                <th scope="col">Best use</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Neighborhood"><strong>Chelsea / Flatiron</strong></td>
-                <td data-label="Best for">Most travelers</td>
-                <td data-label="Main strengths">Balanced, central, walkable, strong dining</td>
-                <td data-label="Trade-offs">Good hotels can be pricey</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">Mid–High</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-anchor">Best overall</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>Midtown Manhattan</strong></td>
-                <td data-label="Best for">First-timers, short trips</td>
-                <td data-label="Main strengths">Convenience, transit reach, hotel density</td>
-                <td data-label="Trade-offs">Busier, less atmospheric</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">Mid–High</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-flex">First-time stay</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>SoHo / Tribeca</strong></td>
-                <td data-label="Best for">Couples, stylish stays</td>
-                <td data-label="Main strengths">Atmosphere, dining, shopping, memorable feel</td>
-                <td data-label="Trade-offs">Usually expensive</td>
-                <td data-label="Budget"><span class="t-badge t-badge-no">High</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-anchor">Couples</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>Upper West Side</strong></td>
-                <td data-label="Best for">Families, calmer stays</td>
-                <td data-label="Main strengths">Comfort, quieter feel, practical pacing</td>
-                <td data-label="Trade-offs">Less nightlife, farther from some downtown plans</td>
-                <td data-label="Budget"><span class="t-badge t-badge-maybe">Mid–High</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-flex">Family stay</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>Lower East Side / East Village</strong></td>
-                <td data-label="Best for">Nightlife, energy</td>
-                <td data-label="Main strengths">Bars, late dining, stronger evening scene</td>
-                <td data-label="Trade-offs">Noise risk</td>
-                <td data-label="Budget"><span class="t-badge t-badge-maybe">Mid</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-anchor">Nightlife</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>Williamsburg</strong></td>
-                <td data-label="Best for">Brooklyn vibe, nightlife</td>
-                <td data-label="Main strengths">Dining, trendier local feel</td>
-                <td data-label="Trade-offs">Less efficient for classic sightseeing</td>
-                <td data-label="Budget"><span class="t-badge t-badge-maybe">Mid</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-flex">Brooklyn option</span></td>
-              </tr>
-              <tr>
-                <td data-label="Neighborhood"><strong>Long Island City</strong></td>
-                <td data-label="Best for">Better value</td>
-                <td data-label="Main strengths">Often better rates, decent subway access</td>
-                <td data-label="Trade-offs">Less central for short trips</td>
-                <td data-label="Budget"><span class="t-badge t-badge-yes">Low–Mid</span></td>
-                <td data-label="Best use"><span class="t-badge t-badge-flex">Better value</span></td>
-              </tr>
-            </tbody>
+            <thead><tr><th scope="col">Neighborhood</th><th scope="col">Trip fit</th><th scope="col">Trade-off</th><th scope="col">Relative budget</th></tr></thead><tbody><tr><th scope="row" data-label="Neighborhood">Chelsea / Flatiron<br><span class="t-badge t-badge-anchor">Best overall</span></th><td data-label="Trip fit"><strong>Most travelers</strong><br>Balanced, central, walkable, strong dining</td><td data-label="Trade-off">Good hotels can be pricey</td><td data-label="Relative budget"><span class="t-badge t-badge-no">Mid–High</span></td></tr><tr><th scope="row" data-label="Neighborhood">Midtown Manhattan<br><span class="t-badge t-badge-flex">First-time stay</span></th><td data-label="Trip fit"><strong>First-timers, short trips</strong><br>Convenience, transit reach, hotel density</td><td data-label="Trade-off">Busier, less atmospheric</td><td data-label="Relative budget"><span class="t-badge t-badge-no">Mid–High</span></td></tr><tr><th scope="row" data-label="Neighborhood">SoHo / Tribeca<br><span class="t-badge t-badge-anchor">Couples</span></th><td data-label="Trip fit"><strong>Couples, stylish stays</strong><br>Atmosphere, dining, shopping, memorable feel</td><td data-label="Trade-off">Usually expensive</td><td data-label="Relative budget"><span class="t-badge t-badge-no">High</span></td></tr><tr><th scope="row" data-label="Neighborhood">Upper West Side<br><span class="t-badge t-badge-flex">Family stay</span></th><td data-label="Trip fit"><strong>Families, calmer stays</strong><br>Comfort, quieter feel, practical pacing</td><td data-label="Trade-off">Less nightlife, farther from some downtown plans</td><td data-label="Relative budget"><span class="t-badge t-badge-maybe">Mid–High</span></td></tr><tr><th scope="row" data-label="Neighborhood">Lower East Side / East Village<br><span class="t-badge t-badge-anchor">Nightlife</span></th><td data-label="Trip fit"><strong>Nightlife, energy</strong><br>Bars, late dining, stronger evening scene</td><td data-label="Trade-off">Noise risk</td><td data-label="Relative budget"><span class="t-badge t-badge-maybe">Mid</span></td></tr><tr><th scope="row" data-label="Neighborhood">Williamsburg<br><span class="t-badge t-badge-flex">Brooklyn option</span></th><td data-label="Trip fit"><strong>Brooklyn vibe, nightlife</strong><br>Dining, trendier local feel</td><td data-label="Trade-off">Less efficient for classic sightseeing</td><td data-label="Relative budget"><span class="t-badge t-badge-maybe">Mid</span></td></tr><tr><th scope="row" data-label="Neighborhood">Long Island City<br><span class="t-badge t-badge-flex">Better value</span></th><td data-label="Trip fit"><strong>Better value</strong><br>Often better rates, decent subway access</td><td data-label="Trade-off">Less central for short trips</td><td data-label="Relative budget"><span class="t-badge t-badge-yes">Low–Mid</span></td></tr></tbody>
           </table>
         </div>
 
+        <p class="ny-hub-table-note">Budget labels compare areas, not live prices or availability.</p>
         <p class="aff-note">
           Tip: compare neighborhood fit first, then filter by guest rating, cancellation policy, nearest subway access, and recent noise feedback before comparing final price.
         </p>
@@ -765,7 +765,7 @@
         </div>
 
         <div class="table-wrap" role="region" aria-label="New York hotel booking factors table" tabindex="0">
-          <table class="table ttd-table" aria-label="What matters when booking New York hotels">
+          <table role="table" class="table ttd-table" aria-label="What matters when booking New York hotels">
             <caption class="table-cap">
               Practical hotel booking factors in New York and when they matter most.
             </caption>
@@ -808,6 +808,31 @@
 
         <div class="callout">
           <b>Best booking habit:</b> compare the total cost, room type, subway convenience, and recent guest reviews together instead of choosing by price alone.
+        </div>
+      </section>
+
+      <!-- TRUST / E-E-A-T -->
+      <section class="card pad content" aria-label="Why trust TripGuidely">
+        <div class="section-title">
+          <h2>How we pick where to stay in New York</h2>
+          <p>Neighborhood first, hotel second.</p>
+        </div>
+
+        <p class="aff-note">
+          This guide is structured around neighborhood convenience, transit access, travel style fit, and hotel booking practicality rather than star rating alone.
+        </p>
+
+        <ul class="checklist">
+          <li><strong>Getting around matters:</strong> the right neighborhood can save time every morning and make evenings easier too.</li>
+          <li><strong>Different trips need different areas:</strong> the best place for a first visit is not always the best one for couples, families, or nightlife.</li>
+          <li><strong>Walkability and subway access:</strong> a good New York base usually makes daily planning simpler.</li>
+          <li><strong>Hotel choice still matters:</strong> noise, room size, cancellation terms, and subway access often matter more than star rating alone.</li>
+          <li><strong>Built to make the choice easier:</strong> this guide helps you narrow down the right area first, then compare hotels with more confidence.</li>
+          <li><strong>Affiliate disclosure:</strong> some links below are affiliate links; TripGuidely may earn a commission at no extra cost to you.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Good starting point:</b> if you’re unsure, stay in a well-connected Manhattan area first, then filter hotels by guest rating, cancellation policy, nearest subway access, and recent noise reviews.
         </div>
       </section>
 
