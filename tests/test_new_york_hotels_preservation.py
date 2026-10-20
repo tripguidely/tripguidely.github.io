@@ -187,7 +187,9 @@ class NewYorkPreservation(unittest.TestCase):
             self.assertEqual(evidence["kitchen"],["refrigerator","microwave","dishwasher"])
             self.assertTrue(evidence["source"].startswith("https://www.marriott.com/en-us/hotels/"))
             self.assertTrue(evidence["source"].endswith("/rooms/"))
-            self.assertIn(evidence["source"],family)
+            # Official provenance stays in the registry; the guide no longer links to hotel booking sites.
+            self.assertIn(evidence["source"], [source["url"] for source in hotel["sources"]])
+            self.assertNotIn(evidence["source"], [anchor.get("href") for anchor in self.pages["family"].find("a")])
             self.assertIn(name,family)
             self.assertIn("maximum occupancy of four guests",family)
         homewood=next(h for h in self.registry["hotels"] if h["key"]=="homewood")["room_evidence"]

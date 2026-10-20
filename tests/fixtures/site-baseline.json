@@ -230,6 +230,46 @@
       "reason": "Owner explicitly approved these exact New York hotel guides V1 integration hashes in APPROBATION FINALE AUDIT NEW YORK: three local lazy Leaflet map script inclusions and the new map controller. Nine photographs and current design validated; no authorization for any additional path, hash or later change.",
       "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE AUDIT NEW YORK (Codex conversation, 2026-10-19)",
       "recorded_on": "2026-10-19"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/new-york/index.html",
+      "base_revision": "1cd006b75c1de7aa8a2a1611ab0e42974673a0fe",
+      "before": "7e6bc5fac095cefbf6481af1731b76cbea2581460f7eebf55e8aa8bbc46ee1a7",
+      "after": "0ef6559720708a872231f449e17d5cfd5f1bbf973efb9405594057e149b5cc22",
+      "reason": "Owner explicitly approved these exact four NYC SEO/CRO V2 metadata hashes after validating the four pages and removal of 27 direct hotel links. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, JSON-LD, affiliate anchors, consent and scripts remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE SEO/CRO NEW YORK V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/new-york/luxury-hotels/index.html",
+      "base_revision": "1cd006b75c1de7aa8a2a1611ab0e42974673a0fe",
+      "before": "d16ab2d4701bbe7c47390eabcbdab43457d1d4f416ab36fcc57bea2f0b2bc03d",
+      "after": "5dd13c928fff502364d28d9bfe8716d6cf0b8bb503d734e891d27fbc2a60a022",
+      "reason": "Owner explicitly approved these exact four NYC SEO/CRO V2 metadata hashes after validating the four pages and removal of 27 direct hotel links. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, JSON-LD, affiliate anchors, consent and scripts remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE SEO/CRO NEW YORK V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/new-york/family-hotels/index.html",
+      "base_revision": "1cd006b75c1de7aa8a2a1611ab0e42974673a0fe",
+      "before": "7d74a79c8ec14694b7028ae0e4ab15574c1fedd8ca9323a5c10853305e66480c",
+      "after": "9ca387f7859bed01ee1b1d61c399aee76cf64b07ff287e314f5ade01006516fb",
+      "reason": "Owner explicitly approved these exact four NYC SEO/CRO V2 metadata hashes after validating the four pages and removal of 27 direct hotel links. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, JSON-LD, affiliate anchors, consent and scripts remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE SEO/CRO NEW YORK V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/new-york/cheap-hotels/index.html",
+      "base_revision": "1cd006b75c1de7aa8a2a1611ab0e42974673a0fe",
+      "before": "48a3baf15316caede3d3ba461d7b0eeb0cc60ea3fec11cf46ab6e9d864ec60d5",
+      "after": "c5dad241cbcfa7295df39efd6fbbf15ebca04ccdf70baa60bd391f95f13c397b",
+      "reason": "Owner explicitly approved these exact four NYC SEO/CRO V2 metadata hashes after validating the four pages and removal of 27 direct hotel links. Authorize only title, description and corresponding social text; canonical, hreflang, robots, social images, JSON-LD, affiliate anchors, consent and scripts remain unchanged.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — APPROBATION FINALE SEO/CRO NEW YORK V2 (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
     }
   ],
   "contracts": {

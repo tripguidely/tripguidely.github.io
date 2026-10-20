@@ -72,3 +72,21 @@
 .tg-new-york-hotels .ny-hotel-photo>.ny-photo-layout-reserve,.tg-new-york-hotels .ny-hotel-photo>figcaption{visibility:hidden}
 .tg-new-york-hotels .ny-hotel-photo>picture{display:block;position:absolute;inset:0}
 .tg-new-york-hotels .ny-hotel-photo>picture>img{display:block;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center top}
+
+/* V2: concise fit choices, using existing guide colors and typography. */
+.tg-new-york-hotels .ny-fit-list{list-style:none;margin:18px 0;padding:0}
+.tg-new-york-hotels .ny-fit-list li{border-top:1px solid var(--ny-line);padding:10px 0}
+.tg-new-york-hotels .ny-fit-list a{display:inline-flex;align-items:center;min-height:44px;font-weight:650;line-height:1.5}
+.tg-new-york-hotels .ny-fit-list span{display:block;font-size:.9rem;line-height:1.7;color:var(--ny-muted)}
+/* Keep all three comparison booking links in the normal mobile reading flow. */
+@media(max-width:760px){
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table-region{background-image:none}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table-region .tg-hotel-table{min-width:0;table-layout:fixed}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tbody{display:block;width:100%}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tr{display:block;width:100%;border-bottom:1px solid var(--ny-line)}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tbody :is(th,td){display:block;width:auto;min-width:0;padding:14px 18px;border-bottom:0;overflow-wrap:anywhere}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tbody th{background:#f7f7f3}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tbody td::before{content:attr(data-label);display:block;font-size:.75rem;font-weight:650;color:var(--ny-muted);margin-bottom:6px}
+ .tg-ui.tg-new-york-hotels .tg-hotels .tg-hotel-table tbody td:last-child::before{content:none}
+}
