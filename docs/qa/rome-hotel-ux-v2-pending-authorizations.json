@@ -1,0 +1,45 @@
+{
+  "status": "APPLIED LOCALLY AFTER EXPLICIT OWNER APPROVAL — exactly four kind/source/base/before/after tuples verified. Only these entries appended to the baseline; all 37 historical authorizations and all other records preserved. Official audit PASS, zero errors, four recognized authorizations. No functional code change; owner authorized commit/push/Draft PR only, no merge or deployment.",
+  "authorizations": [
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/rome/cheap-hotels/index.html",
+      "base_revision": "d681c019b20aebc6ee60880201edaea2e49191d1",
+      "before": null,
+      "after": "8d70933c656efa63aab7852086e5f3addc6232996956bcee294ca513b1c9ddd3",
+      "reason": "Owner explicitly approved this exact Rome UX V2 map inclusion/controller hash. Reuse unchanged local Leaflet and existing consent-aware site.js; add only Rome marker/photo/card selection, reset, keyboard/touch behavior and failure fallbacks. Preserve original SEO/head markup, photo assets, nine Klook URL/SubID pairs, two historical hub links and other cities.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — ROME UX V2 | FINALISATION ET PR DRAFT (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/rome/family-hotels/index.html",
+      "base_revision": "d681c019b20aebc6ee60880201edaea2e49191d1",
+      "before": null,
+      "after": "8d70933c656efa63aab7852086e5f3addc6232996956bcee294ca513b1c9ddd3",
+      "reason": "Owner explicitly approved this exact Rome UX V2 map inclusion/controller hash. Reuse unchanged local Leaflet and existing consent-aware site.js; add only Rome marker/photo/card selection, reset, keyboard/touch behavior and failure fallbacks. Preserve original SEO/head markup, photo assets, nine Klook URL/SubID pairs, two historical hub links and other cities.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — ROME UX V2 | FINALISATION ET PR DRAFT (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/rome/luxury-hotels/index.html",
+      "base_revision": "d681c019b20aebc6ee60880201edaea2e49191d1",
+      "before": null,
+      "after": "8d70933c656efa63aab7852086e5f3addc6232996956bcee294ca513b1c9ddd3",
+      "reason": "Owner explicitly approved this exact Rome UX V2 map inclusion/controller hash. Reuse unchanged local Leaflet and existing consent-aware site.js; add only Rome marker/photo/card selection, reset, keyboard/touch behavior and failure fallbacks. Preserve original SEO/head markup, photo assets, nine Klook URL/SubID pairs, two historical hub links and other cities.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — ROME UX V2 | FINALISATION ET PR DRAFT (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/rome-hotel-map.js",
+      "base_revision": "d681c019b20aebc6ee60880201edaea2e49191d1",
+      "before": null,
+      "after": "c8a2284baf576ca1bcf021db8caf7fc3b16f6392519ce3cfb382d6506c2abbfe",
+      "reason": "Owner explicitly approved this exact Rome UX V2 map inclusion/controller hash. Reuse unchanged local Leaflet and existing consent-aware site.js; add only Rome marker/photo/card selection, reset, keyboard/touch behavior and failure fallbacks. Preserve original SEO/head markup, photo assets, nine Klook URL/SubID pairs, two historical hub links and other cities.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — ROME UX V2 | FINALISATION ET PR DRAFT (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    }
+  ]
+}
