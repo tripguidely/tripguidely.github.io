@@ -1,0 +1,55 @@
+{
+  "status": "APPLIED LOCALLY AFTER EXPLICIT OWNER APPROVAL — five exact kind/source/base/before/after tuples verified. Only these five entries appended to the baseline; all 32 historic authorizations and all other baseline records preserved. Official audit PASS with zero errors and five recognized authorizations. Commit/push/Draft PR authorized; no merge or deployment.",
+  "authorizations": [
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/london/index.html",
+      "base_revision": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+      "before": "0632ce500b0b0c0ace6334d5c12cb05d60b2a553ac08f1305778d16e9fe743b4",
+      "after": "eef06c27f00ef7841b9fabd7018e7fd27898d059a6983f466fae89db22c3ee0b",
+      "reason": "Intentional London hub title/description and corresponding social metadata update for first-visit, neighborhood and Tube-access intent. Original H1, canonical, hreflang, JSON-LD, content, anchors, Drive, consent/shared script and CSP preserved. Exact hashes explicitly approved by the owner in LONDON : APPROBATION FINALE ET PR.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON : APPROBATION FINALE ET PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/london/cheap-hotels/index.html",
+      "base_revision": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+      "before": null,
+      "after": "33f17e7d893665c5eaa231023b23dffcec10ef17d31981070fba28e869654d08",
+      "reason": "London-only progressive Leaflet map adapter/inclusion derived from the existing New York mechanism, using unchanged local Leaflet assets. Nine source-backed property points, accessible synchronized choices, touch-safe movement, panel scroll reset, early map CTA and asset/tile fallback. Existing site.js alone tracks consent-aware affiliate clicks; exact supplied links/SubIDs preserved. No changes to shared scripts or other cities. Exact hashes explicitly approved by the owner in LONDON : APPROBATION FINALE ET PR.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON : APPROBATION FINALE ET PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/london/family-hotels/index.html",
+      "base_revision": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+      "before": null,
+      "after": "33f17e7d893665c5eaa231023b23dffcec10ef17d31981070fba28e869654d08",
+      "reason": "London-only progressive Leaflet map adapter/inclusion derived from the existing New York mechanism, using unchanged local Leaflet assets. Nine source-backed property points, accessible synchronized choices, touch-safe movement, panel scroll reset, early map CTA and asset/tile fallback. Existing site.js alone tracks consent-aware affiliate clicks; exact supplied links/SubIDs preserved. No changes to shared scripts or other cities. Exact hashes explicitly approved by the owner in LONDON : APPROBATION FINALE ET PR.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON : APPROBATION FINALE ET PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_markup",
+      "source": "hotels/london/luxury-hotels/index.html",
+      "base_revision": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+      "before": null,
+      "after": "33f17e7d893665c5eaa231023b23dffcec10ef17d31981070fba28e869654d08",
+      "reason": "London-only progressive Leaflet map adapter/inclusion derived from the existing New York mechanism, using unchanged local Leaflet assets. Nine source-backed property points, accessible synchronized choices, touch-safe movement, panel scroll reset, early map CTA and asset/tile fallback. Existing site.js alone tracks consent-aware affiliate clicks; exact supplied links/SubIDs preserved. No changes to shared scripts or other cities. Exact hashes explicitly approved by the owner in LONDON : APPROBATION FINALE ET PR.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON : APPROBATION FINALE ET PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "new_integration_script",
+      "source": "assets/js/london-hotel-map.js",
+      "base_revision": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+      "before": null,
+      "after": "a14f66c56ac4e07aa7f92a04385371410d77035d838e2be4336be0bfacb1a901",
+      "reason": "London-only progressive Leaflet map adapter/inclusion derived from the existing New York mechanism, using unchanged local Leaflet assets. Nine source-backed property points, accessible synchronized choices, touch-safe movement, panel scroll reset, early map CTA and asset/tile fallback. Existing site.js alone tracks consent-aware affiliate clicks; exact supplied links/SubIDs preserved. No changes to shared scripts or other cities. Exact hashes explicitly approved by the owner in LONDON : APPROBATION FINALE ET PR.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON : APPROBATION FINALE ET PR (Codex conversation, 2026-10-20)",
+      "recorded_on": "2026-10-20"
+    }
+  ]
+}
