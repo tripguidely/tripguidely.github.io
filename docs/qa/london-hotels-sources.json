@@ -1,0 +1,1913 @@
+{
+  "base_commit": "47d11b6d8cd811fe9fd526d3a785dcdc4ba989cb",
+  "checked_on": "2026-10-20",
+  "selection": "Exact nine owner-selected hotel links/SubIDs and 27 supplied photographs; original photo order retained.",
+  "photo_policy": "Owner requested local download, proportional WebP/AVIF optimization and integration. Originals preserved intact outside Git; no additional rights or publication approval inferred.",
+  "map_policy": "Existing local Leaflet 1.9.4 and New York controller mechanics reused in a London-only adapter. Property points from official coordinates/map links or exact-address OpenStreetMap results; markers are location aids, not guaranteed entrances or step-free routes.",
+  "hotels": [
+    {
+      "key": "savoy",
+      "name": "The Savoy",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/3MIczRWd",
+      "subid": "london_luxury_savoy",
+      "offer_id": "london_luxury_savoy",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/ac978e5c_z.webp",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/bf477fc0_z.webp",
+        "https://i.travelapi.com/lodging/1000000/30000/27200/27158/9b146386_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Strand / Covent Garden side",
+      "address": "The Savoy, Strand, London WC2R 0EZ",
+      "coordinates": [
+        51.5101494,
+        -0.1205205
+      ],
+      "coordinate_source": "https://maps.app.goo.gl/6xETapNcmEwtHt7r8",
+      "coordinate_evidence": "Property marker coordinates in the Google Maps link published on the official Savoy homepage.",
+      "format": "Rooms, Junior Suites and named suites",
+      "choice": "West End evenings and a classic Strand address",
+      "fit": "Theatre plans around the Strand and Covent Garden",
+      "facts": "The Savoy lists Edwardian and Art Deco room styles, with city, courtyard, garden and river-view categories. Its Strand address makes the West End the starting point for the stay; select a named river-view room if that is the feature you want.",
+      "tradeoff": "The riverside building does not give every room a Thames view. Dining, pool or other experiences must be checked against the booking terms.",
+      "check": "Exact room and outlook; beds; included dining or services; deposit and cancellation.",
+      "source": "https://www.thesavoylondon.com/rooms?room=rooms",
+      "source2": "https://www.thesavoylondon.com/",
+      "photos": [
+        {
+          "key": "savoy",
+          "name": "The Savoy",
+          "category": "luxury",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/ac978e5c_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/ac978e5c_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\savoy-1.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1364
+          ],
+          "bytes": 254292,
+          "sha256": "17b85509b5bd27c81df0e252d6f638639b409c4f4073e3e5eb8c7a39fce6ebdf",
+          "status": "downloaded_and_decoded",
+          "alt": "The Savoy facade beside the Thames at dusk.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-riverside-480x390.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 390,
+              "bytes": 37840,
+              "sha256": "bd30402d608cd4742e2865a8b455d2f765589180e8758d3c00b98f06a71a469d"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-riverside-480x390.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 390,
+              "bytes": 24602,
+              "sha256": "5645bca3791d8db3ffed86526065476f357ae2c55ab14b4a4dac6746478269c7"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-riverside-960x779.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 779,
+              "bytes": 103088,
+              "sha256": "5d61f672b7b942a0bc87a18e019f5c5774287620c8b318ea6d210ebf3c2c5eb9"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-riverside-960x779.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 779,
+              "bytes": 71746,
+              "sha256": "00ffdb1146b988ad5ca2899e30930d239365b0903236259f363ae27114e45cff"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "savoy",
+          "name": "The Savoy",
+          "category": "luxury",
+          "index": 1,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/bf477fc0_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/27200/27158/bf477fc0_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\savoy-2.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1090
+          ],
+          "bytes": 239832,
+          "sha256": "e5522b23df434222589e5adc8b1fd84e929cbab9f66d35496bce8e52513ec5c9",
+          "status": "downloaded_and_decoded",
+          "alt": "The Savoy interior with patterned marble floor, columns and seating.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-lobby-480x311.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 311,
+              "bytes": 36162,
+              "sha256": "ed6b5044d2001530346f753bf1705a10d2fddda42f32144c7a867db8fc01c752"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-lobby-480x311.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 311,
+              "bytes": 23310,
+              "sha256": "f0c5e17eb211721e549e7839e5e986521fa977c5b373444715e055c3d031a961"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-lobby-960x623.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 623,
+              "bytes": 98450,
+              "sha256": "62518a00e65ecda413765a206ced536bf7a00167aa382896223fe363effcc9cd"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-lobby-960x623.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 623,
+              "bytes": 67150,
+              "sha256": "8a35b0f79cc5a12684eb3cbed29d016d5463ada1dbd31e273a06463761e6f646"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "savoy",
+          "name": "The Savoy",
+          "category": "luxury",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/1000000/30000/27200/27158/9b146386_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/30000/27200/27158/9b146386_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\savoy-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1440
+          ],
+          "bytes": 658592,
+          "sha256": "72a8c2bd4bb8b6740534e4878106cb0ee922c0671024cfb7c5a4b9fac10b8b73",
+          "status": "downloaded_and_decoded",
+          "alt": "Indoor pool in the supplied Savoy photograph; access conditions depend on the stay.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-indoor-pool-480x360.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 360,
+              "bytes": 32444,
+              "sha256": "4e11e97578c77536a749d52cd5a09d8e410100c75533a204a3b41e26f3205720"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-indoor-pool-480x360.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 360,
+              "bytes": 21532,
+              "sha256": "e761b1993b8b6a317e54e6d803fcc3f825061017724bfaf71b63302039e99679"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-indoor-pool-960x720.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 720,
+              "bytes": 94988,
+              "sha256": "bc1a33e25af8dec41b2933f0aec6c3a8657b89700a1ae40951541b61063d0da9"
+            },
+            {
+              "file": "assets/images/hotels/london/the-savoy-london-indoor-pool-960x720.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 720,
+              "bytes": 65205,
+              "sha256": "c7b13315ae94313deef4b5da626f510245f21e590327a94d833b889c38f626c7"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C664fea0d0d044b10b8aa765bb-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F253441-the-savoy%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/253441-the-savoy/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.thesavoylondon.com/rooms?room=rooms",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thesavoylondon.com/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "shard",
+      "name": "Shangri-La The Shard, London",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/8hv8Ydc3",
+      "subid": "london_luxury_shard",
+      "offer_id": "london_luxury_shard",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/w2756h3840x0y0-9c7d50b7_z.webp",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f3510294_z.webp",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f63b6d4d_z.webp"
+      ],
+      "area": "London Bridge / Southwark",
+      "address": "31 St Thomas Street, London SE1 9QU",
+      "coordinates": [
+        51.504571,
+        -0.086796
+      ],
+      "coordinate_source": "https://www.shangri-la.com/london/shangrila/",
+      "coordinate_evidence": "Hotel latitude/longitude published in the official page data.",
+      "format": "View-specific rooms, suites and connecting combinations",
+      "choice": "A skyline-led stay south of the Thames",
+      "fit": "London skyline views and a London Bridge base",
+      "facts": "Shangri-La names southerly Shard and city-view categories separately. Floor-to-ceiling windows are part of the room description, but the direction and landmarks vary. The address is by London Bridge, rather than in the West End.",
+      "tradeoff": "A high-floor setting does not promise every landmark from your room. Match the view description and plan the journey to theatres or shopping.",
+      "check": "View direction; exact room; pool/session access and age rules; breakfast and cancellation.",
+      "source": "https://www.shangri-la.com/london/shangrila/rooms-suites/",
+      "source2": "https://www.shangri-la.com/london/shangrila/",
+      "photos": [
+        {
+          "key": "shard",
+          "name": "Shangri-La The Shard, London",
+          "category": "luxury",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/w2756h3840x0y0-9c7d50b7_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/w2756h3840x0y0-9c7d50b7_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\shard-1.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            2340
+          ],
+          "bytes": 221346,
+          "sha256": "52c47193645d40ed5bab0194040e729b3e8b07e05d87ec6ee6516e19e2c3430d",
+          "status": "downloaded_and_decoded",
+          "alt": "The Shard rising above its street-level entrance in London.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-exterior-480x669.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 669,
+              "bytes": 34738,
+              "sha256": "1b499314a08676b9bc36c1218900d5c1638e9980d593347749199de566945044"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-exterior-480x669.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 669,
+              "bytes": 25570,
+              "sha256": "c44e8cb42542b19ef8e20594107f34920702ae0f5c7340d9d0f656f6955024c0"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-exterior-960x1337.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 1337,
+              "bytes": 87770,
+              "sha256": "6cc96f46b04df0fb8253df66b54374070a6fa75fab6b7581e0c4888204f6a30c"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-exterior-960x1337.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 1337,
+              "bytes": 67087,
+              "sha256": "65ea6dac6347ad7893082b43b9bc09adc2084cba1bcfb0a4e4a07765a487a157"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "shard",
+          "name": "Shangri-La The Shard, London",
+          "category": "luxury",
+          "index": 1,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f3510294_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f3510294_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\shard-2.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1132
+          ],
+          "bytes": 159376,
+          "sha256": "2ab326e9aa0b9574163d07bf4a70b2b63750d1fbbbae1c42d90893fd23cadeb1",
+          "status": "downloaded_and_decoded",
+          "alt": "Shangri-La The Shard reception and seating beside skyline-facing windows.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-lobby-480x323.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 323,
+              "bytes": 22218,
+              "sha256": "86d20232fc3d4d70097b264427e689d1a75716d49be8f2f4f7d3505471dcc9bd"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-lobby-480x323.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 323,
+              "bytes": 15388,
+              "sha256": "12e4a3afef36cabee2e0235f4de5db290de82361a3f217f113852f283b13ba88"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-lobby-960x647.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 647,
+              "bytes": 60924,
+              "sha256": "e32d9d3ab52704c29fa78725fa47792bfbbc7ba9dbf11d4da76b055b353c0bc1"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-lobby-960x647.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 647,
+              "bytes": 45277,
+              "sha256": "1703767aaf68fca6c8a7e48dbdef1d8f2cd8f5c3614895d8ba79ec39acb356d6"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "shard",
+          "name": "Shangri-La The Shard, London",
+          "category": "luxury",
+          "index": 2,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f63b6d4d_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/9000000/8040000/8035800/8035714/f63b6d4d_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\shard-3.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1013
+          ],
+          "bytes": 220906,
+          "sha256": "1ea843be883a3db957cd9bce68136fbaeb8f1c88bc46658f9a5fb9ec54b4f852",
+          "status": "downloaded_and_decoded",
+          "alt": "Shangri-La The Shard indoor pool with windows overlooking London.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-pool-480x289.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 289,
+              "bytes": 28508,
+              "sha256": "9a77643e5158da0a2976858820fd00348b36fb2d7b5300bab9eaf676916b9e6b"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-pool-480x289.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 289,
+              "bytes": 18228,
+              "sha256": "8219fb5996e602081f58a7c6612860bd5287cce11215443c3aec1fd0bbd9210e"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-pool-960x579.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 579,
+              "bytes": 86044,
+              "sha256": "58a43aeb147c8c6ea26c9380761fa17ddef14d7cd2e5d44befc3a013081ed3d2"
+            },
+            {
+              "file": "assets/images/hotels/london/shangri-la-shard-london-pool-960x579.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 579,
+              "bytes": 56156,
+              "sha256": "b57cfa84c496ca891ce8526071e7bfd9692cba5cc4f0a36f8cecbc63747467ff"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C7bb8fbdc3b004babba8781863-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F276467-shangrila-the-shard-london%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/276467-shangrila-the-shard-london/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.shangri-la.com/london/shangrila/rooms-suites/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.shangri-la.com/london/shangrila/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "langham",
+      "name": "The Langham, London",
+      "category": "luxury",
+      "affiliate_url": "https://klook.tpk.ro/IZoWBLQU",
+      "subid": "london_luxury_langham",
+      "offer_id": "london_luxury_langham",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/d8695e56_z.webp",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/bb9ee3ac_z.webp",
+        "https://i.travelapi.com/lodging/1000000/30000/22100/22099/b15c2942_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Portland Place / Oxford Circus",
+      "address": "1c Portland Place, Regent Street, London W1B 1JA",
+      "coordinates": [
+        51.5186,
+        -0.1441
+      ],
+      "coordinate_source": "https://www.langhamhotels.com/en/the-langham/london/",
+      "coordinate_evidence": "GeoCoordinates JSON-LD on the official property homepage.",
+      "format": "Rooms, club categories and suites",
+      "choice": "Oxford Street shopping and a Portland Place address",
+      "fit": "Shopping around Oxford Circus with a traditional hotel setting",
+      "facts": "The Langham places the hotel on Portland Place near Oxford Circus. Its accommodation list distinguishes rooms, club categories and suites. Club privileges belong to the named category and offer; they should not be assumed for an entry-level room.",
+      "tradeoff": "A club lounge, afternoon tea or spa experience is a separate booking decision unless explicitly included. This is not a riverfront address.",
+      "check": "Room versus club category; beds; lounge and breakfast terms; spa access and cancellation.",
+      "source": "https://www.langhamhotels.com/en/the-langham/london/stay?tab=tabs-rooms",
+      "source2": "https://www.langhamhotels.com/en/the-langham/london/discover/our-location/",
+      "photos": [
+        {
+          "key": "langham",
+          "name": "The Langham, London",
+          "category": "luxury",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/d8695e56_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/d8695e56_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\langham-1.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1258
+          ],
+          "bytes": 359288,
+          "sha256": "3429d5ba836dc5fb7b2540678dec8b64e1d44947dda5b6be303de9fc93c8f4bf",
+          "status": "downloaded_and_decoded",
+          "alt": "The Langham London entrance and facade beside All Souls Church.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-langham-london-exterior-480x359.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 359,
+              "bytes": 52240,
+              "sha256": "c8d7ce396fb668806b8b3e538b5b3fc937110a08379f3c36847a802c3e5c2978"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-exterior-480x359.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 359,
+              "bytes": 33253,
+              "sha256": "946f47085352131f9c9072e2a62b13d71ff3b83914af3f7e218db0ae01c399ee"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-exterior-960x719.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 719,
+              "bytes": 148204,
+              "sha256": "0a7bb47d482c50bc1fba78f0bfe759de03c4f8af098a03f1bd37a75eac07f25b"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-exterior-960x719.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 719,
+              "bytes": 94905,
+              "sha256": "ce416d7a896dc1632e5c1df3ed25d45f3d9ccce471800770e8fd71010df935cc"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "langham",
+          "name": "The Langham, London",
+          "category": "luxury",
+          "index": 1,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/bb9ee3ac_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/30000/22100/22099/bb9ee3ac_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\langham-2.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1099
+          ],
+          "bytes": 180076,
+          "sha256": "673cef533875da548e00edbb56bc6123002331f69f076383a27d423c8408b452",
+          "status": "downloaded_and_decoded",
+          "alt": "Indoor swimming pool in the supplied Langham London photograph.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-langham-london-pool-480x314.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 314,
+              "bytes": 24016,
+              "sha256": "e4a59850c1b99492af0e4dfbcdfef6e9652ad5b094b89a1f4165c0bca833c87b"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-pool-480x314.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 314,
+              "bytes": 17837,
+              "sha256": "2dc0a656102e485c4fbd5ba513c7d717b4d689a07942fc7e8c1b047330124d8b"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-pool-960x628.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 628,
+              "bytes": 66746,
+              "sha256": "38615a3c8bef7cf69c3135e77d88b88af3438c93ac10b14c503f6852af166e77"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-pool-960x628.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 628,
+              "bytes": 51635,
+              "sha256": "1dd1b6626356f13b930b31d892f41e729d70e74429c1134a0c85391459037dc0"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "langham",
+          "name": "The Langham, London",
+          "category": "luxury",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/1000000/30000/22100/22099/b15c2942_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/30000/22100/22099/b15c2942_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\langham-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1536
+          ],
+          "bytes": 821634,
+          "sha256": "b4161587d6cd820e64f67a6ee7f24f99c495cea1944925e225d9452ab5fbc83e",
+          "status": "downloaded_and_decoded",
+          "alt": "The Langham London dining interior with pale upholstered chairs and chandeliers.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/the-langham-london-dining-room-480x384.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 384,
+              "bytes": 40102,
+              "sha256": "0d4e3981827d7c700f6adaa379a304661c2e1b4bbb14fb02b1c00b1597b938b4"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-dining-room-480x384.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 384,
+              "bytes": 26916,
+              "sha256": "ff3d1c840bf0706419afe8570196f249cbc5029c426dae155cb3107ed565cbde"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-dining-room-960x768.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 768,
+              "bytes": 123626,
+              "sha256": "b4da969aa8b95945d2e825695be1656c09da6abd58828bcd0f271c1163af8b38"
+            },
+            {
+              "file": "assets/images/hotels/london/the-langham-london-dining-room-960x768.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 768,
+              "bytes": 85925,
+              "sha256": "8cd98cff8e7965571dd65251b451220c38af5a96be9d9871f558586d4367a0d0"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C64853f335c8145dd9c82c1f39-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F397831-the-langham-london%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/397831-the-langham-london/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.langhamhotels.com/en/the-langham/london/stay?tab=tabs-rooms",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.langhamhotels.com/en/the-langham/london/discover/our-location/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "staybridge",
+      "name": "Staybridge Suites London – Vauxhall",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/O9FymwTV",
+      "subid": "london_family_staybridge",
+      "offer_id": "london_family_staybridge",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/67eb93d4_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/8000000/7840000/7836900/7836882/48097842_z.webp",
+        "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/be64be72_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Vauxhall / south of the river",
+      "address": "100 Vauxhall Walk, London SE11 5EL",
+      "coordinates": [
+        51.4891406,
+        -0.1207734
+      ],
+      "coordinate_source": "https://nominatim.openstreetmap.org/search?q=Staybridge+Suites%2C+100+Vauxhall+Walk%2C+London%2C+SE11+5EL&format=jsonv2&limit=1",
+      "coordinate_evidence": "Exact hotel/address OpenStreetMap result, 100 Vauxhall Walk, SE11 5EL.",
+      "format": "Apartment-style suites with equipped kitchens",
+      "choice": "Self-catering routines around Vauxhall",
+      "fit": "A kitchen-led stay with Vauxhall connections",
+      "facts": "IHG describes equipped kitchens in its suites and an apartment-style stay on Vauxhall Walk. This supports simple meals in the room. The precise bed configuration and accepted party must still be confirmed for the named suite; a kitchen does not establish space for four.",
+      "tradeoff": "Plan the daily route across London rather than treating a central-London label as a West End address. Do not infer a sofa bed or extra sleeping place from a room photograph.",
+      "check": "Exact suite, beds and accepted child ages; kitchen equipment; breakfast terms; transport and cancellation.",
+      "source": "https://www.ihg.com/staybridge/hotels/gb/en/london/lonva/hoteldetail",
+      "occupancy_status": "Exact guest maximum and sleeping configuration not independently established; no numeric capacity claim.",
+      "photos": [
+        {
+          "key": "staybridge",
+          "name": "Staybridge Suites London – Vauxhall",
+          "category": "family",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/67eb93d4_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/67eb93d4_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\staybridge-1.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1470,
+            2000
+          ],
+          "bytes": 694085,
+          "sha256": "a3545076dee25dd82db73111c0e91f4da099ce661b887003862ed2c72c8dec7d",
+          "status": "downloaded_and_decoded",
+          "alt": "Staybridge Suites Vauxhall entrance with its hotel sign on the brick facade.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-480x653.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 653,
+              "bytes": 70370,
+              "sha256": "ee17ecc0cc1549809d73a66077d015001e97abfad1148d44bf904a8e21c2caff"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-480x653.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 653,
+              "bytes": 45266,
+              "sha256": "5cab1b79dd89c1f271b3dcb11a767795f729e4b65825b7384e076cad2477e244"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 1306,
+              "bytes": 224326,
+              "sha256": "584e277705af81b5cb467f58e38027273a85d5a7972d4012eab98840c49f78fa"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 1306,
+              "bytes": 153249,
+              "sha256": "9ef5192daa3c98cb72e6890e68727908622bf61f1103de3858ea4cf1a171736f"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "staybridge",
+          "name": "Staybridge Suites London – Vauxhall",
+          "category": "family",
+          "index": 1,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/8000000/7840000/7836900/7836882/48097842_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/8000000/7840000/7836900/7836882/48097842_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\staybridge-2.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1105
+          ],
+          "bytes": 124496,
+          "sha256": "a216eac285e9958b6786b1ae2e46fa0adcc32248096dde37c60ab5e6d028dfd5",
+          "status": "downloaded_and_decoded",
+          "alt": "Staybridge Suites bedroom with a double bed, window and yellow cushions.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-bedroom-480x316.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 316,
+              "bytes": 15006,
+              "sha256": "f2d37751eb3bf51d925522b4ac9eae5889e0fe4543f4d366eb53ab5c2dfff77c"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-bedroom-480x316.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 316,
+              "bytes": 10586,
+              "sha256": "594fa4a0780ccd9a2ba8f9db27019ef2deab9697ae22dd8adc8442297a76afac"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-bedroom-960x631.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 631,
+              "bytes": 43580,
+              "sha256": "908951da4363cdea4dbd9bdfb3413b423f8b8a5a43059836b3d2f5fa1db492a9"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-bedroom-960x631.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 631,
+              "bytes": 32751,
+              "sha256": "17d6e59293df5c7c0fb5530036b73ddaa9c4b0604f6fc42cb4aff97d33dfb694"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "staybridge",
+          "name": "Staybridge Suites London – Vauxhall",
+          "category": "family",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/be64be72_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/8000000/7840000/7836900/7836882/be64be72_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\staybridge-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1278
+          ],
+          "bytes": 450823,
+          "sha256": "070be287285715654299b04fadd1d16bff18d2c46fb4a5528d9e233d75a81af1",
+          "status": "downloaded_and_decoded",
+          "alt": "Staybridge Suites shared breakfast and seating area in Vauxhall.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-breakfast-room-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 28330,
+              "sha256": "74038aea5179b975b851b2dab9e0f5e3bbd222cf562debf0ad616f75975df3d0"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-breakfast-room-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 18904,
+              "sha256": "37fe12ab55ccb01b17b8215d8776755074b4eb4c37a4a5c50c259f3444616eae"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-breakfast-room-960x639.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 639,
+              "bytes": 88596,
+              "sha256": "c3da24498808d2fc18215079b6499e7a4f579f6fb081817df3fc2f77c72e6c80"
+            },
+            {
+              "file": "assets/images/hotels/london/staybridge-suites-vauxhall-london-breakfast-room-960x639.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 639,
+              "bytes": 57116,
+              "sha256": "e1865ad5b6f10e0e5c3d31acc3d5abd3393549f0dc2cbe9f011895b23433c3af"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C5a81407cc66a4123a45f67224-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F280436-staybridge-suites-london--vauxhall-by-ihg%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/280436-staybridge-suites-london--vauxhall-by-ihg/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.ihg.com/staybridge/hotels/gb/en/london/lonva/hoteldetail",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "residence",
+      "name": "Residence Inn by Marriott London Kensington",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/BY4TrnYK",
+      "subid": "london_family_residence",
+      "offer_id": "london_family_residence",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/0dc82e13_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/a3754277_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/648394d2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Warwick Road / Kensington–Olympia side",
+      "address": "181–183 Warwick Road, London W14 8PU",
+      "coordinates": [
+        51.493611,
+        -0.202208
+      ],
+      "coordinate_source": "https://nominatim.openstreetmap.org/search?q=Residence+Inn%2C+181+Warwick+Road%2C+London%2C+W14+8PU&format=jsonv2&limit=1",
+      "coordinate_evidence": "Exact hotel/address OpenStreetMap result, 181–183 Warwick Road, W14 8PU.",
+      "format": "Studios and one-/two-bedroom suites with kitchens",
+      "choice": "Kitchen facilities and a named suite layout",
+      "fit": "Longer stays when the exact kitchen-and-bed layout works",
+      "facts": "Marriott describes kitchens and one- and two-bedroom suites. Published room descriptions include a double-bed studio and selected double- or twin-bed suites with a sofa bed. Choose the exact layout and accepted guests rather than reading the generic booking form maximum as room capacity.",
+      "tradeoff": "The Warwick Road address is toward Kensington–Olympia, not beside every South Kensington museum. Open-plan and separate-bedroom formats are different purchases.",
+      "check": "Named suite and bedroom separation; double/twin and sofa-bed arrangement; every guest and age; kitchen and housekeeping terms.",
+      "source": "https://www.marriott.com/en-us/hotels/lonrk-residence-inn-london-kensington/rooms/",
+      "source2": "https://context.marriott.com/faq/html/properties/residence-inn-by-marriott-london-kensington.html",
+      "occupancy_status": "Do not use the generic booking form maximum of eight as property-specific room capacity. Actual offer occupancy to confirm.",
+      "photos": [
+        {
+          "key": "residence",
+          "name": "Residence Inn by Marriott London Kensington",
+          "category": "family",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/0dc82e13_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/0dc82e13_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\residence-1.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 931177,
+          "sha256": "1b39d5f22bac02cb96c5fa1cb5342878ad13d6a3eaf8cf2a2887eaf12f3858a9",
+          "status": "downloaded_and_decoded",
+          "alt": "Residence Inn London Kensington building on a Warwick Road street corner.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-exterior-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 39680,
+              "sha256": "72209b18cc7ded563da3ebc07520d937e1a450701f8ee97b0c5cd08bf2165d0d"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-exterior-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 25673,
+              "sha256": "35e02acb077201754b5e5ff1dfac6f7da9144be87d9ce88e8c9ab01cbf9435cf"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-exterior-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 123762,
+              "sha256": "72cd39697c02dae2bd33bcf1a28c472d11147897b61cbb68283377bab971f9b4"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-exterior-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 80130,
+              "sha256": "da233b28199827fa689d172f3ce56e30e900140f585c58b4d6c03219e9e685e3"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "residence",
+          "name": "Residence Inn by Marriott London Kensington",
+          "category": "family",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/a3754277_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/a3754277_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\residence-2.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 736549,
+          "sha256": "0de27edc5e4e784331ba407697c392dd99664c82085c68f90b8653bc8763384d",
+          "status": "downloaded_and_decoded",
+          "alt": "Residence Inn London Kensington reception counters and lobby seating.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-reception-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 27040,
+              "sha256": "a6bc52e082904c5744c07ef428a84baf71221c34f4b66f8e19397a1676098a17"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-reception-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 18330,
+              "sha256": "283027e24c91c8cbfae0e0fe55e6dcfdd999cc2e4fd3a94bf3df1e7276713682"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-reception-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 106186,
+              "sha256": "ee341f817cf0675a6c0b2de1615d8ac79daa620e55a5fe14cc19caa7462b1ec4"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-reception-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 65467,
+              "sha256": "e3040ee59d9006f84555a7bcbff2b0071743d548e6b2fe1481e610ed243fa43e"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "residence",
+          "name": "Residence Inn by Marriott London Kensington",
+          "category": "family",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/648394d2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/3000000/2280000/2270900/2270848/648394d2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\residence-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1287
+          ],
+          "bytes": 680821,
+          "sha256": "2e749688e67c180508dca463cca166263ba5aa93c6e87df36d70af5a7bd1e924",
+          "status": "downloaded_and_decoded",
+          "alt": "Residence Inn London Kensington lounge with tables, upholstered chairs and windows.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-lounge-480x322.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 322,
+              "bytes": 29822,
+              "sha256": "75f158bda3d71f094d41f7655bf2187282f99429935cc2f5d3a5a7196b23a251"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-lounge-480x322.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 322,
+              "bytes": 19088,
+              "sha256": "814a64829e9d687671be2aa0a9716b50da0616a8782ceee44cf8354a80453c5f"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-lounge-960x644.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 644,
+              "bytes": 97224,
+              "sha256": "ec81d92de0b4e3a200a8bc2fb67890a6b2831b7d8fe7346ca527acea8939cef2"
+            },
+            {
+              "file": "assets/images/hotels/london/residence-inn-kensington-london-lounge-960x644.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 644,
+              "bytes": 61866,
+              "sha256": "af3576d7af9588197f5124fe1a05b82ff22a0a4ade5ebe7cb216c8e8bcebebf8"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C57f94987d0374fc285af23714-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F269874-residence-inn-by-marriott-london-kensington%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/269874-residence-inn-by-marriott-london-kensington/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.marriott.com/en-us/hotels/lonrk-residence-inn-london-kensington/rooms/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://context.marriott.com/faq/html/properties/residence-inn-by-marriott-london-kensington.html",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "citadines",
+      "name": "Citadines Trafalgar Square London",
+      "category": "family",
+      "affiliate_url": "https://klook.tpk.ro/JTNTiOoK",
+      "subid": "london_family_citadines",
+      "offer_id": "london_family_citadines",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/450000/447100/447050/7aaa5439_z.webp",
+        "https://i.travelapi.com/lodging/1000000/450000/447100/447050/5b574734_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/1000000/450000/447100/447050/29cf9b05_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Trafalgar Square / Charing Cross",
+      "address": "18–21 Northumberland Avenue, London WC2N 5EA",
+      "coordinates": [
+        51.5071626,
+        -0.1246722
+      ],
+      "coordinate_source": "https://nominatim.openstreetmap.org/search?q=Citadines+Trafalgar+Square%2C+Northumberland+Avenue%2C+London%2C+WC2N+5EA&format=jsonv2&limit=1",
+      "coordinate_evidence": "Exact hotel/address OpenStreetMap result, 18–21 Northumberland Avenue, WC2N 5EA.",
+      "format": "Studios and one-/two-bedroom apartments with kitchenettes",
+      "choice": "Central sightseeing with apartment categories",
+      "fit": "Trafalgar Square plans with a kitchen and a category-specific capacity",
+      "facts": "Citadines publishes studios for up to two, one-bedroom apartments for up to four and two-bedroom apartments for up to six, with equipped kitchenettes. Those are category limits, not interchangeable rooms. Confirm the actual beds, including any sofa-bed use, in the Klook offer.",
+      "tradeoff": "A studio is not the four-person apartment. Additional beds or cots need confirmation; central location does not remove the need to check access and sleeping arrangements.",
+      "check": "Studio versus named apartment; maximum guests; written bed layout; cot/extra-bed approval; kitchen and service terms.",
+      "source": "https://www.discoverasr.com/en/citadines/united-kingdom/citadines-trafalgar-square-london/apartment",
+      "source2": "https://www.discoverasr.com/en/citadines/united-kingdom/citadines-trafalgar-square-london/location",
+      "photos": [
+        {
+          "key": "citadines",
+          "name": "Citadines Trafalgar Square London",
+          "category": "family",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/450000/447100/447050/7aaa5439_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/1000000/450000/447100/447050/7aaa5439_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\citadines-1.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1060
+          ],
+          "bytes": 215692,
+          "sha256": "db6ccba20c24d8610c18e078601461ddddf8a7c637535a7ab3c8fd26a60ccda6",
+          "status": "downloaded_and_decoded",
+          "alt": "Citadines Trafalgar Square entrance and stone facade on Northumberland Avenue.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-exterior-480x303.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 303,
+              "bytes": 32882,
+              "sha256": "65fcfc090e608ff15fa5bf2a80474ddeb342a322f84f69ef42605a715ca9c491"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-exterior-480x303.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 303,
+              "bytes": 21659,
+              "sha256": "630e76487a336c8723dff94811bc5083680503baf24b0c3f0ca9d294801279dd"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-exterior-960x606.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 606,
+              "bytes": 89610,
+              "sha256": "9910511cc4ac2a74168a1076e9c14333111e28ca556fb36338203e4ec6f9134c"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-exterior-960x606.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 606,
+              "bytes": 61020,
+              "sha256": "36ac41b7a2761de6a070d06f8a9ddd99e35e3880a5dc352bfb6b72481008111e"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "citadines",
+          "name": "Citadines Trafalgar Square London",
+          "category": "family",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/1000000/450000/447100/447050/5b574734_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/450000/447100/447050/5b574734_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\citadines-2.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1127
+          ],
+          "bytes": 324736,
+          "sha256": "caaedb692c26653a45a1a6dda284b076fec779644e66a384f937335935956c03",
+          "status": "downloaded_and_decoded",
+          "alt": "Citadines apartment living area with a sofa and kitchenette behind it.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-living-kitchen-480x282.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 282,
+              "bytes": 17452,
+              "sha256": "b59b1db08a7c065d64ea9945c4a290260ef3f1f07765a8d5e2e19963b39cba03"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-living-kitchen-480x282.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 282,
+              "bytes": 13154,
+              "sha256": "43e7015d504ae46b6ecb995b16f1bc6775b1b8fc978b3e7248e51137eec4e643"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-living-kitchen-960x564.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 564,
+              "bytes": 46852,
+              "sha256": "019de0f56a00e408fcb787b975762c69e75eb41b67451143c178d207b20c48f8"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-living-kitchen-960x564.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 564,
+              "bytes": 34707,
+              "sha256": "835adcf166d8dcc9c4c04fa5c32ceabf5bf2defd383f40cee4228dc3153cf085"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "citadines",
+          "name": "Citadines Trafalgar Square London",
+          "category": "family",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/1000000/450000/447100/447050/29cf9b05_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/1000000/450000/447100/447050/29cf9b05_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\citadines-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1146
+          ],
+          "bytes": 291393,
+          "sha256": "7aebe4768a884e865f691c7e20e27d6a33aa0727e6f234435798411dd809bd1b",
+          "status": "downloaded_and_decoded",
+          "alt": "Citadines studio interior with a double bed, kitchenette and dining surface.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-studio-480x286.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 286,
+              "bytes": 16476,
+              "sha256": "bc2baae5bcae52ba25174ff629ed377bb504a9239c964dd2d8e426d2b99bc688"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-studio-480x286.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 286,
+              "bytes": 12521,
+              "sha256": "dc23a4454ff74734f7aa0de0b2229a94922a0729cd9a29ac10ca70dd339abb96"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-studio-960x573.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 573,
+              "bytes": 48632,
+              "sha256": "3dd24c118aec68a8f8bb8e950ea09c5a80ba0b18ec1fd50eeb351e9a44a9396b"
+            },
+            {
+              "file": "assets/images/hotels/london/citadines-trafalgar-square-london-studio-960x573.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 573,
+              "bytes": 35912,
+              "sha256": "d9f1a6e3671f454ce09a75931e9267c91084517f195e130c83b8e427465902ba"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C35c3bdcdf64e40f5b35718e2e-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F450124-citadines-trafalgar-square-london%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/450124-citadines-trafalgar-square-london/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.discoverasr.com/en/citadines/united-kingdom/citadines-trafalgar-square-london/apartment",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.discoverasr.com/en/citadines/united-kingdom/citadines-trafalgar-square-london/location",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "pointa",
+      "name": "Point A London Liverpool Street",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/2jwtcX4r",
+      "subid": "london_cheap_pointa",
+      "offer_id": "london_cheap_pointa",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/519a76e7_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/bd05a523_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5050000/5040200/5040114/71029256_z.webp"
+      ],
+      "area": "Folgate Street / Spitalfields",
+      "address": "13–15 Folgate Street, London E1 6BX",
+      "coordinates": [
+        51.5210373,
+        -0.0776486
+      ],
+      "coordinate_source": "https://www.pointahotels.com/our-hotels/liverpool-street/",
+      "coordinate_evidence": "Official property GeoCoordinates and Google Maps property marker.",
+      "format": "Compact double and twin formats; windowless categories",
+      "choice": "Liverpool Street connections and Spitalfields",
+      "fit": "A compact base for Liverpool Street and east-London plans",
+      "facts": "Point A lists compact double and twin rooms, including windowless options, at its Folgate Street address. This is the Liverpool Street property, not the separate Shoreditch hotel. Check the actual category before comparing a lower displayed rate.",
+      "tradeoff": "Compact space, luggage storage and window preference can matter more than a small rate difference. Confirm breakfast and storage charges through the booked channel.",
+      "check": "Window or windowless wording; double/twin; luggage; breakfast; total and cancellation.",
+      "source": "https://www.pointahotels.com/our-hotels/liverpool-street/",
+      "photos": [
+        {
+          "key": "pointa",
+          "name": "Point A London Liverpool Street",
+          "category": "cheap",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/519a76e7_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/519a76e7_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\pointa-1.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 907889,
+          "sha256": "8804c8cac4ff4d842f4c615109c8e05a20d0f0e49eb26d1538efeb63030436a5",
+          "status": "downloaded_and_decoded",
+          "alt": "Point A Liverpool Street entrance and brick facade on Folgate Street.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-exterior-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 41208,
+              "sha256": "0f42cfc076570bb9668b8542fe53747d10ff6bdc48f8b2fbf01564953d6f1235"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-exterior-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 25594,
+              "sha256": "f84d78c7eb38d4ec50fee1b5ff2dbba2c408554f198d199260028bdecdbeb23d"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-exterior-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 143828,
+              "sha256": "880643264216ec512680cef3ee7baa4c4579f2c0dae0864981afe954193b5767"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-exterior-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 92671,
+              "sha256": "491ed283372162e4b8974d4f1d94047f3fad020632b4fee83dd61672676d5955"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "pointa",
+          "name": "Point A London Liverpool Street",
+          "category": "cheap",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/bd05a523_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/6000000/5050000/5040200/5040114/bd05a523_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\pointa-2.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 766951,
+          "sha256": "b41f6325ed2d3bc538403f9f8e1ab0a4bb43b8825df40919e1d506c7d45557e1",
+          "status": "downloaded_and_decoded",
+          "alt": "Point A Liverpool Street shared seating area with tables and upholstered benches.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-lounge-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 32710,
+              "sha256": "d331bf48b720604109d35e1c84b1f171655d302822ebf31ae57dbe7e78d3c127"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-lounge-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 21164,
+              "sha256": "04899301de1a7a8d407e035f3a45f79ca3bbcb90f6cba0f34fb1c9e5905853e5"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-lounge-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 113024,
+              "sha256": "375816065c05cef32867d6d6a174a13ea3343473f8e4193ce63ecd86532db404"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-lounge-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 73159,
+              "sha256": "0a733c3d507a078a6ae29e33a727ff0685d302f785e75898e3f0869d0c1fe3ea"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "pointa",
+          "name": "Point A London Liverpool Street",
+          "category": "cheap",
+          "index": 2,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5050000/5040200/5040114/71029256_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5050000/5040200/5040114/71029256_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\pointa-3.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "bytes": 212592,
+          "sha256": "6597df60b6a09a7b1eb05ad182a6969139a7c81c5a6dd9cfdca1123f3b5e3d4f",
+          "status": "downloaded_and_decoded",
+          "alt": "Point A Liverpool Street corridor with room doors and patterned carpet.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-corridor-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 23072,
+              "sha256": "d3c84cc8c44cc64eff816c3213821a53c56f4c536755ebb8d8426505efb6d100"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-corridor-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 15191,
+              "sha256": "8f15a714f795836fe8691d4c8c73f0987daba3323df3527f8af08ab46c3c2f48"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-corridor-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 73194,
+              "sha256": "fa6e1b20ddf60aea213631ff8307d66869039ffd068f4beab6ef57171ff36f65"
+            },
+            {
+              "file": "assets/images/hotels/london/point-a-liverpool-street-london-corridor-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 52178,
+              "sha256": "80ccde58aef6850c5f62a117fc751e80e54639102c102b6562aab99bd132716f"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7Ce8eec9b27adb4b328d002ed74-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F426970-point-a-london-liverpool-street%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/426970-point-a-london-liverpool-street/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.pointahotels.com/our-hotels/liverpool-street/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "zholborn",
+      "name": "The Z Hotel Holborn",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/96ZF10xT",
+      "subid": "london_cheap_zholborn",
+      "offer_id": "london_cheap_zholborn",
+      "image_sources": [
+        "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/w6720h4133x0y0-d6cc0c16_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/50ef8aa2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/1e48a62a_z.jpg?impolicy=resizecrop&rw=1920&ra=fit"
+      ],
+      "area": "Kingsway / Holborn",
+      "address": "75 Kingsway, London WC2B 6SR",
+      "coordinates": [
+        51.5158365,
+        -0.1195495
+      ],
+      "coordinate_source": "https://nominatim.openstreetmap.org/search?q=The+Z+Hotel%2C+75+Kingsway%2C+London%2C+WC2B+6SR&format=jsonv2&limit=1",
+      "coordinate_evidence": "Exact hotel/address OpenStreetMap result, 75 Kingsway, WC2B 6SR.",
+      "format": "Compact double/queen/king categories, including windowless rooms",
+      "choice": "A small-room base for Holborn and the West End",
+      "fit": "Central evenings when a compact bedroom is enough",
+      "facts": "The Z Hotel Holborn lists compact room categories at 75 Kingsway, including rooms without windows. The named bed and window category determine the room you book; the exterior photograph does not establish your outlook.",
+      "tradeoff": "This is a compact-room choice rather than an apartment. Check window wording, luggage space and the full booking total; do not assume that a larger bed means a large room.",
+      "check": "Exact room, bed size and window status; luggage; breakfast; payment and cancellation.",
+      "source": "https://www.thezhotels.com/hotels/holborn/",
+      "photos": [
+        {
+          "key": "zholborn",
+          "name": "The Z Hotel Holborn",
+          "category": "cheap",
+          "index": 0,
+          "url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/w6720h4133x0y0-d6cc0c16_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/w6720h4133x0y0-d6cc0c16_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\zholborn-1.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1181
+          ],
+          "bytes": 1051125,
+          "sha256": "0b05b6a097a5bba35dd35768424a075585be9ec09450f0105aa4c6e900e0f650",
+          "status": "downloaded_and_decoded",
+          "alt": "The Z Hotel Holborn building on Kingsway, seen through street trees.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-exterior-480x295.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 295,
+              "bytes": 47378,
+              "sha256": "5759728c5dcfa875faf3bfe3c18d1778c054fadb06ad512236d68b8d55df3c67"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-exterior-480x295.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 295,
+              "bytes": 31336,
+              "sha256": "1df0be1087d78a94085afb3dc5f77eec0658972be8f4ea0af739c1827bd7eb49"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-exterior-960x590.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 590,
+              "bytes": 173928,
+              "sha256": "784f0a0a59abae08ebe6dcf4b085569be41ccc931d16d75fef10bb881a05aaa1"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-exterior-960x590.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 590,
+              "bytes": 114702,
+              "sha256": "0b6067bd51ba5c2028a3065e20fded47e5fb71337c2c7b298c5c7ded2e7ef016"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "zholborn",
+          "name": "The Z Hotel Holborn",
+          "category": "cheap",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/50ef8aa2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/50ef8aa2_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\zholborn-2.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1281
+          ],
+          "bytes": 105427,
+          "sha256": "e8f887fefc1c8adb9e2d50cb326275f90532594de0e596f1dcb89d2fa7dd3fac",
+          "status": "downloaded_and_decoded",
+          "alt": "Compact Z Hotel Holborn bedroom with a double bed and dark feature wall.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-bedroom-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 12602,
+              "sha256": "4298ebe2a32c44f5f7ebc2ce0ec006993c44bb5b81a28c4a0c3367f3e0be2e59"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-bedroom-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 9130,
+              "sha256": "4969bb243e46ccd43a12cf9ec170a09d401435bb15c8354866c5ad26dadd19c6"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-bedroom-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 31450,
+              "sha256": "970911bf83c10f28568fb46b68f0d7f32bb6b24cb9e2ec226dd46e691a83ab5f"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-bedroom-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 23244,
+              "sha256": "eca5eed0bcdc5b41844af6ea4c34b5aa547dfd0354126005fb9f02340489fd62"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "zholborn",
+          "name": "The Z Hotel Holborn",
+          "category": "cheap",
+          "index": 2,
+          "url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/1e48a62a_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/104000000/103100000/103092500/103092462/1e48a62a_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\zholborn-3.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1281
+          ],
+          "bytes": 184270,
+          "sha256": "6abafaffdce351e42f62e183771d57c942936e44a331ba3bfe7741ad425e1020",
+          "status": "downloaded_and_decoded",
+          "alt": "The Z Hotel Holborn lounge and bar with high white ceilings.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-lounge-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 25990,
+              "sha256": "7a092fd4c28cedb71d0bc0d51ef10e7ffd92677660fd61d39396787d56c66533"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-lounge-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 17896,
+              "sha256": "7be6ef717368cbc0e74ecb1ab6ba610d9d4688ec1163fbb3b310231ac6d3e7f2"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-lounge-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 69018,
+              "sha256": "361ffea120a869191341bab72e64d32b576ca1f27ecfee0d489335a249728df6"
+            },
+            {
+              "file": "assets/images/hotels/london/z-hotel-holborn-london-lounge-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 48934,
+              "sha256": "168855d8779e78e8e85a8a7a5dd1bb0c367b70bbb52305c53f7ae954cb7a76c0"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C605d98a4ce814eac9b1aa23ed-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F573167-the-z-hotel-holborn%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/573167-the-z-hotel-holborn/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://www.thezhotels.com/hotels/holborn/",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "key": "ibis",
+      "name": "ibis London Blackfriars",
+      "category": "cheap",
+      "affiliate_url": "https://klook.tpk.ro/zeO1g3Av",
+      "subid": "london_cheap_ibis",
+      "offer_id": "london_cheap_ibis",
+      "image_sources": [
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/a576cb54_z.webp",
+        "https://i.travelapi.com/lodging/6000000/5400000/5399400/5399359/e830642f_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+        "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/ed8487c5_z.webp"
+      ],
+      "area": "Blackfriars Road / Southwark",
+      "address": "49 Blackfriars Road, London SE1 8NZ",
+      "coordinates": [
+        51.505136,
+        -0.104874
+      ],
+      "coordinate_source": "https://all.accor.com/hotel/7943/index.en.shtml",
+      "coordinate_evidence": "Official Hotel GeoCoordinates JSON-LD.",
+      "format": "Double, twin and named double-plus-sofa-bed category",
+      "choice": "Southwark and Waterloo-side sightseeing",
+      "fit": "A hotel-format stay south of the river",
+      "facts": "Accor lists double and twin rooms and a named family room with a double bed plus sofa bed. Its Blackfriars Road address is on the Southwark side. Match the room to your whole party; a standard double is not automatically the family category.",
+      "tradeoff": "Waterloo and Southwark connections are useful for different routes. Compare the exact station access, breakfast inclusion and complete offer rather than assuming the lowest base rate is best value.",
+      "check": "Double/twin or named family category; accepted guests; breakfast; arrival route and total.",
+      "source": "https://all.accor.com/hotel/7943/index.en.shtml",
+      "photos": [
+        {
+          "key": "ibis",
+          "name": "ibis London Blackfriars",
+          "category": "cheap",
+          "index": 0,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/a576cb54_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/a576cb54_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\ibis-1.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            2327
+          ],
+          "bytes": 200888,
+          "sha256": "03211c722c64ded2c0d9dfb3881a31c183c483e1375a78bf50576b8fc25ed221",
+          "status": "downloaded_and_decoded",
+          "alt": "ibis London Blackfriars building and hotel sign at dusk.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-exterior-480x665.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 665,
+              "bytes": 36940,
+              "sha256": "f5ab51622e06cf1dee4ebc1d7e339fb5d2e60373222f6aa3a9acad69a91ccb14"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-exterior-480x665.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 665,
+              "bytes": 26601,
+              "sha256": "ecfba36b9ef372ad54e4fbea52ff0f351d9e14c74a88c9e4f81ffc796e0dbecb"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-exterior-960x1330.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 1330,
+              "bytes": 84088,
+              "sha256": "74599424feac1014e2c321f9fd43e6a7f8a1cec1f5bbf35a1f0ff5254ee375db"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-exterior-960x1330.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 1330,
+              "bytes": 64593,
+              "sha256": "97208acdc29d3cd450c613580f8ab4431f84bb85acdbf78e8f23611d0dcbaa82"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "ibis",
+          "name": "ibis London Blackfriars",
+          "category": "cheap",
+          "index": 1,
+          "url": "https://i.travelapi.com/lodging/6000000/5400000/5399400/5399359/e830642f_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "final_url": "https://i.travelapi.com/lodging/6000000/5400000/5399400/5399359/e830642f_z.jpg?impolicy=resizecrop&rw=1920&ra=fit",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\ibis-2.jpg",
+          "format": "JPEG",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 626768,
+          "sha256": "0cb9a30d4fd178670adf9b151cf7f43e9eedf4e5d18e52a13a32b38b232f047e",
+          "status": "downloaded_and_decoded",
+          "alt": "ibis London Blackfriars twin room with two beds and a window.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-twin-room-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 22604,
+              "sha256": "adc4cf3d6b43e7ff2e1c7e3471c788d8419bff6dea15df17b1e991a9e4bd8ef1"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-twin-room-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 15450,
+              "sha256": "c44ce02d819801ca3e30170984306f4b341a9f028aae2d2fa3271af635f9d818"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-twin-room-960x640.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 640,
+              "bytes": 81584,
+              "sha256": "469bee58547b825b3d09bbfb13c6c716285aa57278651d5658b22fe151d9dc3c"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-twin-room-960x640.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 640,
+              "bytes": 54211,
+              "sha256": "fa1808f7a5476fd07fa0eaf52faff183df72c874e9334386c4a31fb6f1ce664c"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        },
+        {
+          "key": "ibis",
+          "name": "ibis London Blackfriars",
+          "category": "cheap",
+          "index": 2,
+          "url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/ed8487c5_z.webp",
+          "final_url": "https://res.klook.com/klook-hotel/image/upload/w_1680,c_fill,q_85/travelapi/6000000/5400000/5399400/5399359/ed8487c5_z.webp",
+          "file": "C:\\Users\\1995\\AppData\\Local\\Temp\\tripguidely-london-hotel-guides-v1-qa\\originals\\ibis-3.webp",
+          "format": "WEBP",
+          "dimensions": [
+            1680,
+            1121
+          ],
+          "bytes": 204386,
+          "sha256": "c1cf45286a4dfdd84ba0a64a2ec1880bcf7289355ce04023c823f23e522652af",
+          "status": "downloaded_and_decoded",
+          "alt": "ibis London Blackfriars lounge with green and black high-backed chairs.",
+          "variants": [
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-lounge-480x320.webp",
+              "format": "WEBP",
+              "width": 480,
+              "height": 320,
+              "bytes": 28342,
+              "sha256": "a22106722a67f0cc06fe12609a8d6df0c1efaf8301abad333b731518970a6baa"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-lounge-480x320.avif",
+              "format": "AVIF",
+              "width": 480,
+              "height": 320,
+              "bytes": 19032,
+              "sha256": "09048b0e56aba12a03289aacaddf02078365bf0317456e76ddd1d279efb84055"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-lounge-960x641.webp",
+              "format": "WEBP",
+              "width": 960,
+              "height": 641,
+              "bytes": 78028,
+              "sha256": "be68be661dc444c1f79d7495027f06179f76d04014580bf36ad9f787c012254d"
+            },
+            {
+              "file": "assets/images/hotels/london/ibis-london-blackfriars-lounge-960x641.avif",
+              "format": "AVIF",
+              "width": 960,
+              "height": 641,
+              "bytes": 56319,
+              "sha256": "6b8f4eae39c1b9dd03d4b1a4bb7986372fe36991a811c38913caa283383ad7ac"
+            }
+          ],
+          "processing": "Full-frame proportional LANCZOS resize. Nearest integer height; no additional crop, retouch, upscale or content alteration. WebP q84/method6; AVIF q63/speed6.",
+          "identity_status": "Exact owner-selected photo association retained; visual property/brand consistency checked. Shared-area and room images do not prove the booked room type or service access."
+        }
+      ],
+      "affiliate_evidence": {
+        "checked_on": "2026-10-20",
+        "method": "HEAD; first response only; no destination GET",
+        "status": 302,
+        "redirect_url": "https://affiliate.klook.com/redirect?aid=api%7C13694%7C8831ba8b40e7458b879856b89-699178%7Cpid%7C699178&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2Fdetail%2F257814-ibis-london-blackfriars%2F",
+        "intended_klook_destination": "https://www.klook.com/hotels/detail/257814-ibis-london-blackfriars/",
+        "partner_id_visible": "699178",
+        "subid_account_status": "Not exposed in first redirect. Supplied HTML data-subid is not proof of account-side short-link SubID or commission attribution."
+      },
+      "sources": [
+        {
+          "url": "https://all.accor.com/hotel/7943/index.en.shtml",
+          "purpose": "Official property / room facts",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
