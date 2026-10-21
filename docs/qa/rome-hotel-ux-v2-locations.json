@@ -1,0 +1,115 @@
+{
+  "base_revision": "d681c019b20aebc6ee60880201edaea2e49191d1",
+  "scope": "Nine exact existing Rome properties. Original provenance register and all photo assets remain unchanged.",
+  "point_policy": "Verified published property/feature points for location planning, not a promise of exact entrance or step-free access.",
+  "hotels": [
+    {
+      "key": "de_russie",
+      "name": "Hotel de Russie",
+      "address": "Via del Babuino 9, 00187 Rome",
+      "area": "Piazza del Popolo / Via del Babuino",
+      "checked_on": "2026-10-20",
+      "latitude": 41.9099087,
+      "longitude": 12.4775123,
+      "source": "https://nominatim.openstreetmap.org/search?q=Hotel+de+Russie&viewbox=12.3%2C42.0%2C12.7%2C41.7&bounded=1&format=jsonv2&limit=1",
+      "evidence": "OpenStreetMap hotel feature De Russie, Vicolo del Borghetto, Campo Marzio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+      "osm_type": "node",
+      "osm_id": 627053984
+    },
+    {
+      "key": "eden",
+      "name": "Hotel Eden",
+      "address": "Via Ludovisi 49, 00187 Rome",
+      "area": "Ludovisi / Villa Borghese side",
+      "checked_on": "2026-10-20",
+      "latitude": 41.906625,
+      "longitude": 12.4863071,
+      "source": "https://nominatim.openstreetmap.org/search?q=Hotel+Eden%2C+Via+Ludovisi+49%2C+00187+Rome&format=jsonv2&limit=1",
+      "evidence": "OpenStreetMap hotel feature Hotel Eden, 49, Via Ludovisi, Ludovisi, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+      "osm_type": "way",
+      "osm_id": 337697756
+    },
+    {
+      "key": "manfredi",
+      "name": "Hotel Manfredi Suite in Rome",
+      "address": "Via Margutta 61, 00187 Rome",
+      "area": "Via Margutta / Spanish Steps",
+      "checked_on": "2026-10-20",
+      "latitude": 41.9073704,
+      "longitude": 12.4809598,
+      "source": "https://www.hotelmanfredi.com/en/suite-hotel-downtown-rome",
+      "map_source": "https://goo.gl/maps/QtUgwKRLtaRfQrsu5",
+      "evidence": "Exact Hotel Manfredi Suite Rome Google property point linked by its official site; Via Margutta 61. Not Palazzo Manfredi by the Colosseum."
+    },
+    {
+      "key": "quirinale",
+      "name": "Hotel Quirinale",
+      "address": "Via Nazionale 7, 00184 Rome",
+      "area": "Via Nazionale / Repubblica",
+      "checked_on": "2026-10-20",
+      "latitude": 41.9016357,
+      "longitude": 12.4948372,
+      "source": "https://nominatim.openstreetmap.org/search?q=Hotel+Quirinale%2C+Via+Nazionale+7%2C+00184+Rome&format=jsonv2&limit=1",
+      "evidence": "OpenStreetMap hotel feature Hotel Quirinale, 7, Via Nazionale, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia",
+      "osm_type": "node",
+      "osm_id": 4269740977
+    },
+    {
+      "key": "michelangelo",
+      "name": "Starhotels Michelangelo",
+      "address": "Via della Stazione di San Pietro 14, 00165 Rome",
+      "area": "San Pietro station / Vatican side",
+      "checked_on": "2026-10-20",
+      "latitude": 41.898842,
+      "longitude": 12.454535,
+      "source": "https://www.starhotels.com/en/our-hotels/michelangelo-rome/location.html",
+      "evidence": "Official View on Google Maps link and new google.maps.LatLng(41.898842, 12.454535) on its property location page."
+    },
+    {
+      "key": "adagio_vatican",
+      "name": "Aparthotel Adagio Rome Vatican",
+      "address": "Via Damiano Chiesa 8, 00136 Rome",
+      "area": "Balduina / north-west Rome",
+      "checked_on": "2026-10-20",
+      "latitude": 41.919691,
+      "longitude": 12.436872,
+      "source": "https://all.accor.com/hotel/9346/index.en.shtml",
+      "evidence": "Official Hotel GeoCoordinates JSON-LD for Adagio Rome Vatican. Separate OSM hotel/address record confirms Via Damiano Chiesa 8 in Balduina."
+    },
+    {
+      "key": "beehive",
+      "name": "The Beehive",
+      "address": "Via Marghera 8, 00185 Rome",
+      "area": "Via Marghera / Termini",
+      "checked_on": "2026-10-20",
+      "latitude": 41.9031941,
+      "longitude": 12.5045889,
+      "source": "https://www.the-beehive.com/",
+      "evidence": "Official site businessLocationCoordinates: latitude 41.9031941, longitude 12.5045889; Via Marghera 8."
+    },
+    {
+      "key": "sonya",
+      "name": "Hotel Sonya",
+      "address": "Via del Viminale 58, 00184 Rome",
+      "area": "Teatro dell’Opera / Viminale",
+      "checked_on": "2026-10-20",
+      "latitude": 41.9000334,
+      "longitude": 12.4956482,
+      "source": "https://nominatim.openstreetmap.org/search?q=Hotel+Sonya%2C+Via+del+Viminale+58%2C+00184+Rome&format=jsonv2&limit=1",
+      "evidence": "OpenStreetMap hotel feature Hotel Sonya, 58, Via del Viminale, Castro Pretorio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00184, Italia",
+      "osm_type": "node",
+      "osm_id": 2201468656
+    },
+    {
+      "key": "generator",
+      "name": "Generator Rome",
+      "address": "Via Principe Amedeo 251, 00185 Rome",
+      "area": "Esquilino / Via Principe Amedeo",
+      "checked_on": "2026-10-20",
+      "latitude": 41.895615,
+      "longitude": 12.505675,
+      "source": "https://staygenerator.com/hostels/rome?lang=en-GB",
+      "evidence": "Official property map element data-google-map-lat=\"41.8956150\" and data-google-map-long=\"12.5056750\". Its old shortened Google link points at nearby street number 257 and is not used."
+    }
+  ]
+}
