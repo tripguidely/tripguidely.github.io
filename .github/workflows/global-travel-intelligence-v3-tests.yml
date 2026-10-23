@@ -1,0 +1,126 @@
+name: Global travel intelligence V3 offline tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/global-travel-intelligence-v3-tests.yml'
+      - 'scripts/global-travel-intelligence.py'
+      - 'scripts/travel_intelligence/**'
+      - 'config/travel-intelligence/**'
+      - 'tests/test_global_travel_intelligence.py'
+      - 'tests/fixtures/travel-intelligence/**'
+      - 'docs/global-travel-intelligence-v3-phase1.md'
+      - '.github/workflows/paris-travel-intelligence.yml'
+      - 'scripts/paris-travel-intelligence.py'
+      - 'tests/test_paris_travel_intelligence.py'
+      - 'docs/travel-intelligence/paris-events.json'
+      - 'hotels/paris/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.12'
+      - name: Prepare local ref for the Git non-mutation regression test
+        # PR merge checkouts are detached; git show-ref --heads needs a local ref.
+        # This ephemeral runner ref is never pushed and is not a storage branch.
+        run: git branch --no-track ci-v3-offline-test HEAD
+      - name: Run offline V3 and Paris V2 suites with mandatory Linux symlink coverage
+        env:
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          python -B - <<'PY'
+          import os
+          import importlib.util
+          from pathlib import Path
+          import sys
+          import tempfile
+          import unittest
+          from zoneinfo import ZoneInfo
+
+          if sys.platform != "linux" or sys.version_info[:2] != (3, 12):
+              raise SystemExit("Ubuntu and Python 3.12 are required")
+          for name in ("Europe/Paris", "Europe/London", "Europe/Rome", "America/New_York"):
+              ZoneInfo(name)
+          root = Path.cwd().resolve()
+          with tempfile.TemporaryDirectory(prefix="gti-v3-ci-") as temporary:
+              guard = Path(temporary)
+              if guard.resolve().is_relative_to(root):
+                  raise SystemExit("Test temporary directory must be outside the checkout")
+              attempts = guard / "network-attempts.log"
+              # Inherited by the Python CLI subprocess as well as this test process.
+              (guard / "sitecustomize.py").write_text(
+                  "import os, sys\n"
+                  "def deny_network(event, args):\n"
+                  "    if event in {'socket.connect', 'socket.connect_ex', 'socket.getaddrinfo', 'urllib.Request'}:\n"
+                  "        with open(os.environ['GTI_NETWORK_LOG'], 'a', encoding='utf-8') as log:\n"
+                  "            log.write(event + '\\n')\n"
+                  "        raise RuntimeError('Python network access is disabled in offline CI')\n"
+                  "sys.addaudithook(deny_network)\n", encoding="utf-8")
+              os.environ["GTI_NETWORK_LOG"] = str(attempts)
+              os.environ["PYTHONPATH"] = str(guard) + os.pathsep + os.environ.get("PYTHONPATH", "")
+              sys.path.insert(0, str(guard))
+              spec = importlib.util.spec_from_file_location("gti_ci_network_guard", guard / "sitecustomize.py")
+              module = importlib.util.module_from_spec(spec)
+              spec.loader.exec_module(module)
+
+              suite = unittest.defaultTestLoader.discover("tests", pattern="test_*travel_intelligence.py")
+              def test_ids(items):
+                  for item in items:
+                      if isinstance(item, unittest.TestSuite):
+                          yield from test_ids(item)
+                      else:
+                          yield item.id()
+              planned = list(test_ids(suite))
+              symlink = "test_global_travel_intelligence.FoundationTests.test_linked_state_pointer_is_refused"
+              if symlink not in planned:
+                  raise SystemExit("Mandatory symlink regression test was not discovered")
+              result = unittest.TextTestRunner(verbosity=2).run(suite)
+              if not result.wasSuccessful() or result.skipped or result.testsRun != len(planned):
+                  raise SystemExit("Every discovered test must run successfully without skips on Ubuntu")
+
+              from travel_intelligence.registry import Registry
+              from travel_intelligence.storage import LocalStateStore, StoreError
+              from travel_intelligence.validation import ValidationError, instant, safe_external_directory
+              def refused(operation):
+                  try:
+                      operation()
+                  except (ValidationError, StoreError):
+                      return
+                  raise AssertionError("Unsafe filesystem operation was accepted")
+              refused(lambda: safe_external_directory(root / "scripts" / ".." / "hotels", root))
+              link = guard / "linked-output"
+              link.symlink_to(root / "hotels", target_is_directory=True)
+              refused(lambda: safe_external_directory(link / "new-output", root))
+              state = guard / "state"
+              state.mkdir()
+              (state / "CURRENT.json").write_text(
+                  '{"schema_version":3,"generation":1,"token":"../../outside"}', encoding="utf-8")
+              registry = Registry.from_directory(root / "config" / "travel-intelligence")
+              refused(lambda: LocalStateStore(state, registry, root).load(instant("2026-10-22T12:00:00Z")))
+              if attempts.exists():
+                  raise SystemExit("Unexpected Python network access was attempted")
+              print(f"{result.testsRun} tests passed; symlink executed without skip; 3 extra path checks passed")
+          PY
+      - name: Check the Paris V2 public section offline
+        run: python -B scripts/paris-travel-intelligence.py --check-public
+      - name: Check diff whitespace
+        # HEAD is the PR merge tree on PR events; use its first-parent delta.
+        run: git diff --check HEAD^ HEAD
