@@ -1,0 +1,109 @@
+name: Paris travel intelligence
+
+on:
+  schedule:
+    # 06:23 Paris in winter, 07:23 in summer. Not a real-time safety service.
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'hotels/paris/**'
+      - 'scripts/paris-travel-intelligence.py'
+      - 'tests/test_paris_travel_intelligence.py'
+      - 'docs/travel-intelligence/**'
+      - '.github/workflows/paris-travel-intelligence.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'hotels/paris/**'
+      - 'scripts/paris-travel-intelligence.py'
+      - 'tests/test_paris_travel_intelligence.py'
+      - 'docs/travel-intelligence/**'
+      - '.github/workflows/paris-travel-intelligence.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Offline monitor and security tests
+        run: python -B -m unittest discover -s tests -p test_paris_travel_intelligence.py -v
+      - name: Reject stale or unmanaged public notices
+        run: python -B scripts/paris-travel-intelligence.py --check-public
+
+  monitor:
+    # No PR/fork code is ever run with a state-writing cache scope.
+    if: >-
+      github.repository == 'tripguidely/tripguidely.github.io' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: paris-travel-monitor-main
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Restore comparison state (JSON only, never code)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ${{ runner.temp }}/paris-travel-state/state.json
+          key: paris-travel-v2-main-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: paris-travel-v2-main-
+      - name: Check official feed and prepare review artifacts
+        id: monitor
+        run: >-
+          python -B scripts/paris-travel-intelligence.py
+          --state "$RUNNER_TEMP/paris-travel-state/state.json"
+          --output "$RUNNER_TEMP/paris-travel-run"
+      - name: Retain last good observation even after a source failure
+        if: always() && steps.monitor.outcome != 'skipped'
+        id: state
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/paris-travel-run/state.json" ]; then
+            mkdir -p "$RUNNER_TEMP/paris-travel-state"
+            cp "$RUNNER_TEMP/paris-travel-run/state.json" "$RUNNER_TEMP/paris-travel-state/state.json"
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Save deduplication state
+        if: always() && steps.state.outputs.available == 'true'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ${{ runner.temp }}/paris-travel-state/state.json
+          key: paris-travel-v2-main-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish review summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/paris-travel-run/report.md" ]; then
+            cat "$RUNNER_TEMP/paris-travel-run/report.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Verification required: monitoring did not complete. No safety conclusion or publication.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Keep reports and unapplied proposals for human review
+        if: always() && steps.monitor.outcome != 'skipped'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: paris-travel-review-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/paris-travel-run/
+          retention-days: 14
+          if-no-files-found: error

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "signatures": {
+    "canada": "a90d0cd07af4d2eff154422e94ac5f0113dda25d42c4cfd7be96bd2b03893250",
+    "event:ratp-2026-10-22-station-closures": "247be414f18ea3263855a1b969792d12ff80a4845aa973223d22cd8eb08463a5",
+    "event:ratp-2026-10-24-demonstration": "386ad1a6f19266bfbcb0aeacd6f6d1aaccb3dba9df0c60d0771c0a0870d15b50"
+  },
+  "last_success_at": "2026-10-23T03:34:52+02:00",
+  "snapshot": {
+    "risk": "Exercise a high degree of caution",
+    "update_summary": "Safety and security section \u2013 added information on demonstrations",
+    "update_type": "Regular text update",
+    "regional_advisory": 0,
+    "advisory_warning": 0,
+    "published_at": "2026-10-20T00:38:25+02:00"
+  }
+}

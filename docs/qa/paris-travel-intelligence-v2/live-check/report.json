@@ -1,0 +1,162 @@
+{
+  "version": 2,
+  "generated_at_paris": "2026-10-23T03:30:51+02:00",
+  "coverage": "partial",
+  "status": "verification required",
+  "public_status": "evergreen",
+  "scope": "Canadian France advice summary plus local expiry review; not Paris live transport monitoring.",
+  "sources": [
+    {
+      "id": "canada",
+      "url": "https://travel.gc.ca/destinations/france",
+      "feed_url": "https://data.international.gc.ca/travel-voyage/index-alpha-eng.json",
+      "publisher": "Government of Canada / Global Affairs Canada",
+      "licence": "Open Government Licence - Canada",
+      "attempted_at": "2026-10-23T03:30:51+02:00",
+      "checked_at": "2026-10-23T03:30:51+02:00",
+      "status": "checked",
+      "last_success_at": "2026-10-23T03:30:51+02:00",
+      "snapshot": {
+        "risk": "Exercise a high degree of caution",
+        "update_summary": "Safety and security section \u2013 added information on demonstrations",
+        "update_type": "Regular text update",
+        "regional_advisory": 0,
+        "advisory_warning": 0,
+        "published_at": "2026-10-20T00:38:25+02:00"
+      },
+      "export_generated_at": "2026-10-22T22:00:17+02:00",
+      "category_hint": "demonstration",
+      "interpretation": "Country-level change signal only; Paris dates and places require human review.",
+      "changed": true
+    },
+    {
+      "id": "ratp",
+      "url": "https://www.ratp.fr/infos-trafic",
+      "status": "verification required",
+      "checked_at": null,
+      "reason": "Manual reference only; no authorized reliable adapter is enabled."
+    },
+    {
+      "id": "prefecture",
+      "url": "https://www.prefecturedepolice.interieur.gouv.fr/",
+      "status": "verification required",
+      "checked_at": null,
+      "reason": "Manual reference only; no authorized reliable adapter is enabled."
+    },
+    {
+      "id": "diplomatie",
+      "url": "https://www.diplomatie.gouv.fr/en/services-to-foreigners/visiting-france",
+      "status": "verification required",
+      "checked_at": null,
+      "reason": "Manual reference only; no authorized reliable adapter is enabled."
+    },
+    {
+      "id": "sncf",
+      "url": "https://www.sncf-connect.com/aide/informations-situation-perturbee",
+      "status": "verification required",
+      "checked_at": null,
+      "reason": "Manual reference only; no authorized reliable adapter is enabled."
+    }
+  ],
+  "state_note": "No previous state; initial comparison requires review.",
+  "events": [
+    {
+      "id": "ratp-2026-10-22-station-closures",
+      "source": "ratp",
+      "source_url": "https://www.ratp.fr/infos-trafic",
+      "category": "transport_disruption",
+      "locations": [
+        "Republique",
+        "Chatelet",
+        "Les Halles",
+        "Chatelet-Les Halles"
+      ],
+      "starts_at": "2026-10-22T22:00:00+02:00",
+      "ends_at": null,
+      "verified_on": "2026-10-22",
+      "verified_at": null,
+      "review_due_at": "2026-10-25T00:00:00+02:00",
+      "review_status": "legacy_reference",
+      "reviewed_by": null,
+      "publication_requested": false,
+      "confirmed_fact": "The V1 RATP review recorded security-related station restrictions, with no stops or connections at the named stations. The cause was not classified as a demonstration.",
+      "summary_en": "The RATP bulletin reviewed for V1 listed station restrictions from 22:00 on 22 October 2026. Check the latest official information before travelling.",
+      "relevance_en": "Changes to central interchange access can affect hotel journeys. No hotel closure or danger is inferred.",
+      "status": "verification required",
+      "reason": "Human verification with a recorded time is required."
+    },
+    {
+      "id": "ratp-2026-10-24-demonstration",
+      "source": "ratp",
+      "source_url": "https://www.ratp.fr/infos-trafic",
+      "category": "demonstration",
+      "locations": [
+        "Charles de Gaulle-Etoile",
+        "Concorde",
+        "Tuileries"
+      ],
+      "starts_at": "2026-10-24T09:00:00+02:00",
+      "ends_at": null,
+      "verified_on": "2026-10-22",
+      "verified_at": null,
+      "review_due_at": "2026-10-25T00:00:00+02:00",
+      "review_status": "legacy_reference",
+      "reviewed_by": null,
+      "publication_requested": false,
+      "confirmed_fact": "The V1 RATP review recorded closures for a demonstration on 24 October from 09:00. Listed places are examples, not the full list; reopening required police authorization.",
+      "summary_en": "The RATP bulletin reviewed for V1 listed demonstration-related station closures on 24 October 2026. Check the bulletin for the full list and route changes.",
+      "relevance_en": "Station access may affect hotel and attraction journeys. Unknown reopening time requires manual checking, not a predicted return to normal.",
+      "status": "verification required",
+      "reason": "Human verification with a recorded time is required."
+    }
+  ],
+  "new_findings": [
+    {
+      "id": "canada",
+      "new": true,
+      "message": "Official France advisory summary observed; inspect changes and the full source before interpreting."
+    },
+    {
+      "id": "event:ratp-2026-10-22-station-closures",
+      "new": true,
+      "message": "verification required: ratp-2026-10-22-station-closures. Human verification with a recorded time is required."
+    },
+    {
+      "id": "event:ratp-2026-10-24-demonstration",
+      "new": true,
+      "message": "verification required: ratp-2026-10-24-demonstration. Human verification with a recorded time is required."
+    },
+    {
+      "id": "state",
+      "new": true,
+      "message": "No previous state; initial comparison requires review."
+    }
+  ],
+  "pending_review": [
+    {
+      "id": "canada",
+      "new": true,
+      "message": "Official France advisory summary observed; inspect changes and the full source before interpreting."
+    },
+    {
+      "id": "event:ratp-2026-10-22-station-closures",
+      "new": true,
+      "message": "verification required: ratp-2026-10-22-station-closures. Human verification with a recorded time is required."
+    },
+    {
+      "id": "event:ratp-2026-10-24-demonstration",
+      "new": true,
+      "message": "verification required: ratp-2026-10-24-demonstration. Human verification with a recorded time is required."
+    },
+    {
+      "id": "state",
+      "new": true,
+      "message": "No previous state; initial comparison requires review."
+    }
+  ],
+  "proposal_available": false,
+  "proposal_kind": null,
+  "publication_authorized": false,
+  "network_failure": false,
+  "safety_conclusion": null
+}
