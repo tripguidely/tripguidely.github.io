@@ -1,0 +1,83 @@
+{
+  "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+  "pages": [
+    {
+      "page": "hotels/london/index.html",
+      "all_anchors_exact": true,
+      "all_scripts_and_jsonld_exact": true,
+      "h1_exact": true,
+      "real_hotel_pictures_exact": true,
+      "seo_metadata_exact": true,
+      "klook": []
+    },
+    {
+      "page": "hotels/london/luxury-hotels/index.html",
+      "all_anchors_exact": true,
+      "all_scripts_and_jsonld_exact": true,
+      "h1_exact": true,
+      "real_hotel_pictures_exact": true,
+      "seo_metadata_exact": true,
+      "klook": [
+        {
+          "url": "https://klook.tpk.ro/3MIczRWd",
+          "subid": "london_luxury_savoy"
+        },
+        {
+          "url": "https://klook.tpk.ro/8hv8Ydc3",
+          "subid": "london_luxury_shard"
+        },
+        {
+          "url": "https://klook.tpk.ro/IZoWBLQU",
+          "subid": "london_luxury_langham"
+        }
+      ]
+    },
+    {
+      "page": "hotels/london/family-hotels/index.html",
+      "all_anchors_exact": true,
+      "all_scripts_and_jsonld_exact": true,
+      "h1_exact": true,
+      "real_hotel_pictures_exact": true,
+      "seo_metadata_exact": true,
+      "klook": [
+        {
+          "url": "https://klook.tpk.ro/O9FymwTV",
+          "subid": "london_family_staybridge"
+        },
+        {
+          "url": "https://klook.tpk.ro/BY4TrnYK",
+          "subid": "london_family_residence"
+        },
+        {
+          "url": "https://klook.tpk.ro/JTNTiOoK",
+          "subid": "london_family_citadines"
+        }
+      ]
+    },
+    {
+      "page": "hotels/london/cheap-hotels/index.html",
+      "all_anchors_exact": true,
+      "all_scripts_and_jsonld_exact": true,
+      "h1_exact": true,
+      "real_hotel_pictures_exact": true,
+      "seo_metadata_exact": true,
+      "klook": [
+        {
+          "url": "https://klook.tpk.ro/2jwtcX4r",
+          "subid": "london_cheap_pointa"
+        },
+        {
+          "url": "https://klook.tpk.ro/96ZF10xT",
+          "subid": "london_cheap_zholborn"
+        },
+        {
+          "url": "https://klook.tpk.ro/zeO1g3Av",
+          "subid": "london_cheap_ibis"
+        }
+      ]
+    }
+  ],
+  "real_hotel_variants_unchanged": 108,
+  "shared_tracking_map_controller_baseline_unchanged": true,
+  "all_26_image_urls_http_200_and_hash_verified": true
+}
