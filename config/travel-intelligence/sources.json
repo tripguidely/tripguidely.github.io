@@ -1,0 +1,32 @@
+{
+  "schema_version": 3,
+  "publication_enabled": false,
+  "sources": [
+    {
+      "source_id": "ca-travel-advisories",
+      "adapter": "canada-index-v1",
+      "endpoint": "https://data.international.gc.ca/travel-voyage/index-alpha-eng.json",
+      "publisher": "Government of Canada / Global Affairs Canada",
+      "licence": "Open Government Licence - Canada",
+      "licence_url": "https://open.canada.ca/en/open-government-licence-canada",
+      "documentation_url": "https://open.canada.ca/data/dataset/bef2ebb3-ca9a-485f-aaff-5dc36eb89426",
+      "countries": ["FR", "GB", "IT", "US"],
+      "country_slugs": {"FR": "france", "GB": "united-kingdom", "IT": "italy", "US": "united-states"},
+      "allowed_urls": [
+        "https://data.international.gc.ca/travel-voyage/index-alpha-eng.json",
+        "https://open.canada.ca/en/open-government-licence-canada",
+        "https://open.canada.ca/data/dataset/bef2ebb3-ca9a-485f-aaff-5dc36eb89426",
+        "https://travel.gc.ca/destinations/france",
+        "https://travel.gc.ca/destinations/united-kingdom",
+        "https://travel.gc.ca/destinations/italy",
+        "https://travel.gc.ca/destinations/united-states"
+      ],
+      "audience_nationalities": ["CA"],
+      "max_export_age_hours": 48,
+      "freshness_hours": 12,
+      "review_hours": 24,
+      "qualification": "CONFIRMED AUTOMATABLE",
+      "publication_enabled": false
+    }
+  ]
+}

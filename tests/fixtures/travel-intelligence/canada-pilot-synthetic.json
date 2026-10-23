@@ -1,0 +1,33 @@
+{
+  "metadata": {"generated": {"timestamp": 1792670400}},
+  "data": {
+    "FR": {
+      "country-iso": "FR", "date-published": {"timestamp": 1792666800},
+      "recent-updates-type": "Regular text update", "has-regional-advisory": 0,
+      "has-advisory-warning": 0, "has-content": 1,
+      "eng": {"url-slug": "france", "advisory-text": "Exercise a high degree of caution",
+              "recent-updates": "Synthetic fixture - France bulletin revision, not a real travel claim."}
+    },
+    "GB": {
+      "country-iso": "GB", "date-published": {"timestamp": 1792666800},
+      "recent-updates-type": "Regular text update", "has-regional-advisory": 0,
+      "has-advisory-warning": 0, "has-content": 1,
+      "eng": {"url-slug": "united-kingdom", "advisory-text": "Exercise a high degree of caution",
+              "recent-updates": "Synthetic fixture - UK bulletin revision, not a real travel claim."}
+    },
+    "IT": {
+      "country-iso": "IT", "date-published": {"timestamp": 1792666800},
+      "recent-updates-type": "Regular text update", "has-regional-advisory": 0,
+      "has-advisory-warning": 0, "has-content": 1,
+      "eng": {"url-slug": "italy", "advisory-text": "Exercise normal security precautions",
+              "recent-updates": "Synthetic fixture - Italy bulletin revision, not a real travel claim."}
+    },
+    "US": {
+      "country-iso": "US", "date-published": {"timestamp": 1792666800},
+      "recent-updates-type": "Regular text update", "has-regional-advisory": 0,
+      "has-advisory-warning": 0, "has-content": 1,
+      "eng": {"url-slug": "united-states", "advisory-text": "Exercise normal security precautions",
+              "recent-updates": "Synthetic fixture - US bulletin revision, not a real travel claim."}
+    }
+  }
+}

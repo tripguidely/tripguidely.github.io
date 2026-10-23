@@ -1,0 +1,17 @@
+{
+  "schema_version": 3,
+  "destinations": [
+    {"destination_id": "fr", "name_en": "France", "kind": "country", "country_code": "FR", "parent_id": null, "timezone": null, "pages": []},
+    {"destination_id": "gb", "name_en": "United Kingdom", "kind": "country", "country_code": "GB", "parent_id": null, "timezone": null, "pages": []},
+    {"destination_id": "it", "name_en": "Italy", "kind": "country", "country_code": "IT", "parent_id": null, "timezone": null, "pages": []},
+    {"destination_id": "us", "name_en": "United States", "kind": "country", "country_code": "US", "parent_id": null, "timezone": null, "pages": []},
+    {"destination_id": "fr-idf", "name_en": "Ile-de-France", "kind": "region", "country_code": "FR", "parent_id": "fr", "timezone": "Europe/Paris", "pages": []},
+    {"destination_id": "gb-england", "name_en": "England", "kind": "region", "country_code": "GB", "parent_id": "gb", "timezone": "Europe/London", "pages": []},
+    {"destination_id": "it-lazio", "name_en": "Lazio", "kind": "region", "country_code": "IT", "parent_id": "it", "timezone": "Europe/Rome", "pages": []},
+    {"destination_id": "us-ny", "name_en": "New York State", "kind": "region", "country_code": "US", "parent_id": "us", "timezone": "America/New_York", "pages": []},
+    {"destination_id": "fr-paris", "name_en": "Paris", "kind": "city", "country_code": "FR", "parent_id": "fr-idf", "timezone": "Europe/Paris", "pages": ["/hotels/paris/", "/hotels/paris/cheap-hotels/", "/hotels/paris/family-hotels/", "/hotels/paris/luxury-hotels/"]},
+    {"destination_id": "gb-london", "name_en": "London", "kind": "city", "country_code": "GB", "parent_id": "gb-england", "timezone": "Europe/London", "pages": ["/hotels/london/", "/hotels/london/cheap-hotels/", "/hotels/london/family-hotels/", "/hotels/london/luxury-hotels/"]},
+    {"destination_id": "it-rome", "name_en": "Rome", "kind": "city", "country_code": "IT", "parent_id": "it-lazio", "timezone": "Europe/Rome", "pages": ["/hotels/rome/", "/hotels/rome/cheap-hotels/", "/hotels/rome/family-hotels/", "/hotels/rome/luxury-hotels/"]},
+    {"destination_id": "us-new-york-city", "name_en": "New York City", "kind": "city", "country_code": "US", "parent_id": "us-ny", "timezone": "America/New_York", "pages": ["/hotels/new-york/", "/hotels/new-york/cheap-hotels/", "/hotels/new-york/family-hotels/", "/hotels/new-york/luxury-hotels/"]}
+  ]
+}
