@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "notes": "Imported V1 facts are historical review records, not approved live events. V1 recorded a date but no verification clock time. Recheck manually before proposing public dated copy. An unknown end is not an all-clear.",
+  "events": [
+    {
+      "id": "ratp-2026-10-22-station-closures",
+      "source": "ratp",
+      "source_url": "https://www.ratp.fr/infos-trafic",
+      "category": "transport_disruption",
+      "locations": ["Republique", "Chatelet", "Les Halles", "Chatelet-Les Halles"],
+      "starts_at": "2026-10-22T22:00:00+02:00",
+      "ends_at": null,
+      "verified_on": "2026-10-22",
+      "verified_at": null,
+      "review_due_at": "2026-10-25T00:00:00+02:00",
+      "review_status": "legacy_reference",
+      "reviewed_by": null,
+      "publication_requested": false,
+      "confirmed_fact": "The V1 RATP review recorded security-related station restrictions, with no stops or connections at the named stations. The cause was not classified as a demonstration.",
+      "summary_en": "The RATP bulletin reviewed for V1 listed station restrictions from 22:00 on 22 October 2026. Check the latest official information before travelling.",
+      "relevance_en": "Changes to central interchange access can affect hotel journeys. No hotel closure or danger is inferred."
+    },
+    {
+      "id": "ratp-2026-10-24-demonstration",
+      "source": "ratp",
+      "source_url": "https://www.ratp.fr/infos-trafic",
+      "category": "demonstration",
+      "locations": ["Charles de Gaulle-Etoile", "Concorde", "Tuileries"],
+      "starts_at": "2026-10-24T09:00:00+02:00",
+      "ends_at": null,
+      "verified_on": "2026-10-22",
+      "verified_at": null,
+      "review_due_at": "2026-10-25T00:00:00+02:00",
+      "review_status": "legacy_reference",
+      "reviewed_by": null,
+      "publication_requested": false,
+      "confirmed_fact": "The V1 RATP review recorded closures for a demonstration on 24 October from 09:00. Listed places are examples, not the full list; reopening required police authorization.",
+      "summary_en": "The RATP bulletin reviewed for V1 listed demonstration-related station closures on 24 October 2026. Check the bulletin for the full list and route changes.",
+      "relevance_en": "Station access may affect hotel and attraction journeys. Unknown reopening time requires manual checking, not a predicted return to normal."
+    }
+  ]
+}

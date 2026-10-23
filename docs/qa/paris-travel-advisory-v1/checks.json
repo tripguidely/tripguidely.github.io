@@ -1,0 +1,272 @@
+{
+  "base": "27c98abb1185da3364ecf7ac904e33117f729f99",
+  "preservation": [
+    {
+      "file": "hotels/paris/index.html",
+      "originalPageExactAfterRemovingAddition": true,
+      "entireHeadExact": true,
+      "affiliateAnchors": 10
+    },
+    {
+      "file": "hotels/paris/luxury-hotels/index.html",
+      "originalPageExactAfterRemovingAddition": true,
+      "entireHeadExact": true,
+      "affiliateAnchors": 4
+    },
+    {
+      "file": "hotels/paris/family-hotels/index.html",
+      "originalPageExactAfterRemovingAddition": true,
+      "entireHeadExact": true,
+      "affiliateAnchors": 4
+    },
+    {
+      "file": "hotels/paris/cheap-hotels/index.html",
+      "originalPageExactAfterRemovingAddition": true,
+      "entireHeadExact": true,
+      "affiliateAnchors": 3
+    }
+  ],
+  "views": [
+    {
+      "route": "",
+      "width": 320,
+      "noOverflow": true
+    },
+    {
+      "route": "",
+      "width": 390,
+      "noOverflow": true
+    },
+    {
+      "route": "",
+      "width": 768,
+      "noOverflow": true
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "noOverflow": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 320,
+      "noOverflow": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 390,
+      "noOverflow": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 768,
+      "noOverflow": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 1440,
+      "noOverflow": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 320,
+      "noOverflow": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 390,
+      "noOverflow": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 768,
+      "noOverflow": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 1440,
+      "noOverflow": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 320,
+      "noOverflow": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 390,
+      "noOverflow": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 768,
+      "noOverflow": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 1440,
+      "noOverflow": true
+    }
+  ],
+  "keyboard": [
+    {
+      "route": "",
+      "width": 390,
+      "visibleFocus": true
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "visibleFocus": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 390,
+      "visibleFocus": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "width": 1440,
+      "visibleFocus": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 390,
+      "visibleFocus": true
+    },
+    {
+      "route": "family-hotels/",
+      "width": 1440,
+      "visibleFocus": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 390,
+      "visibleFocus": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "width": 1440,
+      "visibleFocus": true
+    }
+  ],
+  "tracking": [
+    {
+      "route": "",
+      "consent": "denied",
+      "affiliateEvents": 0,
+      "originalSubid": null,
+      "event": null
+    },
+    {
+      "route": "",
+      "consent": "granted",
+      "affiliateEvents": 1,
+      "originalSubid": null,
+      "event": {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/cNYZdcZk",
+        "transport_type": "beacon"
+      }
+    },
+    {
+      "route": "luxury-hotels/",
+      "consent": "denied",
+      "affiliateEvents": 0,
+      "originalSubid": "paris_luxury_le_meurice",
+      "event": null
+    },
+    {
+      "route": "luxury-hotels/",
+      "consent": "granted",
+      "affiliateEvents": 1,
+      "originalSubid": "paris_luxury_le_meurice",
+      "event": {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/GOOv5HfU",
+        "transport_type": "beacon"
+      }
+    },
+    {
+      "route": "family-hotels/",
+      "consent": "denied",
+      "affiliateEvents": 0,
+      "originalSubid": "paris_hotel_citadines_halles",
+      "event": null
+    },
+    {
+      "route": "family-hotels/",
+      "consent": "granted",
+      "affiliateEvents": 1,
+      "originalSubid": "paris_hotel_citadines_halles",
+      "event": {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/7c3IV7YH",
+        "transport_type": "beacon",
+        "hotel_id": "247912",
+        "placement": "list",
+        "experiment_variant": "baseline",
+        "page_path": "/hotels/paris/family-hotels/"
+      }
+    },
+    {
+      "route": "cheap-hotels/",
+      "consent": "denied",
+      "affiliateEvents": 0,
+      "originalSubid": "paris_hotel_ibis_cambronne",
+      "event": null
+    },
+    {
+      "route": "cheap-hotels/",
+      "consent": "granted",
+      "affiliateEvents": 1,
+      "originalSubid": "paris_hotel_ibis_cambronne",
+      "event": {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/jor8wPCP",
+        "transport_type": "beacon",
+        "hotel_id": "2846",
+        "placement": "map",
+        "experiment_variant": "with_map",
+        "page_path": "/hotels/paris/cheap-hotels/"
+      }
+    }
+  ],
+  "noJavaScript": [
+    {
+      "route": "",
+      "pass": true
+    },
+    {
+      "route": "luxury-hotels/",
+      "pass": true
+    },
+    {
+      "route": "family-hotels/",
+      "pass": true
+    },
+    {
+      "route": "cheap-hotels/",
+      "pass": true
+    }
+  ],
+  "externalRequestsAllowed": 0,
+  "onlyOriginalFilesChanged": [
+    "hotels/paris/cheap-hotels/index.html",
+    "hotels/paris/family-hotels/index.html",
+    "hotels/paris/index.html",
+    "hotels/paris/luxury-hotels/index.html"
+  ],
+  "contrast": {
+    "text": "rgb(18, 36, 58)",
+    "link": "rgb(11, 116, 120)",
+    "background": "rgb(243, 238, 228)",
+    "textRatio": 13.561435995622643,
+    "linkRatio": 4.799937369168314
+  },
+  "passed": true
+}
