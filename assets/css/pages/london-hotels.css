@@ -27,3 +27,51 @@
 @media(max-width:900px){.lh-map-layout{grid-template-columns:1fr}.lh-guide #hotel-map-card{max-height:380px}.lh-map-choices{grid-template-columns:1fr}.lh-map-toolbar{padding:16px}.lh-hotel-actions{flex-direction:column;align-items:stretch}}
 @media(max-width:760px){.lh-guide #hotel-map-canvas{height:320px}.lh-guide #hotel-map-card{max-height:380px;padding:20px}.lh-edit>strong{font-size:2.8rem}.lh-hub .section-title{display:block}.lh-hub .hero-tool-shell{min-width:0}.lh-hub .grid{min-width:0}.lh-hub .lh-hub-grid{grid-template-columns:1fr}.lh-hub .lh-route-nav{gap:8px}.lh-hub .lh-route-nav a{font-size:.875rem;padding:10px 12px}.lh-hub .lh-guide-preview h3{font-size:1.35rem}}
 @media(forced-colors:active){.lh-guide .lh-map-pin{background:ButtonFace;color:ButtonText;border-color:ButtonText!important}.lh-guide .lh-map-pin.is-selected{outline:3px solid Highlight}}
+
+/* Premium London heroes: full source composition, no image filters or script. */
+.lh-guide .lh-hero{grid-template-columns:minmax(0,.47fr) minmax(0,.53fr);gap:40px;align-items:center;padding:20px 0 40px}
+.lh-guide .lh-hero>div{min-width:0}
+.lh-guide .lh-hero h1{font-size:clamp(3.2rem,4.8vw,4.75rem);line-height:1.03;margin:14px 0 22px}
+.lh-guide .lh-hero .lh-lead{font-size:1.0625rem;line-height:1.65;margin-bottom:24px}
+.lh-guide .lh-hero .lh-meta{margin-top:20px!important}
+.lh-guide .lh-hero-editorial{padding:0;display:block;align-self:center;overflow:hidden;border:1px solid #cbdce3;background:#fff;color:#143247;border-radius:20px}
+.lh-hero-figure{margin:0}
+.lh-guide .lh-hero-picture{display:block}
+.lh-guide .lh-hero-picture img{display:block;width:100%;height:auto;object-fit:contain}
+.lh-hero-figure figcaption{padding:10px 18px;border-bottom:1px solid #e0e9ed;font-size:.75rem;line-height:1.5;color:#465d6d}
+.lh-hero-note{padding:22px 24px 24px}
+.lh-hero-note>span{font:700 .75rem/1.6 Arial,sans-serif;letter-spacing:.1em;color:#086b68}
+.lh-guide .lh-hero-note p{color:#143247;font-size:.9375rem;line-height:1.6;margin:10px 0 12px}
+.lh-guide .lh-hero-note small{font-size:.75rem;color:#465d6d}
+/* Hub: cover at desktop with the clock tower retained at the right; cap at
+   native width. On mobile, show the full panorama above the existing controls. */
+.lh-hub .hero.hero-full{max-width:1672px;margin-inline:auto;background:#143247}
+.lh-hub .hero-bg img{object-position:70% 50%}
+.lh-hub .hero-overlay{opacity:1;background:linear-gradient(180deg,rgba(8,23,35,.68),rgba(8,23,35,.22) 50%,rgba(8,23,35,.62))}
+.lh-hub .hero-tool-title,.lh-hub .hero-tool-sub{color:#fff}
+.lh-hub .hero-tool-title{width:fit-content;max-width:100%;padding:5px 10px;background:#143247eF;border-radius:5px}
+.lh-hub .hero-tool-sub{width:fit-content;max-width:100%;padding:4px 10px;background:#143247eF;border-radius:5px}
+.lh-hub .hero-tool-shell .meta{color:#465d6d}
+.lh-hub .hero :focus-visible{outline:3px solid #12cfd0;outline-offset:4px}
+@media(max-width:900px){
+  .lh-guide .lh-hero{grid-template-columns:1fr;gap:24px}
+  .lh-guide .lh-hero h1{font-size:clamp(3rem,7vw,4rem)}
+  .lh-guide .lh-hero .lh-lead{max-width:66ch}
+}
+@media(max-width:760px){
+  .lh-guide .lh-hero{padding:12px 0 28px;gap:18px}
+  .lh-guide .lh-hero h1{font-size:clamp(2.8rem,11.8vw,3.5rem);margin:12px 0 18px}
+  .lh-guide .lh-hero .lh-lead{font-size:1rem;line-height:1.6;margin-bottom:20px}
+  .lh-guide .lh-hero .lh-actions{gap:8px}
+  .lh-guide .lh-hero .lh-button{padding:12px 14px}
+  .lh-guide .lh-hero .lh-meta{margin-top:16px!important}
+  .lh-hero-note{padding:18px}
+  .lh-hub .hero.hero-full{display:flex;flex-direction:column;min-height:0}
+  .lh-hub .hero-bg{position:relative;inset:auto}
+  .lh-hub .hero-bg picture{height:auto}
+  .lh-hub .hero-bg img{position:static;width:100%;height:auto;object-fit:contain}
+  .lh-hub .hero-overlay{display:none}
+  .lh-hub .hero-inner{padding:24px 18px 32px;align-items:initial}
+  .lh-hub .hero-tool-wrap{transform:none}
+  .lh-hub .hero-tool-title,.lh-hub .hero-tool-sub{padding:0;background:none}
+}

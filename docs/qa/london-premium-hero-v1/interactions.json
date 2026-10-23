@@ -1,0 +1,241 @@
+[
+  {
+    "kind": "luxury",
+    "selections": [
+      {
+        "name": "The Savoy",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/3MIczRWd",
+        "subid": "london_luxury_savoy",
+        "scrollTop": 0
+      },
+      {
+        "name": "Shangri-La The Shard, London",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/8hv8Ydc3",
+        "subid": "london_luxury_shard",
+        "scrollTop": 0
+      },
+      {
+        "name": "The Langham, London",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/IZoWBLQU",
+        "subid": "london_luxury_langham",
+        "scrollTop": 0
+      }
+    ],
+    "keyboard": "The Savoy",
+    "enabled": "true",
+    "locked": "false",
+    "deniedEvents": 0,
+    "grantedEvents": [
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/3MIczRWd",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/luxury-hotels/",
+        "offer_id": "london_luxury_savoy",
+        "cta_id": "london_luxury_savoy_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/8hv8Ydc3",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/luxury-hotels/",
+        "offer_id": "london_luxury_shard",
+        "cta_id": "london_luxury_shard_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/IZoWBLQU",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/luxury-hotels/",
+        "offer_id": "london_luxury_langham",
+        "cta_id": "london_luxury_langham_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/3MIczRWd",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/luxury-hotels/",
+        "offer_id": "london_luxury_savoy",
+        "cta_id": "london_luxury_savoy_map",
+        "cta_location": "map"
+      }
+    ],
+    "mapState": "ready"
+  },
+  {
+    "kind": "family",
+    "selections": [
+      {
+        "name": "Staybridge Suites London – Vauxhall",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/O9FymwTV",
+        "subid": "london_family_staybridge",
+        "scrollTop": 0
+      },
+      {
+        "name": "Residence Inn by Marriott London Kensington",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/BY4TrnYK",
+        "subid": "london_family_residence",
+        "scrollTop": 0
+      },
+      {
+        "name": "Citadines Trafalgar Square London",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/JTNTiOoK",
+        "subid": "london_family_citadines",
+        "scrollTop": 0
+      }
+    ],
+    "keyboard": "Staybridge Suites London – Vauxhall",
+    "enabled": "true",
+    "locked": "false",
+    "deniedEvents": 0,
+    "grantedEvents": [
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/O9FymwTV",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/family-hotels/",
+        "offer_id": "london_family_staybridge",
+        "cta_id": "london_family_staybridge_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/BY4TrnYK",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/family-hotels/",
+        "offer_id": "london_family_residence",
+        "cta_id": "london_family_residence_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/JTNTiOoK",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/family-hotels/",
+        "offer_id": "london_family_citadines",
+        "cta_id": "london_family_citadines_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/O9FymwTV",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/family-hotels/",
+        "offer_id": "london_family_staybridge",
+        "cta_id": "london_family_staybridge_map",
+        "cta_location": "map"
+      }
+    ],
+    "mapState": "ready"
+  },
+  {
+    "kind": "cheap",
+    "selections": [
+      {
+        "name": "Point A London Liverpool Street",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/2jwtcX4r",
+        "subid": "london_cheap_pointa",
+        "scrollTop": 0
+      },
+      {
+        "name": "The Z Hotel Holborn",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/96ZF10xT",
+        "subid": "london_cheap_zholborn",
+        "scrollTop": 0
+      },
+      {
+        "name": "ibis London Blackfriars",
+        "pressed": 1,
+        "url": "https://klook.tpk.ro/zeO1g3Av",
+        "subid": "london_cheap_ibis",
+        "scrollTop": 0
+      }
+    ],
+    "keyboard": "Point A London Liverpool Street",
+    "enabled": "true",
+    "locked": "false",
+    "deniedEvents": 0,
+    "grantedEvents": [
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/2jwtcX4r",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/cheap-hotels/",
+        "offer_id": "london_cheap_pointa",
+        "cta_id": "london_cheap_pointa_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/96ZF10xT",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/cheap-hotels/",
+        "offer_id": "london_cheap_zholborn",
+        "cta_id": "london_cheap_zholborn_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/zeO1g3Av",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/cheap-hotels/",
+        "offer_id": "london_cheap_ibis",
+        "cta_id": "london_cheap_ibis_hotel_card",
+        "cta_location": "hotel_card"
+      },
+      {
+        "affiliate_program": "klook",
+        "page_type": "guide",
+        "destination": "https://klook.tpk.ro/2jwtcX4r",
+        "transport_type": "beacon",
+        "page_path": "/hotels/london/cheap-hotels/",
+        "offer_id": "london_cheap_pointa",
+        "cta_id": "london_cheap_pointa_map",
+        "cta_location": "map"
+      }
+    ],
+    "mapState": "ready"
+  },
+  {
+    "kind": "hub",
+    "webpFallback": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.webp",
+    "heroDownloads": 1
+  },
+  {
+    "kind": "luxury",
+    "webpFallback": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.webp",
+    "heroDownloads": 1
+  },
+  {
+    "kind": "family",
+    "webpFallback": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.webp",
+    "heroDownloads": 1
+  },
+  {
+    "kind": "cheap",
+    "webpFallback": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.webp",
+    "heroDownloads": 1
+  }
+]

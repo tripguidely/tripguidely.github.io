@@ -1,0 +1,96 @@
+{
+  "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+  "status": "All preconditions passed; exact social patch and four approved baseline entries applied",
+  "verified": [
+    {
+      "source": "hotels/london/index.html",
+      "before": "eef06c27f00ef7841b9fabd7018e7fd27898d059a6983f466fae89db22c3ee0b",
+      "after": "edf09bd32b395d901429ad450d278832704c4260dff2f5e9fcf1942081f81aef",
+      "scope": "Only approved social image fields and necessary hub JSON-LD image references",
+      "social_file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.webp",
+      "social_dimensions": [
+        1440,
+        810
+      ]
+    },
+    {
+      "source": "hotels/london/luxury-hotels/index.html",
+      "before": "b640ea6bef2b5dd57585f26b3c6ac1aa78309a65fdfc73c678669b9cf1173b09",
+      "after": "33f81c2ae1c46bb5d1db2d269be4728dfedc742be4b5840bc95c8e38b078163c",
+      "scope": "Only approved social image fields and necessary hub JSON-LD image references",
+      "social_file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.webp",
+      "social_dimensions": [
+        1440,
+        810
+      ]
+    },
+    {
+      "source": "hotels/london/family-hotels/index.html",
+      "before": "f91959e3744f474f4a66ef454334d2e895be52ecae4dc12edb951b967e6a2f95",
+      "after": "aff37676607c07b1e9d53d865383eb0366ba77b94ef74b05aea0bc2df3a49a68",
+      "scope": "Only approved social image fields and necessary hub JSON-LD image references",
+      "social_file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.webp",
+      "social_dimensions": [
+        1440,
+        600
+      ]
+    },
+    {
+      "source": "hotels/london/cheap-hotels/index.html",
+      "before": "f9a3a256ca367374440c4cf827cd9ddb434942c8cdcbe7181cc3d690c3e415cd",
+      "after": "c3a48570f96d0e7c6f55866d40139f2d490c1d4e9f935b32f1c8bce23095a86c",
+      "scope": "Only approved social image fields and necessary hub JSON-LD image references",
+      "social_file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.webp",
+      "social_dimensions": [
+        1440,
+        720
+      ]
+    }
+  ],
+  "hero_variants_verified": 26,
+  "real_hotel_variants_verified": 108,
+  "historical_authorizations_preserved": 41,
+  "total_authorizations": 45,
+  "body_and_nonimage_head_unchanged": true,
+  "jsonld_changes": [
+    [
+      "@graph",
+      2,
+      "primaryImageOfPage",
+      "url"
+    ],
+    [
+      "@graph",
+      2,
+      "primaryImageOfPage",
+      "width"
+    ],
+    [
+      "@graph",
+      2,
+      "primaryImageOfPage",
+      "height"
+    ],
+    [
+      "@graph",
+      3,
+      "image",
+      0,
+      "url"
+    ],
+    [
+      "@graph",
+      3,
+      "image",
+      0,
+      "width"
+    ],
+    [
+      "@graph",
+      3,
+      "image",
+      0,
+      "height"
+    ]
+  ]
+}

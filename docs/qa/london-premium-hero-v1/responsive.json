@@ -1,0 +1,2536 @@
+[
+  {
+    "baseline": true,
+    "name": "hub",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 688,
+      "size": 327990,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp"
+    },
+    "cls": 0.065,
+    "shifts": [
+      {
+        "time": 419.20000000018626,
+        "value": 0.065,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 65,
+      "width": 390,
+      "height": 841.71875,
+      "bottom": 906.71875
+    },
+    "h1": {
+      "x": 0,
+      "y": 105,
+      "width": 390,
+      "height": 28.4375,
+      "bottom": 133.4375
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 0,
+        "y": 201.65625,
+        "width": 111.53125,
+        "height": 48,
+        "bottom": 249.65625
+      },
+      {
+        "text": "Family hotels",
+        "x": 119.53125,
+        "y": 201.65625,
+        "width": 109.171875,
+        "height": 48,
+        "bottom": 249.65625
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 236.703125,
+        "y": 201.65625,
+        "width": 108.5,
+        "height": 48,
+        "bottom": 249.65625
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 13,
+        "y": 280.65625,
+        "width": 364,
+        "height": 62.4375,
+        "bottom": 343.09375
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 13,
+        "y": 353.09375,
+        "width": 364,
+        "height": 62.4375,
+        "bottom": 415.53125
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 13,
+        "y": 425.53125,
+        "width": 364,
+        "height": 62.4375,
+        "bottom": 487.96875
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 13,
+        "y": 497.96875,
+        "width": 364,
+        "height": 62.4375,
+        "bottom": 560.40625
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+      "width": 1600,
+      "height": 900,
+      "rect": {
+        "x": 0,
+        "y": 65,
+        "width": 390,
+        "height": 840.71875,
+        "bottom": 905.71875
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+        "transfer": 258174,
+        "body": 257874
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-960x779.avif",
+        "transfer": 72046,
+        "body": 71746
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.avif",
+        "transfer": 153549,
+        "body": 153249
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 691323,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "hub",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 324,
+      "size": 552192,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp"
+    },
+    "cls": 0.11953125,
+    "shifts": [
+      {
+        "time": 321.10000000009313,
+        "value": 0.11953125,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 119.53125,
+      "width": 768,
+      "height": 720,
+      "bottom": 839.53125
+    },
+    "h1": {
+      "x": 0,
+      "y": 186.59375,
+      "width": 768,
+      "height": 28.4375,
+      "bottom": 215.03125
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 0,
+        "y": 261.140625,
+        "width": 131.734375,
+        "height": 48,
+        "bottom": 309.140625
+      },
+      {
+        "text": "Family hotels",
+        "x": 143.734375,
+        "y": 261.140625,
+        "width": 129.046875,
+        "height": 48,
+        "bottom": 309.140625
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 284.78125,
+        "y": 261.140625,
+        "width": 128.28125,
+        "height": 48,
+        "bottom": 309.140625
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 17,
+        "y": 342.140625,
+        "width": 247.265625,
+        "height": 52,
+        "bottom": 394.140625
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 274.265625,
+        "y": 342.140625,
+        "width": 190.578125,
+        "height": 52,
+        "bottom": 394.140625
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 474.84375,
+        "y": 342.140625,
+        "width": 203.9375,
+        "height": 52,
+        "bottom": 394.140625
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 17,
+        "y": 404.140625,
+        "width": 156.84375,
+        "height": 52,
+        "bottom": 456.140625
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+      "width": 1600,
+      "height": 900,
+      "rect": {
+        "x": 0,
+        "y": 119.53125,
+        "width": 768,
+        "height": 719,
+        "bottom": 838.53125
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+        "transfer": 258174,
+        "body": 257874
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-960x779.avif",
+        "transfer": 72046,
+        "body": 71746
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.avif",
+        "transfer": 153549,
+        "body": 153249
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/point-a-liverpool-street-london-exterior-960x640.avif",
+        "transfer": 92971,
+        "body": 92671
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 783994,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "hub",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 296,
+      "size": 1035360,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp"
+    },
+    "cls": 0.05347222222222222,
+    "shifts": [
+      {
+        "time": 307.8000000002794,
+        "value": 0.05347222222222222,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 77,
+      "width": 1440,
+      "height": 720,
+      "bottom": 797
+    },
+    "h1": {
+      "x": 160,
+      "y": 251.828125,
+      "width": 1120,
+      "height": 28.4375,
+      "bottom": 280.265625
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 160,
+        "y": 326.375,
+        "width": 131.734375,
+        "height": 48,
+        "bottom": 374.375
+      },
+      {
+        "text": "Family hotels",
+        "x": 303.734375,
+        "y": 326.375,
+        "width": 129.046875,
+        "height": 48,
+        "bottom": 374.375
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 444.78125,
+        "y": 326.375,
+        "width": 128.28125,
+        "height": 48,
+        "bottom": 374.375
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 177,
+        "y": 407.375,
+        "width": 247.265625,
+        "height": 52,
+        "bottom": 459.375
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 434.265625,
+        "y": 407.375,
+        "width": 190.578125,
+        "height": 52,
+        "bottom": 459.375
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 634.84375,
+        "y": 407.375,
+        "width": 203.9375,
+        "height": 52,
+        "bottom": 459.375
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 848.78125,
+        "y": 407.375,
+        "width": 156.84375,
+        "height": 52,
+        "bottom": 459.375
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+      "width": 1600,
+      "height": 900,
+      "rect": {
+        "x": 0,
+        "y": 77,
+        "width": 1440,
+        "height": 719,
+        "bottom": 796
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/global-travel-hero.webp",
+        "transfer": 258174,
+        "body": 257874
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-480x390.avif",
+        "transfer": 24902,
+        "body": 24602
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-480x653.avif",
+        "transfer": 45566,
+        "body": 45266
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/point-a-liverpool-street-london-exterior-480x320.avif",
+        "transfer": 25894,
+        "body": 25594
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 561790,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "luxury",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 232,
+      "size": 51120,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 848.234375,
+      "bottom": 1013.328125
+    },
+    "h1": {
+      "x": 16,
+      "y": 222.28125,
+      "width": 358,
+      "height": 105.75,
+      "bottom": 328.03125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 521.828125,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 569.828125
+      },
+      {
+        "text": "Explore the map",
+        "x": 172.53125,
+        "y": 521.828125,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 569.828125
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "luxury",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 244,
+      "size": 62622,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 272.09999999962747,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 549.3125,
+      "bottom": 768.1875
+    },
+    "h1": {
+      "x": 24,
+      "y": 291.265625,
+      "width": 447.421875,
+      "height": 108.46875,
+      "bottom": 399.734375
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 593.53125,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 641.53125
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 593.53125,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 641.53125
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "luxury",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 276,
+      "size": 98164,
+      "tag": "H1",
+      "id": "page-title",
+      "className": "",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 544.953125,
+      "bottom": 718.4375
+    },
+    "h1": {
+      "x": 140,
+      "y": 230.671875,
+      "width": 714.84375,
+      "height": 195.25,
+      "bottom": 425.921875
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 559,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 607
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 559,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 607
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "family",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 260,
+      "size": 61588,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 904.984375,
+      "bottom": 1070.078125
+    },
+    "h1": {
+      "x": 16,
+      "y": 222.28125,
+      "width": 358,
+      "height": 105.75,
+      "bottom": 328.03125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 552.1875,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 600.1875
+      },
+      {
+        "text": "Explore the map",
+        "x": 172.53125,
+        "y": 552.1875,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 600.1875
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "family",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 240,
+      "size": 62920,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 278.09999999962747,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 575.703125,
+      "bottom": 794.578125
+    },
+    "h1": {
+      "x": 24,
+      "y": 304.46875,
+      "width": 447.421875,
+      "height": 108.46875,
+      "bottom": 412.9375
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 606.734375,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 654.734375
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 606.734375,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 654.734375
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "family",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 276,
+      "size": 95448,
+      "tag": "H1",
+      "id": "page-title",
+      "className": "",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 544.953125,
+      "bottom": 718.4375
+    },
+    "h1": {
+      "x": 140,
+      "y": 230.671875,
+      "width": 714.84375,
+      "height": 195.25,
+      "bottom": 425.921875
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 559,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 607
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 559,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 607
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "cheap",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 292,
+      "size": 59685,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 904.984375,
+      "bottom": 1070.078125
+    },
+    "h1": {
+      "x": 16,
+      "y": 222.28125,
+      "width": 358,
+      "height": 105.75,
+      "bottom": 328.03125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 552.1875,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 600.1875
+      },
+      {
+        "text": "Explore the map",
+        "x": 172.53125,
+        "y": 552.1875,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 600.1875
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "cheap",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 244,
+      "size": 62634,
+      "tag": "P",
+      "id": "",
+      "className": "lh-lead",
+      "url": ""
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 281.1999999997206,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 575.703125,
+      "bottom": 794.578125
+    },
+    "h1": {
+      "x": 24,
+      "y": 304.46875,
+      "width": 447.421875,
+      "height": 108.46875,
+      "bottom": 412.9375
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 606.734375,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 654.734375
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 606.734375,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 654.734375
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": true,
+    "name": "cheap",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 296,
+      "size": 94478,
+      "tag": "H1",
+      "id": "page-title",
+      "className": "",
+      "url": ""
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 544.953125,
+      "bottom": 718.4375
+    },
+    "h1": {
+      "x": 140,
+      "y": 230.671875,
+      "width": 714.84375,
+      "height": 195.25,
+      "bottom": 425.921875
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 559,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 607
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 559,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 607
+      }
+    ],
+    "image": null,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 216504,
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "hub",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 272,
+      "size": 85410,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.avif"
+    },
+    "cls": 0.065,
+    "shifts": [
+      {
+        "time": 214.5,
+        "value": 0.065,
+        "sources": [
+          "hero hero-full"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 65,
+      "width": 390,
+      "height": 1045.09375,
+      "bottom": 1110.09375
+    },
+    "h1": {
+      "x": 18,
+      "y": 308.375,
+      "width": 275.984375,
+      "height": 28.4375,
+      "bottom": 336.8125
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 18,
+        "y": 405.03125,
+        "width": 111.53125,
+        "height": 48,
+        "bottom": 453.03125
+      },
+      {
+        "text": "Family hotels",
+        "x": 137.53125,
+        "y": 405.03125,
+        "width": 109.171875,
+        "height": 48,
+        "bottom": 453.03125
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 254.703125,
+        "y": 405.03125,
+        "width": 108.5,
+        "height": 48,
+        "bottom": 453.03125
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 31,
+        "y": 484.03125,
+        "width": 328,
+        "height": 62.4375,
+        "bottom": 546.46875
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 31,
+        "y": 556.46875,
+        "width": 328,
+        "height": 62.4375,
+        "bottom": 618.90625
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 31,
+        "y": 628.90625,
+        "width": 328,
+        "height": 62.4375,
+        "bottom": 691.34375
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 31,
+        "y": 701.34375,
+        "width": 328,
+        "height": 62.4375,
+        "bottom": 763.78125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.avif",
+      "width": 389,
+      "height": 219,
+      "rect": {
+        "x": 0,
+        "y": 65,
+        "width": 390,
+        "height": 219.375,
+        "bottom": 284.375
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.avif",
+        "transfer": 74038,
+        "body": 73738
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-960x779.avif",
+        "transfer": 72046,
+        "body": 71746
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.avif",
+        "transfer": 153549,
+        "body": 153249
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 510367,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Family hotels",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "hub",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 300,
+      "size": 552192,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif"
+    },
+    "cls": 0.11953125,
+    "shifts": [
+      {
+        "time": 302.79999999981374,
+        "value": 0.11953125,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 119.53125,
+      "width": 768,
+      "height": 720,
+      "bottom": 839.53125
+    },
+    "h1": {
+      "x": 0,
+      "y": 177.59375,
+      "width": 295.984375,
+      "height": 38.4375,
+      "bottom": 216.03125
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 0,
+        "y": 270.140625,
+        "width": 131.734375,
+        "height": 48,
+        "bottom": 318.140625
+      },
+      {
+        "text": "Family hotels",
+        "x": 143.734375,
+        "y": 270.140625,
+        "width": 129.046875,
+        "height": 48,
+        "bottom": 318.140625
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 284.78125,
+        "y": 270.140625,
+        "width": 128.28125,
+        "height": 48,
+        "bottom": 318.140625
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 17,
+        "y": 351.140625,
+        "width": 247.265625,
+        "height": 52,
+        "bottom": 403.140625
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 274.265625,
+        "y": 351.140625,
+        "width": 190.578125,
+        "height": 52,
+        "bottom": 403.140625
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 474.84375,
+        "y": 351.140625,
+        "width": 203.9375,
+        "height": 52,
+        "bottom": 403.140625
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 17,
+        "y": 413.140625,
+        "width": 156.84375,
+        "height": 52,
+        "bottom": 465.140625
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif",
+      "width": 768,
+      "height": 432,
+      "rect": {
+        "x": 0,
+        "y": 119.53125,
+        "width": 768,
+        "height": 719,
+        "bottom": 838.53125
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif",
+        "transfer": 172702,
+        "body": 172402
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-960x779.avif",
+        "transfer": 72046,
+        "body": 71746
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-960x1306.avif",
+        "transfer": 153549,
+        "body": 153249
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/point-a-liverpool-street-london-exterior-960x640.avif",
+        "transfer": 92971,
+        "body": 92671
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 701702,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Family hotels",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "hub",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 296,
+      "size": 1035360,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.avif"
+    },
+    "cls": 0.05347222222222222,
+    "shifts": [
+      {
+        "time": 333,
+        "value": 0.05347222222222222,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 0,
+      "y": 77,
+      "width": 1440,
+      "height": 720,
+      "bottom": 797
+    },
+    "h1": {
+      "x": 160,
+      "y": 242.828125,
+      "width": 295.984375,
+      "height": 38.4375,
+      "bottom": 281.265625
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 160,
+        "y": 335.375,
+        "width": 131.734375,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "Family hotels",
+        "x": 303.734375,
+        "y": 335.375,
+        "width": 129.046875,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 444.78125,
+        "y": 335.375,
+        "width": 128.28125,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 177,
+        "y": 416.375,
+        "width": 247.265625,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 434.265625,
+        "y": 416.375,
+        "width": 190.578125,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 634.84375,
+        "y": 416.375,
+        "width": 203.9375,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 848.78125,
+        "y": 416.375,
+        "width": 156.84375,
+        "height": 52,
+        "bottom": 468.375
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.avif",
+      "width": 1440,
+      "height": 810,
+      "rect": {
+        "x": 0,
+        "y": 77,
+        "width": 1440,
+        "height": 719,
+        "bottom": 796
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.avif",
+        "transfer": 138806,
+        "body": 138506
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-480x390.avif",
+        "transfer": 24902,
+        "body": 24602
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-480x653.avif",
+        "transfer": 45566,
+        "body": 45266
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/point-a-liverpool-street-london-exterior-480x320.avif",
+        "transfer": 25894,
+        "body": 25594
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 445602,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Family hotels",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "hub",
+    "width": 1920,
+    "dpr": 1,
+    "lcp": {
+      "time": 280,
+      "size": 1202168,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif"
+    },
+    "cls": 0.04010416666666667,
+    "shifts": [
+      {
+        "time": 309.10000000009313,
+        "value": 0.04010416666666667,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 124,
+      "y": 77,
+      "width": 1672,
+      "height": 720,
+      "bottom": 797
+    },
+    "h1": {
+      "x": 400,
+      "y": 242.828125,
+      "width": 295.984375,
+      "height": 38.4375,
+      "bottom": 281.265625
+    },
+    "ctas": [
+      {
+        "text": "Luxury hotels",
+        "x": 400,
+        "y": 335.375,
+        "width": 131.734375,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "Family hotels",
+        "x": 543.734375,
+        "y": 335.375,
+        "width": 129.046875,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "Cheap hotels",
+        "x": 684.78125,
+        "y": 335.375,
+        "width": 128.28125,
+        "height": 48,
+        "bottom": 383.375
+      },
+      {
+        "text": "📍\n                  Quick pick (best areas)",
+        "x": 417,
+        "y": 416.375,
+        "width": 247.265625,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🧭\n                  Neighborhoods",
+        "x": 674.265625,
+        "y": 416.375,
+        "width": 190.578125,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🧾\n                  Booking strategy",
+        "x": 874.84375,
+        "y": 416.375,
+        "width": 203.9375,
+        "height": 52,
+        "bottom": 468.375
+      },
+      {
+        "text": "🏨\n                  Hotels Hub",
+        "x": 1088.78125,
+        "y": 416.375,
+        "width": 156.84375,
+        "height": 52,
+        "bottom": 468.375
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif",
+      "width": 1672,
+      "height": 941,
+      "rect": {
+        "x": 124,
+        "y": 77,
+        "width": 1672,
+        "height": 719,
+        "bottom": 796
+      },
+      "objectFit": "cover"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif",
+        "transfer": 172702,
+        "body": 172402
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/the-savoy-london-riverside-480x390.avif",
+        "transfer": 24902,
+        "body": 24602
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/staybridge-suites-vauxhall-london-exterior-480x653.avif",
+        "transfer": 45566,
+        "body": 45266
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hotels/london/point-a-liverpool-street-london-exterior-480x320.avif",
+        "transfer": 25894,
+        "body": 25594
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 479498,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Family hotels",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "luxury",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 196,
+      "size": 71389,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 894.8125,
+      "bottom": 1059.90625
+    },
+    "h1": {
+      "x": 16,
+      "y": 214.28125,
+      "width": 358,
+      "height": 94.78125,
+      "bottom": 309.0625
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 475.03125,
+        "width": 132.53125,
+        "height": 48,
+        "bottom": 523.03125
+      },
+      {
+        "text": "Explore the map",
+        "x": 156.53125,
+        "y": 475.03125,
+        "width": 146.703125,
+        "height": 48,
+        "bottom": 523.03125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.avif",
+      "width": 358,
+      "height": 201,
+      "rect": {
+        "x": 17,
+        "y": 597.46875,
+        "width": 356,
+        "height": 200.25,
+        "bottom": 797.71875
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.avif",
+        "transfer": 79698,
+        "body": 79398
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 299082,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "luxury",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 176,
+      "size": 284328,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.avif"
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 201.79999999981374,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 1083.171875,
+      "bottom": 1302.046875
+    },
+    "h1": {
+      "x": 24,
+      "y": 276.0625,
+      "width": 720,
+      "height": 110.75,
+      "bottom": 386.8125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 516.953125,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 564.953125
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 516.953125,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 564.953125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.avif",
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "x": 25,
+        "y": 649.390625,
+        "width": 718,
+        "height": 403.875,
+        "bottom": 1053.265625
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.avif",
+        "transfer": 143663,
+        "body": 143363
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 363047,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "luxury",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 208,
+      "size": 196950,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 602.546875,
+      "bottom": 776.03125
+    },
+    "h1": {
+      "x": 140,
+      "y": 279.34375,
+      "width": 526.390625,
+      "height": 142.375,
+      "bottom": 421.71875
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 579.90625,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 627.90625
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 579.90625,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 627.90625
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif",
+      "width": 594,
+      "height": 334,
+      "rect": {
+        "x": 707.390625,
+        "y": 194.484375,
+        "width": 591.609375,
+        "height": 332.765625,
+        "bottom": 527.25
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif",
+        "transfer": 39747,
+        "body": 39447
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 259131,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "luxury",
+    "width": 1920,
+    "dpr": 1,
+    "lcp": {
+      "time": 176,
+      "size": 196950,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 380,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 602.546875,
+      "bottom": 776.03125
+    },
+    "h1": {
+      "x": 380,
+      "y": 272.265625,
+      "width": 526.390625,
+      "height": 156.53125,
+      "bottom": 428.796875
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 380,
+        "y": 586.984375,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 634.984375
+      },
+      {
+        "text": "Explore the map",
+        "x": 536.53125,
+        "y": 586.984375,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 634.984375
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif",
+      "width": 594,
+      "height": 334,
+      "rect": {
+        "x": 947.390625,
+        "y": 194.484375,
+        "width": 591.609375,
+        "height": 332.765625,
+        "bottom": 527.25
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif",
+        "transfer": 39747,
+        "body": 39447
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 259131,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "family",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 188,
+      "size": 52877,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 842.890625,
+      "bottom": 1007.984375
+    },
+    "h1": {
+      "x": 16,
+      "y": 214.28125,
+      "width": 358,
+      "height": 94.78125,
+      "bottom": 309.0625
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 475.03125,
+        "width": 132.53125,
+        "height": 48,
+        "bottom": 523.03125
+      },
+      {
+        "text": "Explore the map",
+        "x": 156.53125,
+        "y": 475.03125,
+        "width": 146.703125,
+        "height": 48,
+        "bottom": 523.03125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.avif",
+      "width": 358,
+      "height": 149,
+      "rect": {
+        "x": 17,
+        "y": 597.46875,
+        "width": 356,
+        "height": 148.328125,
+        "bottom": 745.796875
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.avif",
+        "transfer": 47003,
+        "body": 46703
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 266387,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "family",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 156,
+      "size": 214682,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.avif"
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 198.5,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 978.453125,
+      "bottom": 1197.328125
+    },
+    "h1": {
+      "x": 24,
+      "y": 276.0625,
+      "width": 720,
+      "height": 110.75,
+      "bottom": 386.8125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 516.953125,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 564.953125
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 516.953125,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 564.953125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.avif",
+      "width": 720,
+      "height": 300,
+      "rect": {
+        "x": 25,
+        "y": 649.390625,
+        "width": 718,
+        "height": 299.15625,
+        "bottom": 948.546875
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.avif",
+        "transfer": 92031,
+        "body": 91731
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 311415,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "family",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 192,
+      "size": 146072,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 516.578125,
+      "bottom": 690.0625
+    },
+    "h1": {
+      "x": 140,
+      "y": 236.359375,
+      "width": 526.390625,
+      "height": 142.375,
+      "bottom": 378.734375
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 536.921875,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 584.921875
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 536.921875,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 584.921875
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif",
+      "width": 594,
+      "height": 247,
+      "rect": {
+        "x": 707.390625,
+        "y": 194.484375,
+        "width": 591.609375,
+        "height": 246.796875,
+        "bottom": 441.28125
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif",
+        "transfer": 24808,
+        "body": 24508
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 244192,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "family",
+    "width": 1920,
+    "dpr": 1,
+    "lcp": {
+      "time": 200,
+      "size": 145850,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 380,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 519.34375,
+      "bottom": 692.828125
+    },
+    "h1": {
+      "x": 380,
+      "y": 230.671875,
+      "width": 526.390625,
+      "height": 156.53125,
+      "bottom": 387.203125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 380,
+        "y": 545.390625,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 593.390625
+      },
+      {
+        "text": "Explore the map",
+        "x": 536.53125,
+        "y": 545.390625,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 593.390625
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif",
+      "width": 594,
+      "height": 247,
+      "rect": {
+        "x": 947.390625,
+        "y": 195.859375,
+        "width": 591.609375,
+        "height": 246.796875,
+        "bottom": 442.65625
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif",
+        "transfer": 24808,
+        "body": 24508
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 244192,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "cheap",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "time": 272,
+      "size": 63201,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 16,
+      "y": 165.09375,
+      "width": 358,
+      "height": 872.5625,
+      "bottom": 1037.65625
+    },
+    "h1": {
+      "x": 16,
+      "y": 214.28125,
+      "width": 358,
+      "height": 94.78125,
+      "bottom": 309.0625
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 16,
+        "y": 475.03125,
+        "width": 132.53125,
+        "height": 48,
+        "bottom": 523.03125
+      },
+      {
+        "text": "Explore the map",
+        "x": 156.53125,
+        "y": 475.03125,
+        "width": 146.703125,
+        "height": 48,
+        "bottom": 523.03125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.avif",
+      "width": 358,
+      "height": 179,
+      "rect": {
+        "x": 17,
+        "y": 597.46875,
+        "width": 356,
+        "height": 178,
+        "bottom": 775.46875
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.avif",
+        "transfer": 51303,
+        "body": 51003
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 270687,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "cheap",
+    "width": 768,
+    "dpr": 2,
+    "lcp": {
+      "time": 164,
+      "size": 257762,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.avif"
+    },
+    "cls": 0.042210312500000007,
+    "shifts": [
+      {
+        "time": 190.29999999981374,
+        "value": 0.042210312500000007,
+        "sources": [
+          "main"
+        ]
+      }
+    ],
+    "overflow": false,
+    "hero": {
+      "x": 24,
+      "y": 218.875,
+      "width": 720,
+      "height": 1038.296875,
+      "bottom": 1257.171875
+    },
+    "h1": {
+      "x": 24,
+      "y": 276.0625,
+      "width": 720,
+      "height": 110.75,
+      "bottom": 386.8125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 24,
+        "y": 516.953125,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 564.953125
+      },
+      {
+        "text": "Explore the map",
+        "x": 180.53125,
+        "y": 516.953125,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 564.953125
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.avif",
+      "width": 720,
+      "height": 360,
+      "rect": {
+        "x": 25,
+        "y": 649.390625,
+        "width": 718,
+        "height": 359,
+        "bottom": 1008.390625
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.avif",
+        "transfer": 95541,
+        "body": 95241
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 314925,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "cheap",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "time": 176,
+      "size": 175060,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 140,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 565.578125,
+      "bottom": 739.0625
+    },
+    "h1": {
+      "x": 140,
+      "y": 260.859375,
+      "width": 526.390625,
+      "height": 142.375,
+      "bottom": 403.234375
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 140,
+        "y": 561.421875,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 609.421875
+      },
+      {
+        "text": "Explore the map",
+        "x": 296.53125,
+        "y": 561.421875,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 609.421875
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif",
+      "width": 594,
+      "height": 297,
+      "rect": {
+        "x": 707.390625,
+        "y": 194.484375,
+        "width": 591.609375,
+        "height": 295.796875,
+        "bottom": 490.28125
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif",
+        "transfer": 26682,
+        "body": 26382
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 246066,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  },
+  {
+    "baseline": false,
+    "name": "cheap",
+    "width": 1920,
+    "dpr": 1,
+    "lcp": {
+      "time": 172,
+      "size": 175060,
+      "tag": "IMG",
+      "id": "",
+      "className": "",
+      "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif"
+    },
+    "cls": 0,
+    "shifts": [],
+    "overflow": false,
+    "hero": {
+      "x": 380,
+      "y": 173.484375,
+      "width": 1160,
+      "height": 565.578125,
+      "bottom": 739.0625
+    },
+    "h1": {
+      "x": 380,
+      "y": 253.78125,
+      "width": 526.390625,
+      "height": 156.53125,
+      "bottom": 410.3125
+    },
+    "ctas": [
+      {
+        "text": "Find your stay",
+        "x": 380,
+        "y": 568.5,
+        "width": 144.53125,
+        "height": 48,
+        "bottom": 616.5
+      },
+      {
+        "text": "Explore the map",
+        "x": 536.53125,
+        "y": 568.5,
+        "width": 158.703125,
+        "height": 48,
+        "bottom": 616.5
+      }
+    ],
+    "image": {
+      "src": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif",
+      "width": 594,
+      "height": 297,
+      "rect": {
+        "x": 947.390625,
+        "y": 194.484375,
+        "width": 591.609375,
+        "height": 295.796875,
+        "bottom": 490.28125
+      },
+      "objectFit": "contain"
+    },
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8765/assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif",
+        "transfer": 26682,
+        "body": 26382
+      },
+      {
+        "url": "http://127.0.0.1:8765/assets/images/tg-logo.png",
+        "transfer": 90971,
+        "body": 90671
+      }
+    ],
+    "totalResourceBytes": 246066,
+    "accessibility": [],
+    "keyboardFocus": {
+      "text": "Explore the map",
+      "outline": "solid"
+    },
+    "errors": []
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "page": "hotels/london/index.html",
+    "original": "where-to-stay-in-london-westminster-skyline.png",
+    "native_width": 1672,
+    "native_height": 941,
+    "format": "PNG",
+    "source_sha256": "eeaf71b7647b69e2fc0dc913780cd647bcbb00ed724461c625e833c38d0c8049",
+    "source_unchanged": true,
+    "variants": [
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-640.avif",
+        "width": 640,
+        "height": 360,
+        "bytes": 36030,
+        "format": "avif",
+        "sha256": "a4fcf17d1676b5468ae0e8db13824eb8d088e387ad44bcc6f1f7f520941c0fb3"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 51670,
+        "format": "webp",
+        "sha256": "02e7611ae1a1426c34d6367a8f87d35df705f16f5ca564b1398871b9d72eacda"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.avif",
+        "width": 960,
+        "height": 540,
+        "bytes": 73738,
+        "format": "avif",
+        "sha256": "35ea2af5cb0686fff25e067d5aef1ed90250d920441b571771fa8c503369216b"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 103088,
+        "format": "webp",
+        "sha256": "e2459bef1e3e5810adb2c6c850a51e7f121b5594dca846d30071a2d773e7423f"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.avif",
+        "width": 1440,
+        "height": 810,
+        "bytes": 138506,
+        "format": "avif",
+        "sha256": "795b735f5b6fb287335aa1826f095345584158c1cacd010b97f8fa094a3c6470"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 199744,
+        "format": "webp",
+        "sha256": "6f0524348407014bf24f9c2540528810e82fe39380b2cc0c14f264a83d9d94f7"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.avif",
+        "width": 1672,
+        "height": 941,
+        "bytes": 172402,
+        "format": "avif",
+        "sha256": "5397e87ceb52158f5b354a0becbc240867c7662a1530f03162b7a152121ff153"
+      },
+      {
+        "file": "assets/images/hero/london/where-to-stay-in-london-westminster-skyline-1672.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 247414,
+        "format": "webp",
+        "sha256": "d47b70a675ee0d4d0d6ffffea619fbb8e095eff08aed1d0707662b9529d6ebde"
+      }
+    ]
+  },
+  {
+    "page": "hotels/london/luxury-hotels/index.html",
+    "original": "luxury-hotels-in-london-elegant-hotel-interior.png",
+    "native_width": 1672,
+    "native_height": 941,
+    "format": "PNG",
+    "source_sha256": "83334396d468d78ad82933d85c5b5e48dd9ac74139d679baba68c26d2e026d54",
+    "source_unchanged": true,
+    "variants": [
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.avif",
+        "width": 640,
+        "height": 360,
+        "bytes": 39447,
+        "format": "avif",
+        "sha256": "af8eb719e690bf4c43a7ceac23e27a7658cc96a7cb768d4d6b5a83531c8bcd2f"
+      },
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 58906,
+        "format": "webp",
+        "sha256": "f93f95768b1cdacd56a3b70bafb3b828f1afa6f8b75a9f7d83e26fa503bdb6e0"
+      },
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.avif",
+        "width": 960,
+        "height": 540,
+        "bytes": 79398,
+        "format": "avif",
+        "sha256": "84cd1cb92a2c9e7618edc71f1d4c361781c27e35ccfe3bf288e21930dd0abaed"
+      },
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 114628,
+        "format": "webp",
+        "sha256": "6db784ba14228a8241920e13592d39b9e53c03dc44f0ec0f6e01034f3ce1844b"
+      },
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.avif",
+        "width": 1440,
+        "height": 810,
+        "bytes": 143363,
+        "format": "avif",
+        "sha256": "08804119e196bd2f8db03b5e5b0b0119fd857a766eaeb42e9df1df7b618ee8b9"
+      },
+      {
+        "file": "assets/images/hero/london/luxury-hotels-in-london-elegant-hotel-interior-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 209002,
+        "format": "webp",
+        "sha256": "bb8257af905d7508dc9b8eea3215f9fec2e5fe57345385f5fb3341be58c2067e"
+      }
+    ]
+  },
+  {
+    "page": "hotels/london/family-hotels/index.html",
+    "original": "family-hotels-in-london-spacious-aparthotel.png",
+    "native_width": 1942,
+    "native_height": 809,
+    "format": "PNG",
+    "source_sha256": "72e57397b436a8546a998b62b26e1e7b70e679ec6978e987a935e194ce78e2fa",
+    "source_unchanged": true,
+    "variants": [
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.avif",
+        "width": 640,
+        "height": 267,
+        "bytes": 24508,
+        "format": "avif",
+        "sha256": "1aa29c3326ad0da5c4e26e1e1040494cc633bd549bbb00b6f7db5f0d823b3a0d"
+      },
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-640.webp",
+        "width": 640,
+        "height": 267,
+        "bytes": 35414,
+        "format": "webp",
+        "sha256": "c0645d0b3e76f7d5950bfb539421a13d79af78bc53030c1bc0ca67f579f9865e"
+      },
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.avif",
+        "width": 960,
+        "height": 400,
+        "bytes": 46703,
+        "format": "avif",
+        "sha256": "5b4e52913f2d38b8ce7759129f5759f4fe60e650f65252291e882a5dc75ff853"
+      },
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-960.webp",
+        "width": 960,
+        "height": 400,
+        "bytes": 67880,
+        "format": "webp",
+        "sha256": "b991917ba0e6a7273a5780568e14deef55b516cde4e88618e651acda1ce459e1"
+      },
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.avif",
+        "width": 1440,
+        "height": 600,
+        "bytes": 91731,
+        "format": "avif",
+        "sha256": "63d94fbe3eae1b4ae9314e232516c28f42b8a50bfd0a05414f06fbcf41415632"
+      },
+      {
+        "file": "assets/images/hero/london/family-hotels-in-london-spacious-aparthotel-1440.webp",
+        "width": 1440,
+        "height": 600,
+        "bytes": 134116,
+        "format": "webp",
+        "sha256": "558079b94061a28a227561a9e0b9dbda59b3394f61b28f9db5efc257dfb106da"
+      }
+    ]
+  },
+  {
+    "page": "hotels/london/cheap-hotels/index.html",
+    "original": "cheap-hotels-in-london-budget-accommodation.png",
+    "native_width": 1774,
+    "native_height": 887,
+    "format": "PNG",
+    "source_sha256": "d07897148d897293fe8a662fbacf15e4de4145eab9367086bf76164381f33302",
+    "source_unchanged": true,
+    "variants": [
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.avif",
+        "width": 640,
+        "height": 320,
+        "bytes": 26382,
+        "format": "avif",
+        "sha256": "dbcea76e7665f1c982c92e765a1d58b6da5bc86ab7f9da364663dda493f8ca56"
+      },
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-640.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 37794,
+        "format": "webp",
+        "sha256": "90d0de21dbf0b4336f024b29c970c63bf1627ec1ec06609a0716fa029754a956"
+      },
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.avif",
+        "width": 960,
+        "height": 480,
+        "bytes": 51003,
+        "format": "avif",
+        "sha256": "f385bdeb84a17609a9559b427a67b6ee506735b93e637f5d79839c62e5772b31"
+      },
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-960.webp",
+        "width": 960,
+        "height": 480,
+        "bytes": 71776,
+        "format": "webp",
+        "sha256": "85770d8f30ab26f36243d006085740ead70d517b249e87abd00537ec3f2989d4"
+      },
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.avif",
+        "width": 1440,
+        "height": 720,
+        "bytes": 95241,
+        "format": "avif",
+        "sha256": "1f01bd85d41b26dc3cb1050ec4b532aca4bd6780fa28040ba72a7cb40fec6258"
+      },
+      {
+        "file": "assets/images/hero/london/cheap-hotels-in-london-budget-accommodation-1440.webp",
+        "width": 1440,
+        "height": 720,
+        "bytes": 133704,
+        "format": "webp",
+        "sha256": "4e6901514e0fc420a6db6537e2826c963787e6d8ad1c1b07743faef910a558bf"
+      }
+    ]
+  }
+]

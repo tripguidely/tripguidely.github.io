@@ -410,6 +410,46 @@
       "reason": "Owner explicitly approved this exact Rome UX V2 map inclusion/controller hash. Reuse unchanged local Leaflet and existing consent-aware site.js; add only Rome marker/photo/card selection, reset, keyboard/touch behavior and failure fallbacks. Preserve original SEO/head markup, photo assets, nine Klook URL/SubID pairs, two historical hub links and other cities.",
       "reviewed_by": "owner instruction: TRIPGUIDELY — ROME UX V2 | FINALISATION ET PR DRAFT (Codex conversation, 2026-10-20)",
       "recorded_on": "2026-10-20"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/london/index.html",
+      "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+      "before": "eef06c27f00ef7841b9fabd7018e7fd27898d059a6983f466fae89db22c3ee0b",
+      "after": "edf09bd32b395d901429ad450d278832704c4260dff2f5e9fcf1942081f81aef",
+      "reason": "Explicit owner approval: London Premium Hero V1 social hero image URLs, image ALT and exact dimensions only; necessary hub JSON-LD image references updated. Preserve SEO titles, descriptions, canonical, hreflang, H1, editorial content, affiliate URLs/SubIDs, maps and consent/tracking.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON PREMIUM HERO V1 — Final Approval · Social Metadata · Baseline · Draft PR (Codex conversation, 2026-10-22)",
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/london/luxury-hotels/index.html",
+      "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+      "before": "b640ea6bef2b5dd57585f26b3c6ac1aa78309a65fdfc73c678669b9cf1173b09",
+      "after": "33f81c2ae1c46bb5d1db2d269be4728dfedc742be4b5840bc95c8e38b078163c",
+      "reason": "Explicit owner approval: London Premium Hero V1 social hero image URLs, image ALT and exact dimensions only; necessary hub JSON-LD image references updated. Preserve SEO titles, descriptions, canonical, hreflang, H1, editorial content, affiliate URLs/SubIDs, maps and consent/tracking.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON PREMIUM HERO V1 — Final Approval · Social Metadata · Baseline · Draft PR (Codex conversation, 2026-10-22)",
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/london/family-hotels/index.html",
+      "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+      "before": "f91959e3744f474f4a66ef454334d2e895be52ecae4dc12edb951b967e6a2f95",
+      "after": "aff37676607c07b1e9d53d865383eb0366ba77b94ef74b05aea0bc2df3a49a68",
+      "reason": "Explicit owner approval: London Premium Hero V1 social hero image URLs, image ALT and exact dimensions only; necessary hub JSON-LD image references updated. Preserve SEO titles, descriptions, canonical, hreflang, H1, editorial content, affiliate URLs/SubIDs, maps and consent/tracking.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON PREMIUM HERO V1 — Final Approval · Social Metadata · Baseline · Draft PR (Codex conversation, 2026-10-22)",
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "kind": "seo_metadata",
+      "source": "hotels/london/cheap-hotels/index.html",
+      "base_revision": "ba230ddfae87a14f78057070350f37b6b3268ba5",
+      "before": "f9a3a256ca367374440c4cf827cd9ddb434942c8cdcbe7181cc3d690c3e415cd",
+      "after": "c3a48570f96d0e7c6f55866d40139f2d490c1d4e9f935b32f1c8bce23095a86c",
+      "reason": "Explicit owner approval: London Premium Hero V1 social hero image URLs, image ALT and exact dimensions only; necessary hub JSON-LD image references updated. Preserve SEO titles, descriptions, canonical, hreflang, H1, editorial content, affiliate URLs/SubIDs, maps and consent/tracking.",
+      "reviewed_by": "owner instruction: TRIPGUIDELY — LONDON PREMIUM HERO V1 — Final Approval · Social Metadata · Baseline · Draft PR (Codex conversation, 2026-10-22)",
+      "recorded_on": "2026-10-22"
     }
   ],
   "contracts": {
