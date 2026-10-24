@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "updated": "2026-10-24T12:00:00Z",
+  "features": [
+    {
+      "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.001.1",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.001.1",
+        "areaDesc": "New York (Manhattan)",
+        "geocode": {
+          "UGC": [
+            "NYZ072"
+          ],
+          "SAME": [
+            "036061"
+          ]
+        },
+        "affectedZones": [
+          "https://api.weather.gov/zones/forecast/NYZ072"
+        ],
+        "references": [],
+        "sent": "2026-10-24T11:00:00Z",
+        "effective": "2026-10-24T11:00:00Z",
+        "onset": "2026-10-24T11:30:00Z",
+        "expires": "2026-10-24T13:00:00Z",
+        "ends": "2026-10-24T14:00:00Z",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "event": "Heat Advisory",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Upton NY",
+        "headline": "SYNTHETIC Heat Advisory qualification fixture; not a real event",
+        "description": "SYNTHETIC test data. Not an actual weather bulletin.",
+        "instruction": "SYNTHETIC reference only.",
+        "response": "Prepare",
+        "note": null,
+        "parameters": {},
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": {
+          "NationalWeatherService": [
+            "HTY"
+          ]
+        }
+      }
+    }
+  ]
+}

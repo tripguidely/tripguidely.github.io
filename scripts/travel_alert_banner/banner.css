@@ -12,3 +12,7 @@
 .tg-advisory__status { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 40rem) { .tg-advisory-slot { block-size: 13.5rem; } .tg-advisory { padding: .9rem; } }
 @media (forced-colors: active) { .tg-advisory { border-color: CanvasText; } }
+
+/* Local preview only: this selector is absent from production pages. */
+.nws-preview-note { padding:.65rem 1rem; background:#12243a; color:white; text-align:center; font:600 .8rem/1.5 system-ui,sans-serif; }
+#destination-nws-advisory { max-inline-size:70rem; margin-inline:auto; }

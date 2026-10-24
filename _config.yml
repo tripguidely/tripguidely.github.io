@@ -8,3 +8,14 @@ exclude:
   - tests/test_travel_alert_banner.mjs
   - tests/test_travel_alert_banner_browser.mjs
   - docs/travel-alert-banner-v4.md
+  - scripts/nws-travel-alerts.py
+  - scripts/nws-preview.py
+  - scripts/travel_intelligence/nws.py
+  - scripts/travel_intelligence/nws_storage.py
+  - config/travel-intelligence/nws-nyc.json
+  - tests/fixtures/nws
+  - tests/test_nws_alerts.py
+  - tests/test_nws_alerts.mjs
+  - tests/test_nws_alerts_browser.mjs
+  - docs/tripguidely-nws-automatic-alerts-phase5.md
+  - docs/workflows
