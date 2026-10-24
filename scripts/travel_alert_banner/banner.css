@@ -1,0 +1,14 @@
+/* Opt-in slot: no legacy selectors or global overrides. */
+.tg-advisory-slot { block-size: 9.5rem; position: relative; margin-block: 1.5rem; }
+.tg-advisory { box-sizing: border-box; max-block-size: 100%; overflow: auto; padding: 1rem 1.25rem;
+  border: 1px solid #d9cba9; border-inline-start: 3px solid #a57932; border-radius: .65rem;
+  background: #fcf8ed; color: #12243a; font: 400 .9375rem/1.5 system-ui, sans-serif; }
+.tg-advisory[hidden] { display: none; }
+.tg-advisory h2 { margin: 0 0 .3rem; font: 650 .9375rem/1.5 system-ui, sans-serif; }
+.tg-advisory p { margin: 0 0 .4rem; }
+.tg-advisory .tg-advisory__meta { margin: 0; font-size: .8rem; color: #475569; }
+.tg-advisory a { color: #085c60; text-decoration: underline; text-underline-offset: .15em; }
+.tg-advisory a:focus-visible { outline: 3px solid #0b7478; outline-offset: 3px; }
+.tg-advisory__status { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 40rem) { .tg-advisory-slot { block-size: 13.5rem; } .tg-advisory { padding: .9rem; } }
+@media (forced-colors: active) { .tg-advisory { border-color: CanvasText; } }
