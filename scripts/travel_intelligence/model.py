@@ -154,7 +154,11 @@ def validate_event(event, registry, now):
         except ValueError:
             raise ValueError("publication_date") from None
         require(event["published_at"] is None, "date_precision_conflict")
-    official_url(event["source_url"], source["allowed_urls"])
+    if source["adapter"] == "usgs-summary-v1":
+        from .usgs import validate_usgs_event
+        validate_usgs_event(event, source, now)
+    else:
+        official_url(event["source_url"], source["allowed_urls"])
     require(event["source_status"] in {"observed", "officially_confirmed", "needs_validation",
                                       "withdrawn", "unverifiable"}, "source_status")
     if event["withdrawal_evidence_url"] is not None:
@@ -232,13 +236,19 @@ def compare(previous_events, incoming, registry, now):
         kind = "initial_observation" if not previous_events else "new_information"
         if old:
             require(instant(event["observed_at"]) >= instant(old["observed_at"]), "clock_rollback")
+            if registry.sources[event["source_id"]]["adapter"] == "usgs-summary-v1":
+                require(instant(event["source_updated_at"]) >= instant(old["source_updated_at"]),
+                        "usgs_revision_rollback")
+                require(event["source_updated_at"] != old["source_updated_at"] or
+                        event["content_hash"] == old["content_hash"], "usgs_revision_conflict")
             event["first_observed_at"] = old["first_observed_at"]
             if old["content_hash"] == event["content_hash"]:
                 kind = "no_change"
                 event["review_due_at"] = old["review_due_at"]
                 event["human_review_status"] = old["human_review_status"]
             else:
-                kind = ("severity_changed" if old["source_severity_raw"] != event["source_severity_raw"]
+                kind = ("source_revised" if registry.sources[event["source_id"]]["adapter"] == "usgs-summary-v1"
+                        else "severity_changed" if old["source_severity_raw"] != event["source_severity_raw"]
                         else "new_information")
                 event["human_review_status"] = "needs_reverification"
         event["lifecycle_status"] = lifecycle(event, now)
