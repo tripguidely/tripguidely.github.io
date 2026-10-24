@@ -1,0 +1,10 @@
+# V4 qualification tools and synthetic data must never enter the Pages artifact.
+# These paths are new; existing public pages and assets remain unchanged.
+exclude:
+  - scripts/travel-alert-banner.py
+  - scripts/travel_alert_banner
+  - tests/fixtures/travel-alert-banner
+  - tests/test_travel_alert_banner.py
+  - tests/test_travel_alert_banner.mjs
+  - tests/test_travel_alert_banner_browser.mjs
+  - docs/travel-alert-banner-v4.md

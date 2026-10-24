@@ -27,6 +27,9 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
       - name: Prepare local ref for the Git non-mutation regression test
         # PR merge checkouts are detached; git show-ref --heads needs a local ref.
         # This ephemeral runner ref is never pushed and is not a storage branch.
@@ -73,6 +76,7 @@ jobs:
               suite = unittest.TestSuite([
                   unittest.defaultTestLoader.discover("tests", pattern="test_*travel_intelligence.py"),
                   unittest.defaultTestLoader.discover("tests", pattern="test_v3_automation_foundation.py"),
+                  unittest.defaultTestLoader.discover("tests", pattern="test_travel_alert_banner.py"),
               ])
               def test_ids(items):
                   for item in items:
@@ -85,11 +89,12 @@ jobs:
                           "test_usgs_travel_intelligence": 24,
                           "test_gdacs_travel_intelligence": 26,
                           "test_paris_travel_intelligence": 30,
-                          "test_v3_automation_foundation": 19}
+                          "test_v3_automation_foundation": 19,
+                          "test_travel_alert_banner": 9}
               counts = {name: sum(ident.startswith(name + ".") for ident in planned)
                         for name in expected}
-              if counts != expected or len(planned) != 148:
-                  raise SystemExit(f"Expected all 148 foundation/USGS/GDACS/Paris/automation tests: {counts}")
+              if counts != expected or len(planned) != 157:
+                  raise SystemExit(f"Expected all 157 foundation/USGS/GDACS/Paris/automation/V4 tests: {counts}")
               symlink = "test_global_travel_intelligence.FoundationTests.test_linked_state_pointer_is_refused"
               if symlink not in planned:
                   raise SystemExit("Mandatory symlink regression test was not discovered")
@@ -120,6 +125,21 @@ jobs:
                   raise SystemExit("Unexpected Python network access was attempted")
               print(f"{result.testsRun} tests passed; symlink executed without skip; 3 extra path checks passed")
           PY
+      - name: Run V4 client tests with mocked fetch only
+        run: node --test tests/test_travel_alert_banner.mjs
+      - name: Install Jekyll test builder outside the checkout
+        # Dependency installation only; the build/test below has no live providers.
+        run: |
+          gem install --install-dir "$RUNNER_TEMP/v4-gems" jekyll --version 3.10.0 --no-document
+      - name: Verify synthetic resources are absent from the Pages artifact
+        env:
+          GEM_HOME: ${{ runner.temp }}/v4-gems
+          GEM_PATH: ${{ runner.temp }}/v4-gems
+          BANNER_PUBLISHED_DIR: ${{ runner.temp }}/v4-pages-test
+          JEKYLL_ENV: production
+        run: |
+          "$GEM_HOME/bin/jekyll" build --safe --source . --destination "$BANNER_PUBLISHED_DIR"
+          python -B -m unittest discover -s tests -p test_travel_alert_banner.py -v
       - name: Check the Paris V2 public section offline
         run: python -B scripts/paris-travel-intelligence.py --check-public
       - name: Check diff whitespace
