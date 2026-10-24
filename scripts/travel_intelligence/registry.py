@@ -77,8 +77,11 @@ class Registry:
             require(source["qualification"] == "CONFIRMED AUTOMATABLE", "source_not_qualified")
             for field in ("publisher", "licence", "adapter"):
                 plain(source[field], 160)
-            worldwide = source["adapter"] == "usgs-summary-v1"
-            if worldwide:
+            worldwide = source["adapter"] in {"usgs-summary-v1", "gdacs-events-v1"}
+            if source["adapter"] == "gdacs-events-v1":
+                from .gdacs import validate_source
+                validate_source(source)
+            elif worldwide:
                 from .usgs import validate_source
                 validate_source(source)
             require(type(source["countries"]) is list and (source["countries"] or worldwide) and
@@ -107,7 +110,7 @@ class Registry:
 
     @classmethod
     def from_directory(cls, directory, source_file="sources.json"):
-        require(source_file in {"sources.json", "usgs-sources.json"}, "unsupported_source_profile")
+        require(source_file in {"sources.json", "usgs-sources.json", "gdacs-sources.json", "gdacs-usgs-sources.json"}, "unsupported_source_profile")
         return cls(load_json(directory / "destinations.json"), load_json(directory / source_file))
 
     def contexts(self, event):
@@ -122,6 +125,10 @@ class Registry:
                 relation = "country_context"
             elif event["city"] == d["destination_id"] and event["geographic_scope"] == "city":
                 relation = "explicit_city_scope"
+            if event["source_id"] == "gdacs-multi-hazard":
+                codes = (event["source_data"].get("country-contexts") or "").split(",")
+                if d["country_code"] in codes:
+                    relation = "country_context_to_verify"
             if relation:
                 result.append({"destination_id": d["destination_id"], "relationship": relation,
                                "local_incident_confirmed": False, "pages": d["pages"]})

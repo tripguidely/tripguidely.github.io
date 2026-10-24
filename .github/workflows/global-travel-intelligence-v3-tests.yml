@@ -10,6 +10,7 @@ on:
       - 'config/travel-intelligence/**'
       - 'tests/test_global_travel_intelligence.py'
       - 'tests/test_usgs_travel_intelligence.py'
+      - 'tests/test_gdacs_travel_intelligence.py'
       - 'tests/fixtures/travel-intelligence/**'
       - 'docs/global-travel-intelligence-v3-phase1.md'
       - '.github/workflows/paris-travel-intelligence.yml'
@@ -90,8 +91,14 @@ jobs:
                       else:
                           yield item.id()
               planned = list(test_ids(suite))
-              if not any(ident.startswith("test_usgs_travel_intelligence.") for ident in planned):
-                  raise SystemExit("Mandatory USGS suite was not discovered")
+              expected = {"test_global_travel_intelligence": 49,
+                          "test_usgs_travel_intelligence": 24,
+                          "test_gdacs_travel_intelligence": 26,
+                          "test_paris_travel_intelligence": 30}
+              counts = {name: sum(ident.startswith(name + ".") for ident in planned)
+                        for name in expected}
+              if counts != expected or len(planned) != 129:
+                  raise SystemExit(f"Expected all 129 foundation/USGS/GDACS/Paris tests: {counts}")
               symlink = "test_global_travel_intelligence.FoundationTests.test_linked_state_pointer_is_refused"
               if symlink not in planned:
                   raise SystemExit("Mandatory symlink regression test was not discovered")

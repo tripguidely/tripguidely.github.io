@@ -21,7 +21,7 @@ RISK = {"Exercise normal security precautions", "Exercise a high degree of cauti
 @dataclass(frozen=True)
 class Batch:
     source_id: str
-    generated_at: str
+    generated_at: str | None
     events: list[dict]
     coverage: str = "country_advisories_only"
 
@@ -147,7 +147,10 @@ class CanadaAdapter:
 def adapters_for(registry):
     result = {}
     for ident, source in registry.sources.items():
-        if source["adapter"] == "usgs-summary-v1":
+        if source["adapter"] == "gdacs-events-v1":
+            from .gdacs import GDACSAdapter
+            result[ident] = GDACSAdapter(registry, source)
+        elif source["adapter"] == "usgs-summary-v1":
             from .usgs import USGSAdapter
             result[ident] = USGSAdapter(registry, source)
         else:

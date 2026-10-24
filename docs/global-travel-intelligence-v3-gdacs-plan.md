@@ -1,4 +1,8 @@
-# GDACS: qualification plan only, no adapter or activation
+# GDACS: qualification record and remaining production decisions
+
+Phase 3 now provides an explicitly selected local adapter and offline tests; see
+[the phase 3 operations document](global-travel-intelligence-v3-gdacs-phase3.md).
+This earlier qualification record remains background, not authorization for production.
 
 Reviewed official sources on 2026-10-23. This document does not add a provider,
 credential, collector, schedule, public renderer or withdrawal mechanism.
