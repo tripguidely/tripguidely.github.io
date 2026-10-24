@@ -1,0 +1,28 @@
+{
+  "schema_version": 3,
+  "publication_enabled": false,
+  "sources": [
+    {
+      "source_id": "usgs-earthquakes",
+      "adapter": "usgs-summary-v1",
+      "endpoint": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+      "publisher": "U.S. Geological Survey",
+      "licence": "USGS-produced data: U.S. public domain; credit USGS; third-party rights may apply",
+      "licence_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "documentation_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+      "countries": [],
+      "country_slugs": {},
+      "allowed_urls": [
+        "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+        "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+        "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      ],
+      "audience_nationalities": [],
+      "max_export_age_hours": 1,
+      "freshness_hours": 1,
+      "review_hours": 1,
+      "qualification": "CONFIRMED AUTOMATABLE",
+      "publication_enabled": false
+    }
+  ]
+}

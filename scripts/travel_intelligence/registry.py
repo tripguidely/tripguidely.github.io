@@ -77,7 +77,11 @@ class Registry:
             require(source["qualification"] == "CONFIRMED AUTOMATABLE", "source_not_qualified")
             for field in ("publisher", "licence", "adapter"):
                 plain(source[field], 160)
-            require(type(source["countries"]) is list and source["countries"] and
+            worldwide = source["adapter"] == "usgs-summary-v1"
+            if worldwide:
+                from .usgs import validate_source
+                validate_source(source)
+            require(type(source["countries"]) is list and (source["countries"] or worldwide) and
                     len(source["countries"]) == len(set(source["countries"])) <= 64, "source_countries")
             require(type(source["country_slugs"]) is dict and
                     set(source["country_slugs"]) == set(source["countries"]), "source_slugs")
@@ -93,7 +97,7 @@ class Registry:
                 require(code in self.countries, "unknown_source_country")
                 slug(source["country_slugs"][code])
             require(type(source["audience_nationalities"]) is list and
-                    1 <= len(source["audience_nationalities"]) <= 64, "source_audience")
+                    (0 if worldwide else 1) <= len(source["audience_nationalities"]) <= 64, "source_audience")
             for code in source["audience_nationalities"]:
                 country(code)
             for field in ("max_export_age_hours", "freshness_hours", "review_hours"):
@@ -102,8 +106,9 @@ class Registry:
         self.config_hash = digest([destinations, sources])
 
     @classmethod
-    def from_directory(cls, directory):
-        return cls(load_json(directory / "destinations.json"), load_json(directory / "sources.json"))
+    def from_directory(cls, directory, source_file="sources.json"):
+        require(source_file in {"sources.json", "usgs-sources.json"}, "unsupported_source_profile")
+        return cls(load_json(directory / "destinations.json"), load_json(directory / source_file))
 
     def contexts(self, event):
         """Report associations, never assertions that the city is affected."""

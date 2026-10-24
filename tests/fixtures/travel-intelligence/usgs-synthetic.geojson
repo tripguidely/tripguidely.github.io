@@ -1,0 +1,93 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1792756800000,
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+    "title": "SYNTHETIC USGS-format fixture; not real events",
+    "status": 200,
+    "api": "2.8.2",
+    "count": 2
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "ussynthetic001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89,
+          15
+        ]
+      },
+      "properties": {
+        "mag": 6.8,
+        "place": "Synthetic test epicenter; no real earthquake",
+        "time": 1792753200000,
+        "updated": 1792756740000,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ussynthetic001",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ussynthetic001.geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 500,
+        "net": "us",
+        "code": "synthetic001",
+        "ids": ",ussynthetic001,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 1.5,
+        "rms": 0.6,
+        "gap": 90,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "SYNTHETIC TEST DATA"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ussynthetic002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7,
+          35.7,
+          30
+        ]
+      },
+      "properties": {
+        "mag": 3.2,
+        "place": "Synthetic test epicenter; no real earthquake",
+        "time": 1792749600000,
+        "updated": 1792756740000,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ussynthetic002",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ussynthetic002.geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "automatic",
+        "tsunami": 0,
+        "sig": 500,
+        "net": "us",
+        "code": "synthetic002",
+        "ids": ",ussynthetic002,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 1.5,
+        "rms": 0.6,
+        "gap": 90,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "SYNTHETIC TEST DATA"
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Provider interface and the only enabled network provider: Canada's index."""
+"""Provider contract. Canada is default; USGS requires its explicit local profile."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -147,6 +147,10 @@ class CanadaAdapter:
 def adapters_for(registry):
     result = {}
     for ident, source in registry.sources.items():
-        require(source["adapter"] == ADAPTER_VERSION, "adapter_not_enabled")
-        result[ident] = CanadaAdapter(registry, source)
+        if source["adapter"] == "usgs-summary-v1":
+            from .usgs import USGSAdapter
+            result[ident] = USGSAdapter(registry, source)
+        else:
+            require(source["adapter"] == ADAPTER_VERSION, "adapter_not_enabled")
+            result[ident] = CanadaAdapter(registry, source)
     return result

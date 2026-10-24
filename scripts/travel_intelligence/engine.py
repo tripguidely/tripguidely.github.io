@@ -14,7 +14,8 @@ SAFE_SOURCE_CODES = {"malformed_json", "duplicate_json_key", "nonfinite_json_num
                      "country_code_mismatch", "country_slug_mismatch", "country_content_missing",
                      "canada_schema_mismatch", "unknown_advisory_level", "redirect_refused",
                      "unexpected_http_response", "unexpected_content_type", "unexpected_encoding",
-                     "response_time_limit", "response_size_limit", "conflicting_duplicate"}
+                     "response_time_limit", "response_size_limit", "conflicting_duplicate",
+                     "usgs_revision_rollback", "usgs_revision_conflict", "usgs_export_rollback"}
 
 
 def source_error(exc):
@@ -50,10 +51,15 @@ class Monitor:
                 adapter = self.adapters[ident]
                 raw = reader(ident) if reader is not None else adapter.fetch()
                 batch = adapter.parse(raw, now)
-                require(batch.source_id == ident and batch.coverage == "country_advisories_only",
+                require(batch.source_id == ident and batch.coverage ==
+                        ("worldwide_earthquakes_rolling_7_days" if source["adapter"] == "usgs-summary-v1"
+                         else "country_advisories_only"),
                         "batch_identity_or_coverage")
                 require(type(batch.events) is list and len(batch.events) <= 1000, "batch_limit")
                 require(instant(batch.generated_at) <= now + timedelta(minutes=10), "future_batch")
+                if source["adapter"] == "usgs-summary-v1" and old_source.get("source_generated_at"):
+                    require(instant(batch.generated_at) >= instant(old_source["source_generated_at"]),
+                            "usgs_export_rollback")
                 for event in batch.events:
                     require(event["source_id"] == ident and
                             event["provenance"]["config_hash"] == self.registry.config_hash,
@@ -99,7 +105,10 @@ class Monitor:
         report = {"schema_version": 3, "mode": "local_shadow", "generated_at": stamp(now),
                   "run_id": digest([self.registry.config_hash, stamp(now), snapshot.token]),
                   "config_hash": self.registry.config_hash, "coverage": "partial",
-                  "coverage_statement": "Canadian national advisory changes only; local conditions not verified.",
+                  "coverage_statement": ("USGS rolling earthquake observations only; worldwide coverage is incomplete; "
+                      "traveler impact unknown." if any(s["adapter"] == "usgs-summary-v1"
+                      for s in self.registry.sources.values()) else
+                      "Canadian national advisory changes only; local conditions not verified."),
                   "status": "verification_required" if any(s["status"] == "unavailable" for s in source_states.values())
                             else "monitoring_partial",
                   "initial_observation": snapshot.token is None, "safety_conclusion": None,

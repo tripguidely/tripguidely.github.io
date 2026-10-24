@@ -21,9 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--input", type=Path, help="Replay one bounded Canada JSON file; no network")
-    mode.add_argument("--live", action="store_true", help="One anonymous GET of the already-qualified Canada index")
+    mode.add_argument("--input", type=Path, help="Replay one bounded provider JSON file; no network")
+    mode.add_argument("--live", action="store_true", help="One anonymous GET of the explicitly selected fixed source endpoint")
     mode.add_argument("--recover-state", action="store_true", help="Explicit local recovery only; no collection")
+    parser.add_argument("--provider", choices=("canada", "usgs"), default="canada",
+                        help="Explicit local source profile; defaults to Canada")
     parser.add_argument("--state-dir", required=True, type=Path, help="Dedicated local directory outside all Git checkouts")
     parser.add_argument("--output", required=True, type=Path, help="Dedicated reports directory outside all Git checkouts")
     parser.add_argument("--config", type=Path, default=ROOT / "config" / "travel-intelligence")
@@ -41,7 +43,8 @@ def main(argv=None):
         require(not candidate_output.is_relative_to(state_dir) and not state_dir.is_relative_to(candidate_output),
                 "state_and_reports_must_be_separate")
         output = candidate_output
-        registry = Registry.from_directory(args.config)
+        registry = Registry.from_directory(args.config,
+            "usgs-sources.json" if args.provider == "usgs" else "sources.json")
         store = LocalStateStore(state_dir, registry, ROOT)
         adapters = adapters_for(registry)
         if args.recover_state:
@@ -59,7 +62,7 @@ def main(argv=None):
         report = Monitor(registry, store, adapters).run(now, replay if args.input else None)
         write_report(output, report, ROOT)
         print("V3 local shadow: partial coverage; " + str(len(report["events"])) +
-              " national observations; publication disabled; state committed=" +
+              " source observations; publication disabled; state committed=" +
               str(report["persistence"]["committed"]).lower() + ".")
         return 2 if report["status"] == "verification_required" else 0
     except (StoreError, ValidationError, ValueError, KeyError, TypeError, OSError, RecursionError) as exc:
