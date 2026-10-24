@@ -3,21 +3,8 @@ name: Global travel intelligence V3 offline tests
 on:
   pull_request:
     branches: [main]
-    paths:
-      - '.github/workflows/global-travel-intelligence-v3-tests.yml'
-      - 'scripts/global-travel-intelligence.py'
-      - 'scripts/travel_intelligence/**'
-      - 'config/travel-intelligence/**'
-      - 'tests/test_global_travel_intelligence.py'
-      - 'tests/test_usgs_travel_intelligence.py'
-      - 'tests/test_gdacs_travel_intelligence.py'
-      - 'tests/fixtures/travel-intelligence/**'
-      - 'docs/global-travel-intelligence-v3-phase1.md'
-      - '.github/workflows/paris-travel-intelligence.yml'
-      - 'scripts/paris-travel-intelligence.py'
-      - 'tests/test_paris_travel_intelligence.py'
-      - 'docs/travel-intelligence/paris-events.json'
-      - 'hotels/paris/**'
+    # Always create the check, including documentation-only PRs, so it can
+    # safely become a required main check after separate owner approval.
   workflow_dispatch:
 
 permissions:
@@ -83,7 +70,10 @@ jobs:
               module = importlib.util.module_from_spec(spec)
               spec.loader.exec_module(module)
 
-              suite = unittest.defaultTestLoader.discover("tests", pattern="test_*travel_intelligence.py")
+              suite = unittest.TestSuite([
+                  unittest.defaultTestLoader.discover("tests", pattern="test_*travel_intelligence.py"),
+                  unittest.defaultTestLoader.discover("tests", pattern="test_v3_automation_foundation.py"),
+              ])
               def test_ids(items):
                   for item in items:
                       if isinstance(item, unittest.TestSuite):
@@ -94,11 +84,12 @@ jobs:
               expected = {"test_global_travel_intelligence": 49,
                           "test_usgs_travel_intelligence": 24,
                           "test_gdacs_travel_intelligence": 26,
-                          "test_paris_travel_intelligence": 30}
+                          "test_paris_travel_intelligence": 30,
+                          "test_v3_automation_foundation": 19}
               counts = {name: sum(ident.startswith(name + ".") for ident in planned)
                         for name in expected}
-              if counts != expected or len(planned) != 129:
-                  raise SystemExit(f"Expected all 129 foundation/USGS/GDACS/Paris tests: {counts}")
+              if counts != expected or len(planned) != 148:
+                  raise SystemExit(f"Expected all 148 foundation/USGS/GDACS/Paris/automation tests: {counts}")
               symlink = "test_global_travel_intelligence.FoundationTests.test_linked_state_pointer_is_refused"
               if symlink not in planned:
                   raise SystemExit("Mandatory symlink regression test was not discovered")
