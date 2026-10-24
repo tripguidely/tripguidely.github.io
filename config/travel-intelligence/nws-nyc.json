@@ -1,0 +1,37 @@
+{
+  "policy": "nws-nyc-heat-v1",
+  "source": "https://api.weather.gov/alerts/active?area=NY",
+  "destination": "us-new-york-city",
+  "zones": {
+    "NYZ072": "Manhattan",
+    "NYZ073": "Bronx",
+    "NYZ074": "Staten Island",
+    "NYZ075": "Brooklyn",
+    "NYZ176": "Northern Queens",
+    "NYZ178": "Southern Queens"
+  },
+  "pages": [
+    "/car-rental/new-york/",
+    "/hotels/new-york/",
+    "/hotels/new-york/cheap-hotels/",
+    "/hotels/new-york/family-hotels/",
+    "/hotels/new-york/luxury-hotels/",
+    "/itinerary/new-york/",
+    "/itinerary/new-york/2-days/",
+    "/itinerary/new-york/3-days/",
+    "/itinerary/new-york/4-days/",
+    "/itinerary/new-york/first-time/",
+    "/itinerary/new-york/rainy-day/",
+    "/things-to-do/new-york/"
+  ],
+  "zone_verification": {
+    "url": "https://api.weather.gov/zones/forecast?area=NY",
+    "verified_at": "2026-10-24",
+    "sha256": "97a584947eb93a74d024cb512aff199df3e08b9e9f8a7d501ad937e7199215fe"
+  },
+  "events": [
+    "Heat Advisory"
+  ],
+  "freshness_seconds": 1200,
+  "max_bulletin_age_hours": 72
+}

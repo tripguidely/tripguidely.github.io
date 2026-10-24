@@ -13,7 +13,7 @@ permissions:
 jobs:
   offline-tests:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 10
     defaults:
       run:
         shell: bash
@@ -77,6 +77,7 @@ jobs:
                   unittest.defaultTestLoader.discover("tests", pattern="test_*travel_intelligence.py"),
                   unittest.defaultTestLoader.discover("tests", pattern="test_v3_automation_foundation.py"),
                   unittest.defaultTestLoader.discover("tests", pattern="test_travel_alert_banner.py"),
+                  unittest.defaultTestLoader.discover("tests", pattern="test_nws_alerts.py"),
               ])
               def test_ids(items):
                   for item in items:
@@ -90,11 +91,12 @@ jobs:
                           "test_gdacs_travel_intelligence": 26,
                           "test_paris_travel_intelligence": 30,
                           "test_v3_automation_foundation": 19,
-                          "test_travel_alert_banner": 9}
+                          "test_travel_alert_banner": 9,
+                          "test_nws_alerts": 32}
               counts = {name: sum(ident.startswith(name + ".") for ident in planned)
                         for name in expected}
-              if counts != expected or len(planned) != 157:
-                  raise SystemExit(f"Expected all 157 foundation/USGS/GDACS/Paris/automation/V4 tests: {counts}")
+              if counts != expected or len(planned) != 189:
+                  raise SystemExit(f"Expected all 189 foundation/USGS/GDACS/Paris/automation/V4/NWS tests: {counts}")
               symlink = "test_global_travel_intelligence.FoundationTests.test_linked_state_pointer_is_refused"
               if symlink not in planned:
                   raise SystemExit("Mandatory symlink regression test was not discovered")
@@ -126,7 +128,38 @@ jobs:
               print(f"{result.testsRun} tests passed; symlink executed without skip; 3 extra path checks passed")
           PY
       - name: Run V4 client tests with mocked fetch only
-        run: node --test tests/test_travel_alert_banner.mjs
+        run: |
+          node --test tests/test_travel_alert_banner.mjs
+          node --test tests/test_nws_alerts.mjs
+      - name: Install pinned browser test tools outside the checkout
+        # Tool installation only; browser requests below are restricted to loopback.
+        run: npm install --prefix "$RUNNER_TEMP/nws-browser-tools" --no-package-lock --no-audit --no-fund playwright-core@1.64.0 axe-core@4.10.3
+      - name: Run V4 and NWS browser and accessibility checks on synthetic previews
+        env:
+          BANNER_BROWSER_TOOLS: ${{ runner.temp }}/nws-browser-tools/node_modules
+          BANNER_AXE_TOOLS: ${{ runner.temp }}/nws-browser-tools/node_modules
+          BANNER_QA: ${{ runner.temp }}/nws-browser-qa
+        run: |
+          export BANNER_BROWSER="$(command -v google-chrome)"
+          test -n "$BANNER_BROWSER"
+          python -B scripts/travel-alert-banner.py --port 8766 > "$RUNNER_TEMP/v4-preview.log" 2>&1 &
+          v4_pid=$!
+          python -B scripts/nws-preview.py --port 8767 > "$RUNNER_TEMP/nws-preview.log" 2>&1 &
+          nws_pid=$!
+          trap 'kill "$v4_pid" "$nws_pid" 2>/dev/null || true' EXIT
+          for port in 8766 8767; do
+            ready=false
+            for attempt in {1..20}; do
+              if curl --fail --silent "http://127.0.0.1:$port/" > /dev/null; then ready=true; break; fi
+              sleep 0.25
+            done
+            if [ "$ready" != true ]; then
+              cat "$RUNNER_TEMP/v4-preview.log" "$RUNNER_TEMP/nws-preview.log"
+              exit 1
+            fi
+          done
+          node tests/test_travel_alert_banner_browser.mjs
+          node tests/test_nws_alerts_browser.mjs
       - name: Install Jekyll test builder outside the checkout
         # Dependency installation only; the build/test below has no live providers.
         run: |
@@ -140,6 +173,7 @@ jobs:
         run: |
           "$GEM_HOME/bin/jekyll" build --safe --source . --destination "$BANNER_PUBLISHED_DIR"
           python -B -m unittest discover -s tests -p test_travel_alert_banner.py -v
+          python -B -m unittest discover -s tests -p test_nws_alerts.py -v
       - name: Check the Paris V2 public section offline
         run: python -B scripts/paris-travel-intelligence.py --check-public
       - name: Check diff whitespace

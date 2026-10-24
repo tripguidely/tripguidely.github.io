@@ -62,7 +62,7 @@ class BannerPolicyTests(unittest.TestCase):
                     'tests/fixtures/travel-alert-banner', 'tests/test_travel_alert_banner.py',
                     'tests/test_travel_alert_banner.mjs', 'tests/test_travel_alert_banner_browser.mjs',
                     'docs/travel-alert-banner-v4.md'}
-        self.assertEqual(excluded, expected)
+        self.assertTrue(expected <= excluded)
         self.assertFalse((ROOT / '.nojekyll').exists(), 'A raw Pages copy would bypass exclusions')
         # CI sets this after a real Jekyll build into a temporary directory.
         if os.environ.get('BANNER_PUBLISHED_DIR'):

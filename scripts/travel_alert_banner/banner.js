@@ -1,5 +1,6 @@
 /* TripGuidely V4 local qualification. No production publication policy is enabled. */
 const MAX_BYTES = 65536;
+const RESPONSE_TIME = new WeakMap();
 const SOURCES = new Set(['https://www.gdacs.org/', 'https://www.who.int/']);
 const DESTINATIONS = {'fr-paris':'FR','gb-london':'GB','it-rome':'IT','us-new-york-city':'US'};
 const CATEGORIES = ['cyclone','health'];
@@ -11,7 +12,56 @@ const instant = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:
   Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value;
 export const isLoopback = hostname => ['127.0.0.1','localhost','[::1]'].includes(hostname);
 
+
+const NYC_ZONES = {'NYZ072':'Manhattan','NYZ073':'Bronx','NYZ074':'Staten Island',
+  'NYZ075':'Brooklyn','NYZ176':'Northern Queens','NYZ178':'Southern Queens'};
+const NWS_ID = /^urn:oid:2\.49\.0\.1\.840\.0\.[a-f0-9]{40}\.\d{3}\.\d{1,3}$/;
+const NWS_DATE = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$/.test(value) &&
+  Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value.slice(0,23)+'Z';
+const GEO_UNTIL = Date.parse('2026-11-23T00:00:00Z');
+
+export function validateNWSFeed(feed, now, context, {demo = false, hostname = ''} = {}) {
+  if (context.destination !== 'us-new-york-city' || context.country !== 'US' || !Number.isFinite(now) || now >= GEO_UNTIL ||
+      !fields(feed,['schema','policy','sourceId','synthetic','status','generatedAt','expiresAt','advisories']) ||
+      feed.schema !== 2 || feed.policy !== 'nws-nyc-heat-v1' || feed.sourceId !== 'nws-nyc' ||
+      typeof feed.synthetic !== 'boolean' || (feed.synthetic && (!demo || !isLoopback(hostname))) ||
+      feed.status !== 'checked' || !NWS_DATE(feed.generatedAt) || !NWS_DATE(feed.expiresAt) ||
+      Date.parse(feed.generatedAt) > now || Date.parse(feed.expiresAt) <= now ||
+      Date.parse(feed.expiresAt) <= Date.parse(feed.generatedAt) ||
+      Date.parse(feed.expiresAt)-Date.parse(feed.generatedAt) > 1200000 ||
+      !Array.isArray(feed.advisories) || feed.advisories.length > 20) throw Error('nws_feed_invalid');
+  const ids = new Set(); const advisories = [];
+  for (const item of feed.advisories) {
+    if (!fields(item,['id','event','zones','sentAt','effectiveAt','onsetAt','verifiedAt','sourceExpiresAt','expiresAt','sourceUrl']) ||
+        typeof item.id !== 'string' || !NWS_ID.test(item.id) || ids.has(item.id) || item.event !== 'Heat Advisory' ||
+        item.sourceUrl !== 'https://api.weather.gov/alerts/'+item.id ||
+        !Array.isArray(item.zones) || item.zones.length < 1 || item.zones.length > 6 ||
+        new Set(item.zones).size !== item.zones.length || item.zones.some(zone=>typeof zone !== 'string' || !Object.hasOwn(NYC_ZONES,zone)) ||
+        !['sentAt','effectiveAt','verifiedAt','sourceExpiresAt','expiresAt'].every(key=>NWS_DATE(item[key])) ||
+        (item.onsetAt !== null && !NWS_DATE(item.onsetAt)) ||
+        item.verifiedAt !== feed.generatedAt || Date.parse(item.sentAt) > Date.parse(item.effectiveAt) ||
+        Date.parse(item.effectiveAt) > Date.parse(item.verifiedAt) ||
+        Date.parse(item.verifiedAt)-Date.parse(item.sentAt) > 259200000 ||
+        Date.parse(item.sourceExpiresAt) <= Date.parse(item.verifiedAt) ||
+        Date.parse(item.sourceExpiresAt)-Date.parse(item.verifiedAt) > 259200000 ||
+        Date.parse(item.expiresAt) <= Date.parse(item.verifiedAt) ||
+        Date.parse(item.expiresAt) > Math.min(Date.parse(item.sourceExpiresAt),Date.parse(feed.expiresAt),GEO_UNTIL) ||
+        (item.onsetAt !== null && (Date.parse(item.onsetAt) < Date.parse(item.sentAt) ||
+          Date.parse(item.onsetAt) > Date.parse(item.sourceExpiresAt)))) throw Error('nws_advisory_invalid');
+    ids.add(item.id);
+    advisories.push({id:item.id,category:'nws-heat',priority:1,destination:context.destination,country:'US',
+      area:'New York City: '+[...item.zones].sort().map(zone=>NYC_ZONES[zone]).join(', '),
+      title:'Heat Advisory',description:feed.synthetic ? 'Synthetic NWS test notice for the listed demonstration areas. No real advisory is reported.' :
+        'Official NWS advisory for the listed areas. Read the original bulletin for its scope and instructions.',
+      verifiedAt:item.verifiedAt,expiresAt:item.expiresAt,sourceUrl:feed.synthetic ? 'https://www.weather.gov/documentation/services-web-alerts' : item.sourceUrl,sourceName:'National Weather Service',
+      sentAt:item.sentAt});
+  }
+  advisories.sort((a,b)=>Date.parse(b.sentAt)-Date.parse(a.sentAt) || (a.id < b.id ? -1 : 1));
+  return {...feed,advisories};
+}
+
 export function validateFeed(feed, now, context, {demo = false, hostname = ''} = {}) {
+  if (feed?.schema === 2) return validateNWSFeed(feed, now, context, {demo, hostname});
   if (!Number.isFinite(now) || DESTINATIONS[context.destination] !== context.country ||
       !fields(feed, ['schema','synthetic','generatedAt','expiresAt','advisories']) || feed.schema !== 1 ||
       feed.synthetic !== true || !demo || !isLoopback(hostname)) throw Error('policy_disabled');
@@ -44,7 +94,7 @@ export function selectAdvisory(feed, context, now) {
   return feed.advisories.filter(item => item.destination === context.destination && item.country === context.country &&
     Date.parse(item.expiresAt) > now).sort((a,b) => a.priority - b.priority ||
       CATEGORIES.indexOf(a.category) - CATEGORIES.indexOf(b.category) ||
-      Date.parse(b.verifiedAt) - Date.parse(a.verifiedAt) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))[0] || null;
+      Date.parse(b.sentAt || b.verifiedAt) - Date.parse(a.sentAt || a.verifiedAt) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))[0] || null;
 }
 
 export async function readFeed(url, {signal, fetcher = fetch} = {}) {
@@ -65,7 +115,15 @@ export async function readFeed(url, {signal, fetcher = fetch} = {}) {
   } finally { await reader.cancel(); }
   const bytes = new Uint8Array(size); let offset = 0;
   for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-  return JSON.parse(new TextDecoder('utf-8', {fatal:true}).decode(bytes));
+  const parsed = JSON.parse(new TextDecoder('utf-8', {fatal:true}).decode(bytes));
+  const serverDate = response.headers.get('date');
+  const age = response.headers.get('age') || '0';
+  const serverTime = serverDate && Date.parse(serverDate);
+  if (parsed && typeof parsed === 'object' && Number.isFinite(serverTime) &&
+      new Date(serverTime).toUTCString() === serverDate && /^\d{1,8}$/.test(age)) {
+    RESPONSE_TIME.set(parsed,{floor:serverTime + Number(age)*1000,received:performance.now()});
+  }
+  return parsed;
 }
 
 export function createClock(wall = Date.now, monotonic = () => performance.now()) {
@@ -85,17 +143,19 @@ export async function mountBanner(host, {feedUrl, destination, country, demo = f
   const status = document.createElement('span'); status.className = 'tg-advisory__status';
   status.setAttribute('role','status'); status.setAttribute('aria-live','polite');
   card.append(heading, body, meta); host.append(card, status);
-  const now = createClock(); let feed = null, timer = null, controller = new AbortController(), disposed = false;
+  const clock = createClock(); let responseTime = null;
+  const now = () => Math.max(clock(), responseTime ? responseTime.floor + Math.max(0,performance.now()-responseTime.received) : 0);
+  let feed = null, timer = null, controller = new AbortController(), disposed = false;
   const clear = () => { card.hidden = true; card.replaceChildren(); };
   const check = () => {
     clearTimeout(timer);
     if (disposed) return;
     if (document.hidden) { clear(); return; }
     try {
-      validateFeed(feed, now(), context, {demo, hostname:location.hostname});
-      const item = selectAdvisory(feed, context, now());
+      const validated = validateFeed(feed, now(), context, {demo, hostname:location.hostname});
+      const item = selectAdvisory(validated, context, now());
       if (!item) { clear(); status.textContent = 'Travel advisory removed or unavailable.'; return; }
-      heading.textContent = 'Travel advisory · ' + item.title + ' · SYNTHETIC';
+      heading.textContent = 'Travel advisory · ' + item.title + (feed.synthetic ? ' · SYNTHETIC' : '');
       body.textContent = item.description;
       const area = document.createElement('span'); area.textContent = item.area + ' · Verified ';
       const time = document.createElement('time'); time.dateTime = item.verifiedAt;
@@ -104,7 +164,7 @@ export async function mountBanner(host, {feedUrl, destination, country, demo = f
       source.textContent = item.sourceName + ' — official reference';
       meta.replaceChildren(area,time,document.createTextNode(' · '),source);
       card.replaceChildren(heading,body,meta); card.hidden = false;
-      status.textContent = 'Synthetic travel advisory available.';
+      status.textContent = feed.synthetic ? 'Synthetic travel advisory available.' : 'Official NWS travel advisory available.';
       timer = setTimeout(check, Math.max(1, Math.min(Date.parse(feed.expiresAt), Date.parse(item.expiresAt)) - now()));
     } catch { clear(); status.textContent = 'Travel advisory unavailable.'; }
   };
@@ -113,7 +173,10 @@ export async function mountBanner(host, {feedUrl, destination, country, demo = f
   const timeout = setTimeout(() => controller.abort(), 5000);
   try {
     if (url.origin !== location.origin || url.username || url.password || url.hash) throw Error('feed_origin');
-    feed = await readFeed(url.href, {signal:controller.signal}); if (!disposed) check();
+    feed = await readFeed(url.href, {signal:controller.signal});
+    responseTime = RESPONSE_TIME.get(feed) || null;
+    if (feed?.schema === 2 && !responseTime) throw Error('nws_response_time_unverified');
+    if (!disposed) check();
   } catch { if (!disposed) clear(); }
   finally { clearTimeout(timeout); }
   return () => { disposed = true; controller.abort(); clearTimeout(timer); clear();
