@@ -19,7 +19,7 @@ def markdown(report):
     lines = ["# Global Travel Intelligence V3 — local human review", "",
              "Run: " + report["generated_at"], "Run ID: " + report["run_id"], "",
              "**Partial monitoring. No safety conclusion. Publication disabled.**", "",
-             "National advice is audience-specific. An earthquake observation does not establish traveler impact.", "",
+             "National advice is audience-specific. A disaster observation or modeled hazard does not establish traveler impact.", "",
              "- Status: " + safe_text(report["status"]),
              "- No change detected in comparable data: " + str(report["no_change"]).lower(),
              "- Initial observation: " + str(report["initial_observation"]).lower(),
@@ -55,9 +55,27 @@ def markdown(report):
                       "- USGS tsunami flag: " + str(data["tsunami-flag"]) +
                       "; not an active tsunami warning or evacuation order.",
                       "- Credit: U.S. Geological Survey. Measurement review is not impact verification.", ""]
+        if event["source_id"] == "gdacs-multi-hazard":
+            data = event["source_data"]
+            lines += ["- GDACS potential hazard assessment, not a delegated official public warning.",
+                      "- Hazard / episode: " + safe_text(data["event-type"]) + " / " + str(data["episode-id"]),
+                      "- Source level / episode level: " + safe_text(data["alert-level"]) + " / " + safe_text(data["episode-alert-level"]),
+                      "- Source date basis: " + safe_text(data["time-basis"]),
+                      "- Source start / reported end / modified: " + safe_text(data["from-text"]) + " / " +
+                      safe_text(data["to-text"]) + " / " + safe_text(data["modified-text"]),
+                      "- The reported end or current=false is not a verified end of danger.",
+                      "- Country context only: " + safe_text(data["country-contexts"] or "unresolved"),
+                      "- Geometry: " + safe_text(data["geometry-summary"]),
+                      "- Tsunami assessment not collected; no active tsunami warning or evacuation order inferred.",
+                      "- Credit: Global Disaster Awareness and Coordination System, GDACS.", ""]
         for context in report["destination_contexts"][event["event_id"]]:
             lines.append("- Review context only: " + safe_text(context["destination_id"]) +
                          " (" + context["relationship"] + "); no confirmed local incident.")
+        lines.append("")
+    if "observation_groups" in report:
+        lines += ["## Source relationships and review", "", safe_text(report["grouping_statement"]), ""]
+        for item in report["observation_groups"] + report["cross_source_relationships"] + report["possible_duplicate_review"]:
+            lines.append("- " + safe_text(item))
         lines.append("")
     lines += ["## Changes and coverage gaps", ""]
     for item in report["changes"] + report["diagnostics"]:

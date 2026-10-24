@@ -1,0 +1,366 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "TC",
+        "eventid": 9000001,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "<b>SYNTHETIC</b>",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Red/TC.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Red/TC.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=TC&eventid=9000001&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000001&episodeid=1&eventtype=TC",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=TC&eventid=9000001"
+        },
+        "alertlevel": "Red",
+        "alertscore": 3,
+        "episodealertlevel": "Red",
+        "episodealertscore": 2.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-22T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "SYNTHETIC",
+        "sourceid": "",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 220,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": "km/h"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "FL",
+        "eventid": 9000002,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "<b>SYNTHETIC</b>",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/FL.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/FL.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=FL&eventid=9000002&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000002&episodeid=1&eventtype=FL",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=FL&eventid=9000002"
+        },
+        "alertlevel": "Orange",
+        "alertscore": 2,
+        "episodealertlevel": "Orange",
+        "episodealertscore": 1.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-22T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "SYNTHETIC",
+        "sourceid": "",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 0,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "VO",
+        "eventid": 9000003,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "<b>SYNTHETIC</b>",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/VO.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/VO.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=VO&eventid=9000003&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000003&episodeid=1&eventtype=VO",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=VO&eventid=9000003"
+        },
+        "alertlevel": "Orange",
+        "alertscore": 2,
+        "episodealertlevel": "Orange",
+        "episodealertscore": 1.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-22T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "SYNTHETIC",
+        "sourceid": "",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 0,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "DR",
+        "eventid": 9000004,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "<b>SYNTHETIC</b>",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/DR.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Orange/DR.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=DR&eventid=9000004&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000004&episodeid=1&eventtype=DR",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=DR&eventid=9000004"
+        },
+        "alertlevel": "Orange",
+        "alertscore": 2,
+        "episodealertlevel": "Orange",
+        "episodealertscore": 1.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-22T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "SYNTHETIC",
+        "sourceid": "",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 120000,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": "km2"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "WF",
+        "eventid": 9000005,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "<b>SYNTHETIC</b>",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Red/WF.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Red/WF.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=WF&eventid=9000005&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000005&episodeid=1&eventtype=WF",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=WF&eventid=9000005"
+        },
+        "alertlevel": "Red",
+        "alertscore": 3,
+        "episodealertlevel": "Red",
+        "episodealertscore": 2.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-22T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "SYNTHETIC",
+        "sourceid": "",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 15000,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": "ha"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        12.49,
+        41.89,
+        12.49,
+        41.89
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.49,
+          41.89
+        ]
+      },
+      "properties": {
+        "eventtype": "EQ",
+        "eventid": 9000006,
+        "episodeid": 1,
+        "eventname": "SYNTHETIC TEST ONLY",
+        "glide": "",
+        "name": "Synthetic hazard; not real disaster intelligence",
+        "description": "Synthetic provider-format record; no real event or impact",
+        "htmldescription": "Synthetic modeled tsunami possibility; not an authoritative warning",
+        "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Red/EQ.png",
+        "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Red/EQ.png",
+        "url": {
+          "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=9000006&episodeid=1",
+          "report": "https://www.gdacs.org/report.aspx?eventid=9000006&episodeid=1&eventtype=EQ",
+          "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=9000006"
+        },
+        "alertlevel": "Red",
+        "alertscore": 3,
+        "episodealertlevel": "Red",
+        "episodealertscore": 2.5,
+        "istemporary": "false",
+        "iscurrent": "true",
+        "country": "Synthetic Italy context",
+        "fromdate": "2026-10-23T11:00:00",
+        "todate": "2026-10-23T11:00:00",
+        "datemodified": "2026-10-23T11:50:00",
+        "iso3": "ITA",
+        "source": "NEIC",
+        "sourceid": "ussynthetic001",
+        "polygonlabel": "Centroid",
+        "Class": "Point_Centroid",
+        "affectedcountries": [
+          {
+            "iso2": "IT",
+            "iso3": "ITA",
+            "countryname": "Italy"
+          }
+        ],
+        "severitydata": {
+          "severity": 6.8,
+          "severitytext": "Synthetic measurement; not an impact statement",
+          "severityunit": "M"
+        }
+      }
+    }
+  ],
+  "bbox": null
+}

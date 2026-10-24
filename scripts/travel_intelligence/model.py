@@ -8,7 +8,7 @@ import re
 from .validation import (canonical, country, digest, instant, keys, official_url,
                          plain, require, slug, stamp)
 
-CATEGORIES = {"public_health", "earthquake", "volcanic_activity", "tsunami", "flood",
+CATEGORIES = {"drought", "wildfire", "public_health", "earthquake", "volcanic_activity", "tsunami", "flood",
               "severe_weather", "civil_unrest", "security_restriction", "transport_strike",
               "transport_disruption", "planned_works", "travel_advisory", "entry_restriction",
               "destination_access", "other_exceptional"}
@@ -154,7 +154,10 @@ def validate_event(event, registry, now):
         except ValueError:
             raise ValueError("publication_date") from None
         require(event["published_at"] is None, "date_precision_conflict")
-    if source["adapter"] == "usgs-summary-v1":
+    if source["adapter"] == "gdacs-events-v1":
+        from .gdacs import validate_gdacs_event
+        validate_gdacs_event(event, source, now)
+    elif source["adapter"] == "usgs-summary-v1":
         from .usgs import validate_usgs_event
         validate_usgs_event(event, source, now)
     else:
@@ -198,8 +201,11 @@ def validate_event(event, registry, now):
     plain(p["adapter_version"], 64)
     for field in ("payload_hash", "config_hash"):
         require(type(p[field]) is str and re.fullmatch(r"[a-f0-9]{64}", p[field]), "provenance_hash")
-    require(instant(p["source_generated_at"]) <= instant(event["observed_at"]) + timedelta(minutes=10),
-            "future_generation")
+    if p["source_generated_at"] is None:
+        require(source["adapter"] == "gdacs-events-v1", "unknown_export_time_not_supported")
+    else:
+        require(instant(p["source_generated_at"]) <= instant(event["observed_at"]) + timedelta(minutes=10),
+                "future_generation")
     if event["related_event_reference"] is not None:
         official_url(event["related_event_reference"], source["allowed_urls"])
     require(event["content_hash"] == content_hash(event), "content_hash_mismatch")
@@ -214,7 +220,8 @@ def normalize_event(original, registry, now):
                   "last_verified_at", "review_due_at", "fresh_until", "source_updated_at"):
         if event[field] is not None:
             event[field] = stamp(instant(event[field]))
-    event["provenance"]["source_generated_at"] = stamp(instant(event["provenance"]["source_generated_at"]))
+    if event["provenance"]["source_generated_at"] is not None:
+        event["provenance"]["source_generated_at"] = stamp(instant(event["provenance"]["source_generated_at"]))
     event["country_codes"] = sorted(event["country_codes"])
     event["affected_locations"] = sorted(event["affected_locations"], key=canonical)
     event["content_hash"] = content_hash(event)
@@ -241,13 +248,17 @@ def compare(previous_events, incoming, registry, now):
                         "usgs_revision_rollback")
                 require(event["source_updated_at"] != old["source_updated_at"] or
                         event["content_hash"] == old["content_hash"], "usgs_revision_conflict")
+            if registry.sources[event["source_id"]]["adapter"] == "gdacs-events-v1":
+                from .gdacs import validate_revision
+                validate_revision(old, event)
             event["first_observed_at"] = old["first_observed_at"]
             if old["content_hash"] == event["content_hash"]:
                 kind = "no_change"
                 event["review_due_at"] = old["review_due_at"]
                 event["human_review_status"] = old["human_review_status"]
             else:
-                kind = ("source_revised" if registry.sources[event["source_id"]]["adapter"] == "usgs-summary-v1"
+                kind = ("source_revised" if registry.sources[event["source_id"]]["adapter"] in
+                        {"usgs-summary-v1", "gdacs-events-v1"}
                         else "severity_changed" if old["source_severity_raw"] != event["source_severity_raw"]
                         else "new_information")
                 event["human_review_status"] = "needs_reverification"

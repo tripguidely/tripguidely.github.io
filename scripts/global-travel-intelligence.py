@@ -13,7 +13,7 @@ from travel_intelligence.registry import Registry
 from travel_intelligence.reporting import write_report
 from travel_intelligence.storage import LocalStateStore, StoreError
 from travel_intelligence.validation import (MAX_INPUT_BYTES, UTC, ValidationError, digest,
-                                           instant, require, safe_external_directory, stamp)
+                                           instant, require, safe_external_directory, stamp, parse_json, canonical, keys)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,13 +24,15 @@ def main(argv=None):
     mode.add_argument("--input", type=Path, help="Replay one bounded provider JSON file; no network")
     mode.add_argument("--live", action="store_true", help="One anonymous GET of the explicitly selected fixed source endpoint")
     mode.add_argument("--recover-state", action="store_true", help="Explicit local recovery only; no collection")
-    parser.add_argument("--provider", choices=("canada", "usgs"), default="canada",
+    parser.add_argument("--provider", choices=("canada", "usgs", "gdacs", "gdacs-usgs"), default="canada",
                         help="Explicit local source profile; defaults to Canada")
     parser.add_argument("--state-dir", required=True, type=Path, help="Dedicated local directory outside all Git checkouts")
     parser.add_argument("--output", required=True, type=Path, help="Dedicated reports directory outside all Git checkouts")
     parser.add_argument("--config", type=Path, default=ROOT / "config" / "travel-intelligence")
     parser.add_argument("--now", help="RFC3339 clock for deterministic offline replay/recovery only")
     args = parser.parse_args(argv)
+    if args.live and args.provider == "gdacs-usgs":
+        parser.error("Combined provider mode is offline replay only")
     if args.live and args.now:
         parser.error("--now cannot be used with --live")
     now = datetime.now(UTC)
@@ -44,7 +46,8 @@ def main(argv=None):
                 "state_and_reports_must_be_separate")
         output = candidate_output
         registry = Registry.from_directory(args.config,
-            "usgs-sources.json" if args.provider == "usgs" else "sources.json")
+            {"canada": "sources.json", "usgs": "usgs-sources.json",
+             "gdacs": "gdacs-sources.json", "gdacs-usgs": "gdacs-usgs-sources.json"}[args.provider])
         store = LocalStateStore(state_dir, registry, ROOT)
         adapters = adapters_for(registry)
         if args.recover_state:
@@ -56,7 +59,17 @@ def main(argv=None):
             write_report(output, report, ROOT)
             print("State recovered locally. Review the coverage gap before the next collection; no publication.")
             return 0
-        def replay(_):
+        replay_payloads = None
+        if args.input and args.provider == "gdacs-usgs":
+            with args.input.open("rb") as stream:
+                envelope = parse_json(stream.read(MAX_INPUT_BYTES + 1))
+            keys(envelope, {"schema_version", "payloads"})
+            require(type(envelope["schema_version"]) is int and envelope["schema_version"] == 3, "replay_schema")
+            keys(envelope["payloads"], set(registry.sources))
+            replay_payloads = {ident: canonical(value) for ident, value in envelope["payloads"].items()}
+        def replay(ident):
+            if replay_payloads is not None:
+                return replay_payloads[ident]
             with args.input.open("rb") as stream:
                 return stream.read(MAX_INPUT_BYTES + 1)
         report = Monitor(registry, store, adapters).run(now, replay if args.input else None)

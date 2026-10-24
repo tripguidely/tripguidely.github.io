@@ -15,7 +15,8 @@ SAFE_SOURCE_CODES = {"malformed_json", "duplicate_json_key", "nonfinite_json_num
                      "canada_schema_mismatch", "unknown_advisory_level", "redirect_refused",
                      "unexpected_http_response", "unexpected_content_type", "unexpected_encoding",
                      "response_time_limit", "response_size_limit", "conflicting_duplicate",
-                     "usgs_revision_rollback", "usgs_revision_conflict", "usgs_export_rollback"}
+                     "usgs_revision_rollback", "usgs_revision_conflict", "usgs_export_rollback",
+                     "gdacs_revision_rollback", "gdacs_revision_conflict", "gdacs_time_basis_changed"}
 
 
 def source_error(exc):
@@ -52,11 +53,15 @@ class Monitor:
                 raw = reader(ident) if reader is not None else adapter.fetch()
                 batch = adapter.parse(raw, now)
                 require(batch.source_id == ident and batch.coverage ==
-                        ("worldwide_earthquakes_rolling_7_days" if source["adapter"] == "usgs-summary-v1"
+                        ("gdacs_app_selection_partial" if source["adapter"] == "gdacs-events-v1" else
+                         "worldwide_earthquakes_rolling_7_days" if source["adapter"] == "usgs-summary-v1"
                          else "country_advisories_only"),
                         "batch_identity_or_coverage")
                 require(type(batch.events) is list and len(batch.events) <= 1000, "batch_limit")
-                require(instant(batch.generated_at) <= now + timedelta(minutes=10), "future_batch")
+                if batch.generated_at is None:
+                    require(source["adapter"] == "gdacs-events-v1", "unknown_batch_time")
+                else:
+                    require(instant(batch.generated_at) <= now + timedelta(minutes=10), "future_batch")
                 if source["adapter"] == "usgs-summary-v1" and old_source.get("source_generated_at"):
                     require(instant(batch.generated_at) >= instant(old_source["source_generated_at"]),
                             "usgs_export_rollback")
@@ -105,7 +110,10 @@ class Monitor:
         report = {"schema_version": 3, "mode": "local_shadow", "generated_at": stamp(now),
                   "run_id": digest([self.registry.config_hash, stamp(now), snapshot.token]),
                   "config_hash": self.registry.config_hash, "coverage": "partial",
-                  "coverage_statement": ("USGS rolling earthquake observations only; worldwide coverage is incomplete; "
+                  "coverage_statement": ("GDACS application selection and optional USGS observations only; "
+                      "incomplete coverage, unqualified geography and unknown traveler impact."
+                      if any(s["adapter"] == "gdacs-events-v1" for s in self.registry.sources.values()) else
+                      "USGS rolling earthquake observations only; worldwide coverage is incomplete; "
                       "traveler impact unknown." if any(s["adapter"] == "usgs-summary-v1"
                       for s in self.registry.sources.values()) else
                       "Canadian national advisory changes only; local conditions not verified."),
@@ -122,6 +130,9 @@ class Monitor:
                                and all(s["status"] == "checked" for s in source_states.values()),
                   "persistence": {"committed": False, "previous_generation": snapshot.generation,
                                   "generation": None, "token": None, "error_code": None}}
+        if any(s["adapter"] == "gdacs-events-v1" for s in self.registry.sources.values()):
+            from .reconciliation import reconcile
+            report.update(reconcile(ordered))
         try:
             committed = self.store.commit(next_state, snapshot.token, now)
             report["persistence"].update(committed=True, generation=committed.generation, token=committed.token)

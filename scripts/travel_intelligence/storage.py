@@ -55,7 +55,7 @@ def validate_state(data, registry, now):
         require(data["last_run_at"] is not None and
                 instant(event["observed_at"]) <= instant(data["last_run_at"]), "state_event_clock")
     require(type(data["sources"]) is dict and set(data["sources"]) <= set(registry.sources), "state_sources")
-    for s in data["sources"].values():
+    for source_id, s in data["sources"].items():
         keys(s, {"status", "last_attempt_at", "last_success_at", "source_generated_at", "error_code"})
         require(s["status"] in {"checked", "unavailable"}, "source_state_status")
         attempt = instant(s["last_attempt_at"])
@@ -68,7 +68,8 @@ def validate_state(data, registry, now):
                     "source_generated_clock")
         if s["status"] == "checked":
             require(s["error_code"] is None and s["last_success_at"] == s["last_attempt_at"]
-                    and s["source_generated_at"] is not None, "checked_source_state")
+                    and (s["source_generated_at"] is not None or
+                         registry.sources[source_id]["adapter"] == "gdacs-events-v1"), "checked_source_state")
         else:
             require(type(s["error_code"]) is str and re.fullmatch(r"[a-z0-9_]{1,80}", s["error_code"]),
                     "invalid_error_code")
